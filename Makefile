@@ -1,6 +1,9 @@
 .PHONY: all drgnt avgdrgnt clean destroy
 
-all : drgnt avgdrgnt
+all : drgnt avgdrgnt build
+
+build :
+	mkdir -f build
 
 drgnt :
 	make -f drgnt.mak
