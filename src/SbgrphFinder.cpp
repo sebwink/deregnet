@@ -211,7 +211,7 @@ vector<Sbgrph> SbgrphFinder::run(bool start_heuristic, std::string model_sense) 
                          data.time_limit,
                          data.gap_cut,
                          model_sense) ) {
-            SbgrphModel::Solution current { model.getCurrentSolution() };
+            SbgrphModel::Solution current = model.getCurrentSolution() ;
             subgraphs.push_back(toSbgrph( current, "suboptimal_" + to_string(i) ));
             for (auto node: current.nodes)
                 nodes_so_far.insert(node);
