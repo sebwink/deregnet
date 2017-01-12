@@ -4,11 +4,13 @@ all : bin/drgnt
 
 include common.mak
 
+CXXFLAGS += -DRGNT_DEBUG
+
 INCLUDE += -I${GUROBI_HOME}/include
 LDFLAGS += -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi${GUROBI_VERSION_SUFFIX}
 RUNPATH = ${LEMON_HOME}/lib:${GUROBI_HOME}/lib
 
-objects = build/utils.o build/SbgrphFinder.o build/SbgrphModel.o build/drgnt.o
+objects = build/utils.o build/SbgrphFinder.o build/SbgrphModel.o build/StartHeuristic.o build/drgnt.o
 
 bin/drgnt : $(objects)
 	$(CXX) -o $@ $^ $(LDFLAGS) -Wl,-rpath=$(RUNPATH)
@@ -37,6 +39,13 @@ SBGRPHMODEL_INCLUDE_DEPS=$(SBGRPHFINDER_INCLUDE_DEPS)
 build/SbgrphModel.o : src/SbgrphModel.cpp $(SBGRPHMODEL_INCLUDE_DEPS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
+# StartHeuristic
+
+STARTHEURISTIC_INCLUDE_DEPS=include/deregnet/StartHeuristic.h \
+							include/deregnet/usinglemon.h
+
+build/StartHeuristic.o : src/StartHeuristic.cpp $(STARTHEURISTIC_INCLUDE_DEPS)
+	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 clean : 
 	rm -f $(objects)

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------
-//                      drgnt -- find deregulated pathways
+//                   deregnet -- find deregulated pathways
 // --------------------------------------------------------------------------
 // Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2016
 //
@@ -69,7 +69,6 @@ struct Options {
     set<string>* include { nullptr };                  /*< node ids of nodes to be included in subgraph */
     set<string>* exclude { nullptr };                  /*< node ids of nodes to be excluded in subgraph */
     string* outdir { nullptr };                        /*< directory to which to write output and logs */
-    bool receptor_as_root { true };                   /*< orientation */
     string model_sense { "max" };
 };
 
@@ -112,17 +111,6 @@ int main(int argc, char* argv[]) {
     vector<Sbgrph> subgraphs { sbgrphFinder.run(options.start_heuristic, options.model_sense) };
 
     writeSubgraphs(subgraphs, options.outdir);
-
-    // test and debug
-    if (data.score && data.graph)
-        for (NodeIt v(*data.graph); v != INVALID; ++v)
-            cout << (*data.score)[v] << " ";
-    cout << endl;
-    cout << endl;
-    cout << data.size << endl;
-    if (options.terminals)
-        for (auto t: *options.terminals)
-            cout << t << endl;
 
     return 0;
 }
@@ -210,7 +198,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 break;
             case 'f':
                 // -f,--flip-orientation
-                options.receptor_as_root = false;
+                data.receptor_as_root = false;
                 break;
             case 'o':
                 // -o,--output-dir
@@ -263,12 +251,10 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 void finalize_data(Options& options, Data& data) {
     data.read_graph(options.lgf_file);
     data.read_score(options.score_tsv);
-    if (!options.receptor_as_root)
-        data.get_reversed_graph();
-    data.get_node_set(data.terminals, options.terminals);
-    data.get_node_set(data.receptors, options.receptors);
-    data.get_node_set(data.include, options.include);
-    data.get_node_set(data.exclude, options.exclude);
+    data.get_node_set(&data.terminals, options.terminals);
+    data.get_node_set(&data.receptors, options.receptors);
+    data.get_node_set(&data.include, options.include);
+    data.get_node_set(&data.exclude, options.exclude);
     data.get_root(options.root_id);
 }
 

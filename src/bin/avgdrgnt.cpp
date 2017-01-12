@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------
-//                   avgdrgnt -- find deregulated pathways
+//                   deregnet -- find deregulated pathways
 // --------------------------------------------------------------------------
 // Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2016
 //
