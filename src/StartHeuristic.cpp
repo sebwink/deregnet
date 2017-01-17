@@ -59,13 +59,13 @@ StartHeuristic::StartHeuristic(Graph* xgraph,
 
 bool StartHeuristic::run() {
     if (!root)
-        root = getMaximalRoot();
+        root = getExtremalRoot();
     if (!root)
         return false;
     start_solution->insert(*root);
     Node* next;
     while (--size > 0) {
-        next = argmax();
+        next = argextr();
         if ( next )
             start_solution->insert(*next);
         else
@@ -79,7 +79,7 @@ pair<Node, set<Node>>* StartHeuristic::getStartSolution() {
     return ret;
 }
 
-Node* StartHeuristic::getMaximalRoot() {
+Node* StartHeuristic::getExtremalRoot() {
     double max;
     Node* argmax { nullptr };
     if (receptors)
@@ -91,7 +91,7 @@ Node* StartHeuristic::getMaximalRoot() {
     return argmax;
 }
 
-Node* StartHeuristic::argmax() {
+Node* StartHeuristic::argextr() {
     double max;
     Node* argmax { nullptr };
     Node* u = new Node();

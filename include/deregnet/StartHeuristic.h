@@ -68,8 +68,8 @@ class StartHeuristic {
 
   private:
 
-    Node* getMaximalRoot();
-    Node* argmax();
+    Node* getExtremalRoot();
+    Node* argextr();
     void update_max(Node** argmaxp, Node* node, double* max);
 
 };

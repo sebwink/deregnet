@@ -1,4 +1,4 @@
-CXX=c++
+CXX=icpc
 CXXFLAGS=-std=c++11 -Wall
 
 LEMON_VERSION=1.3.1
