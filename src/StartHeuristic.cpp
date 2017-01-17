@@ -46,13 +46,15 @@ StartHeuristic::StartHeuristic(Graph* xgraph,
                                Node* xroot,
                                int xsize,
                                set<Node>* xexclude,
-                               set<Node>* xreceptors)
+                               set<Node>* xreceptors,
+                               function<bool(double, double)> xcmp)
  : graph { xgraph },
    score { xscore },
    root { xroot },
    size { xsize },
    exclude { xexclude },
-   receptors { xreceptors }
+   receptors { xreceptors },
+   cmp { xcmp }
 {
     start_solution = new set<Node>();
 }
@@ -116,7 +118,7 @@ void StartHeuristic::update_max(Node** argmaxp, Node* node, double* maxp) {
         **argmaxp = *node;
         *maxp = (*score)[*node];
     }
-    else if ((*score)[*node] > *maxp) {
+    else if ( cmp(*maxp, (*score)[*node]) ) {
         **argmaxp = *node;
         *maxp = (*score)[*node];
     }

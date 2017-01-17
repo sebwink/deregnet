@@ -37,6 +37,7 @@
 
 #include <set>
 #include <utility>
+#include <functional>
 
 #include <deregnet/usinglemon.h>
 
@@ -53,6 +54,8 @@ class StartHeuristic {
     std::set<Node>* exclude;
     std::set<Node>* receptors;
 
+    std::function<bool(double, double)> cmp;
+
     std::set<Node>* start_solution;
 
   public:
@@ -62,7 +65,8 @@ class StartHeuristic {
                    Node* root,
                    int size,
                    std::set<Node>* exclude,
-                   std::set<Node>* receptors);
+                   std::set<Node>* receptors,
+                   std::function<bool(double, double)> xcmp);
     bool run();
     std::pair<Node, std::set<Node>>* getStartSolution();
 

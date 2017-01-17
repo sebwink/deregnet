@@ -39,6 +39,7 @@
 #include <map>
 #include <utility>
 #include <algorithm>
+#include <functional>
 
 #include <lemon/lgf_reader.h>
 
@@ -176,19 +177,17 @@ vector<Sbgrph> SbgrphFinder::run(bool start_heuristic, std::string model_sense) 
 
     std::pair<Node, set<Node>>* start_solution { nullptr };
     if (start_heuristic) {
-        StartHeuristic heuristic(data.graph, data.score, data.root, data.size, data.exclude, data.receptors);
-        if (heuristic.run())
-            start_solution = heuristic.getStartSolution();
+        StartHeuristic* heuristic;
+        if (model_sense == "min")
+            heuristic = new StartHeuristic(data.graph, data.score, data.root, data.size, data.exclude, data.receptors, greater<double>());
+        else
+            heuristic = new StartHeuristic(data.graph, data.score, data.root, data.size, data.exclude, data.receptors, less<double>());
+        if (heuristic->run())
+            start_solution = heuristic->getStartSolution();
     }
 
-#ifdef RGNT_DEBUG
-    if (start_solution) {
-        write2sif(data.graph, start_solution->second, data.nodeid, "drgnt_start_solution_debug.sif");
-        cout << "Start solution root: " << (*data.nodeid)[start_solution->first] << endl;
-        cout << "Start solution size: " << (start_solution->second).size() << endl;
-    }
-
-#endif
+    if (!start_solution)
+        cout << "No heuristic start solution found.\n" << endl;
 
     if ( model.solve(start_solution,
                      data.time_limit,
