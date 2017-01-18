@@ -44,7 +44,7 @@
 
 #include <deregnet/usinglemon.h>
 #include <deregnet/utils.h>
-#include <deregnet/SbgrphModel.h>
+#include <deregnet/DeregnetModel.h>
 
 namespace deregnet {
 
@@ -99,7 +99,7 @@ class SbgrphFinder {
 
     Data data;
 
-    Sbgrph toSbgrph(SbgrphModel::Solution solution, std::string signature);
+    Sbgrph toSbgrph(DeregnetModel<GRBModel>::Solution solution, std::string signature);
 
   public:
 

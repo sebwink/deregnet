@@ -43,15 +43,19 @@
 
 #include <lemon/lgf_reader.h>
 
+#include <gurobi_c++.h>
+
 #include <deregnet/usinglemon.h>
 #include <deregnet/utils.h>
 #include <deregnet/SbgrphFinder.h>
-#include <deregnet/SbgrphModel.h>
+#include <deregnet/DeregnetModel.h>
 #include <deregnet/StartHeuristic.h>
 
 using namespace std;
 
 namespace deregnet {
+
+using Solution = DeregnetModel<GRBModel>::Solution;
 
 void SbgrphFinder::Data::read_graph(string* pathToLgf) {
     if (!pathToLgf) {
@@ -159,7 +163,7 @@ SbgrphFinder::SbgrphFinder(SbgrphFinder::Data xdata)
 
 vector<Sbgrph> SbgrphFinder::run(bool start_heuristic, std::string model_sense) {
     // set up model
-    SbgrphModel model(data.graph, data.score, data.nodeid, data.root);
+    DeregnetModel<GRBModel> model(data.graph, data.score, data.nodeid, data.root);
 
     model.createVariables();
     model.addBaseConstraints(data.size);
@@ -210,7 +214,7 @@ vector<Sbgrph> SbgrphFinder::run(bool start_heuristic, std::string model_sense) 
                          data.time_limit,
                          data.gap_cut,
                          model_sense) ) {
-            SbgrphModel::Solution current = model.getCurrentSolution() ;
+            Solution current = model.getCurrentSolution() ;
             subgraphs.push_back(toSbgrph( current, "suboptimal_" + to_string(i) ));
             for (auto node: current.nodes)
                 nodes_so_far.insert(node);
@@ -225,7 +229,7 @@ vector<Sbgrph> SbgrphFinder::run(bool start_heuristic, std::string model_sense) 
     return subgraphs;
 }
 
-Sbgrph SbgrphFinder::toSbgrph( SbgrphModel::Solution solution, string signature ) {
+Sbgrph SbgrphFinder::toSbgrph(DeregnetModel<GRBModel>::Solution solution, string signature) {
     Sbgrph subgraph;
     subgraph.signature = signature;
     subgraph.rootid = solution.rootid;
