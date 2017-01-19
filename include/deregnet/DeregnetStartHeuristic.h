@@ -32,30 +32,56 @@
 // --------------------------------------------------------------------------
 //
 
-#ifndef START_HEURISTIC_H
-#define START_HEURISTIC_H
+#ifndef DEREGNET_START_HEURISTIC_H
+#define DEREGNET_START_HEURISTIC_H
 
 #include <set>
 #include <utility>
+#include <functional>
 
 #include <deregnet/usinglemon.h>
-#include <deregnet/DeregnetStartHeuristic.h>
 
 namespace deregnet {
 
-class StartHeuristic : public DeregnetStartHeuristic {
+class DeregnetStartHeuristic {
+
+  protected:
+
+    Graph* graph;
+    NodeMap<double>* score;
+    Node* root;
+    int size;
+    std::set<Node>* exclude;
+    std::set<Node>* receptors;
+
+    std::function<bool(double, double)> cmp;
+
+    std::set<Node>* start_solution { nullptr };
+    bool found_node { false };
+    bool success { false };
 
   public:
 
-    using DeregnetStartHeuristic::DeregnetStartHeuristic;
+    DeregnetStartHeuristic(Graph* xgraph,
+                           NodeMap<double>* xscore,
+                           Node* root,
+                           int size,
+                           std::set<Node>* exclude,
+                           std::set<Node>* receptors,
+                           std::function<bool(double, double)> xcmp);
+    bool run();
+    std::pair<Node, std::set<Node>>* getStartSolution();
 
   private:
 
-    virtual bool search_further() override;
-    virtual bool feasible_node(Node* node) override;
+    Node* get_best_root();
+    Node* get_next_node();
+    void update_best_node(Node** current_best_node, Node* node, double* best);
+    virtual bool search_further() = 0;
+    virtual bool feasible_node(Node* node) = 0;
 
 };
 
 }    //    namespace deregnet
 
-#endif    //    START_HEURISTIC
+#endif    //    DEREGNET_START_HEURISTIC

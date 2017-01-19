@@ -37,91 +37,31 @@
 #include <deregnet/usinglemon.h>
 #include <deregnet/StartHeuristic.h>
 
-using namespace std;
-
 namespace deregnet {
 
-StartHeuristic::StartHeuristic(Graph* xgraph,
-                               NodeMap<double>* xscore,
-                               Node* xroot,
-                               int xsize,
-                               set<Node>* xexclude,
-                               set<Node>* xreceptors,
-                               function<bool(double, double)> xcmp)
- : graph { xgraph },
-   score { xscore },
-   root { xroot },
-   size { xsize },
-   exclude { xexclude },
-   receptors { xreceptors },
-   cmp { xcmp }
-{
-    start_solution = new set<Node>();
-}
-
-bool StartHeuristic::run() {
-    if (!root)
-        root = getExtremalRoot();
-    if (!root)
+bool StartHeuristic::search_further() {
+    size--;
+    if (size > 0 && found_node)
+        return true;
+    else if (size > 0 && !found_node)
         return false;
-    start_solution->insert(*root);
-    Node* next;
-    while (--size > 0) {
-        next = argextr();
-        if ( next )
-            start_solution->insert(*next);
-        else
-            return false;
+    else if (size == 0) {
+        success = true;
+        return false;
     }
-    return true;
-}
-
-pair<Node, set<Node>>* StartHeuristic::getStartSolution() {
-    pair<Node, set<Node>>* ret { new pair<Node, set<Node>>( make_pair(*root, *start_solution) ) };
-    return ret;
-}
-
-Node* StartHeuristic::getExtremalRoot() {
-    double max;
-    Node* argmax { nullptr };
-    if (receptors)
-        for (auto v : *receptors)
-            update_max(&argmax, &v, &max);
     else
-        for (NodeIt v(*graph); v != INVALID; ++v)
-            update_max(&argmax, &v, &max);
-    return argmax;
+        return false;
 }
 
-Node* StartHeuristic::argextr() {
-    double max;
-    Node* argmax { nullptr };
-    Node* u = new Node();
-    for (auto v : *start_solution) {
-        for (OutArcIt a(*graph, v); a != INVALID; ++a) {
-            *u = graph->target(a);
-            if (exclude) {
-                if (start_solution->find(*u) == start_solution->end() && exclude->find(*u) == exclude->end())
-                    update_max(&argmax, u, &max);
-            }
-            else
-                if (start_solution->find(*u) == start_solution->end())
-                    update_max(&argmax, u, &max);
+bool StartHeuristic::feasible_node(Node* node) {
+    if (exclude) {
+        if (start_solution->find(*node) == start_solution->end() && exclude->find(*node) == exclude->end())
+            return true;
         }
-    }
-    return argmax;
-}
-
-void StartHeuristic::update_max(Node** argmaxp, Node* node, double* maxp) {
-    if (!(*argmaxp)) {
-        *argmaxp = new Node();
-        **argmaxp = *node;
-        *maxp = (*score)[*node];
-    }
-    else if ( cmp(*maxp, (*score)[*node]) ) {
-        **argmaxp = *node;
-        *maxp = (*score)[*node];
-    }
+    else
+        if (start_solution->find(*node) == start_solution->end())
+            return true;
+    return false;
 }
 
 }    //    namespace deregnet
