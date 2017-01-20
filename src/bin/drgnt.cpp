@@ -45,10 +45,13 @@
 #include <iostream>
 #include <string>
 #include <set>
+// gurobi ###################################################################
+#include <gurobi_c++.h>
 // deregnet #################################################################
-#include <deregnet/version.h>
 #include <deregnet/utils.h>
-#include <deregnet/SbgrphFinder.h>
+#include <deregnet/version.h>
+#include <deregnet/DrgntData.h>
+#include <deregnet/DeregnetFinder.h>
 
 #define OPTION_ERROR 1
 
@@ -74,7 +77,7 @@ struct Options {
 
 // Data #####################################################################
 
-using Data = SbgrphFinder::Data;
+using Data = DrgntData;
 
 // parse_options ############################################################
 
@@ -86,7 +89,7 @@ void finalize_data(Options& options, Data& data);
 
 // writeSubgraphs ###########################################################
 
-void writeSubgraphs(vector<Sbgrph>& subgraphs, string* outdir);
+void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdir);
 
 // print_version ############################################################
 
@@ -99,19 +102,14 @@ void print_help();
 // main #####################################################################
 
 int main(int argc, char* argv[]) {
-
     Options options;
     Data data;
     parse_options(argc, argv, options, data);
     finalize_data(options, data);
-
-
-    SbgrphFinder sbgrphFinder(data);
-
-    vector<Sbgrph> subgraphs { sbgrphFinder.run(options.start_heuristic, options.model_sense) };
-
+    cout << data.size << endl;
+    DeregnetFinder<GRBModel, Data> subgraphFinder(&data);
+    vector<Subgraph> subgraphs { subgraphFinder.run(options.start_heuristic, options.model_sense) };
     writeSubgraphs(subgraphs, options.outdir);
-
     return 0;
 }
 
@@ -145,7 +143,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 
     int opt;
     int option_index = 0;
-    string option_signature = "hvg:s:n:r:R:T:i:e:b:p:t:c:o:";
+    string option_signature = "hfvg:s:n:r:R:T:i:e:b:p:t:c:o:";
     while ( (opt = getopt_long(argc, argv, option_signature.c_str(),
                                long_options, &option_index)) != -1) {
         switch (opt) {
@@ -260,7 +258,7 @@ void finalize_data(Options& options, Data& data) {
 
 // writeSubgraphs ###########################################################
 
-void writeSubgraphs(vector<Sbgrph>& subgraphs, string* outdirp) {
+void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
     char cwd[2048];
     string outdir;
     if (getcwd(cwd, sizeof(cwd)) != NULL)
