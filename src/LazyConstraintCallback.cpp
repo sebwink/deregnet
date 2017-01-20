@@ -32,6 +32,7 @@
 // --------------------------------------------------------------------------
 //
 
+#include <cmath>
 #include <iostream>
 #include <map>
 #include <set>
@@ -52,12 +53,19 @@ namespace deregnet {
 
 LazyConstraintCallback::LazyConstraintCallback(std::map<Node, GRBVar>* xx,
                                                Graph* xgraph,
-                                               Node* xroot)
+                                               Node* xroot,
+                                               double* xgap_cut)
  : x { xx },
    graph { xgraph },
-   root { xroot }
- { }
-
+   original_root { xroot },
+   root { nullptr },
+   gap_cut { xgap_cut }
+ {
+    if (xroot) {
+        root = new Node();
+        *root = *original_root;
+    }
+ }
 
 void LazyConstraintCallback::callback() {
     try {
@@ -70,6 +78,14 @@ void LazyConstraintCallback::callback() {
             int num_components { lemon::stronglyConnectedComponents(current_subgraph, component_map) };
             if (num_components > 1)
                 check_and_set_lazy_constr(num_components, component_map);
+        }
+        else if (where == GRB_CB_MIP && gap_cut) {
+            double best_objective { getDoubleInfo(GRB_CB_MIP_OBJBST) };
+            double best_bound { getDoubleInfo(GRB_CB_MIP_OBJBND) };
+            if ( abs(best_objective - best_bound) < (*gap_cut) * (1.0 + abs(best_objective)) ) {
+                cout << "Achieved " << *gap_cut << " gap. Stopping optimization." << endl;
+                abort();
+            }
         }
     }
     catch (GRBException e) {
@@ -159,8 +175,9 @@ void LazyConstraintCallbackRoot::set_lazy_constraint(const std::set<Node>& compo
 
 LazyConstraintCallbackNoRoot::LazyConstraintCallbackNoRoot(std::map<Node, GRBVar>* xx,
                                                            std::map<Node, GRBVar>* yy,
-                                                           Graph* xgraph)
- : LazyConstraintCallback { xx, xgraph, nullptr },
+                                                           Graph* xgraph,
+                                                           double* gap_cut)
+ : LazyConstraintCallback(xx, xgraph, nullptr, gap_cut),
    y { yy }
 { }
 

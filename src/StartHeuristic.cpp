@@ -39,6 +39,19 @@
 
 namespace deregnet {
 
+Node* StartHeuristic::get_best_root() {
+    double best;
+    Node* best_node { nullptr };
+    if (receptors)
+        for (auto v : *receptors)
+            update_best_node(&best_node, &v, &best);
+    else
+        for (NodeIt v(*graph); v != INVALID; ++v)
+            update_best_node(&best_node, &v, &best);
+    return best_node;
+}
+
+
 bool StartHeuristic::search_further() {
     size--;
     if (size > 0 && found_node)

@@ -50,6 +50,7 @@ class DeregnetStartHeuristic {
     Graph* graph;
     NodeMap<double>* score;
     Node* root;
+    Node* original_root;
     int size;
     std::set<Node>* exclude;
     std::set<Node>* receptors;
@@ -72,11 +73,12 @@ class DeregnetStartHeuristic {
     bool run();
     std::pair<Node, std::set<Node>>* getStartSolution();
 
-  private:
+  protected:
 
-    Node* get_best_root();
     Node* get_next_node();
     void update_best_node(Node** current_best_node, Node* node, double* best);
+
+    virtual Node* get_best_root() = 0;
     virtual bool search_further() = 0;
     virtual bool feasible_node(Node* node) = 0;
 

@@ -98,7 +98,6 @@ class SbgrphFinder {
   private:
 
     Data data;
-
     Sbgrph toSbgrph(DeregnetModel<GRBModel>::Solution solution, std::string signature);
 
   public:

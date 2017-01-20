@@ -52,33 +52,35 @@ class LazyConstraintCallback : public GRBCallback {
 
     LazyConstraintCallback(std::map<Node, GRBVar>* xx,
                            Graph* xgraph,
-                           Node* xroot);
+                           Node* xroot,
+                           double* xgap_cut);
   protected:
 
     std::map<Node, GRBVar>* x;
     Graph* graph;
+    Node* original_root;
     Node* root;
     std::vector<Node> selected_nodes;
+    double* gap_cut;
 
-protected:
+  protected:
 
-  void callback();
+    void callback();
 
-private:
+ private:
 
-  virtual void get_solution_filter(NodeFilter& solution_filter) = 0;
-  virtual void set_lazy_constraint(const std::set<Node>& component,
-                                   const std::set<Node>& global_parents) = 0;
-
-  void check_and_set_lazy_constr(const int num_components,
-                                 const InducedSubgraph::NodeMap<int>& component_map);
-  void get_component_nodes(const InducedSubgraph::NodeMap<int>& component_map,
-                           std::set<Node>& component,
-                           const int k);
-  bool is_root_component(const std::set<Node>& component);
-  void get_parents(const std::set<Node>& component,
-                   std::set<Node>& parents,
-                   std::set<Node>& global_parents);
+    virtual void get_solution_filter(NodeFilter& solution_filter) = 0;
+    virtual void set_lazy_constraint(const std::set<Node>& component,
+                                     const std::set<Node>& global_parents) = 0;
+    void check_and_set_lazy_constr(const int num_components,
+                                   const InducedSubgraph::NodeMap<int>& component_map);
+    void get_component_nodes(const InducedSubgraph::NodeMap<int>& component_map,
+                             std::set<Node>& component,
+                             const int k);
+    bool is_root_component(const std::set<Node>& component);
+    void get_parents(const std::set<Node>& component,
+                     std::set<Node>& parents,
+                     std::set<Node>& global_parents);
 };
 
 class LazyConstraintCallbackRoot : public LazyConstraintCallback {
@@ -101,7 +103,8 @@ class LazyConstraintCallbackNoRoot : public LazyConstraintCallback {
 
     LazyConstraintCallbackNoRoot(std::map<Node, GRBVar>* xx,
                                  std::map<Node, GRBVar>* yy,
-                                 Graph* xgraph);
+                                 Graph* xgraph,
+                                 double* xgap_cut);
 
   private:
 

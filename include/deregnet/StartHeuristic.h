@@ -51,6 +51,7 @@ class StartHeuristic : public DeregnetStartHeuristic {
 
   private:
 
+    virtual Node* get_best_root() override;
     virtual bool search_further() override;
     virtual bool feasible_node(Node* node) override;
 

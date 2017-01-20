@@ -50,6 +50,7 @@
 #include <deregnet/SbgrphFinder.h>
 #include <deregnet/DeregnetModel.h>
 #include <deregnet/StartHeuristic.h>
+#include <deregnet/SuboptimalStartHeuristic.h>
 
 using namespace std;
 
@@ -180,7 +181,7 @@ vector<Sbgrph> SbgrphFinder::run(bool start_heuristic, std::string model_sense) 
     // find optimal subgraph (modulo time_limit and/or gap_cut)
 
     std::pair<Node, set<Node>>* start_solution { nullptr };
-    if (start_heuristic) {
+    if (start_heuristic) {  // find_start_solution(start_solution);
         StartHeuristic* heuristic;
         if (model_sense == "min")
             heuristic = new StartHeuristic(data.graph, data.score, data.root, data.size, data.exclude, data.receptors, greater<double>());
@@ -208,8 +209,26 @@ vector<Sbgrph> SbgrphFinder::run(bool start_heuristic, std::string model_sense) 
     set<string> nodes_so_far { subgraphs.back().nodes };
     for (int i = 0; i < data.num_subopt_iter; i++) {
         model.addSuboptimalityConstraint(nodes_so_far, data.max_overlap, data.size);
+        // suboptimal start solution
         start_solution = nullptr;
-        // TODO ... -> start heuristic for suboptimal runs
+        if (start_heuristic) {
+            SuboptimalStartHeuristic* heuristic;
+            if (model_sense == "min")
+                heuristic = new SuboptimalStartHeuristic(data.graph, data.score, data.root, data.size,
+                                                         data.exclude, data.receptors, greater<double>(),
+                                                         data.nodeid, &nodes_so_far, data.max_overlap);
+            else
+                heuristic = new SuboptimalStartHeuristic(data.graph, data.score, data.root, data.size,
+                                                         data.exclude, data.receptors, less<double>(),
+                                                         data.nodeid, &nodes_so_far, data.max_overlap);
+            if (heuristic->run())
+                start_solution = heuristic->getStartSolution();
+        }
+
+        if (!start_solution)
+            cout << "No heuristic start solution found.\n" << endl;
+
+        // solve for next suboptimal solution
         if ( model.solve(start_solution,
                          data.time_limit,
                          data.gap_cut,

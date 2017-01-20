@@ -104,8 +104,8 @@ class DeregnetModel {
     void addBaseConstraintsRoot(int size);
     void addBaseConstraintsNoRoot(int size);
     void setStartSolution(std::pair<Node, std::set<Node>>* start_solution);  // specialize for GRBModel and FMILP ?
-    void setCallbackRoot();                     // specialize for GRBModel and FMILP ?!
-    void setCallbackNoRoot();                   // specialize for GRBModel and FMILP ?!
+    void setCallbackRoot(double* gap_cut);                     // specialize for GRBModel and FMILP ?!
+    void setCallbackNoRoot(double* gap_cut);                   // specialize for GRBModel and FMILP ?!
 
 };
 
@@ -224,17 +224,20 @@ bool DeregnetModel<Model>::solve(std::pair<Node, std::set<Node>>* start_solution
     else
         model.set(GRB_IntAttr_ModelSense, GRB_MAXIMIZE);
 
-    model.getEnv().set(GRB_IntParam_LazyConstraints, 1);
+    model.set(GRB_IntParam_LazyConstraints, 1);
+
+    if (time_limit)
+        model.set(GRB_DoubleParam_TimeLimit, *time_limit);
 
     if (root) {
         if (start_solution)
             setStartSolution(start_solution);
-        setCallbackRoot();
+        setCallbackRoot(gap_cut);
     }
     else {
         if (start_solution)
             setStartSolution(start_solution);
-        setCallbackNoRoot();
+        setCallbackNoRoot(gap_cut);
     }
     model.update();
     model.optimize();
@@ -308,13 +311,13 @@ void DeregnetModel<GRBModel>::createVariablesNoRoot() {
 }
 
 template <> inline
-void DeregnetModel<GRBModel>::setCallbackRoot() {
-    model.setCallback( new LazyConstraintCallbackRoot(&x, graph, root) );
+void DeregnetModel<GRBModel>::setCallbackRoot(double* gap_cut) {
+    model.setCallback( new LazyConstraintCallbackRoot(&x, graph, root, gap_cut) );
 }
 
 template <> inline
-void DeregnetModel<GRBModel>::setCallbackNoRoot() {
-    model.setCallback( new LazyConstraintCallbackNoRoot(&x, y, graph) );
+void DeregnetModel<GRBModel>::setCallbackNoRoot(double* gap_cut) {
+    model.setCallback( new LazyConstraintCallbackNoRoot(&x, y, graph, gap_cut) );
 }
 
 // Specializations for Model = grbfrc::FMILP

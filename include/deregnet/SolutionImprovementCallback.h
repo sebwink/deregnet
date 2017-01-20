@@ -32,49 +32,46 @@
 // --------------------------------------------------------------------------
 //
 
-#ifndef SUBOPTIMAL_START_HEURISTIC_H
-#define SUBOPTIMAL_START_HEURISTIC_H
+#ifndef SOLUTION_IMPROVMENT_CALLBACK_H
+#define SOLUTION_IMPROVMENT_CALLBACK_H
 
 #include <string>
+#include <map>
+#include <vector>
 #include <set>
-#include <utility>
 
 #include <deregnet/usinglemon.h>
-#include <deregnet/DeregnetStartHeuristic.h>
+#include <deregnet/LazyConstraintCallback.h>
+
+#include <gurobi_c++.h>
 
 namespace deregnet {
 
-class SuboptimalStartHeuristic : public DeregnetStartHeuristic {
+
+class SolutionImprovmentCallbackRoot : public LazyConstraintCallbackRoot {
 
   private:
 
-    NodeMap<std::string>* nodeid;
-    std::set<std::string>* nodes_so_far;
-    double max_overlap;
-    int current_overlapping_nodes { 0 };
+    std::set<Node>* current_solution { nullptr };
 
   public:
 
-    SuboptimalStartHeuristic(Graph* xgraph,
-                             NodeMap<double>* xscore,
-                             Node* root,
-                             int size,
-                             std::set<Node>* exclude,
-                             std::set<Node>* receptors,
-                             std::function<bool(double, double)> xcmp,
-                             NodeMap<std::string>* xnodeid,
-                             std::set<std::string>* xnodes_sof_far,
-                             double xmax_overlap);
+    using LazyConstraintCallbackRoot::LazyConstraintCallbackRoot;
 
-  private:
+  protected:
 
-    bool is_overlap_node(Node* node);
-    virtual Node* get_best_root() override;
-    virtual bool search_further() override;
-    virtual bool feasible_node(Node* node) override;
+    void callback();
+
+
+
+};
+
+class SolutionImprovmentNoRoot : public LazyConstraintCallbackNoRoot {
+
+
 
 };
 
 }    //    namespace deregnet
 
-#endif    //    SUBOPTIMAL_START_HEURISTIC
+#endif    //    SOLUTION_IMPROVMENT_CALLBACK_H
