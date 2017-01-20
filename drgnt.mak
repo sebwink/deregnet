@@ -11,8 +11,8 @@ LDFLAGS += -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi${GUROBI_VERSION_SUFFIX}
 RUNPATH = ${LEMON_HOME}/lib:${GUROBI_HOME}/lib
 
 objects = build/utils.o \
+          build/DeregnetData.o \
           build/LazyConstraintCallback.o \
-		  build/SbgrphFinder.o \
 		  build/DeregnetStartHeuristic.o \
 		  build/StartHeuristic.o \
 		  build/SuboptimalStartHeuristic.o \
@@ -23,7 +23,8 @@ bin/drgnt : $(objects)
 
 DRGNT_INCLUDE_DEPS=include/deregnet/version.h \
                    include/deregnet/utils.h \
-				   include/deregnet/SbgrphFinder.h
+				   include/deregnet/DeregnetFinder.h \
+				   include/deregnet/DrgntData.h
 
 build/drgnt.o : src/bin/drgnt.cpp $(DRGNT_INCLUDE_DEPS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
@@ -34,17 +35,6 @@ LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS=include/deregnet/usinglemon.h \
                                     include/deregnet/LazyConstraintCallback.h
 
 build/LazyConstraintCallback.o : src/LazyConstraintCallback.cpp $(LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS)
-	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
-
-# SbgrphFinder
-
-SBGRPHFINDER_INCLUDE_DEPS=include/deregnet/SbgrphFinder.h \
-                          include/deregnet/LazyConstraintCallback.h \
-                          include/deregnet/DeregnetModel.h \
-						  include/deregnet/utils.h \
-						  include/deregnet/usinglemon.h
-
-build/SbgrphFinder.o : src/SbgrphFinder.cpp $(SBGRPHFINDER_INCLUDE_DEPS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 # StartHeuristic

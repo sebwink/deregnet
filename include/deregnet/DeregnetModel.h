@@ -44,6 +44,7 @@
 
 #include <gurobi_c++.h>
 
+#include <deregnet/utils.h>
 #include <deregnet/usinglemon.h>
 #include <deregnet/LazyConstraintCallback.h>
 
@@ -54,16 +55,6 @@ namespace deregnet {
 
 template <typename Model>
 class DeregnetModel {
-
-  public:
-
-    struct Solution {
-        std::set<std::string> nodes;
-        std::set<std::pair<std::string, std::string>> edgelist;
-        std::string rootid;
-        double total_score;
-        double avg_score;
-    };
 
   protected:
 
@@ -262,7 +253,7 @@ void DeregnetModel<Model>::addSuboptimalityConstraint(std::set<std::string> node
 }
 
 template <typename Model>
-typename DeregnetModel<Model>::Solution DeregnetModel<Model>::getCurrentSolution() {
+Solution DeregnetModel<Model>::getCurrentSolution() {
     Solution solution;
     std::set<Node> nodes;
     string rootid;

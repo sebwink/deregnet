@@ -74,7 +74,7 @@ class LazyConstraintCallback : public GRBCallback {
                                      const std::set<Node>& global_parents) = 0;
     void check_and_set_lazy_constr(const int num_components,
                                    const InducedSubgraph::NodeMap<int>& component_map);
-    void get_component_nodes(const InducedSubgraph::NodeMap<int>& component_map,
+    bool get_component_nodes(const InducedSubgraph::NodeMap<int>& component_map,
                              std::set<Node>& component,
                              const int k);
     bool is_root_component(const std::set<Node>& component);

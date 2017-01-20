@@ -95,7 +95,7 @@ void register_node_set_file(set<string>** node_set,
 
 // Sbgrph::writeToFile #######################################################
 
-void Sbgrph::writeToFile(string filepath, bool plain) {
+void Subgraph::writeToFile(string filepath, bool plain) {
     ofstream sif_file;
     sif_file.open(filepath + "/" + signature + ".sif");
     if (!plain) {

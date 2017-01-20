@@ -103,9 +103,8 @@ void LazyConstraintCallback::check_and_set_lazy_constr(const int num_components,
         std::set<Node> component;
         std::set<Node> parents;
         std::set<Node> global_parents;
-        get_component_nodes(component_map, component, k);
-        bool is_not_root_component = !is_root_component(component);
-        if (is_not_root_component) {
+        bool more_than_one_node = get_component_nodes(component_map, component, k);
+        if (!is_root_component(component) && more_than_one_node) {
             get_parents(component, parents, global_parents);
             if (parents.size() == 0)
                 set_lazy_constraint(component, global_parents);
@@ -113,12 +112,15 @@ void LazyConstraintCallback::check_and_set_lazy_constr(const int num_components,
     }
 }
 
-void LazyConstraintCallback::get_component_nodes(const InducedSubgraph::NodeMap<int>& component_map,
+bool LazyConstraintCallback::get_component_nodes(const InducedSubgraph::NodeMap<int>& component_map,
                                                  std::set<Node>& component,
                                                  const int k) {
     for (auto v : selected_nodes)
         if (k == component_map[v])
             component.insert(v);
+    if (component.size() > 1)
+        return true;
+    return false;
 }
 
 bool LazyConstraintCallback::is_root_component(const std::set<Node>& component) {

@@ -32,73 +32,63 @@
 // --------------------------------------------------------------------------
 //
 
-#ifndef DEREGNET_UTILS_H
-#define DEREGNET_UTILS_H
+#ifndef DEREGNET_DATA_H
+#define DEREGNET_DATA_H
 
-#include <string>
+#define INPUT_ERROR 1
+#define NO_OPTIMAL_SUBGRAPH_FOUND 2
+
 #include <set>
-#include <map>
+#include <string>
+#include <utility>
 
+#include <deregnet/utils.h>
 #include <deregnet/usinglemon.h>
+#include <deregnet/DeregnetModel.h>
 
 namespace deregnet {
 
-// split_string #############################################################
+class DeregnetData {
 
-std::set<std::string> split_string(const std::string& str,
-                                   const std::string& sep);
+      public:
 
-// set_union ################################################################
+        Graph* graph { nullptr };
+        NodeMap<double>* score { nullptr };
+        NodeMap<std::string>* nodeid { nullptr };
+        Node* root { nullptr };
+        std::set<Node>* terminals { nullptr };
+        std::set<Node>* receptors { nullptr };
+        std::set<Node>* include { nullptr };
+        std::set<Node>* exclude { nullptr };
+        int num_subopt_iter { 0 };                         /*< number of iterations to find suboptimal subgraphs */
+        double max_overlap { 0.0 };                        /*< maximal percentage of overlap to previous subgraphs
+                                                               when searching for suboptimal subgraphs             */
+        double* time_limit { nullptr };                    /*< time limit of a single solve */
+        double* gap_cut { nullptr };                       /*< gap tolerance */
 
-template <typename T>
-void set_union(std::set<T>** A, std::set<T> B) {
-    for (auto elmt : B) (*A)->insert(elmt);
-}
+        bool receptor_as_root { true };
 
-// register_node_set ########################################################
+     private:
 
-void register_node_set(std::set<std::string>** node_set,
-                       std::string comma_separated_list_of_nodes);
+        Graph* revgraph { nullptr };
+        NodeMap<std::string>* revnodeid { nullptr };
 
-// register_node_set_file ###################################################
+        Graph* original_graph { nullptr };
+        NodeMap<std::string>* original_nodeid { nullptr };
 
-void register_node_set_file(std::set<std::string>** node_set,
-                            std::string path2file);
+      public:
 
-// ##########################################################################
+        void read_graph(std::string* pathToLgf);
+        void read_score(std::string* pathToTsv);
+        void get_node_set(std::set<Node>** node_set, std::set<std::string>* node_ids);
+        void get_root(std::string* root_id);
 
-struct Solution {
-    std::set<std::string> nodes;
-    std::set<std::pair<std::string, std::string>> edgelist;
-    std::string rootid;
-    double total_score;
-    double avg_score;
-};
+      private:
 
-struct Subgraph {
+        void reverse_graph();
 
-    std::string signature;
-    std::set<std::pair<std::string, std::string>> edgelist;
-    std::set<std::string> nodes;
-    std::set<std::string> receptors;
-    std::set<std::string> terminals;
-    std::string rootid;
-    double total_score;
-    double avg_score;
+    };
 
-    void writeToFile(std::string filepath, bool plain = false);
+}   // namespace deregnet
 
-};
-
-// ##########################################################################
-
-bool getNodeById(Graph* graph, NodeMap<std::string>* nodeid, std::string id, Node* node);
-
-// ##########################################################################
-
-void write2sif(Graph* graph, std::set<Node> node_set, NodeMap<std::string>* nodeid, std::string path2file);
-
-}  // namespace deregnet
-
-
-#endif    //    DEREGNET_UTILS_H
+#endif   // DEREGNET_DATA_H
