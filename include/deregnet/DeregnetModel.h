@@ -202,7 +202,13 @@ void DeregnetModel<Model>::addReceptorConstraints(std::set<Node>* receptors) {
 
 template <typename Model>
 void DeregnetModel<Model>::addTerminalConstraints(std::set<Node>* terminals) {
-
+    for (NodeIt v(*graph); v != INVALID; ++v)
+        if (terminals->find(v) == terminals->end()) {
+            GRBLinExpr out_neighbor_expr;
+            for (OutArcIt a(*graph, v); a != INVALID; ++a)
+                out_neighbor_expr += x[graph->target(a)];
+            model.addConstr(x[v] - out_neighbor_expr <= 0);
+        }
 }
 
 template <typename Model>

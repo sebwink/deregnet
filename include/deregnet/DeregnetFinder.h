@@ -83,7 +83,6 @@ DeregnetFinder<ModelType, Data>::DeregnetFinder(Data* xdata)
 
 template <typename ModelType, typename Data>
 std::vector<Subgraph> DeregnetFinder<ModelType, Data>::run(bool start_heuristic, std::string model_sense) {
-    std::cout << data->size << std::endl;
     model->createVariables();
     add_base_constraints();
     if (data->include)
