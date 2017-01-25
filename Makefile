@@ -8,8 +8,13 @@ build :
 drgnt :
 	make -f drgnt.mak
 
-avgdrgnt : 
-	make -f avgdrgnt.mak
+avgdrgnt : grbfrc
+	#make -f avgdrgnt.mak
+
+grbfrc :
+	cd grbfrc
+	make 
+	cd ..
 
 clean :
 	rm -f build/*.o
