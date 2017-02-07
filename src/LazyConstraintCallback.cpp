@@ -103,7 +103,7 @@ void LazyConstraintCallback::check_and_set_lazy_constr(const int num_components,
         std::set<Node> component;
         std::set<Node> parents;
         std::set<Node> global_parents;
-        bool more_than_one_node = get_component_nodes(component_map, component, k);
+        bool more_than_one_node = get_component_nodes(component_map, component, k);  // violation of POLS
         if (!is_root_component(component) && more_than_one_node) {
             get_parents(component, parents, global_parents);
             if (parents.size() == 0)

@@ -35,33 +35,9 @@
 #include <set>
 
 #include <deregnet/usinglemon.h>
-#include <deregnet/StartHeuristic.h>
+#include <deregnet/AvgStartHeuristic.h>
 
 namespace deregnet {
-
-StartHeuristic::StartHeuristic(Graph* xgraph,
-                               NodeMap<double>* xscore,
-                               Node* root,
-                               std::set<Node>* exclude,
-                               std::set<Node>* receptors,
-                               std::function<bool(double, double)> xcmp,
-                               int xsize)
- : DeregnetStartHeuristic(xgraph, xscore, root, exclude, receptors, xcmp),
-   size { xsize }
-{ }
-
-Node* StartHeuristic::get_best_root() {
-    double best;
-    Node* best_node { nullptr };
-    if (receptors)
-        for (auto v : *receptors)
-            update_best_node(&best_node, &v, &best);
-    else
-        for (NodeIt v(*graph); v != INVALID; ++v)
-            update_best_node(&best_node, &v, &best);
-    return best_node;
-}
-
 
 bool StartHeuristic::search_further() {
     size--;
@@ -75,17 +51,6 @@ bool StartHeuristic::search_further() {
     }
     else
         return false;
-}
-
-bool StartHeuristic::feasible_node(Node* node) {
-    if (exclude) {
-        if (start_solution->find(*node) == start_solution->end() && exclude->find(*node) == exclude->end())
-            return true;
-        }
-    else
-        if (start_solution->find(*node) == start_solution->end())
-            return true;
-    return false;
 }
 
 }    //    namespace deregnet

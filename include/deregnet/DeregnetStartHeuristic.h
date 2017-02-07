@@ -51,7 +51,6 @@ class DeregnetStartHeuristic {
     NodeMap<double>* score;
     Node* root;
     Node* original_root;
-    int size;
     std::set<Node>* exclude;
     std::set<Node>* receptors;
 
@@ -66,7 +65,6 @@ class DeregnetStartHeuristic {
     DeregnetStartHeuristic(Graph* xgraph,
                            NodeMap<double>* xscore,
                            Node* root,
-                           int size,
                            std::set<Node>* exclude,
                            std::set<Node>* receptors,
                            std::function<bool(double, double)> xcmp);

@@ -48,6 +48,7 @@ class SuboptimalStartHeuristic : public DeregnetStartHeuristic {
 
   private:
 
+    int size;
     NodeMap<std::string>* nodeid;
     std::set<std::string>* nodes_so_far;
     double max_overlap;
@@ -58,13 +59,13 @@ class SuboptimalStartHeuristic : public DeregnetStartHeuristic {
     SuboptimalStartHeuristic(Graph* xgraph,
                              NodeMap<double>* xscore,
                              Node* root,
-                             int size,
                              std::set<Node>* exclude,
                              std::set<Node>* receptors,
                              std::function<bool(double, double)> xcmp,
                              NodeMap<std::string>* xnodeid,
                              std::set<std::string>* xnodes_sof_far,
-                             double xmax_overlap);
+                             double xmax_overlap,
+                             int xsize);
 
   private:
 

@@ -84,7 +84,7 @@ struct Options {
 
 // Data #####################################################################
 
-using Data = AvgSbgrphFinder::Data;
+using Data = AvgdrgntData;
 
 // parse_options ############################################################
 
@@ -115,24 +115,12 @@ int main(int argc, char* argv[]) {
     parse_options(argc, argv, options, data);
     finalize_data(options, data);
 
-    AvgSbgrphFinder sbgrphFinder(data,
-                                 options.receptor_as_root);
+    DeregnetFinder<FMILP, Data> subgraphFinder(&data);
 
-    vector<Sbgrph> subgraphs { sbgrphFinder.run(options.algorithm,
+    vector<Sbgrph> subgraphs { subgraphFinder.run(options.algorithm,
                                                 options.start_heuristic,
                                                 options.model_sense) };
-    // writeSubgraphs(subgraphs, options.outdir);
-
-    // test and debug
-    if (data.score && data.graph)
-        for (NodeIt v(*data.graph); v != INVALID; ++v)
-            cout << (*data.score)[v] << " ";
-    cout << endl;
-    cout << endl;
-    cout << data.max_size << endl;
-    if (options.terminals)
-        for (auto t: *options.terminals)
-            cout << t << endl;
+    writeSubgraphs(subgraphs, options.outdir);
 
     return 0;
 }
@@ -255,11 +243,11 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				break;
 			case 'l':
 				// -l,--min-size
-				data.min_size = atoi( optarg );
+                data.size.min_size = atoi( optarg );
 				break;
 			case 'u':
 				// -u,--max-size
-				data.max_size = atoi( optarg );
+                data.size.max_size = atoi( optarg );
 				break;
 			case 't':
 				// -t,--time-limit

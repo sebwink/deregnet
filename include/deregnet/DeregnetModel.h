@@ -42,14 +42,16 @@
 #include <utility>
 #include <vector>
 
+#include <lemon/connectivity.h>
+#include <lemon/adaptors.h>
+
 #include <gurobi_c++.h>
+
+#include <grbfrc/FMILP.h>
 
 #include <deregnet/utils.h>
 #include <deregnet/usinglemon.h>
 #include <deregnet/LazyConstraintCallback.h>
-
-#include <lemon/connectivity.h>
-#include <lemon/adaptors.h>
 
 namespace deregnet {
 
@@ -82,7 +84,8 @@ class DeregnetModel {
     bool solve(std::pair<Node, std::set<Node>>* start_solution,
                double* time_limit,
                double* gap_cut,
-               std::string model_sense);
+               std::string model_sense,
+               grbfrc::Algorithm algorithm = grbfrc::Algorithm::GCC);
     void addSuboptimalityConstraint(std::set<std::string> nodes_so_far,
                                     double max_overlap,
                                     int size);
@@ -95,6 +98,10 @@ class DeregnetModel {
     void addBaseConstraintsRoot(int size);
     void addBaseConstraintsNoRoot(int size);
     void setStartSolution(std::pair<Node, std::set<Node>>* start_solution);  // specialize for GRBModel and FMILP ?
+    void solve_common(std::pair<Node, std::set<Node>>* start_solution,
+                      double* time_limit,
+                      double* gap_cut,
+                      std::string model_sense);
     void setCallbackRoot(double* gap_cut);                     // specialize for GRBModel and FMILP ?!
     void setCallbackNoRoot(double* gap_cut);                   // specialize for GRBModel and FMILP ?!
 
@@ -201,7 +208,7 @@ void DeregnetModel<Model>::addReceptorConstraints(std::set<Node>* receptors) {
 }
 
 template <typename Model>
-void DeregnetModel<Model>::addTerminalConstraints(std::set<Node>* terminals) {
+void DeregnetModel<Model>::addTerminalConstraints(std::set<Node>* terminals) { // consider using complement of terminals ...
     for (NodeIt v(*graph); v != INVALID; ++v)
         if (terminals->find(v) == terminals->end()) {
             GRBLinExpr out_neighbor_expr;
@@ -212,10 +219,10 @@ void DeregnetModel<Model>::addTerminalConstraints(std::set<Node>* terminals) {
 }
 
 template <typename Model>
-bool DeregnetModel<Model>::solve(std::pair<Node, std::set<Node>>* start_solution,
-                        double* time_limit,
-                        double* gap_cut,
-                        std::string model_sense) {
+void DeregnetModel<Model>::solve_common(std::pair<Node, std::set<Node>>* start_solution,
+                                        double* time_limit,
+                                        double* gap_cut,
+                                        std::string model_sense) {
     if (model_sense == "min")
         model.set(GRB_IntAttr_ModelSense, GRB_MINIMIZE);
     else
@@ -237,13 +244,6 @@ bool DeregnetModel<Model>::solve(std::pair<Node, std::set<Node>>* start_solution
         setCallbackNoRoot(gap_cut);
     }
     model.update();
-    model.optimize();
-
-    int status = model.get(GRB_IntAttr_Status);   // FMILP implmentation of status!
-    if (status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT)
-        return true;
-    else
-        return false;
 }
 
 template <typename Model>
@@ -317,8 +317,91 @@ void DeregnetModel<GRBModel>::setCallbackNoRoot(double* gap_cut) {
     model.setCallback( new LazyConstraintCallbackNoRoot(&x, y, graph, gap_cut) );
 }
 
+template <> inline
+bool DeregnetModel<GRBModel>::solve(std::pair<Node, std::set<Node>>* start_solution,
+                                    double* time_limit,
+                                    double* gap_cut,
+                                    std::string model_sense,
+                                    grbfrc::Algorithm algorithm) {
+    solve_common(start_solution, time_limit, gap_cut, model_sense);
+    model.optimize();
+    int status = model.get(GRB_IntAttr_Status);   // FMILP implmentation of status!
+    if (status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT)
+        return true;
+    else
+        return false;
+}
+
+template <> inline
+void DeregnetModel<GRBModel>::addSuboptimalityConstraint(std::set<std::string> nodes_so_far,
+                                             double max_overlap,
+                                             int size) {
+    GRBLinExpr nodes_so_far_expr;
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        if (nodes_so_far.find((*nodeid)[v]) != nodes_so_far.end())
+            nodes_so_far_expr += x[v];
+    }
+    model.addConstr(nodes_so_far_expr <= max_overlap * size);
+}
+
 // Specializations for Model = grbfrc::FMILP
 
+template <> inline
+void DeregnetModel<grbfrc::FMILP>::createVariablesRoot() {
+    for (NodeIt v(*graph); v != INVALID; ++v)
+        x[v] = model.addVar(0.0, 1.0, (*score)[v], 1.0, GRB_BINARY);
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP>::createVariablesNoRoot() {
+    y = new std::map<Node, GRBVar>;
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        x[v] = model.addVar(0.0, 1.0, (*score)[v], 1.0, GRB_BINARY);
+        (*y)[v] = model.addVar(0.0, 1.0, 0.0, 0.0, GRB_BINARY);
+    }
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP>::setCallbackRoot(double* gap_cut) {
+
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP>::setCallbackNoRoot(double* gap_cut) {
+
+}
+
+template <> inline
+bool DeregnetModel<grbfrc::FMILP>::solve(std::pair<Node, std::set<Node>>* start_solution,
+                                    double* time_limit,
+                                    double* gap_cut,
+                                    std::string model_sense,
+                                    grbfrc::Algorithm algorithm) {
+    return false;
+    /*
+    solve_common(start_solution, time_limit, gap_cut, model_sense);
+    model.optimize(algorithm);
+    int status = model.get(GRB_IntAttr_Status);   // FMILP implmentation of status!
+    if (status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT)
+        return true;
+    else
+        return false;
+    */
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP>::addSuboptimalityConstraint(std::set<std::string> nodes_so_far,
+                                                              double max_overlap,
+                                                              int size) {
+    GRBLinExpr nodes_so_far_expr;
+    GRBLinExpr size_expr;
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        size_expr += x[v];
+        if (nodes_so_far.find((*nodeid)[v]) != nodes_so_far.end())
+            nodes_so_far_expr += x[v];
+    }
+    model.addConstr(nodes_so_far_expr <= max_overlap * size_expr);
+}
 
 }   // namespace deregnet
 

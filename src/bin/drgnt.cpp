@@ -75,7 +75,7 @@ struct Options {
     string model_sense { "max" };
 };
 
-// Data #####################################################################
+// Data
 
 using Data = DrgntData;
 
@@ -106,7 +106,6 @@ int main(int argc, char* argv[]) {
     Data data;
     parse_options(argc, argv, options, data);
     finalize_data(options, data);
-    cout << data.size << endl;
     DeregnetFinder<GRBModel, Data> subgraphFinder(&data);
     vector<Subgraph> subgraphs { subgraphFinder.run(options.start_heuristic, options.model_sense) };
     writeSubgraphs(subgraphs, options.outdir);

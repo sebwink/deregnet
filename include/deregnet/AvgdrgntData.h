@@ -43,8 +43,10 @@ class AvgdrgntData : public DeregnetData {
 
       public:
 
-        int min_size { 20 };
-        int max_size { 50 };
+        struct {
+            int min_size { 20 };
+            int max_size { 50 };
+        } size;
 
     };
 

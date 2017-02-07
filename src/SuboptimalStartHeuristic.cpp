@@ -44,17 +44,18 @@ namespace deregnet {
 SuboptimalStartHeuristic::SuboptimalStartHeuristic(Graph* xgraph,
                                                    NodeMap<double>* xscore,
                                                    Node* root,
-                                                   int size,
                                                    std::set<Node>* exclude,
                                                    std::set<Node>* receptors,
                                                    std::function<bool(double, double)> xcmp,
                                                    NodeMap<std::string>* xnodeid,
                                                    std::set<std::string>* xnodes_sof_far,
-                                                   double xmax_overlap)
- : DeregnetStartHeuristic(xgraph, xscore, root, size, exclude, receptors, xcmp),
+                                                   double xmax_overlap,
+                                                   int xsize)
+ : DeregnetStartHeuristic(xgraph, xscore, root, exclude, receptors, xcmp),
    nodeid { xnodeid },
    nodes_so_far { xnodes_sof_far },
-   max_overlap { xmax_overlap }
+   max_overlap { xmax_overlap },
+   size { xsize }
 { }
 
 Node* SuboptimalStartHeuristic::get_best_root() {

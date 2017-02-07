@@ -32,60 +32,31 @@
 // --------------------------------------------------------------------------
 //
 
+#ifndef AVG_START_HEURISTIC_H
+#define AVG_START_HEURISTIC_H
+
 #include <set>
+#include <utility>
 
 #include <deregnet/usinglemon.h>
 #include <deregnet/StartHeuristic.h>
 
 namespace deregnet {
 
-StartHeuristic::StartHeuristic(Graph* xgraph,
-                               NodeMap<double>* xscore,
-                               Node* root,
-                               std::set<Node>* exclude,
-                               std::set<Node>* receptors,
-                               std::function<bool(double, double)> xcmp,
-                               int xsize)
- : DeregnetStartHeuristic(xgraph, xscore, root, exclude, receptors, xcmp),
-   size { xsize }
-{ }
+class AvgStartHeuristic : public DeregnetStartHeuristic {
 
-Node* StartHeuristic::get_best_root() {
-    double best;
-    Node* best_node { nullptr };
-    if (receptors)
-        for (auto v : *receptors)
-            update_best_node(&best_node, &v, &best);
-    else
-        for (NodeIt v(*graph); v != INVALID; ++v)
-            update_best_node(&best_node, &v, &best);
-    return best_node;
-}
+    public:
 
+        using DeregnetStartHeuristic::DeregnetStartHeuristic;
 
-bool StartHeuristic::search_further() {
-    size--;
-    if (size > 0 && found_node)
-        return true;
-    else if (size > 0 && !found_node)
-        return false;
-    else if (size == 0) {
-        success = true;
-        return false;
-    }
-    else
-        return false;
-}
+    private:
 
-bool StartHeuristic::feasible_node(Node* node) {
-    if (exclude) {
-        if (start_solution->find(*node) == start_solution->end() && exclude->find(*node) == exclude->end())
-            return true;
-        }
-    else
-        if (start_solution->find(*node) == start_solution->end())
-            return true;
-    return false;
-}
+        virtual Node* get_best_root() override;
+        virtual bool search_further() override;
+        virtual bool feasible_node(Node* node) override;
+
+};
 
 }    //    namespace deregnet
+
+#endif    //    AVG_START_HEURISTIC

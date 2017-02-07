@@ -45,9 +45,19 @@ namespace deregnet {
 
 class StartHeuristic : public DeregnetStartHeuristic {
 
+  private:
+
+    int size;
+
   public:
 
-    using DeregnetStartHeuristic::DeregnetStartHeuristic;
+    StartHeuristic(Graph* xgraph,
+                   NodeMap<double>* xscore,
+                   Node* root,
+                   std::set<Node>* exclude,
+                   std::set<Node>* receptors,
+                   std::function<bool(double, double)> xcmp,
+                   int xsize);
 
   private:
 

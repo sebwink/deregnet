@@ -66,7 +66,7 @@ class SolutionImprovmentCallbackRoot : public LazyConstraintCallbackRoot {
 
 };
 
-class SolutionImprovmentNoRoot : public LazyConstraintCallbackNoRoot {
+class SolutionImprovmentCallbackNoRoot : public LazyConstraintCallbackNoRoot {
 
 
 
