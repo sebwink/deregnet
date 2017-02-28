@@ -1,20 +1,7 @@
-.PHONY: all drgnt avgdrgnt clean destroy
+.PHONY: clean destroy
 
-all : drgnt avgdrgnt build
-
-build :
-	mkdir -f build
-
-drgnt :
-	make -f drgnt.mak
-
-avgdrgnt : grbfrc
-	#make -f avgdrgnt.mak
-
-grbfrc :
-	cd grbfrc
-	make 
-	cd ..
+all :
+	./build.sh
 
 clean :
 	rm -f build/*.o
@@ -22,3 +9,4 @@ clean :
 destroy :
 	rm -f build/*.o
 	rm -f bin/drgnt bin/avgdrgnt
+	rm -f grbfrc/lib/*

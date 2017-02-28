@@ -6,9 +6,7 @@ include common.mak
 
 CXXFLAGS += -DRGNT_DEBUG
 
-INCLUDE += -I${GUROBI_HOME}/include
 LDFLAGS += -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi${GUROBI_VERSION_SUFFIX}
-RUNPATH = ${LEMON_HOME}/lib:${GUROBI_HOME}/lib
 
 objects = build/utils.o \
           build/DeregnetData.o \
