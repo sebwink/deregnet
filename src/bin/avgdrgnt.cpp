@@ -51,35 +51,29 @@
 #include <deregnet/version.h>
 #include <deregnet/utils.h>
 #include <deregnet/AvgSbgrphFinder.h>
+#include <deregnet/AvgdrgntData.h>
 
 #define OPTION_ERROR 1
 
 // ##########################################################################
 
 using namespace std;
-//using namespace grbfrc;
+using namespace grbfrc;
 using namespace deregnet;
-
-// Algorithm ################################################################
-
-using Algorithm = grbfrc::Algorithm;
 
 // Options ##################################################################
 
 struct Options {
 	string* lgf_file { nullptr };                      /*< Path to lgf file containing graph to be used */            
-	string* score_tsv { nullptr };                     /*< Path to tsv with scores */
-	Algorithm algorithm { Algorithm::GCC };            /*< Algorithm to use to solve the FILP */
-	bool start_heuristic { true };                     /*< Whether to run the greedy start heuristic */
-	string* root_id { nullptr };                       /*< root node id */
+    string* score_tsv { nullptr };                     /*< Path to tsv with scores */
+    string* root_id { nullptr };                       /*< root node id */
     set<string>* terminals { nullptr };                /*< terminal node ids */
 	set<string>* receptors { nullptr };                /*< receptor node ids */
 	set<string>* include { nullptr };                  /*< node ids of nodes to be included in subgraph */
 	set<string>* exclude { nullptr };                  /*< node ids of nodes to be excluded in subgraph */
 	bool no_max_size { false };                        /*< whether to restrict to subgraphs with a maximal size */
 	string* outdir { nullptr };                        /*< directory to which to write output and logs */
-	bool receptor_as_root { true };                    /*< orientation */
-    string model_sense { "max" };
+    bool receptor_as_root { true };                    /*< orientation */
 };
 
 // Data #####################################################################
@@ -114,14 +108,9 @@ int main(int argc, char* argv[]) {
     Data data;
     parse_options(argc, argv, options, data);
     finalize_data(options, data);
-
     DeregnetFinder<FMILP, Data> subgraphFinder(&data);
-
-    vector<Sbgrph> subgraphs { subgraphFinder.run(options.algorithm,
-                                                options.start_heuristic,
-                                                options.model_sense) };
+    vector<Sbgrph> subgraphs { subgraphFinder.run() };
     writeSubgraphs(subgraphs, options.outdir);
-
     return 0;
 }
 
@@ -174,7 +163,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 string model_sense { "model-sense" };
                 // --no-start-heuristic
                 if ( strcmp(long_options[option_index].name, no_start_heuristic.c_str()) == 0 )
-                    options.start_heuristic = false;
+                    data.start_heuristic = false;
                 // --no-max-size
                 else if ( strcmp(long_options[option_index].name, no_max_size.c_str()) == 0)
                     options.no_max_size = true;
@@ -191,7 +180,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				else if ( strcmp(long_options[option_index].name, exclude_file.c_str()) == 0)
 					register_node_set_file(&options.exclude, optarg);
                 else if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0)
-                    options.model_sense = string(optarg);
+                    data.model_sense = string(optarg);
 				break;
 			}
 			case 'g':
@@ -216,11 +205,11 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				string dta { "dta" };
 				string ovt { "ovt" };
 				if ( strcmp(optarg, gcc.c_str()) == 0 ) 
-					options.algorithm = Algorithm::GCC;
+                    data.algorithm = Algorithm::GCC;
 				else if ( strcmp(optarg, dta.c_str()) == 0 ) 
-					options.algorithm = Algorithm::DTA;
+                    data.algorithm = Algorithm::DTA;
 				else if ( strcmp(optarg, ovt.c_str()) == 0 ) 
-					options.algorithm = Algorithm::OVT;
+                    data.algorithm = Algorithm::OVT;
 				else {
 				    cout << "\nUnknown algorithm option provided:" << endl;
 					cout << "-a,--algorithm  < gcc | dta | ovt >" << endl;
@@ -299,7 +288,7 @@ void finalize_data(Options& options, Data& data) {
     data.get_root(options.root_id);
     if (options.no_max_size)
         data.max_size = countNodes(*data.graph);
-    if (options.algorithm == Algorithm::DTA)
+    if (data.algorithm == Algorithm::DTA)
         data.gap_cut = nullptr;
 }
 

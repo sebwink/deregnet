@@ -45,8 +45,6 @@
 
 #include <deregnet/utils.h>
 #include <deregnet/usinglemon.h>
-#include <deregnet/DrgntData.h>
-#include <deregnet/AvgdrgntData.h>
 #include <deregnet/DeregnetModel.h>
 #include <deregnet/StartHeuristic.h>
 #include <deregnet/SuboptimalStartHeuristic.h>
@@ -61,30 +59,22 @@ class DeregnetFinder {
   private:
 
     Data* data;
-    DeregnetModel<ModelType>* model;
+    DeregnetModel<ModelType, Data>* model;
 
   public:
 
     DeregnetFinder(Data* xdata);
-    std::vector<Subgraph> run(bool start_heuristic,
-                              std::string model_sense,
-                              grbfrc::Algorithm algorithm = grbfrc::Algorithm::GCC);
+    std::vector<Subgraph> run();
 
   private:
 
-    void find_start_solution(std::pair<Node, std::set<Node>>** start_solution, std::string model_sense);
+    void find_start_solution(std::pair<Node, std::set<Node>>** start_solution);
     void find_suboptimal_start_solution(std::pair<Node, std::set<Node>>** start_solution,
-                                        std::string model_sense,
                                         std::set<std::string>* nodes_so_far);
-    void add_base_constraints();
-    void add_suboptimiality_constraints(std::set<std::string>& nodes_so_far);
-    Subgraph to_subgraph(Solution solution, string signature);
-    void run_optimal_init(bool start_heuristic,
-                          std::pair<Node, std::set<Node>>** start_solution,
-                          std::string model_sense);
-    void run_suboptimal_init(bool start_heuristic,
-                             std::pair<Node, std::set<Node> > **start_solution,
-                             std::string model_sense,
+    Subgraph to_subgraph(Solution solution,
+                         string signature);
+    void run_optimal_init(std::pair<Node, std::set<Node>>** start_solution);
+    void run_suboptimal_init(std::pair<Node, std::set<Node> > **start_solution,
                              std::set<std::string>* nodes_so_far);
     void run_optimal_windup(bool solve_successful,
                             std::vector<Subgraph>* subgraphs);
@@ -98,26 +88,24 @@ class DeregnetFinder {
 template <typename ModelType, typename Data>
 DeregnetFinder<ModelType, Data>::DeregnetFinder(Data* xdata)
  : data { xdata },
-   model { new DeregnetModel<ModelType>(xdata->graph, xdata->score, xdata->nodeid, xdata->root) }
+   model { new DeregnetModel<ModelType, Data>(xdata) }
 { }
 
 template <typename ModelType, typename Data>
-void DeregnetFinder<ModelType, Data>::run_optimal_init(bool start_heuristic,
-                                                       std::pair<Node, std::set<Node> >** start_solution,
-                                                       std::string model_sense) {
+void DeregnetFinder<ModelType, Data>::run_optimal_init(std::pair<Node, std::set<Node> >** start_solution) {
     model->createVariables();
-    add_base_constraints();
+    model->addBaseConstraints();
     if (data->include)
-        model->addIncludeConstraints(data->include);
+        model->addIncludeConstraints();
     if (data->exclude)
-        model->addExcludeConstraints(data->exclude);
+        model->addExcludeConstraints();
     if (data->receptors && !data->root)
-        model->addReceptorConstraints(data->receptors);
+        model->addReceptorConstraints();
     if (data->terminals)
-        model->addTerminalConstraints(data->terminals);
-    if (start_heuristic)
-        find_start_solution(start_solution, model_sense);
-    if (!(*start_solution))
+        model->addTerminalConstraints();
+    if (data->start_heuristic)
+        find_start_solution(start_solution);
+    if (data->start_heuristic && !(*start_solution))
         std::cout << "No heuristic start solution found.\n" << std::endl;
 }
 
@@ -133,14 +121,12 @@ void DeregnetFinder<ModelType, Data>::run_optimal_windup(bool solve_successful, 
 }
 
 template <typename ModelType, typename Data>
-void DeregnetFinder<ModelType, Data>::run_suboptimal_init(bool start_heuristic,
-                                                          std::pair<Node, std::set<Node> > **start_solution,
-                                                          std::string model_sense,
+void DeregnetFinder<ModelType, Data>::run_suboptimal_init(std::pair<Node, std::set<Node> > **start_solution,
                                                           std::set<std::string>* nodes_so_far) {
-    add_suboptimiality_constraints(*nodes_so_far);
-    if (start_heuristic)
-        find_suboptimal_start_solution(start_solution, model_sense, nodes_so_far);
-    if (start_heuristic && !(*start_solution))
+    model->addSuboptimalityConstraint(*nodes_so_far);
+    if (data->start_heuristic)
+        find_suboptimal_start_solution(start_solution, nodes_so_far);
+    if (data->start_heuristic && !(*start_solution))
         std::cout << "No heuristic start solution found.\n" << std::endl;
 }
 
@@ -164,30 +150,20 @@ bool DeregnetFinder<ModelType, Data>::run_suboptimal_windup(bool solve_successfu
 }
 
 template <typename ModelType, typename Data>
-std::vector<Subgraph> DeregnetFinder<ModelType, Data>::run(bool start_heuristic,
-                                                           std::string model_sense,
-                                                           grbfrc::Algorithm algorithm) {
+std::vector<Subgraph> DeregnetFinder<ModelType, Data>::run() {
     std::pair<Node, std::set<Node>>* start_solution { nullptr };
     // find optimal subgraph
-    run_optimal_init(start_heuristic, &start_solution, model_sense);
+    run_optimal_init(&start_solution);
     std::vector<Subgraph> subgraphs;
-    bool solve_successful { model->solve(start_solution,
-                                         data->time_limit,
-                                         data->gap_cut,
-                                         model_sense,
-                                         algorithm) };
+    bool solve_successful { model->solve(start_solution) };
     run_optimal_windup(solve_successful, &subgraphs);
     // find suboptimal subgraphs
     std::set<std::string> nodes_so_far { subgraphs.back().nodes };
     for (int i = 0; i < data->num_subopt_iter; ++i) {
         start_solution = nullptr;
-        run_suboptimal_init(start_heuristic, &start_solution, model_sense, &nodes_so_far);
+        run_suboptimal_init(&start_solution, &nodes_so_far);
         // solve for next suboptimal solution
-        solve_successful = model->solve(start_solution,
-                                      data->time_limit,
-                                      data->gap_cut,
-                                      model_sense,
-                                      algorithm);
+        solve_successful = model->solve(start_solution);
         if (!run_suboptimal_windup(solve_successful, &subgraphs, &nodes_so_far, i))
             break;
     }
@@ -226,14 +202,13 @@ Subgraph DeregnetFinder<ModelType, Data>::to_subgraph(Solution solution, std::st
     return subgraph;
 }
 
-// ModelType = GRBModel specializations
+// specializations
 
 template <> inline
 void DeregnetFinder<GRBModel, DrgntData>::find_start_solution(std::pair<Node,
-                                                              std::set<Node>>** start_solution,
-                                                              std::string model_sense) {
+                                                              std::set<Node>>** start_solution) {
     StartHeuristic* heuristic;
-    if (model_sense == "min")
+    if (data->model_sense == "min")
         heuristic = new StartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::greater<double>(), data->size);
     else
         heuristic = new StartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::less<double>(), data->size);
@@ -241,12 +216,27 @@ void DeregnetFinder<GRBModel, DrgntData>::find_start_solution(std::pair<Node,
         *start_solution = heuristic->getStartSolution();
 }
 
+
+template <> inline
+void DeregnetFinder<FMILP, AvgdrgntData>::find_start_solution(std::pair<Node,
+                                                              std::set<Node>>** start_solution) {
+    /*
+    StartHeuristic* heuristic;
+    if (data->model_sense == "min")
+        heuristic = new AvgStartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::greater<double>(), data->size);
+    else
+        heuristic = new AvgStartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::less<double>(), data->size);
+    if (heuristic->run())
+        *start_solution = heuristic->getStartSolution();
+    */
+}
+
+
 template <> inline
 void DeregnetFinder<GRBModel, DrgntData>::find_suboptimal_start_solution(std::pair<Node, std::set<Node>>** start_solution,
-                                                                         std::string model_sense,
                                                                          std::set<std::string>* nodes_so_far) {
     SuboptimalStartHeuristic* heuristic;
-    if (model_sense == "min")
+    if (data->model_sense == "min")
         heuristic = new SuboptimalStartHeuristic(data->graph, data->score, data->root,
                                                  data->exclude, data->receptors, std::greater<double>(),
                                                  data->nodeid, nodes_so_far, data->max_overlap, data->size);
@@ -258,37 +248,13 @@ void DeregnetFinder<GRBModel, DrgntData>::find_suboptimal_start_solution(std::pa
         *start_solution = heuristic->getStartSolution();
 }
 
-template <> inline
-void DeregnetFinder<GRBModel, DrgntData>::add_base_constraints() {
-    model->addBaseConstraints(data->size);
-}
-
-template <> inline
-void DeregnetFinder<GRBModel, DrgntData>::add_suboptimiality_constraints(std::set<std::string>& nodes_so_far) {
-    model->addSuboptimalityConstraint(nodes_so_far, data->max_overlap, data->size);
-}
-
-// ModelType FMILP specializations
-/*
-template <> inline
-void DeregnetFinder<FMILP, AvgdrgntData>::find_start_solution(std::pair<Node,
-                                                              std::set<Node>>** start_solution,
-                                                              std::string model_sense) {
-    StartHeuristic* heuristic;
-    if (model_sense == "min")
-        heuristic = new AvgStartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::greater<double>(), data->size);
-    else
-        heuristic = new AvgStartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::less<double>(), data->size);
-    if (heuristic->run())
-        *start_solution = heuristic->getStartSolution();
-}
 
 template <> inline
 void DeregnetFinder<FMILP, AvgdrgntData>::find_suboptimal_start_solution(std::pair<Node, std::set<Node>>** start_solution,
-                                                                         std::string model_sense,
                                                                          std::set<std::string>* nodes_so_far) {
+    /*
     SuboptimalStartHeuristic* heuristic;
-    if (model_sense == "min")
+    if (data->model_sense == "min")
         heuristic = new AvgSuboptimalStartHeuristic(data->graph, data->score, data->root,
                                                     data->exclude, data->receptors, std::greater<double>(),
                                                     data->nodeid, nodes_so_far, data->max_overlap, data->size);
@@ -297,8 +263,9 @@ void DeregnetFinder<FMILP, AvgdrgntData>::find_suboptimal_start_solution(std::pa
                                                     data->nodeid, nodes_so_far, data->max_overlap, data->size);
     if (heuristic->run())
         *start_solution = heuristic->getStartSolution();
+    */
 }
-*/
+
 
 }
 

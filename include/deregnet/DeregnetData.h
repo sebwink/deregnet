@@ -44,7 +44,6 @@
 
 #include <deregnet/utils.h>
 #include <deregnet/usinglemon.h>
-#include <deregnet/DeregnetModel.h>
 
 namespace deregnet {
 
@@ -67,6 +66,8 @@ class DeregnetData {
         double* gap_cut { nullptr };                       /*< gap tolerance */
 
         bool receptor_as_root { true };
+        std::string model_sense { "max" };
+        bool start_heuristic { true };                     /*< Whether to run the greedy start heuristic */
 
      private:
 

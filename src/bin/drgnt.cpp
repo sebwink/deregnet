@@ -65,7 +65,6 @@ using namespace deregnet;
 struct Options {
     string* lgf_file { nullptr };                      /*< Path to lgf file containing graph to be used */
     string* score_tsv { nullptr };                     /*< Path to tsv with scores */
-    bool start_heuristic { true };                     /*< Whether to run the greedy start heuristic */
     string* root_id { nullptr };                       /*< root node id */
     set<string>* terminals { nullptr };                /*< terminal node ids */
     set<string>* receptors { nullptr };                /*< receptor node ids */
@@ -107,7 +106,7 @@ int main(int argc, char* argv[]) {
     parse_options(argc, argv, options, data);
     finalize_data(options, data);
     DeregnetFinder<GRBModel, Data> subgraphFinder(&data);
-    vector<Subgraph> subgraphs { subgraphFinder.run(options.start_heuristic, options.model_sense) };
+    vector<Subgraph> subgraphs { subgraphFinder.run() };
     writeSubgraphs(subgraphs, options.outdir);
     return 0;
 }
@@ -155,10 +154,10 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 string model_sense { "model-sense" };
                 // --model-sense
                 if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0 )
-                    options.model_sense = optarg;
+                    data.model_sense = optarg;
                 // --no-start-heuristic
                 if ( strcmp(long_options[option_index].name, no_start_heuristic.c_str()) == 0 )
-                    options.start_heuristic = false;
+                    data.start_heuristic = false;
                 // --terminals-file
                 else if ( strcmp(long_options[option_index].name, terminals_file.c_str()) == 0)
                     register_node_set_file(&options.terminals, optarg);

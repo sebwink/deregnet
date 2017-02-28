@@ -35,20 +35,23 @@
 #ifndef AVGDRGNT_DATA_H
 #define AVGDRGNT_DATA_H
 
+#include <grbfrc/FMILP.h> // #include <grbfrc/Algorithms.h>
 #include <deregnet/DeregnetData.h>
 
 namespace deregnet {
+
+using Algorithm = grbfrc::Algorithm;
 
 class AvgdrgntData : public DeregnetData {
 
       public:
 
-        struct {
             int min_size { 20 };
             int max_size { 50 };
-        } size;
 
-    };
+            Algorithm algorithm { Algorithm::GCC };
+
+};
 
 }   // namespace deregnet
 

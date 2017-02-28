@@ -79,7 +79,7 @@ void LazyConstraintCallback::callback() {
             if (num_components > 1)
                 check_and_set_lazy_constr(num_components, component_map);
         }
-        else if (where == GRB_CB_MIP && gap_cut) {
+        else if (gap_cut && where == GRB_CB_MIP) {
             double best_objective { getDoubleInfo(GRB_CB_MIP_OBJBST) };
             double best_bound { getDoubleInfo(GRB_CB_MIP_OBJBND) };
             if ( abs(best_objective - best_bound) < (*gap_cut) * (1.0 + abs(best_objective)) ) {

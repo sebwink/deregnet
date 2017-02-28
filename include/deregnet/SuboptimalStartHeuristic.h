@@ -48,10 +48,10 @@ class SuboptimalStartHeuristic : public DeregnetStartHeuristic {
 
   private:
 
-    int size;
     NodeMap<std::string>* nodeid;
     std::set<std::string>* nodes_so_far;
     double max_overlap;
+    int size;
     int current_overlapping_nodes { 0 };
 
   public:
