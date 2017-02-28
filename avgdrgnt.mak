@@ -1,57 +1,58 @@
 .PHONY: all clean destroy
 
-all : bin/drgnt
+all : bin/avgdrgnt
 
 include common.mak
 
 CXXFLAGS += -DRGNT_DEBUG
 
-INCLUDE += -I${GUROBI_HOME}/include
-LDFLAGS += -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi${GUROBI_VERSION_SUFFIX}
+LDFLAGS = -L${GRBFRC_HOME}/lib -lgrbfrc
+
+RUNPATH = ${GRBFRC_HOME}/lib
 
 objects = build/utils.o \
           build/DeregnetData.o \
-          build/LazyConstraintCallback.o \
-		  build/DeregnetStartHeuristic.o \
-		  build/StartHeuristic.o \
-		  build/SuboptimalStartHeuristic.o \
-		  build/drgnt.o
+          build/DeregnetStartHeuristic.o \
+		  build/avgdrgnt.o \
+          build/AvgStartHeuristic.o \
+		  build/AvgSuboptimalStartHeuristic.o \
 
-bin/drgnt : $(objects)
+bin/avgdrgnt : $(objects)
 	$(CXX) -o $@ $^ $(LDFLAGS) -Wl,-rpath=$(RUNPATH)
 
-DRGNT_INCLUDE_DEPS=include/deregnet/version.h \
-                   include/deregnet/utils.h \
-				   include/deregnet/DeregnetFinder.h \
-				   include/deregnet/DrgntData.h
+AVGDRGNT_INCLUDE_DEPS=include/deregnet/version.h \
+                      include/deregnet/utils.h \
+				      include/deregnet/DeregnetFinder.h \
+					  include/deregnet/DeregnetModel.h \
+				      include/deregnet/AvgdrgntData.h
 
-build/drgnt.o : src/bin/drgnt.cpp $(DRGNT_INCLUDE_DEPS)
+build/avgdrgnt.o : src/bin/avgdrgnt.cpp $(AVGDRGNT_INCLUDE_DEPS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 # LazyConstraintCallback
 
-LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS=include/deregnet/usinglemon.h \
+#LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS=include/deregnet/usinglemon.h \
                                     include/deregnet/LazyConstraintCallback.h
 
-build/LazyConstraintCallback.o : src/LazyConstraintCallback.cpp $(LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS)
-	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
+#build/LazyConstraintCallback.o : src/LazyConstraintCallback.cpp $(LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS)
+#	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
-# StartHeuristic
+# AvgStartHeuristic
 
-STARTHEURISTIC_INCLUDE_DEPS=include/deregnet/DeregnetStartHeuristic.h \
-                            include/deregnet/StartHeuristic.h \
-							include/deregnet/usinglemon.h
+AVGSTARTHEURISTIC_INCLUDE_DEPS=include/deregnet/DeregnetStartHeuristic.h \
+                               include/deregnet/AvgStartHeuristic.h \
+                               include/deregnet/usinglemon.h
 
-build/StartHeuristic.o : src/StartHeuristic.cpp $(STARTHEURISTIC_INCLUDE_DEPS)
+build/AvgStartHeuristic.o : src/AvgStartHeuristic.cpp $(AVGSTARTHEURISTIC_INCLUDE_DEPS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 # SuboptimalStartHeuristic
 
-SUBOPTIMALSTARTHEURISTIC_INCLUDE_DEPS=include/deregnet/DeregnetStartHeuristic.h \
-                                      include/deregnet/SuboptimalStartHeuristic.h \
-					                  include/deregnet/usinglemon.h
+AVGSUBOPTIMALSTARTHEURISTIC_INCLUDE_DEPS=include/deregnet/DeregnetStartHeuristic.h \
+                                         include/deregnet/AvgSuboptimalStartHeuristic.h \
+                                         include/deregnet/usinglemon.h
 
-build/SuboptimalStartHeuristic.o : src/SuboptimalStartHeuristic.cpp $(SUBOPTIMALSTARTHEURISTIC_INCLUDE_DEPS)
+build/AvgSuboptimalStartHeuristic.o : src/AvgSuboptimalStartHeuristic.cpp $(AVGSUBOPTIMALSTARTHEURISTIC_INCLUDE_DEPS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 

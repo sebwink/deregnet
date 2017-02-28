@@ -9,7 +9,6 @@ include gurobi_version.mak
 GRBFRC_HOME=grbfrc
 
 INCLUDE=-Iinclude -I${LEMON_HOME}/include -I${GUROBI_HOME}/include -I${GRBFRC_HOME}/include
-LDFLAGS=#-L${LEMON_HOME}/lib -lemon 
 
 build/utils.o : src/utils.cpp include/deregnet/utils.h include/deregnet/usinglemon.h
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)

@@ -38,6 +38,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <functional>
 
 #include <gurobi_c++.h>
 
@@ -48,6 +49,8 @@
 #include <deregnet/DeregnetModel.h>
 #include <deregnet/StartHeuristic.h>
 #include <deregnet/SuboptimalStartHeuristic.h>
+#include <deregnet/AvgStartHeuristic.h>
+#include <deregnet/AvgSuboptimalStartHeuristic.h>
 
 namespace deregnet {
 
@@ -154,6 +157,12 @@ std::vector<Subgraph> DeregnetFinder<ModelType, Data>::run() {
     std::pair<Node, std::set<Node>>* start_solution { nullptr };
     // find optimal subgraph
     run_optimal_init(&start_solution);
+
+    /*
+    std::cout << "# nodes in start: " << (start_solution->second).size() << std::endl;
+    write2sif(data->graph, start_solution->second, data->nodeid, "start.sif");
+    */
+
     std::vector<Subgraph> subgraphs;
     bool solve_successful { model->solve(start_solution) };
     run_optimal_windup(solve_successful, &subgraphs);
@@ -207,63 +216,59 @@ Subgraph DeregnetFinder<ModelType, Data>::to_subgraph(Solution solution, std::st
 template <> inline
 void DeregnetFinder<GRBModel, DrgntData>::find_start_solution(std::pair<Node,
                                                               std::set<Node>>** start_solution) {
-    StartHeuristic* heuristic;
-    if (data->model_sense == "min")
-        heuristic = new StartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::greater<double>(), data->size);
-    else
-        heuristic = new StartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::less<double>(), data->size);
-    if (heuristic->run())
-        *start_solution = heuristic->getStartSolution();
+    std::function<bool(double, double)> cmp;
+    if (data->model_sense == "min") cmp = std::greater<double>();
+    else cmp = std::less<double>();
+
+    StartHeuristic heuristic(data->graph, data->score, data->root, data->exclude, data->receptors, cmp, data->size);
+    if (heuristic.run())
+        *start_solution = heuristic.getStartSolution();
 }
 
 
 template <> inline
 void DeregnetFinder<FMILP, AvgdrgntData>::find_start_solution(std::pair<Node,
                                                               std::set<Node>>** start_solution) {
-    /*
-    StartHeuristic* heuristic;
-    if (data->model_sense == "min")
-        heuristic = new AvgStartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::greater<double>(), data->size);
-    else
-        heuristic = new AvgStartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::less<double>(), data->size);
-    if (heuristic->run())
-        *start_solution = heuristic->getStartSolution();
-    */
+
+
+    std::function<bool(double, double)> cmp;
+    if (data->model_sense == "min") cmp = std::greater<double>();
+    else cmp = std::less<double>();
+    AvgStartHeuristic heuristic(data->graph, data->score, data->root, data->exclude, data->receptors,
+                                cmp, data->min_size, data->max_size);
+    if (heuristic.run())
+        *start_solution = heuristic.getStartSolution();
 }
 
 
 template <> inline
 void DeregnetFinder<GRBModel, DrgntData>::find_suboptimal_start_solution(std::pair<Node, std::set<Node>>** start_solution,
                                                                          std::set<std::string>* nodes_so_far) {
-    SuboptimalStartHeuristic* heuristic;
-    if (data->model_sense == "min")
-        heuristic = new SuboptimalStartHeuristic(data->graph, data->score, data->root,
-                                                 data->exclude, data->receptors, std::greater<double>(),
-                                                 data->nodeid, nodes_so_far, data->max_overlap, data->size);
-    else
-        heuristic = new SuboptimalStartHeuristic(data->graph, data->score, data->root,
-                                                 data->exclude, data->receptors, std::less<double>(),
-                                                 data->nodeid, nodes_so_far, data->max_overlap, data->size);
-    if (heuristic->run())
-        *start_solution = heuristic->getStartSolution();
+    std::function<bool(double, double)> cmp;
+    if (data->model_sense == "min") cmp = std::greater<double>();
+    else cmp = std::less<double>();
+    SuboptimalStartHeuristic heuristic(data->graph, data->score, data->root,
+                                       data->exclude, data->receptors, cmp,
+                                       data->nodeid, nodes_so_far, data->max_overlap, data->size);
+    if (heuristic.run())
+        *start_solution = heuristic.getStartSolution();
 }
 
 
 template <> inline
 void DeregnetFinder<FMILP, AvgdrgntData>::find_suboptimal_start_solution(std::pair<Node, std::set<Node>>** start_solution,
                                                                          std::set<std::string>* nodes_so_far) {
-    /*
-    SuboptimalStartHeuristic* heuristic;
-    if (data->model_sense == "min")
-        heuristic = new AvgSuboptimalStartHeuristic(data->graph, data->score, data->root,
-                                                    data->exclude, data->receptors, std::greater<double>(),
-                                                    data->nodeid, nodes_so_far, data->max_overlap, data->size);
-    else
-        heuristic = new AvgSuboptimalStartHeuristic(data->graph, data->score, data->root, data->exclude, data->receptors, std::less<double>(),
-                                                    data->nodeid, nodes_so_far, data->max_overlap, data->size);
-    if (heuristic->run())
-        *start_solution = heuristic->getStartSolution();
-    */
+
+    std::function<bool(double, double)> cmp;
+    if (data->model_sense == "min") cmp = std::greater<double>();
+    else cmp = std::less<double>();
+    AvgSuboptimalStartHeuristic heuristic(data->graph, data->score, data->root,
+                                          data->exclude, data->receptors, cmp,
+                                          data->nodeid, nodes_so_far, data->max_overlap,
+                                          data->min_size, data->max_size);
+    if (heuristic.run())
+        *start_solution = heuristic.getStartSolution();
+
 }
 
 

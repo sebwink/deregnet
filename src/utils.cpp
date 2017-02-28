@@ -132,7 +132,7 @@ bool getNodeById(Graph* graph, NodeMap<std::string>* nodeid, std::string id, Nod
 
 // ##########################################################################
 
-void write2sif(Graph* graph, std::set<Node> node_set, NodeMap<std::string>* nodeid, std::string path2file) {
+void write2sif(Graph* graph, std::set<Node>& node_set, NodeMap<std::string>* nodeid, std::string path2file) {
     ofstream sif_file;
     sif_file.open(path2file);
     for (auto v : node_set)

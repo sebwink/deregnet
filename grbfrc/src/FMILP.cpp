@@ -66,6 +66,15 @@ void FMILP::set(GRB_DoubleAttr attr, double val)
 void FMILP::set(GRB_StringAttr attr, std::string val)
  { baseModel->set(attr, val); }
 
+void FMILP::set(GRB_IntParam param, int val)
+ { baseModel->set(param, val); }
+
+void FMILP::set(GRB_DoubleParam param, double val)
+ { baseModel->set(param, val); }
+
+void FMILP::set(GRB_StringParam param, std::string val)
+ { baseModel->set(param, val); }
+
 void FMILP::setEnv(GRB_IntParam para, int val)
  { (baseModel->getEnv()).set(para, val); }
 
@@ -222,6 +231,30 @@ bool FMILP::isUnisignant()
    }
  }
 
+void FMILP::optimize(Algorithm algorithm) {
+    if (algorithm == Algorithm::GCC)
+        this->runGeneralizedCharnesCooper();
+    else if (algorithm == Algorithm::CCT)
+        this->runCharnesCooper();
+    else if (algorithm == Algorithm::DTA)
+        this->runDinkelbach();
+    //else if (algorithm == Algorithm::OVT)
+        //this->runObjVarTransform();
+}
+
+double FMILP::getObjVal() {
+    return solution->objVal;
+}
+
+double FMILP::getVal(GRBVar& var) {
+    int index { 0 };
+    for (GRBVar* varp : vars) {
+        if (varp->sameAs(var))
+            return (solution->varVals)[index];
+        index++;
+    }
+}
+
 void FMILP::runCharnesCooper(int time_limit)
  {
   baseModel->update();
@@ -274,7 +307,7 @@ void FMILP::runDinkelbach(GRBCallback& callback,
   dinkel.writeSolution();
  }
 
-void FMILP::runYGGY(int time_limit) {
+void FMILP::runGeneralizedCharnesCooper(int time_limit) {
     baseModel->update();
     YGGY yggy(this);
     yggy.run(time_limit);

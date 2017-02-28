@@ -97,6 +97,7 @@ class DeregnetModel {
     void setup_solve(std::pair<Node, std::set<Node>>* start_solution);
     void setCallbackRoot();
     void setCallbackNoRoot();
+    void _getCurrentSolution(std::string* rootid, std::set<Node>* nodes, Solution* solution);
 
     GRBLinExpr setBaseConstraintsRootCommon();
     GRBLinExpr setBaseConstraintsNoRootCommon();
@@ -188,7 +189,7 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::addBaseConstraintsNoRoot() {
     model.addConstr(subgraph_size_lhs <= data->max_size);
 }
 
-template <typename Model, typename Data>    // remains to be seen if we need a specialization for FMILP
+template <typename Model, typename Data>
 void DeregnetModel<Model, Data>::setStartSolution(std::pair<Node, std::set<Node>>* start_solution) {
     for (NodeIt v(*graph); v != INVALID; ++v) {
         if ((start_solution->second).find(v) != (start_solution->second).end())
@@ -267,22 +268,11 @@ void DeregnetModel<Model, Data>::setup_solve(std::pair<Node, std::set<Node>>* st
 
 
 template <typename Model, typename Data>
-Solution DeregnetModel<Model, Data>::getCurrentSolution() {      // make sure avg solution is in the xs!
+Solution DeregnetModel<Model, Data>::getCurrentSolution() {
     Solution solution;
     std::set<Node> nodes;
     string rootid;
-    for (NodeIt v(*graph); v != INVALID; ++v) {
-        if (x[v].get(GRB_DoubleAttr_X) >= 0.98) {
-            nodes.insert(v);
-            solution.nodes.insert((*nodeid)[v]);
-            if (!root) {
-                if ((*y)[v].get(GRB_DoubleAttr_X) >= 0.98)
-                    rootid = (*nodeid)[v];
-            }
-            else
-                rootid = (*nodeid)[*root];
-        }
-    }
+    _getCurrentSolution(&rootid, &nodes, &solution);
     for (auto v : nodes) {
         std::string source = (*nodeid)[v];
         for (OutArcIt a(*graph, v); a != INVALID; ++a) {
@@ -292,15 +282,12 @@ Solution DeregnetModel<Model, Data>::getCurrentSolution() {      // make sure av
         }
     }
     solution.rootid = rootid;
-    solution.total_score = model.get(GRB_DoubleAttr_ObjVal);
     solution.avg_score = solution.total_score / solution.nodes.size();
     return solution;
 }
 
 
 // Specializations
-
-
 
 template <> inline
 void DeregnetModel<GRBModel, DrgntData>::createVariablesRoot() {
@@ -384,13 +371,44 @@ bool DeregnetModel<GRBModel, DrgntData>::solve(std::pair<Node, std::set<Node>>* 
 
 template <> inline
 bool DeregnetModel<grbfrc::FMILP, AvgdrgntData>::solve(std::pair<Node, std::set<Node>>* start_solution) {
-    return false;
-    /*
     setup_solve(start_solution);
     model.optimize(data->algorithm);
-    int status = model.get(GRB_IntAttr_Status);   // FMILP implmentation of status!
+    int status = model.get(GRB_IntAttr_Status);
     return status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT;
-    */
+}
+
+template <> inline
+void DeregnetModel<GRBModel, DrgntData>::_getCurrentSolution(std::string* rootid, std::set<Node>* nodes, Solution* solution) {
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        if (x[v].get(GRB_DoubleAttr_X) >= 0.98) {
+            nodes->insert(v);
+            (solution->nodes).insert((*nodeid)[v]);
+            if (!root) {
+                if ((*y)[v].get(GRB_DoubleAttr_X) >= 0.98)
+                    *rootid = (*nodeid)[v];
+            }
+            else
+                *rootid = (*nodeid)[*root];
+        }
+    }
+    solution->total_score = model.get(GRB_DoubleAttr_ObjVal);
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::_getCurrentSolution(std::string* rootid, std::set<Node>* nodes, Solution* solution) {
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        if (model.getVal(x[v]) >= 0.98) {
+            nodes->insert(v);
+            (solution->nodes).insert((*nodeid)[v]);
+            if (!root) {
+                if (model.getVal((*y)[v]) >= 0.98)
+                    *rootid = (*nodeid)[v];
+            }
+            else
+                *rootid = (*nodeid)[*root];
+        }
+    }
+    solution->total_score = model.getObjVal() * nodes->size();
 }
 
 

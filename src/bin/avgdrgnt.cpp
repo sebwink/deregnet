@@ -50,8 +50,8 @@
 // deregnet #################################################################
 #include <deregnet/version.h>
 #include <deregnet/utils.h>
-#include <deregnet/AvgSbgrphFinder.h>
 #include <deregnet/AvgdrgntData.h>
+#include <deregnet/DeregnetFinder.h>
 
 #define OPTION_ERROR 1
 
@@ -90,7 +90,7 @@ void finalize_data(Options& options, Data& data);
 
 // writeSubgraphs ###########################################################
 
-void writeSubgraphs(vector<Sbgrph>& subgraphs, string* outdir);
+void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdir);
 
 // print_version ############################################################
 
@@ -109,7 +109,7 @@ int main(int argc, char* argv[]) {
     parse_options(argc, argv, options, data);
     finalize_data(options, data);
     DeregnetFinder<FMILP, Data> subgraphFinder(&data);
-    vector<Sbgrph> subgraphs { subgraphFinder.run() };
+    vector<Subgraph> subgraphs { subgraphFinder.run() };
     writeSubgraphs(subgraphs, options.outdir);
     return 0;
 }
@@ -232,11 +232,11 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				break;
 			case 'l':
 				// -l,--min-size
-                data.size.min_size = atoi( optarg );
+                data.min_size = atoi( optarg );
 				break;
 			case 'u':
 				// -u,--max-size
-                data.size.max_size = atoi( optarg );
+                data.max_size = atoi( optarg );
 				break;
 			case 't':
 				// -t,--time-limit
@@ -281,10 +281,10 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 void finalize_data(Options& options, Data& data) {
     data.read_graph(options.lgf_file);
     data.read_score(options.score_tsv);
-    data.get_node_set(data.terminals, options.terminals);
-    data.get_node_set(data.receptors, options.receptors);
-    data.get_node_set(data.include, options.include);
-    data.get_node_set(data.exclude, options.exclude);
+    data.get_node_set(&data.terminals, options.terminals);
+    data.get_node_set(&data.receptors, options.receptors);
+    data.get_node_set(&data.include, options.include);
+    data.get_node_set(&data.exclude, options.exclude);
     data.get_root(options.root_id);
     if (options.no_max_size)
         data.max_size = countNodes(*data.graph);
@@ -294,7 +294,7 @@ void finalize_data(Options& options, Data& data) {
 
 // writeSubgraphs ###########################################################
 
-void writeSubgraphs(vector<Sbgrph>& subgraphs, string* outdirp) {
+void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
     char cwd[2048];
     string outdir;
     if (getcwd(cwd, sizeof(cwd)) != NULL)

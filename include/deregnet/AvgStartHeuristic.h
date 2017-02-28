@@ -39,21 +39,35 @@
 #include <utility>
 
 #include <deregnet/usinglemon.h>
-#include <deregnet/StartHeuristic.h>
+#include <deregnet/DeregnetStartHeuristic.h>
 
 namespace deregnet {
 
 class AvgStartHeuristic : public DeregnetStartHeuristic {
 
+    private:
+
+        int min_size;
+        int max_size;
+        double current_avg { 0.0 };
+
     public:
 
-        using DeregnetStartHeuristic::DeregnetStartHeuristic;
-
+        AvgStartHeuristic(Graph* xgraph,
+                          NodeMap<double>* xscore,
+                          Node* root,
+                          std::set<Node>* exclude,
+                          std::set<Node>* receptors,
+                          std::function<bool(double, double)> xcmp,
+                          int xmin_size,
+                          int xmax_size);
     private:
 
         virtual Node* get_best_root() override;
         virtual bool search_further() override;
         virtual bool feasible_node(Node* node) override;
+
+        double update_avg(Node* node);
 
 };
 

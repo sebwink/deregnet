@@ -74,7 +74,7 @@ bool DeregnetStartHeuristic::run() {
     Node* next { nullptr };
     while ( search_further() ) {
         next = get_next_node();
-        if (  next ) {
+        if ( next ) {
             start_solution->insert(*next);
             found_node = true;
         }

@@ -104,7 +104,6 @@ void YGGY::define_tx() {
         else {
             tx.push_back( new GRBVar( transformation.addVar(lb, ub, 0.0, GRB_BINARY) ) );
         }
-        transformation.update();
         vindex++;
     }
 }

@@ -128,6 +128,10 @@ class FMILP
     void set(GRB_IntAttr attr, int val);
     void set(GRB_DoubleAttr attr, double val);
     void set(GRB_StringAttr attr, std::string val);
+    // set parameters of the base models ============================================= //
+    void set(GRB_IntParam attr, int val);
+    void set(GRB_DoubleParam attr, double val);
+    void set(GRB_StringParam attr, std::string val);
     // set parameters of the base model's environment ================================ //
     void setEnv(GRB_IntParam para, int val);
     // add variables to the model ==================================================== //
@@ -184,6 +188,11 @@ class FMILP
     // check if denominator has unfirm sign in feasible region ======================= //
     bool checkUnisignance(std::string sign);
     bool isUnisignant();
+
+    //
+    void optimize(Algorithm algorithm = Algorithm::GCC);
+    double getObjVal();
+    double getVal(GRBVar& var);
     // =============================================================================== //
     // algorithms
     // =============================================================================== //
@@ -226,7 +235,7 @@ class FMILP
     // Scheduling Applications, AIChE J., 2013 (59) 11 (4255-4272)                     //
     // =============================================================================== //
     // run YGGY algorithm //
-    void runYGGY(int time_limit = 1200);
+    void runGeneralizedCharnesCooper(int time_limit = 1200);
     void runYGGY(GRBCallback callback,
                  int time_limit = 1200);
     GRBModel getYGGYTransform();

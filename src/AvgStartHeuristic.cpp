@@ -39,18 +39,74 @@
 
 namespace deregnet {
 
-bool StartHeuristic::search_further() {
-    size--;
-    if (size > 0 && found_node)
-        return true;
-    else if (size > 0 && !found_node)
-        return false;
-    else if (size == 0) {
+AvgStartHeuristic::AvgStartHeuristic(Graph* xgraph,
+                                     NodeMap<double>* xscore,
+                                     Node* root,
+                                     std::set<Node>* exclude,
+                                     std::set<Node>* receptors,
+                                     std::function<bool(double, double)> xcmp,
+                                     int xmin_size,
+                                     int xmax_size)
+ : DeregnetStartHeuristic(xgraph, xscore, root, exclude, receptors, xcmp),
+   min_size { xmin_size },
+   max_size { xmax_size }
+{ }
+
+Node* AvgStartHeuristic::get_best_root() {
+    double best;
+    Node* best_node { nullptr };
+    if (receptors)
+        for (auto v : *receptors)
+            update_best_node(&best_node, &v, &best);
+    else
+        for (NodeIt v(*graph); v != INVALID; ++v)
+            update_best_node(&best_node, &v, &best);
+    return best_node;
+}
+
+
+bool AvgStartHeuristic::search_further() {
+    int current_size { static_cast<int>(start_solution->size()) };
+    if (current_size < min_size) {
+        if (found_node)
+            return true;
+        else
+            return false;
+    }
+    if (current_size >= min_size && current_size < max_size) {
+        if (found_node)
+            return true;
+        else {
+            success = true;
+            return false;
+        }
+    }
+    if (current_size == max_size) {
         success = true;
         return false;
     }
-    else
+    return false;   // to get rid of compiler warning ... ;)
+}
+
+bool AvgStartHeuristic::feasible_node(Node* node) {
+    double new_avg { update_avg(node) };
+    int current_size { static_cast<int>(start_solution->size()) };
+    if (new_avg < current_avg && current_size > min_size)
         return false;
+    current_avg = new_avg;
+    if (exclude) {
+        if (start_solution->find(*node) == start_solution->end() && exclude->find(*node) == exclude->end())
+            return true;
+        }
+    else
+        if (start_solution->find(*node) == start_solution->end())
+            return true;
+    return false;
+}
+
+double AvgStartHeuristic::update_avg(Node* node) {
+    int current_size { static_cast<int>(start_solution->size()) };
+    return ((*score)[*node] + current_size * current_avg) / (current_size + 1);
 }
 
 }    //    namespace deregnet
