@@ -40,6 +40,8 @@
 
 #include <gurobi_c++.h>
 
+#include <grbfrc/GrbfrcCallback.h>
+
 namespace grbfrc
 {
 
@@ -91,6 +93,9 @@ class FMILP
     FMILPObj objective;
     FMILPSol* solution = nullptr;
     std::vector<GRBVar*> vars;
+    std::vector<double>* startSol;
+
+    GrbfrcCallback* cb;
 
   public:
 
@@ -145,6 +150,10 @@ class FMILP
                    double denominatorCoeff,
                    char type,
                    std::string name = "");
+
+    //
+    void setStartSolution(GRBVar& var, double val);
+
     // get variables of the model ==================================================== //
     GRBVar* getVars();
     // update model (necessary before defining constraints with newly added variables) //
@@ -188,6 +197,11 @@ class FMILP
     // check if denominator has unfirm sign in feasible region ======================= //
     bool checkUnisignance(std::string sign);
     bool isUnisignant();
+
+    template <typename T>
+    void setCallback(GrbfrcCallback* xcb) {
+        cb = xcb;
+    }
 
     //
     void optimize(Algorithm algorithm = Algorithm::GCC);

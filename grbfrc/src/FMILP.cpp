@@ -100,6 +100,20 @@ GRBVar& FMILP::addVar(double lowerBound,
   return *(vars.back());
  }
 
+void FMILP::setStartSolution(GRBVar& var, double val) {
+    if (startSol)
+        startSol = new std::vector<double>(vars.size());
+    else
+        startSol->resize(vars.size());
+    int index { 0 };
+    for (GRBVar* varp : vars) {
+        if (varp->sameAs(var))
+            (*startSol)[index] = val;
+        index++;
+    }
+
+}
+
 GRBVar* FMILP::getVars()
  { return baseModel->getVars(); }
 
@@ -253,6 +267,7 @@ double FMILP::getVal(GRBVar& var) {
             return (solution->varVals)[index];
         index++;
     }
+    return 0.0; // bad
 }
 
 void FMILP::runCharnesCooper(int time_limit)

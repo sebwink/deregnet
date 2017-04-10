@@ -1,5 +1,5 @@
 CXX=c++
-CXXFLAGS=-std=c++11 -Wall -ggdb3
+CXXFLAGS=-std=c++11 -Wall -fPIC -ggdb3 -pg
 
 LEMON_VERSION=1.3.1
 LEMON_HOME=/opt/lemon/${LEMON_VERSION}

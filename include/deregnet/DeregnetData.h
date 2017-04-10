@@ -38,12 +38,9 @@
 #define INPUT_ERROR 1
 #define NO_OPTIMAL_SUBGRAPH_FOUND 2
 
-#include <set>
-#include <string>
 #include <utility>
 
 #include <deregnet/utils.h>
-#include <deregnet/usinglemon.h>
 
 namespace deregnet {
 

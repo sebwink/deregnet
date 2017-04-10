@@ -190,22 +190,6 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::addBaseConstraintsNoRoot() {
 }
 
 template <typename Model, typename Data>
-void DeregnetModel<Model, Data>::setStartSolution(std::pair<Node, std::set<Node>>* start_solution) {
-    for (NodeIt v(*graph); v != INVALID; ++v) {
-        if ((start_solution->second).find(v) != (start_solution->second).end())
-            x[v].set(GRB_DoubleAttr_Start, 1.0);
-        else
-            x[v].set(GRB_DoubleAttr_Start, 0.0);
-        if (!root) {
-            if (v == start_solution->first)
-                (*y)[v].set(GRB_DoubleAttr_Start, 1.0);
-            else
-                (*y)[v].set(GRB_DoubleAttr_Start, 0.0);
-        }
-    }
-}
-
-template <typename Model, typename Data>
 void DeregnetModel<Model, Data>::addIncludeConstraints() {
     for (Node v : *(data->include))
         model.addConstr(x[v] == 1);
@@ -342,8 +326,46 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::addSuboptimalityConstraint(std:
 }
 
 template <> inline
+void DeregnetModel<GRBModel, DrgntData>::setStartSolution(std::pair<Node, std::set<Node>>* start_solution) {
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        if ((start_solution->second).find(v) != (start_solution->second).end())
+            x[v].set(GRB_DoubleAttr_Start, 1.0);
+        else
+            x[v].set(GRB_DoubleAttr_Start, 0.0);
+        if (!root) {
+            if (v == start_solution->first)
+                (*y)[v].set(GRB_DoubleAttr_Start, 1.0);
+            else
+                (*y)[v].set(GRB_DoubleAttr_Start, 0.0);
+        }
+    }
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setStartSolution(std::pair<Node, std::set<Node>>* start_solution) {
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        if ((start_solution->second).find(v) != (start_solution->second).end())
+            model.setStartSolution(x[v], 1.0);
+        else
+            model.setStartSolution(x[v], 1.0);
+        if (!root) {
+            if (v == start_solution->first)
+                model.setStartSolution((*y)[v], 1.0);
+            else
+                model.setStartSolution((*y)[v], 0.0);
+        }
+    }
+}
+
+
+template <> inline
 void DeregnetModel<GRBModel, DrgntData>::setCallbackRoot() {
-    model.setCallback( new LazyConstraintCallbackRoot(&x, graph, root, data->gap_cut) );
+    //model.setCallback( new LazyConstraintCallbackRoot(&x, graph, root, data->gap_cut) );
+    std::vector<std::map<Node,GRBVar>> xx;
+    xx.push_back(x);
+    LazyConstraintCallbackRoot* cb { new LazyConstraintCallbackRoot(graph, root, data->gap_cut, x) };
+    cb->register_variables(xx);
+    model.setCallback(cb);
 }
 
 template <> inline

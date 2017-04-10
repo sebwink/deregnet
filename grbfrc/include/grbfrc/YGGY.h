@@ -125,6 +125,9 @@ class YGGY
       void define_constraints(GRBLinExpr& objDenominator);
       bool getUmax(double& umax);
 
+      template <typename T>
+      void transformCallback();
+
  };
 
 }  // namespace grbfrc

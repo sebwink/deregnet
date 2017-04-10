@@ -6,7 +6,7 @@ include common.mak
 
 CXXFLAGS += -DRGNT_DEBUG
 
-LDFLAGS = -L${GRBFRC_HOME}/lib -lgrbfrc
+LDFLAGS = -pg -L${GRBFRC_HOME}/lib -lgrbfrc
 
 RUNPATH = ${GRBFRC_HOME}/lib
 

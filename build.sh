@@ -7,4 +7,6 @@ make -f drgnt.mak
 cd grbfrc && make -f grbfrc.mak && cd ..
 # avgdrgnt
 make -f avgdrgnt.mak
+# libderegnet
+make -f libderegnet.mak
 

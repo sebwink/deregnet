@@ -35,17 +35,6 @@
 #ifndef DEREGNET_FINDER_H
 #define DEREGNET_FINDER_H
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <functional>
-
-#include <gurobi_c++.h>
-
-#include <grbfrc/FMILP.h>
-
-#include <deregnet/utils.h>
-#include <deregnet/usinglemon.h>
 #include <deregnet/DeregnetModel.h>
 #include <deregnet/StartHeuristic.h>
 #include <deregnet/SuboptimalStartHeuristic.h>

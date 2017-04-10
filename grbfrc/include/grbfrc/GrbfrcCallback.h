@@ -31,3 +31,32 @@
 // $Authors: Sebastian Winkler $
 // --------------------------------------------------------------------------
 //
+
+#ifndef GRBFRC_CALLBACK_H
+#define GRBFRC_CALLBACK_H
+
+#include <map>
+#include <vector>
+
+#include <gurobi_c++.h>
+
+namespace deregnet {
+
+class GrbfrcCallback : public GRBCallback {
+
+    friend class CharnesCooper;
+    friend class Dinkelbach;
+    friend class YGGY;
+    friend class ObjVarTransform;
+
+public:
+
+    virtual void register_variables(std::vector<std::map<T,GRBVar>> vargrps);
+
+};
+
+
+}    //     namespace deregnet
+
+
+#endif
