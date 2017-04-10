@@ -40,7 +40,7 @@
 
 #include <gurobi_c++.h>
 
-#include <grbfrc/GrbfrcCallback.h>
+//#include <grbfrc/GrbfrcCallback.h>
 
 namespace grbfrc
 {
@@ -95,7 +95,7 @@ class FMILP
     std::vector<GRBVar*> vars;
     std::vector<double>* startSol;
 
-    GrbfrcCallback* cb;
+    //GrbfrcCallback* cb;
 
   public:
 
@@ -197,12 +197,12 @@ class FMILP
     // check if denominator has unfirm sign in feasible region ======================= //
     bool checkUnisignance(std::string sign);
     bool isUnisignant();
-
+/*
     template <typename T>
     void setCallback(GrbfrcCallback* xcb) {
         cb = xcb;
     }
-
+*/
     //
     void optimize(Algorithm algorithm = Algorithm::GCC);
     double getObjVal();

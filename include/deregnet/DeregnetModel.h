@@ -360,12 +360,14 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setStartSolution(std::pair<Node
 
 template <> inline
 void DeregnetModel<GRBModel, DrgntData>::setCallbackRoot() {
-    //model.setCallback( new LazyConstraintCallbackRoot(&x, graph, root, data->gap_cut) );
+    model.setCallback( new LazyConstraintCallbackRoot(&x, graph, root, data->gap_cut) );
+    /*
     std::vector<std::map<Node,GRBVar>> xx;
     xx.push_back(x);
     LazyConstraintCallbackRoot* cb { new LazyConstraintCallbackRoot(graph, root, data->gap_cut, x) };
     cb->register_variables(xx);
     model.setCallback(cb);
+    */
 }
 
 template <> inline
