@@ -1,4 +1,4 @@
-#!/opt/anaconda/3.5/bin/python
+#!/share/opt/x86_64_sl7/anaconda-python-3.6/bin/python
 
 import os
 import subprocess
