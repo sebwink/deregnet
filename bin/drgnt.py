@@ -11,6 +11,8 @@ from biograph.mapping.gene import GeneIdMapper
 import deregnet
 
 def define_args(parser):
+    parser.add_argument('--absolute-values', default = False, dest = 'abs', type = bool,
+                        help = 'Whether to take absolute values of the scores. Default: False, use like ... --absolute-values True ...')
     parser.add_argument('--graph', dest = 'graph', type = str, required=True,
                         help = 'A graphml file containing the graph you want to run drgnt with.')
     parser.add_argument('--scores', metavar = 'SCORE_FILE', dest = 'scores', type = str, required=True,
@@ -93,6 +95,8 @@ def main():
 
     if args.flip:
         drgnt_args += ['--flip-orientation']
+    if args.abs:
+        drgnt_args += ['--absolute-values']
 
     subprocess.call(['drgnt'] + drgnt_args)
 

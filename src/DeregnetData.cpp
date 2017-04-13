@@ -32,6 +32,7 @@
 // --------------------------------------------------------------------------
 //
 
+#include <cmath>
 #include <iostream>
 #include <fstream>
 #include <set>
@@ -73,7 +74,7 @@ void DeregnetData::read_graph(string* pathToLgf) {
         reverse_graph();
 }
 
-void DeregnetData::read_score(string* pathToTsv) {
+void DeregnetData::read_score(string* pathToTsv, bool take_abs) {
     if (!graph) {
         cerr << "Error: call AvgDeregnetData::read_graph() first." << endl;
         exit(INPUT_ERROR);
@@ -90,11 +91,15 @@ void DeregnetData::read_score(string* pathToTsv) {
         double value;
         while ( !tsv.eof() ) {
               tsv >> key >> value;
+              std::cout <<  key << " : " << value << std::endl;
               score_map[key] = value;
         }
         score = new NodeMap<double>(*graph);
-        for (NodeIt v(*graph); v != INVALID; ++v)
+        for (NodeIt v(*graph); v != INVALID; ++v) {
             (*score)[v] = score_map[(*nodeid)[v]];
+            if (take_abs)
+                (*score)[v] = std::abs((*score)[v]);
+        }
         tsv.close();
     }
     catch ( ... ) {
