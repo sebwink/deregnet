@@ -19,8 +19,8 @@ def define_args(parser):
                         help = 'Column name of (gene) id in your score file. Default: score')
     parser.add_argument('--id-column', default = 'id', dest = 'id_col', type = str,
                         help = 'Column name of (gene) id in your score file. Default: id')
-    parser.add_argument('--sep', default = 'comma', dest = 'sep', type = str,
-                        help = 'The column seperator in your score file. Options: comma, tab. Default:comma')
+    parser.add_argument('--sep', default = 'tab', dest = 'sep', type = str,
+                        help = 'The column seperator in your score file. Options: comma, tab. Default: tab')
     parser.add_argument('--score-id-type', default = None, dest = 'score_id_type', type = str,
                         help = 'Which id type do you have in your score file? Options: entrez, uniprot, ensembl, symbol. Default: same as graph id type')
     parser.add_argument('--graph-id-type', default = 'entrez', dest = 'graph_id_type', type = str,
@@ -45,6 +45,8 @@ def define_args(parser):
                         help = 'Model sense. \noptions: max, min. Default: max')
     parser.add_argument('--output-path', default = os.getcwd(), dest = 'output', type = str,
                         help = 'Folder to which output is written. (Does not have to exist.) Default : cwd')
+    parser.add_argument('--flip-orientation', default = False, dest='flip', type = bool,
+                        help = 'Set --flip-orientation True when you want to flip the orientation. Default: False')
 
 def parse_sep(sep):
     if sep == 'tab':
@@ -88,6 +90,9 @@ def main():
     for arg in drgnt_arg_dict:
         if drgnt_arg_dict[arg] is not None:
             drgnt_args += [arg, drgnt_arg_dict[arg]]
+
+    if args.flip:
+        drgnt_args += ['--flip-orientation']
 
     subprocess.call(['drgnt'] + drgnt_args)
 
