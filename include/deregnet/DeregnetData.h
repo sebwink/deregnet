@@ -77,7 +77,7 @@ class DeregnetData {
       public:
 
         void read_graph(std::string* pathToLgf);
-        void read_score(std::string* pathToTsv);
+        void read_score(std::string* pathToTsv, bool take_abs);
         void get_node_set(std::set<Node>** node_set, std::set<std::string>* node_ids);
         void get_root(std::string* root_id);
 
