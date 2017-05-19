@@ -52,6 +52,7 @@
 #include <deregnet/utils.h>
 #include <deregnet/usinglemon.h>
 #include <deregnet/LazyConstraintCallback.h>
+#include <deregnet/GrbfrcLazyConstraintCallback.h>
 #include <deregnet/DrgntData.h>
 #include <deregnet/AvgdrgntData.h>
 
@@ -361,18 +362,10 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setStartSolution(std::pair<Node
 template <> inline
 void DeregnetModel<GRBModel, DrgntData>::setCallbackRoot() {
     model.setCallback( new LazyConstraintCallbackRoot(&x, graph, root, data->gap_cut) );
-    /*
-    std::vector<std::map<Node,GRBVar>> xx;
-    xx.push_back(x);
-    LazyConstraintCallbackRoot* cb { new LazyConstraintCallbackRoot(graph, root, data->gap_cut, x) };
-    cb->register_variables(xx);
-    model.setCallback(cb);
-    */
 }
 
 template <> inline
 void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setCallbackRoot() {
-
 }
 
 template <> inline
@@ -382,7 +375,6 @@ void DeregnetModel<GRBModel, DrgntData>::setCallbackNoRoot() {
 
 template <> inline
 void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setCallbackNoRoot() {
-
 }
 
 template <> inline
@@ -396,7 +388,36 @@ bool DeregnetModel<GRBModel, DrgntData>::solve(std::pair<Node, std::set<Node>>* 
 template <> inline
 bool DeregnetModel<grbfrc::FMILP, AvgdrgntData>::solve(std::pair<Node, std::set<Node>>* start_solution) {
     setup_solve(start_solution);
-    model.optimize(data->algorithm);
+    // add callback here
+    grbfrc::GrbfrcCallback<Node>* cb;
+    if (root) {
+        std::vector<std::map<Node, GRBVar>>* vargrps = new std::vector<std::map<Node, GRBVar>>( { x } );
+        GrbfrcLazyConstraintCallbackRoot* callback = new GrbfrcLazyConstraintCallbackRoot(graph, root, data->gap_cut);
+        cb = new grbfrc::GrbfrcCallback<Node>(callback, vargrps);
+    }
+    else {
+        std::vector<std::map<Node, GRBVar>>* vargrps = new std::vector<std::map<Node, GRBVar>>( { x, *y } );
+        GrbfrcLazyConstraintCallbackNoRoot* callback = new GrbfrcLazyConstraintCallbackNoRoot(graph, data->gap_cut);
+        cb = new grbfrc::GrbfrcCallback<Node>(callback, vargrps);
+    }
+    double objlb = 0.0;
+    double objub = 0.0;
+    std::set<Node> maxnodes;
+    for (int k = 0; k <= data->min_size; ++k) {
+        double ub = -1000000.0;
+        for (NodeIt v(*graph); v != INVALID; ++v) {
+            if (maxnodes.find(v) == maxnodes.end() && score->operator[](v) > ub) {
+                ub = score->operator[](v);
+                objub += ub;
+                maxnodes.insert(v);
+            }
+        }
+    }
+
+    objub = objub / data->min_size;
+    std::cout << objub << std::endl;
+
+    model.optimize(data->algorithm, cb, &objub, &objlb);
     int status = model.get(GRB_IntAttr_Status);
     return status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT;
 }

@@ -38,6 +38,10 @@
 #include <map>
 #include <vector>
 
+#ifdef GRBFRC_OMP
+  #include <omp.h>
+#endif
+
 #include <gurobi_c++.h>
 
 namespace grbfrc
@@ -51,10 +55,6 @@ class Gloverizer
      GRBVar* u;
      double U;
      std::map<GRBVar*, GRBVar> glvrvr;
-     std::vector<GRBVar*> binvars;
-     std::map<GRBQConstr*, GRBLinExpr> qconstr2newlhs;
-     std::vector<GRBQConstr*> qconstrs;
-     GRBLinExpr newobj { 0.0 };
 
    public:
 
@@ -63,8 +63,13 @@ class Gloverizer
 
    private:
 
-     void handle_qconstr(GRBVar* var, GRBQConstr* qconstr);
-     void handle_objective(GRBVar* var);
+     void add_glover_variables();
+#ifndef GRBFRC_OMP
+     void linearize_qconstr(GRBQConstr* qconstr);
+#else
+     void linearize_qconstr(GRBQConstr* qconstr, int q, omp_lock_t* model_lock);
+#endif
+     void linearize_objective();
 
  };
 

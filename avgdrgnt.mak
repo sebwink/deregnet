@@ -4,7 +4,7 @@ all : bin/avgdrgnt
 
 include common.mak
 
-CXXFLAGS += -DRGNT_DEBUG
+CXXFLAGS += -DRGNT_DEBUG 
 
 LDFLAGS = -pg -L${GRBFRC_HOME}/lib -lgrbfrc
 
@@ -13,29 +13,39 @@ RUNPATH = ${GRBFRC_HOME}/lib
 objects = build/utils.o \
           build/DeregnetData.o \
           build/DeregnetStartHeuristic.o \
-		  build/avgdrgnt.o \
+	  build/avgdrgnt.o \
           build/AvgStartHeuristic.o \
-		  build/AvgSuboptimalStartHeuristic.o \
+	  build/AvgSuboptimalStartHeuristic.o \
+	  build/GrbfrcLazyConstraintCallback.o \
+	  build/LazyConstraintCallback.o
 
 bin/avgdrgnt : $(objects)
 	$(CXX) -o $@ $^ $(LDFLAGS) -Wl,-rpath=$(RUNPATH)
 
 AVGDRGNT_INCLUDE_DEPS=include/deregnet/version.h \
                       include/deregnet/utils.h \
-				      include/deregnet/DeregnetFinder.h \
-					  include/deregnet/DeregnetModel.h \
-				      include/deregnet/AvgdrgntData.h
+		      include/deregnet/DeregnetFinder.h \
+		      include/deregnet/DeregnetModel.h \
+		      include/deregnet/AvgdrgntData.h
 
 build/avgdrgnt.o : src/bin/avgdrgnt.cpp $(AVGDRGNT_INCLUDE_DEPS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 # LazyConstraintCallback
 
-#LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS=include/deregnet/usinglemon.h \
+GRBFRCLAZYCONSTRAINTCALLBACK_INCLUDE_DEPS=include/deregnet/usinglemon.h \
+                                          include/deregnet/GrbfrcLazyConstraintCallback.h
+
+build/GrbfrcLazyConstraintCallback.o : src/GrbfrcLazyConstraintCallback.cpp $(GRBFRCLAZYCONSTRAINTCALLBACK_INCLUDE_DEPS)
+	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
+
+# LazyConstraintCallback
+
+LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS=include/deregnet/usinglemon.h \
                                     include/deregnet/LazyConstraintCallback.h
 
-#build/LazyConstraintCallback.o : src/LazyConstraintCallback.cpp $(LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS)
-#	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
+build/LazyConstraintCallback.o : src/LazyConstraintCallback.cpp $(LAZYCONSTRAINTCALLBACK_INCLUDE_DEPS)
+	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 # AvgStartHeuristic
 

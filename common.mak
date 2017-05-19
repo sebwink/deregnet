@@ -6,7 +6,7 @@ LEMON_HOME=/opt/lemon/${LEMON_VERSION}
 
 include gurobi_version.mak
 
-GRBFRC_HOME=grbfrc
+GRBFRC_HOME=/home/sebastian/wrk/deregnet/deregnet/grbfrc
 
 INCLUDE=-Iinclude -I${LEMON_HOME}/include -I${GUROBI_HOME}/include -I${GRBFRC_HOME}/include
 

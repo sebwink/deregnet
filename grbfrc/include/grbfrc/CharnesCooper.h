@@ -40,16 +40,17 @@
 
 #include <gurobi_c++.h>
 
-#include <grbfrc/FMILP.h>
+#include <grbfrc/common.h>
+#include <grbfrc/Algorithm.h>
+#include <grbfrc/GrbfrcCallback.h>
 
 namespace grbfrc
 {
 
-class CharnesCooper
- {
+class CharnesCooper : public _Algorithm {
+
   private:
 
-    FMILP* fmip;
     FMILPSol solution;
     bool invalid;
     bool transformed;
@@ -59,15 +60,30 @@ class CharnesCooper
 
   public:
 
-    CharnesCooper(FMILP& fmipRef);
+    CharnesCooper(GRBEnv* env);
     void printInvalidity();
     void transform();
     GRBModel getTransform();
     void solveTransform();
     void solveTransform(GRBCallback& callback);
-    void run(int time_limit);
-    void run(GRBCallback& callback, int time_limit);
-    void writeSolution();
+
+    template <typename T>
+    void run(GrbfrcCallback<T>* cb) {
+        if (invalid) printInvalidity();
+        else
+         {
+          std::cout << "\n=========== solving FLP via Charnes-Cooper transform ===========\n\n";
+          if (!transformed) transform();
+          if (cb) {
+              callback = cb->yield(y, vars);
+              transformation.setCallback(callback);
+          }
+          solveTransform();
+          backTransformSolution();
+         }
+    }
+
+    virtual void writeSolution(FMILPSol** xsolution) override;
     FMILPSol getSolution();
 
   private:

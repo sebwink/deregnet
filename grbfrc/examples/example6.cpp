@@ -19,12 +19,12 @@ int main()
   model.setObjDenominator(objDenom);
   model.setObjSense(GRB_MAXIMIZE);
   std::cout << "\nSolve with Charnes-Cooper transformation:" << std::endl;
-  model.runCharnesCooper();
+  model.optimize(grbfrc::Algorithm::CCT);
   model.printSolution();
   std::cout << "\nSolve with generalized Charnes-Cooper transformation:" << std::endl;
-  model.runYGGY();
+  model.optimize(grbfrc::Algorithm::GCC);
   model.printSolution();
   std::cout << "\nSolve with Dinkelbach algorithm: " << std::endl;
-  model.runDinkelbach();
+  model.optimize(grbfrc::Algorithm::DTA);
   model.printSolution();
  }

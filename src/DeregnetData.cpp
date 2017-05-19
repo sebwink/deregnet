@@ -91,7 +91,6 @@ void DeregnetData::read_score(string* pathToTsv, bool take_abs) {
         double value;
         while ( !tsv.eof() ) {
               tsv >> key >> value;
-              std::cout <<  key << " : " << value << std::endl;
               score_map[key] = value;
         }
         score = new NodeMap<double>(*graph);
@@ -99,8 +98,7 @@ void DeregnetData::read_score(string* pathToTsv, bool take_abs) {
             (*score)[v] = score_map[(*nodeid)[v]];
             if (take_abs)
                 (*score)[v] = std::abs((*score)[v]);
-        }
-        tsv.close();
+        }        tsv.close();
     }
     catch ( ... ) {
       cerr << "Could not read score file " << pathToTsv << "." << endl;

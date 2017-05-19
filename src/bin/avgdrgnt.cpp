@@ -74,6 +74,7 @@ struct Options {
 	bool no_max_size { false };                        /*< whether to restrict to subgraphs with a maximal size */
 	string* outdir { nullptr };                        /*< directory to which to write output and logs */
     bool receptor_as_root { true };                    /*< orientation */
+    bool absolute_values { false };
 };
 
 // Data #####################################################################
@@ -144,6 +145,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
         {"help", 0, 0, 'h'},
 		{"version", 0, 0, 'v'},
         {"model-sense", 0, 0, 0},
+        {"absolute-values", 0, 0, 0},
 		{NULL, 0, NULL, 0}
 	};
 
@@ -161,6 +163,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 string include_file { "include-file" };
                 string exclude_file { "exclude-file" };
                 string model_sense { "model-sense" };
+                string absolute_values { "absolute-values" };
                 // --no-start-heuristic
                 if ( strcmp(long_options[option_index].name, no_start_heuristic.c_str()) == 0 )
                     data.start_heuristic = false;
@@ -170,6 +173,9 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 // --terminals-file
                 else if ( strcmp(long_options[option_index].name, terminals_file.c_str()) == 0)
                     register_node_set_file(&options.terminals, optarg);
+                // --absolute-values
+                if ( strcmp(long_options[option_index].name, absolute_values.c_str()) == 0 )
+                    options.absolute_values = true;
                 // --receptors-file
                 else if ( strcmp(long_options[option_index].name, receptors_file.c_str()) == 0)
                     register_node_set_file(&options.receptors, optarg);
@@ -280,7 +286,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 
 void finalize_data(Options& options, Data& data) {
     data.read_graph(options.lgf_file);
-    data.read_score(options.score_tsv);
+    data.read_score(options.score_tsv, options.absolute_values);
     data.get_node_set(&data.terminals, options.terminals);
     data.get_node_set(&data.receptors, options.receptors);
     data.get_node_set(&data.include, options.include);

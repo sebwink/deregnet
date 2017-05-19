@@ -4,18 +4,16 @@
 #include <cmath>
 
 #include <gurobi_c++.h>
+
 #include <grbfrc/Dinkelbach.h>
 
-namespace grbfrc
-{
+namespace grbfrc {
 
-Dinkelbach::Dinkelbach(FMILP& fmipRef,
-                       double qi,
+Dinkelbach::Dinkelbach(double qi,
                        int maxit,
                        int maxsec,
                        double tolerance)
-                     : fmip { &fmipRef },
-                       q_init { qi },
+                     : q_init { qi },
                        max_iter { maxit },
                        time_limit { maxsec },
                        tol { tolerance }
@@ -33,9 +31,9 @@ void Dinkelbach::set_time_limit(int seconds)
 void Dinkelbach::set_tolerance(double tolerance)
  { tol = tolerance; }
 
-void Dinkelbach::run(bool verbose,
-                     bool logFile,
-                     std::string logFileName)
+void Dinkelbach::_run(bool verbose,
+                      bool logFile,
+                      std::string logFileName)
 
  {
 
@@ -43,19 +41,17 @@ void Dinkelbach::run(bool verbose,
   if (verbose)
    { std::cout << "\n============ Solving FMILP with Dinkelbach's algorithm ============\n"; }
   else
-   { ((fmip->baseModel)->getEnv()).set(GRB_IntParam_LogToConsole, 0); }
+   { (base_model->getEnv()).set(GRB_IntParam_LogToConsole, 0); }
 
   if (logFile)
-   { ((fmip->baseModel)->getEnv()).set(GRB_StringParam_LogFile, logFileName); }
+   { (base_model->getEnv()).set(GRB_StringParam_LogFile, logFileName); }
   else
-   { ((fmip->baseModel)->getEnv()).set(GRB_StringParam_LogFile, ""); }
+   { (base_model->getEnv()).set(GRB_StringParam_LogFile, ""); }
 
   // get model data =================================================================== //
-  GRBModel* model = fmip->baseModel;
-  FMILPObj& objective = fmip->objective;
-  GRBLinExpr& objNumerator = objective.numerator;
-  GRBLinExpr& objDenominator = objective.denominator;
-  int sense = objective.sense;
+  GRBLinExpr& objNumerator = objective->numerator;
+  GRBLinExpr& objDenominator = objective->denominator;
+  int sense = objective->sense;
 
   // algorithm parameters ============================================================= //
   int iter = 0;
@@ -71,13 +67,13 @@ void Dinkelbach::run(bool verbose,
     iter++;
     if (verbose) { printIteration(iter); }
     GRBLinExpr currentObj = sign * objNumerator - q * objDenominator;
-    model->setObjective(currentObj, GRB_MAXIMIZE);
-    model->optimize();
-    int status = model->get(GRB_IntAttr_Status);
+    base_model->setObjective(currentObj, GRB_MAXIMIZE);
+    base_model->optimize();
+    int status = base_model->get(GRB_IntAttr_Status);
     if (status != GRB_OPTIMAL) { printProblem(status, iter); }
     else
      {
-      Fq = model->get(GRB_DoubleAttr_ObjVal);
+      Fq = base_model->get(GRB_DoubleAttr_ObjVal);
       double numVal { sign * objNumerator.getValue() };
       double denomVal { objDenominator.getValue() };
       q = numVal / denomVal;
@@ -89,84 +85,18 @@ void Dinkelbach::run(bool verbose,
         if (sense == GRB_MINIMIZE) { q = -q; }
         // register solution
         solution.objVal = q;
-        for (unsigned int i = 0; i < (fmip->vars).size(); i++)
-          solution.varVals.push_back( ((fmip->vars)[i])->get(GRB_DoubleAttr_X) );
+        for (unsigned int i = 0; i < vars->size(); i++)
+          solution.varVals.push_back( ((*vars)[i])->get(GRB_DoubleAttr_X) );
        }
      }
    }
  }
 
 
-void Dinkelbach::run(GRBCallback& callback,
-                     bool verbose,
-                     bool logFile,
-                     std::string logFileName)
-
- {
-
-  // set verbosity and logging behaviour ============================================== //
-  if (verbose)
-   { std::cout << "\n============ Solving FMILP with Dinkelbach's algorithm ============\n"; }
-  else
-   { ((fmip->baseModel)->getEnv()).set(GRB_IntParam_LogToConsole, 0); }
-
-  if (logFile)
-   { ((fmip->baseModel)->getEnv()).set(GRB_StringParam_LogFile, logFileName); }
-  else
-   { ((fmip->baseModel)->getEnv()).set(GRB_StringParam_LogFile, ""); }
-
-  // get model data =================================================================== //
-  GRBModel* model = fmip->baseModel;
-  FMILPObj& objective = fmip->objective;
-  GRBLinExpr& objNumerator = objective.numerator;
-  GRBLinExpr& objDenominator = objective.denominator;
-  int sense = objective.sense;
-
-  // algorithm parameters ============================================================= //
-  int iter = 0;
-  double q { q_init };
-  double Fq;
-  bool done { false };
-
-  // solve Dinkelbach iterations ====================================================== //
-  double sign { 1.0 };
-  if (sense == GRB_MINIMIZE) { sign = -1.0; }
-  while (!done && iter < max_iter)
-   {
-    iter++;
-    if (verbose) { printIteration(iter); }
-    GRBLinExpr currentObj = sign * objNumerator - q * objDenominator;
-    model->setObjective(currentObj, GRB_MAXIMIZE);
-    model->setCallback(&callback);
-    model->optimize();
-    int status = model->get(GRB_IntAttr_Status);
-    if (status != GRB_OPTIMAL) { printProblem(status, iter); }
-    else
-     {
-      Fq = model->get(GRB_DoubleAttr_ObjVal);
-      double numVal { sign * objNumerator.getValue() };
-      double denomVal { objDenominator.getValue() };
-      q = numVal / denomVal;
-      std::cout << "\n     q = " << q
-                << " ,  |F(q)| = " << std::abs(Fq) << std::endl;
-      if (std::abs(Fq) < tol)
-       {
-        done = true;
-        if (sense == GRB_MINIMIZE) { q = -q; }
-        // register solution
-        solution.objVal = q;
-        for (unsigned int i = 0; i < (fmip->vars).size(); i++)
-          solution.varVals.push_back( ((fmip->vars)[i])->get(GRB_DoubleAttr_X) );
-       }
-     }
-   }
- }
-
-
-void Dinkelbach::writeSolution()
+void Dinkelbach::writeSolution(FMILPSol** xsolution)
  { 
-  if (fmip->solution) *(fmip->solution) = solution;
-  else if (!fmip->solution) fmip->solution = new FMILPSol(solution);
+  if (*xsolution) **xsolution = solution;
+  else if (!*xsolution) *xsolution = new FMILPSol(solution);
   else std::cout << "No solution avaiable!" << std::endl;
  }
 

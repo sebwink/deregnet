@@ -91,8 +91,8 @@ def main():
         if drgnt_arg_dict[arg] is not None:
             drgnt_args += [arg, drgnt_arg_dict[arg]]
 
-    if args.flip:
-        drgnt._args += ['--flip-orientation']
+    #if args.flip:
+    #    drgnt._args += ['--flip-orientation']
     if args.abs:
         drgnt_args += ['--absolute-values']
 

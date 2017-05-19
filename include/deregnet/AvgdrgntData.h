@@ -35,7 +35,7 @@
 #ifndef AVGDRGNT_DATA_H
 #define AVGDRGNT_DATA_H
 
-#include <grbfrc/FMILP.h> // #include <grbfrc/Algorithms.h>
+#include <grbfrc/common.h>
 #include <deregnet/DeregnetData.h>
 
 namespace deregnet {
@@ -49,7 +49,7 @@ class AvgdrgntData : public DeregnetData {
             int min_size { 20 };
             int max_size { 50 };
 
-            Algorithm algorithm { Algorithm::GCC };
+            Algorithm algorithm { Algorithm::DTA };
 
 };
 
