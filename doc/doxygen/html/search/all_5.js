@@ -1,9 +1,16 @@
 var searchData=
 [
-  ['feasible_5fnode',['feasible_node',['../classderegnet_1_1AvgStartHeuristic.html#a3e18528bc735d47edcd719a72baf4e46',1,'deregnet::AvgStartHeuristic::feasible_node()'],['../classderegnet_1_1AvgSuboptimalStartHeuristic.html#aca3dd2ae41b88a0bd925b297d490e2cb',1,'deregnet::AvgSuboptimalStartHeuristic::feasible_node()'],['../classderegnet_1_1DeregnetStartHeuristic.html#ac296c4f122f7d3ad2fcc2cbb0d1b5379',1,'deregnet::DeregnetStartHeuristic::feasible_node()'],['../classderegnet_1_1StartHeuristic.html#a1d7931058aceb84790f861a39f0a8bfd',1,'deregnet::StartHeuristic::feasible_node()'],['../classderegnet_1_1SuboptimalStartHeuristic.html#acbd151d7620495d80be8c63f1d3c4ecb',1,'deregnet::SuboptimalStartHeuristic::feasible_node()']]],
-  ['finalize_5fdata',['finalize_data',['../avgdrgnt_8cpp.html#af166ec9917c82f0f736217d3ac5bd370',1,'finalize_data(Options &amp;options, Data &amp;data):&#160;avgdrgnt.cpp'],['../drgnt_8cpp.html#af166ec9917c82f0f736217d3ac5bd370',1,'finalize_data(Options &amp;options, Data &amp;data):&#160;drgnt.cpp']]],
-  ['find_5fstart_5fsolution',['find_start_solution',['../classderegnet_1_1DeregnetFinder.html#a9bca73c631c1ce679b07f1e0664abfa2',1,'deregnet::DeregnetFinder::find_start_solution(std::pair&lt; Node, std::set&lt; Node &gt;&gt; **start_solution)'],['../classderegnet_1_1DeregnetFinder.html#a1b7a50c77d09000e2d80b39025d67393',1,'deregnet::DeregnetFinder::find_start_solution(std::pair&lt; Node, std::set&lt; Node &gt;&gt; **start_solution)'],['../classderegnet_1_1DeregnetFinder.html#a6a5305626ad5039e294fa2f6bd3b4b74',1,'deregnet::DeregnetFinder::find_start_solution(std::pair&lt; Node, std::set&lt; Node &gt;&gt; **start_solution)']]],
-  ['find_5fsuboptimal_5fstart_5fsolution',['find_suboptimal_start_solution',['../classderegnet_1_1DeregnetFinder.html#a85fcde1dddbfd03ffc4ae8d244b4fc72',1,'deregnet::DeregnetFinder::find_suboptimal_start_solution(std::pair&lt; Node, std::set&lt; Node &gt;&gt; **start_solution, std::set&lt; std::string &gt; *nodes_so_far)'],['../classderegnet_1_1DeregnetFinder.html#a42eca7055ed54197e27df7bd70271a13',1,'deregnet::DeregnetFinder::find_suboptimal_start_solution(std::pair&lt; Node, std::set&lt; Node &gt;&gt; **start_solution, std::set&lt; std::string &gt; *nodes_so_far)'],['../classderegnet_1_1DeregnetFinder.html#ae81ebb01d3cba09b12858bce7799e2a5',1,'deregnet::DeregnetFinder::find_suboptimal_start_solution(std::pair&lt; Node, std::set&lt; Node &gt;&gt; **start_solution, std::set&lt; std::string &gt; *nodes_so_far)']]],
-  ['fmilp',['FMILP',['../namespacederegnet.html#a31759ad43b8b9641205bcf69b09f10c5',1,'deregnet']]],
-  ['found_5fnode',['found_node',['../classderegnet_1_1DeregnetStartHeuristic.html#a1ca705794583fb3b6e563efeceb4445e',1,'deregnet::DeregnetStartHeuristic']]]
+  ['edgelist',['edgelist',['../structderegnet_1_1Solution.html#aa4dcc94d51fa7e4e9443263572d8b18d',1,'deregnet::Solution::edgelist()'],['../structderegnet_1_1Subgraph.html#a918a816236f30355b2ec812af629db09',1,'deregnet::Subgraph::edgelist()']]],
+  ['env',['env',['../classderegnet_1_1DeregnetModel.html#accd03120356b80b083041b4eef003e5b',1,'deregnet::DeregnetModel']]],
+  ['example1_2ecpp',['example1.cpp',['../example1_8cpp.html',1,'']]],
+  ['example10_2ecpp',['example10.cpp',['../example10_8cpp.html',1,'']]],
+  ['example2_2ecpp',['example2.cpp',['../example2_8cpp.html',1,'']]],
+  ['example3_2ecpp',['example3.cpp',['../example3_8cpp.html',1,'']]],
+  ['example4_2ecpp',['example4.cpp',['../example4_8cpp.html',1,'']]],
+  ['example5_2ecpp',['example5.cpp',['../example5_8cpp.html',1,'']]],
+  ['example6_2ecpp',['example6.cpp',['../example6_8cpp.html',1,'']]],
+  ['example7_2ecpp',['example7.cpp',['../example7_8cpp.html',1,'']]],
+  ['example8_2ecpp',['example8.cpp',['../example8_8cpp.html',1,'']]],
+  ['example9_2ecpp',['example9.cpp',['../example9_8cpp.html',1,'']]],
+  ['exclude',['exclude',['../structOptions.html#a0b4e7353a06f655fb83a2402ed52ecd0',1,'Options::exclude()'],['../classderegnet_1_1DeregnetData.html#a8e4398e6ece11ef87767914c6f2c304d',1,'deregnet::DeregnetData::exclude()'],['../classderegnet_1_1DeregnetStartHeuristic.html#aa22c6581cd404bf7ac325850b28dc951',1,'deregnet::DeregnetStartHeuristic::exclude()']]]
 ];

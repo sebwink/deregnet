@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lazyconstraintcallback',['LazyConstraintCallback',['../classderegnet_1_1LazyConstraintCallback.html#ad025c982974ffc3e70677948b9668600',1,'deregnet::LazyConstraintCallback']]],
-  ['lazyconstraintcallbacknoroot',['LazyConstraintCallbackNoRoot',['../classderegnet_1_1LazyConstraintCallbackNoRoot.html#abd4603bff30a09c920cdf67d8e5ba12f',1,'deregnet::LazyConstraintCallbackNoRoot']]]
+  ['handle_5fobjective',['handle_objective',['../classgrbfrc_1_1Gloverizer.html#ac5074a3f184676514d56f1fc2b7a69f4',1,'grbfrc::Gloverizer']]],
+  ['handle_5fqconstr',['handle_qconstr',['../classgrbfrc_1_1Gloverizer.html#a94a1a62395d6ec2d8ba418a812cfbed7',1,'grbfrc::Gloverizer']]]
 ];

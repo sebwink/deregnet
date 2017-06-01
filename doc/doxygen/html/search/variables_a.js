@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['original_5fgraph',['original_graph',['../classderegnet_1_1DeregnetData.html#a3ea2abe9900785d80fa0141afdd985a9',1,'deregnet::DeregnetData']]],
-  ['original_5fnodeid',['original_nodeid',['../classderegnet_1_1DeregnetData.html#a6707f9bbc1ac5ccf78724e73cd8053b1',1,'deregnet::DeregnetData']]],
-  ['original_5froot',['original_root',['../classderegnet_1_1DeregnetStartHeuristic.html#a22c9ec9b11605201c87dbac622d7618e',1,'deregnet::DeregnetStartHeuristic::original_root()'],['../classderegnet_1_1LazyConstraintCallback.html#a0ced82ab9f112cbb3e1df10a84be6c64',1,'deregnet::LazyConstraintCallback::original_root()']]],
-  ['outdir',['outdir',['../structOptions.html#a80746ce696086f5fb130d798849d0277',1,'Options']]]
+  ['newobj',['newobj',['../classgrbfrc_1_1Gloverizer.html#a38a674b64d09932859b9a0efd3acf723',1,'grbfrc::Gloverizer']]],
+  ['no_5fmax_5fsize',['no_max_size',['../structOptions.html#a8ad3707dd08d31b9084188a549126644',1,'Options']]],
+  ['nodeid',['nodeid',['../classderegnet_1_1AvgSuboptimalStartHeuristic.html#af59e6b6ba10fd5d2c210a0947cf37e66',1,'deregnet::AvgSuboptimalStartHeuristic::nodeid()'],['../classderegnet_1_1DeregnetData.html#a3b57d7ed19c104c7fe257e17f0d2cfb5',1,'deregnet::DeregnetData::nodeid()'],['../classderegnet_1_1DeregnetModel.html#adfebf6f9983c9ccc934469a79381fb78',1,'deregnet::DeregnetModel::nodeid()'],['../classderegnet_1_1SuboptimalStartHeuristic.html#a8928f9630eb2ffbd557e95b62c278103',1,'deregnet::SuboptimalStartHeuristic::nodeid()']]],
+  ['nodes',['nodes',['../structderegnet_1_1Solution.html#a581de4de354d10149c7b9c0816c70840',1,'deregnet::Solution::nodes()'],['../structderegnet_1_1Subgraph.html#a6f8b8d288c1314cc9623e732c5b89056',1,'deregnet::Subgraph::nodes()']]],
+  ['nodes_5fso_5ffar',['nodes_so_far',['../classderegnet_1_1AvgSuboptimalStartHeuristic.html#ac07c2b61bf03b25e1bd87cb353bd4597',1,'deregnet::AvgSuboptimalStartHeuristic::nodes_so_far()'],['../classderegnet_1_1SuboptimalStartHeuristic.html#af9a38b598d55b9a1fa22b9f0c141218b',1,'deregnet::SuboptimalStartHeuristic::nodes_so_far()']]],
+  ['num_5fsubopt_5fiter',['num_subopt_iter',['../classderegnet_1_1DeregnetData.html#adb7428cd99112156ae9f80187af9ebbe',1,'deregnet::DeregnetData']]],
+  ['numerator',['numerator',['../structgrbfrc_1_1FMILPObj.html#a01c26f8e99a6692909e562aa561c9274',1,'grbfrc::FMILPObj']]],
+  ['numvars',['numvars',['../classmyCallback.html#a4093ee09300c254ac977ad61f861f21f',1,'myCallback']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['y',['y',['../classderegnet_1_1DeregnetModel.html#ae76df61afe302b939165facf3dd21ac8',1,'deregnet::DeregnetModel::y()'],['../classderegnet_1_1LazyConstraintCallbackNoRoot.html#aaa32cd3d5b65d1c41174cbc9a120ab64',1,'deregnet::LazyConstraintCallbackNoRoot::y()']]]
+  ['vars',['vars',['../classgrbfrc_1_1FMILP.html#acbf6866651d8b8b18c094302cf2a4284',1,'grbfrc::FMILP::vars()'],['../classmyCallback.html#a5e9e8c33c9ed51920ee430230a91a744',1,'myCallback::vars()']]],
+  ['varvals',['varVals',['../structgrbfrc_1_1FMILPSol.html#a36afbb370bb174c488c46b882c0c9bbf',1,'grbfrc::FMILPSol']]],
+  ['version_2eh',['version.h',['../version_8h.html',1,'']]]
 ];

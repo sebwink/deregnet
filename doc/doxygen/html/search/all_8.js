@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['lazyconstraintcallback',['LazyConstraintCallback',['../classderegnet_1_1LazyConstraintCallback.html',1,'deregnet']]],
-  ['lazyconstraintcallback',['LazyConstraintCallback',['../classderegnet_1_1LazyConstraintCallback.html#ad025c982974ffc3e70677948b9668600',1,'deregnet::LazyConstraintCallback']]],
-  ['lazyconstraintcallback_2ecpp',['LazyConstraintCallback.cpp',['../LazyConstraintCallback_8cpp.html',1,'']]],
-  ['lazyconstraintcallback_2eh',['LazyConstraintCallback.h',['../LazyConstraintCallback_8h.html',1,'']]],
-  ['lazyconstraintcallbacknoroot',['LazyConstraintCallbackNoRoot',['../classderegnet_1_1LazyConstraintCallbackNoRoot.html',1,'deregnet']]],
-  ['lazyconstraintcallbacknoroot',['LazyConstraintCallbackNoRoot',['../classderegnet_1_1LazyConstraintCallbackNoRoot.html#abd4603bff30a09c920cdf67d8e5ba12f',1,'deregnet::LazyConstraintCallbackNoRoot']]],
-  ['lazyconstraintcallbackroot',['LazyConstraintCallbackRoot',['../classderegnet_1_1LazyConstraintCallbackRoot.html',1,'deregnet']]],
-  ['lgf_5ffile',['lgf_file',['../structOptions.html#ab1d4dd586f45745c976ef7fcd2536221',1,'Options']]]
+  ['handle_5fobjective',['handle_objective',['../classgrbfrc_1_1Gloverizer.html#ac5074a3f184676514d56f1fc2b7a69f4',1,'grbfrc::Gloverizer']]],
+  ['handle_5fqconstr',['handle_qconstr',['../classgrbfrc_1_1Gloverizer.html#a94a1a62395d6ec2d8ba418a812cfbed7',1,'grbfrc::Gloverizer']]]
 ];
