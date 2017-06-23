@@ -160,7 +160,7 @@ def output2graphml(graph, tmp_files, outdir):
     def get_root(path):
         with open(path, 'r') as sif:
             first_line = sif.readline()
-            return first_line.split(':')[-1].strip()
+            return (':'.join(first_line.split(':')[1:])).strip()
 
     
     scores = pd.read_csv(tmp_files.scores, sep = '\t', header = None)
@@ -168,6 +168,7 @@ def output2graphml(graph, tmp_files, outdir):
     output = os.path.join(tmp_files.path, 'subgraphs/plain')
     for sif in os.listdir(output):
         root = get_root(os.path.join(output, '..', sif))
+        print(root)
         nodes = parse_sif(os.path.join(output, sif))
         mapped_nodes = graph.vs.select(name_in=nodes)
         subgraph = graph.subgraph(mapped_nodes, "create_from_scratch")
@@ -176,6 +177,7 @@ def output2graphml(graph, tmp_files, outdir):
                 node['score'] = scores.ix[node['name'],1]
             except:
                 node['score'] = 0.0
+            print(node['score'])
             if node['name'] == root:
                 node['root'] = True
             else:

@@ -37,24 +37,90 @@
 
 #include <map>
 #include <vector>
+#include <memory>
 
 #include <gurobi_c++.h>
 
-namespace deregnet {
+namespace grbfrc {
 
-class GrbfrcCallback : public GRBCallback {
-
-    friend class CharnesCooper;
-    friend class Dinkelbach;
-    friend class YGGY;
-    friend class ObjVarTransform;
+template <typename T>
+class Callback {
 
 public:
 
-    virtual void register_variables(std::vector<std::map<T,GRBVar>> vargrps);
+    GRBCallback* yield(std::vector<GRBVar*>& tx,
+                       std::vector<GRBVar*>* vars,
+                       std::vector<std::map<T,GRBVar>>* vargrps = nullptr) {
+        // check whether referenced variables are discrete
+        if (vargrps) {
+            transformed_vargrps = new std::vector<std::map<T, GRBVar>>();
+            for (std::map<T, GRBVar>& vargrp : *(vargrps)) {
+                std::map<T, GRBVar> transformed_vargrp;
+                for (auto& e: vargrp)
+                    transformed_vargrp[e.first] = *tx[getIndex(e.second, vars)];
+                transformed_vargrps->push_back(transformed_vargrp);
+            }
+            this->register_vargrps();
+        }
+        return init_callback();
+    }
+
+    GRBCallback* yield(std::vector<std::map<T,GRBVar>>* vargrps = nullptr) {
+        if (vargrps) {
+            transformed_vargrps = new std::vector<std::map<T, GRBVar>>();
+            *transformed_vargrps = *vargrps;
+            this->register_vargrps();
+        }
+        return init_callback();
+    }
+
+    virtual void register_vargrps() {
+
+    }
+
+    GRBCallback* init_callback() {
+        return this->cbp;
+    }
+
+protected:
+
+    GRBCallback* cbp { nullptr };
+    std::vector<std::map<T,GRBVar>>* transformed_vargrps { nullptr };
+
+private:
+
+    int getIndex(GRBVar& var, std::vector<GRBVar*>* vars) {
+        for (unsigned int i = 0; i < vars->size(); i++)
+            if (var.sameAs(*((*vars)[i]))) return i;
+        return -1;
+    }
 
 };
 
+template <typename T>
+class GrbfrcCallback {
+
+private:
+
+    std::vector<std::map<T,GRBVar>>* vargrps;
+    Callback<T>* cb;
+
+public:
+
+    GrbfrcCallback(Callback<T>* xcb, std::vector<std::map<T,GRBVar>>* xvargrps = nullptr)
+
+        : vargrps { xvargrps }, cb { xcb } { }
+
+    GRBCallback* yield(std::vector<GRBVar*>& tx,
+                       std::vector<GRBVar*>* vars) {
+        return cb->yield(tx, vars, vargrps);
+    }
+
+    GRBCallback* yield() {
+        return cb->yield(vargrps);
+    }
+
+};
 
 }    //     namespace deregnet
 

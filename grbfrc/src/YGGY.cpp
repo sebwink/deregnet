@@ -32,6 +32,8 @@
 // --------------------------------------------------------------------------
 //
 
+#include <memory>
+
 #include <gurobi_c++.h>
 #include <grbfrc/YGGY.h>
 #include <grbfrc/Gloverizer.h>
@@ -39,13 +41,7 @@
 namespace grbfrc
 {
 
-YGGY::YGGY(FMILP* fmipPtr)
-             : fmip { fmipPtr },
-               invalid { false },
-               transformed { false },
-               transformation { GRBModel((fmipPtr->baseModel)->getEnv()) } {
-    fmip->update();
-}
+YGGY::YGGY(GRBEnv* env) : transformation { GRBModel(*env) } { }
 
 void YGGY::printInvalidity() {
    std::cout << "\n!!! === this->printInvalidity() doesn't make sense' === !!!\n\n";
@@ -95,54 +91,19 @@ void YGGY::printInvalidity() {
  *
  */
 
-template <typename T>
-void YGGY::transformCallback() {
-    if (fmip->cb && fmip->cb->vargrps) {
-        std::vector<std::map<T, GRBVar>> transformed_vargrps;
-        for (std::map<T, GRBVar>& vargrp : *(fmip->cb->vargrps)) {
-            std::map<T, GRBVar> transformed_vargrp;
-            for (T& e: vargrp)
-                transformed_vargrp[e] = tx[getIndex(vargrp[e])];
-            transformed_vargrps.push_back(transformed_vargrp);
-        }
-        cb->register_variables(transformed_vargrps);
-    }
-}
-
-int YGGY::transform() {
-    // denominator variable u = 1 / (dx + ey + f)
-    double umax = 0.0;
-    if (!getUmax(umax)) return 127;
-    u = transformation.addVar(0.0, umax, 0.0, GRB_CONTINUOUS);
-    // tx ~ (u*xc, xd)
-    define_tx();
-    transformCallback();
-    transformation.setCallback(fmip->cb);
-    // transform parameters
-
-    transformation.update();
-    FMILPObj& objective = fmip->objective;
-    define_objective(objective.numerator, objective.sense);
-    define_constraints(objective.denominator);
-    transformation.update();
-    Gloverizer gloverizer(&transformation, &u, umax);
-    gloverizer.gloverize();
-    return 0;
-}
-
 bool YGGY::getUmax(double& umax) {
     std::cout << "Calculating Umax ...\n " << std::endl;    // if verbose ...
-    fmip->baseModel->setObjective((fmip->objective).denominator, GRB_MINIMIZE);
-    fmip->baseModel->optimize();
+    base_model->setObjective(objective->denominator, GRB_MINIMIZE);
+    base_model->optimize();
     std::cout << "\nDone calculating Umax.\n" << std::endl;       // if verbose ...
-    if (fmip->get(GRB_IntAttr_Status) != GRB_OPTIMAL) return false;
-    umax = 1 / fmip->get(GRB_DoubleAttr_ObjVal);
+    if (base_model->get(GRB_IntAttr_Status) != GRB_OPTIMAL) return false;
+    umax = 1 / base_model->get(GRB_DoubleAttr_ObjVal);
     return true;
 }
 
 void YGGY::define_tx() {
     int vindex { 0 };
-    for (auto var: fmip->vars) {
+    for (auto var: *vars) {
         double lb { var->get(GRB_DoubleAttr_LB) };
         double ub { var->get(GRB_DoubleAttr_UB) };
         if (var->get(GRB_CharAttr_VType) == 'C') {
@@ -156,12 +117,24 @@ void YGGY::define_tx() {
         }
         else {
             tx.push_back( new GRBVar( transformation.addVar(lb, ub, 0.0, GRB_BINARY) ) );
-            if (fmip->startSol) {
-                tx.back()->set(GRB_DoubleAttr_Start, (*(fmip->startSol))[vindex]);
+            if (start_solution) {
+                tx.back()->set(GRB_DoubleAttr_Start, (*start_solution)[vindex]);
             }
         }
         vindex++;
     }
+}
+
+void YGGY::do_the_rest(double umax) {
+    std::cout << "Transform objective ..." << std::endl;
+    define_objective(objective->numerator, objective->sense);
+    std::cout << "Transform constraints ... " << std::endl;
+    define_constraints(objective->denominator);
+    transformation.update();
+    std::cout << "Gloverize..." << std::endl;
+    Gloverizer gloverizer(&transformation, &u, umax);
+    gloverizer.gloverize();
+    std::cout << "Done with transforming..." << std::endl;
 }
 
 void YGGY::define_objective(GRBLinExpr& objNumerator, int objSense) {
@@ -194,10 +167,10 @@ void YGGY::define_constraints(GRBLinExpr& objDenominator) {
     transformation.addQConstr(lhs, GRB_EQUAL, 1.0);
 
 
-    GRBConstr* constrs { fmip->getConstrs() };
-    int numConstrs { fmip->get(GRB_IntAttr_NumConstrs) };
-    for (int i = 0; i < numConstrs; i++) {
-      GRBLinExpr origLhs { fmip->getRow(*constrs) };
+    GRBConstr* constrs { base_model->getConstrs() };
+    int numConstrs { base_model->get(GRB_IntAttr_NumConstrs) };
+    for (int k = 0; k < numConstrs; k++) {
+      GRBLinExpr origLhs { base_model->getRow(*constrs) };
       double b { constrs->get(GRB_DoubleAttr_RHS) };
       lhs = - b * u ;
       for (unsigned int i = 0; i < origLhs.size(); i++) {
@@ -224,7 +197,7 @@ GRBModel YGGY::getTransform() {
     else if (transformed)
         return transformation;
     else {
-        transform();
+        //transform();
         return transformation;
     }
 }
@@ -246,62 +219,24 @@ void YGGY::solveTransform() {
     }
 }
 
-void YGGY::solveTransform(GRBCallback& callback) {
-    if (invalid)
-        printInvalidity();
-    else {
-        try {
-              transformation.setCallback(&callback);
-              transformation.optimize();
-              std::cout << std::endl;
-        }
-        catch (GRBException e) {
-            std::cout << "Gurobi error: " << e.getMessage() << "\n\n";
-        }
-        catch (...) {
-            std::cout << "Error while attempting to optimize transform ... \n\n";
-        }
-    }
-}
-
-void YGGY::run(int time_limit) {
-    if (invalid)
-        printInvalidity();
-    else {
-        std::cout << "\n=========== solving FMIP via YGGY transform ===========\n\n";
-        if (!transformed) transform();
-        solveTransform();
-        backTransformSolution();
-    }
-}
-
-void YGGY::run(GRBCallback& callback, int time_limit) {
-    if (invalid)
-        printInvalidity();
-    else {
-        std::cout << "\n=========== solving FLP via Charnes-Cooper transform ===========\n\n";
-        if (!transformed) transform();
-        solveTransform(callback);
-        backTransformSolution();
-    }
-}
-
-void YGGY::writeSolution() {
-    if (fmip->solution) *(fmip->solution) = solution;
-    else if (!fmip->solution) fmip->solution = new FMILPSol(solution);
+void YGGY::writeSolution(FMILPSol** xsolution) {
+    if (*xsolution) **xsolution = solution;
+    else if (!*xsolution) *xsolution = new FMILPSol(solution);
     else std::cout << "No solution avaiable!" << std::endl;
 }
 
+/*
 FMILPSol YGGY::getSolution() {
     return solution;
 }
+*/
 
 void YGGY::backTransformSolution() {
     int status { transformation.get(GRB_IntAttr_Status) };
     if (status == GRB_OPTIMAL) {
       solution.objVal = transformation.get(GRB_DoubleAttr_ObjVal);
       double uval { u.get(GRB_DoubleAttr_X) };
-      for (int i = 0; i < fmip->get(GRB_IntAttr_NumVars); i++) {
+      for (int i = 0; i < base_model->get(GRB_IntAttr_NumVars); i++) {
         double value { tx[i]->get(GRB_DoubleAttr_X) };
         if (tx[i]->get(GRB_CharAttr_VType) == 'C')
             solution.varVals.push_back( value / uval );
@@ -313,8 +248,8 @@ void YGGY::backTransformSolution() {
 }
 
 int YGGY::getIndex(GRBVar& var) {
-    for (int i = 0; i < fmip->get(GRB_IntAttr_NumVars); i++)
-        if (var.sameAs(*(fmip->vars[i]))) return i;
+    for (int i = 0; i < base_model->get(GRB_IntAttr_NumVars); i++)
+        if (var.sameAs(*((*vars)[i]))) return i;
     return -1;
 }
 

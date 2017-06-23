@@ -39,5 +39,7 @@
 #include <grbfrc/CharnesCooper.h>
 #include <grbfrc/Dinkelbach.h>
 #include <grbfrc/YGGY.h>
+#include <grbfrc/GrbfrcCallback.h>
+#include <grbfrc/common.h>
 
 #endif   // GRBFRC_H

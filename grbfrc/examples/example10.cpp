@@ -24,7 +24,7 @@ int main(void)
   model.setObjDenominator(objDenom);
   model.setObjSense(GRB_MINIMIZE);
 
-  model.runYGGY();
+  model.optimize(grbfrc::Algorithm::GCC);
   model.printSolution();
 
   return 0;

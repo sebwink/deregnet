@@ -22,6 +22,6 @@ int main()
   GRBLinExpr objDenom { x + 3*z + v + 4 };
   model.setObjDenominator(objDenom);
   model.setObjSense(GRB_MAXIMIZE);
-  model.runYGGY();
+  model.optimize(grbfrc::Algorithm::GCC);
   model.printSolution();
  }

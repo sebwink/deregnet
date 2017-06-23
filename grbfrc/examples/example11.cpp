@@ -24,8 +24,11 @@ int main(void)
   model.setObjDenominator(objDenom);
   model.setObjSense(GRB_MINIMIZE);
 
-  model.optimize(grbfrc::Algorithm::DTA);
-  model.printSolution();  
+  double ub = 10.0/4.0;
+  double lb = 0.0;
+
+  model.optimize<int>(grbfrc::Algorithm::OVT, nullptr, &ub, &lb);
+  model.printSolution();
 
   return 0;
  }

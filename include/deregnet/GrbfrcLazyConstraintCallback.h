@@ -32,94 +32,55 @@
 // --------------------------------------------------------------------------
 //
 
-#ifndef LAZY_CONSTRAINT_CALLBACK_H
-#define LAZY_CONSTRAINT_CALLBACK_H
+#ifndef GRBFRC_LAZY_CONSTRAINT_CALLBACK_H
+#define GRBFRC_LAZY_CONSTRAINT_CALLBACK_H
 
 #include <string>
 #include <map>
 #include <vector>
 #include <set>
+#include <memory>
 
 #include <gurobi_c++.h>
 
 #include <grbfrc/GrbfrcCallback.h>
 
 #include <deregnet/usinglemon.h>
+#include <deregnet/LazyConstraintCallback.h>
 
 namespace deregnet {
 
-class LazyConstraintCallback : public GrbfrcCallback<Node> {
+class GrbfrcLazyConstraintCallbackRoot : public grbfrc::Callback<Node> {
 
-  public:
+public:
 
-    LazyConstraintCallback(Graph* xgraph,
-                           Node* xroot,
-                           double* xgap_cut);
-  protected:
+    GrbfrcLazyConstraintCallbackRoot(Graph* xgraph, Node* xroot, double* xgap_cut);
 
-    std::map<Node, GRBVar> x;
+    virtual void register_vargrps() override;
+
+private:
+
     Graph* graph;
-    Node* original_root;
     Node* root;
-    std::vector<Node> selected_nodes;
     double* gap_cut;
 
-  protected:
-
-    void callback();
-
- private:
-
-    virtual void get_solution_filter(NodeFilter& solution_filter) = 0;
-    virtual void set_lazy_constraint(const std::set<Node>& component,
-                                     const std::set<Node>& global_parents) = 0;
-    void check_and_set_lazy_constr(const int num_components,
-                                   const InducedSubgraph::NodeMap<int>& component_map);
-    bool get_component_nodes(const InducedSubgraph::NodeMap<int>& component_map,
-                             std::set<Node>& component,
-                             const int k);
-    bool is_root_component(const std::set<Node>& component);
-    void get_parents(const std::set<Node>& component,
-                     std::set<Node>& parents,
-                     std::set<Node>& global_parents);
 };
 
-class LazyConstraintCallbackRoot : public LazyConstraintCallback {
+class GrbfrcLazyConstraintCallbackNoRoot : public grbfrc::Callback<Node> {
 
-  public:
+public:
 
-    LazyConstraintCallbackRoot(Graph* xgraph,
-                               Node* xroot,
-                               double* xgap_cut,
-                               std::vector<std::map<Node,GRBVar>> x);
-    virtual void register_variables(std::vector<std::map<Node,GRBVar>> x_transformed) override;
+    GrbfrcLazyConstraintCallbackNoRoot(Graph* xgraph, double* xgap_cut);
 
-  private:
+    virtual void register_vargrps() override;
 
-    virtual void get_solution_filter(NodeFilter& solution_filter) override;
-    virtual void set_lazy_constraint(const std::set<Node>& component,
-                                     const std::set<Node>& global_parents) override;
+private:
+
+    Graph* graph;
+    double* gap_cut;
 
 };
 
-class LazyConstraintCallbackNoRoot : public LazyConstraintCallback {
-
-  public:
-
-    LazyConstraintCallbackNoRoot(Graph* xgraph,
-                                 double* xgap_cut,
-                                 std::vector<std::map<Node,GRBVar>> xy);
-    virtual void register_variables(std::vector<std::map<Node,GRBVar>> xy_transformed) override;
-
-  private:
-
-    std::map<Node, GRBVar> y;
-
-    virtual void get_solution_filter(NodeFilter& solution_filter) override;
-    virtual void set_lazy_constraint(const std::set<Node>& component,
-                                     const std::set<Node>& global_parents) override;
-
-};
 
 }    //    namespace deregnet
 

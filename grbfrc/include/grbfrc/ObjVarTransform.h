@@ -38,44 +38,119 @@
 #include <vector>
 
 #include <gurobi_c++.h>
-#include <grbfrc/FMILP.h>
+
+#include <grbfrc/common.h>
+#include <grbfrc/Algorithm.h>
+#include <grbfrc/GrbfrcCallback.h>
+
+/*
+ *  max (cc*xc + cd*xd + d)/(ec*xc + ed*xd + f)
+ *
+ *  s.t.
+ *
+ *      Ac*xc + Ad*xd = b
+ *      xc in R
+ *      xd in Z
+ */
+
+// if ex != 0: Objective variable transform not applicable
+
+/*
+ *  u = (cc*xc + cd*xd + d)/(ed*xd + f)
+ *
+ */
+
+/*
+ *   max u
+ *
+ *   s.t.
+ *
+ *       Ac*xc + Ad*xd = b
+ *       ed*(u*xd) + f*u = cc*xc + cd*xd + d
+ *       xc, u in R
+ *       xd in Z
+ *
+ */
+
+// Gloverize( u * xd ) --> w = u * xd
+
+/*
+ *   max u
+ *
+ *   s.t.
+ *
+ *       Ac*xc + Ad*xd = b
+ *       ed*w + f*u = cc*xc + cd*xd + d
+ *       GloverConstraints(w, xd, u)
+ *       xc, u in R
+ *       xd in Z
+ *
+ */
 
 namespace grbfrc {
 
-class ObjVarTransform {
+class ObjVarTransform : public _Algorithm {
 
     private:
 
-        FMILP* fmip;
         FMILPSol solution;
-        // GrbFrcCallback* callback ...
         bool invalid;
         bool transformed;
         GRBModel transformation;
         GRBVar u;
+        std::vector<GRBVar*> tx;
         double* umax;
         double* umin;
 
     public:
 
-        YGGY(FMILP* fmipPtr, double* objub = nullptr, double* objlb = nullptr);
+        ObjVarTransform(GRBEnv* env, double* objub = nullptr, double* objlb = nullptr);
         void printInvalidity();
-        int transform();
+
+        template <typename T>
+        int transform(GrbfrcCallback<T>* cb) {
+
+            copy_model();
+
+            u = transformation.addVar(*umin, *umax, 0.0, GRB_CONTINUOUS);
+            transformation.setObjective(GRBLinExpr(u), base_model->get(GRB_IntAttr_ModelSense));
+            transformation.update();
+            add_u_constraint();
+
+            if (cb) {
+                callback = cb->yield(tx, vars);
+                transformation.setCallback(callback);
+            }
+
+            transformation.update();
+            return 0;
+        }
+
         GRBModel getTransform();
         void solveTransform();
-        // void solveTransform(GRBCallback& callback);
-        void run(int time_limit);
-        // void run(GRBCallback& callback, int time_limit);
-        void writeSolution();
-        FMILPSol getSolution();
+
+        template <typename T>
+        void run(GrbfrcCallback<T>* cb) {
+            if (invalid)
+                printInvalidity();
+            else {
+                std::cout << "\n=========== solving FMIP via Objective Variable Transform transform ===========\n\n";
+                if (!transformed) transform(cb);
+                solveTransform();
+                backTransformSolution();
+            }
+        }
+
+        void writeSolution(FMILPSol** xsolution);
+        // FMILPSol getSolution();
 
     private:
 
+        void copy_model();
+
         void backTransformSolution();
         int getIndex(GRBVar& var);
-        void defineUConstr();
-        bool getUMax();
-        bool getUMin();
+        void add_u_constraint();
 
 
 };      // class ObjVarTransform
