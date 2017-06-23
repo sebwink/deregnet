@@ -1,8 +1,8 @@
 CXX=c++
-CXXFLAGS=-std=c++11 -Wall -fPIC -ggdb3 -pg
+CXXFLAGS=-std=c++11 -Wall -fPIC 
 
 LEMON_VERSION=1.3.1
-LEMON_HOME=/opt/lemon/${LEMON_VERSION}
+LEMON_HOME=/share/opt/x86_64_sl7/lemon
 
 include gurobi_version.mak
 
