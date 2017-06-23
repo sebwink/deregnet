@@ -2,9 +2,10 @@ import os
 import time
 import subprocess
 import igraph
+import numpy as np
+import networkx as nx
 import pandas as pd
 
-from biograph.mapping.gene import GeneIdMapper
 
 __tmpdir__ = os.path.join(os.path.expanduser('~'), '.deregnet/tmp')
 
@@ -123,6 +124,29 @@ def write_tmp_files(graph,
     tmp_files.write_scores(scores)
     return tmp_files
 
+# work around igraph graphml bug
+def ig_to_nx(ig_graph):
+    def series_to_str(series):
+        series = [str(elmt) for elmt in series]
+        return '['+','.join(series)+']'
+    nx_graph = nx.DiGraph()
+    for i, node in enumerate(ig_graph.vs):
+        nx_graph.add_node(i, node.attributes())
+    for edge in ig_graph.es:
+        nx_graph.add_edge(edge.source, edge.target, edge.attributes())
+    for node in nx_graph.nodes(data=True):
+        for attr in node[1]:
+            if isinstance(node[1][attr], np.float64):
+                node[1][attr] = float(node[1][attr])
+            if isinstance(node[1][attr], pd.core.series.Series):
+                node[1][attr] = series_to_str(node[1][attr])
+    for edge in nx_graph.edges(data=True):
+        for attr in edge[2]:
+            if isinstance(edge[2][attr], pd.core.series.Series):
+                edge[2][attr] = series_to_str(edge[2][attr])
+    return nx_graph
+
+
 def output2graphml(graph, tmp_files, outdir):
     def parse_sif(path2sif):
         nodes = set()
@@ -157,6 +181,6 @@ def output2graphml(graph, tmp_files, outdir):
             else:
                 node['root'] = False
         graphml = os.path.join(outdir, sif.split('.')[0] + '.graphml')
-        # write scores into attrs + root identity
-        subgraph.write(graphml, 'graphml')
+        subgraph = ig_to_nx(subgraph)
+        nx.write_graphml(subgraph, graphml)
 

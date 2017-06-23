@@ -6,7 +6,7 @@ import time
 import argparse
 import igraph
 
-from biograph.mapping.gene import GeneIdMapper
+from biograph.mapping.gene import HGNCMapper
 
 import deregnet
 
@@ -73,7 +73,7 @@ def main():
                                          args.id_col,
                                          args.score_col,
                                          args.species,
-                                         GeneIdMapper)
+                                         HGNCMapper)
 
     drgnt_arg_dict = {
                     '--graph' : tmp_files.graph,
