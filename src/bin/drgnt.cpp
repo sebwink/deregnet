@@ -71,7 +71,6 @@ struct Options {
     set<string>* include { nullptr };                  /*< node ids of nodes to be included in subgraph */
     set<string>* exclude { nullptr };                  /*< node ids of nodes to be excluded in subgraph */
     string* outdir { nullptr };                        /*< directory to which to write output and logs */
-    string model_sense { "max" };
     bool absolute_values { false };
 };
 

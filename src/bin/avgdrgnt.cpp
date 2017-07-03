@@ -72,8 +72,7 @@ struct Options {
 	set<string>* include { nullptr };                  /*< node ids of nodes to be included in subgraph */
 	set<string>* exclude { nullptr };                  /*< node ids of nodes to be excluded in subgraph */
 	bool no_max_size { false };                        /*< whether to restrict to subgraphs with a maximal size */
-	string* outdir { nullptr };                        /*< directory to which to write output and logs */
-    bool absolute_values { false };
+    string* outdir { nullptr };                        /*< directory to which to write output and logs */
 };
 
 // Data #####################################################################
@@ -229,7 +228,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				break;
 			case 'f':
 				// -f,--flip-orientation
-				data.receptor_as_root = false;
+                data.receptor_as_root = false;
 				break;
 			case 'o':
 				// -o,--output-dir
