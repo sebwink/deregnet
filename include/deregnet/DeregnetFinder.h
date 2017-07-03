@@ -64,7 +64,7 @@ class DeregnetFinder {
     void find_suboptimal_start_solution(std::pair<Node, std::set<Node>>** start_solution,
                                         std::set<std::string>* nodes_so_far);
     Subgraph to_subgraph(Solution solution,
-                         string signature);
+                         std::string signature);
     void run_optimal_init(std::pair<Node, std::set<Node>>** start_solution);
     void run_suboptimal_init(std::pair<Node, std::set<Node> > **start_solution,
                              std::set<std::string>* nodes_so_far);
@@ -181,14 +181,14 @@ Subgraph DeregnetFinder<ModelType, Data>::to_subgraph(Solution solution, std::st
     if (data->receptors)
         for (auto nodeid : subgraph.nodes) {
             Node node;
-            if (getNodeById(data->graph, data->nodeid, nodeid, &node))
+            if (getNodeById(data->original_graph, data->nodeid, nodeid, &node))
                 if (data->receptors->find(node) != data->receptors->end())
                     subgraph.receptors.insert(nodeid);
         }
     if (data->terminals)
         for (auto nodeid : subgraph.nodes) {
             Node node;
-            if (getNodeById(data->graph, data->nodeid, nodeid, &node))
+            if (getNodeById(data->original_graph, data->nodeid, nodeid, &node))
                 if (data->terminals->find(node) != data->terminals->end())
                     subgraph.terminals.insert(nodeid);
         }
