@@ -73,6 +73,7 @@ struct Options {
 	set<string>* exclude { nullptr };                  /*< node ids of nodes to be excluded in subgraph */
 	bool no_max_size { false };                        /*< whether to restrict to subgraphs with a maximal size */
     string* outdir { nullptr };                        /*< directory to which to write output and logs */
+    bool absolute_values { false };
 };
 
 // Data #####################################################################
