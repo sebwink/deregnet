@@ -8,13 +8,13 @@
 namespace grbfrc
 {
 
-CharnesCooper::CharnesCooper(FMILP& fmipRef)
-             : fmip { &fmipRef },
-               transformed { false },
-               transformation { GRBModel((fmip->baseModel)->getEnv()) }
+CharnesCooper::CharnesCooper(GRBEnv* env)
+             : transformed { false },
+               transformation { GRBModel(*env) }
  {
-  if (!fmip->isFLP()) { printInvalidity(); invalid = true; }
-  else { invalid = false; fmip->update(); }
+  //if (!fmip->isFLP()) { printInvalidity(); invalid = true; }
+  //else { invalid = false; base_model->update(); }
+  // base_model->update();
  }
 
 void CharnesCooper::printInvalidity()
@@ -27,7 +27,7 @@ void CharnesCooper::transform()
   // create t variable corr. to t = 1/(ex + f) // set objective to max {cy + dt} //
   t = transformation.addVar(0.0, GRB_INFINITY, 0.0, GRB_CONTINUOUS, "t");
   // create y variables corr. to y = tx //
-  for (auto var : fmip->vars) {
+  for (auto var : *vars) {
         y.push_back( new GRBVar( transformation.addVar(-GRB_INFINITY, GRB_INFINITY, 0.0, GRB_CONTINUOUS) ) );
         transformation.update();
         double lb { var->get(GRB_DoubleAttr_LB) };
@@ -37,12 +37,11 @@ void CharnesCooper::transform()
   }
   transformation.update();
   // objective of the FLP: max (cx + d)/(ex + f) //
-  FMILPObj& objective = fmip->objective;
-  GRBLinExpr& objNumerator = objective.numerator;
+  GRBLinExpr& objNumerator = objective->numerator;
   double d { objNumerator.getConstant() };
-  GRBLinExpr& objDenominator = objective.denominator;
+  GRBLinExpr& objDenominator = objective->denominator;
   double f { objDenominator.getConstant() };
-  int objSense = objective.sense;
+  int objSense = objective->sense;
   // set objective of transform to cy + dt
   GRBLinExpr transformObj { d * t };
   for (unsigned int i = 0; i < objNumerator.size(); i++)
@@ -64,12 +63,12 @@ void CharnesCooper::transform()
    }
   transformation.addConstr(lhs, GRB_EQUAL, 1.0);
   // constraints of the FLP: Ax {<=,=,>=} b //
-  GRBConstr* constrs { fmip->getConstrs() };
-  int numConstrs { fmip->get(GRB_IntAttr_NumConstrs) };
+  GRBConstr* constrs { base_model->getConstrs() };
+  int numConstrs { base_model->get(GRB_IntAttr_NumConstrs) };
   // add Ay - bt {<=,=,>=} 0 constraints //
   for (int i = 0; i < numConstrs; i++)
    {
-    GRBLinExpr origLhs { fmip->getRow(*constrs) };
+    GRBLinExpr origLhs { base_model->getRow(*constrs) };
     double b { constrs->get(GRB_DoubleAttr_RHS) };
     lhs = - b * t ;
     for (unsigned int i = 0; i < origLhs.size(); i++)
@@ -122,59 +121,12 @@ void CharnesCooper::solveTransform()
    }
  }
 
-void CharnesCooper::solveTransform(GRBCallback& callback)
+void CharnesCooper::writeSolution(FMILPSol** xsolution)
  {
-  if (invalid) printInvalidity();
-  else
-   {
-    try
-     {
-      transformation.setCallback(&callback);
-      transformation.optimize();
-      std::cout << std::endl;
-     }
-    catch (GRBException e)
-     {
-      std::cout << "Gurobi error: " << e.getMessage() << "\n\n";
-     }
-    catch (...)
-     {
-      std::cout << "Error while attempting to optimize transform ... \n\n";
-     }
-   }
- }
-
-void CharnesCooper::run(int time_limit)
- {
-  if (invalid) printInvalidity();
-  else
-   {
-    std::cout << "\n=========== solving FLP via Charnes-Cooper transform ===========\n\n";
-    if (!transformed) transform();
-    solveTransform();
-    backTransformSolution();
-   }
- }
-
-void CharnesCooper::run(GRBCallback& callback, int time_limit)
- {
-  if (invalid) printInvalidity();
-  else
-   {
-    std::cout << "\n=========== solving FLP via Charnes-Cooper transform ===========\n\n";
-    if (!transformed) transform();
-    solveTransform(callback);
-    backTransformSolution();
-   }
- }
-
-void CharnesCooper::writeSolution()
- {
-  if (fmip->solution) *(fmip->solution) = solution;
-  else if (!fmip->solution) fmip->solution = new FMILPSol(solution);
+  if (*xsolution) **xsolution = solution;
+  else if (!*xsolution) *xsolution = new FMILPSol(solution);
   else std::cout << "No solution avaiable!" << std::endl;
  }
-
 
 FMILPSol CharnesCooper::getSolution()
  {
@@ -188,7 +140,7 @@ void CharnesCooper::backTransformSolution()
    {
     solution.objVal = transformation.get(GRB_DoubleAttr_ObjVal);
     double tvalue { t.get(GRB_DoubleAttr_X) };
-    for (int i = 0; i < fmip->get(GRB_IntAttr_NumVars); i++)
+    for (int i = 0; i < base_model->get(GRB_IntAttr_NumVars); i++)
      {
       double value { y[i]->get(GRB_DoubleAttr_X) };
       solution.varVals.push_back( value / tvalue );
@@ -199,8 +151,8 @@ void CharnesCooper::backTransformSolution()
 
 int CharnesCooper::getIndex(GRBVar& var)
  {
-  for (int i = 0; i < fmip->get(GRB_IntAttr_NumVars); i++)
-    if (var.sameAs(*(fmip->vars[i]))) return i;
+  for (int i = 0; i < base_model->get(GRB_IntAttr_NumVars); i++)
+    if (var.sameAs(*((*vars)[i]))) return i;
   return -1;
  }
 

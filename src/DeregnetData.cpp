@@ -32,6 +32,7 @@
 // --------------------------------------------------------------------------
 //
 
+#include <cmath>
 #include <iostream>
 #include <fstream>
 #include <set>
@@ -40,6 +41,7 @@
 #include <utility>
 #include <algorithm>
 #include <functional>
+#include <numeric>
 
 #include <lemon/lgf_reader.h>
 
@@ -73,7 +75,7 @@ void DeregnetData::read_graph(string* pathToLgf) {
         reverse_graph();
 }
 
-void DeregnetData::read_score(string* pathToTsv) {
+void DeregnetData::read_score(string* pathToTsv, bool take_abs) {
     if (!graph) {
         cerr << "Error: call AvgDeregnetData::read_graph() first." << endl;
         exit(INPUT_ERROR);
@@ -82,7 +84,7 @@ void DeregnetData::read_score(string* pathToTsv) {
         cerr << "No score file specified." << endl;
         exit(INPUT_ERROR);
     }
-    map<string, double> score_map;
+    map<string, std::set<double>> score_map;
     try {
         ifstream tsv;
         tsv.open( *pathToTsv );
@@ -90,11 +92,23 @@ void DeregnetData::read_score(string* pathToTsv) {
         double value;
         while ( !tsv.eof() ) {
               tsv >> key >> value;
-              score_map[key] = value;
+              if (take_abs)
+                  value = std::abs(value);
+              if (score_map.find(key) != score_map.end())
+                  score_map[key].insert(value);
+              else
+                  score_map[key] = { value };        
         }
         score = new NodeMap<double>(*graph);
-        for (NodeIt v(*graph); v != INVALID; ++v)
-            (*score)[v] = score_map[(*nodeid)[v]];
+        for (NodeIt v(*graph); v != INVALID; ++v) {
+            std::set<double> score_set = score_map[(*nodeid)[v]];
+            if (score_set.size() == 0)
+                (*score)[v] = 0.0;
+            else
+                (*score)[v] = std::accumulate(score_set.begin(), score_set.end(), 0.0) / score_set.size();
+                
+//            std::cout << (*nodeid)[v] << " : " << (*score)[v] << std::endl;
+        }
         tsv.close();
     }
     catch ( ... ) {

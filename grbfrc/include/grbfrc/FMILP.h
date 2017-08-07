@@ -40,50 +40,16 @@
 
 #include <gurobi_c++.h>
 
+#include <grbfrc/common.h>
+#include <grbfrc/Solver.h>
+
 namespace grbfrc
 {
 
-class CharnesCooper;
-class Dinkelbach;
-class YGGY;
-
-
-enum Algorithm {
-    CCT, /*< Charnes-Cooper transformation */
-    GCC, /*< Generalized Charnes-Cooper transform */
-    DTA, /*< Dinkelbach-type algorithm */
-    OVT  /*< Objective-Variable transform */
-};
-
-// UniSignStatus ===================================================================== //
-enum UniSignStatus
- {
-  maybe = 0,
-  yes = 1,
-  no = -1
- };
-// FMILPObj ======================================================================== //
-struct FMILPObj
- {
-  GRBLinExpr numerator;
-  GRBLinExpr denominator;
-  int sense;
-  UniSignStatus uniSign;
- };
-// FMILPSol ======================================================================== //
-struct FMILPSol
- {
-  double objVal;
-  std::vector<double> varVals;
- };
 // FMILP =========================================================================== //
 class FMILP
  {
 
-    friend class CharnesCooper;
-    friend class Dinkelbach;
-    friend class YGGY;
-    friend class Gloverizer;
 
   private:
 
@@ -91,6 +57,7 @@ class FMILP
     FMILPObj objective;
     FMILPSol* solution = nullptr;
     std::vector<GRBVar*> vars;
+    std::vector<double>* startSol { nullptr };
 
   public:
 
@@ -145,6 +112,10 @@ class FMILP
                    double denominatorCoeff,
                    char type,
                    std::string name = "");
+
+    //
+    void setStartSolution(GRBVar& var, double val);
+
     // get variables of the model ==================================================== //
     GRBVar* getVars();
     // update model (necessary before defining constraints with newly added variables) //
@@ -188,9 +159,15 @@ class FMILP
     // check if denominator has unfirm sign in feasible region ======================= //
     bool checkUnisignance(std::string sign);
     bool isUnisignant();
-
     //
-    void optimize(Algorithm algorithm = Algorithm::GCC);
+    template <typename T = int>
+    void optimize(Algorithm algorithm = Algorithm::GCC, GrbfrcCallback<T>* cb = nullptr,
+                  double* objub = nullptr, double* objlb = nullptr) {
+        baseModel->update();
+        Solver solver(baseModel, &objective, &vars, startSol, &solution);
+        solver.solve(algorithm, cb, objub, objlb);
+    }
+
     double getObjVal();
     double getVal(GRBVar& var);
     // =============================================================================== //
@@ -202,30 +179,30 @@ class FMILP
     //                          Nav. Res. Log. Q, 1962 (9) 3-4 (181-186)               //
     // =============================================================================== //
     // run Charnes-Cooper algorithm // =============================================== //
-    void runCharnesCooper(int time_limit = 1200);
-    void runCharnesCooper(GRBCallback& callback,
-                          int time_limit = 1200);
+    //void runCharnesCooper(int time_limit = 1200);
+    //void runCharnesCooper(GRBCallback& callback,
+                          //int time_limit = 1200);
     // get Charnes-Cooper transform // =============================================== //
-    GRBModel getCharnesCooperTransform();
+    //GRBModel getCharnesCooperTransform();
     // =============================================================================== //
     // Dinkelbach's algorithm                                                          //
     // =============================================================================== //
     // run Dinkelbach's algorithm // ================================================= //
-    void runDinkelbach(double qi = 0.0,
-                       int max_iter = 10,
-                       int time_limit = 1200,
-                       double tol = 0.01,
-                       bool verbose = true,
-                       bool logFile = true,
-                       std::string logFileName = "grbfrc.log");
-    void runDinkelbach(GRBCallback& callback,
+    template <typename T>
+    void runDinkelbach(GrbfrcCallback<T>* callback = nullptr,
                        double qi = 0.0,
                        int max_iter = 10,
                        int time_limit = 1200,
                        double tol = 0.01,
                        bool verbose = true,
                        bool logFile = true,
-                       std::string logFileName = "grbfrc.log"); 
+                       std::string logFileName = "grbfrc.log") {
+        baseModel->update();
+
+
+
+    }
+
     // =============================================================================== //
     // YGGY transformation                                                             //
     // =============================================================================== //
@@ -235,10 +212,24 @@ class FMILP
     // Scheduling Applications, AIChE J., 2013 (59) 11 (4255-4272)                     //
     // =============================================================================== //
     // run YGGY algorithm //
-    void runGeneralizedCharnesCooper(int time_limit = 1200);
-    void runYGGY(GRBCallback callback,
-                 int time_limit = 1200);
-    GRBModel getYGGYTransform();
+    template <typename T>
+    void runGeneralizedCharnesCooper(GrbfrcCallback<T>* cb = nullptr) {
+        baseModel->update();
+
+        Solver solver(this->baseModel,
+                      &this->objective,
+                      &this->vars,
+                      this->startSol,
+                      this->solution);
+        solver.solve(Algorithm::GCC, cb);
+        /*
+        YGGY yggy(this);
+        yggy.run(time_limit, cb);
+        yggy.writeSolution();
+        */
+    }
+
+    //GRBModel getYGGYTransform();
     // =============================================================================== //
     // print solution (intented for small models only!)
     void printSolution();

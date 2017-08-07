@@ -38,16 +38,17 @@
 #include <string>
 #include <vector>
 
-#include <grbfrc/FMILP.h>
+#include <grbfrc/common.h>
+#include <grbfrc/Algorithm.h>
+#include <grbfrc/GrbfrcCallback.h>
 
 namespace grbfrc
 {
 
-class Dinkelbach
- {
+class Dinkelbach : public _Algorithm {
+
   private:
 
-    FMILP* fmip;
     double q_init { 0.0 };
     int max_iter { 30 };
     int time_limit { 3600 };
@@ -56,11 +57,10 @@ class Dinkelbach
 
   public:
 
-    Dinkelbach(FMILP& fmipRef,
-               double qi,
-               int maxit,
-               int maxsec,
-               double tolerance);
+    Dinkelbach(double qi = 0.0,
+               int maxit = 30,
+               int maxsec = 3600,
+               double tolerance = 0.0001);
     // set initial q ================================================================= //
     void set_q_init(double qi);
     // set maximal number of iterations ============================================== //
@@ -70,22 +70,31 @@ class Dinkelbach
     // set tolerance ================================================================= //
     void set_tolerance(double tolerance);
     // run Dinkelbach's algorithm ==================================================== //
-    void run(bool verbose = true,
-             bool logFile = true,
-             std::string logFileName = "grbfrc.log");
-    void run(GRBCallback& callback,
+    template <typename T>
+    void run(GrbfrcCallback<T>* cb = nullptr,
              bool verbose = true,
              bool logFile = true,
-             std::string logFileName = "grbfrc.log"); 
+             std::string logFileName = "grbfrc.log") {
+
+        if (cb) {
+            callback = cb->yield();
+            base_model->setCallback(callback);
+            base_model->update();
+        }
+
+        _run(verbose, logFile, logFileName);
+
+    }
+
+    void _run(bool verbose, bool logFile, std::string logFileName);
+
     // write solution ================================================================ //
-    void writeSolution();
+    virtual void writeSolution(FMILPSol** xsolution) override;
     // get solution ================================================================== //
     FMILPSol getSolution();
 
   private:
 
-    // register solution ============================================================= //
-    void registerSolution(double objVal, FMILP* fmip);
     // messages ====================================================================== //
     void printProblem(int status,
                       int iter);

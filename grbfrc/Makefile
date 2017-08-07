@@ -1,12 +1,12 @@
 CXX = c++
-CXXFLAGS = -std=c++11 -Wall -pedantic -fPIC
+CXXFLAGS = -std=c++11 -Wall -pedantic -fPIC -ggdb3 -pg -fopenmp # -DGRBFRC_OMP
 
-GRB_PATH = /opt/gurobi/7.0.1
+include ../gurobi_version.mak
 
-INCLUDE = -I${GRB_PATH}/include -Iinclude
-LDFLAGS = -L${GRB_PATH}/lib -lgurobi_c++ -lgurobi70
+INCLUDE = -I${GUROBI_HOME}/include -Iinclude
+LDFLAGS = -pg -lomp -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi70
 
-objects = FMILP.o CharnesCooper.o Dinkelbach.o Gloverizer.o YGGY.o
+objects = FMILP.o CharnesCooper.o Dinkelbach.o Gloverizer.o YGGY.o Solver.o Algorithm.o ObjVarTransform.o
 
 all : dirs libgrbfrc.a libgrbfrc.so 
 

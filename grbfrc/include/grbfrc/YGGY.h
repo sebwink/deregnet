@@ -39,7 +39,10 @@
 #include <map>
 
 #include <gurobi_c++.h>
-#include <grbfrc/FMILP.h>
+
+#include <grbfrc/common.h>
+#include <grbfrc/Algorithm.h>
+#include <grbfrc/GrbfrcCallback.h>
 
 
 /*
@@ -88,32 +91,67 @@
 namespace grbfrc
 {
 
-class YGGY
- {
-   private:
+class YGGY : public _Algorithm {
 
-      FMILP* fmip;
+    private:
+
       FMILPSol solution;
-      // GrbFrcCallback* callback ...
-      bool invalid;
-      bool transformed;
+
+      bool invalid { false };
+      bool transformed { false };
+
       GRBModel transformation;
       GRBVar u;                    // u = 1 / (ec*xc + ed*xd + f)
       std::vector<GRBVar*> tx;     // tx ~ (u * xc, xd)
 
    public:
 
+      YGGY(GRBEnv* env);
 
-      YGGY(FMILP* fmipPtr);
       void printInvalidity();
-      int transform();
+
+      template <typename T>
+      int transform(GrbfrcCallback<T>* cb) {
+          // denominator variable u = 1 / (dx + ey + f)
+          double umax = 0.0;
+          if (!getUmax(umax)) return 127;
+          u = transformation.addVar(0.0, umax, 0.0, GRB_CONTINUOUS);
+          // tx ~ (u*xc, xd)
+          std::cout << "Define tx ..." << std::endl;
+          define_tx();
+          std::cout << "Setting Callback ..." << std::endl;
+          if (cb) {
+              callback = cb->yield(tx, vars);
+              transformation.setCallback(callback);
+          }
+
+          // handle more generically
+          transformation.set(GRB_IntParam_LazyConstraints, base_model->get(GRB_IntParam_LazyConstraints));
+
+          transformation.update();
+          do_the_rest(umax);
+          return 0;
+      }
+
+      void do_the_rest(double umax);
+
       GRBModel getTransform();
       void solveTransform();
-      void solveTransform(GRBCallback& callback);
-      void run(int time_limit);
-      void run(GRBCallback& callback, int time_limit);
-      void writeSolution();
-      FMILPSol getSolution();
+
+      template <typename T>
+      void run(GrbfrcCallback<T>* cb = nullptr) {
+          if (invalid)
+              printInvalidity();
+          else {
+              std::cout << "\n=========== solving FMIP via YGGY transform ===========\n\n";
+              if (!transformed) transform(cb);
+              solveTransform();
+              backTransformSolution();
+          }
+      }
+
+      virtual void writeSolution(FMILPSol** xsolution) override;
+      // FMILPSol getSolution();
 
 
    private:

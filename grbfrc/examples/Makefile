@@ -1,6 +1,6 @@
 EX= example1
 
-GRB_HOME = /opt/gurobi/7.0.1
+GRB_HOME = /opt/gurobi/7.0.2
 GRBFRC_HOME = ..
 
 EXAMPLES = example1 example2 example3 example4 example5 example6 \

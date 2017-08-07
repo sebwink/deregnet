@@ -100,6 +100,20 @@ GRBVar& FMILP::addVar(double lowerBound,
   return *(vars.back());
  }
 
+void FMILP::setStartSolution(GRBVar& var, double val) {
+    if (!startSol)
+        startSol = new std::vector<double>(vars.size());
+    else
+        startSol->resize(vars.size());
+    int index { 0 };
+    for (GRBVar* varp : vars) {
+        if (varp->sameAs(var))
+            (*startSol)[index] = val;
+        index++;
+    }
+
+}
+
 GRBVar* FMILP::getVars()
  { return baseModel->getVars(); }
 
@@ -231,17 +245,6 @@ bool FMILP::isUnisignant()
    }
  }
 
-void FMILP::optimize(Algorithm algorithm) {
-    if (algorithm == Algorithm::GCC)
-        this->runGeneralizedCharnesCooper();
-    else if (algorithm == Algorithm::CCT)
-        this->runCharnesCooper();
-    else if (algorithm == Algorithm::DTA)
-        this->runDinkelbach();
-    //else if (algorithm == Algorithm::OVT)
-        //this->runObjVarTransform();
-}
-
 double FMILP::getObjVal() {
     return solution->objVal;
 }
@@ -253,76 +256,45 @@ double FMILP::getVal(GRBVar& var) {
             return (solution->varVals)[index];
         index++;
     }
+    return 0.0; // bad
 }
 
+/*
 void FMILP::runCharnesCooper(int time_limit)
  {
+
   baseModel->update();
   CharnesCooper chaco(*this);
   chaco.run(time_limit);
   chaco.writeSolution();
+
  }
 
 void FMILP::runCharnesCooper(GRBCallback& callback,
                                int time_limit)
  {
+
   baseModel->update();
   CharnesCooper chaco(*this);
   chaco.run(callback, time_limit);
   chaco.writeSolution();
  }
+ */
 
+/*
 GRBModel FMILP::getCharnesCooperTransform()
  {
   CharnesCooper chaco(*this);
   return chaco.getTransform();
  }
 
-void FMILP::runDinkelbach(double qi,
-                            int max_iter,
-                            int time_limit,
-                            double tol,
-                            bool verbose,
-                            bool logFile,
-                            std::string logFileName)
- {
-  baseModel->update();
-  Dinkelbach dinkel(*this, qi, max_iter, time_limit, tol);
-  dinkel.run(verbose, logFile, logFileName);
-  dinkel.writeSolution();
- }
-
-void FMILP::runDinkelbach(GRBCallback& callback,
-                            double qi,
-                            int max_iter,
-                            int time_limit,
-                            double tol,
-                            bool verbose,
-                            bool logFile,
-                            std::string logFileName)
- {
-  baseModel->update();
-  Dinkelbach dinkel(*this, qi, max_iter, time_limit, tol);
-  dinkel.run(callback, verbose, logFile, logFileName);
-  dinkel.writeSolution();
- }
-
-void FMILP::runGeneralizedCharnesCooper(int time_limit) {
-    baseModel->update();
-    YGGY yggy(this);
-    yggy.run(time_limit);
-    yggy.writeSolution();
-}
-
-void FMILP::runYGGY(GRBCallback callback,
-             int time_limit)
- { }
 
 GRBModel FMILP::getYGGYTransform()
  {
   GRBModel model(baseModel->getEnv());
   return model;
  }
+ */
 
 void FMILP::printSolution()
  {

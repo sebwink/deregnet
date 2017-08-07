@@ -26,7 +26,7 @@ int main(void)
 
   std::cout << "---- Solve with generalized Charnes-Cooper transform ----" << std::endl;
 
-  model.runYGGY();
+  model.optimize(grbfrc::Algorithm::GCC);
   model.printSolution();
 
   return 0;

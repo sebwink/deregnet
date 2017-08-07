@@ -24,7 +24,7 @@ int main(void)
   model.setObjDenominator(objDenom);
   model.setObjSense(GRB_MINIMIZE);
 
-  model.runDinkelbach();
+  model.optimize(grbfrc::Algorithm::DTA);
   model.printSolution();  
 
   return 0;

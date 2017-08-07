@@ -1,12 +1,12 @@
 CXX=c++
-CXXFLAGS=-std=c++11 -Wall -ggdb3
+CXXFLAGS=-std=c++11 -Wall -fPIC 
 
 LEMON_VERSION=1.3.1
 LEMON_HOME=/opt/lemon/${LEMON_VERSION}
 
 include gurobi_version.mak
 
-GRBFRC_HOME=grbfrc
+GRBFRC_HOME=./grbfrc
 
 INCLUDE=-Iinclude -I${LEMON_HOME}/include -I${GUROBI_HOME}/include -I${GRBFRC_HOME}/include
 

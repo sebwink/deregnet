@@ -14,14 +14,12 @@ class myCallback: public GRBCallback
     double lastiter;
     double lastnode;
     int numvars;
-    GRBVar* vars;
     std::ofstream* logfile;
 
-    myCallback(int xnumvars, GRBVar* xvars, std::ofstream* xlogfile)
+    myCallback(int xnumvars, std::ofstream* xlogfile)
      {
       lastiter = lastnode = -GRB_INFINITY;
       numvars = xnumvars;
-      vars = xvars;
       logfile = xlogfile;
      }
 
@@ -34,6 +32,7 @@ class myCallback: public GRBCallback
         if (where == GRB_CB_PRESOLVE) 
          {
           // Presolve callback
+             std::cout << "GRB_CB_PRESOLVE" << std::endl;
           int cdels = getIntInfo(GRB_CB_PRE_COLDEL);
           int rdels = getIntInfo(GRB_CB_PRE_ROWDEL);
           if (cdels || rdels) 
@@ -64,6 +63,7 @@ class myCallback: public GRBCallback
         else if (where == GRB_CB_MIP)
          {
           // General MIP callback
+             std::cout << "GRB_CB_MIP" << std::endl;
           double nodecnt = getDoubleInfo(GRB_CB_MIP_NODCNT);
           double objbst = getDoubleInfo(GRB_CB_MIP_OBJBST);
           double objbnd = getDoubleInfo(GRB_CB_MIP_OBJBND);
@@ -79,29 +79,6 @@ class myCallback: public GRBCallback
                       << solcnt << " " << cutcnt << std::endl;
            }
          }
-        else if (where == GRB_CB_MIPSOL)
-         {
-          // MIP solution callback
-          int nodecnt = (int) getDoubleInfo(GRB_CB_MIPSOL_NODCNT);
-          double obj = getDoubleInfo(GRB_CB_MIPSOL_OBJ);
-          int solcnt = getIntInfo(GRB_CB_MIPSOL_SOLCNT);
-          double* x = getSolution(vars, numvars);
-          std::cout << "**** New solution at node " << nodecnt
-                    << ", obj " << obj << ", sol " << solcnt
-                    << ", x[0] = " << x[0] << " ****" << std::endl;
-          delete[] x;
-         }
-        else if (where == GRB_CB_MIPNODE)
-         {
-          // MIP node callback
-          std::cout << "**** New node ****" << std::endl;
-          if (getIntInfo(GRB_CB_MIPNODE_STATUS) == GRB_OPTIMAL)
-           {
-            double* x = getNodeRel(vars, numvars);
-            setSolution(vars, x, numvars);
-            delete[] x;
-           }
-         } 
         else if (where == GRB_CB_MESSAGE) 
          {
           // Message callback
@@ -121,12 +98,32 @@ class myCallback: public GRBCallback
      }
   };
 
+class Callback : public grbfrc::Callback {
+
+    private:
+
+        int numvars;
+        GRBVar* vars;
+        std::ofstream* logfile;
+
+    public:
+
+       Callback(int xnumvars, std::ofstream* xlogfile)
+          : numvars { xnumvars },
+            logfile { xlogfile } { 
+            
+                cbp = new myCallback(xnumvars, xlogfile);
+            } 
+
+};
+
 
 int main()
  {
   // define model as usual
   GRBEnv env;
   FMILP model(env);
+  //GRBModel model(env);
   GRBVar x = model.addVar(0.0, GRB_INFINITY, GRB_CONTINUOUS, "x");
   GRBVar y = model.addVar(0.0, GRB_INFINITY, GRB_CONTINUOUS, "y");
   GRBVar z = model.addVar(0.0, GRB_INFINITY, GRB_CONTINUOUS, "z");
@@ -139,13 +136,17 @@ int main()
   GRBLinExpr objNum { 2*x + y + 3*z + u + v + 6 };
   model.setObjNumerator(objNum);
   GRBLinExpr objDenom { x + 3*z + v + 4 };
+  //model.setObjective( objDenom, GRB_MAXIMIZE);
   model.setObjDenominator(objDenom);
   model.setObjSense(GRB_MAXIMIZE);
   // define callback
-  GRBVar* vars = model.getVars();
   std::ofstream logfile("cb.log");
-  myCallback cb { 5, vars, &logfile };
+  Callback cb { 5, &logfile };
+  grbfrc::GrbfrcCallback<int> callback = grbfrc::GrbfrcCallback<int>(&cb);
   // run Dinkelbach's algorithm with callback
-  model.runDinkelbach(cb);
+  model.optimize(grbfrc::Algorithm::GCC, &callback);
+  //myCallback cb(5, &logfile);
+  //model.setCallback(&cb);
+  //model.optimize();
   model.printSolution();
  }
