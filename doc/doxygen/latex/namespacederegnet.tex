@@ -1,0 +1,433 @@
+\hypertarget{namespacederegnet}{}\section{deregnet Namespace Reference}
+\label{namespacederegnet}\index{deregnet@{deregnet}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classderegnet_1_1AvgdrgntData}{Avgdrgnt\+Data}
+\item 
+class \hyperlink{classderegnet_1_1AvgStartHeuristic}{Avg\+Start\+Heuristic}
+\item 
+class \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic}{Avg\+Suboptimal\+Start\+Heuristic}
+\item 
+class \hyperlink{classderegnet_1_1DeregnetData}{Deregnet\+Data}
+\item 
+class \hyperlink{classderegnet_1_1DeregnetFinder}{Deregnet\+Finder}
+\item 
+class \hyperlink{classderegnet_1_1DeregnetModel}{Deregnet\+Model}
+\item 
+class \hyperlink{classderegnet_1_1DeregnetStartHeuristic}{Deregnet\+Start\+Heuristic}
+\item 
+class \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data}
+\item 
+class \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackNoRoot}{Grbfrc\+Lazy\+Constraint\+Callback\+No\+Root}
+\item 
+class \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot}{Grbfrc\+Lazy\+Constraint\+Callback\+Root}
+\item 
+class \hyperlink{classderegnet_1_1LazyConstraintCallback}{Lazy\+Constraint\+Callback}
+\item 
+class \hyperlink{classderegnet_1_1LazyConstraintCallbackNoRoot}{Lazy\+Constraint\+Callback\+No\+Root}
+\item 
+class \hyperlink{classderegnet_1_1LazyConstraintCallbackRoot}{Lazy\+Constraint\+Callback\+Root}
+\item 
+struct \hyperlink{structderegnet_1_1Solution}{Solution}
+\item 
+class \hyperlink{classderegnet_1_1StartHeuristic}{Start\+Heuristic}
+\item 
+struct \hyperlink{structderegnet_1_1Subgraph}{Subgraph}
+\item 
+class \hyperlink{classderegnet_1_1SuboptimalStartHeuristic}{Suboptimal\+Start\+Heuristic}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{namespacederegnet_ad59156f873b7ab02d384164b900cd874}{Algorithm} = grbfrc\+::\+Algorithm
+\item 
+using \hyperlink{namespacederegnet_a31759ad43b8b9641205bcf69b09f10c5}{F\+M\+I\+LP} = grbfrc\+::\+F\+M\+I\+LP
+\item 
+using \hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} = lemon\+::\+Smart\+Digraph
+\item 
+using \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} = Graph\+::\+Node
+\item 
+using \hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{Node\+It} = Graph\+::\+Node\+It
+\item 
+using \hyperlink{namespacederegnet_a253cef939ea250e4cc0c967cd0117853}{Out\+Arc\+It} = Graph\+::\+Out\+Arc\+It
+\item 
+using \hyperlink{namespacederegnet_aed58be361aeda4ef7a9eaca2731ba830}{In\+Arc\+It} = Graph\+::\+In\+Arc\+It
+\item 
+{\footnotesize template$<$typename Value\+Type $>$ }\\using \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map} = Graph\+::\+Node\+Map$<$ Value\+Type $>$
+\item 
+using \hyperlink{namespacederegnet_a50db1f8fc7c6a954d825d9e1ed9ad302}{Node\+Filter} = \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ bool $>$
+\item 
+using \hyperlink{namespacederegnet_ad1e0ad2af7b91e41fc1d8a15a1da5041}{Induced\+Subgraph} = lemon\+::\+Filter\+Nodes$<$ \hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $>$
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+set$<$ string $>$ \hyperlink{namespacederegnet_aa12afb18c8703a823fee68c5b9a04bca}{split\+\_\+string} (const string \&str, const string \&sep)
+\item 
+void \hyperlink{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba}{register\+\_\+node\+\_\+set} (set$<$ string $>$ $\ast$$\ast$node\+\_\+set, string comma\+\_\+separated\+\_\+list\+\_\+of\+\_\+nodes)
+\item 
+void \hyperlink{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0}{register\+\_\+node\+\_\+set\+\_\+file} (set$<$ string $>$ $\ast$$\ast$node\+\_\+set, string path2file)
+\item 
+bool \hyperlink{namespacederegnet_afefc9088a0ea47e8d8c1225b5de29244}{get\+Node\+By\+Id} (\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$graph, \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ std\+::string $>$ $\ast$nodeid, std\+::string id, \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$node)
+\item 
+void \hyperlink{namespacederegnet_a57ac2e918179ec5c93f20248daf39b04}{write2sif} (\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$graph, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ \&node\+\_\+set, \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ std\+::string $>$ $\ast$nodeid, std\+::string path2file)
+\item 
+std\+::set$<$ std\+::string $>$ \hyperlink{namespacederegnet_ae4879ebf699f46d51e52b95f1e6f79da}{split\+\_\+string} (const std\+::string \&str, const std\+::string \&sep)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespacederegnet_a4358b76b371b698be243476cdabc15ab}{set\+\_\+union} (std\+::set$<$ T $>$ $\ast$$\ast$A, std\+::set$<$ T $>$ B)
+\item 
+void \hyperlink{namespacederegnet_a3ca4926831aa9ca021d1b9230429e8bd}{register\+\_\+node\+\_\+set} (std\+::set$<$ std\+::string $>$ $\ast$$\ast$node\+\_\+set, std\+::string comma\+\_\+separated\+\_\+list\+\_\+of\+\_\+nodes)
+\item 
+void \hyperlink{namespacederegnet_afbda9b78d4072e2058fdd242c4783cf1}{register\+\_\+node\+\_\+set\+\_\+file} (std\+::set$<$ std\+::string $>$ $\ast$$\ast$node\+\_\+set, std\+::string path2file)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{deregnet@{deregnet}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Algorithm}{Algorithm}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+Algorithm} = typedef grbfrc\+::\+Algorithm}\hypertarget{namespacederegnet_ad59156f873b7ab02d384164b900cd874}{}\label{namespacederegnet_ad59156f873b7ab02d384164b900cd874}
+
+
+Definition at line 43 of file Avgdrgnt\+Data.\+h.
+
+\index{deregnet@{deregnet}!F\+M\+I\+LP@{F\+M\+I\+LP}}
+\index{F\+M\+I\+LP@{F\+M\+I\+LP}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{F\+M\+I\+LP}{FMILP}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+F\+M\+I\+LP} = typedef grbfrc\+::\+F\+M\+I\+LP}\hypertarget{namespacederegnet_a31759ad43b8b9641205bcf69b09f10c5}{}\label{namespacederegnet_a31759ad43b8b9641205bcf69b09f10c5}
+
+
+Definition at line 46 of file Deregnet\+Finder.\+h.
+
+\index{deregnet@{deregnet}!Graph@{Graph}}
+\index{Graph@{Graph}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Graph}{Graph}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+Graph} = typedef lemon\+::\+Smart\+Digraph}\hypertarget{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{}\label{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}
+
+
+Definition at line 45 of file usinglemon.\+h.
+
+\index{deregnet@{deregnet}!In\+Arc\+It@{In\+Arc\+It}}
+\index{In\+Arc\+It@{In\+Arc\+It}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{In\+Arc\+It}{InArcIt}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+In\+Arc\+It} = typedef Graph\+::\+In\+Arc\+It}\hypertarget{namespacederegnet_aed58be361aeda4ef7a9eaca2731ba830}{}\label{namespacederegnet_aed58be361aeda4ef7a9eaca2731ba830}
+
+
+Definition at line 52 of file usinglemon.\+h.
+
+\index{deregnet@{deregnet}!Induced\+Subgraph@{Induced\+Subgraph}}
+\index{Induced\+Subgraph@{Induced\+Subgraph}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Induced\+Subgraph}{InducedSubgraph}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+Induced\+Subgraph} = typedef lemon\+::\+Filter\+Nodes$<${\bf Graph}$>$}\hypertarget{namespacederegnet_ad1e0ad2af7b91e41fc1d8a15a1da5041}{}\label{namespacederegnet_ad1e0ad2af7b91e41fc1d8a15a1da5041}
+
+
+Definition at line 59 of file usinglemon.\+h.
+
+\index{deregnet@{deregnet}!Node@{Node}}
+\index{Node@{Node}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Node}{Node}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+Node} = typedef Graph\+::\+Node}\hypertarget{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{}\label{namespacederegnet_a744bad34f2de9856d36715a445f027f3}
+
+
+Definition at line 47 of file usinglemon.\+h.
+
+\index{deregnet@{deregnet}!Node\+Filter@{Node\+Filter}}
+\index{Node\+Filter@{Node\+Filter}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Node\+Filter}{NodeFilter}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+Node\+Filter} = typedef {\bf Node\+Map}$<$bool$>$}\hypertarget{namespacederegnet_a50db1f8fc7c6a954d825d9e1ed9ad302}{}\label{namespacederegnet_a50db1f8fc7c6a954d825d9e1ed9ad302}
+
+
+Definition at line 57 of file usinglemon.\+h.
+
+\index{deregnet@{deregnet}!Node\+It@{Node\+It}}
+\index{Node\+It@{Node\+It}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Node\+It}{NodeIt}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+Node\+It} = typedef Graph\+::\+Node\+It}\hypertarget{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{}\label{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}
+
+
+Definition at line 49 of file usinglemon.\+h.
+
+\index{deregnet@{deregnet}!Node\+Map@{Node\+Map}}
+\index{Node\+Map@{Node\+Map}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Node\+Map}{NodeMap}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\+Type $>$ using {\bf deregnet\+::\+Node\+Map} = typedef Graph\+::\+Node\+Map$<$Value\+Type$>$}\hypertarget{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{}\label{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}
+
+
+Definition at line 55 of file usinglemon.\+h.
+
+\index{deregnet@{deregnet}!Out\+Arc\+It@{Out\+Arc\+It}}
+\index{Out\+Arc\+It@{Out\+Arc\+It}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{Out\+Arc\+It}{OutArcIt}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf deregnet\+::\+Out\+Arc\+It} = typedef Graph\+::\+Out\+Arc\+It}\hypertarget{namespacederegnet_a253cef939ea250e4cc0c967cd0117853}{}\label{namespacederegnet_a253cef939ea250e4cc0c967cd0117853}
+
+
+Definition at line 51 of file usinglemon.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{deregnet@{deregnet}!get\+Node\+By\+Id@{get\+Node\+By\+Id}}
+\index{get\+Node\+By\+Id@{get\+Node\+By\+Id}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{get\+Node\+By\+Id(\+Graph $\ast$graph, Node\+Map$<$ std\+::string $>$ $\ast$nodeid, std\+::string id, Node $\ast$node)}{getNodeById(Graph *graph, NodeMap< std::string > *nodeid, std::string id, Node *node)}}]{\setlength{\rightskip}{0pt plus 5cm}bool deregnet\+::get\+Node\+By\+Id (
+\begin{DoxyParamCaption}
+\item[{{\bf Graph} $\ast$}]{graph, }
+\item[{{\bf Node\+Map}$<$ std\+::string $>$ $\ast$}]{nodeid, }
+\item[{std\+::string}]{id, }
+\item[{{\bf Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_afefc9088a0ea47e8d8c1225b5de29244}{}\label{namespacederegnet_afefc9088a0ea47e8d8c1225b5de29244}
+
+
+Definition at line 124 of file utils.\+cpp.
+
+
+
+References I\+N\+V\+A\+L\+ID.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Data\+::get\+\_\+node\+\_\+set(), deregnet\+::\+Deregnet\+Data\+::get\+\_\+root(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+
+\begin{DoxyCode}
+124                                                                                      \{
+125     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*graph); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v)
+126         \textcolor{keywordflow}{if} ((*nodeid)[v] == \textcolor{keywordtype}{id}) \{
+127             *node = v;
+128             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+129         \}
+130     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+131 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacederegnet_afefc9088a0ea47e8d8c1225b5de29244_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet@{deregnet}!register\+\_\+node\+\_\+set@{register\+\_\+node\+\_\+set}}
+\index{register\+\_\+node\+\_\+set@{register\+\_\+node\+\_\+set}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{register\+\_\+node\+\_\+set(std\+::set$<$ std\+::string $>$ $\ast$$\ast$node\+\_\+set, std\+::string comma\+\_\+separated\+\_\+list\+\_\+of\+\_\+nodes)}{register_node_set(std::set< std::string > **node_set, std::string comma_separated_list_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}void deregnet\+::register\+\_\+node\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ std\+::string $>$ $\ast$$\ast$}]{node\+\_\+set, }
+\item[{std\+::string}]{comma\+\_\+separated\+\_\+list\+\_\+of\+\_\+nodes}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_a3ca4926831aa9ca021d1b9230429e8bd}{}\label{namespacederegnet_a3ca4926831aa9ca021d1b9230429e8bd}
+\index{deregnet@{deregnet}!register\+\_\+node\+\_\+set@{register\+\_\+node\+\_\+set}}
+\index{register\+\_\+node\+\_\+set@{register\+\_\+node\+\_\+set}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{register\+\_\+node\+\_\+set(set$<$ string $>$ $\ast$$\ast$node\+\_\+set, string comma\+\_\+separated\+\_\+list\+\_\+of\+\_\+nodes)}{register_node_set(set< string > **node_set, string comma_separated_list_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}void deregnet\+::register\+\_\+node\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{set$<$ string $>$ $\ast$$\ast$}]{node\+\_\+set, }
+\item[{string}]{comma\+\_\+separated\+\_\+list\+\_\+of\+\_\+nodes}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba}{}\label{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba}
+
+
+Definition at line 64 of file utils.\+cpp.
+
+
+
+References split\+\_\+string().
+
+
+
+Referenced by parse\+\_\+options(), and set\+\_\+union().
+
+
+\begin{DoxyCode}
+65                                                              \{
+66     \textcolor{keywordflow}{if} (!(*node\_set))
+67         *node\_set = \textcolor{keyword}{new} set<string>( \hyperlink{namespacederegnet_aa12afb18c8703a823fee68c5b9a04bca}{split\_string}(comma\_separated\_list\_of\_nodes, \textcolor{stringliteral}{","}) );
+68     \textcolor{keywordflow}{else}
+69         set\_union<string>(node\_set, \hyperlink{namespacederegnet_aa12afb18c8703a823fee68c5b9a04bca}{split\_string}(comma\_separated\_list\_of\_nodes, \textcolor{stringliteral}{","}) );
+70 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet@{deregnet}!register\+\_\+node\+\_\+set\+\_\+file@{register\+\_\+node\+\_\+set\+\_\+file}}
+\index{register\+\_\+node\+\_\+set\+\_\+file@{register\+\_\+node\+\_\+set\+\_\+file}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{register\+\_\+node\+\_\+set\+\_\+file(std\+::set$<$ std\+::string $>$ $\ast$$\ast$node\+\_\+set, std\+::string path2file)}{register_node_set_file(std::set< std::string > **node_set, std::string path2file)}}]{\setlength{\rightskip}{0pt plus 5cm}void deregnet\+::register\+\_\+node\+\_\+set\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ std\+::string $>$ $\ast$$\ast$}]{node\+\_\+set, }
+\item[{std\+::string}]{path2file}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_afbda9b78d4072e2058fdd242c4783cf1}{}\label{namespacederegnet_afbda9b78d4072e2058fdd242c4783cf1}
+\index{deregnet@{deregnet}!register\+\_\+node\+\_\+set\+\_\+file@{register\+\_\+node\+\_\+set\+\_\+file}}
+\index{register\+\_\+node\+\_\+set\+\_\+file@{register\+\_\+node\+\_\+set\+\_\+file}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{register\+\_\+node\+\_\+set\+\_\+file(set$<$ string $>$ $\ast$$\ast$node\+\_\+set, string path2file)}{register_node_set_file(set< string > **node_set, string path2file)}}]{\setlength{\rightskip}{0pt plus 5cm}void deregnet\+::register\+\_\+node\+\_\+set\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{set$<$ string $>$ $\ast$$\ast$}]{node\+\_\+set, }
+\item[{string}]{path2file}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0}{}\label{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0}
+
+
+Definition at line 74 of file utils.\+cpp.
+
+
+
+Referenced by parse\+\_\+options(), and set\+\_\+union().
+
+
+\begin{DoxyCode}
+75                                               \{
+76     set<string> nodes\_in\_file;
+77     \textcolor{keywordflow}{try} \{
+78         ifstream file;
+79         file.open( path2file );
+80         \textcolor{keywordtype}{string} nodeid;
+81         \textcolor{keywordflow}{while} ( !file.eof() ) \{
+82             file >> nodeid;
+83             nodes\_in\_file.insert(nodeid);
+84         \}
+85         file.close();
+86     \}
+87     \textcolor{keywordflow}{catch} ( ... ) \{
+88         cerr << \textcolor{stringliteral}{"Could not read file "} << path2file << endl;
+89     \}
+90     \textcolor{keywordflow}{if} (!(*node\_set))
+91         *node\_set = \textcolor{keyword}{new} set<string>(nodes\_in\_file);
+92     \textcolor{keywordflow}{else}
+93         set\_union<string>(node\_set, nodes\_in\_file);
+94 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet@{deregnet}!set\+\_\+union@{set\+\_\+union}}
+\index{set\+\_\+union@{set\+\_\+union}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{set\+\_\+union(std\+::set$<$ T $>$ $\ast$$\ast$\+A, std\+::set$<$ T $>$ B)}{set_union(std::set< T > **A, std::set< T > B)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void deregnet\+::set\+\_\+union (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ T $>$ $\ast$$\ast$}]{A, }
+\item[{std\+::set$<$ T $>$}]{B}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_a4358b76b371b698be243476cdabc15ab}{}\label{namespacederegnet_a4358b76b371b698be243476cdabc15ab}
+
+
+Definition at line 54 of file utils.\+h.
+
+
+
+References register\+\_\+node\+\_\+set(), and register\+\_\+node\+\_\+set\+\_\+file().
+
+
+\begin{DoxyCode}
+54                                            \{
+55     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} elmt : B) (*A)->insert(elmt);
+56 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacederegnet_a4358b76b371b698be243476cdabc15ab_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet@{deregnet}!split\+\_\+string@{split\+\_\+string}}
+\index{split\+\_\+string@{split\+\_\+string}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{split\+\_\+string(const std\+::string \&str, const std\+::string \&sep)}{split_string(const std::string &str, const std::string &sep)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<$std\+::string$>$ deregnet\+::split\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str, }
+\item[{const std\+::string \&}]{sep}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_ae4879ebf699f46d51e52b95f1e6f79da}{}\label{namespacederegnet_ae4879ebf699f46d51e52b95f1e6f79da}
+\index{deregnet@{deregnet}!split\+\_\+string@{split\+\_\+string}}
+\index{split\+\_\+string@{split\+\_\+string}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{split\+\_\+string(const string \&str, const string \&sep)}{split_string(const string &str, const string &sep)}}]{\setlength{\rightskip}{0pt plus 5cm}set$<$string$>$ deregnet\+::split\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str, }
+\item[{const string \&}]{sep}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_aa12afb18c8703a823fee68c5b9a04bca}{}\label{namespacederegnet_aa12afb18c8703a823fee68c5b9a04bca}
+
+
+Definition at line 49 of file utils.\+cpp.
+
+
+
+Referenced by register\+\_\+node\+\_\+set().
+
+
+\begin{DoxyCode}
+50                                             \{
+51     set<string> split;
+52     string::size\_type start \{ 0 \};
+53     string::size\_type last\_sep \{ 0 \};
+54     \textcolor{keywordflow}{while} (last\_sep != string::npos) \{
+55         last\_sep = str.find\_first\_of(sep, start);
+56         split.insert( str.substr(start, last\_sep - start) );
+57         start = last\_sep + 1;
+58     \}
+59     \textcolor{keywordflow}{return} split;
+60 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacederegnet_aa12afb18c8703a823fee68c5b9a04bca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet@{deregnet}!write2sif@{write2sif}}
+\index{write2sif@{write2sif}!deregnet@{deregnet}}
+\subsubsection[{\texorpdfstring{write2sif(\+Graph $\ast$graph, std\+::set$<$ Node $>$ \&node\+\_\+set, Node\+Map$<$ std\+::string $>$ $\ast$nodeid, std\+::string path2file)}{write2sif(Graph *graph, std::set< Node > &node_set, NodeMap< std::string > *nodeid, std::string path2file)}}]{\setlength{\rightskip}{0pt plus 5cm}void deregnet\+::write2sif (
+\begin{DoxyParamCaption}
+\item[{{\bf Graph} $\ast$}]{graph, }
+\item[{std\+::set$<$ {\bf Node} $>$ \&}]{node\+\_\+set, }
+\item[{{\bf Node\+Map}$<$ std\+::string $>$ $\ast$}]{nodeid, }
+\item[{std\+::string}]{path2file}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacederegnet_a57ac2e918179ec5c93f20248daf39b04}{}\label{namespacederegnet_a57ac2e918179ec5c93f20248daf39b04}
+
+
+Definition at line 135 of file utils.\+cpp.
+
+
+
+References I\+N\+V\+A\+L\+ID.
+
+
+\begin{DoxyCode}
+135                                                                                                       \{
+136     ofstream sif\_file;
+137     sif\_file.open(path2file);
+138     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} v : node\_set)
+139         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_a253cef939ea250e4cc0c967cd0117853}{OutArcIt} a(*graph, v); a != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++a)
+140             \textcolor{keywordflow}{if} (node\_set.find(graph->target(a)) != node\_set.end())
+141                 sif\_file << (*nodeid)[v] << \textcolor{stringliteral}{"\(\backslash\)tpp\(\backslash\)t"} << (*nodeid)[graph->target(a)] << \textcolor{stringliteral}{"\(\backslash\)n"};
+142     sif\_file.close();
+143 \}
+\end{DoxyCode}

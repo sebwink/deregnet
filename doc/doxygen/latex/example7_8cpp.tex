@@ -1,0 +1,98 @@
+\hypertarget{example7_8cpp}{}\section{/home/sebastian/wrk/deregnet/deregnet/grbfrc/examples/example7.cpp File Reference}
+\label{example7_8cpp}\index{/home/sebastian/wrk/deregnet/deregnet/grbfrc/examples/example7.\+cpp@{/home/sebastian/wrk/deregnet/deregnet/grbfrc/examples/example7.\+cpp}}
+{\ttfamily \#include $<$gurobi\+\_\+c++.\+h$>$}\\*
+{\ttfamily \#include $<$grbfrc.\+h$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+Include dependency graph for example7.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{example7_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmyCallback}{my\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{example7_8cpp_abfddaf12e2fb003abc1032d57160f839}{F\+M\+I\+LP} = \hyperlink{classgrbfrc_1_1FMILP}{grbfrc\+::\+F\+M\+I\+LP}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{example7_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{example7.\+cpp@{example7.\+cpp}!F\+M\+I\+LP@{F\+M\+I\+LP}}
+\index{F\+M\+I\+LP@{F\+M\+I\+LP}!example7.\+cpp@{example7.\+cpp}}
+\subsubsection[{\texorpdfstring{F\+M\+I\+LP}{FMILP}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf F\+M\+I\+LP} =  {\bf grbfrc\+::\+F\+M\+I\+LP}}\hypertarget{example7_8cpp_abfddaf12e2fb003abc1032d57160f839}{}\label{example7_8cpp_abfddaf12e2fb003abc1032d57160f839}
+
+
+Definition at line 7 of file example7.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{example7.\+cpp@{example7.\+cpp}!main@{main}}
+\index{main@{main}!example7.\+cpp@{example7.\+cpp}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{example7_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{example7_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 125 of file example7.\+cpp.
+
+
+
+References grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr(), grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Var(), grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Vars(), my\+Callback\+::logfile, grbfrc\+::\+F\+M\+I\+L\+P\+::print\+Solution(), grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Dinkelbach(), grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Denominator(), grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Numerator(), grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Sense(), grbfrc\+::\+F\+M\+I\+L\+P\+::update(), and my\+Callback\+::vars.
+
+
+\begin{DoxyCode}
+126  \{
+127   \textcolor{comment}{// define model as usual}
+128   GRBEnv env;
+129   \hyperlink{classgrbfrc_1_1FMILP}{FMILP} model(env);
+130   GRBVar x = model.addVar(0.0, GRB\_INFINITY, GRB\_CONTINUOUS, \textcolor{stringliteral}{"x"});
+131   GRBVar y = model.addVar(0.0, GRB\_INFINITY, GRB\_CONTINUOUS, \textcolor{stringliteral}{"y"});
+132   GRBVar z = model.addVar(0.0, GRB\_INFINITY, GRB\_CONTINUOUS, \textcolor{stringliteral}{"z"});
+133   GRBVar u = model.addVar(0.0, 1.0, GRB\_BINARY, \textcolor{stringliteral}{"u"});
+134   GRBVar v = model.addVar(0.0, 1.0, GRB\_BINARY, \textcolor{stringliteral}{"v"});
+135   model.update();
+136   model.addConstr( x + 3*y + z <= 10 );
+137   model.addConstr( 3*x + 2*y <= 7 );
+138   model.addConstr( u + v >= 1 );
+139   GRBLinExpr objNum \{ 2*x + y + 3*z + u + v + 6 \};
+140   model.setObjNumerator(objNum);
+141   GRBLinExpr objDenom \{ x + 3*z + v + 4 \};
+142   model.setObjDenominator(objDenom);
+143   model.setObjSense(GRB\_MAXIMIZE);
+144   \textcolor{comment}{// define callback}
+145   GRBVar* vars = model.getVars();
+146   std::ofstream logfile(\textcolor{stringliteral}{"cb.log"});
+147   \hyperlink{classmyCallback}{myCallback} cb \{ 5, vars, &logfile \};
+148   \textcolor{comment}{// run Dinkelbach's algorithm with callback}
+149   model.runDinkelbach(cb);
+150   model.printSolution();
+151  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{example7_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+
+

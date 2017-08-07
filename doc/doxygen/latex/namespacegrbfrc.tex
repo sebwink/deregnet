@@ -1,0 +1,93 @@
+\hypertarget{namespacegrbfrc}{}\section{grbfrc Namespace Reference}
+\label{namespacegrbfrc}\index{grbfrc@{grbfrc}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgrbfrc_1_1CharnesCooper}{Charnes\+Cooper}
+\item 
+class \hyperlink{classgrbfrc_1_1Dinkelbach}{Dinkelbach}
+\item 
+class \hyperlink{classgrbfrc_1_1FMILP}{F\+M\+I\+LP}
+\item 
+struct \hyperlink{structgrbfrc_1_1FMILPObj}{F\+M\+I\+L\+P\+Obj}
+\item 
+struct \hyperlink{structgrbfrc_1_1FMILPSol}{F\+M\+I\+L\+P\+Sol}
+\item 
+class \hyperlink{classgrbfrc_1_1Gloverizer}{Gloverizer}
+\item 
+class \hyperlink{classgrbfrc_1_1ObjVarTransform}{Obj\+Var\+Transform}
+\item 
+class \hyperlink{classgrbfrc_1_1YGGY}{Y\+G\+GY}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3}{Algorithm} \{ \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a7a3dc84f4b5dee22f5ddc0a8708214d5}{C\+CT}, 
+\hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a4cfde7623d2723d84c4552806a8d543c}{G\+CC}, 
+\hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a1f1ced79e9527979a81825b883a12876}{D\+TA}, 
+\hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a9d2be8ea4ca5efafa3d84c86af92b50a}{O\+VT}
+ \}
+\item 
+enum \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0ca}{Uni\+Sign\+Status} \{ \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa72f64e32ca10c102c70c6001ce86cf88}{maybe} = 0, 
+\hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{yes} = 1, 
+\hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa260830aae0582bc79704895c876ea411}{no} = -\/1
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{grbfrc@{grbfrc}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!grbfrc@{grbfrc}}
+\subsubsection[{\texorpdfstring{Algorithm}{Algorithm}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf grbfrc\+::\+Algorithm}}\hypertarget{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3}{}\label{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+CT@{C\+CT}!grbfrc@{grbfrc}}\index{grbfrc@{grbfrc}!C\+CT@{C\+CT}}\item[{\em 
+C\+CT\hypertarget{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a7a3dc84f4b5dee22f5ddc0a8708214d5}{}\label{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a7a3dc84f4b5dee22f5ddc0a8708214d5}
+}]\index{G\+CC@{G\+CC}!grbfrc@{grbfrc}}\index{grbfrc@{grbfrc}!G\+CC@{G\+CC}}\item[{\em 
+G\+CC\hypertarget{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a4cfde7623d2723d84c4552806a8d543c}{}\label{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a4cfde7623d2723d84c4552806a8d543c}
+}]\index{D\+TA@{D\+TA}!grbfrc@{grbfrc}}\index{grbfrc@{grbfrc}!D\+TA@{D\+TA}}\item[{\em 
+D\+TA\hypertarget{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a1f1ced79e9527979a81825b883a12876}{}\label{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a1f1ced79e9527979a81825b883a12876}
+}]\index{O\+VT@{O\+VT}!grbfrc@{grbfrc}}\index{grbfrc@{grbfrc}!O\+VT@{O\+VT}}\item[{\em 
+O\+VT\hypertarget{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a9d2be8ea4ca5efafa3d84c86af92b50a}{}\label{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a9d2be8ea4ca5efafa3d84c86af92b50a}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 51 of file F\+M\+I\+L\+P.\+h.
+
+
+\begin{DoxyCode}
+51                \{
+52     \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a7a3dc84f4b5dee22f5ddc0a8708214d5}{CCT}, \textcolor{comment}{/*< Charnes-Cooper transformation */}
+53     \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a4cfde7623d2723d84c4552806a8d543c}{GCC}, \textcolor{comment}{/*< Generalized Charnes-Cooper transform */}
+54     \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a1f1ced79e9527979a81825b883a12876}{DTA}, \textcolor{comment}{/*< Dinkelbach-type algorithm */}
+55     \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a9d2be8ea4ca5efafa3d84c86af92b50a}{OVT}  \textcolor{comment}{/*< Objective-Variable transform */}
+56 \};
+\end{DoxyCode}
+\index{grbfrc@{grbfrc}!Uni\+Sign\+Status@{Uni\+Sign\+Status}}
+\index{Uni\+Sign\+Status@{Uni\+Sign\+Status}!grbfrc@{grbfrc}}
+\subsubsection[{\texorpdfstring{Uni\+Sign\+Status}{UniSignStatus}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf grbfrc\+::\+Uni\+Sign\+Status}}\hypertarget{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0ca}{}\label{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0ca}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{maybe@{maybe}!grbfrc@{grbfrc}}\index{grbfrc@{grbfrc}!maybe@{maybe}}\item[{\em 
+maybe\hypertarget{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa72f64e32ca10c102c70c6001ce86cf88}{}\label{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa72f64e32ca10c102c70c6001ce86cf88}
+}]\index{yes@{yes}!grbfrc@{grbfrc}}\index{grbfrc@{grbfrc}!yes@{yes}}\item[{\em 
+yes\hypertarget{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{}\label{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}
+}]\index{no@{no}!grbfrc@{grbfrc}}\index{grbfrc@{grbfrc}!no@{no}}\item[{\em 
+no\hypertarget{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa260830aae0582bc79704895c876ea411}{}\label{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa260830aae0582bc79704895c876ea411}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 59 of file F\+M\+I\+L\+P.\+h.
+
+
+\begin{DoxyCode}
+60  \{
+61   \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa72f64e32ca10c102c70c6001ce86cf88}{maybe} = 0,
+62   \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{yes} = 1,
+63   \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa260830aae0582bc79704895c876ea411}{no} = -1
+64  \};
+\end{DoxyCode}

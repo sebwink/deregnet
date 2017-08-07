@@ -1,0 +1,159 @@
+\hypertarget{classderegnet_1_1LazyConstraintCallbackNoRoot}{}\section{deregnet\+:\+:Lazy\+Constraint\+Callback\+No\+Root Class Reference}
+\label{classderegnet_1_1LazyConstraintCallbackNoRoot}\index{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}}
+
+
+{\ttfamily \#include $<$Lazy\+Constraint\+Callback.\+h$>$}
+
+
+
+Inheritance diagram for deregnet\+:\+:Lazy\+Constraint\+Callback\+No\+Root\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classderegnet_1_1LazyConstraintCallbackNoRoot__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for deregnet\+:\+:Lazy\+Constraint\+Callback\+No\+Root\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classderegnet_1_1LazyConstraintCallbackNoRoot__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classderegnet_1_1LazyConstraintCallbackNoRoot_abd4603bff30a09c920cdf67d8e5ba12f}{Lazy\+Constraint\+Callback\+No\+Root} (std\+::map$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, G\+R\+B\+Var $>$ $\ast$xx, std\+::map$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, G\+R\+B\+Var $>$ $\ast$yy, \hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$xgraph, double $\ast$xgap\+\_\+cut)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classderegnet_1_1LazyConstraintCallbackNoRoot_a80686ee58b84bb1c73af6f7eddb50db6}{get\+\_\+solution\+\_\+filter} (\hyperlink{namespacederegnet_a50db1f8fc7c6a954d825d9e1ed9ad302}{Node\+Filter} \&solution\+\_\+filter) override
+\item 
+virtual void \hyperlink{classderegnet_1_1LazyConstraintCallbackNoRoot_a3703cd9ca73c46d70bb90f50bb2e66e5}{set\+\_\+lazy\+\_\+constraint} (const std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ \&component, const std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ \&global\+\_\+parents) override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, G\+R\+B\+Var $>$ $\ast$ \hyperlink{classderegnet_1_1LazyConstraintCallbackNoRoot_aaa32cd3d5b65d1c41174cbc9a120ab64}{y}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 100 of file Lazy\+Constraint\+Callback.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}!Lazy\+Constraint\+Callback\+No\+Root@{Lazy\+Constraint\+Callback\+No\+Root}}
+\index{Lazy\+Constraint\+Callback\+No\+Root@{Lazy\+Constraint\+Callback\+No\+Root}!deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}}
+\subsubsection[{\texorpdfstring{Lazy\+Constraint\+Callback\+No\+Root(std\+::map$<$ Node, G\+R\+B\+Var $>$ $\ast$xx, std\+::map$<$ Node, G\+R\+B\+Var $>$ $\ast$yy, Graph $\ast$xgraph, double $\ast$xgap\+\_\+cut)}{LazyConstraintCallbackNoRoot(std::map< Node, GRBVar > *xx, std::map< Node, GRBVar > *yy, Graph *xgraph, double *xgap_cut)}}]{\setlength{\rightskip}{0pt plus 5cm}deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root\+::\+Lazy\+Constraint\+Callback\+No\+Root (
+\begin{DoxyParamCaption}
+\item[{std\+::map$<$ {\bf Node}, G\+R\+B\+Var $>$ $\ast$}]{xx, }
+\item[{std\+::map$<$ {\bf Node}, G\+R\+B\+Var $>$ $\ast$}]{yy, }
+\item[{{\bf Graph} $\ast$}]{xgraph, }
+\item[{double $\ast$}]{xgap\+\_\+cut}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1LazyConstraintCallbackNoRoot_abd4603bff30a09c920cdf67d8e5ba12f}{}\label{classderegnet_1_1LazyConstraintCallbackNoRoot_abd4603bff30a09c920cdf67d8e5ba12f}
+
+
+Definition at line 178 of file Lazy\+Constraint\+Callback.\+cpp.
+
+
+\begin{DoxyCode}
+182  : \hyperlink{classderegnet_1_1LazyConstraintCallback_ad025c982974ffc3e70677948b9668600}{LazyConstraintCallback}(xx, xgraph, \textcolor{keyword}{nullptr}, \hyperlink{classderegnet_1_1LazyConstraintCallback_a6a139307165523fa944e393e01aeec47}{gap\_cut}),
+183    \hyperlink{classderegnet_1_1LazyConstraintCallbackNoRoot_aaa32cd3d5b65d1c41174cbc9a120ab64}{y} \{ yy \}
+184 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}!get\+\_\+solution\+\_\+filter@{get\+\_\+solution\+\_\+filter}}
+\index{get\+\_\+solution\+\_\+filter@{get\+\_\+solution\+\_\+filter}!deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}}
+\subsubsection[{\texorpdfstring{get\+\_\+solution\+\_\+filter(\+Node\+Filter \&solution\+\_\+filter) override}{get_solution_filter(NodeFilter &solution_filter) override}}]{\setlength{\rightskip}{0pt plus 5cm}void deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root\+::get\+\_\+solution\+\_\+filter (
+\begin{DoxyParamCaption}
+\item[{{\bf Node\+Filter} \&}]{solution\+\_\+filter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classderegnet_1_1LazyConstraintCallbackNoRoot_a80686ee58b84bb1c73af6f7eddb50db6}{}\label{classderegnet_1_1LazyConstraintCallbackNoRoot_a80686ee58b84bb1c73af6f7eddb50db6}
+
+
+Implements \hyperlink{classderegnet_1_1LazyConstraintCallback_aebc9854e98523c99d3f856ff71bb86fb}{deregnet\+::\+Lazy\+Constraint\+Callback}.
+
+
+
+Definition at line 188 of file Lazy\+Constraint\+Callback.\+cpp.
+
+
+
+References deregnet\+::\+Lazy\+Constraint\+Callback\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Lazy\+Constraint\+Callback\+::root, deregnet\+::\+Lazy\+Constraint\+Callback\+::selected\+\_\+nodes, deregnet\+::\+Lazy\+Constraint\+Callback\+::x, and y.
+
+
+\begin{DoxyCode}
+188                                                                                   \{
+189     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1LazyConstraintCallback_af481c9d68dea2dab035e1f2f79cda4d5}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+190         \textcolor{keywordflow}{if} (getSolution((*\hyperlink{classderegnet_1_1LazyConstraintCallback_a48d0e4065232a6dca6e10fe416be755f}{x})[v]) >= 0.98) \{
+191             solution\_filter[v] = \textcolor{keyword}{true};
+192             \hyperlink{classderegnet_1_1LazyConstraintCallback_a5ddc4662e6e5c9f1d191c15edbefaa9b}{selected\_nodes}.push\_back(v);
+193             \textcolor{keywordflow}{if} (getSolution((*\hyperlink{classderegnet_1_1LazyConstraintCallbackNoRoot_aaa32cd3d5b65d1c41174cbc9a120ab64}{y})[v]) >= 0.98)
+194                 \hyperlink{classderegnet_1_1LazyConstraintCallback_aa4df18debaaf3aaace54a48b0c3e56ca}{root} = &\hyperlink{classderegnet_1_1LazyConstraintCallback_a5ddc4662e6e5c9f1d191c15edbefaa9b}{selected\_nodes}.back();
+195         \}
+196         \textcolor{keywordflow}{else}
+197             solution\_filter[v] = \textcolor{keyword}{false};
+198     \}
+199 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}!set\+\_\+lazy\+\_\+constraint@{set\+\_\+lazy\+\_\+constraint}}
+\index{set\+\_\+lazy\+\_\+constraint@{set\+\_\+lazy\+\_\+constraint}!deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}}
+\subsubsection[{\texorpdfstring{set\+\_\+lazy\+\_\+constraint(const std\+::set$<$ Node $>$ \&component, const std\+::set$<$ Node $>$ \&global\+\_\+parents) override}{set_lazy_constraint(const std::set< Node > &component, const std::set< Node > &global_parents) override}}]{\setlength{\rightskip}{0pt plus 5cm}void deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root\+::set\+\_\+lazy\+\_\+constraint (
+\begin{DoxyParamCaption}
+\item[{const std\+::set$<$ {\bf Node} $>$ \&}]{component, }
+\item[{const std\+::set$<$ {\bf Node} $>$ \&}]{global\+\_\+parents}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classderegnet_1_1LazyConstraintCallbackNoRoot_a3703cd9ca73c46d70bb90f50bb2e66e5}{}\label{classderegnet_1_1LazyConstraintCallbackNoRoot_a3703cd9ca73c46d70bb90f50bb2e66e5}
+
+
+Implements \hyperlink{classderegnet_1_1LazyConstraintCallback_a8f6db7da84271afcd2e2169318569558}{deregnet\+::\+Lazy\+Constraint\+Callback}.
+
+
+
+Definition at line 202 of file Lazy\+Constraint\+Callback.\+cpp.
+
+
+\begin{DoxyCode}
+203                                                                                            \{
+204     GRBLinExpr component\_expr;
+205     GRBLinExpr global\_parents\_expr;
+206     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} v : component)                      \textcolor{comment}{// void build\_component\_expr(GRBLinExpr& expr); ...}
+207         component\_expr += (*x)[v] - (*y)[v];
+208     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} v : global\_parents)
+209         global\_parents\_expr += (*x)[v];
+210     GRBLinExpr lazy\_constr\_lhs = component\_expr - global\_parents\_expr;
+211     \textcolor{keywordtype}{int} comp\_size = component.size();
+212     addLazy(lazy\_constr\_lhs <= comp\_size - 1);
+213 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}!y@{y}}
+\index{y@{y}!deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root@{deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root}}
+\subsubsection[{\texorpdfstring{y}{y}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<${\bf Node}, G\+R\+B\+Var$>$$\ast$ deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root\+::y\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1LazyConstraintCallbackNoRoot_aaa32cd3d5b65d1c41174cbc9a120ab64}{}\label{classderegnet_1_1LazyConstraintCallbackNoRoot_aaa32cd3d5b65d1c41174cbc9a120ab64}
+
+
+Definition at line 111 of file Lazy\+Constraint\+Callback.\+h.
+
+
+
+Referenced by get\+\_\+solution\+\_\+filter().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sebastian/wrk/deregnet/deregnet/include/deregnet/\hyperlink{LazyConstraintCallback_8h}{Lazy\+Constraint\+Callback.\+h}\item 
+/home/sebastian/wrk/deregnet/deregnet/src/\hyperlink{LazyConstraintCallback_8cpp}{Lazy\+Constraint\+Callback.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\hypertarget{usinglemon_8h}{}\section{/home/sebastian/wrk/deregnet/deregnet/include/deregnet/usinglemon.h File Reference}
+\label{usinglemon_8h}\index{/home/sebastian/wrk/deregnet/deregnet/include/deregnet/usinglemon.\+h@{/home/sebastian/wrk/deregnet/deregnet/include/deregnet/usinglemon.\+h}}
+{\ttfamily \#include $<$lemon/smart\+\_\+graph.\+h$>$}\\*
+{\ttfamily \#include $<$lemon/adaptors.\+h$>$}\\*
+Include dependency graph for usinglemon.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{usinglemon_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usinglemon_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacederegnet}{deregnet}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{I\+N\+V\+A\+L\+ID}~lemon\+::\+I\+N\+V\+A\+L\+ID
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{deregnet\+::\+Graph} = lemon\+::\+Smart\+Digraph
+\item 
+using \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{deregnet\+::\+Node} = Graph\+::\+Node
+\item 
+using \hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{deregnet\+::\+Node\+It} = Graph\+::\+Node\+It
+\item 
+using \hyperlink{namespacederegnet_a253cef939ea250e4cc0c967cd0117853}{deregnet\+::\+Out\+Arc\+It} = Graph\+::\+Out\+Arc\+It
+\item 
+using \hyperlink{namespacederegnet_aed58be361aeda4ef7a9eaca2731ba830}{deregnet\+::\+In\+Arc\+It} = Graph\+::\+In\+Arc\+It
+\item 
+{\footnotesize template$<$typename Value\+Type $>$ }\\using \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{deregnet\+::\+Node\+Map} = Graph\+::\+Node\+Map$<$ Value\+Type $>$
+\item 
+using \hyperlink{namespacederegnet_a50db1f8fc7c6a954d825d9e1ed9ad302}{deregnet\+::\+Node\+Filter} = Node\+Map$<$ bool $>$
+\item 
+using \hyperlink{namespacederegnet_ad1e0ad2af7b91e41fc1d8a15a1da5041}{deregnet\+::\+Induced\+Subgraph} = lemon\+::\+Filter\+Nodes$<$ Graph $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{usinglemon.\+h@{usinglemon.\+h}!I\+N\+V\+A\+L\+ID@{I\+N\+V\+A\+L\+ID}}
+\index{I\+N\+V\+A\+L\+ID@{I\+N\+V\+A\+L\+ID}!usinglemon.\+h@{usinglemon.\+h}}
+\subsubsection[{\texorpdfstring{I\+N\+V\+A\+L\+ID}{INVALID}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+V\+A\+L\+ID~lemon\+::\+I\+N\+V\+A\+L\+ID}\hypertarget{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{}\label{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}
+
+
+Definition at line 43 of file usinglemon.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Receptor\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Suboptimality\+Constraint(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Terminal\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+Root(), deregnet\+::\+Start\+Heuristic\+::get\+\_\+best\+\_\+root(), deregnet\+::\+Avg\+Start\+Heuristic\+::get\+\_\+best\+\_\+root(), deregnet\+::\+Suboptimal\+Start\+Heuristic\+::get\+\_\+best\+\_\+root(), deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::get\+\_\+best\+\_\+root(), deregnet\+::\+Deregnet\+Start\+Heuristic\+::get\+\_\+next\+\_\+node(), deregnet\+::\+Lazy\+Constraint\+Callback\+::get\+\_\+parents(), deregnet\+::\+Lazy\+Constraint\+Callback\+Root\+::get\+\_\+solution\+\_\+filter(), deregnet\+::\+Lazy\+Constraint\+Callback\+No\+Root\+::get\+\_\+solution\+\_\+filter(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::get\+Current\+Solution(), deregnet\+::get\+Node\+By\+Id(), deregnet\+::\+Deregnet\+Data\+::read\+\_\+score(), deregnet\+::\+Deregnet\+Data\+::reverse\+\_\+graph(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+No\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Start\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve(), and deregnet\+::write2sif().
+
