@@ -6,7 +6,7 @@ LEMON_HOME=/share/opt/x86_64_sl7/lemon
 
 include gurobi_version.mak
 
-GRBFRC_HOME=/home/sebastian/prjcts/deregnet/grbfrc
+GRBFRC_HOME=/home/winkler/prjcts/deregnet/grbfrc
 
 INCLUDE=-Iinclude -I${LEMON_HOME}/include -I${GUROBI_HOME}/include -I${GRBFRC_HOME}/include
 

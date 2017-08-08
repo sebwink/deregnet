@@ -1,4 +1,4 @@
-#!/opt/anaconda/3.5/bin/python
+#!/share/opt/x86_64_sl7/anaconda-python-3.6/bin/python
 
 import os
 import subprocess
@@ -7,6 +7,8 @@ import argparse
 import igraph
 
 import deregnet
+
+from biograph.mapping.gene import HGNCMapper
 
 def define_args(parser):
     parser.add_argument('--absolute-values', default = False, dest = 'abs', type = bool,
@@ -51,6 +53,11 @@ def define_args(parser):
                         help = 'Set --flip-orientation True when you want to flip the orientation. Default: False')
     parser.add_argument('--algorithm', default = 'dta', dest = 'algorithm', type = str, 
                         help = 'Algorithm to use: dta, gcc, ovt.')
+    parser.add_argument('--receptors-file', default=None, dest='receptors', type=str,
+                        help = 'Specify path of file containing the receptor nodes')
+    parser.add_argument('--terminals-file', default=None, dest='terminals', type=str,
+                        help = 'Specify path of file containing the terminal nodes')
+    
 
 def parse_sep(sep):
     if sep == 'tab':
@@ -75,7 +82,7 @@ def main():
                                          args.id_col,
                                          args.score_col,
                                          args.species,
-                                         GeneIdMapper)
+                                         HGNCMapper)
 
     drgnt_arg_dict = {
                     '--graph' : tmp_files.graph,
@@ -89,7 +96,9 @@ def main():
                     '--root' : args.root,
                     '--time-limit' : args.time_limit,
                     '--model-sense' : args.model_sense,
-                    '--algorithm' : args.algorithm
+                    '--algorithm' : args.algorithm,
+                    '--receptors-file' : args.receptors,
+                    '--terminals-file' : args.terminals
                  }
 
     drgnt_args = []
