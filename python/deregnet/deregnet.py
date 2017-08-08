@@ -6,7 +6,6 @@ import numpy as np
 import networkx as nx
 import pandas as pd
 
-
 __tmpdir__ = os.path.join(os.path.expanduser('~'), '.deregnet/tmp')
 
 if not os.path.isdir(__tmpdir__):
@@ -124,7 +123,6 @@ def write_tmp_files(graph,
     tmp_files.write_scores(scores)
     return tmp_files
 
-# work around igraph graphml bug
 def ig_to_nx(ig_graph):
     def series_to_str(series):
         series = [str(elmt) for elmt in series]
@@ -168,7 +166,6 @@ def output2graphml(graph, tmp_files, outdir):
     output = os.path.join(tmp_files.path, 'subgraphs/plain')
     for sif in os.listdir(output):
         root = get_root(os.path.join(output, '..', sif))
-        print(root)
         nodes = parse_sif(os.path.join(output, sif))
         mapped_nodes = graph.vs.select(name_in=nodes)
         subgraph = graph.subgraph(mapped_nodes, "create_from_scratch")
@@ -177,7 +174,6 @@ def output2graphml(graph, tmp_files, outdir):
                 node['score'] = scores.ix[node['name'],1]
             except:
                 node['score'] = 0.0
-            print(node['score'])
             if node['name'] == root:
                 node['root'] = True
             else:
