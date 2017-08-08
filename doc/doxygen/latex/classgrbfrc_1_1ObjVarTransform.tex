@@ -1,0 +1,282 @@
+\hypertarget{classgrbfrc_1_1ObjVarTransform}{}\section{grbfrc\+:\+:Obj\+Var\+Transform Class Reference}
+\label{classgrbfrc_1_1ObjVarTransform}\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+
+
+{\ttfamily \#include $<$Obj\+Var\+Transform.\+h$>$}
+
+
+
+Collaboration diagram for grbfrc\+:\+:Obj\+Var\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classgrbfrc_1_1ObjVarTransform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgrbfrc_1_1ObjVarTransform_a15bc0df158294029b1a47cbd61f876c2}{Y\+G\+GY} (\hyperlink{classgrbfrc_1_1FMILP}{F\+M\+I\+LP} $\ast$fmip\+Ptr, double $\ast$objub=nullptr, double $\ast$objlb=nullptr)
+\item 
+void \hyperlink{classgrbfrc_1_1ObjVarTransform_ac335360e5552b0ab4310af36ec3b1569}{print\+Invalidity} ()
+\item 
+int \hyperlink{classgrbfrc_1_1ObjVarTransform_a34378e1e49b4cd057a4e388699a83ee8}{transform} ()
+\item 
+G\+R\+B\+Model \hyperlink{classgrbfrc_1_1ObjVarTransform_a81790f33a25f3daed9a002fcb0d7bf80}{get\+Transform} ()
+\item 
+void \hyperlink{classgrbfrc_1_1ObjVarTransform_a23e5d676c837eff9f952299f19944f7d}{solve\+Transform} ()
+\item 
+void \hyperlink{classgrbfrc_1_1ObjVarTransform_a94fa0bf9fc9193617ba4468fbb14f07d}{run} (int time\+\_\+limit)
+\item 
+void \hyperlink{classgrbfrc_1_1ObjVarTransform_a6af64131ae2f937e1db87187c8d824eb}{write\+Solution} ()
+\item 
+\hyperlink{structgrbfrc_1_1FMILPSol}{F\+M\+I\+L\+P\+Sol} \hyperlink{classgrbfrc_1_1ObjVarTransform_ab517bedf3c236382e114231502ff948a}{get\+Solution} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classgrbfrc_1_1ObjVarTransform_abf329f8d35f975917bd5b0934dd08f0c}{back\+Transform\+Solution} ()
+\item 
+int \hyperlink{classgrbfrc_1_1ObjVarTransform_a7133fe02b0c46d105ec60b35fccb6d94}{get\+Index} (G\+R\+B\+Var \&var)
+\item 
+void \hyperlink{classgrbfrc_1_1ObjVarTransform_a13b170b85ba3412e2938951e13f040ad}{define\+U\+Constr} ()
+\item 
+bool \hyperlink{classgrbfrc_1_1ObjVarTransform_a10a106d7b3f65bd188ebe560cc1b54f7}{get\+U\+Max} ()
+\item 
+bool \hyperlink{classgrbfrc_1_1ObjVarTransform_a98c148839783950b0d9d2366737ff4e2}{get\+U\+Min} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgrbfrc_1_1FMILP}{F\+M\+I\+LP} $\ast$ \hyperlink{classgrbfrc_1_1ObjVarTransform_a963e106d0bff9cca9e7589a573df03e7}{fmip}
+\item 
+\hyperlink{structgrbfrc_1_1FMILPSol}{F\+M\+I\+L\+P\+Sol} \hyperlink{classgrbfrc_1_1ObjVarTransform_a9b0edd0806a1ad567dc0ea75b815a6d0}{solution}
+\item 
+bool \hyperlink{classgrbfrc_1_1ObjVarTransform_a4b4e95ad27dfd7b02b041725196e0be8}{invalid}
+\item 
+bool \hyperlink{classgrbfrc_1_1ObjVarTransform_aa6f061234636a40a30c039119aeb58e3}{transformed}
+\item 
+G\+R\+B\+Model \hyperlink{classgrbfrc_1_1ObjVarTransform_a97ea0a63c0b947d4dbdd417e543f88c2}{transformation}
+\item 
+G\+R\+B\+Var \hyperlink{classgrbfrc_1_1ObjVarTransform_a611963103bbe1da24e2a505dcb766b34}{u}
+\item 
+double $\ast$ \hyperlink{classgrbfrc_1_1ObjVarTransform_a1295b4a0d4772f72e7acb3a7cf03184c}{umax}
+\item 
+double $\ast$ \hyperlink{classgrbfrc_1_1ObjVarTransform_a802dc63945284b97ea3b2da08b29f0b1}{umin}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 45 of file Obj\+Var\+Transform.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!back\+Transform\+Solution@{back\+Transform\+Solution}}
+\index{back\+Transform\+Solution@{back\+Transform\+Solution}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{back\+Transform\+Solution()}{backTransformSolution()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Obj\+Var\+Transform\+::back\+Transform\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_abf329f8d35f975917bd5b0934dd08f0c}{}\label{classgrbfrc_1_1ObjVarTransform_abf329f8d35f975917bd5b0934dd08f0c}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!define\+U\+Constr@{define\+U\+Constr}}
+\index{define\+U\+Constr@{define\+U\+Constr}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{define\+U\+Constr()}{defineUConstr()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Obj\+Var\+Transform\+::define\+U\+Constr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a13b170b85ba3412e2938951e13f040ad}{}\label{classgrbfrc_1_1ObjVarTransform_a13b170b85ba3412e2938951e13f040ad}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!get\+Index@{get\+Index}}
+\index{get\+Index@{get\+Index}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{get\+Index(\+G\+R\+B\+Var \&var)}{getIndex(GRBVar &var)}}]{\setlength{\rightskip}{0pt plus 5cm}int grbfrc\+::\+Obj\+Var\+Transform\+::get\+Index (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Var \&}]{var}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a7133fe02b0c46d105ec60b35fccb6d94}{}\label{classgrbfrc_1_1ObjVarTransform_a7133fe02b0c46d105ec60b35fccb6d94}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!get\+Solution@{get\+Solution}}
+\index{get\+Solution@{get\+Solution}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{get\+Solution()}{getSolution()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+L\+P\+Sol} grbfrc\+::\+Obj\+Var\+Transform\+::get\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_ab517bedf3c236382e114231502ff948a}{}\label{classgrbfrc_1_1ObjVarTransform_ab517bedf3c236382e114231502ff948a}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!get\+Transform@{get\+Transform}}
+\index{get\+Transform@{get\+Transform}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{get\+Transform()}{getTransform()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model grbfrc\+::\+Obj\+Var\+Transform\+::get\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_a81790f33a25f3daed9a002fcb0d7bf80}{}\label{classgrbfrc_1_1ObjVarTransform_a81790f33a25f3daed9a002fcb0d7bf80}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!get\+U\+Max@{get\+U\+Max}}
+\index{get\+U\+Max@{get\+U\+Max}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{get\+U\+Max()}{getUMax()}}]{\setlength{\rightskip}{0pt plus 5cm}bool grbfrc\+::\+Obj\+Var\+Transform\+::get\+U\+Max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a10a106d7b3f65bd188ebe560cc1b54f7}{}\label{classgrbfrc_1_1ObjVarTransform_a10a106d7b3f65bd188ebe560cc1b54f7}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!get\+U\+Min@{get\+U\+Min}}
+\index{get\+U\+Min@{get\+U\+Min}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{get\+U\+Min()}{getUMin()}}]{\setlength{\rightskip}{0pt plus 5cm}bool grbfrc\+::\+Obj\+Var\+Transform\+::get\+U\+Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a98c148839783950b0d9d2366737ff4e2}{}\label{classgrbfrc_1_1ObjVarTransform_a98c148839783950b0d9d2366737ff4e2}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!print\+Invalidity@{print\+Invalidity}}
+\index{print\+Invalidity@{print\+Invalidity}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{print\+Invalidity()}{printInvalidity()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Obj\+Var\+Transform\+::print\+Invalidity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_ac335360e5552b0ab4310af36ec3b1569}{}\label{classgrbfrc_1_1ObjVarTransform_ac335360e5552b0ab4310af36ec3b1569}
+
+
+Definition at line 19 of file Obj\+Var\+Transform.\+cpp.
+
+
+\begin{DoxyCode}
+19                                       \{
+20    \textcolor{comment}{// if (no umax available) "no umax"}
+21    \textcolor{comment}{// if (no umin available) "no umin"}
+22    \textcolor{comment}{// else if (continuous vars in denominator) "continuous variables in denominator"}
+23 \}
+\end{DoxyCode}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!run@{run}}
+\index{run@{run}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{run(int time\+\_\+limit)}{run(int time_limit)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Obj\+Var\+Transform\+::run (
+\begin{DoxyParamCaption}
+\item[{int}]{time\+\_\+limit}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_a94fa0bf9fc9193617ba4468fbb14f07d}{}\label{classgrbfrc_1_1ObjVarTransform_a94fa0bf9fc9193617ba4468fbb14f07d}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!solve\+Transform@{solve\+Transform}}
+\index{solve\+Transform@{solve\+Transform}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{solve\+Transform()}{solveTransform()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Obj\+Var\+Transform\+::solve\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_a23e5d676c837eff9f952299f19944f7d}{}\label{classgrbfrc_1_1ObjVarTransform_a23e5d676c837eff9f952299f19944f7d}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!transform@{transform}}
+\index{transform@{transform}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{transform()}{transform()}}]{\setlength{\rightskip}{0pt plus 5cm}int grbfrc\+::\+Obj\+Var\+Transform\+::transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_a34378e1e49b4cd057a4e388699a83ee8}{}\label{classgrbfrc_1_1ObjVarTransform_a34378e1e49b4cd057a4e388699a83ee8}
+
+
+Definition at line 25 of file Obj\+Var\+Transform.\+cpp.
+
+
+
+References grbfrc\+::\+Gloverizer\+::gloverize(), and grbfrc\+::\+Gloverizer\+::u.
+
+
+\begin{DoxyCode}
+25                                \{
+26     \textcolor{comment}{// objective variable u = (ax + by + c) / (dx + ey + f)}
+27     \textcolor{keywordflow}{if} (!getUmax()) \textcolor{keywordflow}{return} 127;
+28     \textcolor{keywordflow}{if} (!getUmin()) \textcolor{keywordflow}{return} 128;
+29     \hyperlink{classgrbfrc_1_1ObjVarTransform_a611963103bbe1da24e2a505dcb766b34}{u} = \hyperlink{classgrbfrc_1_1ObjVarTransform_a97ea0a63c0b947d4dbdd417e543f88c2}{transformation}.addVar(\hyperlink{classgrbfrc_1_1ObjVarTransform_a802dc63945284b97ea3b2da08b29f0b1}{umin}, \hyperlink{classgrbfrc_1_1ObjVarTransform_a1295b4a0d4772f72e7acb3a7cf03184c}{umax}, 0.0, GRB\_CONTINUOUS);
+30     \hyperlink{classgrbfrc_1_1ObjVarTransform_a97ea0a63c0b947d4dbdd417e543f88c2}{transformation}.update();
+31     \hyperlink{classgrbfrc_1_1ObjVarTransform_a13b170b85ba3412e2938951e13f040ad}{defineUConstr}();
+32     \hyperlink{classgrbfrc_1_1ObjVarTransform_a97ea0a63c0b947d4dbdd417e543f88c2}{transformation}.update();
+33     Gloverizer gloverizer(&\hyperlink{classgrbfrc_1_1ObjVarTransform_a97ea0a63c0b947d4dbdd417e543f88c2}{transformation}, &\hyperlink{classgrbfrc_1_1ObjVarTransform_a611963103bbe1da24e2a505dcb766b34}{u}, \hyperlink{classgrbfrc_1_1ObjVarTransform_a1295b4a0d4772f72e7acb3a7cf03184c}{umax});
+34     gloverizer.gloverize();
+35     \textcolor{keywordflow}{return} 0;
+36 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1ObjVarTransform_a34378e1e49b4cd057a4e388699a83ee8_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!write\+Solution@{write\+Solution}}
+\index{write\+Solution@{write\+Solution}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{write\+Solution()}{writeSolution()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Obj\+Var\+Transform\+::write\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_a6af64131ae2f937e1db87187c8d824eb}{}\label{classgrbfrc_1_1ObjVarTransform_a6af64131ae2f937e1db87187c8d824eb}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!Y\+G\+GY@{Y\+G\+GY}}
+\index{Y\+G\+GY@{Y\+G\+GY}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{Y\+G\+G\+Y(\+F\+M\+I\+L\+P $\ast$fmip\+Ptr, double $\ast$objub=nullptr, double $\ast$objlb=nullptr)}{YGGY(FMILP *fmipPtr, double *objub=nullptr, double *objlb=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}grbfrc\+::\+Obj\+Var\+Transform\+::\+Y\+G\+GY (
+\begin{DoxyParamCaption}
+\item[{{\bf F\+M\+I\+LP} $\ast$}]{fmip\+Ptr, }
+\item[{double $\ast$}]{objub = {\ttfamily nullptr}, }
+\item[{double $\ast$}]{objlb = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1ObjVarTransform_a15bc0df158294029b1a47cbd61f876c2}{}\label{classgrbfrc_1_1ObjVarTransform_a15bc0df158294029b1a47cbd61f876c2}
+
+
+\subsection{Member Data Documentation}
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!fmip@{fmip}}
+\index{fmip@{fmip}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{fmip}{fmip}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+LP}$\ast$ grbfrc\+::\+Obj\+Var\+Transform\+::fmip\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a963e106d0bff9cca9e7589a573df03e7}{}\label{classgrbfrc_1_1ObjVarTransform_a963e106d0bff9cca9e7589a573df03e7}
+
+
+Definition at line 49 of file Obj\+Var\+Transform.\+h.
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!invalid@{invalid}}
+\index{invalid@{invalid}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{invalid}{invalid}}]{\setlength{\rightskip}{0pt plus 5cm}bool grbfrc\+::\+Obj\+Var\+Transform\+::invalid\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a4b4e95ad27dfd7b02b041725196e0be8}{}\label{classgrbfrc_1_1ObjVarTransform_a4b4e95ad27dfd7b02b041725196e0be8}
+
+
+Definition at line 52 of file Obj\+Var\+Transform.\+h.
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!solution@{solution}}
+\index{solution@{solution}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{solution}{solution}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+L\+P\+Sol} grbfrc\+::\+Obj\+Var\+Transform\+::solution\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a9b0edd0806a1ad567dc0ea75b815a6d0}{}\label{classgrbfrc_1_1ObjVarTransform_a9b0edd0806a1ad567dc0ea75b815a6d0}
+
+
+Definition at line 50 of file Obj\+Var\+Transform.\+h.
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!transformation@{transformation}}
+\index{transformation@{transformation}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{transformation}{transformation}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model grbfrc\+::\+Obj\+Var\+Transform\+::transformation\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a97ea0a63c0b947d4dbdd417e543f88c2}{}\label{classgrbfrc_1_1ObjVarTransform_a97ea0a63c0b947d4dbdd417e543f88c2}
+
+
+Definition at line 54 of file Obj\+Var\+Transform.\+h.
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!transformed@{transformed}}
+\index{transformed@{transformed}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{transformed}{transformed}}]{\setlength{\rightskip}{0pt plus 5cm}bool grbfrc\+::\+Obj\+Var\+Transform\+::transformed\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_aa6f061234636a40a30c039119aeb58e3}{}\label{classgrbfrc_1_1ObjVarTransform_aa6f061234636a40a30c039119aeb58e3}
+
+
+Definition at line 53 of file Obj\+Var\+Transform.\+h.
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!u@{u}}
+\index{u@{u}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{u}{u}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Var grbfrc\+::\+Obj\+Var\+Transform\+::u\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a611963103bbe1da24e2a505dcb766b34}{}\label{classgrbfrc_1_1ObjVarTransform_a611963103bbe1da24e2a505dcb766b34}
+
+
+Definition at line 55 of file Obj\+Var\+Transform.\+h.
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!umax@{umax}}
+\index{umax@{umax}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{umax}{umax}}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ grbfrc\+::\+Obj\+Var\+Transform\+::umax\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a1295b4a0d4772f72e7acb3a7cf03184c}{}\label{classgrbfrc_1_1ObjVarTransform_a1295b4a0d4772f72e7acb3a7cf03184c}
+
+
+Definition at line 56 of file Obj\+Var\+Transform.\+h.
+
+\index{grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}!umin@{umin}}
+\index{umin@{umin}!grbfrc\+::\+Obj\+Var\+Transform@{grbfrc\+::\+Obj\+Var\+Transform}}
+\subsubsection[{\texorpdfstring{umin}{umin}}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ grbfrc\+::\+Obj\+Var\+Transform\+::umin\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1ObjVarTransform_a802dc63945284b97ea3b2da08b29f0b1}{}\label{classgrbfrc_1_1ObjVarTransform_a802dc63945284b97ea3b2da08b29f0b1}
+
+
+Definition at line 57 of file Obj\+Var\+Transform.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sebastian/wrk/deregnet/deregnet/grbfrc/include/grbfrc/\hyperlink{ObjVarTransform_8h}{Obj\+Var\+Transform.\+h}\item 
+/home/sebastian/wrk/deregnet/deregnet/grbfrc/src/\hyperlink{ObjVarTransform_8cpp}{Obj\+Var\+Transform.\+cpp}\end{DoxyCompactItemize}

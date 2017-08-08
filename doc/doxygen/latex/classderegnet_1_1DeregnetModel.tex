@@ -1,0 +1,1436 @@
+\hypertarget{classderegnet_1_1DeregnetModel}{}\section{deregnet\+:\+:Deregnet\+Model$<$ Model, Data $>$ Class Template Reference}
+\label{classderegnet_1_1DeregnetModel}\index{deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$@{deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$}}
+
+
+{\ttfamily \#include $<$Deregnet\+Model.\+h$>$}
+
+
+
+Collaboration diagram for deregnet\+:\+:Deregnet\+Model$<$ Model, Data $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classderegnet_1_1DeregnetModel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classderegnet_1_1DeregnetModel_a218830114b0bd75965152c5c63a5f4d6}{Deregnet\+Model} (\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $\ast$\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data})
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_ae4dd4e4ae3e796c03d4390eeac1e0a96}{create\+Variables} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_ae246d2286429b83b32e727da987a5817}{add\+Base\+Constraints} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a6970e42a055fa0dc871d6991ac0feab4}{add\+Include\+Constraints} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a3b47185dcea73dbcad67d115c55ae762}{add\+Exclude\+Constraints} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a6d8c05a79c11aefcf05bcdbf9f17aacb}{add\+Receptor\+Constraints} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_aee4a0d40a616c0e6e8787dcca08637aa}{add\+Terminal\+Constraints} ()
+\item 
+bool \hyperlink{classderegnet_1_1DeregnetModel_af8ca1da09f5a7ebe517fa62249d0b1ab}{solve} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$start\+\_\+solution)
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a7cac8e5496b44f04ecf7ff9e450e9a6e}{add\+Suboptimality\+Constraint} (std\+::set$<$ std\+::string $>$ \&nodes\+\_\+so\+\_\+far)
+\item 
+\hyperlink{structderegnet_1_1Solution}{Solution} \hyperlink{classderegnet_1_1DeregnetModel_a51e1c5476b2425a143908609e75d098a}{get\+Current\+Solution} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a37d1e4b40f89d3f198196863a8c1d321}{add\+Suboptimality\+Constraint} (std\+::set$<$ std\+::string $>$ \&nodes\+\_\+so\+\_\+far)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a266c4a7f90a2884512f98ddcca6750bc}{add\+Suboptimality\+Constraint} (std\+::set$<$ std\+::string $>$ \&nodes\+\_\+so\+\_\+far)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classderegnet_1_1DeregnetModel_a92c977d9b126c69653401fc45d43879c}{solve} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$start\+\_\+solution)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classderegnet_1_1DeregnetModel_a04b8bcc3b59819f10917a6cbb4dea487}{solve} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$start\+\_\+solution)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+R\+B\+Env \hyperlink{classderegnet_1_1DeregnetModel_accd03120356b80b083041b4eef003e5b}{env}
+\item 
+Model \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model} \{ Model(\hyperlink{classderegnet_1_1DeregnetModel_accd03120356b80b083041b4eef003e5b}{env}) \}
+\item 
+std\+::map$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, G\+R\+B\+Var $>$ \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}
+\item 
+std\+::map$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, G\+R\+B\+Var $>$ $\ast$ \hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y} \{ nullptr \}
+\item 
+\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $\ast$ \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}
+\item 
+\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$ \hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}
+\item 
+\hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ double $>$ $\ast$ \hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score}
+\item 
+\hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ std\+::string $>$ $\ast$ \hyperlink{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}{nodeid}
+\item 
+\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$ \hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_ad985c03d46183b994dd6f6c037d1c53f}{create\+Variables\+Root} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_ad3700418efd7be24df0d3a16a991a559}{create\+Variables\+No\+Root} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a65d0e8cac88cc6735659ab41610fd1c9}{add\+Base\+Constraints\+Root} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a808586dd1edcbadefc04de1c378a6cfa}{add\+Base\+Constraints\+No\+Root} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a7a76da5bb39123d94c57ba2c940cb1c2}{set\+Start\+Solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$start\+\_\+solution)
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a502657403c84cbdc66ad845c56dee339}{setup\+\_\+solve} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$start\+\_\+solution)
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a19332c492a33a1e488ed916947d38c08}{set\+Callback\+Root} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a6cecefeafaf782843c91e0c55e768a94}{set\+Callback\+No\+Root} ()
+\item 
+void \hyperlink{classderegnet_1_1DeregnetModel_a8b4f6be55c874c039c8180c1288f0319}{\+\_\+get\+Current\+Solution} (std\+::string $\ast$rootid, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$nodes, \hyperlink{structderegnet_1_1Solution}{Solution} $\ast$solution)
+\item 
+G\+R\+B\+Lin\+Expr \hyperlink{classderegnet_1_1DeregnetModel_ab6093e7558a653c17145e8e08a96938f}{set\+Base\+Constraints\+Root\+Common} ()
+\item 
+G\+R\+B\+Lin\+Expr \hyperlink{classderegnet_1_1DeregnetModel_a5f6cc627b7a800f3d9d77f5f859d241c}{set\+Base\+Constraints\+No\+Root\+Common} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a377a4df1d8935fdb5628775df077a029}{add\+Base\+Constraints\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_ad46d039147e10e7afb08a9ede2fc8a69}{add\+Base\+Constraints\+No\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a075dee6e8c4cb899b485dc3627e78791}{add\+Base\+Constraints\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a54f3e682bcd27dab4046ac879f69ff91}{add\+Base\+Constraints\+No\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_aef6cc7f88d0590243d12b9c473ca3ee9}{create\+Variables\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a338d7fe9e37a2dc4e4341b10bdce991f}{create\+Variables\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_aefb0e4b6a3fc7ff0dd6beffc9d826f1d}{create\+Variables\+No\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_ab0653fa747e69cd61b0721440dc57552}{create\+Variables\+No\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_afc649e6b52c4e993b17bad158799fdb3}{set\+Start\+Solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$start\+\_\+solution)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_acb0700e2cc2af475bc99255027e4757a}{set\+Start\+Solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$start\+\_\+solution)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a8f10c7fabb80842cd27eb10d31289bbb}{set\+Callback\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a1d62ef7fd28d6316d549712bf9214e54}{set\+Callback\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a2aacf97af86f2c0f62b9fe4857443400}{set\+Callback\+No\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a53356bbd16a9a2bfb51fcdf35da9cc7a}{set\+Callback\+No\+Root} ()
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_ae031344d7bef7965ecbff1af301cc32b}{\+\_\+get\+Current\+Solution} (std\+::string $\ast$rootid, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$nodes, \hyperlink{structderegnet_1_1Solution}{Solution} $\ast$solution)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetModel_a38d98fe20d193181c7c5d0655f3c0808}{\+\_\+get\+Current\+Solution} (std\+::string $\ast$rootid, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$nodes, \hyperlink{structderegnet_1_1Solution}{Solution} $\ast$solution)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Model, typename Data$>$\\*
+class deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$}
+
+
+
+Definition at line 62 of file Deregnet\+Model.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!Deregnet\+Model@{Deregnet\+Model}}
+\index{Deregnet\+Model@{Deregnet\+Model}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{Deregnet\+Model(\+Data $\ast$data)}{DeregnetModel(Data *data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data$>$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::{\bf Deregnet\+Model} (
+\begin{DoxyParamCaption}
+\item[{{\bf Data} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_a218830114b0bd75965152c5c63a5f4d6}{}\label{classderegnet_1_1DeregnetModel_a218830114b0bd75965152c5c63a5f4d6}
+
+
+Definition at line 109 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::nodeid, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::score.
+
+
+\begin{DoxyCode}
+110  : data \{ xdata \},
+111    \hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph} \{ xdata->graph \},
+112    \hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score} \{ xdata->score \},
+113    \hyperlink{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}{nodeid} \{ xdata->nodeid \},
+114    \hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root} \{ xdata->root \}
+115 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!\+\_\+get\+Current\+Solution@{\+\_\+get\+Current\+Solution}}
+\index{\+\_\+get\+Current\+Solution@{\+\_\+get\+Current\+Solution}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{\+\_\+get\+Current\+Solution(std\+::string $\ast$rootid, std\+::set$<$ Node $>$ $\ast$nodes, Solution $\ast$solution)}{_getCurrentSolution(std::string *rootid, std::set< Node > *nodes, Solution *solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::\+\_\+get\+Current\+Solution (
+\begin{DoxyParamCaption}
+\item[{std\+::string $\ast$}]{rootid, }
+\item[{std\+::set$<$ {\bf Node} $>$ $\ast$}]{nodes, }
+\item[{{\bf Solution} $\ast$}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a8b4f6be55c874c039c8180c1288f0319}{}\label{classderegnet_1_1DeregnetModel_a8b4f6be55c874c039c8180c1288f0319}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::get\+Current\+Solution().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a8b4f6be55c874c039c8180c1288f0319_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!\+\_\+get\+Current\+Solution@{\+\_\+get\+Current\+Solution}}
+\index{\+\_\+get\+Current\+Solution@{\+\_\+get\+Current\+Solution}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{\+\_\+get\+Current\+Solution(std\+::string $\ast$rootid, std\+::set$<$ Node $>$ $\ast$nodes, Solution $\ast$solution)}{_getCurrentSolution(std::string *rootid, std::set< Node > *nodes, Solution *solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::\+\_\+get\+Current\+Solution (
+\begin{DoxyParamCaption}
+\item[{std\+::string $\ast$}]{rootid, }
+\item[{std\+::set$<$ {\bf Node} $>$ $\ast$}]{nodes, }
+\item[{{\bf Solution} $\ast$}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_ae031344d7bef7965ecbff1af301cc32b}{}\label{classderegnet_1_1DeregnetModel_ae031344d7bef7965ecbff1af301cc32b}
+
+
+Definition at line 426 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::nodeid, deregnet\+::\+Solution\+::nodes, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, deregnet\+::\+Solution\+::total\+\_\+score, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+426                                                                                                            
+                  \{
+427     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+428         \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v].\textcolor{keyword}{get}(GRB\_DoubleAttr\_X) >= 0.98) \{
+429             nodes->insert(v);
+430             (solution->nodes).insert((*\hyperlink{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}{nodeid})[v]);
+431             \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}) \{
+432                 \textcolor{keywordflow}{if} ((*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v].get(GRB\_DoubleAttr\_X) >= 0.98)
+433                     *rootid = (*nodeid)[v];
+434             \}
+435             \textcolor{keywordflow}{else}
+436                 *rootid = (*nodeid)[*\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}];
+437         \}
+438     \}
+439     solution->total\_score = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.get(GRB\_DoubleAttr\_ObjVal);
+440 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!\+\_\+get\+Current\+Solution@{\+\_\+get\+Current\+Solution}}
+\index{\+\_\+get\+Current\+Solution@{\+\_\+get\+Current\+Solution}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{\+\_\+get\+Current\+Solution(std\+::string $\ast$rootid, std\+::set$<$ Node $>$ $\ast$nodes, Solution $\ast$solution)}{_getCurrentSolution(std::string *rootid, std::set< Node > *nodes, Solution *solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::\+\_\+get\+Current\+Solution (
+\begin{DoxyParamCaption}
+\item[{std\+::string $\ast$}]{rootid, }
+\item[{std\+::set$<$ {\bf Node} $>$ $\ast$}]{nodes, }
+\item[{{\bf Solution} $\ast$}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a38d98fe20d193181c7c5d0655f3c0808}{}\label{classderegnet_1_1DeregnetModel_a38d98fe20d193181c7c5d0655f3c0808}
+
+
+Definition at line 443 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::nodeid, deregnet\+::\+Solution\+::nodes, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, deregnet\+::\+Solution\+::total\+\_\+score, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+443                                                                                                            
+                        \{
+444     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+445         \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.getVal(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v]) >= 0.98) \{
+446             nodes->insert(v);
+447             (solution->nodes).insert((*\hyperlink{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}{nodeid})[v]);
+448             \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}) \{
+449                 \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.getVal((*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v]) >= 0.98)
+450                     *rootid = (*nodeid)[v];
+451             \}
+452             \textcolor{keywordflow}{else}
+453                 *rootid = (*nodeid)[*\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}];
+454         \}
+455     \}
+456     solution->total\_score = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.getObjVal() * nodes->size();
+457 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Base\+Constraints@{add\+Base\+Constraints}}
+\index{add\+Base\+Constraints@{add\+Base\+Constraints}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Base\+Constraints()}{addBaseConstraints()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Base\+Constraints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_ae246d2286429b83b32e727da987a5817}{}\label{classderegnet_1_1DeregnetModel_ae246d2286429b83b32e727da987a5817}
+
+
+Definition at line 127 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root.
+
+
+\begin{DoxyCode}
+127                                                     \{
+128     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root})
+129         \hyperlink{classderegnet_1_1DeregnetModel_a65d0e8cac88cc6735659ab41610fd1c9}{addBaseConstraintsRoot}();
+130     \textcolor{keywordflow}{else}
+131         \hyperlink{classderegnet_1_1DeregnetModel_a808586dd1edcbadefc04de1c378a6cfa}{addBaseConstraintsNoRoot}();
+132     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.update();
+133 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_ae246d2286429b83b32e727da987a5817_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Base\+Constraints\+No\+Root@{add\+Base\+Constraints\+No\+Root}}
+\index{add\+Base\+Constraints\+No\+Root@{add\+Base\+Constraints\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Base\+Constraints\+No\+Root()}{addBaseConstraintsNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Base\+Constraints\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a808586dd1edcbadefc04de1c378a6cfa}{}\label{classderegnet_1_1DeregnetModel_a808586dd1edcbadefc04de1c378a6cfa}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a808586dd1edcbadefc04de1c378a6cfa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Base\+Constraints\+No\+Root@{add\+Base\+Constraints\+No\+Root}}
+\index{add\+Base\+Constraints\+No\+Root@{add\+Base\+Constraints\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Base\+Constraints\+No\+Root()}{addBaseConstraintsNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::add\+Base\+Constraints\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_ad46d039147e10e7afb08a9ede2fc8a69}{}\label{classderegnet_1_1DeregnetModel_ad46d039147e10e7afb08a9ede2fc8a69}
+
+
+Definition at line 174 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+No\+Root\+Common().
+
+
+\begin{DoxyCode}
+174                                                                   \{
+175     GRBLinExpr subgraph\_size\_lhs \{ \hyperlink{classderegnet_1_1DeregnetModel_a5f6cc627b7a800f3d9d77f5f859d241c}{setBaseConstraintsNoRootCommon}() \};
+176     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(subgraph\_size\_lhs == \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->size);
+177 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_ad46d039147e10e7afb08a9ede2fc8a69_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Base\+Constraints\+No\+Root@{add\+Base\+Constraints\+No\+Root}}
+\index{add\+Base\+Constraints\+No\+Root@{add\+Base\+Constraints\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Base\+Constraints\+No\+Root()}{addBaseConstraintsNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::add\+Base\+Constraints\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a54f3e682bcd27dab4046ac879f69ff91}{}\label{classderegnet_1_1DeregnetModel_a54f3e682bcd27dab4046ac879f69ff91}
+
+
+Definition at line 187 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+size, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+No\+Root\+Common().
+
+
+\begin{DoxyCode}
+187                                                                         \{
+188     GRBLinExpr subgraph\_size\_lhs \{ \hyperlink{classderegnet_1_1DeregnetModel_a5f6cc627b7a800f3d9d77f5f859d241c}{setBaseConstraintsNoRootCommon}() \};
+189     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}{min\_size} <= subgraph\_size\_lhs);
+190     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(subgraph\_size\_lhs <= data->max\_size);
+191 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a54f3e682bcd27dab4046ac879f69ff91_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Base\+Constraints\+Root@{add\+Base\+Constraints\+Root}}
+\index{add\+Base\+Constraints\+Root@{add\+Base\+Constraints\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Base\+Constraints\+Root()}{addBaseConstraintsRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Base\+Constraints\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a65d0e8cac88cc6735659ab41610fd1c9}{}\label{classderegnet_1_1DeregnetModel_a65d0e8cac88cc6735659ab41610fd1c9}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a65d0e8cac88cc6735659ab41610fd1c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Base\+Constraints\+Root@{add\+Base\+Constraints\+Root}}
+\index{add\+Base\+Constraints\+Root@{add\+Base\+Constraints\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Base\+Constraints\+Root()}{addBaseConstraintsRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::add\+Base\+Constraints\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a377a4df1d8935fdb5628775df077a029}{}\label{classderegnet_1_1DeregnetModel_a377a4df1d8935fdb5628775df077a029}
+
+
+Definition at line 168 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+Root\+Common().
+
+
+\begin{DoxyCode}
+168                                                                 \{
+169     GRBLinExpr subgraph\_size\_lhs \{ \hyperlink{classderegnet_1_1DeregnetModel_ab6093e7558a653c17145e8e08a96938f}{setBaseConstraintsRootCommon}() \};
+170     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(subgraph\_size\_lhs == \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->size);
+171 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a377a4df1d8935fdb5628775df077a029_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Base\+Constraints\+Root@{add\+Base\+Constraints\+Root}}
+\index{add\+Base\+Constraints\+Root@{add\+Base\+Constraints\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Base\+Constraints\+Root()}{addBaseConstraintsRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::add\+Base\+Constraints\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a075dee6e8c4cb899b485dc3627e78791}{}\label{classderegnet_1_1DeregnetModel_a075dee6e8c4cb899b485dc3627e78791}
+
+
+Definition at line 180 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+size, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+Root\+Common().
+
+
+\begin{DoxyCode}
+180                                                                       \{
+181     GRBLinExpr subgraph\_size\_lhs \{ \hyperlink{classderegnet_1_1DeregnetModel_ab6093e7558a653c17145e8e08a96938f}{setBaseConstraintsRootCommon}() \};
+182     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}{min\_size} <= subgraph\_size\_lhs);
+183     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(subgraph\_size\_lhs <= data->max\_size);
+184 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a075dee6e8c4cb899b485dc3627e78791_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Exclude\+Constraints@{add\+Exclude\+Constraints}}
+\index{add\+Exclude\+Constraints@{add\+Exclude\+Constraints}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Exclude\+Constraints()}{addExcludeConstraints()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Exclude\+Constraints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_a3b47185dcea73dbcad67d115c55ae762}{}\label{classderegnet_1_1DeregnetModel_a3b47185dcea73dbcad67d115c55ae762}
+
+
+Definition at line 201 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::exclude, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+201                                                        \{
+202     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} v : *(\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a8e4398e6ece11ef87767914c6f2c304d}{exclude}))
+203         \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] == 0);
+204     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.update();
+205 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Include\+Constraints@{add\+Include\+Constraints}}
+\index{add\+Include\+Constraints@{add\+Include\+Constraints}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Include\+Constraints()}{addIncludeConstraints()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Include\+Constraints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_a6970e42a055fa0dc871d6991ac0feab4}{}\label{classderegnet_1_1DeregnetModel_a6970e42a055fa0dc871d6991ac0feab4}
+
+
+Definition at line 194 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::include, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+194                                                        \{
+195     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} v : *(\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a438d16e60be5d119d174aa039f070ab2}{include}))
+196         \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] == 1);
+197     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.update();
+198 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Receptor\+Constraints@{add\+Receptor\+Constraints}}
+\index{add\+Receptor\+Constraints@{add\+Receptor\+Constraints}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Receptor\+Constraints()}{addReceptorConstraints()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Receptor\+Constraints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_a6d8c05a79c11aefcf05bcdbf9f17aacb}{}\label{classderegnet_1_1DeregnetModel_a6d8c05a79c11aefcf05bcdbf9f17aacb}
+
+
+Definition at line 208 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Data\+::receptors, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+208                                                         \{
+209     \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}) \{
+210         std::set<Node>* receptors \{ \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors} \};
+211         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v)
+212             \textcolor{keywordflow}{if} (receptors->find(v) == receptors->end())
+213                 \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr((*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v] == 0);
+214     \}
+215     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.update();
+216 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Suboptimality\+Constraint@{add\+Suboptimality\+Constraint}}
+\index{add\+Suboptimality\+Constraint@{add\+Suboptimality\+Constraint}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Suboptimality\+Constraint(std\+::set$<$ std\+::string $>$ \&nodes\+\_\+so\+\_\+far)}{addSuboptimalityConstraint(std::set< std::string > &nodes_so_far)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Suboptimality\+Constraint (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ std\+::string $>$ \&}]{nodes\+\_\+so\+\_\+far}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_a7cac8e5496b44f04ecf7ff9e450e9a6e}{}\label{classderegnet_1_1DeregnetModel_a7cac8e5496b44f04ecf7ff9e450e9a6e}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Suboptimality\+Constraint@{add\+Suboptimality\+Constraint}}
+\index{add\+Suboptimality\+Constraint@{add\+Suboptimality\+Constraint}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Suboptimality\+Constraint(std\+::set$<$ std\+::string $>$ \&nodes\+\_\+so\+\_\+far)}{addSuboptimalityConstraint(std::set< std::string > &nodes_so_far)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::add\+Suboptimality\+Constraint (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ std\+::string $>$ \&}]{nodes\+\_\+so\+\_\+far}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classderegnet_1_1DeregnetModel_a37d1e4b40f89d3f198196863a8c1d321}{}\label{classderegnet_1_1DeregnetModel_a37d1e4b40f89d3f198196863a8c1d321}
+
+
+Definition at line 308 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::nodeid, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+308                                                                                                    \{
+309     GRBLinExpr nodes\_so\_far\_expr;
+310     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+311         \textcolor{keywordflow}{if} (nodes\_so\_far.find((*\hyperlink{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}{nodeid})[v]) != nodes\_so\_far.end())
+312             nodes\_so\_far\_expr += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v];
+313     \}
+314     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(nodes\_so\_far\_expr <= data->max\_overlap * \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->size);
+315 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Suboptimality\+Constraint@{add\+Suboptimality\+Constraint}}
+\index{add\+Suboptimality\+Constraint@{add\+Suboptimality\+Constraint}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Suboptimality\+Constraint(std\+::set$<$ std\+::string $>$ \&nodes\+\_\+so\+\_\+far)}{addSuboptimalityConstraint(std::set< std::string > &nodes_so_far)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::add\+Suboptimality\+Constraint (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ std\+::string $>$ \&}]{nodes\+\_\+so\+\_\+far}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classderegnet_1_1DeregnetModel_a266c4a7f90a2884512f98ddcca6750bc}{}\label{classderegnet_1_1DeregnetModel_a266c4a7f90a2884512f98ddcca6750bc}
+
+
+Definition at line 318 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::nodeid, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+318                                                                                                          \{
+319     GRBLinExpr nodes\_so\_far\_expr;
+320     GRBLinExpr size\_expr;
+321     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+322         size\_expr += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v];
+323         \textcolor{keywordflow}{if} (nodes\_so\_far.find((*\hyperlink{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}{nodeid})[v]) != nodes\_so\_far.end())
+324             nodes\_so\_far\_expr += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v];
+325     \}
+326     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(nodes\_so\_far\_expr <= data->max\_overlap * size\_expr);
+327 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!add\+Terminal\+Constraints@{add\+Terminal\+Constraints}}
+\index{add\+Terminal\+Constraints@{add\+Terminal\+Constraints}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{add\+Terminal\+Constraints()}{addTerminalConstraints()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::add\+Terminal\+Constraints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_aee4a0d40a616c0e6e8787dcca08637aa}{}\label{classderegnet_1_1DeregnetModel_aee4a0d40a616c0e6e8787dcca08637aa}
+
+
+Definition at line 219 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Data\+::terminals, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+219                                                         \{ \textcolor{comment}{// consider using complement of terminals ...}
+220     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+221         std::set<Node>* terminals \{ \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a1fe559c6056cd411647f836849e4b0da}{terminals} \};
+222         \textcolor{keywordflow}{if} (terminals->find(v) == terminals->end()) \{
+223             GRBLinExpr out\_neighbor\_expr;
+224             \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_a253cef939ea250e4cc0c967cd0117853}{OutArcIt} a(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}, v); a != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++a)
+225                 out\_neighbor\_expr += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}->target(a)];
+226             \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] - out\_neighbor\_expr <= 0);
+227         \}
+228     \}
+229     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.update();
+230 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!create\+Variables@{create\+Variables}}
+\index{create\+Variables@{create\+Variables}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{create\+Variables()}{createVariables()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::create\+Variables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_ae4dd4e4ae3e796c03d4390eeac1e0a96}{}\label{classderegnet_1_1DeregnetModel_ae4dd4e4ae3e796c03d4390eeac1e0a96}
+
+
+Definition at line 118 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root.
+
+
+\begin{DoxyCode}
+118                                                  \{
+119     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root})
+120         \hyperlink{classderegnet_1_1DeregnetModel_ad985c03d46183b994dd6f6c037d1c53f}{createVariablesRoot}();
+121     \textcolor{keywordflow}{else}
+122         \hyperlink{classderegnet_1_1DeregnetModel_ad3700418efd7be24df0d3a16a991a559}{createVariablesNoRoot}();
+123     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.update();
+124 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_ae4dd4e4ae3e796c03d4390eeac1e0a96_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!create\+Variables\+No\+Root@{create\+Variables\+No\+Root}}
+\index{create\+Variables\+No\+Root@{create\+Variables\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{create\+Variables\+No\+Root()}{createVariablesNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::create\+Variables\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_ad3700418efd7be24df0d3a16a991a559}{}\label{classderegnet_1_1DeregnetModel_ad3700418efd7be24df0d3a16a991a559}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_ad3700418efd7be24df0d3a16a991a559_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!create\+Variables\+No\+Root@{create\+Variables\+No\+Root}}
+\index{create\+Variables\+No\+Root@{create\+Variables\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{create\+Variables\+No\+Root()}{createVariablesNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::create\+Variables\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_aefb0e4b6a3fc7ff0dd6beffc9d826f1d}{}\label{classderegnet_1_1DeregnetModel_aefb0e4b6a3fc7ff0dd6beffc9d826f1d}
+
+
+Definition at line 290 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::score, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+290                                                                \{
+291     \hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y} = \textcolor{keyword}{new} std::map<Node, GRBVar>;
+292     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+293         \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addVar(0.0, 1.0, (*\hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score})[v], GRB\_BINARY);
+294         (*y)[v] = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addVar(0.0, 1.0, 0.0, GRB\_BINARY);
+295     \}
+296 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!create\+Variables\+No\+Root@{create\+Variables\+No\+Root}}
+\index{create\+Variables\+No\+Root@{create\+Variables\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{create\+Variables\+No\+Root()}{createVariablesNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::create\+Variables\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_ab0653fa747e69cd61b0721440dc57552}{}\label{classderegnet_1_1DeregnetModel_ab0653fa747e69cd61b0721440dc57552}
+
+
+Definition at line 299 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::score, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+299                                                                      \{
+300     \hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y} = \textcolor{keyword}{new} std::map<Node, GRBVar>;
+301     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+302         \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addVar(0.0, 1.0, (*\hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score})[v], 1.0, GRB\_BINARY);
+303         (*y)[v] = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addVar(0.0, 1.0, 0.0, 0.0, GRB\_BINARY);
+304     \}
+305 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!create\+Variables\+Root@{create\+Variables\+Root}}
+\index{create\+Variables\+Root@{create\+Variables\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{create\+Variables\+Root()}{createVariablesRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::create\+Variables\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_ad985c03d46183b994dd6f6c037d1c53f}{}\label{classderegnet_1_1DeregnetModel_ad985c03d46183b994dd6f6c037d1c53f}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_ad985c03d46183b994dd6f6c037d1c53f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!create\+Variables\+Root@{create\+Variables\+Root}}
+\index{create\+Variables\+Root@{create\+Variables\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{create\+Variables\+Root()}{createVariablesRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::create\+Variables\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_aef6cc7f88d0590243d12b9c473ca3ee9}{}\label{classderegnet_1_1DeregnetModel_aef6cc7f88d0590243d12b9c473ca3ee9}
+
+
+Definition at line 278 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::score, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+278                                                              \{
+279     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v)
+280         \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addVar(0.0, 1.0, (*\hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score})[v], GRB\_BINARY);
+281 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!create\+Variables\+Root@{create\+Variables\+Root}}
+\index{create\+Variables\+Root@{create\+Variables\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{create\+Variables\+Root()}{createVariablesRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::create\+Variables\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a338d7fe9e37a2dc4e4341b10bdce991f}{}\label{classderegnet_1_1DeregnetModel_a338d7fe9e37a2dc4e4341b10bdce991f}
+
+
+Definition at line 284 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::score, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+284                                                                    \{
+285     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v)
+286         \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addVar(0.0, 1.0, (*\hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score})[v], 1.0, GRB\_BINARY);
+287 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!get\+Current\+Solution@{get\+Current\+Solution}}
+\index{get\+Current\+Solution@{get\+Current\+Solution}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{get\+Current\+Solution()}{getCurrentSolution()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ {\bf Solution} {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::get\+Current\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_a51e1c5476b2425a143908609e75d098a}{}\label{classderegnet_1_1DeregnetModel_a51e1c5476b2425a143908609e75d098a}
+
+
+Definition at line 256 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Solution\+::avg\+\_\+score, deregnet\+::\+Solution\+::edgelist, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Solution\+::nodes, deregnet\+::\+Solution\+::rootid, and deregnet\+::\+Solution\+::total\+\_\+score.
+
+
+\begin{DoxyCode}
+256                                                         \{
+257     Solution solution;
+258     std::set<Node> nodes;
+259     \textcolor{keywordtype}{string} rootid;
+260     \hyperlink{classderegnet_1_1DeregnetModel_a8b4f6be55c874c039c8180c1288f0319}{\_getCurrentSolution}(&rootid, &nodes, &solution);
+261     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} v : nodes) \{
+262         std::string source = (*nodeid)[v];
+263         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_a253cef939ea250e4cc0c967cd0117853}{OutArcIt} a(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}, v); a != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++a) \{
+264             std::string target \{ (*nodeid)[\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}->target(a)] \};
+265             \textcolor{keywordflow}{if} (solution.nodes.find(target) != solution.nodes.end())
+266                 solution.edgelist.insert( std::make\_pair(source, target));
+267         \}
+268     \}
+269     solution.rootid = rootid;
+270     solution.avg\_score = solution.total\_score / solution.nodes.size();
+271     \textcolor{keywordflow}{return} solution;
+272 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a51e1c5476b2425a143908609e75d098a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Base\+Constraints\+No\+Root\+Common@{set\+Base\+Constraints\+No\+Root\+Common}}
+\index{set\+Base\+Constraints\+No\+Root\+Common@{set\+Base\+Constraints\+No\+Root\+Common}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Base\+Constraints\+No\+Root\+Common()}{setBaseConstraintsNoRootCommon()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ G\+R\+B\+Lin\+Expr {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::set\+Base\+Constraints\+No\+Root\+Common (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a5f6cc627b7a800f3d9d77f5f859d241c}{}\label{classderegnet_1_1DeregnetModel_a5f6cc627b7a800f3d9d77f5f859d241c}
+
+
+Definition at line 151 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+No\+Root().
+
+
+\begin{DoxyCode}
+151                                                                       \{
+152     GRBLinExpr subgraph\_size\_lhs;
+153     GRBLinExpr exactly\_one\_root\_lhs;
+154     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+155         \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr((*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v] <= \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v]);
+156         subgraph\_size\_lhs += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v];
+157         exactly\_one\_root\_lhs += (*y)[v];
+158         GRBLinExpr parent\_sum;
+159         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_aed58be361aeda4ef7a9eaca2731ba830}{InArcIt} a(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph},v); a != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++a)
+160             parent\_sum += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}->source(a)];
+161         \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] - (*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v] - parent\_sum <= 0);
+162     \}
+163     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(exactly\_one\_root\_lhs == 1);
+164     \textcolor{keywordflow}{return} subgraph\_size\_lhs;
+165 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a5f6cc627b7a800f3d9d77f5f859d241c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Base\+Constraints\+Root\+Common@{set\+Base\+Constraints\+Root\+Common}}
+\index{set\+Base\+Constraints\+Root\+Common@{set\+Base\+Constraints\+Root\+Common}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Base\+Constraints\+Root\+Common()}{setBaseConstraintsRootCommon()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ G\+R\+B\+Lin\+Expr {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::set\+Base\+Constraints\+Root\+Common (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_ab6093e7558a653c17145e8e08a96938f}{}\label{classderegnet_1_1DeregnetModel_ab6093e7558a653c17145e8e08a96938f}
+
+
+Definition at line 136 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+Root().
+
+
+\begin{DoxyCode}
+136                                                                     \{
+137     GRBLinExpr subgraph\_size\_lhs;
+138     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+139         subgraph\_size\_lhs += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v];
+140         GRBLinExpr parent\_sum;
+141         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_aed58be361aeda4ef7a9eaca2731ba830}{InArcIt} a(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph},v); a != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++a)
+142             parent\_sum += \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}->source(a)];
+143         \textcolor{keywordflow}{if} (v != *\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root})
+144             \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v] - parent\_sum <= 0);
+145     \}
+146     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.addConstr(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[*\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}] == 1);
+147     \textcolor{keywordflow}{return} subgraph\_size\_lhs;
+148 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_ab6093e7558a653c17145e8e08a96938f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Callback\+No\+Root@{set\+Callback\+No\+Root}}
+\index{set\+Callback\+No\+Root@{set\+Callback\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Callback\+No\+Root()}{setCallbackNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::set\+Callback\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a6cecefeafaf782843c91e0c55e768a94}{}\label{classderegnet_1_1DeregnetModel_a6cecefeafaf782843c91e0c55e768a94}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a6cecefeafaf782843c91e0c55e768a94_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Callback\+No\+Root@{set\+Callback\+No\+Root}}
+\index{set\+Callback\+No\+Root@{set\+Callback\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Callback\+No\+Root()}{setCallbackNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::set\+Callback\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a2aacf97af86f2c0f62b9fe4857443400}{}\label{classderegnet_1_1DeregnetModel_a2aacf97af86f2c0f62b9fe4857443400}
+
+
+Definition at line 372 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::gap\+\_\+cut, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+372                                                            \{
+373     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.setCallback( \textcolor{keyword}{new} LazyConstraintCallbackNoRoot(&\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}, \hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y}, \hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}, 
+      \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3637c87366454adc152487fc2f5cfede}{gap\_cut}) );
+374 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Callback\+No\+Root@{set\+Callback\+No\+Root}}
+\index{set\+Callback\+No\+Root@{set\+Callback\+No\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Callback\+No\+Root()}{setCallbackNoRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::set\+Callback\+No\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a53356bbd16a9a2bfb51fcdf35da9cc7a}{}\label{classderegnet_1_1DeregnetModel_a53356bbd16a9a2bfb51fcdf35da9cc7a}
+
+
+Definition at line 377 of file Deregnet\+Model.\+h.
+
+
+\begin{DoxyCode}
+377                                                                  \{
+378 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Callback\+Root@{set\+Callback\+Root}}
+\index{set\+Callback\+Root@{set\+Callback\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Callback\+Root()}{setCallbackRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::set\+Callback\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a19332c492a33a1e488ed916947d38c08}{}\label{classderegnet_1_1DeregnetModel_a19332c492a33a1e488ed916947d38c08}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a19332c492a33a1e488ed916947d38c08_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Callback\+Root@{set\+Callback\+Root}}
+\index{set\+Callback\+Root@{set\+Callback\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Callback\+Root()}{setCallbackRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::set\+Callback\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a8f10c7fabb80842cd27eb10d31289bbb}{}\label{classderegnet_1_1DeregnetModel_a8f10c7fabb80842cd27eb10d31289bbb}
+
+
+Definition at line 363 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::gap\+\_\+cut, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x.
+
+
+\begin{DoxyCode}
+363                                                          \{
+364     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.setCallback( \textcolor{keyword}{new} LazyConstraintCallbackRoot(&\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}, \hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}, \hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}, 
+      \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3637c87366454adc152487fc2f5cfede}{gap\_cut}) );
+365 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Callback\+Root@{set\+Callback\+Root}}
+\index{set\+Callback\+Root@{set\+Callback\+Root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Callback\+Root()}{setCallbackRoot()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::set\+Callback\+Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a1d62ef7fd28d6316d549712bf9214e54}{}\label{classderegnet_1_1DeregnetModel_a1d62ef7fd28d6316d549712bf9214e54}
+
+
+Definition at line 368 of file Deregnet\+Model.\+h.
+
+
+\begin{DoxyCode}
+368                                                                \{
+369 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Start\+Solution@{set\+Start\+Solution}}
+\index{set\+Start\+Solution@{set\+Start\+Solution}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Start\+Solution(std\+::pair$<$ Node, std\+::set$<$ Node $>$$>$ $\ast$start\+\_\+solution)}{setStartSolution(std::pair< Node, std::set< Node >> *start_solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::set\+Start\+Solution (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ {\bf Node}, std\+::set$<$ {\bf Node} $>$$>$ $\ast$}]{start\+\_\+solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a7a76da5bb39123d94c57ba2c940cb1c2}{}\label{classderegnet_1_1DeregnetModel_a7a76da5bb39123d94c57ba2c940cb1c2}
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve().
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a7a76da5bb39123d94c57ba2c940cb1c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Start\+Solution@{set\+Start\+Solution}}
+\index{set\+Start\+Solution@{set\+Start\+Solution}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Start\+Solution(std\+::pair$<$ Node, std\+::set$<$ Node $>$$>$ $\ast$start\+\_\+solution)}{setStartSolution(std::pair< Node, std::set< Node >> *start_solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::set\+Start\+Solution (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ {\bf Node}, std\+::set$<$ {\bf Node} $>$$>$ $\ast$}]{start\+\_\+solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_afc649e6b52c4e993b17bad158799fdb3}{}\label{classderegnet_1_1DeregnetModel_afc649e6b52c4e993b17bad158799fdb3}
+
+
+Definition at line 330 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+330                                                                                                      \{
+331     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+332         \textcolor{keywordflow}{if} ((start\_solution->second).find(v) != (start\_solution->second).end())
+333             \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v].\textcolor{keyword}{set}(GRB\_DoubleAttr\_Start, 1.0);
+334         \textcolor{keywordflow}{else}
+335             \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v].set(GRB\_DoubleAttr\_Start, 0.0);
+336         \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}) \{
+337             \textcolor{keywordflow}{if} (v == start\_solution->first)
+338                 (*y)[v].set(GRB\_DoubleAttr\_Start, 1.0);
+339             \textcolor{keywordflow}{else}
+340                 (*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v].set(GRB\_DoubleAttr\_Start, 0.0);
+341         \}
+342     \}
+343 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!set\+Start\+Solution@{set\+Start\+Solution}}
+\index{set\+Start\+Solution@{set\+Start\+Solution}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{set\+Start\+Solution(std\+::pair$<$ Node, std\+::set$<$ Node $>$$>$ $\ast$start\+\_\+solution)}{setStartSolution(std::pair< Node, std::set< Node >> *start_solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::set\+Start\+Solution (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ {\bf Node}, std\+::set$<$ {\bf Node} $>$$>$ $\ast$}]{start\+\_\+solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_acb0700e2cc2af475bc99255027e4757a}{}\label{classderegnet_1_1DeregnetModel_acb0700e2cc2af475bc99255027e4757a}
+
+
+Definition at line 346 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+346                                                                                                            
+      \{
+347     \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+348         \textcolor{keywordflow}{if} ((start\_solution->second).find(v) != (start\_solution->second).end())
+349             \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.setStartSolution(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v], 1.0);
+350         \textcolor{keywordflow}{else}
+351             \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.setStartSolution(\hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}[v], 1.0);
+352         \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}) \{
+353             \textcolor{keywordflow}{if} (v == start\_solution->first)
+354                 \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.setStartSolution((*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v], 1.0);
+355             \textcolor{keywordflow}{else}
+356                 \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.setStartSolution((*\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y})[v], 0.0);
+357         \}
+358     \}
+359 \}
+\end{DoxyCode}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!setup\+\_\+solve@{setup\+\_\+solve}}
+\index{setup\+\_\+solve@{setup\+\_\+solve}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{setup\+\_\+solve(std\+::pair$<$ Node, std\+::set$<$ Node $>$$>$ $\ast$start\+\_\+solution)}{setup_solve(std::pair< Node, std::set< Node >> *start_solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model , typename Data $>$ void {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::setup\+\_\+solve (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ {\bf Node}, std\+::set$<$ {\bf Node} $>$$>$ $\ast$}]{start\+\_\+solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classderegnet_1_1DeregnetModel_a502657403c84cbdc66ad845c56dee339}{}\label{classderegnet_1_1DeregnetModel_a502657403c84cbdc66ad845c56dee339}
+
+
+Definition at line 233 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Data\+::model\+\_\+sense, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Start\+Solution(), and deregnet\+::\+Deregnet\+Data\+::time\+\_\+limit.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+
+\begin{DoxyCode}
+233                                                                                         \{
+234     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_ac3918536b5423facf0ac155997703c52}{model\_sense} == \textcolor{stringliteral}{"min"})
+235         \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.set(GRB\_IntAttr\_ModelSense, GRB\_MINIMIZE);
+236     \textcolor{keywordflow}{else}
+237         \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.set(GRB\_IntAttr\_ModelSense, GRB\_MAXIMIZE);
+238 
+239     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.set(GRB\_IntParam\_LazyConstraints, 1);
+240 
+241     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_ac378faf7e8466135b8dc0ced907d98ae}{time\_limit})
+242         \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.set(GRB\_DoubleParam\_TimeLimit, *(\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_ac378faf7e8466135b8dc0ced907d98ae}{time\_limit}));
+243 
+244     \textcolor{keywordflow}{if} (start\_solution)
+245         \hyperlink{classderegnet_1_1DeregnetModel_a7a76da5bb39123d94c57ba2c940cb1c2}{setStartSolution}(start\_solution);
+246 
+247     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root})
+248         \hyperlink{classderegnet_1_1DeregnetModel_a19332c492a33a1e488ed916947d38c08}{setCallbackRoot}();
+249     \textcolor{keywordflow}{else}
+250         \hyperlink{classderegnet_1_1DeregnetModel_a6cecefeafaf782843c91e0c55e768a94}{setCallbackNoRoot}();
+251     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.update();
+252 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a502657403c84cbdc66ad845c56dee339_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a502657403c84cbdc66ad845c56dee339_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!solve@{solve}}
+\index{solve@{solve}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{solve(std\+::pair$<$ Node, std\+::set$<$ Node $>$$>$ $\ast$start\+\_\+solution)}{solve(std::pair< Node, std::set< Node >> *start_solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ bool {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::solve (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ {\bf Node}, std\+::set$<$ {\bf Node} $>$$>$ $\ast$}]{start\+\_\+solution}
+\end{DoxyParamCaption}
+)}\hypertarget{classderegnet_1_1DeregnetModel_af8ca1da09f5a7ebe517fa62249d0b1ab}{}\label{classderegnet_1_1DeregnetModel_af8ca1da09f5a7ebe517fa62249d0b1ab}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!solve@{solve}}
+\index{solve@{solve}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{solve(std\+::pair$<$ Node, std\+::set$<$ Node $>$$>$ $\ast$start\+\_\+solution)}{solve(std::pair< Node, std::set< Node >> *start_solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ bool {\bf deregnet\+::\+Deregnet\+Model}$<$ G\+R\+B\+Model, {\bf Drgnt\+Data} $>$\+::solve (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ {\bf Node}, std\+::set$<$ {\bf Node} $>$$>$ $\ast$}]{start\+\_\+solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classderegnet_1_1DeregnetModel_a92c977d9b126c69653401fc45d43879c}{}\label{classderegnet_1_1DeregnetModel_a92c977d9b126c69653401fc45d43879c}
+
+
+Definition at line 381 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve().
+
+
+\begin{DoxyCode}
+381                                                                                           \{
+382     \hyperlink{classderegnet_1_1DeregnetModel_a502657403c84cbdc66ad845c56dee339}{setup\_solve}(start\_solution);
+383     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.optimize();
+384     \textcolor{keywordtype}{int} status = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.get(GRB\_IntAttr\_Status);   \textcolor{comment}{// FMILP implmentation of status!}
+385     \textcolor{keywordflow}{return} status == GRB\_OPTIMAL || status == GRB\_INTERRUPTED || status == GRB\_TIME\_LIMIT;
+386 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a92c977d9b126c69653401fc45d43879c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!solve@{solve}}
+\index{solve@{solve}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{solve(std\+::pair$<$ Node, std\+::set$<$ Node $>$$>$ $\ast$start\+\_\+solution)}{solve(std::pair< Node, std::set< Node >> *start_solution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ bool {\bf deregnet\+::\+Deregnet\+Model}$<$ grbfrc\+::\+F\+M\+I\+LP, {\bf Avgdrgnt\+Data} $>$\+::solve (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ {\bf Node}, std\+::set$<$ {\bf Node} $>$$>$ $\ast$}]{start\+\_\+solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classderegnet_1_1DeregnetModel_a04b8bcc3b59819f10917a6cbb4dea487}{}\label{classderegnet_1_1DeregnetModel_a04b8bcc3b59819f10917a6cbb4dea487}
+
+
+Definition at line 389 of file Deregnet\+Model.\+h.
+
+
+
+References deregnet\+::\+Avgdrgnt\+Data\+::algorithm, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::gap\+\_\+cut, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::graph, I\+N\+V\+A\+L\+ID, deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+size, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::model, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::root, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::score, deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::x, and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::y.
+
+
+\begin{DoxyCode}
+389                                                                                                 \{
+390     \hyperlink{classderegnet_1_1DeregnetModel_a502657403c84cbdc66ad845c56dee339}{setup\_solve}(start\_solution);
+391     \textcolor{comment}{// add callback here}
+392     grbfrc::GrbfrcCallback<Node>* cb;
+393     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}) \{
+394         std::vector<std::map<Node, GRBVar>>* vargrps = \textcolor{keyword}{new} std::vector<std::map<Node, GRBVar>>( \{ 
+      \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x} \} );
+395         GrbfrcLazyConstraintCallbackRoot* callback = \textcolor{keyword}{new} GrbfrcLazyConstraintCallbackRoot(
+      \hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}, \hyperlink{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{root}, \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3637c87366454adc152487fc2f5cfede}{gap\_cut});
+396         cb = \textcolor{keyword}{new} grbfrc::GrbfrcCallback<Node>(callback, vargrps);
+397     \}
+398     \textcolor{keywordflow}{else} \{
+399         std::vector<std::map<Node, GRBVar>>* vargrps = \textcolor{keyword}{new} std::vector<std::map<Node, GRBVar>>( \{ 
+      \hyperlink{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{x}, *\hyperlink{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{y} \} );
+400         GrbfrcLazyConstraintCallbackNoRoot* callback = \textcolor{keyword}{new} GrbfrcLazyConstraintCallbackNoRoot(
+      \hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}, \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3637c87366454adc152487fc2f5cfede}{gap\_cut});
+401         cb = \textcolor{keyword}{new} grbfrc::GrbfrcCallback<Node>(callback, vargrps);
+402     \}
+403     \textcolor{keywordtype}{double} objlb = 0.0;
+404     \textcolor{keywordtype}{double} objub = 0.0;
+405     std::set<Node> maxnodes;
+406     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k <= \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}{min\_size}; ++k) \{
+407         \textcolor{keywordtype}{double} ub = -1000000.0;
+408         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{graph}); v != \hyperlink{usinglemon_8h_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+409             \textcolor{keywordflow}{if} (maxnodes.find(v) == maxnodes.end() && \hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score}->operator[](v) > ub) \{
+410                 ub = \hyperlink{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{score}->operator[](v);
+411                 objub += ub;
+412                 maxnodes.insert(v);
+413             \}
+414         \}
+415     \}
+416 
+417     objub = objub / \hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}{min\_size};
+418     std::cout << objub << std::endl;
+419 
+420     \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.optimize(\hyperlink{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_aa75d6acc2d63aa589651c705eaf89280}{algorithm}, cb, &objub, &objlb);
+421     \textcolor{keywordtype}{int} status = \hyperlink{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{model}.get(GRB\_IntAttr\_Status);
+422     \textcolor{keywordflow}{return} status == GRB\_OPTIMAL || status == GRB\_INTERRUPTED || status == GRB\_TIME\_LIMIT;
+423 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetModel_a04b8bcc3b59819f10917a6cbb4dea487_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!data@{data}}
+\index{data@{data}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{data}{data}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ {\bf Data}$\ast$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::data\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}{}\label{classderegnet_1_1DeregnetModel_ad5399761cf6293a702f3800bda4806d1}
+
+
+Definition at line 71 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Exclude\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Include\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Receptor\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Suboptimality\+Constraint(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Terminal\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!env@{env}}
+\index{env@{env}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{env}{env}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ G\+R\+B\+Env {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::env\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_accd03120356b80b083041b4eef003e5b}{}\label{classderegnet_1_1DeregnetModel_accd03120356b80b083041b4eef003e5b}
+
+
+Definition at line 66 of file Deregnet\+Model.\+h.
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!graph@{graph}}
+\index{graph@{graph}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{graph}{graph}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ {\bf Graph}$\ast$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::graph\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}{}\label{classderegnet_1_1DeregnetModel_a3cd2f54b8e061ef5bed32708d9bc1ef1}
+
+
+Definition at line 72 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Receptor\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Suboptimality\+Constraint(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Terminal\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+Deregnet\+Model(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+No\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Start\+Solution(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!model@{model}}
+\index{model@{model}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{model}{model}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ Model {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::model \{ Model({\bf env}) \}\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}{}\label{classderegnet_1_1DeregnetModel_a30d525de2086e342b33fe3e45ede4947}
+
+
+Definition at line 67 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Exclude\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Include\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Receptor\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Suboptimality\+Constraint(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Terminal\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+No\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Start\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!nodeid@{nodeid}}
+\index{nodeid@{nodeid}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{nodeid}{nodeid}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ {\bf Node\+Map}$<$std\+::string$>$$\ast$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::nodeid\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}{}\label{classderegnet_1_1DeregnetModel_adfebf6f9983c9ccc934469a79381fb78}
+
+
+Definition at line 74 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Suboptimality\+Constraint(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+Deregnet\+Model().
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!root@{root}}
+\index{root@{root}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{root}{root}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ {\bf Node}$\ast$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::root\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}{}\label{classderegnet_1_1DeregnetModel_a54b20393a0e26d65935d387685d7fe96}
+
+
+Definition at line 75 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Base\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Receptor\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+Deregnet\+Model(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Start\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::setup\+\_\+solve(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!score@{score}}
+\index{score@{score}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{score}{score}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ {\bf Node\+Map}$<$double$>$$\ast$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::score\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}{}\label{classderegnet_1_1DeregnetModel_a46224b0bda5bab796d3b7cb41c184a4d}
+
+
+Definition at line 73 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+Deregnet\+Model(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!x@{x}}
+\index{x@{x}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{x}{x}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ std\+::map$<${\bf Node}, G\+R\+B\+Var$>$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::x\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}{}\label{classderegnet_1_1DeregnetModel_a360c980f3fec4dfbab50e9bb06a933a8}
+
+
+Definition at line 68 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Exclude\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Include\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Suboptimality\+Constraint(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Terminal\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+No\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Start\+Solution(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+\index{deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}!y@{y}}
+\index{y@{y}!deregnet\+::\+Deregnet\+Model@{deregnet\+::\+Deregnet\+Model}}
+\subsubsection[{\texorpdfstring{y}{y}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Model, typename Data$>$ std\+::map$<${\bf Node}, G\+R\+B\+Var$>$$\ast$ {\bf deregnet\+::\+Deregnet\+Model}$<$ Model, {\bf Data} $>$\+::y \{ nullptr \}\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}{}\label{classderegnet_1_1DeregnetModel_ae76df61afe302b939165facf3dd21ac8}
+
+
+Definition at line 69 of file Deregnet\+Model.\+h.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::add\+Receptor\+Constraints(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::create\+Variables\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Base\+Constraints\+No\+Root\+Common(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Callback\+No\+Root(), deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::set\+Start\+Solution(), and deregnet\+::\+Deregnet\+Model$<$ Model, Data $>$\+::solve().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/sebastian/wrk/deregnet/deregnet/include/deregnet/\hyperlink{DeregnetModel_8h}{Deregnet\+Model.\+h}\end{DoxyCompactItemize}

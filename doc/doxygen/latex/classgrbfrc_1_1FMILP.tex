@@ -1,0 +1,1692 @@
+\hypertarget{classgrbfrc_1_1FMILP}{}\section{grbfrc\+:\+:F\+M\+I\+LP Class Reference}
+\label{classgrbfrc_1_1FMILP}\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+
+
+{\ttfamily \#include $<$F\+M\+I\+L\+P.\+h$>$}
+
+
+
+Collaboration diagram for grbfrc\+:\+:F\+M\+I\+LP\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classgrbfrc_1_1FMILP__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgrbfrc_1_1FMILP_ad1cd2043aeb83f2a8cedd6cb51c1a4eb}{F\+M\+I\+LP} (G\+R\+B\+Env \&env, G\+R\+B\+Lin\+Expr obj\+Numerator, G\+R\+B\+Lin\+Expr obj\+Denominator, int obj\+Sense)
+\item 
+\hyperlink{classgrbfrc_1_1FMILP_ad9adf272f045373e2bc0be41a336535f}{F\+M\+I\+LP} (G\+R\+B\+Env \&grb\+Env)
+\item 
+\hyperlink{classgrbfrc_1_1FMILP_ae4d4c0bf4a155daf065a0ec4a7480ed3}{F\+M\+I\+LP} (G\+R\+B\+Env \&grb\+Env, G\+R\+B\+Lin\+Expr obj\+Numerator, G\+R\+B\+Lin\+Expr obj\+Denominator)
+\item 
+\hyperlink{classgrbfrc_1_1FMILP_a7cf1bc41af845b97ac2f472bb0ca9538}{F\+M\+I\+LP} (G\+R\+B\+Env \&grb\+Env, int obj\+Sense)
+\item 
+G\+R\+B\+Model \hyperlink{classgrbfrc_1_1FMILP_afe58165f5407f1a3ce9bd36f2318cf34}{base\+Model\+Copy} ()
+\item 
+\hyperlink{classgrbfrc_1_1FMILP}{F\+M\+I\+LP} \hyperlink{classgrbfrc_1_1FMILP_a59dc03cc8a28516880d27261fc973778}{copy} ()
+\item 
+int \hyperlink{classgrbfrc_1_1FMILP_a5f74659534b60535f4cacce86ac94c23}{get} (G\+R\+B\+\_\+\+Int\+Attr attr)
+\item 
+double \hyperlink{classgrbfrc_1_1FMILP_af5523dfe96c9fbe427f33ebe5c1ff8cc}{get} (G\+R\+B\+\_\+\+Double\+Attr attr)
+\item 
+std\+::string \hyperlink{classgrbfrc_1_1FMILP_a3ceb90426d02ae98b1a4a0526b2de0fd}{get} (G\+R\+B\+\_\+\+String\+Attr attr)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a087ba9838a44e8cef68e82dede8ed802}{set} (G\+R\+B\+\_\+\+Int\+Attr attr, int val)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_abe1a7a606a0f690cdd404e1a310803de}{set} (G\+R\+B\+\_\+\+Double\+Attr attr, double val)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a6a2f6a9477d67cbdc3aeff5791da1ad5}{set} (G\+R\+B\+\_\+\+String\+Attr attr, std\+::string val)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a5f02a9b7a33678f92903f7e329592622}{set} (G\+R\+B\+\_\+\+Int\+Param attr, int val)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_adc96d11bddbc67a07470d681c2dac895}{set} (G\+R\+B\+\_\+\+Double\+Param attr, double val)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a74b9551933ba80e72ed59adf4c0a4973}{set} (G\+R\+B\+\_\+\+String\+Param attr, std\+::string val)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_ac19e80d0b147c51d390897ce5012ba4c}{set\+Env} (G\+R\+B\+\_\+\+Int\+Param para, int val)
+\item 
+G\+R\+B\+Var \& \hyperlink{classgrbfrc_1_1FMILP_ab646c83b90d8693d82c0725b59b32e7e}{add\+Var} (double lower\+Bound, double upper\+Bound, char type, std\+::string name=\char`\"{}\char`\"{})
+\item 
+G\+R\+B\+Var \& \hyperlink{classgrbfrc_1_1FMILP_a50b35d6917057f852051449d3efb2e4e}{add\+Var} (double lower\+Bound, double upper\+Bound, double numerator\+Coeff, double denominator\+Coeff, char type, std\+::string name=\char`\"{}\char`\"{})
+\item 
+G\+R\+B\+Var $\ast$ \hyperlink{classgrbfrc_1_1FMILP_a82e2e741d1b528dee6b89e2e78ea792a}{get\+Vars} ()
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_ace026c6b2263f7f223eb7fd913f2e269}{update} ()
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a91eaec761ac1e1d07018d3cb5512bfee}{set\+Obj\+Numerator} (G\+R\+B\+Lin\+Expr \&obj\+Numerator)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a493bb568964e5b860c76c4f4be5e41e3}{set\+Obj\+Denominator} (G\+R\+B\+Lin\+Expr \&obj\+Denominator)
+\item 
+int \hyperlink{classgrbfrc_1_1FMILP_a6c8ce619a50d2204113d6b16e9cc39a8}{get\+Obj\+Sense} ()
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_ae6b816f8e2da2e685a7ace8377605622}{set\+Obj\+Sense} (int obj\+\_\+sense)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_ae8b0c42c0a3c149c963460589df36712}{add\+Constr} (const G\+R\+B\+Lin\+Expr lhs\+Expr, char sense, const G\+R\+B\+Lin\+Expr rhs\+Expr, std\+::string name=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a699e5047bda4129fe20bf3163319d4b2}{add\+Constr} (const G\+R\+B\+Lin\+Expr lhs\+Expr, char sense, G\+R\+B\+Var rhs\+Var, std\+::string name=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_aec485b0df699b5b947a7f6fc42861aa0}{add\+Constr} (const G\+R\+B\+Lin\+Expr lhs\+Expr, char sense, double rhs\+Val, std\+::string name=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a6ab655cc18db6b78d22a2d5da31e0145}{add\+Constr} (G\+R\+B\+Var lhs\+Var, char sense, G\+R\+B\+Var rhs\+Var, std\+::string name=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a6f3cdbb13550f21b6d3f6d4403b500fb}{add\+Constr} (G\+R\+B\+Var lhs\+Var, char sense, double rhs\+Val, std\+::string name=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_ababc0c8768b8b5bf318d7e4b6598e821}{add\+Constr} (G\+R\+B\+Temp\+Constr tc, std\+::string name=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a98f89f58f1909632b96518dfd6b284b0}{add\+Constr} (const G\+R\+B\+Lin\+Expr expr, double lower, double upper)
+\item 
+G\+R\+B\+Constr $\ast$ \hyperlink{classgrbfrc_1_1FMILP_aa6a2087036235f6255f9f779e2303768}{get\+Constrs} ()
+\item 
+G\+R\+B\+Lin\+Expr \hyperlink{classgrbfrc_1_1FMILP_a13b7ccccee5b9592cb5a15830c0f06c7}{get\+Row} (G\+R\+B\+Constr \&constr)
+\item 
+bool \hyperlink{classgrbfrc_1_1FMILP_a4a7dfcc68142d75ef7d19c9856658f59}{is\+F\+LP} ()
+\item 
+bool \hyperlink{classgrbfrc_1_1FMILP_a1aeef936dc377addedfd5bffcf525213}{check\+Unisignance} (std\+::string sign)
+\item 
+bool \hyperlink{classgrbfrc_1_1FMILP_aaf641eb8a257ea33eeaf96a317e74138}{is\+Unisignant} ()
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a5265d37ac0930ebd9b0da68c0c326aaa}{optimize} (\hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3}{Algorithm} algorithm=Algorithm\+::\+G\+CC)
+\item 
+double \hyperlink{classgrbfrc_1_1FMILP_acb4fb29dd992dc066940d84bb5c29c34}{get\+Obj\+Val} ()
+\item 
+double \hyperlink{classgrbfrc_1_1FMILP_a4c11488e9204c757cacee7f45467c635}{get\+Val} (G\+R\+B\+Var \&var)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a92b0bbd1d64a2de0d49b5a8954a217b4}{run\+Charnes\+Cooper} (int time\+\_\+limit=1200)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a6ab31a732827b5d1df16a16058aeec1f}{run\+Charnes\+Cooper} (G\+R\+B\+Callback \&callback, int time\+\_\+limit=1200)
+\item 
+G\+R\+B\+Model \hyperlink{classgrbfrc_1_1FMILP_a1f6d8f2107c6d716c22aa0817e0a13d2}{get\+Charnes\+Cooper\+Transform} ()
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a4a5ba754ac4e88ec64cd739ed82d5134}{run\+Dinkelbach} (double qi=0.\+0, int max\+\_\+iter=10, int time\+\_\+limit=1200, double tol=0.\+01, bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=\char`\"{}grbfrc.\+log\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a0eb2e593a68bb8612b7e9483fda428d2}{run\+Dinkelbach} (G\+R\+B\+Callback \&callback, double qi=0.\+0, int max\+\_\+iter=10, int time\+\_\+limit=1200, double tol=0.\+01, bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=\char`\"{}grbfrc.\+log\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a8ee40cf97350d09be062f711c081aa67}{run\+Generalized\+Charnes\+Cooper} (int time\+\_\+limit=1200)
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a76f59c733d36a5d06c8da909be01ad6f}{run\+Y\+G\+GY} (G\+R\+B\+Callback callback, int time\+\_\+limit=1200)
+\item 
+G\+R\+B\+Model \hyperlink{classgrbfrc_1_1FMILP_a1362b319e977e4063553bdea9cd4ecf1}{get\+Y\+G\+G\+Y\+Transform} ()
+\item 
+void \hyperlink{classgrbfrc_1_1FMILP_a981a9d57ccb5c0410314be4de6bd0897}{print\+Solution} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+R\+B\+Model $\ast$ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{base\+Model}
+\item 
+\hyperlink{structgrbfrc_1_1FMILPObj}{F\+M\+I\+L\+P\+Obj} \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}
+\item 
+\hyperlink{structgrbfrc_1_1FMILPSol}{F\+M\+I\+L\+P\+Sol} $\ast$ \hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution} = nullptr
+\item 
+std\+::vector$<$ G\+R\+B\+Var $\ast$ $>$ \hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgrbfrc_1_1FMILP_adf7fb42f9a4a02584da1dcb6469fc521}{Charnes\+Cooper}
+\item 
+class \hyperlink{classgrbfrc_1_1FMILP_a84e1163273507597523f840b89817919}{Dinkelbach}
+\item 
+class \hyperlink{classgrbfrc_1_1FMILP_ab4df4b3fe13c29ab1a27a64a8da3f093}{Y\+G\+GY}
+\item 
+class \hyperlink{classgrbfrc_1_1FMILP_ae46934249303b16d5e90251e221b363e}{Gloverizer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 80 of file F\+M\+I\+L\+P.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!F\+M\+I\+LP@{F\+M\+I\+LP}}
+\index{F\+M\+I\+LP@{F\+M\+I\+LP}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{F\+M\+I\+L\+P(\+G\+R\+B\+Env \&env, G\+R\+B\+Lin\+Expr obj\+Numerator, G\+R\+B\+Lin\+Expr obj\+Denominator, int obj\+Sense)}{FMILP(GRBEnv &env, GRBLinExpr objNumerator, GRBLinExpr objDenominator, int objSense)}}]{\setlength{\rightskip}{0pt plus 5cm}grbfrc\+::\+F\+M\+I\+L\+P\+::\+F\+M\+I\+LP (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Env \&}]{env, }
+\item[{G\+R\+B\+Lin\+Expr}]{obj\+Numerator, }
+\item[{G\+R\+B\+Lin\+Expr}]{obj\+Denominator, }
+\item[{int}]{obj\+Sense}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ad1cd2043aeb83f2a8cedd6cb51c1a4eb}{}\label{classgrbfrc_1_1FMILP_ad1cd2043aeb83f2a8cedd6cb51c1a4eb}
+
+
+Definition at line 14 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::denominator, grbfrc\+::maybe, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::numerator, objective, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::sense, solution, and grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::uni\+Sign.
+
+
+\begin{DoxyCode}
+19              : \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel} \{ \textcolor{keyword}{new} GRBModel(env) \}
+20  \{
+21   \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a01c26f8e99a6692909e562aa561c9274}{numerator} = objNumerator;
+22   \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a73deb875d3546667487959e7b15878d6}{denominator} = objDenominator;
+23   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->setObjective(objDenominator);
+24   \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a65e9d84a220fc53712fb1dd7a30cad59}{sense} = objSense;
+25   \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa72f64e32ca10c102c70c6001ce86cf88}{UniSignStatus::maybe};
+26   \hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution} = \textcolor{keyword}{nullptr};
+27  \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!F\+M\+I\+LP@{F\+M\+I\+LP}}
+\index{F\+M\+I\+LP@{F\+M\+I\+LP}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{F\+M\+I\+L\+P(\+G\+R\+B\+Env \&grb\+Env)}{FMILP(GRBEnv &grbEnv)}}]{\setlength{\rightskip}{0pt plus 5cm}grbfrc\+::\+F\+M\+I\+L\+P\+::\+F\+M\+I\+LP (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Env \&}]{grb\+Env}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ad9adf272f045373e2bc0be41a336535f}{}\label{classgrbfrc_1_1FMILP_ad9adf272f045373e2bc0be41a336535f}
+
+
+Definition at line 29 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References objective, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::uni\+Sign, and grbfrc\+::yes.
+
+
+\begin{DoxyCode}
+30        : \hyperlink{classgrbfrc_1_1FMILP_ad1cd2043aeb83f2a8cedd6cb51c1a4eb}{FMILP}(grbEnv, 0.0, 0.0, GRB\_MAXIMIZE)
+31  \{ \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{UniSignStatus::yes}; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!F\+M\+I\+LP@{F\+M\+I\+LP}}
+\index{F\+M\+I\+LP@{F\+M\+I\+LP}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{F\+M\+I\+L\+P(\+G\+R\+B\+Env \&grb\+Env, G\+R\+B\+Lin\+Expr obj\+Numerator, G\+R\+B\+Lin\+Expr obj\+Denominator)}{FMILP(GRBEnv &grbEnv, GRBLinExpr objNumerator, GRBLinExpr objDenominator)}}]{\setlength{\rightskip}{0pt plus 5cm}grbfrc\+::\+F\+M\+I\+L\+P\+::\+F\+M\+I\+LP (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Env \&}]{grb\+Env, }
+\item[{G\+R\+B\+Lin\+Expr}]{obj\+Numerator, }
+\item[{G\+R\+B\+Lin\+Expr}]{obj\+Denominator}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ae4d4c0bf4a155daf065a0ec4a7480ed3}{}\label{classgrbfrc_1_1FMILP_ae4d4c0bf4a155daf065a0ec4a7480ed3}
+
+
+Definition at line 33 of file F\+M\+I\+L\+P.\+cpp.
+
+
+\begin{DoxyCode}
+36        : \hyperlink{classgrbfrc_1_1FMILP_ad1cd2043aeb83f2a8cedd6cb51c1a4eb}{FMILP}(grbEnv, objNumerator, objDenominator, GRB\_MAXIMIZE)
+37  \{ \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!F\+M\+I\+LP@{F\+M\+I\+LP}}
+\index{F\+M\+I\+LP@{F\+M\+I\+LP}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{F\+M\+I\+L\+P(\+G\+R\+B\+Env \&grb\+Env, int obj\+Sense)}{FMILP(GRBEnv &grbEnv, int objSense)}}]{\setlength{\rightskip}{0pt plus 5cm}grbfrc\+::\+F\+M\+I\+L\+P\+::\+F\+M\+I\+LP (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Env \&}]{grb\+Env, }
+\item[{int}]{obj\+Sense}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a7cf1bc41af845b97ac2f472bb0ca9538}{}\label{classgrbfrc_1_1FMILP_a7cf1bc41af845b97ac2f472bb0ca9538}
+
+
+Definition at line 39 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References objective, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::uni\+Sign, and grbfrc\+::yes.
+
+
+\begin{DoxyCode}
+41        : \hyperlink{classgrbfrc_1_1FMILP_ad1cd2043aeb83f2a8cedd6cb51c1a4eb}{FMILP}(grbEnv, 0.0, 0.0, objSense)
+42  \{ \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{UniSignStatus::yes}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Lin\+Expr lhs\+Expr, char sense, const G\+R\+B\+Lin\+Expr rhs\+Expr, std\+::string name="""")}{addConstr(const GRBLinExpr lhsExpr, char sense, const GRBLinExpr rhsExpr, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const G\+R\+B\+Lin\+Expr}]{lhs\+Expr, }
+\item[{char}]{sense, }
+\item[{const G\+R\+B\+Lin\+Expr}]{rhs\+Expr, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ae8b0c42c0a3c149c963460589df36712}{}\label{classgrbfrc_1_1FMILP_ae8b0c42c0a3c149c963460589df36712}
+
+
+Definition at line 121 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+125  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(lhsExpr, sense, rhsExpr, name); \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classgrbfrc_1_1FMILP_ae8b0c42c0a3c149c963460589df36712_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Lin\+Expr lhs\+Expr, char sense, G\+R\+B\+Var rhs\+Var, std\+::string name="""")}{addConstr(const GRBLinExpr lhsExpr, char sense, GRBVar rhsVar, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const G\+R\+B\+Lin\+Expr}]{lhs\+Expr, }
+\item[{char}]{sense, }
+\item[{G\+R\+B\+Var}]{rhs\+Var, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a699e5047bda4129fe20bf3163319d4b2}{}\label{classgrbfrc_1_1FMILP_a699e5047bda4129fe20bf3163319d4b2}
+
+
+Definition at line 127 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+131  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(lhsExpr, sense, rhsVar, name); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Lin\+Expr lhs\+Expr, char sense, double rhs\+Val, std\+::string name="""")}{addConstr(const GRBLinExpr lhsExpr, char sense, double rhsVal, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const G\+R\+B\+Lin\+Expr}]{lhs\+Expr, }
+\item[{char}]{sense, }
+\item[{double}]{rhs\+Val, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_aec485b0df699b5b947a7f6fc42861aa0}{}\label{classgrbfrc_1_1FMILP_aec485b0df699b5b947a7f6fc42861aa0}
+
+
+Definition at line 133 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+137  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(lhsExpr, sense, rhsVal, name); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Constr(\+G\+R\+B\+Var lhs\+Var, char sense, G\+R\+B\+Var rhs\+Var, std\+::string name="""")}{addConstr(GRBVar lhsVar, char sense, GRBVar rhsVar, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Var}]{lhs\+Var, }
+\item[{char}]{sense, }
+\item[{G\+R\+B\+Var}]{rhs\+Var, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a6ab655cc18db6b78d22a2d5da31e0145}{}\label{classgrbfrc_1_1FMILP_a6ab655cc18db6b78d22a2d5da31e0145}
+
+
+Definition at line 139 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+143  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(lhsVar, sense, rhsVar, name); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Constr(\+G\+R\+B\+Var lhs\+Var, char sense, double rhs\+Val, std\+::string name="""")}{addConstr(GRBVar lhsVar, char sense, double rhsVal, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Var}]{lhs\+Var, }
+\item[{char}]{sense, }
+\item[{double}]{rhs\+Val, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a6f3cdbb13550f21b6d3f6d4403b500fb}{}\label{classgrbfrc_1_1FMILP_a6f3cdbb13550f21b6d3f6d4403b500fb}
+
+
+Definition at line 145 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+149  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(lhsVar, sense, rhsVal, name); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Constr(\+G\+R\+B\+Temp\+Constr tc, std\+::string name="""")}{addConstr(GRBTempConstr tc, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Temp\+Constr}]{tc, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ababc0c8768b8b5bf318d7e4b6598e821}{}\label{classgrbfrc_1_1FMILP_ababc0c8768b8b5bf318d7e4b6598e821}
+
+
+Definition at line 151 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+153  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(tc, name); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Lin\+Expr expr, double lower, double upper)}{addConstr(const GRBLinExpr expr, double lower, double upper)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const G\+R\+B\+Lin\+Expr}]{expr, }
+\item[{double}]{lower, }
+\item[{double}]{upper}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a98f89f58f1909632b96518dfd6b284b0}{}\label{classgrbfrc_1_1FMILP_a98f89f58f1909632b96518dfd6b284b0}
+
+
+Definition at line 155 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+158  \{
+159   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(expr, GRB\_GREATER\_EQUAL, lower);
+160   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addConstr(expr, GRB\_LESS\_EQUAL, upper);
+161  \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Var@{add\+Var}}
+\index{add\+Var@{add\+Var}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Var(double lower\+Bound, double upper\+Bound, char type, std\+::string name="""")}{addVar(double lowerBound, double upperBound, char type, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Var \& grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Var (
+\begin{DoxyParamCaption}
+\item[{double}]{lower\+Bound, }
+\item[{double}]{upper\+Bound, }
+\item[{char}]{type, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ab646c83b90d8693d82c0725b59b32e7e}{}\label{classgrbfrc_1_1FMILP_ab646c83b90d8693d82c0725b59b32e7e}
+
+
+Definition at line 81 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, and vars.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+85  \{
+86   \hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}.push\_back(\textcolor{keyword}{new} GRBVar(\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addVar(lowerBound, upperBound, 0.0, type, name)));
+87   \textcolor{keywordflow}{return} *(\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}.back());
+88  \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{classgrbfrc_1_1FMILP_ab646c83b90d8693d82c0725b59b32e7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!add\+Var@{add\+Var}}
+\index{add\+Var@{add\+Var}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{add\+Var(double lower\+Bound, double upper\+Bound, double numerator\+Coeff, double denominator\+Coeff, char type, std\+::string name="""")}{addVar(double lowerBound, double upperBound, double numeratorCoeff, double denominatorCoeff, char type, std::string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Var \& grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Var (
+\begin{DoxyParamCaption}
+\item[{double}]{lower\+Bound, }
+\item[{double}]{upper\+Bound, }
+\item[{double}]{numerator\+Coeff, }
+\item[{double}]{denominator\+Coeff, }
+\item[{char}]{type, }
+\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a50b35d6917057f852051449d3efb2e4e}{}\label{classgrbfrc_1_1FMILP_a50b35d6917057f852051449d3efb2e4e}
+
+
+Definition at line 90 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::denominator, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::numerator, objective, and vars.
+
+
+\begin{DoxyCode}
+96  \{
+97   \hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}.push\_back(\textcolor{keyword}{new} GRBVar(\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->addVar(lowerBound, upperBound, denominatorCoeff, type, 
+      name)));
+98   \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a01c26f8e99a6692909e562aa561c9274}{numerator} += numeratorCoeff * (*(\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}.back()));
+99   \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a73deb875d3546667487959e7b15878d6}{denominator} += denominatorCoeff * (*(\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}.back()));
+100   \textcolor{keywordflow}{return} *(\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}.back());
+101  \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!base\+Model\+Copy@{base\+Model\+Copy}}
+\index{base\+Model\+Copy@{base\+Model\+Copy}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{base\+Model\+Copy()}{baseModelCopy()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model grbfrc\+::\+F\+M\+I\+L\+P\+::base\+Model\+Copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_afe58165f5407f1a3ce9bd36f2318cf34}{}\label{classgrbfrc_1_1FMILP_afe58165f5407f1a3ce9bd36f2318cf34}
+
+
+Definition at line 45 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+46  \{ \textcolor{keywordflow}{return} *\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!check\+Unisignance@{check\+Unisignance}}
+\index{check\+Unisignance@{check\+Unisignance}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{check\+Unisignance(std\+::string sign)}{checkUnisignance(std::string sign)}}]{\setlength{\rightskip}{0pt plus 5cm}bool grbfrc\+::\+F\+M\+I\+L\+P\+::check\+Unisignance (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{sign}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a1aeef936dc377addedfd5bffcf525213}{}\label{classgrbfrc_1_1FMILP_a1aeef936dc377addedfd5bffcf525213}
+test
+
+Definition at line 175 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::denominator, objective, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::uni\+Sign, and grbfrc\+::yes.
+
+
+
+Referenced by is\+Unisignant().
+
+
+\begin{DoxyCode}
+176  \{
+181   \textcolor{keywordflow}{if} (sign == \textcolor{stringliteral}{"positive"})
+182      \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->setObjective(\hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a73deb875d3546667487959e7b15878d6}{denominator}, GRB\_MINIMIZE);
+183   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sign == \textcolor{stringliteral}{"negative"})
+184      \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->setObjective(\hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a73deb875d3546667487959e7b15878d6}{denominator}, GRB\_MAXIMIZE);
+185 
+186   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->optimize();
+187 
+188   \textcolor{keywordflow}{if} (sign == \textcolor{stringliteral}{"positive"} && \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(GRB\_IntAttr\_Status) == GRB\_OPTIMAL)
+189    \{
+190     \textcolor{keywordflow}{if} (\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(GRB\_DoubleAttr\_ObjVal) > 0)
+191      \{
+192       \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{UniSignStatus::yes};
+193       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+194      \}
+195     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} false ;
+196    \}
+197   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+198   \textcolor{keywordflow}{if} (sign == \textcolor{stringliteral}{"negative"} && \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(GRB\_IntAttr\_Status) == GRB\_OPTIMAL)
+199    \{
+200     \textcolor{keywordflow}{if} (\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(GRB\_DoubleAttr\_ObjVal) < 0)
+201      \{
+202       \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{UniSignStatus::yes};
+203       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+204      \}
+205     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+206    \}
+207   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+208  \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a1aeef936dc377addedfd5bffcf525213_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!copy@{copy}}
+\index{copy@{copy}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{copy()}{copy()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+LP} grbfrc\+::\+F\+M\+I\+L\+P\+::copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a59dc03cc8a28516880d27261fc973778}{}\label{classgrbfrc_1_1FMILP_a59dc03cc8a28516880d27261fc973778}
+
+
+Definition at line 48 of file F\+M\+I\+L\+P.\+cpp.
+
+
+\begin{DoxyCode}
+49  \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get@{get}}
+\index{get@{get}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Int\+Attr attr)}{get(GRB_IntAttr attr)}}]{\setlength{\rightskip}{0pt plus 5cm}int grbfrc\+::\+F\+M\+I\+L\+P\+::get (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+Int\+Attr}]{attr}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a5f74659534b60535f4cacce86ac94c23}{}\label{classgrbfrc_1_1FMILP_a5f74659534b60535f4cacce86ac94c23}
+
+
+Definition at line 51 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+
+Referenced by grbfrc\+::\+Charnes\+Cooper\+::back\+Transform\+Solution(), grbfrc\+::\+Y\+G\+G\+Y\+::back\+Transform\+Solution(), grbfrc\+::\+Y\+G\+G\+Y\+::define\+\_\+constraints(), grbfrc\+::\+Charnes\+Cooper\+::get\+Index(), grbfrc\+::\+Y\+G\+G\+Y\+::get\+Index(), grbfrc\+::\+Y\+G\+G\+Y\+::get\+Umax(), and grbfrc\+::\+Charnes\+Cooper\+::transform().
+
+
+\begin{DoxyCode}
+52  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(attr); \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a5f74659534b60535f4cacce86ac94c23_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get@{get}}
+\index{get@{get}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Double\+Attr attr)}{get(GRB_DoubleAttr attr)}}]{\setlength{\rightskip}{0pt plus 5cm}double grbfrc\+::\+F\+M\+I\+L\+P\+::get (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+Double\+Attr}]{attr}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_af5523dfe96c9fbe427f33ebe5c1ff8cc}{}\label{classgrbfrc_1_1FMILP_af5523dfe96c9fbe427f33ebe5c1ff8cc}
+
+
+Definition at line 54 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+55  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(attr); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get@{get}}
+\index{get@{get}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+String\+Attr attr)}{get(GRB_StringAttr attr)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string grbfrc\+::\+F\+M\+I\+L\+P\+::get (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+String\+Attr}]{attr}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a3ceb90426d02ae98b1a4a0526b2de0fd}{}\label{classgrbfrc_1_1FMILP_a3ceb90426d02ae98b1a4a0526b2de0fd}
+
+
+Definition at line 57 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+58  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(attr); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Charnes\+Cooper\+Transform@{get\+Charnes\+Cooper\+Transform}}
+\index{get\+Charnes\+Cooper\+Transform@{get\+Charnes\+Cooper\+Transform}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Charnes\+Cooper\+Transform()}{getCharnesCooperTransform()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Charnes\+Cooper\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a1f6d8f2107c6d716c22aa0817e0a13d2}{}\label{classgrbfrc_1_1FMILP_a1f6d8f2107c6d716c22aa0817e0a13d2}
+
+
+Definition at line 275 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References grbfrc\+::\+Charnes\+Cooper\+::get\+Transform().
+
+
+\begin{DoxyCode}
+276  \{
+277   \hyperlink{classgrbfrc_1_1FMILP_adf7fb42f9a4a02584da1dcb6469fc521}{CharnesCooper} chaco(*\textcolor{keyword}{this});
+278   \textcolor{keywordflow}{return} chaco.getTransform();
+279  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a1f6d8f2107c6d716c22aa0817e0a13d2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Constrs@{get\+Constrs}}
+\index{get\+Constrs@{get\+Constrs}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Constrs()}{getConstrs()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Constr $\ast$ grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Constrs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_aa6a2087036235f6255f9f779e2303768}{}\label{classgrbfrc_1_1FMILP_aa6a2087036235f6255f9f779e2303768}
+
+
+Definition at line 163 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+
+Referenced by grbfrc\+::\+Y\+G\+G\+Y\+::define\+\_\+constraints(), and grbfrc\+::\+Charnes\+Cooper\+::transform().
+
+
+\begin{DoxyCode}
+164  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->getConstrs(); \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_aa6a2087036235f6255f9f779e2303768_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Obj\+Sense@{get\+Obj\+Sense}}
+\index{get\+Obj\+Sense@{get\+Obj\+Sense}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Obj\+Sense()}{getObjSense()}}]{\setlength{\rightskip}{0pt plus 5cm}int grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Obj\+Sense (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a6c8ce619a50d2204113d6b16e9cc39a8}{}\label{classgrbfrc_1_1FMILP_a6c8ce619a50d2204113d6b16e9cc39a8}
+
+
+Definition at line 115 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References objective, and grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::sense.
+
+
+\begin{DoxyCode}
+116  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a65e9d84a220fc53712fb1dd7a30cad59}{sense}; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Obj\+Val@{get\+Obj\+Val}}
+\index{get\+Obj\+Val@{get\+Obj\+Val}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Obj\+Val()}{getObjVal()}}]{\setlength{\rightskip}{0pt plus 5cm}double grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Obj\+Val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_acb4fb29dd992dc066940d84bb5c29c34}{}\label{classgrbfrc_1_1FMILP_acb4fb29dd992dc066940d84bb5c29c34}
+
+
+Definition at line 245 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::obj\+Val, and solution.
+
+
+\begin{DoxyCode}
+245                         \{
+246     \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution}->\hyperlink{structgrbfrc_1_1FMILPSol_a63fec0e4c5df880215f3de25e8605505}{objVal};
+247 \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Row@{get\+Row}}
+\index{get\+Row@{get\+Row}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Row(\+G\+R\+B\+Constr \&constr)}{getRow(GRBConstr &constr)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Lin\+Expr grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Row (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Constr \&}]{constr}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a13b7ccccee5b9592cb5a15830c0f06c7}{}\label{classgrbfrc_1_1FMILP_a13b7ccccee5b9592cb5a15830c0f06c7}
+
+
+Definition at line 166 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+
+Referenced by grbfrc\+::\+Y\+G\+G\+Y\+::define\+\_\+constraints(), and grbfrc\+::\+Charnes\+Cooper\+::transform().
+
+
+\begin{DoxyCode}
+167  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->getRow(constr); \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a13b7ccccee5b9592cb5a15830c0f06c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Val@{get\+Val}}
+\index{get\+Val@{get\+Val}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Val(\+G\+R\+B\+Var \&var)}{getVal(GRBVar &var)}}]{\setlength{\rightskip}{0pt plus 5cm}double grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Val (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Var \&}]{var}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a4c11488e9204c757cacee7f45467c635}{}\label{classgrbfrc_1_1FMILP_a4c11488e9204c757cacee7f45467c635}
+
+
+Definition at line 249 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References solution, vars, and grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::var\+Vals.
+
+
+\begin{DoxyCode}
+249                                 \{
+250     \textcolor{keywordtype}{int} index \{ 0 \};
+251     \textcolor{keywordflow}{for} (GRBVar* varp : \hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}) \{
+252         \textcolor{keywordflow}{if} (varp->sameAs(var))
+253             \textcolor{keywordflow}{return} (\hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution}->\hyperlink{structgrbfrc_1_1FMILPSol_a36afbb370bb174c488c46b882c0c9bbf}{varVals})[index];
+254         index++;
+255     \}
+256 \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Vars@{get\+Vars}}
+\index{get\+Vars@{get\+Vars}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Vars()}{getVars()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Var $\ast$ grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Vars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a82e2e741d1b528dee6b89e2e78ea792a}{}\label{classgrbfrc_1_1FMILP_a82e2e741d1b528dee6b89e2e78ea792a}
+
+
+Definition at line 103 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+104  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->getVars(); \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classgrbfrc_1_1FMILP_a82e2e741d1b528dee6b89e2e78ea792a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!get\+Y\+G\+G\+Y\+Transform@{get\+Y\+G\+G\+Y\+Transform}}
+\index{get\+Y\+G\+G\+Y\+Transform@{get\+Y\+G\+G\+Y\+Transform}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{get\+Y\+G\+G\+Y\+Transform()}{getYGGYTransform()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model grbfrc\+::\+F\+M\+I\+L\+P\+::get\+Y\+G\+G\+Y\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a1362b319e977e4063553bdea9cd4ecf1}{}\label{classgrbfrc_1_1FMILP_a1362b319e977e4063553bdea9cd4ecf1}
+
+
+Definition at line 321 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+322  \{
+323   GRBModel model(\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->getEnv());
+324   \textcolor{keywordflow}{return} model;
+325  \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!is\+F\+LP@{is\+F\+LP}}
+\index{is\+F\+LP@{is\+F\+LP}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{is\+F\+L\+P()}{isFLP()}}]{\setlength{\rightskip}{0pt plus 5cm}bool grbfrc\+::\+F\+M\+I\+L\+P\+::is\+F\+LP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a4a7dfcc68142d75ef7d19c9856658f59}{}\label{classgrbfrc_1_1FMILP_a4a7dfcc68142d75ef7d19c9856658f59}
+
+
+Definition at line 169 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+
+Referenced by grbfrc\+::\+Charnes\+Cooper\+::\+Charnes\+Cooper().
+
+
+\begin{DoxyCode}
+170  \{
+171   \textcolor{keywordflow}{if} (\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(GRB\_IntAttr\_NumIntVars) == 0) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+172   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+173  \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classgrbfrc_1_1FMILP_a4a7dfcc68142d75ef7d19c9856658f59_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!is\+Unisignant@{is\+Unisignant}}
+\index{is\+Unisignant@{is\+Unisignant}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{is\+Unisignant()}{isUnisignant()}}]{\setlength{\rightskip}{0pt plus 5cm}bool grbfrc\+::\+F\+M\+I\+L\+P\+::is\+Unisignant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_aaf641eb8a257ea33eeaf96a317e74138}{}\label{classgrbfrc_1_1FMILP_aaf641eb8a257ea33eeaf96a317e74138}
+test
+
+Definition at line 210 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References check\+Unisignance(), grbfrc\+::no, objective, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::uni\+Sign, and grbfrc\+::yes.
+
+
+\begin{DoxyCode}
+211  \{
+217   \textcolor{keywordflow}{if} (\hyperlink{classgrbfrc_1_1FMILP_a1aeef936dc377addedfd5bffcf525213}{checkUnisignance}(\textcolor{stringliteral}{"positive"}))
+218    \{
+219     \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{UniSignStatus::yes};
+220     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+221    \}
+222   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classgrbfrc_1_1FMILP_a1aeef936dc377addedfd5bffcf525213}{checkUnisignance}(\textcolor{stringliteral}{"negative"}))
+223    \{
+224     \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caaa21c1cd93fb385635c35556848befb75}{UniSignStatus::yes};
+225     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+226    \}
+227   \textcolor{keywordflow}{else}
+228    \{
+229     \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_ab5f06f05e7cb926e59e3f70978f69d5c}{uniSign} = \hyperlink{namespacegrbfrc_a26ee84e31d7fae9e033413a2a5e1f0caa260830aae0582bc79704895c876ea411}{UniSignStatus::no};
+230     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+231    \}
+232  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_aaf641eb8a257ea33eeaf96a317e74138_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!optimize@{optimize}}
+\index{optimize@{optimize}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{optimize(\+Algorithm algorithm=\+Algorithm\+::\+G\+C\+C)}{optimize(Algorithm algorithm=Algorithm::GCC)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::optimize (
+\begin{DoxyParamCaption}
+\item[{{\bf Algorithm}}]{algorithm = {\ttfamily Algorithm\+:\+:GCC}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a5265d37ac0930ebd9b0da68c0c326aaa}{}\label{classgrbfrc_1_1FMILP_a5265d37ac0930ebd9b0da68c0c326aaa}
+
+
+Definition at line 234 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References grbfrc\+::\+C\+CT, grbfrc\+::\+D\+TA, grbfrc\+::\+G\+CC, run\+Charnes\+Cooper(), run\+Dinkelbach(), and run\+Generalized\+Charnes\+Cooper().
+
+
+\begin{DoxyCode}
+234                                         \{
+235     \textcolor{keywordflow}{if} (algorithm == \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a4cfde7623d2723d84c4552806a8d543c}{Algorithm::GCC})
+236         this->\hyperlink{classgrbfrc_1_1FMILP_a8ee40cf97350d09be062f711c081aa67}{runGeneralizedCharnesCooper}();
+237     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (algorithm == \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a7a3dc84f4b5dee22f5ddc0a8708214d5}{Algorithm::CCT})
+238         this->\hyperlink{classgrbfrc_1_1FMILP_a92b0bbd1d64a2de0d49b5a8954a217b4}{runCharnesCooper}();
+239     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (algorithm == \hyperlink{namespacegrbfrc_a032175e688b11ec611d637a145c6dfc3a1f1ced79e9527979a81825b883a12876}{Algorithm::DTA})
+240         this->\hyperlink{classgrbfrc_1_1FMILP_a4a5ba754ac4e88ec64cd739ed82d5134}{runDinkelbach}();
+241     \textcolor{comment}{//else if (algorithm == Algorithm::OVT)}
+242         \textcolor{comment}{//this->runObjVarTransform();}
+243 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a5265d37ac0930ebd9b0da68c0c326aaa_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!print\+Solution@{print\+Solution}}
+\index{print\+Solution@{print\+Solution}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{print\+Solution()}{printSolution()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::print\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a981a9d57ccb5c0410314be4de6bd0897}{}\label{classgrbfrc_1_1FMILP_a981a9d57ccb5c0410314be4de6bd0897}
+
+
+Definition at line 327 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::obj\+Val, solution, vars, and grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::var\+Vals.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+328  \{
+329   \textcolor{keywordflow}{if} (\hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution})
+330    \{
+331     std::cout << \textcolor{stringliteral}{"\(\backslash\)n########################### Solution ############################\(\backslash\)n\(\backslash\)n"};
+332     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->get(GRB\_IntAttr\_NumVars); i++)
+333      \{
+334       \textcolor{keywordtype}{double} varval \{ \hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution}->\hyperlink{structgrbfrc_1_1FMILPSol_a36afbb370bb174c488c46b882c0c9bbf}{varVals}[i] \};
+335       \textcolor{keywordflow}{if} (varval == 0.0) varval = std::abs(varval);
+336       std::cout << \hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}[i]->get(GRB\_StringAttr\_VarName)
+337                 << \textcolor{stringliteral}{": "} << varval << std::endl;
+338      \}
+339     std::cout << std::endl;
+340     std::cout << \textcolor{stringliteral}{"ObjVal: "} << \hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution}->\hyperlink{structgrbfrc_1_1FMILPSol_a63fec0e4c5df880215f3de25e8605505}{objVal} << std::endl;
+341     std::cout << \textcolor{stringliteral}{"\(\backslash\)n#################################################################\(\backslash\)n\(\backslash\)n"};
+342    \}
+343   \textcolor{keywordflow}{else}
+344     std::cout << \textcolor{stringliteral}{"There is no solution to print!"} << std::endl;
+345  \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classgrbfrc_1_1FMILP_a981a9d57ccb5c0410314be4de6bd0897_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!run\+Charnes\+Cooper@{run\+Charnes\+Cooper}}
+\index{run\+Charnes\+Cooper@{run\+Charnes\+Cooper}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{run\+Charnes\+Cooper(int time\+\_\+limit=1200)}{runCharnesCooper(int time_limit=1200)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Charnes\+Cooper (
+\begin{DoxyParamCaption}
+\item[{int}]{time\+\_\+limit = {\ttfamily 1200}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a92b0bbd1d64a2de0d49b5a8954a217b4}{}\label{classgrbfrc_1_1FMILP_a92b0bbd1d64a2de0d49b5a8954a217b4}
+
+
+Definition at line 258 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+Charnes\+Cooper\+::run(), and grbfrc\+::\+Charnes\+Cooper\+::write\+Solution().
+
+
+
+Referenced by main(), and optimize().
+
+
+\begin{DoxyCode}
+259  \{
+260   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->update();
+261   \hyperlink{classgrbfrc_1_1FMILP_adf7fb42f9a4a02584da1dcb6469fc521}{CharnesCooper} chaco(*\textcolor{keyword}{this});
+262   chaco.run(time\_limit);
+263   chaco.writeSolution();
+264  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a92b0bbd1d64a2de0d49b5a8954a217b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a92b0bbd1d64a2de0d49b5a8954a217b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!run\+Charnes\+Cooper@{run\+Charnes\+Cooper}}
+\index{run\+Charnes\+Cooper@{run\+Charnes\+Cooper}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{run\+Charnes\+Cooper(\+G\+R\+B\+Callback \&callback, int time\+\_\+limit=1200)}{runCharnesCooper(GRBCallback &callback, int time_limit=1200)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Charnes\+Cooper (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Callback \&}]{callback, }
+\item[{int}]{time\+\_\+limit = {\ttfamily 1200}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a6ab31a732827b5d1df16a16058aeec1f}{}\label{classgrbfrc_1_1FMILP_a6ab31a732827b5d1df16a16058aeec1f}
+
+
+Definition at line 266 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+Charnes\+Cooper\+::run(), and grbfrc\+::\+Charnes\+Cooper\+::write\+Solution().
+
+
+\begin{DoxyCode}
+268  \{
+269   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->update();
+270   \hyperlink{classgrbfrc_1_1FMILP_adf7fb42f9a4a02584da1dcb6469fc521}{CharnesCooper} chaco(*\textcolor{keyword}{this});
+271   chaco.run(callback, time\_limit);
+272   chaco.writeSolution();
+273  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a6ab31a732827b5d1df16a16058aeec1f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!run\+Dinkelbach@{run\+Dinkelbach}}
+\index{run\+Dinkelbach@{run\+Dinkelbach}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{run\+Dinkelbach(double qi=0.\+0, int max\+\_\+iter=10, int time\+\_\+limit=1200, double tol=0.\+01, bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=""grbfrc.\+log"")}{runDinkelbach(double qi=0.0, int max_iter=10, int time_limit=1200, double tol=0.01, bool verbose=true, bool logFile=true, std::string logFileName="grbfrc.log")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Dinkelbach (
+\begin{DoxyParamCaption}
+\item[{double}]{qi = {\ttfamily 0.0}, }
+\item[{int}]{max\+\_\+iter = {\ttfamily 10}, }
+\item[{int}]{time\+\_\+limit = {\ttfamily 1200}, }
+\item[{double}]{tol = {\ttfamily 0.01}, }
+\item[{bool}]{verbose = {\ttfamily true}, }
+\item[{bool}]{log\+File = {\ttfamily true}, }
+\item[{std\+::string}]{log\+File\+Name = {\ttfamily \char`\"{}grbfrc.log\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a4a5ba754ac4e88ec64cd739ed82d5134}{}\label{classgrbfrc_1_1FMILP_a4a5ba754ac4e88ec64cd739ed82d5134}
+
+
+Definition at line 281 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+Dinkelbach\+::run(), and grbfrc\+::\+Dinkelbach\+::write\+Solution().
+
+
+
+Referenced by main(), and optimize().
+
+
+\begin{DoxyCode}
+288  \{
+289   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->update();
+290   \hyperlink{classgrbfrc_1_1FMILP_a84e1163273507597523f840b89817919}{Dinkelbach} dinkel(*\textcolor{keyword}{this}, qi, max\_iter, time\_limit, tol);
+291   dinkel.run(verbose, logFile, logFileName);
+292   dinkel.writeSolution();
+293  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a4a5ba754ac4e88ec64cd739ed82d5134_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a4a5ba754ac4e88ec64cd739ed82d5134_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!run\+Dinkelbach@{run\+Dinkelbach}}
+\index{run\+Dinkelbach@{run\+Dinkelbach}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{run\+Dinkelbach(\+G\+R\+B\+Callback \&callback, double qi=0.\+0, int max\+\_\+iter=10, int time\+\_\+limit=1200, double tol=0.\+01, bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=""grbfrc.\+log"")}{runDinkelbach(GRBCallback &callback, double qi=0.0, int max_iter=10, int time_limit=1200, double tol=0.01, bool verbose=true, bool logFile=true, std::string logFileName="grbfrc.log")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Dinkelbach (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Callback \&}]{callback, }
+\item[{double}]{qi = {\ttfamily 0.0}, }
+\item[{int}]{max\+\_\+iter = {\ttfamily 10}, }
+\item[{int}]{time\+\_\+limit = {\ttfamily 1200}, }
+\item[{double}]{tol = {\ttfamily 0.01}, }
+\item[{bool}]{verbose = {\ttfamily true}, }
+\item[{bool}]{log\+File = {\ttfamily true}, }
+\item[{std\+::string}]{log\+File\+Name = {\ttfamily \char`\"{}grbfrc.log\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a0eb2e593a68bb8612b7e9483fda428d2}{}\label{classgrbfrc_1_1FMILP_a0eb2e593a68bb8612b7e9483fda428d2}
+
+
+Definition at line 295 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+Dinkelbach\+::run(), and grbfrc\+::\+Dinkelbach\+::write\+Solution().
+
+
+\begin{DoxyCode}
+303  \{
+304   \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->update();
+305   \hyperlink{classgrbfrc_1_1FMILP_a84e1163273507597523f840b89817919}{Dinkelbach} dinkel(*\textcolor{keyword}{this}, qi, max\_iter, time\_limit, tol);
+306   dinkel.run(callback, verbose, logFile, logFileName);
+307   dinkel.writeSolution();
+308  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a0eb2e593a68bb8612b7e9483fda428d2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!run\+Generalized\+Charnes\+Cooper@{run\+Generalized\+Charnes\+Cooper}}
+\index{run\+Generalized\+Charnes\+Cooper@{run\+Generalized\+Charnes\+Cooper}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{run\+Generalized\+Charnes\+Cooper(int time\+\_\+limit=1200)}{runGeneralizedCharnesCooper(int time_limit=1200)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Generalized\+Charnes\+Cooper (
+\begin{DoxyParamCaption}
+\item[{int}]{time\+\_\+limit = {\ttfamily 1200}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a8ee40cf97350d09be062f711c081aa67}{}\label{classgrbfrc_1_1FMILP_a8ee40cf97350d09be062f711c081aa67}
+
+
+Definition at line 310 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model, grbfrc\+::\+Y\+G\+G\+Y\+::run(), and grbfrc\+::\+Y\+G\+G\+Y\+::write\+Solution().
+
+
+
+Referenced by optimize().
+
+
+\begin{DoxyCode}
+310                                                       \{
+311     \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->update();
+312     \hyperlink{classgrbfrc_1_1FMILP_ab4df4b3fe13c29ab1a27a64a8da3f093}{YGGY} yggy(\textcolor{keyword}{this});
+313     yggy.run(time\_limit);
+314     yggy.writeSolution();
+315 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a8ee40cf97350d09be062f711c081aa67_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1FMILP_a8ee40cf97350d09be062f711c081aa67_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!run\+Y\+G\+GY@{run\+Y\+G\+GY}}
+\index{run\+Y\+G\+GY@{run\+Y\+G\+GY}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{run\+Y\+G\+G\+Y(\+G\+R\+B\+Callback callback, int time\+\_\+limit=1200)}{runYGGY(GRBCallback callback, int time_limit=1200)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Y\+G\+GY (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Callback}]{callback, }
+\item[{int}]{time\+\_\+limit = {\ttfamily 1200}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a76f59c733d36a5d06c8da909be01ad6f}{}\label{classgrbfrc_1_1FMILP_a76f59c733d36a5d06c8da909be01ad6f}
+
+
+Definition at line 317 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+319  \{ \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classgrbfrc_1_1FMILP_a76f59c733d36a5d06c8da909be01ad6f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set@{set}}
+\index{set@{set}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Int\+Attr attr, int val)}{set(GRB_IntAttr attr, int val)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+Int\+Attr}]{attr, }
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a087ba9838a44e8cef68e82dede8ed802}{}\label{classgrbfrc_1_1FMILP_a087ba9838a44e8cef68e82dede8ed802}
+
+
+Definition at line 60 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+61  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->set(attr, val); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set@{set}}
+\index{set@{set}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Double\+Attr attr, double val)}{set(GRB_DoubleAttr attr, double val)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+Double\+Attr}]{attr, }
+\item[{double}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_abe1a7a606a0f690cdd404e1a310803de}{}\label{classgrbfrc_1_1FMILP_abe1a7a606a0f690cdd404e1a310803de}
+
+
+Definition at line 63 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+64  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->set(attr, val); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set@{set}}
+\index{set@{set}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+String\+Attr attr, std\+::string val)}{set(GRB_StringAttr attr, std::string val)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+String\+Attr}]{attr, }
+\item[{std\+::string}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a6a2f6a9477d67cbdc3aeff5791da1ad5}{}\label{classgrbfrc_1_1FMILP_a6a2f6a9477d67cbdc3aeff5791da1ad5}
+
+
+Definition at line 66 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+67  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->set(attr, val); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set@{set}}
+\index{set@{set}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Int\+Param attr, int val)}{set(GRB_IntParam attr, int val)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+Int\+Param}]{attr, }
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a5f02a9b7a33678f92903f7e329592622}{}\label{classgrbfrc_1_1FMILP_a5f02a9b7a33678f92903f7e329592622}
+
+
+Definition at line 69 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+70  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->set(param, val); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set@{set}}
+\index{set@{set}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Double\+Param attr, double val)}{set(GRB_DoubleParam attr, double val)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+Double\+Param}]{attr, }
+\item[{double}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_adc96d11bddbc67a07470d681c2dac895}{}\label{classgrbfrc_1_1FMILP_adc96d11bddbc67a07470d681c2dac895}
+
+
+Definition at line 72 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+73  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->set(param, val); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set@{set}}
+\index{set@{set}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+String\+Param attr, std\+::string val)}{set(GRB_StringParam attr, std::string val)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+String\+Param}]{attr, }
+\item[{std\+::string}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a74b9551933ba80e72ed59adf4c0a4973}{}\label{classgrbfrc_1_1FMILP_a74b9551933ba80e72ed59adf4c0a4973}
+
+
+Definition at line 75 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+76  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->set(param, val); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set\+Env@{set\+Env}}
+\index{set\+Env@{set\+Env}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set\+Env(\+G\+R\+B\+\_\+\+Int\+Param para, int val)}{setEnv(GRB_IntParam para, int val)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Env (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+\_\+\+Int\+Param}]{para, }
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ac19e80d0b147c51d390897ce5012ba4c}{}\label{classgrbfrc_1_1FMILP_ac19e80d0b147c51d390897ce5012ba4c}
+
+
+Definition at line 78 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+\begin{DoxyCode}
+79  \{ (\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->getEnv()).\textcolor{keyword}{set}(para, val); \}
+\end{DoxyCode}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set\+Obj\+Denominator@{set\+Obj\+Denominator}}
+\index{set\+Obj\+Denominator@{set\+Obj\+Denominator}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set\+Obj\+Denominator(\+G\+R\+B\+Lin\+Expr \&obj\+Denominator)}{setObjDenominator(GRBLinExpr &objDenominator)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Denominator (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Lin\+Expr \&}]{obj\+Denominator}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a493bb568964e5b860c76c4f4be5e41e3}{}\label{classgrbfrc_1_1FMILP_a493bb568964e5b860c76c4f4be5e41e3}
+
+
+Definition at line 112 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::denominator, and objective.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+113  \{ \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a73deb875d3546667487959e7b15878d6}{denominator} = objDenominator; \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classgrbfrc_1_1FMILP_a493bb568964e5b860c76c4f4be5e41e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set\+Obj\+Numerator@{set\+Obj\+Numerator}}
+\index{set\+Obj\+Numerator@{set\+Obj\+Numerator}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set\+Obj\+Numerator(\+G\+R\+B\+Lin\+Expr \&obj\+Numerator)}{setObjNumerator(GRBLinExpr &objNumerator)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Numerator (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Lin\+Expr \&}]{obj\+Numerator}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_a91eaec761ac1e1d07018d3cb5512bfee}{}\label{classgrbfrc_1_1FMILP_a91eaec761ac1e1d07018d3cb5512bfee}
+
+
+Definition at line 109 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::numerator, and objective.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+110  \{ \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a01c26f8e99a6692909e562aa561c9274}{numerator} = objNumerator; \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classgrbfrc_1_1FMILP_a91eaec761ac1e1d07018d3cb5512bfee_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!set\+Obj\+Sense@{set\+Obj\+Sense}}
+\index{set\+Obj\+Sense@{set\+Obj\+Sense}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{set\+Obj\+Sense(int obj\+\_\+sense)}{setObjSense(int obj_sense)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Sense (
+\begin{DoxyParamCaption}
+\item[{int}]{obj\+\_\+sense}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ae6b816f8e2da2e685a7ace8377605622}{}\label{classgrbfrc_1_1FMILP_ae6b816f8e2da2e685a7ace8377605622}
+
+
+Definition at line 118 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References objective, and grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::sense.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+119  \{ \hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective}.\hyperlink{structgrbfrc_1_1FMILPObj_a65e9d84a220fc53712fb1dd7a30cad59}{sense} = objSense; \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classgrbfrc_1_1FMILP_ae6b816f8e2da2e685a7ace8377605622_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!update@{update}}
+\index{update@{update}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{update()}{update()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+F\+M\+I\+L\+P\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1FMILP_ace026c6b2263f7f223eb7fd913f2e269}{}\label{classgrbfrc_1_1FMILP_ace026c6b2263f7f223eb7fd913f2e269}
+
+
+Definition at line 106 of file F\+M\+I\+L\+P.\+cpp.
+
+
+
+References base\+Model.
+
+
+
+Referenced by grbfrc\+::\+Charnes\+Cooper\+::\+Charnes\+Cooper(), main(), and grbfrc\+::\+Y\+G\+G\+Y\+::\+Y\+G\+G\+Y().
+
+
+\begin{DoxyCode}
+107  \{ \hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel}->update(); \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classgrbfrc_1_1FMILP_ace026c6b2263f7f223eb7fd913f2e269_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!Charnes\+Cooper@{Charnes\+Cooper}}
+\index{Charnes\+Cooper@{Charnes\+Cooper}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{Charnes\+Cooper}{CharnesCooper}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Charnes\+Cooper}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classgrbfrc_1_1FMILP_adf7fb42f9a4a02584da1dcb6469fc521}{}\label{classgrbfrc_1_1FMILP_adf7fb42f9a4a02584da1dcb6469fc521}
+
+
+Definition at line 83 of file F\+M\+I\+L\+P.\+h.
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!Dinkelbach@{Dinkelbach}}
+\index{Dinkelbach@{Dinkelbach}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{Dinkelbach}{Dinkelbach}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Dinkelbach}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classgrbfrc_1_1FMILP_a84e1163273507597523f840b89817919}{}\label{classgrbfrc_1_1FMILP_a84e1163273507597523f840b89817919}
+
+
+Definition at line 84 of file F\+M\+I\+L\+P.\+h.
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!Gloverizer@{Gloverizer}}
+\index{Gloverizer@{Gloverizer}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{Gloverizer}{Gloverizer}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Gloverizer}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classgrbfrc_1_1FMILP_ae46934249303b16d5e90251e221b363e}{}\label{classgrbfrc_1_1FMILP_ae46934249303b16d5e90251e221b363e}
+
+
+Definition at line 86 of file F\+M\+I\+L\+P.\+h.
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!Y\+G\+GY@{Y\+G\+GY}}
+\index{Y\+G\+GY@{Y\+G\+GY}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{Y\+G\+GY}{YGGY}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Y\+G\+GY}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classgrbfrc_1_1FMILP_ab4df4b3fe13c29ab1a27a64a8da3f093}{}\label{classgrbfrc_1_1FMILP_ab4df4b3fe13c29ab1a27a64a8da3f093}
+
+
+Definition at line 85 of file F\+M\+I\+L\+P.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!base\+Model@{base\+Model}}
+\index{base\+Model@{base\+Model}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{base\+Model}{baseModel}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model$\ast$ grbfrc\+::\+F\+M\+I\+L\+P\+::base\+Model\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{}\label{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}
+
+
+Definition at line 90 of file F\+M\+I\+L\+P.\+h.
+
+
+
+Referenced by add\+Constr(), add\+Var(), base\+Model\+Copy(), grbfrc\+::\+Charnes\+Cooper\+::\+Charnes\+Cooper(), check\+Unisignance(), F\+M\+I\+L\+P(), get(), get\+Constrs(), get\+Row(), grbfrc\+::\+Y\+G\+G\+Y\+::get\+Umax(), get\+Vars(), get\+Y\+G\+G\+Y\+Transform(), is\+F\+L\+P(), print\+Solution(), grbfrc\+::\+Dinkelbach\+::run(), run\+Charnes\+Cooper(), run\+Dinkelbach(), run\+Generalized\+Charnes\+Cooper(), set(), set\+Env(), and update().
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!objective@{objective}}
+\index{objective@{objective}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{objective}{objective}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+L\+P\+Obj} grbfrc\+::\+F\+M\+I\+L\+P\+::objective\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{}\label{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}
+
+
+Definition at line 91 of file F\+M\+I\+L\+P.\+h.
+
+
+
+Referenced by add\+Var(), check\+Unisignance(), F\+M\+I\+L\+P(), get\+Obj\+Sense(), grbfrc\+::\+Y\+G\+G\+Y\+::get\+Umax(), is\+Unisignant(), grbfrc\+::\+Dinkelbach\+::run(), set\+Obj\+Denominator(), set\+Obj\+Numerator(), set\+Obj\+Sense(), grbfrc\+::\+Charnes\+Cooper\+::transform(), and grbfrc\+::\+Y\+G\+G\+Y\+::transform().
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!solution@{solution}}
+\index{solution@{solution}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{solution}{solution}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+L\+P\+Sol}$\ast$ grbfrc\+::\+F\+M\+I\+L\+P\+::solution = nullptr\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{}\label{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}
+
+
+Definition at line 92 of file F\+M\+I\+L\+P.\+h.
+
+
+
+Referenced by F\+M\+I\+L\+P(), get\+Obj\+Val(), get\+Val(), print\+Solution(), grbfrc\+::\+Charnes\+Cooper\+::write\+Solution(), grbfrc\+::\+Dinkelbach\+::write\+Solution(), and grbfrc\+::\+Y\+G\+G\+Y\+::write\+Solution().
+
+\index{grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}!vars@{vars}}
+\index{vars@{vars}!grbfrc\+::\+F\+M\+I\+LP@{grbfrc\+::\+F\+M\+I\+LP}}
+\subsubsection[{\texorpdfstring{vars}{vars}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$G\+R\+B\+Var$\ast$$>$ grbfrc\+::\+F\+M\+I\+L\+P\+::vars\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{}\label{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}
+
+
+Definition at line 93 of file F\+M\+I\+L\+P.\+h.
+
+
+
+Referenced by add\+Var(), grbfrc\+::\+Y\+G\+G\+Y\+::define\+\_\+tx(), grbfrc\+::\+Charnes\+Cooper\+::get\+Index(), grbfrc\+::\+Y\+G\+G\+Y\+::get\+Index(), get\+Val(), print\+Solution(), grbfrc\+::\+Dinkelbach\+::run(), and grbfrc\+::\+Charnes\+Cooper\+::transform().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sebastian/wrk/deregnet/deregnet/grbfrc/include/grbfrc/\hyperlink{FMILP_8h}{F\+M\+I\+L\+P.\+h}\item 
+/home/sebastian/wrk/deregnet/deregnet/grbfrc/src/\hyperlink{FMILP_8cpp}{F\+M\+I\+L\+P.\+cpp}\end{DoxyCompactItemize}

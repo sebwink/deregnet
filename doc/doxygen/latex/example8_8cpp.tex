@@ -1,0 +1,92 @@
+\hypertarget{example8_8cpp}{}\section{/home/sebastian/wrk/deregnet/deregnet/grbfrc/examples/example8.cpp File Reference}
+\label{example8_8cpp}\index{/home/sebastian/wrk/deregnet/deregnet/grbfrc/examples/example8.\+cpp@{/home/sebastian/wrk/deregnet/deregnet/grbfrc/examples/example8.\+cpp}}
+{\ttfamily \#include $<$gurobi\+\_\+c++.\+h$>$}\\*
+{\ttfamily \#include $<$grbfrc.\+h$>$}\\*
+Include dependency graph for example8.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{example8_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{example8_8cpp_abfddaf12e2fb003abc1032d57160f839}{F\+M\+I\+LP} = \hyperlink{classgrbfrc_1_1FMILP}{grbfrc\+::\+F\+M\+I\+LP}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{example8_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{example8.\+cpp@{example8.\+cpp}!F\+M\+I\+LP@{F\+M\+I\+LP}}
+\index{F\+M\+I\+LP@{F\+M\+I\+LP}!example8.\+cpp@{example8.\+cpp}}
+\subsubsection[{\texorpdfstring{F\+M\+I\+LP}{FMILP}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf F\+M\+I\+LP} =  {\bf grbfrc\+::\+F\+M\+I\+LP}}\hypertarget{example8_8cpp_abfddaf12e2fb003abc1032d57160f839}{}\label{example8_8cpp_abfddaf12e2fb003abc1032d57160f839}
+
+
+Definition at line 4 of file example8.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{example8.\+cpp@{example8.\+cpp}!main@{main}}
+\index{main@{main}!example8.\+cpp@{example8.\+cpp}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{example8_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\label{example8_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Definition at line 6 of file example8.\+cpp.
+
+
+
+References grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Constr(), grbfrc\+::\+F\+M\+I\+L\+P\+::add\+Var(), grbfrc\+::\+F\+M\+I\+L\+P\+::print\+Solution(), grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Y\+G\+G\+Y(), grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Denominator(), grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Numerator(), grbfrc\+::\+F\+M\+I\+L\+P\+::set\+Obj\+Sense(), and grbfrc\+::\+F\+M\+I\+L\+P\+::update().
+
+
+\begin{DoxyCode}
+7  \{
+8   GRBEnv env;
+9   \hyperlink{classgrbfrc_1_1FMILP}{FMILP} model(env);
+10   GRBVar x = model.addVar(0.0, GRB\_INFINITY, GRB\_CONTINUOUS, \textcolor{stringliteral}{"x"});
+11   GRBVar y = model.addVar(0.0, 6.0, GRB\_CONTINUOUS, \textcolor{stringliteral}{"y"});
+12   model.update();
+13   model.addConstr(-x + y <= 4.0);
+14   model.addConstr(2*x + y <= 14.0);
+15 
+16   GRBVar u = model.addVar(0.0, 1.0, GRB\_BINARY, \textcolor{stringliteral}{"u"});
+17   GRBVar v = model.addVar(0.0, 1.0, GRB\_BINARY, \textcolor{stringliteral}{"v"});
+18   model.update();
+19   model.addConstr( u + v <= 1 );
+20 
+21   GRBLinExpr objNum \{ -2*x + y + u + 2 \};
+22   model.setObjNumerator(objNum);
+23   GRBLinExpr objDenom \{ x + 3*y + u + v + 4 \};
+24   model.setObjDenominator(objDenom);
+25   model.setObjSense(GRB\_MINIMIZE);
+26 
+27   std::cout << \textcolor{stringliteral}{"---- Solve with generalized Charnes-Cooper transform ----"} << std::endl;
+28 
+29   model.runYGGY();
+30   model.printSolution();
+31 
+32   \textcolor{keywordflow}{return} 0;
+33  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{example8_8cpp_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,587 @@
+\hypertarget{classgrbfrc_1_1Dinkelbach}{}\section{grbfrc\+:\+:Dinkelbach Class Reference}
+\label{classgrbfrc_1_1Dinkelbach}\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+
+
+{\ttfamily \#include $<$Dinkelbach.\+h$>$}
+
+
+
+Collaboration diagram for grbfrc\+:\+:Dinkelbach\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classgrbfrc_1_1Dinkelbach__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgrbfrc_1_1Dinkelbach_a555d9710b9252b64bb7919554f82aac2}{Dinkelbach} (\hyperlink{classgrbfrc_1_1FMILP}{F\+M\+I\+LP} \&fmip\+Ref, double qi, int maxit, int maxsec, double tolerance)
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_ac29adf5a73dcdd4d008c4e8b40ea2013}{set\+\_\+q\+\_\+init} (double qi)
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_a8b89f06ee090b89eac1f967751d45900}{set\+\_\+max\+\_\+iter} (int max)
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_a4be338efdc5fdd17a84b41091d77528f}{set\+\_\+time\+\_\+limit} (int seconds)
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_a8f1ea3b5713cbd3d586ecb45027d1a2a}{set\+\_\+tolerance} (double tolerance)
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_ab8ac04bd4f79da6c5bba0f0d969942ce}{run} (bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=\char`\"{}grbfrc.\+log\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_ac43714fb91027f9912205d049650c07e}{run} (G\+R\+B\+Callback \&callback, bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=\char`\"{}grbfrc.\+log\char`\"{})
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_a9a27c81b1b70feeabebb17a65f6ada30}{write\+Solution} ()
+\item 
+\hyperlink{structgrbfrc_1_1FMILPSol}{F\+M\+I\+L\+P\+Sol} \hyperlink{classgrbfrc_1_1Dinkelbach_a486f5253d9df01c5a2887804aac7383a}{get\+Solution} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_a580fb42838c0e80bd187a36b297d4be6}{register\+Solution} (double obj\+Val, \hyperlink{classgrbfrc_1_1FMILP}{F\+M\+I\+LP} $\ast$\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip})
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_a37136d7a62a3b8b5b480788750fcb5e3}{print\+Problem} (int status, int iter)
+\item 
+void \hyperlink{classgrbfrc_1_1Dinkelbach_a761608ae16a7e037e2b2e6a0dd096697}{print\+Iteration} (int iter)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgrbfrc_1_1FMILP}{F\+M\+I\+LP} $\ast$ \hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}
+\item 
+double \hyperlink{classgrbfrc_1_1Dinkelbach_aa5ef5cdb3b0b29aee7eeb61c947c2a4d}{q\+\_\+init} \{ 0.\+0 \}
+\item 
+int \hyperlink{classgrbfrc_1_1Dinkelbach_a732fd0c62a20a624dbd5d9ab95f5d9c7}{max\+\_\+iter} \{ 30 \}
+\item 
+int \hyperlink{classgrbfrc_1_1Dinkelbach_adc23446f0c5a966a0476c4fc60bb47a6}{time\+\_\+limit} \{ 3600 \}
+\item 
+double \hyperlink{classgrbfrc_1_1Dinkelbach_aa14d02fd3f14975d9ef118b18dfb5d87}{tol} \{ 0.\+0001 \}
+\item 
+\hyperlink{structgrbfrc_1_1FMILPSol}{F\+M\+I\+L\+P\+Sol} \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 46 of file Dinkelbach.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!Dinkelbach@{Dinkelbach}}
+\index{Dinkelbach@{Dinkelbach}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{Dinkelbach(\+F\+M\+I\+L\+P \&fmip\+Ref, double qi, int maxit, int maxsec, double tolerance)}{Dinkelbach(FMILP &fmipRef, double qi, int maxit, int maxsec, double tolerance)}}]{\setlength{\rightskip}{0pt plus 5cm}grbfrc\+::\+Dinkelbach\+::\+Dinkelbach (
+\begin{DoxyParamCaption}
+\item[{{\bf F\+M\+I\+LP} \&}]{fmip\+Ref, }
+\item[{double}]{qi, }
+\item[{int}]{maxit, }
+\item[{int}]{maxsec, }
+\item[{double}]{tolerance}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_a555d9710b9252b64bb7919554f82aac2}{}\label{classgrbfrc_1_1Dinkelbach_a555d9710b9252b64bb7919554f82aac2}
+
+
+Definition at line 12 of file Dinkelbach.\+cpp.
+
+
+
+References max\+\_\+iter, q\+\_\+init, time\+\_\+limit, and tol.
+
+
+\begin{DoxyCode}
+17                      : \hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip} \{ &fmipRef \},
+18                        \hyperlink{classgrbfrc_1_1Dinkelbach_aa5ef5cdb3b0b29aee7eeb61c947c2a4d}{q\_init} \{ qi \},
+19                        \hyperlink{classgrbfrc_1_1Dinkelbach_a732fd0c62a20a624dbd5d9ab95f5d9c7}{max\_iter} \{ maxit \},
+20                        \hyperlink{classgrbfrc_1_1Dinkelbach_adc23446f0c5a966a0476c4fc60bb47a6}{time\_limit} \{ maxsec \},
+21                        \hyperlink{classgrbfrc_1_1Dinkelbach_aa14d02fd3f14975d9ef118b18dfb5d87}{tol} \{ tolerance \}
+22                     \{  \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!get\+Solution@{get\+Solution}}
+\index{get\+Solution@{get\+Solution}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{get\+Solution()}{getSolution()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+L\+P\+Sol} grbfrc\+::\+Dinkelbach\+::get\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_a486f5253d9df01c5a2887804aac7383a}{}\label{classgrbfrc_1_1Dinkelbach_a486f5253d9df01c5a2887804aac7383a}
+
+
+Definition at line 173 of file Dinkelbach.\+cpp.
+
+
+
+References solution.
+
+
+\begin{DoxyCode}
+174  \{ \textcolor{keywordflow}{return} \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution}; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!print\+Iteration@{print\+Iteration}}
+\index{print\+Iteration@{print\+Iteration}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{print\+Iteration(int iter)}{printIteration(int iter)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::print\+Iteration (
+\begin{DoxyParamCaption}
+\item[{int}]{iter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_a761608ae16a7e037e2b2e6a0dd096697}{}\label{classgrbfrc_1_1Dinkelbach_a761608ae16a7e037e2b2e6a0dd096697}
+
+
+Definition at line 183 of file Dinkelbach.\+cpp.
+
+
+
+Referenced by run().
+
+
+\begin{DoxyCode}
+184      \{
+185       std::cout << \textcolor{stringliteral}{"\(\backslash\)n==================== Dinkelbach iteration "}
+186                 << iter << \textcolor{stringliteral}{" ===================\(\backslash\)n\(\backslash\)n"};
+187      \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1Dinkelbach_a761608ae16a7e037e2b2e6a0dd096697_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!print\+Problem@{print\+Problem}}
+\index{print\+Problem@{print\+Problem}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{print\+Problem(int status, int iter)}{printProblem(int status, int iter)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::print\+Problem (
+\begin{DoxyParamCaption}
+\item[{int}]{status, }
+\item[{int}]{iter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_a37136d7a62a3b8b5b480788750fcb5e3}{}\label{classgrbfrc_1_1Dinkelbach_a37136d7a62a3b8b5b480788750fcb5e3}
+
+
+Definition at line 176 of file Dinkelbach.\+cpp.
+
+
+
+Referenced by run().
+
+
+\begin{DoxyCode}
+178      \{
+179       std::cout << \textcolor{stringliteral}{"\(\backslash\)nModel iteration "} << iter
+180                 << \textcolor{stringliteral}{" is not solvable, GRB\_STATUS: "} << status << \textcolor{stringliteral}{"\(\backslash\)n"};
+181      \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1Dinkelbach_a37136d7a62a3b8b5b480788750fcb5e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!register\+Solution@{register\+Solution}}
+\index{register\+Solution@{register\+Solution}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{register\+Solution(double obj\+Val, F\+M\+I\+L\+P $\ast$fmip)}{registerSolution(double objVal, FMILP *fmip)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::register\+Solution (
+\begin{DoxyParamCaption}
+\item[{double}]{obj\+Val, }
+\item[{{\bf F\+M\+I\+LP} $\ast$}]{fmip}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_a580fb42838c0e80bd187a36b297d4be6}{}\label{classgrbfrc_1_1Dinkelbach_a580fb42838c0e80bd187a36b297d4be6}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!run@{run}}
+\index{run@{run}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{run(bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=""grbfrc.\+log"")}{run(bool verbose=true, bool logFile=true, std::string logFileName="grbfrc.log")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::run (
+\begin{DoxyParamCaption}
+\item[{bool}]{verbose = {\ttfamily true}, }
+\item[{bool}]{log\+File = {\ttfamily true}, }
+\item[{std\+::string}]{log\+File\+Name = {\ttfamily \char`\"{}grbfrc.log\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_ab8ac04bd4f79da6c5bba0f0d969942ce}{}\label{classgrbfrc_1_1Dinkelbach_ab8ac04bd4f79da6c5bba0f0d969942ce}
+
+
+Definition at line 36 of file Dinkelbach.\+cpp.
+
+
+
+References grbfrc\+::\+F\+M\+I\+L\+P\+::base\+Model, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::denominator, fmip, max\+\_\+iter, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::numerator, grbfrc\+::\+F\+M\+I\+L\+P\+::objective, grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::obj\+Val, print\+Iteration(), print\+Problem(), q\+\_\+init, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::sense, solution, tol, grbfrc\+::\+F\+M\+I\+L\+P\+::vars, and grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::var\+Vals.
+
+
+
+Referenced by grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Dinkelbach().
+
+
+\begin{DoxyCode}
+40  \{
+41 
+42   \textcolor{comment}{// set verbosity and logging behaviour ============================================== //}
+43   \textcolor{keywordflow}{if} (verbose)
+44    \{ std::cout << \textcolor{stringliteral}{"\(\backslash\)n============ Solving FMILP with Dinkelbach's algorithm ============\(\backslash\)n"}; \}
+45   \textcolor{keywordflow}{else}
+46    \{ ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel})->getEnv()).\textcolor{keyword}{set}(GRB\_IntParam\_LogToConsole, 0); \}
+47 
+48   \textcolor{keywordflow}{if} (logFile)
+49    \{ ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel})->getEnv()).\textcolor{keyword}{set}(GRB\_StringParam\_LogFile, logFileName); \}
+50   \textcolor{keywordflow}{else}
+51    \{ ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel})->getEnv()).\textcolor{keyword}{set}(GRB\_StringParam\_LogFile, \textcolor{stringliteral}{""}); \}
+52 
+53   \textcolor{comment}{// get model data =================================================================== //}
+54   GRBModel* model = \hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel};
+55   FMILPObj& objective = \hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective};
+56   GRBLinExpr& objNumerator = objective.\hyperlink{structgrbfrc_1_1FMILPObj_a01c26f8e99a6692909e562aa561c9274}{numerator};
+57   GRBLinExpr& objDenominator = objective.denominator;
+58   \textcolor{keywordtype}{int} sense = objective.sense;
+59 
+60   \textcolor{comment}{// algorithm parameters ============================================================= //}
+61   \textcolor{keywordtype}{int} iter = 0;
+62   \textcolor{keywordtype}{double} q \{ \hyperlink{classgrbfrc_1_1Dinkelbach_aa5ef5cdb3b0b29aee7eeb61c947c2a4d}{q\_init} \};
+63   \textcolor{keywordtype}{double} Fq;
+64   \textcolor{keywordtype}{bool} done \{ \textcolor{keyword}{false} \};
+65 
+66   \textcolor{comment}{// solve Dinkelbach iterations ====================================================== //}
+67   \textcolor{keywordtype}{double} sign \{ 1.0 \};
+68   \textcolor{keywordflow}{if} (sense == GRB\_MINIMIZE) \{ sign = -1.0; \}
+69   \textcolor{keywordflow}{while} (!done && iter < \hyperlink{classgrbfrc_1_1Dinkelbach_a732fd0c62a20a624dbd5d9ab95f5d9c7}{max\_iter})
+70    \{
+71     iter++;
+72     \textcolor{keywordflow}{if} (verbose) \{ \hyperlink{classgrbfrc_1_1Dinkelbach_a761608ae16a7e037e2b2e6a0dd096697}{printIteration}(iter); \}
+73     GRBLinExpr currentObj = sign * objNumerator - q * objDenominator;
+74     model->setObjective(currentObj, GRB\_MAXIMIZE);
+75     model->optimize();
+76     \textcolor{keywordtype}{int} status = model->get(GRB\_IntAttr\_Status);
+77     \textcolor{keywordflow}{if} (status != GRB\_OPTIMAL) \{ \hyperlink{classgrbfrc_1_1Dinkelbach_a37136d7a62a3b8b5b480788750fcb5e3}{printProblem}(status, iter); \}
+78     \textcolor{keywordflow}{else}
+79      \{
+80       Fq = model->get(GRB\_DoubleAttr\_ObjVal);
+81       \textcolor{keywordtype}{double} numVal \{ sign * objNumerator.getValue() \};
+82       \textcolor{keywordtype}{double} denomVal \{ objDenominator.getValue() \};
+83       q = numVal / denomVal;
+84       std::cout << \textcolor{stringliteral}{"\(\backslash\)n     q = "} << q
+85                 << \textcolor{stringliteral}{" ,  |F(q)| = "} << std::abs(Fq) << std::endl;
+86       \textcolor{keywordflow}{if} (std::abs(Fq) < \hyperlink{classgrbfrc_1_1Dinkelbach_aa14d02fd3f14975d9ef118b18dfb5d87}{tol})
+87        \{
+88         done = \textcolor{keyword}{true};
+89         \textcolor{keywordflow}{if} (sense == GRB\_MINIMIZE) \{ q = -q; \}
+90         \textcolor{comment}{// register solution}
+91         \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution}.\hyperlink{structgrbfrc_1_1FMILPSol_a63fec0e4c5df880215f3de25e8605505}{objVal} = q;
+92         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < (\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}).size(); i++)
+93           \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution}.\hyperlink{structgrbfrc_1_1FMILPSol_a36afbb370bb174c488c46b882c0c9bbf}{varVals}.push\_back( ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars})[i])->get(GRB\_DoubleAttr\_X) );
+94        \}
+95      \}
+96    \}
+97  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classgrbfrc_1_1Dinkelbach_ab8ac04bd4f79da6c5bba0f0d969942ce_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1Dinkelbach_ab8ac04bd4f79da6c5bba0f0d969942ce_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!run@{run}}
+\index{run@{run}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{run(\+G\+R\+B\+Callback \&callback, bool verbose=true, bool log\+File=true, std\+::string log\+File\+Name=""grbfrc.\+log"")}{run(GRBCallback &callback, bool verbose=true, bool logFile=true, std::string logFileName="grbfrc.log")}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::run (
+\begin{DoxyParamCaption}
+\item[{G\+R\+B\+Callback \&}]{callback, }
+\item[{bool}]{verbose = {\ttfamily true}, }
+\item[{bool}]{log\+File = {\ttfamily true}, }
+\item[{std\+::string}]{log\+File\+Name = {\ttfamily \char`\"{}grbfrc.log\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_ac43714fb91027f9912205d049650c07e}{}\label{classgrbfrc_1_1Dinkelbach_ac43714fb91027f9912205d049650c07e}
+
+
+Definition at line 100 of file Dinkelbach.\+cpp.
+
+
+
+References grbfrc\+::\+F\+M\+I\+L\+P\+::base\+Model, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::denominator, fmip, max\+\_\+iter, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::numerator, grbfrc\+::\+F\+M\+I\+L\+P\+::objective, grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::obj\+Val, print\+Iteration(), print\+Problem(), q\+\_\+init, grbfrc\+::\+F\+M\+I\+L\+P\+Obj\+::sense, solution, tol, grbfrc\+::\+F\+M\+I\+L\+P\+::vars, and grbfrc\+::\+F\+M\+I\+L\+P\+Sol\+::var\+Vals.
+
+
+\begin{DoxyCode}
+105  \{
+106 
+107   \textcolor{comment}{// set verbosity and logging behaviour ============================================== //}
+108   \textcolor{keywordflow}{if} (verbose)
+109    \{ std::cout << \textcolor{stringliteral}{"\(\backslash\)n============ Solving FMILP with Dinkelbach's algorithm ============\(\backslash\)n"}; \}
+110   \textcolor{keywordflow}{else}
+111    \{ ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel})->getEnv()).\textcolor{keyword}{set}(GRB\_IntParam\_LogToConsole, 0); \}
+112 
+113   \textcolor{keywordflow}{if} (logFile)
+114    \{ ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel})->getEnv()).\textcolor{keyword}{set}(GRB\_StringParam\_LogFile, logFileName); \}
+115   \textcolor{keywordflow}{else}
+116    \{ ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel})->getEnv()).\textcolor{keyword}{set}(GRB\_StringParam\_LogFile, \textcolor{stringliteral}{""}); \}
+117 
+118   \textcolor{comment}{// get model data =================================================================== //}
+119   GRBModel* model = \hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a587e886dcaa1ece325a7f283100182a8}{baseModel};
+120   FMILPObj& objective = \hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_a8807cc16614684fd6053b44dcd65657c}{objective};
+121   GRBLinExpr& objNumerator = objective.\hyperlink{structgrbfrc_1_1FMILPObj_a01c26f8e99a6692909e562aa561c9274}{numerator};
+122   GRBLinExpr& objDenominator = objective.denominator;
+123   \textcolor{keywordtype}{int} sense = objective.sense;
+124 
+125   \textcolor{comment}{// algorithm parameters ============================================================= //}
+126   \textcolor{keywordtype}{int} iter = 0;
+127   \textcolor{keywordtype}{double} q \{ \hyperlink{classgrbfrc_1_1Dinkelbach_aa5ef5cdb3b0b29aee7eeb61c947c2a4d}{q\_init} \};
+128   \textcolor{keywordtype}{double} Fq;
+129   \textcolor{keywordtype}{bool} done \{ \textcolor{keyword}{false} \};
+130 
+131   \textcolor{comment}{// solve Dinkelbach iterations ====================================================== //}
+132   \textcolor{keywordtype}{double} sign \{ 1.0 \};
+133   \textcolor{keywordflow}{if} (sense == GRB\_MINIMIZE) \{ sign = -1.0; \}
+134   \textcolor{keywordflow}{while} (!done && iter < \hyperlink{classgrbfrc_1_1Dinkelbach_a732fd0c62a20a624dbd5d9ab95f5d9c7}{max\_iter})
+135    \{
+136     iter++;
+137     \textcolor{keywordflow}{if} (verbose) \{ \hyperlink{classgrbfrc_1_1Dinkelbach_a761608ae16a7e037e2b2e6a0dd096697}{printIteration}(iter); \}
+138     GRBLinExpr currentObj = sign * objNumerator - q * objDenominator;
+139     model->setObjective(currentObj, GRB\_MAXIMIZE);
+140     model->setCallback(&callback);
+141     model->optimize();
+142     \textcolor{keywordtype}{int} status = model->get(GRB\_IntAttr\_Status);
+143     \textcolor{keywordflow}{if} (status != GRB\_OPTIMAL) \{ \hyperlink{classgrbfrc_1_1Dinkelbach_a37136d7a62a3b8b5b480788750fcb5e3}{printProblem}(status, iter); \}
+144     \textcolor{keywordflow}{else}
+145      \{
+146       Fq = model->get(GRB\_DoubleAttr\_ObjVal);
+147       \textcolor{keywordtype}{double} numVal \{ sign * objNumerator.getValue() \};
+148       \textcolor{keywordtype}{double} denomVal \{ objDenominator.getValue() \};
+149       q = numVal / denomVal;
+150       std::cout << \textcolor{stringliteral}{"\(\backslash\)n     q = "} << q
+151                 << \textcolor{stringliteral}{" ,  |F(q)| = "} << std::abs(Fq) << std::endl;
+152       \textcolor{keywordflow}{if} (std::abs(Fq) < \hyperlink{classgrbfrc_1_1Dinkelbach_aa14d02fd3f14975d9ef118b18dfb5d87}{tol})
+153        \{
+154         done = \textcolor{keyword}{true};
+155         \textcolor{keywordflow}{if} (sense == GRB\_MINIMIZE) \{ q = -q; \}
+156         \textcolor{comment}{// register solution}
+157         \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution}.\hyperlink{structgrbfrc_1_1FMILPSol_a63fec0e4c5df880215f3de25e8605505}{objVal} = q;
+158         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < (\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars}).size(); i++)
+159           \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution}.\hyperlink{structgrbfrc_1_1FMILPSol_a36afbb370bb174c488c46b882c0c9bbf}{varVals}.push\_back( ((\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_acbf6866651d8b8b18c094302cf2a4284}{vars})[i])->get(GRB\_DoubleAttr\_X) );
+160        \}
+161      \}
+162    \}
+163  \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classgrbfrc_1_1Dinkelbach_ac43714fb91027f9912205d049650c07e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!set\+\_\+max\+\_\+iter@{set\+\_\+max\+\_\+iter}}
+\index{set\+\_\+max\+\_\+iter@{set\+\_\+max\+\_\+iter}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{set\+\_\+max\+\_\+iter(int max)}{set_max_iter(int max)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::set\+\_\+max\+\_\+iter (
+\begin{DoxyParamCaption}
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_a8b89f06ee090b89eac1f967751d45900}{}\label{classgrbfrc_1_1Dinkelbach_a8b89f06ee090b89eac1f967751d45900}
+
+
+Definition at line 27 of file Dinkelbach.\+cpp.
+
+
+
+References max\+\_\+iter.
+
+
+\begin{DoxyCode}
+28  \{ \hyperlink{classgrbfrc_1_1Dinkelbach_a732fd0c62a20a624dbd5d9ab95f5d9c7}{max\_iter} = max; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!set\+\_\+q\+\_\+init@{set\+\_\+q\+\_\+init}}
+\index{set\+\_\+q\+\_\+init@{set\+\_\+q\+\_\+init}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{set\+\_\+q\+\_\+init(double qi)}{set_q_init(double qi)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::set\+\_\+q\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{double}]{qi}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_ac29adf5a73dcdd4d008c4e8b40ea2013}{}\label{classgrbfrc_1_1Dinkelbach_ac29adf5a73dcdd4d008c4e8b40ea2013}
+
+
+Definition at line 24 of file Dinkelbach.\+cpp.
+
+
+
+References q\+\_\+init.
+
+
+\begin{DoxyCode}
+25  \{ \hyperlink{classgrbfrc_1_1Dinkelbach_aa5ef5cdb3b0b29aee7eeb61c947c2a4d}{q\_init} = qi; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!set\+\_\+time\+\_\+limit@{set\+\_\+time\+\_\+limit}}
+\index{set\+\_\+time\+\_\+limit@{set\+\_\+time\+\_\+limit}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{set\+\_\+time\+\_\+limit(int seconds)}{set_time_limit(int seconds)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::set\+\_\+time\+\_\+limit (
+\begin{DoxyParamCaption}
+\item[{int}]{seconds}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_a4be338efdc5fdd17a84b41091d77528f}{}\label{classgrbfrc_1_1Dinkelbach_a4be338efdc5fdd17a84b41091d77528f}
+
+
+Definition at line 30 of file Dinkelbach.\+cpp.
+
+
+
+References time\+\_\+limit.
+
+
+\begin{DoxyCode}
+31  \{ \hyperlink{classgrbfrc_1_1Dinkelbach_adc23446f0c5a966a0476c4fc60bb47a6}{time\_limit} = seconds; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!set\+\_\+tolerance@{set\+\_\+tolerance}}
+\index{set\+\_\+tolerance@{set\+\_\+tolerance}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{set\+\_\+tolerance(double tolerance)}{set_tolerance(double tolerance)}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::set\+\_\+tolerance (
+\begin{DoxyParamCaption}
+\item[{double}]{tolerance}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_a8f1ea3b5713cbd3d586ecb45027d1a2a}{}\label{classgrbfrc_1_1Dinkelbach_a8f1ea3b5713cbd3d586ecb45027d1a2a}
+
+
+Definition at line 33 of file Dinkelbach.\+cpp.
+
+
+
+References tol.
+
+
+\begin{DoxyCode}
+34  \{ \hyperlink{classgrbfrc_1_1Dinkelbach_aa14d02fd3f14975d9ef118b18dfb5d87}{tol} = tolerance; \}
+\end{DoxyCode}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!write\+Solution@{write\+Solution}}
+\index{write\+Solution@{write\+Solution}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{write\+Solution()}{writeSolution()}}]{\setlength{\rightskip}{0pt plus 5cm}void grbfrc\+::\+Dinkelbach\+::write\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgrbfrc_1_1Dinkelbach_a9a27c81b1b70feeabebb17a65f6ada30}{}\label{classgrbfrc_1_1Dinkelbach_a9a27c81b1b70feeabebb17a65f6ada30}
+
+
+Definition at line 166 of file Dinkelbach.\+cpp.
+
+
+
+References fmip, solution, and grbfrc\+::\+F\+M\+I\+L\+P\+::solution.
+
+
+
+Referenced by grbfrc\+::\+F\+M\+I\+L\+P\+::run\+Dinkelbach().
+
+
+\begin{DoxyCode}
+167  \{ 
+168   \textcolor{keywordflow}{if} (\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution}) *(\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution}) = \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution};
+169   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution}) \hyperlink{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{fmip}->\hyperlink{classgrbfrc_1_1FMILP_ae7b20c4efb2d3a689d46a5b88329b207}{solution} = \textcolor{keyword}{new} FMILPSol(
+      \hyperlink{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{solution});
+170   \textcolor{keywordflow}{else} std::cout << \textcolor{stringliteral}{"No solution avaiable!"} << std::endl;
+171  \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgrbfrc_1_1Dinkelbach_a9a27c81b1b70feeabebb17a65f6ada30_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!fmip@{fmip}}
+\index{fmip@{fmip}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{fmip}{fmip}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+LP}$\ast$ grbfrc\+::\+Dinkelbach\+::fmip\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}{}\label{classgrbfrc_1_1Dinkelbach_aa7b46a3cb24f1ec0f278edaa2348729d}
+
+
+Definition at line 50 of file Dinkelbach.\+h.
+
+
+
+Referenced by run(), and write\+Solution().
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!max\+\_\+iter@{max\+\_\+iter}}
+\index{max\+\_\+iter@{max\+\_\+iter}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{max\+\_\+iter}{max_iter}}]{\setlength{\rightskip}{0pt plus 5cm}int grbfrc\+::\+Dinkelbach\+::max\+\_\+iter \{ 30 \}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_a732fd0c62a20a624dbd5d9ab95f5d9c7}{}\label{classgrbfrc_1_1Dinkelbach_a732fd0c62a20a624dbd5d9ab95f5d9c7}
+
+
+Definition at line 52 of file Dinkelbach.\+h.
+
+
+
+Referenced by Dinkelbach(), run(), and set\+\_\+max\+\_\+iter().
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!q\+\_\+init@{q\+\_\+init}}
+\index{q\+\_\+init@{q\+\_\+init}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{q\+\_\+init}{q_init}}]{\setlength{\rightskip}{0pt plus 5cm}double grbfrc\+::\+Dinkelbach\+::q\+\_\+init \{ 0.\+0 \}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_aa5ef5cdb3b0b29aee7eeb61c947c2a4d}{}\label{classgrbfrc_1_1Dinkelbach_aa5ef5cdb3b0b29aee7eeb61c947c2a4d}
+
+
+Definition at line 51 of file Dinkelbach.\+h.
+
+
+
+Referenced by Dinkelbach(), run(), and set\+\_\+q\+\_\+init().
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!solution@{solution}}
+\index{solution@{solution}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{solution}{solution}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+M\+I\+L\+P\+Sol} grbfrc\+::\+Dinkelbach\+::solution\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}{}\label{classgrbfrc_1_1Dinkelbach_a2b704289f15a68055ac48167119cc69e}
+
+
+Definition at line 55 of file Dinkelbach.\+h.
+
+
+
+Referenced by get\+Solution(), run(), and write\+Solution().
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!time\+\_\+limit@{time\+\_\+limit}}
+\index{time\+\_\+limit@{time\+\_\+limit}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{time\+\_\+limit}{time_limit}}]{\setlength{\rightskip}{0pt plus 5cm}int grbfrc\+::\+Dinkelbach\+::time\+\_\+limit \{ 3600 \}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_adc23446f0c5a966a0476c4fc60bb47a6}{}\label{classgrbfrc_1_1Dinkelbach_adc23446f0c5a966a0476c4fc60bb47a6}
+
+
+Definition at line 53 of file Dinkelbach.\+h.
+
+
+
+Referenced by Dinkelbach(), and set\+\_\+time\+\_\+limit().
+
+\index{grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}!tol@{tol}}
+\index{tol@{tol}!grbfrc\+::\+Dinkelbach@{grbfrc\+::\+Dinkelbach}}
+\subsubsection[{\texorpdfstring{tol}{tol}}]{\setlength{\rightskip}{0pt plus 5cm}double grbfrc\+::\+Dinkelbach\+::tol \{ 0.\+0001 \}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgrbfrc_1_1Dinkelbach_aa14d02fd3f14975d9ef118b18dfb5d87}{}\label{classgrbfrc_1_1Dinkelbach_aa14d02fd3f14975d9ef118b18dfb5d87}
+
+
+Definition at line 54 of file Dinkelbach.\+h.
+
+
+
+Referenced by Dinkelbach(), run(), and set\+\_\+tolerance().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sebastian/wrk/deregnet/deregnet/grbfrc/include/grbfrc/\hyperlink{Dinkelbach_8h}{Dinkelbach.\+h}\item 
+/home/sebastian/wrk/deregnet/deregnet/grbfrc/src/\hyperlink{Dinkelbach_8cpp}{Dinkelbach.\+cpp}\end{DoxyCompactItemize}
