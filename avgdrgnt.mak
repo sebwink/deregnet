@@ -6,9 +6,9 @@ include common.mak
 
 CXXFLAGS += -DRGNT_DEBUG 
 
-LDFLAGS = -pg -L${GRBFRC_HOME}/lib -lgrbfrc
+LDFLAGS = -pg -L${GRBFRC_HOME}/lib -lgrbfrc -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi${GUROBI_VERSION_SUFFIX}
 
-RUNPATH = ${GRBFRC_HOME}/lib
+RUNPATH = ${GRBFRC_HOME}/lib:${GUROBI_HOME}/lib
 
 objects = build/utils.o \
           build/DeregnetData.o \

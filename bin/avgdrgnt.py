@@ -9,6 +9,8 @@ import igraph
 
 import deregnet
 
+from biograph.mapping.gene import BiomartGeneIdMapper
+
 def define_args(parser):
     parser.add_argument('--absolute-values', default = False, dest = 'abs', type = bool,
                         help = 'Whether to take absolute values of the scores. Default: False, use like ... --absolute-values True ...')
@@ -52,10 +54,18 @@ def define_args(parser):
                         help = 'Set --flip-orientation True when you want to flip the orientation. Default: False')
     parser.add_argument('--algorithm', default = 'dta', dest = 'algorithm', type = str, 
                         help = 'Algorithm to use: dta, gcc, ovt.')
-    parser.add_argument('--receptors-from-gmt', dest='receptors_from_gmt',
+    parser.add_argument('--receptors-from-gmt', default=None, dest='receptors_from_gmt',
                         help = '--repecptors-from-gmt path to gmt file, gene set 1, [gene set 2,...,gene set N]')
-    parser.add_argument('--terminals-from-gmt', dest='terminals_from_gmt',
+    parser.add_argument('--terminals-from-gmt', default=None, dest='terminals_from_gmt',
                         help = '--terminals-from-gmt path to gmt file, gene set 1, [gene set 2,...,gene set N]')
+    parser.add_argument('--receptors-file', default=None, dest='receptors', type=str,
+                        help = 'Specify path of file containing the receptor nodes')
+    parser.add_argument('--terminals-file', default=None, dest='terminals', type=str,
+                        help = 'Specify path of file containing the terminal nodes')
+    parser.add_argument('--receptor-id-type', default=None, dest='receptor_id_type', type=str,
+                        help = 'Id system of specified receptors.')
+    parser.add_argument('--terminal-id-type', default=None, dest='terminal_id_type', type=str,
+                        help = 'Id system of specified terminals.')
 
 def parse_sep(sep):
     if sep == 'tab':
@@ -80,7 +90,11 @@ def main():
                                          args.id_col,
                                          args.score_col,
                                          args.species,
-                                         GeneIdMapper)
+                                         BiomartGeneIdMapper,
+                                         args.receptors,
+                                         args.receptor_id_type,
+                                         args.terminals,
+                                         args.terminal_id_type)
 
     drgnt_arg_dict = {
                     '--graph' : tmp_files.graph,
@@ -94,7 +108,9 @@ def main():
                     '--root' : args.root,
                     '--time-limit' : args.time_limit,
                     '--model-sense' : args.model_sense,
-                    '--algorithm' : args.algorithm
+                    '--algorithm' : args.algorithm,
+                    '--receptors-file' : tmp_files.receptors,
+                    '--terminals-file' : tmp_files.terminals
                  }
 
     drgnt_args = []

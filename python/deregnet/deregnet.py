@@ -60,13 +60,25 @@ class TmpFileHandle:
         os.mkdir(self.path)
         os.mkdir(os.path.join(self.path, 'subgraphs'))
         self.graph = None
-        self.scores = None
+        self.scores = None 
+        self.receptors = None
+        self.terminals = None
     def write_graph(self, graph, graph_id_attr):
         self.graph = os.path.join(self.path, 'graph.lgf')
-        igraph2lgf(graph, self.graph, id_attr = graph_id_attr)
+        igraph2lgf(graph, self.graph, id_attr = graph_id_attr) 
     def write_scores(self, scores):
         self.scores = os.path.join(self.path, 'scores.tsv')
-        scores.to_csv(self.scores, sep = '\t', index = False, header = False)
+        scores.to_csv(self.scores, sep = '\t', index = False, header = False) 
+    def write_receptors(self, receptors):
+        self.receptors = os.path.join(self.path, 'receptors.txt')
+        with open(self.receptors, 'w') as receptors_file:
+            for r in receptors:
+                receptors_file.write(r+'\n')
+    def write_terminals(self, terminals):
+        self.terminals = os.path.join(self.path, 'terminals.txt')
+        with open(self.terminals, 'w') as terminals_file:
+            for t in terminals:
+                terminals_file.write(t+'\n')
 
 def parse_scores(path2score,
                  id_col,
@@ -84,13 +96,32 @@ def parse_scores(path2score,
     if id_mapper is None:
         graph_id_type = score_id_type
     if score_id_type != graph_id_type:
-        mapper = id_mapper(default_species = species, **kwargs)
+        args = []
+        if species != 'hsa':
+            args = [species]
+        mapper = id_mapper(*args)
         ids = mapper.map(ids, score_id_type, graph_id_type)
     df['ids'] = ids
     df = df[['ids', score_col]]
     df = df[df['ids'] != '']
     # df = df[str(df[score_col]) != '']
-    return df
+    return df 
+
+def parse_layer(layer_file, layer_from_gmt, graph_id_type, layer_id_type, species, id_mapper):
+    layer = set(pd.read_table(layer_file)[[0]].tolist())
+    gmt_data = layer_from_gmt.split(',')
+    gmt_file, gene_sets = gmt_data[0], gmt_data[1:]
+    gmt = from_gmt(gmt_file)
+    for gene_set in gene_sets:
+        layer |= set(gmt[gene_set])
+    layer = list(layer)
+    if layer_id_type != graph_id_type:
+        args = []
+        if species != 'hsa':
+            args = [species]
+        mapper = id_mapper(*args)
+        layer = mapper.map(layer, layer_id_type, graph_id_type)
+    return layer
 
 def remove_self_loops(graph):
     self_loops = [e for e in graph.es if e.source == e.target]
@@ -107,6 +138,12 @@ def write_tmp_files(graph,
                     score_col,
                     species,
                     id_mapper = None,
+                    receptors_file,
+                    receptors_from_gmt,
+                    receptor_id_type,
+                    terminals_file,
+                    terminals_from_gmt,
+                    terminal_id_type,
                     **kwargs):
     graph = remove_self_loops(graph)
     scores = parse_scores(path2score,
@@ -121,6 +158,20 @@ def write_tmp_files(graph,
     tmp_files = TmpFileHandle()
     tmp_files.write_graph(graph, graph_id_attr)
     tmp_files.write_scores(scores)
+    receptors = parse_layer(receptors_file,
+                            receptors_from_gmt,
+                            graph_id_type,
+                            receptor_id_type,
+                            species,
+                            id_mapper)
+    tmp_files.write_receptors(receptors)
+    terminals = parse_layer(terminals_file,
+                            terminals_from_gmt,
+                            graph_id_type,
+                            terminal_id_type,
+                            species,
+                            id_mapper)
+    tmp_files.write_terminals(terminals)
     return tmp_files
 
 def ig_to_nx(ig_graph):
@@ -135,6 +186,8 @@ def ig_to_nx(ig_graph):
     for node in nx_graph.nodes(data=True):
         for attr in node[1]:
             if isinstance(node[1][attr], np.float64):
+                node[1][attr] = float(node[1][attr])
+            if isinstance(node[1][attr], np.int64):
                 node[1][attr] = float(node[1][attr])
             if isinstance(node[1][attr], pd.core.series.Series):
                 node[1][attr] = series_to_str(node[1][attr])
@@ -160,7 +213,6 @@ def output2graphml(graph, tmp_files, outdir):
             first_line = sif.readline()
             return (':'.join(first_line.split(':')[1:])).strip()
 
-    
     scores = pd.read_csv(tmp_files.scores, sep = '\t', header = None)
     scores.set_index(0, inplace = True)
     output = os.path.join(tmp_files.path, 'subgraphs/plain')

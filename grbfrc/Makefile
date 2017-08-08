@@ -1,10 +1,10 @@
 CXX = c++
-CXXFLAGS = -std=c++11 -Wall -pedantic -fPIC -ggdb3 -pg -fopenmp # -DGRBFRC_OMP
+CXXFLAGS = -std=c++11 -Wall -pedantic -fPIC -ggdb3 -pg # -fopenmp # -DGRBFRC_OMP
 
 include ../gurobi_version.mak
 
 INCLUDE = -I${GUROBI_HOME}/include -Iinclude
-LDFLAGS = -pg -lomp -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi70
+LDFLAGS = -pg -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi70
 
 objects = FMILP.o CharnesCooper.o Dinkelbach.o Gloverizer.o YGGY.o Solver.o Algorithm.o ObjVarTransform.o
 

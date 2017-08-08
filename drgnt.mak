@@ -4,7 +4,7 @@ all : bin/drgnt
 
 include common.mak
 
-CXXFLAGS += -DRGNT_DEBUG
+# CXXFLAGS += -DRGNT_DEBUG
 
 LDFLAGS = -pg -L${GUROBI_HOME}/lib -lgurobi_c++ -lgurobi${GUROBI_VERSION_SUFFIX}
 
