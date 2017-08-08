@@ -1,5 +1,6 @@
 #!/opt/anaconda/3.5/bin/python
 
+
 import os
 import subprocess
 import time
@@ -51,6 +52,10 @@ def define_args(parser):
                         help = 'Set --flip-orientation True when you want to flip the orientation. Default: False')
     parser.add_argument('--algorithm', default = 'dta', dest = 'algorithm', type = str, 
                         help = 'Algorithm to use: dta, gcc, ovt.')
+    parser.add_argument('--receptors-from-gmt', dest='receptors_from_gmt',
+                        help = '--repecptors-from-gmt path to gmt file, gene set 1, [gene set 2,...,gene set N]')
+    parser.add_argument('--terminals-from-gmt', dest='terminals_from_gmt',
+                        help = '--terminals-from-gmt path to gmt file, gene set 1, [gene set 2,...,gene set N]')
 
 def parse_sep(sep):
     if sep == 'tab':
