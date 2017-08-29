@@ -3,7 +3,7 @@ import time
 import subprocess
 import igraph
 import numpy as np
-import networkx as nx
+import networkx as nx # should not be necessary
 import pandas as pd
 
 __tmpdir__ = os.path.join(os.path.expanduser('~'), '.deregnet/tmp')
@@ -68,17 +68,16 @@ class TmpFileHandle:
         igraph2lgf(graph, self.graph, id_attr = graph_id_attr) 
     def write_scores(self, scores):
         self.scores = os.path.join(self.path, 'scores.tsv')
-        scores.to_csv(self.scores, sep = '\t', index = False, header = False) 
+        scores.to_csv(self.scores, sep = '\t', index = False, header = False)
+    def _write_layer(self, layer, filename, fileattr):
+        fileattr = os.path.join(self.path, filename)
+        with open(fileattr, 'w') as layer_file:
+            for node in layer_file:
+                layer_file.write(node+'\n')
     def write_receptors(self, receptors):
-        self.receptors = os.path.join(self.path, 'receptors.txt')
-        with open(self.receptors, 'w') as receptors_file:
-            for r in receptors:
-                receptors_file.write(r+'\n')
+        self._write_layer(receptors, 'receptors.txt', self.receptors)
     def write_terminals(self, terminals):
-        self.terminals = os.path.join(self.path, 'terminals.txt')
-        with open(self.terminals, 'w') as terminals_file:
-            for t in terminals:
-                terminals_file.write(t+'\n')
+        self._write_layer(terminals, 'terminals.txt', self.terminals)
 
 def parse_scores(path2score,
                  id_col,
@@ -107,20 +106,36 @@ def parse_scores(path2score,
     # df = df[str(df[score_col]) != '']
     return df 
 
+def read_gmt(path2gmt):
+    gmt = open(path2gmt, "r")
+    geneSets = {}
+    descriptions = {}
+    for line in gmt:
+        getthis = line.split("\n")[0]
+        geneSet = getthis.split("\t")[0]
+        description = getthis.split("\t")[1]
+        genes = getthis.split("\t")[2:-1]
+        genes = { gene for gene in genes if len(gene) > 0 }
+        geneSets[geneSet] = genes
+        descriptions[geneSet] = description
+    gmt.close()
+    return geneSets, descriptions
+
 def parse_layer(layer_file, layer_from_gmt, graph_id_type, layer_id_type, species, id_mapper):
     layer = set(pd.read_table(layer_file)[[0]].tolist())
-    gmt_data = layer_from_gmt.split(',')
-    gmt_file, gene_sets = gmt_data[0], gmt_data[1:]
-    gmt = from_gmt(gmt_file)
-    for gene_set in gene_sets:
-        layer |= set(gmt[gene_set])
-    layer = list(layer)
-    if layer_id_type != graph_id_type:
-        args = []
-        if species != 'hsa':
-            args = [species]
-        mapper = id_mapper(*args)
-        layer = mapper.map(layer, layer_id_type, graph_id_type)
+    if layer_from_gmt is not None:
+        gmt_data = layer_from_gmt.split(',')
+        gmt_file, gene_sets = gmt_data[0], gmt_data[1:]
+        gmt, _ = read_gmt(gmt_file)
+        for gene_set in gene_sets:
+            layer |= set(gmt[gene_set])
+            layer = list(layer)
+        if layer_id_type != graph_id_type:
+            args = []
+            if species != 'hsa':
+                args = [species]
+            mapper = id_mapper(*args)
+            layer = mapper.map(layer, layer_id_type, graph_id_type)
     return layer
 
 def remove_self_loops(graph):
@@ -137,7 +152,7 @@ def write_tmp_files(graph,
                     id_col,
                     score_col,
                     species,
-                    id_mapper = None,
+                    id_mapper,
                     receptors_file,
                     receptors_from_gmt,
                     receptor_id_type,
@@ -145,7 +160,14 @@ def write_tmp_files(graph,
                     terminals_from_gmt,
                     terminal_id_type,
                     **kwargs):
+    '''
+    Write all necessary temporary files.
+    '''
+    tmp_files = TmpFileHandle()
+    # graph 
     graph = remove_self_loops(graph)
+    tmp_files.write_graph(graph, graph_id_attr)
+    # score
     scores = parse_scores(path2score,
                           id_col,
                           score_col,
@@ -155,9 +177,8 @@ def write_tmp_files(graph,
                           species,
                           id_mapper,
                           **kwargs)
-    tmp_files = TmpFileHandle()
-    tmp_files.write_graph(graph, graph_id_attr)
     tmp_files.write_scores(scores)
+    # receptors
     receptors = parse_layer(receptors_file,
                             receptors_from_gmt,
                             graph_id_type,
@@ -165,6 +186,7 @@ def write_tmp_files(graph,
                             species,
                             id_mapper)
     tmp_files.write_receptors(receptors)
+    # terminals
     terminals = parse_layer(terminals_file,
                             terminals_from_gmt,
                             graph_id_type,
@@ -172,8 +194,10 @@ def write_tmp_files(graph,
                             species,
                             id_mapper)
     tmp_files.write_terminals(terminals)
+    # 
     return tmp_files
 
+# this is not really necessary, deal with it purely in igraph!
 def ig_to_nx(ig_graph):
     def series_to_str(series):
         series = [str(elmt) for elmt in series]
@@ -233,4 +257,28 @@ def output2graphml(graph, tmp_files, outdir):
         graphml = os.path.join(outdir, sif.split('.')[0] + '.graphml')
         subgraph = ig_to_nx(subgraph)
         nx.write_graphml(subgraph, graphml)
+
+#####################################################################################
+
+#####################################################################################
+
+class SubgraphFinder:
+    def __init__(self, graph):
+        self.graph = graph
+
+    def __call__(self, *args, **kwargs):
+        pass
+
+class GMTFile:
+    def __init__(self, path):
+        self.path = path
+
+    def read(self):
+        pass
+
+    def write(self, path=None):
+        pass
+
+class SubgraphFinderResult:
+    pass
 
