@@ -143,7 +143,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 		{"no-start-heuristic", 0, 0, 0},
         {"help", 0, 0, 'h'},
 		{"version", 0, 0, 'v'},
-        {"model-sense", 0, 0, 0},
+        {"model-sense", 1, 0, 0},
         {"absolute-values", 0, 0, 0},
 		{NULL, 0, NULL, 0}
 	};
@@ -184,9 +184,9 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 // --exclude-file
 				else if ( strcmp(long_options[option_index].name, exclude_file.c_str()) == 0)
 					register_node_set_file(&options.exclude, optarg);
-                else if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0)
-                    data.model_sense = string(optarg);
-				break;
+                else if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0) 
+				    data.model_sense = optarg;
+                break;
 			}
 			case 'g':
 				// -g,--graph
@@ -218,7 +218,6 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				else {
 				    cout << "\nUnknown algorithm option provided:" << endl;
 					cout << "-a,--algorithm  < gcc | dta | ovt >" << endl;
-					print_help();
 					exit(OPTION_ERROR);
 				}
 				break;
@@ -300,6 +299,8 @@ void finalize_data(Options& options, Data& data) {
 // writeSubgraphs ###########################################################
 
 void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
+    // hard to do platform-independent without Boost or C++17
+    // on the other hand, it is 2017 now ...
     char cwd[2048];
     string outdir;
     if (getcwd(cwd, sizeof(cwd)) != NULL)
@@ -316,6 +317,10 @@ void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
         subgraph.writeToFile(outdir);
         subgraph.writeToFile(outdir_plain, true);
     }
+}
+
+void write_subgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
+    //fs::path outdir(*outdirp);
 }
 
 // print_version ############################################################

@@ -82,7 +82,8 @@ void LazyConstraintCallback::callback() {
         else if (gap_cut && where == GRB_CB_MIP) {
             double best_objective { getDoubleInfo(GRB_CB_MIP_OBJBST) };
             double best_bound { getDoubleInfo(GRB_CB_MIP_OBJBND) };
-            if ( abs(best_objective - best_bound) < (*gap_cut) * (1.0 + abs(best_objective)) ) {
+            if ( abs(best_objective - best_bound) < 0.000001 ) {}
+            else if ( abs(best_objective - best_bound) < (*gap_cut) * (1.0 + abs(best_objective)) ) {
                 cout << "Achieved " << *gap_cut << " gap. Stopping optimization." << endl;
                 abort();
             }

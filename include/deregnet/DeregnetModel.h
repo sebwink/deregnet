@@ -415,7 +415,7 @@ bool DeregnetModel<grbfrc::FMILP, AvgdrgntData>::solve(std::pair<Node, std::set<
     }
 
     objub = objub / data->min_size;
-    std::cout << objub << std::endl;
+    // std::cout << objub << std::endl;
 
     model.optimize(data->algorithm, cb, &objub, &objlb);
     int status = model.get(GRB_IntAttr_Status);
