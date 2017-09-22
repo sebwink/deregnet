@@ -1,3 +1,7 @@
+'''
+
+'''
+
 import os
 import time
 import shutil
@@ -6,166 +10,14 @@ import subprocess
 import igraph as ig
 import pandas as pd
 
-
-def parse_scores(path2score,
-                 id_col,
-                 score_col,
-                 sep,
-                 score_id_type,
-                 graph_id_type,
-                 species,
-                 id_mapper,
-                 **kwargs):
-    df = pd.read_csv(path2score, sep = sep)
-    df = df[[id_col, score_col]]
-    df.dropna(inplace=True)
-    ids = list(df[id_col])
-    if id_mapper is None:
-        graph_id_type = score_id_type
-    if score_id_type != graph_id_type:
-        args = []
-        if species != 'hsa':
-            args = [species]
-        mapper = id_mapper(*args)
-        ids = mapper.map(ids, score_id_type, graph_id_type)
-    df['ids'] = ids
-    df = df[['ids', score_col]]
-    df = df[df['ids'] != '']
-    # df = df[str(df[score_col]) != '']
-    return df 
-
-def read_gmt(path2gmt):
-    gmt = open(path2gmt, "r")
-    geneSets = {}
-    descriptions = {}
-    for line in gmt:
-        getthis = line.split("\n")[0]
-        geneSet = getthis.split("\t")[0]
-        description = getthis.split("\t")[1]
-        genes = getthis.split("\t")[2:-1]
-        genes = { gene for gene in genes if len(gene) > 0 }
-        geneSets[geneSet] = genes
-        descriptions[geneSet] = description
-    gmt.close()
-    return geneSets, descriptions
-
-def parse_layer(layer_file, layer_from_gmt, graph_id_type, layer_id_type, species, id_mapper):
-    layer = set(pd.read_table(layer_file)[[0]].tolist())
-    if layer_from_gmt is not None:
-        gmt_data = layer_from_gmt.split(',')
-        gmt_file, gene_sets = gmt_data[0], gmt_data[1:]
-        gmt, _ = read_gmt(gmt_file)
-        for gene_set in gene_sets:
-            layer |= set(gmt[gene_set])
-            layer = list(layer)
-        if layer_id_type != graph_id_type:
-            args = []
-            if species != 'hsa':
-                args = [species]
-            mapper = id_mapper(*args)
-            layer = mapper.map(layer, layer_id_type, graph_id_type)
-    return layer
-
-def write_tmp_files(graph,
-                    graph_id_attr,
-                    graph_id_type,
-                    path2score,
-                    score_id_type,
-                    sep,
-                    id_col,
-                    score_col,
-                    species,
-                    id_mapper,
-                    receptors_file,
-                    receptors_from_gmt,
-                    receptor_id_type,
-                    terminals_file,
-                    terminals_from_gmt,
-                    terminal_id_type,
-                    **kwargs):
-    '''
-    Write all necessary temporary files.
-    '''
-    tmp_files = TmpFileHandle()
-    # graph 
-    graph = remove_self_loops(graph)
-    tmp_files.write_graph(graph, graph_id_attr)
-    # score
-    scores = parse_scores(path2score,
-                          id_col,
-                          score_col,
-                          sep,
-                          score_id_type,
-                          graph_id_type,
-                          species,
-                          id_mapper,
-                          **kwargs)
-    tmp_files.write_scores(scores)
-    # receptors
-    receptors = parse_layer(receptors_file,
-                            receptors_from_gmt,
-                            graph_id_type,
-                            receptor_id_type,
-                            species,
-                            id_mapper)
-    tmp_files.write_receptors(receptors)
-    # terminals
-    terminals = parse_layer(terminals_file,
-                            terminals_from_gmt,
-                            graph_id_type,
-                            terminal_id_type,
-                            species,
-                            id_mapper)
-    tmp_files.write_terminals(terminals)
-    # 
-    return tmp_files
-
-def output2graphml(graph, tmp_files, outdir):
-    def parse_sif(path2sif):
-        nodes = set()
-        with open(path2sif, 'r') as sif:
-            for edge in sif:
-                edge = edge.split('\t')
-                nodes.add(edge[0])
-                nodes.add(edge[2][:-1])
-        return nodes 
-
-    def get_root(path):
-        with open(path, 'r') as sif:
-            first_line = sif.readline()
-            return (':'.join(first_line.split(':')[1:])).strip()
-
-    scores = pd.read_csv(tmp_files.scores, sep = '\t', header = None)
-    scores.set_index(0, inplace = True)
-    output = os.path.join(tmp_files.path, 'subgraphs/plain')
-    for sif in os.listdir(output):
-        root = get_root(os.path.join(output, '..', sif))
-        nodes = parse_sif(os.path.join(output, sif))
-        mapped_nodes = graph.vs.select(name_in=nodes)
-        subgraph = graph.subgraph(mapped_nodes, "create_from_scratch")
-        for node in subgraph.vs:
-            try:
-                node['score'] = scores.ix[node['name'],1]
-            except:
-                node['score'] = 0.0
-            if node['name'] == root:
-                node['root'] = True
-            else:
-                node['root'] = False
-        graphml = os.path.join(outdir, sif.split('.')[0] + '.graphml')
-        subgraph = ig_to_nx(subgraph)
-        nx.write_graphml(subgraph, graphml)
-
 #####################################################################################
-
-#####################################################################################
-
-def time_stamp():
-    return time.strftime('%Y-%m-%d-%H-%M-%S', time.gmtime())
 
 DEREGNET_TMPPATH = os.path.join(os.path.expanduser('~'), '.deregnet/tmp')
 
-DEREGNET_BINPATH=os.path.join(__file__,'../../bin')
+DEREGNET_BINPATH=os.path.join(os.path.dirname(__file__),'../../bin')
+
+def time_stamp():
+    return time.strftime('%Y-%m-%d-%H-%M-%S', time.gmtime())
 
 def igraph_to_lgf(graph,
                   path,
@@ -207,13 +59,295 @@ def igraph_to_lgf(graph,
             write_graph_attributes(additional_graph_attributes, lgf)
 
 
-class AbsoluteDeregnetArguments:
+def stringify_graph_attributes(_graph):
+
+    def stringify(what):
+        attrs = what.attributes()
+        for item in what:
+            for attr in attrs:
+                val = item[attr]
+                if not (isinstance(val, str) |
+                        isinstance(val, int) |
+                        isinstance(val, float)):
+                    item[attr] = str(val)
+
+    graph = _graph.copy()
+    stringify(graph.vs)
+    stringify(graph.es)
+    return graph
+
+class InvalidDeregnetArguments(Exception):
     pass
 
+class DeregenetArguments:
 
-class AverageDeregnetArguments:
-    pass
+    def __init__(self, scores={},
+                       default_score=0.0,
+                       excluded_nodes=None,
+                       included_nodes=None,
+                       flip_orientation=False,
+                       num_suboptimal=0,
+                       max_overlap=0.0,
+                       abs_values=False,
+                       model_sense='max',
+                       time_limit=1200,
+                       gap_cut=0.05,
+                       debug=False):
 
+        self.scores = dict(scores)
+        self.default_score = float(default_score)
+        self.excluded_nodes = excluded_nodes
+        self.included_nodes = included_nodes
+        self.flip_orientation = bool(flip_orientation)
+        self.num_suboptimal = int(num_suboptimal)
+        self._max_overlap = float(max_overlap)
+        self.abs_values = bool(abs_values)
+        self._model_sense = str(model_sense)
+        self._time_limit = float(time_limit)
+        self._gap_cut = float(gap_cut)
+        self.debug = bool(debug)
+
+        if not self.validate():
+            raise InvalidDeregnetArguments
+
+    def validate(self):
+        valid = True
+        if not self._validate_time_limit(self._time_limit):
+            self.time_limit = self._time_limit
+            valid = False
+        if not self._validate_gap_cut(self._gap_cut):
+            self.gap_cut = self._gap_cut
+            valid = False
+        if not self._validate_max_overlap(self._max_overlap):
+            self.max_overlap = self._max_overlap
+            valid = False
+        if not self._validate_model_sense(self._model_sense):
+            self.models_sense = self._model_sense
+            valid = False
+        return valid
+
+    @property
+    def max_overlap(self):
+        return self._max_overlap
+
+    @max_overlap.setter
+    def max_overlap(self, percentage):
+        if self._validate_max_overlap(percentage):
+            self._max_overlap = percentage
+        else:
+            print('max_overlap must be in the interval [0,100]')
+
+    def _validate_max_overlap(self, percentage):
+        return 0 <= percentage <= 100
+
+    @property
+    def model_sense(self):
+        return self._model_sense
+
+    @model_sense.setter
+    def model_sense(self, sense):
+        if self._validate_model_sense(sense):
+            self._model_sense = sense
+        else:
+            print('model_sense must be from {\'max\', \'min\'}')
+
+    def _validate_model_sense(self, sense):
+        return sense in {'min', 'max'}
+
+    @property
+    def time_limit(self):
+        return self._time_limit
+
+    @time_limit.setter
+    def time_limit(self, limit):
+        if self._validate_time_limit(limit):
+            self._time_limit = limit
+        else:
+            print('time_limit must be None or a float >= 0')
+
+    def _validate_time_limit(self, limit):
+        return limit is None or limit >= 0
+
+    @property
+    def gap_cut(self):
+        return self._gap_cut
+
+    @gap_cut.setter
+    def gap_cut(self, cut):
+        if self._validate_gap_cut(cut):
+            self._gap_cut = cut
+        else:
+            print('gap_cut must be None or a float from [0,1].')
+
+    def _validate_gap_cut(self, cut):
+        return cut is None or 0 < cut < 1
+
+    def kwargs(self):
+        return {
+                 'scores': self.scores,
+                 'default_score': self.default_score,
+                 'excluded_nodes': self.excluded_nodes,
+                 'included_nodes': self.included_nodes,
+                 'flip_orientation': self.flip_orientation,
+                 'num_suboptimal': self.num_suboptimal,
+                 'max_overlap': self.max_overlap,
+                 'abs_values': self.abs_values,
+                 'model_sense': self.model_sense,
+                 'time_limit': self.time_limit,
+                 'gap_cut': self.gap_cut,
+                 'debug': self.debug
+               }
+
+
+class AbsoluteDeregnetArguments(DeregenetArguments):
+
+    def __init__(self, size=20, root=None, **kwargs):
+        self._size = int(size)
+        self._root = root
+        super().__init__(**kwargs)
+
+    def validate(self):
+        valid = super().validate()
+        if not self._validate_size(self._size):
+            self.size = self._size
+            valid = False
+        if not self._validate_root(self._root):
+            self.root = self._root
+            valid = False
+        return valid
+
+    @property
+    def size(self):
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        if self._validate_size(size):
+            self._size = size
+        else:
+            print('size should be >= 0')
+
+    def _validate_size(self, size):
+        return size >= 0
+
+    @property
+    def root(self):
+        return self._root
+
+    @root.setter
+    def root(self, root):
+        if self._validate_root(root):
+            self._root = root
+            if self.num_suboptimal > 0 and self.max_overlap < 1/self.size:
+                self.max_overlap = 1/self.size
+        else:
+            print('root must be None or a string.')
+
+    def _validate_root(self, root):
+        return root is None or isinstance(root, str)
+
+    def __call__(self):
+        return {
+                 **self.kwargs(),
+                 **{
+                     'size': self.size,
+                     'root': self.root
+                   }
+               }
+
+class AverageDeregnetArguments(DeregenetArguments):
+    def __init__(self, min_size=15,
+                       max_size=50,
+                       receptors=None,
+                       terminals=None,
+                       algorithm='GeneralizedCharnesCooper',
+                       **kwargs):
+        self._min_size = int(min_size)
+        self._max_size = int(max_size)
+        self.receptors = receptors
+        self.terminals = terminals
+        self._algorithm = str(algorithm)
+        super().__init__(**kwargs)
+
+    def validate(self):
+        valid = super().validate()
+        if not self._validate_min_size(self._min_size):
+            self.min_size = self._min_size
+            valid = False
+        if not self._validate_max_size(self._max_size):
+            self.max_size = self._max_size
+            valid = False
+        if not self._validate_algorithm(self._algorithm):
+            self.algorithm = self._algorithm
+            valid = False
+        return valid
+
+    @property
+    def max_size(self):
+        return self._max_size
+
+    @max_size.setter
+    def max_size(self, size):
+        if self._validate_max_size(size):
+            self._max_size = size
+        else:
+            print('max_size must be None or an int >= min_size')
+
+    def _validate_max_size(self, size):
+        return size is None or size >= self.min_size
+
+    @property
+    def min_size(self):
+        return self._min_size
+
+    @min_size.setter
+    def min_size(self, size):
+        if self._validate_min_size(size):
+            self._min_size = size
+        else:
+            print('min_size must be <= max_size')
+
+    def _validate_min_size(self, size):
+        return size <= self.max_size
+
+    @property
+    def algorithm(self):
+        return self._algorithm
+
+    @algorithm.setter
+    def algorithm(self, name):
+        if self._validate_algorithm(name):
+            self._algorithm = name
+        else:
+            print('algorithm must be in {gcc, GeneralizedCharnesCooper, dta, Dinkelbach, ovt, ObjectiveVariableTransform}.')
+
+    def _validate_algorithm(self, name):
+        valid = name in {'gcc', 'GeneralizedCharnesCooper',
+                         'dta', 'Dinkelbach',
+                         'ovt', 'ObjectiveVariableTransform'}
+        if self.gap_cut is not None and name in {'dta', 'Dinkelbach'}:
+            print('It is not recommended to use the Dinkelbach-type algorithm together with a gap cut.'\
+                  '\nHowever, for sake of curiosity, we allow it.')
+        return valid
+
+    def _validate_gap_cut(self, cut):
+        valid = super()._validate_gap_cut(cut)
+        if cut is not None and self.algorithm in {'dta', 'Dinkelbach'}:
+            print('It is not recommended to use the Dinkelbach-type algorithm together with a gap cut.'\
+                  '\nHowever, for sake of curiosity, we allow it.')
+        return valid
+
+    def __call__(self):
+        return {
+                 **self.kwargs(),
+                 **{
+                     'min_size': self.min_size,
+                     'max_size': self.max_size,
+                     'receptors': self.receptors,
+                     'terminals': self.terminals,
+                     'algorithm': self.algorithm
+                   }
+               }
 
 class SubgraphFinder:
     '''
@@ -222,7 +356,8 @@ class SubgraphFinder:
     def __init__(self, graph,
                        id_attr='name',
                        deregnet_binpath=None,
-                       tmp_file_path=DEREGNET_TMPPATH):
+                       tmp_file_path=None,
+                       delete_temporary_files=True):
         '''
 
         '''
@@ -231,6 +366,7 @@ class SubgraphFinder:
         self.tmp_file_path = os.path.join(tmp_file_path, time_stamp())
         if not os.path.isdir(self.tmp_file_path):
             os.makedirs(self.tmp_file_path)
+        self.delete_temporary_files = delete_temporary_files
         self.graph_file = os.path.join(self.tmp_file_path, 'graph.lgf')
         self.graph = graph
         self.id_attr = id_attr
@@ -241,9 +377,9 @@ class SubgraphFinder:
 
         '''
         if isinstance(args, AverageDeregnetArguments):
-            return self.run_average_deregnet(**args())
-        elif isinstance(arg, AbsoluteDeregnetArguments):
-            return self.run_absolute_deregnet(**args())
+            return self.run_average_deregnet(**(args()))
+        elif isinstance(args, AbsoluteDeregnetArguments):
+            return self.run_absolute_deregnet(**(args()))
         return None
 
     def run_average_deregnet(self,
@@ -290,29 +426,31 @@ class SubgraphFinder:
                              '--graph' : self.graph_file,
                              '--score' : score_file,
                              '--output-dir' : rundir,
-                             '--gap-cut' : str(gap_cut),
                              '--min-size' : str(min_size),
                              '--max-size': str(max_size),
                              '--suboptimal' : str(num_suboptimal),
                              '--max-overlap-percentage' : str(max_overlap),
-                             '--time-limit' : str(time_limit),
                              '--model-sense' : model_sense,
                              '--algorithm' : algorithm
                             }
+        if time_limit:
+            avgdrgnt_argdict['--time-limit'] = str(time_limit)
+        if gap_cut:
+            avgdrgnt_argdict['--gap_cut'] = str(gap_cut)
         # write receptor and terminal layers to temporary files
         if receptors:
             self._write_geneset(receptors_file, receptors)
-            avgdrgnt_argdict['--receptors-file'] = self.receptors_file
+            avgdrgnt_argdict['--receptors-file'] = receptors_file
         if terminals:
             self._write_geneset(terminals_file, terminals)
-            avgdrgnt_argdict['--terminals-file'] = self.terminals_file
+            avgdrgnt_argdict['--terminals-file'] = terminals_file
         # write temporary files for manually excluded or included nodes
         if excluded_nodes:
             self._write_geneset(exclude_file, excluded_nodes)
-            avgdrgnt_argdict['--exclude-file'] = self.exclude_file
+            avgdrgnt_argdict['--exclude-file'] = exclude_file
         if included_nodes:
             self._write_geneset(include_file, included_nodes)
-            avgdrgnt_argdict['--receptors-file'] = self.receptors_file
+            avgdrgnt_argdict['--receptors-file'] = receptors_file
         # arguments as list (for subprocess.call)
         avgdrgnt_args = []
         for arg in avgdrgnt_argdict:
@@ -339,13 +477,79 @@ class SubgraphFinder:
                                     suboptimal=subgraphs[1:],
                                     mode='avg')
 
-    def run_absolute_deregnet(self, scores, root=None, flip_orientation=False, default_score=None):
-        '''
-
-        '''
-        self._prepare_scores(scores, default_score)
-        root = set() if root is None else {root}
-        self._write_receptors(root)
+    def run_absolute_deregnet(self,
+                              scores={},
+                              default_score=None,
+                              root=None,
+                              excluded_nodes=None,
+                              included_nodes=None,
+                              flip_orientation=False,
+                              size=15,
+                              num_suboptimal=0,
+                              max_overlap=0,
+                              abs_values=False,
+                              model_sense='max',
+                              time_limit=1200,
+                              gap_cut=0.05,
+                              debug=False):
+        # set temporary paths and write temporary files
+        rundir = os.path.join(self.tmp_file_path, 'run_'+time_stamp())
+        os.makedirs(rundir)
+        # temporary files
+        score_file = os.path.join(rundir, 'scores.tsv')
+        exclude_file = os.path.join(rundir, 'exclude.txt')
+        include_file = os.path.join(rundir, 'include.txt')
+        # handle scores
+        self._prepare_scores(score_file, scores, default_score)  # writes self.score_file
+        # assemble arguments
+        drgnt_argdict = {
+                          '--graph' : self.graph_file,
+                          '--score' : score_file,
+                          '--output-dir' : rundir,
+                          '--size' : str(size),
+                          '--suboptimal' : str(num_suboptimal),
+                          '--max-overlap-percentage' : str(max_overlap),
+                          '--model-sense' : model_sense,
+                        }
+        if time_limit:
+            avgdrgnt_argdict['--time-limit'] = str(time_limit)
+        if gap_cut:
+            avgdrgnt_argdict['--gap_cut'] = str(gap_cut)
+        # write receptor and terminal layers to temporary files
+        if root is not None:
+            drgnt_argdict['--root'] = root
+        # write temporary files for manually excluded or included nodes
+        if excluded_nodes:
+            self._write_geneset(exclude_file, excluded_nodes)
+            drgnt_argdict['--exclude-file'] = exclude_file
+        if included_nodes:
+            self._write_geneset(include_file, included_nodes)
+            drgnt_argdict['--include-file'] = receptors_file
+        # arguments as list (for subprocess.call)
+        drgnt_args = []
+        for arg in drgnt_argdict:
+            if drgnt_argdict[arg] is not None:
+                 drgnt_args += [arg, drgnt_argdict[arg]]
+        # add flag arguments
+        if flip_orientation:
+            drgnt_args += ['--flip-orientation']
+        if abs_values:
+            drgnt_args += ['--absolute-values']
+        # call C++ program
+        drgnt = os.path.join(self.deregnet_binpath, 'drgnt')
+        call = [drgnt] + drgnt_args
+        if debug:
+            print(call)
+            subprocess.call(['gdb', '--args']+call)
+        else:
+            subprocess.call(call)  # TODO: reroute messages
+        # parse back the results
+        node_names_list = self._read_result(rundir)
+        subgraphs = [self._get_subgraph(node_names) for node_names in node_names_list]
+        self._write_deregnet_attrs(subgraphs, scores, default_score, root=root) # TODO: register root
+        return SubgraphFinderResult(optimal=subgraphs[0],
+                                    suboptimal=subgraphs[1:],
+                                    mode='abs')
 
     def _remove_self_loops(self, graph):
         self_loops = [e for e in graph.es if e.source == e.target]
@@ -395,18 +599,24 @@ class SubgraphFinder:
 
     def _write_deregnet_attrs(self,
                               subgraphs,
-                              score,
+                              scores,
                               default_score,
-                              receptors,
-                              terminals):
+                              receptors=None,
+                              terminals=None,
+                              root=None):
         for subgraph in subgraphs:
-            for node in subgraph:
-                node['deregnet_score'] = self.scores.get(node['name'], default_score)
-                node['deregnet_receptor'] = True if node['name'] in receptors else False
-                node['deregnet_terminal'] = True if node['name'] in terminals else False
+            for node in subgraph.vs:
+                node['deregnet_score'] = scores.get(node['name'], default_score)
+                if receptors:
+                    node['deregnet_receptor'] = True if node['name'] in receptors else False
+                if terminals:
+                    node['deregnet_terminal'] = True if node['name'] in terminals else False
+                if root:
+                    node['deregnet_root'] = True if node['name'] == root else False
 
     def __del__(self):
-        shutil.rmtree(self.tmp_file_path)
+        if self.delete_temporary_files:
+            shutil.rmtree(self.tmp_file_path)
 
 
 class SubgraphFinderResult:
@@ -454,7 +664,7 @@ class SubgraphFinderResult:
 
     @classmethod
     def _abs_score(cls, graph):
-        return sum(node['_deregnet_score'] for node in graph.vs)
+        return sum(node['deregnet_score'] for node in graph.vs)
 
     @classmethod
     def _avg_score(cls, graph):
@@ -488,8 +698,8 @@ class SubgraphFinderResult:
     def subgraphs(self):
         return [optimal] + suboptimal
 
-    def to_graphml(path='.'):
-        # TODO: stringify/ignore non-str,int,float attributes
+    def to_graphml(self, path='.'):
         self.optimal.write_graphml(os.path.join(path, 'optimal.graphml'))
         for i, subgraph in enumerate(self.suboptimal):
-            subgraph.write_graphml(os.path.join(path, 'suboptimal'+str(i+1)+'.graphml'))
+            writable_subgraph = stringify_graph_attributes(subgraph)
+            writable_subgraph.write_graphml(os.path.join(path, 'suboptimal'+str(i+1)+'.graphml'))
