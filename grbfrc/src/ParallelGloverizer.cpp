@@ -14,8 +14,16 @@ void Gloverizer::gloverize() {
     add_glover_variables();
     std::cout << "Linearizing quadratic constraints and objective..." << std::endl;
     GRBQConstr* qconstr { model->getQConstrs() };
+    omp_lock_t model_lock;
+    omp_init_lock(&model_lock);
+    #pragma omp parallel for
     for (int q = 0; q < model->get(GRB_IntAttr_NumQConstrs); q++) {
-        linearize_qconstr(qconstr);
+        std::cout << q << std::endl;
+        linearize_qconstr(qconstr, q, &model_lock);
+    }
+    omp_destroy_lock(&model_lock);
+    for (int q = 0; q < model->get(GRB_IntAttr_NumQConstrs); q++) {
+        model->remove(*qconstr);
         qconstr++;
     }
     linearize_objective();
@@ -41,9 +49,11 @@ void Gloverizer::add_glover_variables() {
     }
 }
 
-void Gloverizer::linearize_qconstr(GRBQConstr* qconstr) {
-    GRBQConstr* qc { qconstr };
+void Gloverizer::linearize_qconstr(GRBQConstr* qconstr, int q, omp_lock_t* model_lock) {
+    GRBQConstr* qc { qconstr + q };
+    omp_set_lock(model_lock);
     GRBQuadExpr qexpr { model->getQCRow(*qc) };
+    omp_unset_lock(model_lock);
     GRBLinExpr new_lhs { qexpr.getLinExpr() };
     GRBVar* binvar { nullptr };
     for (unsigned int i = 0; i < qexpr.size(); i++) {
@@ -57,10 +67,11 @@ void Gloverizer::linearize_qconstr(GRBQConstr* qconstr) {
             if (binvar->sameAs(*var2glvrvr.first))
                 new_lhs += qexpr.getCoeff(i) * var2glvrvr.second;
     }
+    omp_set_lock(model_lock);
     model->addConstr(new_lhs,
                      qc->get(GRB_CharAttr_QCSense),
                      qc->get(GRB_DoubleAttr_QCRHS));
-    model->remove(*qc);
+    omp_unset_lock(model_lock);
 }
 
 void Gloverizer::linearize_objective() {
