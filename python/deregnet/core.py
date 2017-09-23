@@ -397,8 +397,8 @@ class SubgraphFinder:
                              abs_values=False,
                              model_sense='max',
                              algorithm='GeneralizedCharnesCooper',
-                             time_limit=1200,
-                             gap_cut=0.05,
+                             time_limit=None,
+                             gap_cut=None,
                              debug=False):
         '''
 
@@ -436,7 +436,7 @@ class SubgraphFinder:
         if time_limit:
             avgdrgnt_argdict['--time-limit'] = str(time_limit)
         if gap_cut:
-            avgdrgnt_argdict['--gap_cut'] = str(gap_cut)
+            avgdrgnt_argdict['--gap-cut'] = str(gap_cut)
         # write receptor and terminal layers to temporary files
         if receptors:
             self._write_geneset(receptors_file, receptors)
@@ -466,6 +466,7 @@ class SubgraphFinder:
         call = [avgdrgnt] + avgdrgnt_args
         if debug:
             print(call)
+            print(' '.join(call))
             subprocess.call(['gdb', '--args']+call)
         else:
             subprocess.call(call)  # TODO: reroute messages
@@ -489,8 +490,8 @@ class SubgraphFinder:
                               max_overlap=0,
                               abs_values=False,
                               model_sense='max',
-                              time_limit=1200,
-                              gap_cut=0.05,
+                              time_limit=None,
+                              gap_cut=None,
                               debug=False):
         # set temporary paths and write temporary files
         rundir = os.path.join(self.tmp_file_path, 'run_'+time_stamp())
@@ -512,9 +513,9 @@ class SubgraphFinder:
                           '--model-sense' : model_sense,
                         }
         if time_limit:
-            avgdrgnt_argdict['--time-limit'] = str(time_limit)
+            drgnt_argdict['--time-limit'] = str(time_limit)
         if gap_cut:
-            avgdrgnt_argdict['--gap_cut'] = str(gap_cut)
+            drgnt_argdict['--gap-cut'] = str(gap_cut)
         # write receptor and terminal layers to temporary files
         if root is not None:
             drgnt_argdict['--root'] = root
@@ -624,6 +625,10 @@ class SubgraphFinderResult:
         self.optimal = optimal
         self.suboptimal = suboptimal
         self._mode = mode
+
+    @property
+    def mode(self):
+        return self._mode
 
     @property
     def optimal_score(self):

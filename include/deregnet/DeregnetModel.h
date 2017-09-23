@@ -209,8 +209,27 @@ void DeregnetModel<Model, Data>::addReceptorConstraints() {
     if (!root) {
         std::set<Node>* receptors { data->receptors };
         for (NodeIt v(*graph); v != INVALID; ++v)
-            if (receptors->find(v) == receptors->end())
+            if (receptors->find(v) == receptors->end()) {
                 model.addConstr((*y)[v] == 0);
+            }
+    }
+    model.update();
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::addReceptorConstraints() {
+    if (!root) {
+        std::set<Node>* receptors { data->receptors };
+        GRBLinExpr receptor_sum;
+        for (NodeIt v(*graph); v != INVALID; ++v)
+            if (receptors->find(v) == receptors->end()) {
+                model.addConstr((*y)[v] == 0);   
+            }
+            else {
+                receptor_sum += x[v];
+            }
+        if (data->min_num_receptors)
+            model.addConstr(receptor_sum >= *(data->min_num_receptors));
     }
     model.update();
 }
@@ -225,6 +244,24 @@ void DeregnetModel<Model, Data>::addTerminalConstraints() { // consider using co
                 out_neighbor_expr += x[graph->target(a)];
             model.addConstr(x[v] - out_neighbor_expr <= 0);
         }
+    }
+    model.update();
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::addTerminalConstraints() { // consider using complement of terminals ...
+    for (NodeIt v(*graph); v != INVALID; ++v) {
+        std::set<Node>* terminals { data->terminals };
+        GRBLinExpr terminal_sum;
+        if (terminals->find(v) == terminals->end()) {
+            terminal_sum += x[v];
+            GRBLinExpr out_neighbor_expr;
+            for (OutArcIt a(*graph, v); a != INVALID; ++a)
+                out_neighbor_expr += x[graph->target(a)];
+            model.addConstr(x[v] - out_neighbor_expr <= 0);
+        }
+        if (data->min_num_terminals)
+            model.addConstr(terminal_sum >= *(data->min_num_terminals));
     }
     model.update();
 }

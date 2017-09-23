@@ -122,8 +122,10 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 		{"graph", 1, 0, 'g'},
 		{"terminals", 1, 0, 'T'},
 		{"terminals-file", 1, 0, 0},
+        {"min-num-terminals", 1, 0, 0},
 		{"receptors", 1, 0, 'R'},
 		{"receptors-file", 1, 0, 0},
+        {"min-num-receptors", 1, 0, 0},
 		{"score", 1, 0, 's'},
 		{"algorithm", 1, 0, 'a'},
 		{"root", 1, 0, 'r'},
@@ -163,6 +165,8 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 string exclude_file { "exclude-file" };
                 string model_sense { "model-sense" };
                 string absolute_values { "absolute-values" };
+                string min_num_terminals { "min-num-terminals" };
+                string min_num_receptors { "min-num-receptors" };
                 // --no-start-heuristic
                 if ( strcmp(long_options[option_index].name, no_start_heuristic.c_str()) == 0 )
                     data.start_heuristic = false;
@@ -173,7 +177,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 else if ( strcmp(long_options[option_index].name, terminals_file.c_str()) == 0)
                     register_node_set_file(&options.terminals, optarg);
                 // --absolute-values
-                if ( strcmp(long_options[option_index].name, absolute_values.c_str()) == 0 )
+                else if ( strcmp(long_options[option_index].name, absolute_values.c_str()) == 0 )
                     options.absolute_values = true;
                 // --receptors-file
                 else if ( strcmp(long_options[option_index].name, receptors_file.c_str()) == 0)
@@ -186,6 +190,10 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 					register_node_set_file(&options.exclude, optarg);
                 else if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0) 
 				    data.model_sense = optarg;
+                else if ( strcmp(long_options[option_index].name, min_num_terminals.c_str()) == 0)
+                    data.min_num_terminals = new int( atoi(optarg) );
+                else if ( strcmp(long_options[option_index].name, min_num_receptors.c_str()) == 0)
+                    data.min_num_receptors = new int( atoi(optarg) );
                 break;
 			}
 			case 'g':
@@ -319,9 +327,11 @@ void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
     }
 }
 
+/*
 void write_subgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
     //fs::path outdir(*outdirp);
 }
+*/
 
 // print_version ############################################################
 

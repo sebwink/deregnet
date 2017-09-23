@@ -118,9 +118,9 @@ def parse_scores(score_file,
                  id_column,
                  col_sep,
                  has_header,
-                 id_mapper,
-                 score_id_type,
-                 graph_id_type):
+                 id_mapper=None,
+                 score_id_type=None,
+                 graph_id_type=None):
     '''
 
     '''

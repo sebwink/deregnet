@@ -49,6 +49,9 @@ class AvgdrgntData : public DeregnetData {
             int min_size { 20 };
             int max_size { 50 };
 
+            int* min_num_terminals { nullptr };
+            int* min_num_receptors { nullptr };
+
             Algorithm algorithm { Algorithm::DTA };
 
 };

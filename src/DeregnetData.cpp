@@ -73,6 +73,8 @@ void DeregnetData::read_graph(string* pathToLgf) {
     }
     if (!receptor_as_root)
         reverse_graph();
+    else
+        original_graph = graph;
 }
 
 void DeregnetData::read_score(string* pathToTsv, bool take_abs) {
