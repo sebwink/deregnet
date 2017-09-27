@@ -595,7 +595,7 @@ class SubgraphFinder:
         return nodes
 
     def _get_subgraph(self, node_names):
-        nodes = self.graph.vs.select(name_in=node_names)
+        nodes = self.graph.vs.select(**{self.id_attr+'_in': node_names})
         return self.graph.subgraph(nodes, 'create_from_scratch')
 
     def _write_deregnet_attrs(self,
@@ -607,13 +607,13 @@ class SubgraphFinder:
                               root=None):
         for subgraph in subgraphs:
             for node in subgraph.vs:
-                node['deregnet_score'] = scores.get(node['name'], default_score)
+                node['deregnet_score'] = scores.get(node[self.id_attr], default_score)
                 if receptors:
-                    node['deregnet_receptor'] = True if node['name'] in receptors else False
+                    node['deregnet_receptor'] = True if node[self.id_attr] in receptors else False
                 if terminals:
-                    node['deregnet_terminal'] = True if node['name'] in terminals else False
+                    node['deregnet_terminal'] = True if node[self.id_attr] in terminals else False
                 if root:
-                    node['deregnet_root'] = True if node['name'] == root else False
+                    node['deregnet_root'] = True if node[self.id_attr] == root else False
 
     def __del__(self):
         if self.delete_temporary_files:

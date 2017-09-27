@@ -116,8 +116,8 @@ def populate_shared_args(deregnet_args, argparse_args, id_mapper):
 def parse_scores(score_file,
                  score_column,
                  id_column,
-                 col_sep,
-                 has_header,
+                 col_sep='\t',
+                 has_header=True,
                  id_mapper=None,
                  score_id_type=None,
                  graph_id_type=None):
@@ -127,14 +127,19 @@ def parse_scores(score_file,
     header = {'header':None} if not has_header else {}
     if not has_header:
         score_column, id_column = int(score_column), int(id_column)
-    df = pd.read_table(score_file, sep=col_sep, **header)
+    if isinstance(score_file, pd.DataFrame):
+        df = score_file
+    else:
+        df = pd.read_table(score_file, sep=col_sep, **header)
     if score_id_type != graph_id_type:
         ids = list(df[id_column])
         ids = id_mapper.map(ids, score_id_type, graph_id_type)
         # TODO: handle situations with list-valued id types
     df.drop_duplicates(inplace=True)
     df.set_index(id_column, inplace=True)
+    print(df.head())
     scores = {ID: float(df.ix[ID, score_column]) for ID in df.index}
+    print(scores)
     nan_keys = {ID for ID in scores if math.isnan(scores[ID])}
     for ID in nan_keys:
         del scores[ID]

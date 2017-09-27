@@ -192,8 +192,8 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				    data.model_sense = optarg;
                 else if ( strcmp(long_options[option_index].name, min_num_terminals.c_str()) == 0)
                     data.min_num_terminals = new int( atoi(optarg) );
-                else if ( strcmp(long_options[option_index].name, min_num_receptors.c_str()) == 0)
-                    data.min_num_receptors = new int( atoi(optarg) );
+                else if ( strcmp(long_options[option_index].name, max_num_receptors.c_str()) == 0)
+                    data.max_num_receptors = new int( atoi(optarg) );
                 break;
 			}
 			case 'g':
