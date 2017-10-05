@@ -165,6 +165,7 @@ std::vector<Subgraph> DeregnetFinder<ModelType, Data>::run() {
         if (!run_suboptimal_windup(solve_successful, &subgraphs, &nodes_so_far, i))
             break;
     }
+    std::cout << "Hello" << std::endl;
     return subgraphs;
 }
 

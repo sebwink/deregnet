@@ -87,6 +87,7 @@ class DeregnetModel {
     bool solve(std::pair<Node, std::set<Node>>* start_solution);
     void addSuboptimalityConstraint(std::set<std::string>& nodes_so_far);
     Solution getCurrentSolution();
+    void setObjSense(int sense);
 
   private:
 
@@ -266,12 +267,23 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::addTerminalConstraints() { // c
     model.update();
 }
 
+template<typename Model, typename Data>
+void DeregnetModel<Model, Data>::setObjSense(int sense) {
+    model.set(GRB_IntAttr_ModelSense, sense);
+}
+
+template <> inline
+void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setObjSense(int sense) {
+    model.setObjSense(sense);
+}
+
 template <typename Model, typename Data>
 void DeregnetModel<Model, Data>::setup_solve(std::pair<Node, std::set<Node>>* start_solution) {
     if (data->model_sense == "min")
-        model.set(GRB_IntAttr_ModelSense, GRB_MINIMIZE);
+        setObjSense(GRB_MINIMIZE);
     else
-        model.set(GRB_IntAttr_ModelSense, GRB_MAXIMIZE);
+        setObjSense(GRB_MAXIMIZE);
+    model.update();
 
     model.set(GRB_IntParam_LazyConstraints, 1);
 
@@ -419,7 +431,7 @@ bool DeregnetModel<GRBModel, DrgntData>::solve(std::pair<Node, std::set<Node>>* 
     setup_solve(start_solution);
     model.optimize();
     int status = model.get(GRB_IntAttr_Status);   // FMILP implmentation of status!
-    return status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT;
+    return (status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT);
 }
 
 template <> inline
@@ -456,7 +468,7 @@ bool DeregnetModel<grbfrc::FMILP, AvgdrgntData>::solve(std::pair<Node, std::set<
 
     model.optimize(data->algorithm, cb, &objub, &objlb);
     int status = model.get(GRB_IntAttr_Status);
-    return status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT;
+    return (status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT);
 }
 
 template <> inline

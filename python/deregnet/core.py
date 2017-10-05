@@ -415,6 +415,8 @@ class SubgraphFinder:
         # handle scores
         self._prepare_scores(score_file, scores, default_score)  # writes self.score_file
         # handle algorithm synonyms
+        print(rundir)
+        print(os.listdir(rundir))
         if algorithm == 'GeneralizedCharnesCooper':
             algorithm = 'gcc'
         elif algorithm == 'Dinkelbach':
@@ -470,6 +472,7 @@ class SubgraphFinder:
             subprocess.call(['gdb', '--args']+call)
         else:
             subprocess.call(call)  # TODO: reroute messages
+        print(' '.join(call))
         # parse back the results
         node_names_list = self._read_result(rundir)
         subgraphs = [self._get_subgraph(node_names) for node_names in node_names_list]

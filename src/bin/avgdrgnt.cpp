@@ -110,6 +110,7 @@ int main(int argc, char* argv[]) {
     finalize_data(options, data);
     DeregnetFinder<FMILP, Data> subgraphFinder(&data);
     vector<Subgraph> subgraphs { subgraphFinder.run() };
+    std::cout << subgraphs.size() << std::endl;
     writeSubgraphs(subgraphs, options.outdir);
     return 0;
 }
@@ -125,7 +126,6 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
         {"min-num-terminals", 1, 0, 0},
 		{"receptors", 1, 0, 'R'},
 		{"receptors-file", 1, 0, 0},
-        {"min-num-receptors", 1, 0, 0},
 		{"score", 1, 0, 's'},
 		{"algorithm", 1, 0, 'a'},
 		{"root", 1, 0, 'r'},
@@ -166,7 +166,6 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 string model_sense { "model-sense" };
                 string absolute_values { "absolute-values" };
                 string min_num_terminals { "min-num-terminals" };
-                string min_num_receptors { "min-num-receptors" };
                 // --no-start-heuristic
                 if ( strcmp(long_options[option_index].name, no_start_heuristic.c_str()) == 0 )
                     data.start_heuristic = false;
@@ -192,8 +191,6 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				    data.model_sense = optarg;
                 else if ( strcmp(long_options[option_index].name, min_num_terminals.c_str()) == 0)
                     data.min_num_terminals = new int( atoi(optarg) );
-                else if ( strcmp(long_options[option_index].name, max_num_receptors.c_str()) == 0)
-                    data.max_num_receptors = new int( atoi(optarg) );
                 break;
 			}
 			case 'g':
@@ -309,6 +306,7 @@ void finalize_data(Options& options, Data& data) {
 void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
     // hard to do platform-independent without Boost or C++17
     // on the other hand, it is 2017 now ...
+    std::cout << (*outdirp) << std::endl;
     char cwd[2048];
     string outdir;
     if (getcwd(cwd, sizeof(cwd)) != NULL)
