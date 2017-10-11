@@ -1,5 +1,7 @@
 '''
 
+
+
 '''
 
 import os
@@ -80,6 +82,17 @@ class InvalidDeregnetArguments(Exception):
     pass
 
 class DeregenetArguments:
+    '''
+    Base class for arguments passed to any deregnet algorithm.
+    Specfically, its subclasses AbsoluteDeregnetArguments and
+    AverageDeregnetArguments wrap the arguments needed to run
+    the absolute and average versions of DeRegNet respectively
+    and also set some sensible results. Also these classes
+    perform some basic consistency check on the arguments.
+
+    You can pass all arguments on initialization but also change
+    them by setting the respective properies of an argument object.
+    '''
 
     def __init__(self, scores={},
                        default_score=0.0,
@@ -93,7 +106,50 @@ class DeregenetArguments:
                        time_limit=1200,
                        gap_cut=0.05,
                        debug=False):
+        '''
+        Provide arguments common between the absolute and average
+        version of the DeRegNet algorithms.
 
+        Args:
+
+            size (int): Size of the subgraph(s).
+                        Default: 20
+            root (str): node id of the root node.
+                        Default: None (i.e. run the generic version)
+            scores (dict): A dictionary of scores with keys corresponding to
+                           node ids of the graph you use DeRegNet with.
+                           Default: {}
+            default_score (float): default score of nodes in the graph which
+                                   do not match any key in 'scores'
+                                   Default: 0.0
+            excluded_nodes (list): A list of node ids you want to exclude
+                                   from the subgraph.
+                                   Default: []
+            included_nodes (list): A list of node ids you want to include
+                                   in the subgraph.
+                                   Default: []
+            flip_orientation (bool): If True flips all edges in the original
+                                     graph, so 'receptors' will be 'targets', etc.
+                                     The returned subgraph will already be in
+                                     original orientation again.
+                                     Default: False
+            num_suboptimal (int): Number of suboptimal subgraphs to find.
+                                  Default: 0 (i.e. just find the optimal one)
+            max_overlap (float): Precentage of allowed node overlap between subgraphs.
+                                 Default: 0.0
+            abs_values (bool): If True take the absolute value of the provided scores
+                               to actually find the subgraphs.
+                               Default: False
+            model_sense (str): 'max' for maximization, 'min' for minimization.
+                               Default: 'max'
+            time_limit (int): Time limit for solution attempt in seconds.
+                              Default: None
+            gap_cut (float): Gap percentage at which optimization should be prematurely
+                             stopped.
+                             Default: None
+            debug (bool): If True start the algorithm in debug mode.
+                          Default: False
+        '''
         self.scores = dict(scores)
         self.default_score = float(default_score)
         self.excluded_nodes = excluded_nodes
@@ -202,6 +258,55 @@ class DeregenetArguments:
 class AbsoluteDeregnetArguments(DeregenetArguments):
 
     def __init__(self, size=20, root=None, **kwargs):
+        '''
+        This class wraps all arguments needed to run the absolute score
+        version of DeRegNet and sets some sensible defaults.
+
+        Args:
+
+            size (int): Size of the subgraph(s).
+                        Default: 20
+            root (str): node id of the root node.
+                        Default: None (i.e. run the generic version)
+            scores (dict): A dictionary of scores with keys corresponding to
+                           node ids of the graph you use DeRegNet with.
+                           Default: {}
+            default_score (float): default score of nodes in the graph which
+                                   do not match any key in 'scores'
+                                   Default: 0.0
+            excluded_nodes (list): A list of node ids you want to exclude
+                                   from the subgraph.
+                                   Default: []
+            included_nodes (list): A list of node ids you want to include
+                                   in the subgraph.
+                                   Default: []
+            flip_orientation (bool): If True flips all edges in the original
+                                     graph, so 'receptors' will be 'targets', etc.
+                                     The returned subgraph will already be in
+                                     original orientation again.
+                                     Default: False
+            num_suboptimal (int): Number of suboptimal subgraphs to find.
+                                  Default: 0 (i.e. just find the optimal one)
+            max_overlap (float): Precentage of allowed node overlap between subgraphs.
+                                 Default: 0.0
+            abs_values (bool): If True take the absolute value of the provided scores
+                               to actually find the subgraphs.
+                               Default: False
+            model_sense (str): 'max' for maximization, 'min' for minimization.
+                               Default: 'max'
+            time_limit (int): Time limit for solution attempt in seconds.
+                              Default: None
+            gap_cut (float): Gap percentage at which optimization should be prematurely
+                             stopped.
+                             Default: None
+            debug (bool): If True start the algorithm in debug mode.
+                          Default: False
+        '''
+
+        self.scores = dict(scores)
+        self.default_score = float(default_score)
+        self.excluded_nodes = excluded_nodes
+        self.included_nodes = included_nodes
         self._size = int(size)
         self._root = root
         super().__init__(**kwargs)
@@ -262,6 +367,60 @@ class AverageDeregnetArguments(DeregenetArguments):
                        terminals=None,
                        algorithm='GeneralizedCharnesCooper',
                        **kwargs):
+        '''
+        This class wraps all arguments needed to run the average score
+        version of DeRegNet and sets some sensible defaults.
+
+        Args:
+
+            min_size (int): Minimal size of the subgraph(s)
+                            Default: 15
+            max_size (int): Maximal size of the subgraph(s)
+                            Default: 50
+            receptors (list): List of node ids which define the receptors
+                              Default: []
+            terminals (list): List of node ids which define the terminals
+                              Default: []
+            algorithm (str): Algorithm with which to solve the resulting
+                             Fractional Integer Program.
+                             Default: 'GeneralizedCharnesCooper'
+                             Choices: 'GeneralizedCharnesCooper' ('gcc'),
+                                      'Dinkelbach' ('dta'),
+                                      'ObjectiveVariableTransform' ('ovt')
+            scores (dict): A dictionary of scores with keys corresponding to
+                           node ids of the graph you use DeRegNet with.
+                           Default: {}
+            default_score (float): default score of nodes in the graph which
+                                   do not match any key in 'scores'.
+                                   Default: 0.0
+            excluded_nodes (list): A list of node ids you want to exclude
+                                   from the subgraph.
+                                   Default: []
+            included_nodes (list): A list of node ids you want to include
+                                   in the subgraph.
+                                   Default: []
+            flip_orientation (bool): If True flips all edges in the original
+                                     graph, so 'receptors' will be 'targets', etc.
+                                     The returned subgraph will already be in
+                                     original orientation again.
+                                     Default: False
+            num_suboptimal (int): Number of suboptimal subgraphs to find.
+                                  Default: 0 (i.e. just find the optimal one)
+            max_overlap (float): Precentage of allowed node overlap between subgraphs
+                                 Default: 0.0
+            abs_values (bool): If True take the absolute value of the provided scores
+                               to actually find the subgraphs.
+                               Default: False
+            model_sense (str): 'max' for maximization, 'min' for minimization.
+                               Default: 'max'
+            time_limit (int): Time limit for solution attempt in seconds.
+                              Default: None
+            gap_cut (float): Gap percentage at which optimization should be prematurely
+                             stopped.
+                             Default: None
+            debug (bool): If True start the algorithm in debug mode.
+                          Default: False
+        '''
         self._min_size = int(min_size)
         self._max_size = int(max_size)
         self.receptors = receptors
@@ -351,7 +510,8 @@ class AverageDeregnetArguments(DeregenetArguments):
 
 class SubgraphFinder:
     '''
-
+    This is the main class in deregnet. You can use it to run the subgraph detection
+    algorithms which are the essence of DeRegNet.
     '''
     def __init__(self, graph,
                        id_attr='name',
@@ -359,6 +519,21 @@ class SubgraphFinder:
                        tmp_file_path=None,
                        delete_temporary_files=True):
         '''
+        Args:
+
+            graph (ig.Graph): The regulatory digraph in which you want to find the subgraphs.
+                              See also the deregnet.graph module.
+            id_attr (str): name of the attribute which should be taken as id attribute (and
+                           hence be used to match nodes to scores, etc.).
+                           Default: 'name'
+            deregnet_binpath (str): If you want to use this class with other binaries than the
+                                    default ones you can set the path here. Usually you should 
+                                    not do this and do not have to be concerned with this.
+            tmp_file_path (str): path where temporary file will be stored.
+                                 Default '${HOME}/.deregnet/tmp'
+            delete_temporary_files (bool): Whether to delete the written temporary directories
+                                           and files on deletion of the SubgraphFinder instance.
+                                           Default: True
 
         '''
         self.deregnet_binpath = DEREGNET_BINPATH if deregnet_binpath is None else deregnet_binpath
@@ -374,7 +549,18 @@ class SubgraphFinder:
 
     def run(self, args):
         '''
+        This method run DeRegNet. If it receives an instance of AbsoluteDeregnetArguments
+        as argument, it runs the absolute score version, if it receives an instance
+        AverageDeregnetArguments, it run the average score version. In any case it 
+        return an instance of SubgraphFinderResult.
 
+        Args:
+
+            args: instance of AbsoluteDeregnetArguments or AverageDeregnetArguments
+
+        Returns:
+
+            SubgraphFinderResult
         '''
         if isinstance(args, AverageDeregnetArguments):
             return self.run_average_deregnet(**(args()))
@@ -401,7 +587,61 @@ class SubgraphFinder:
                              gap_cut=None,
                              debug=False):
         '''
+        This method runs the average score version of DeRegNet.
 
+        Args:
+
+            min_size (int): Minimal size of the subgraph(s)
+                            Default: 15
+            max_size (int): Maximal size of the subgraph(s)
+                            Default: 50
+            receptors (list): List of node ids which define the receptors
+                              Default: []
+            terminals (list): List of node ids which define the terminals
+                              Default: []
+            algorithm (str): Algorithm with which to solve the resulting
+                             Fractional Integer Program.
+                             Default: 'GeneralizedCharnesCooper'
+                             Choices: 'GeneralizedCharnesCooper' ('gcc'),
+                                      'Dinkelbach' ('dta'),
+                                      'ObjectiveVariableTransform' ('ovt')
+            scores (dict): A dictionary of scores with keys corresponding to
+                           node ids of the graph you use DeRegNet with.
+                           Default: {}
+            default_score (float): default score of nodes in the graph which
+                                   do not match any key in 'scores'.
+                                   Default: 0.0
+            excluded_nodes (list): A list of node ids you want to exclude
+                                   from the subgraph.
+                                   Default: []
+            included_nodes (list): A list of node ids you want to include
+                                   in the subgraph.
+                                   Default: []
+            flip_orientation (bool): If True flips all edges in the original
+                                     graph, so 'receptors' will be 'targets', etc.
+                                     The returned subgraph will already be in
+                                     original orientation again.
+                                     Default: False
+            num_suboptimal (int): Number of suboptimal subgraphs to find.
+                                  Default: 0 (i.e. just find the optimal one)
+            max_overlap (float): Precentage of allowed node overlap between subgraphs
+                                 Default: 0.0
+            abs_values (bool): If True take the absolute value of the provided scores
+                               to actually find the subgraphs.
+                               Default: False
+            model_sense (str): 'max' for maximization, 'min' for minimization.
+                               Default: 'max'
+            time_limit (int): Time limit for solution attempt in seconds.
+                              Default: None
+            gap_cut (float): Gap percentage at which optimization should be prematurely
+                             stopped.
+                             Default: None
+            debug (bool): If True start the algorithm in debug mode.
+                          Default: False
+
+        Returns:
+
+            SubgraphFinderResult
         '''
         # set temporary paths and write temporary files
         rundir = os.path.join(self.tmp_file_path, 'run_'+time_stamp())
@@ -496,6 +736,49 @@ class SubgraphFinder:
                               time_limit=None,
                               gap_cut=None,
                               debug=False):
+        '''
+        This method runs the absolute score version of DeRegNet.
+
+        Args:
+
+            size (int): Size of the subgraph(s).
+                        Default: 20
+            root (str): node id of the root node.
+                        Default: None (i.e. run the generic version)
+            scores (dict): A dictionary of scores with keys corresponding to
+                           node ids of the graph you use DeRegNet with.
+                           Default: {}
+            default_score (float): default score of nodes in the graph which
+                                   do not match any key in 'scores'
+                                   Default: 0.0
+            excluded_nodes (list): A list of node ids you want to exclude
+                                   from the subgraph.
+                                   Default: []
+            included_nodes (list): A list of node ids you want to include
+                                   in the subgraph.
+                                   Default: []
+            flip_orientation (bool): If True flips all edges in the original
+                                     graph, so 'receptors' will be 'targets', etc.
+                                     The returned subgraph will already be in
+                                     original orientation again.
+                                     Default: False
+            num_suboptimal (int): Number of suboptimal subgraphs to find.
+                                  Default: 0 (i.e. just find the optimal one)
+            max_overlap (float): Precentage of allowed node overlap between subgraphs.
+                                 Default: 0.0
+            abs_values (bool): If True take the absolute value of the provided scores
+                               to actually find the subgraphs.
+                               Default: False
+            model_sense (str): 'max' for maximization, 'min' for minimization.
+                               Default: 'max'
+            time_limit (int): Time limit for solution attempt in seconds.
+                              Default: None
+            gap_cut (float): Gap percentage at which optimization should be prematurely
+                             stopped.
+                             Default: None
+            debug (bool): If True start the algorithm in debug mode.
+                          Default: False
+        '''
         # set temporary paths and write temporary files
         rundir = os.path.join(self.tmp_file_path, 'run_'+time_stamp())
         os.makedirs(rundir)
@@ -622,8 +905,11 @@ class SubgraphFinder:
         if self.delete_temporary_files:
             shutil.rmtree(self.tmp_file_path)
 
-
 class SubgraphFinderResult:
+    '''
+    Instances of this class will be returned by calls to SubgraphFinder's 
+    subgraph detection algorithm run methods.
+    '''
     def __init__(self, optimal, suboptimal, mode):
         self.optimal = optimal
         self.suboptimal = suboptimal

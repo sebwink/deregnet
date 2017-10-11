@@ -290,7 +290,6 @@ class DeregnetGraph(ig.Graph):
 # Reactome FI 
 ################################################################################
 
-
 class ReactomeFI(DeregnetGraph):
 
     REACTOME_FI_DOWNLOAD_URL = 'http://reactomews.oicr.on.ca:8080/caBigR3WebApp2016'
@@ -351,7 +350,6 @@ class ReactomeFI(DeregnetGraph):
     @property
     def undirected_edge_types(self):
         return {edge['interaction'] for edge in self.es if edge['direction'] == '-'}
-
 
 ################################################################################
 # KEGG                                                                         #
@@ -432,7 +430,6 @@ class OmniPath(DeregnetGraph):
 
     def ptm_graph(self):
         return ig.Graph.Read_GraphML(os.path.join(self.path, 'omnipath/omnipath_ptm_graph.graphml'))
-
 
 ################################################################################
 # Pathway Commons
@@ -602,6 +599,39 @@ class RegNetwork(DeregnetGraph):
                  node_columns=(1,3),
                  annotate=True,
                  databases_as_list=True):
+        '''
+        Args:
+
+            species (str): Species for which you want the RegNetwork graph for. Available
+                           are 'hsa' (human) and 'mmu' (mouse).
+                           Default: 'hsa'
+            directions (bool): Whether to include the direction of the edges where known.
+                               Default: True
+            sources (bool): ...
+            exclude (list): List of edge types to exclude.
+                            Default: []
+            include (list): List of edge types to include.
+                            Default: []
+            make_edges_unique (bool): If True edges with identical incident nodes will result
+                                      in only one edge and the attributes will be accessible
+                                      as a list. If False, the graph can contain multiedges. 
+                                      For the DeRegNet algorithms any is fine, it will mostly
+                                      be a matter of downstream convenience whether you choose
+                                      one or the other.
+                                      Default: False
+            root_url (str): Base URL from where you can access the RegNetwork data for download
+                            Default: 'http://www.regnetworkweb.org/download'
+            local_path (str): Path where to store downloaded files.
+                              Default: '${HOME}/.deregnet/graphs/regnetwork'
+            verbose (bool): If True you get some additional messages during download, etc.
+            node_columns (tuple): DO NOT USE THIS ARGUMENT, THERE REALLY SHOULD BE NO REASON
+            annotate (bool): If True the graph will have additional attributes, like several
+                             ID systems identifiers as node attribute, etc.
+                             Default: True
+            databases_as_list (bool): If True the database origin attribute of the edges will be
+                                      in list format. Otherwise it will be a comma-seperated string.
+                                      Default: True
+        '''
         root_url = DEFAULT_REG_NETWORK_DOWNLOAD_URL if root_url is None else root_url
         local_path = DEFAULT_REG_NETWORK_LOCAL_PATH if local_path is None else local_path
         data = self.get(species, directions, sources, local_path, root_url=root_url, verbose=verbose)
