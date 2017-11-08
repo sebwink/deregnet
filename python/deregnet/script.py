@@ -6,7 +6,7 @@ import math
 
 import pandas as pd
 
-import biomap.utils.geneset as geneset
+import biomap.utils.bioset as bioset
 
 def define_geneset_arg(parser, layer_name):
     # --<layer_name>-file (GMT or GRP format)
@@ -167,14 +167,14 @@ def parse_geneset(layer_name, argparse_args, id_mapper):
 def _parse_geneset(geneset_files, geneset_names, genes, geneset_id_type, target_id_type, id_mapper):
     if geneset_files is None and genes is None:
         return set()
-    S = geneset.GeneSet('S', set(genes.split(',')))
+    S = bioset.BioSet('S', set(genes.split(',')))
     geneset_names_cnt = 0
     for geneset_file in geneset_files:
         suffix = geneset_file.split('.')[-1]
         if suffix != 'gmt':
-            S |= geneset.GeneSet.from_grp(geneset_file)
+            S |= bioset.BioSet.from_grp(geneset_file)
         else:
-            coll = geneset.GeneSetCollection.from_gmt(geneset_file)
+            coll = bioset.BioSetCollection.from_gmt(geneset_file)
             names = geneset_names[geneset_names_cnt].split(',')
             S |= coll.union(names)
             geneset_names_cnt += 1

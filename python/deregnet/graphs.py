@@ -668,8 +668,8 @@ class RegNetwork(DeregnetGraph):
         # TODO: map MiRBase families
         if self.species == 'hsa':
             self.map_nodes_to_multiple_targets(BioMap.get_mapper('hgnc'),
-                                               FROM='entrez',
-                                               TO=['entrez', 'ensembl', 'symbol'],
+                                               FROM='entrez_id',
+                                               TO=['entrez_id', 'ensembl_id', 'symbol'],
                                                target_attrs=['entrez', 'ensembl', 'symbol'])
         else:
             self.map_nodes_to_multiple_targets(BioMap.get_mapper('mgi_entrez'),
@@ -679,7 +679,7 @@ class RegNetwork(DeregnetGraph):
             self.map_nodes(BioMap.get_mapper('mgi_ensembl'),
                            FROM='symbol', TO='ensembl',
                            source_attr='symbol', target_attr='ensembl')
-        self.vs['name'] = [','.join(v['mirna_alias']).split(',')[0].split('mmu-')[-1] if v['mirna'] else v['symbol'] for v in self.vs]
+            self.vs['name'] = [','.join(v['mirna_alias']).split(',')[0].split(self.species+'-')[-1] if v['mirna'] else v['symbol'] for v in self.vs]
         # edges
         if databases_as_list:
             self.es['databases'] = [s.split(',') for s in self.es['databases']]
@@ -764,7 +764,7 @@ class RegNetwork(DeregnetGraph):
                 return None
 
         local_path = DEFAULT_REG_NETWORK_LOCAL_PATH if local_path is None else local_path
-        species = 'human' if species == 'hsa' else 'mouse'
+        species = 'human' if species in {'hsa', 'human'} else 'mouse'
         local_file = os.path.join(local_path, species+'.csv')
         if os.path.isfile(local_file):
             return local_file

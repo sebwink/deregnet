@@ -302,12 +302,7 @@ class AbsoluteDeregnetArguments(DeregenetArguments):
             debug (bool): If True start the algorithm in debug mode.
                           Default: False
         '''
-
-        self.scores = dict(scores)
-        self.default_score = float(default_score)
-        self.excluded_nodes = excluded_nodes
-        self.included_nodes = included_nodes
-        self._size = int(size)
+        self._size = size
         self._root = root
         super().__init__(**kwargs)
 
