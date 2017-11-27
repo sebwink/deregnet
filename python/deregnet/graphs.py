@@ -5,7 +5,7 @@ import os
 import zipfile
 
 import requests
-#import rarfile
+import rarfile
 import pandas as pd
 import igraph as ig
 
@@ -15,7 +15,7 @@ from biomap import BioMap
 # data path                                                                    #
 ################################################################################
 
-DEREGNET_GRAPH_DATA = os.path.expanduser('/home/winkler/.deregnet/graphs')
+DEREGNET_GRAPH_DATA = os.path.expanduser('~/.deregnet/graphs')
 if not os.path.isdir(DEREGNET_GRAPH_DATA):
     os.makedirs(DEREGNET_GRAPH_DATA)
 
