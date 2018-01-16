@@ -44,6 +44,9 @@
 
 namespace deregnet {
 
+/**
+ * @brief Implementation of the heuristic solution algorithm for the suboptimal part of the average DeRegNet algorithm
+ */
 class AvgSuboptimalStartHeuristic : public DeregnetStartHeuristic {
 
   private:

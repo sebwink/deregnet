@@ -30,7 +30,6 @@
 // $Maintainer: Sebastian Winkler $
 // $Authors: Sebastian Winkler $
 // --------------------------------------------------------------------------
-//
 
 #ifndef DEREGNET_MODEL_H
 #define DEREGNET_MODEL_H
@@ -58,50 +57,149 @@
 
 namespace deregnet {
 
+/**
+ * @brief Implements the mathematical optimization problems
+ * which are the basis of the DeRegNet algorithms
+ *
+ *  
+ *
+ * @tparam Model
+ * @tparam Data
+ */
 template <typename Model, typename Data>
 class DeregnetModel {
 
   protected:
 
     GRBEnv env;
-    Model model { Model(env) };
-    std::map<Node, GRBVar> x;
-    std::map<Node, GRBVar>* y { nullptr };
-
-    Data* data;
-    Graph* graph;
-    NodeMap<double>* score;
-    NodeMap<std::string>* nodeid;
-    Node* root;
+    Model model { Model(env) };            ///< The model, ie. either GRBModel or grbfrc::FMILP
+    std::map<Node, GRBVar> x;              ///< 'Subgraph containment' indicator variables
+    std::map<Node, GRBVar>* y { nullptr }; ///< Potential 'root' indicator variables
+    Data* data;                            ///< Data, like subgraph size bounds, whether to find a root, etc.
+    Graph* graph;                          ///< Underlying network
+    NodeMap<double>* score;                ///< Node scores
+    NodeMap<std::string>* nodeid;          ///< Outside world ids if nodes
+    Node* root;                            ///< Potential root node
 
 
   public:
 
+    /**
+     * @brief Constructor taking relevant data as argument.
+     *
+     * @param data
+     */
     DeregnetModel(Data* data);
+
+    /** \brief Create indicator variables representing root and subgraph nodes
+     *
+     *  In case a root node \f$r \in V\f$ is specified a priori, the following
+     *  variables are added:
+     */
     void createVariables();
-    void addBaseConstraints();
-    void addIncludeConstraints();
+
+    /**
+     * \brief Add fundamental, non-optional constraints
+     */
+    void addBaseConstraints(); //
+    
+    /**
+     * \brief Add constraints to include a priori specified nodes in the subgraphs
+     *
+     * Given a set of nodes \f$S\f$, the following constraint is added:
+     * \f[
+     *    \begin{equation}
+     *        \forall v \in S: x_v = 1
+     *    \end{equation}
+     * \f]
+     * \f$S\f$ is specified in data->include (which may be NULL).
+     */
+    void addIncludeConstraints(); 
+
+    /**
+     * @brief Add constraints to exclude a priori specified nodes from subgraphs
+     *
+     * Given a set of nodes \f$S\f$, the following constraint is added:
+     * \f[
+     *    \begin{equation}
+     *        \forall v \in S: x_v = 0
+     *    \end{equation}
+     * \f]
+     * \f$S\f$ is specified in data->exclude (which may be NULL).
+     */
     void addExcludeConstraints();
+    
+    /**
+     * @brief 
+     */
     void addReceptorConstraints();
+    
+    /**
+     * @brief 
+     */
     void addTerminalConstraints();
+    
+    /**
+     * @brief 
+     *
+     * @param start_solution
+     *
+     * @return 
+     */
     bool solve(std::pair<Node, std::set<Node>>* start_solution);
+   
+    /**
+     * @brief 
+     *
+     * @param nodes_so_far
+     */
     void addSuboptimalityConstraint(std::set<std::string>& nodes_so_far);
+    
+    /**
+     * @brief 
+     *
+     * @return 
+     */
     Solution getCurrentSolution();
+    
+    /**
+     * @brief 
+     *
+     * @param sense
+     */
     void setObjSense(int sense);
 
   private:
 
+    /**
+     * @brief 
+     */
     void createVariablesRoot();
+
+    /**
+     * @brief 
+     */
     void createVariablesNoRoot();
+    
+    /**
+     * @brief 
+     */
     void addBaseConstraintsRoot();
+    
     void addBaseConstraintsNoRoot();
+    
     void setStartSolution(std::pair<Node, std::set<Node>>* start_solution);  // specialize for GRBModel and FMILP ?
+    
     void setup_solve(std::pair<Node, std::set<Node>>* start_solution);
+    
     void setCallbackRoot();
+    
     void setCallbackNoRoot();
+    
     void _getCurrentSolution(std::string* rootid, std::set<Node>* nodes, Solution* solution);
 
     GRBLinExpr setBaseConstraintsRootCommon();
+    
     GRBLinExpr setBaseConstraintsNoRootCommon();
 
 };
@@ -193,14 +291,14 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::addBaseConstraintsNoRoot() {
 
 template <typename Model, typename Data>
 void DeregnetModel<Model, Data>::addIncludeConstraints() {
-    for (Node v : *(data->include))
+    for (const Node& v : *(data->include))
         model.addConstr(x[v] == 1);
     model.update();
 }
 
 template <typename Model, typename Data>
 void DeregnetModel<Model, Data>::addExcludeConstraints() {
-    for (Node v : *(data->exclude))
+    for (const Node& v : *(data->exclude))
         model.addConstr(x[v] == 0);
     model.update();
 }
@@ -305,7 +403,7 @@ template <typename Model, typename Data>
 Solution DeregnetModel<Model, Data>::getCurrentSolution() {
     Solution solution;
     std::set<Node> nodes;
-    string rootid;
+    std::string rootid;
     _getCurrentSolution(&rootid, &nodes, &solution);
     for (auto v : nodes) {
         std::string source = (*nodeid)[v];
@@ -415,6 +513,7 @@ void DeregnetModel<GRBModel, DrgntData>::setCallbackRoot() {
 
 template <> inline
 void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setCallbackRoot() {
+    // TODO: although technically perfectly correct, this look philosophically wrong!
 }
 
 template <> inline
@@ -424,6 +523,7 @@ void DeregnetModel<GRBModel, DrgntData>::setCallbackNoRoot() {
 
 template <> inline
 void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setCallbackNoRoot() {
+    // TODO: although technically perfectly correct, this look philosophically wrong!
 }
 
 template <> inline
