@@ -40,19 +40,25 @@
 
 namespace deregnet {
 
+/**
+ * @brief One of the grbfrc algorithms to solve Fractional integer problems
+ */
 using Algorithm = grbfrc::Algorithm;
 
+/**
+ * @brief Represents all data and parameters to run the average version of the DeRegNet
+ */
 class AvgdrgntData : public DeregnetData {
 
       public:
 
-            int min_size { 20 };
-            int max_size { 50 };
+            int min_size { 20 };        ///< Minimal size of the resulting subgraphs
+            int max_size { 50 };        ///< Maximal size of the resulting subgraphs
 
-            int* min_num_terminals { nullptr };
-            int* min_num_receptors { nullptr };
+            int* min_num_terminals { nullptr };     ///< Minimal number of terminal nodes in subgraphs
+            int* min_num_receptors { nullptr };     ///< Minimal number of receptor nodes in subgraphs
 
-            Algorithm algorithm { Algorithm::DTA };
+            Algorithm algorithm { Algorithm::DTA };     ///< Which solution algorithm to employ
 
 };
 

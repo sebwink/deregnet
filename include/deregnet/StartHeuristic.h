@@ -43,14 +43,28 @@
 
 namespace deregnet {
 
+/**
+ * @brief Implementation of heuristic start solution algorithm for absolute optimal DeRegNet algorithm
+ */
 class StartHeuristic : public DeregnetStartHeuristic {
 
   private:
 
-    int size;
+    int size;   ///< Size of the current subgraph
 
   public:
 
+    /**
+     * @brief Constructor
+     *
+     * @param xgraph
+     * @param xscore
+     * @param root
+     * @param exclude
+     * @param receptors
+     * @param xcmp
+     * @param xsize
+     */
     StartHeuristic(Graph* xgraph,
                    NodeMap<double>* xscore,
                    Node* root,

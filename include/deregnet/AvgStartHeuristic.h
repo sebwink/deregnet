@@ -43,6 +43,9 @@
 
 namespace deregnet {
 
+/**
+ * @brief Implementation of the heuristic solution algorithm for average DeRegNet algorithm
+ */
 class AvgStartHeuristic : public DeregnetStartHeuristic {
 
     private:
@@ -53,6 +56,18 @@ class AvgStartHeuristic : public DeregnetStartHeuristic {
 
     public:
 
+        /**
+         * @brief 
+         *
+         * @param xgraph
+         * @param xscore
+         * @param root
+         * @param exclude
+         * @param receptors
+         * @param xcmp
+         * @param xmin_size
+         * @param xmax_size
+         */
         AvgStartHeuristic(Graph* xgraph,
                           NodeMap<double>* xscore,
                           Node* root,

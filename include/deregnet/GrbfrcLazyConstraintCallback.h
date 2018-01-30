@@ -50,34 +50,59 @@
 
 namespace deregnet {
 
+/**
+ * @brief Wrapper for lazy constraint callback needed for fractional integer formulation (fixed root)
+ */
 class GrbfrcLazyConstraintCallbackRoot : public grbfrc::Callback<Node> {
 
 public:
 
+    /**
+     * @brief Constructor
+     *
+     * @param xgraph Underlying network (in which we try to find subgraphs)
+     * @param xroot The (fixed) root node
+     * @param xgap_cut Gap-cut parameter
+     */
     GrbfrcLazyConstraintCallbackRoot(Graph* xgraph, Node* xroot, double* xgap_cut);
 
+    /**
+     * @brief Method implementing the mapping to reformulated models
+     */
     virtual void register_vargrps() override;
 
 private:
 
-    Graph* graph;
-    Node* root;
-    double* gap_cut;
+    Graph* graph;   ///< Underlying network (in which we try to find the subgraphs)
+    Node* root;     ///< The (fixed) root node
+    double* gap_cut;    ///< Gap-cut parameter
 
 };
 
+/**
+ * @brief Wrapper for lazy constraint callback needed for fractional integer formulation (no fixed root)
+ */
 class GrbfrcLazyConstraintCallbackNoRoot : public grbfrc::Callback<Node> {
 
 public:
 
+    /**
+     * @brief Constructor
+     *  
+     * @param xgraph Underlying network (in which we try to find subgraphs)
+     * @param xgap_cut Gap-cut parameter
+     */
     GrbfrcLazyConstraintCallbackNoRoot(Graph* xgraph, double* xgap_cut);
 
+    /**
+     * @brief Method implementing the mapping to reformulated models
+     */
     virtual void register_vargrps() override;
 
 private:
 
-    Graph* graph;
-    double* gap_cut;
+    Graph* graph;       ///< Underlying network (in which we try to find subgraphs)
+    double* gap_cut;    ///< Gap-cut parameter
 
 };
 

@@ -44,48 +44,86 @@
 
 namespace deregnet {
 
+/**
+ * @brief Represents all shared parameters and data needed to run a DeRegNet algorithm.
+ *
+ * Captures all data shared among all DeRegNet algorithms and allows
+ * to read relevant data from files and carry out certain pre-processing
+ * steps, like reversing the input graph's edge orientations.
+ *
+ */
 class DeregnetData {
 
   public:
 
-    Graph* graph { nullptr };
-    Graph* original_graph { nullptr };
-    NodeMap<double>* score { nullptr };
-    NodeMap<std::string>* nodeid { nullptr };
-    Node* root { nullptr };
-    std::set<Node>* terminals { nullptr };
-    std::set<Node>* receptors { nullptr };
-    std::set<Node>* include { nullptr };
-    std::set<Node>* exclude { nullptr };
-    int num_subopt_iter { 0 };                         /*< number of iterations to find suboptimal subgraphs */
-    double max_overlap { 0.0 };                        /*< maximal percentage of overlap to previous subgraphs
-                                                           when searching for suboptimal subgraphs             */
-    double* time_limit { nullptr };                    /*< time limit of a single solve */
-    double* gap_cut { nullptr };                       /*< gap tolerance */
+    Graph* graph { nullptr };                          ///< Actual graph used to run the algorithms
+    Graph* original_graph { nullptr };                 ///< Original input graph
+    NodeMap<double>* score { nullptr };                ///< Node scores 
+    NodeMap<std::string>* nodeid { nullptr };          ///< Node id's
+    Node* root { nullptr };                            ///< Root node (null if the algorithm is supposed to find the root)
+    std::set<Node>* terminals { nullptr };             ///< Nodes classified as 'terminals'
+    std::set<Node>* receptors { nullptr };             ///< Nodes classified as 'receptors'
+    std::set<Node>* include { nullptr };               ///< Nodes included in any subgraph a priori
+    std::set<Node>* exclude { nullptr };               ///< Nodes excluded from any subgraph a priori
+    int num_subopt_iter { 0 };                         ///< Number of iterations to find suboptimal subgraphs 
+    double max_overlap { 0.0 };                        ///< Maximal percentage of overlap to previous subgraphs when searching for suboptimal subgraphs
+    double* time_limit { nullptr };                    ///< Time limit of a single solve
+    double* gap_cut { nullptr };                       ///< Gap tolerance 
+    bool receptor_as_root { true };                    ///< Whether to orient the subgraphs such that the root acts as 'receptor'
+    std::string model_sense { "max" };                 ///< Whether to maximize or minimize
+    bool start_heuristic { true };                     ///< Whether to run the greedy start heuristic
 
-    bool receptor_as_root { true };
-    std::string model_sense { "max" };
-    bool start_heuristic { true };                     /*< Whether to run the greedy start heuristic */
-
- private:
+  private:
 
     NodeMap<std::string>* revnodeid { nullptr };
     Graph* revgraph { nullptr };
 
     NodeMap<std::string>* original_nodeid { nullptr };
 
-      public:
+  public:
 
-        void read_graph(std::string* pathToLgf);
-        void read_score(std::string* pathToTsv, bool take_abs);
-        void get_node_set(std::set<Node>** node_set, std::set<std::string>* node_ids);
-        void get_root(std::string* root_id);
+    /**
+     * @brief Read graph from LGF (Lemon Graph Format) file
+     *
+     * http://lemon.cs.elte.hu/pub/tutorial/a00018.html
+     *
+     * @param pathToLgf Path to LGF file
+     */
+    void read_graph(std::string* pathToLgf);
+    
+    /**
+     * @brief Read scores from file. 
+     *
+     * @param pathToTsv Path to file with scores: two columns tab-seperated, first column: node id's
+     * @param take_abs Whether to take the absolute values of the parsed scores as actual score
+     */
+    void read_score(std::string* pathToTsv, bool take_abs);
+   
+    /**
+     * @brief Translate a set of node id's into a set of (Lemon) nodes 
+     *
+     * @param[out] node_set Resulting node set
+     * @param[in] node_ids Set of node id's
+     */
+    void get_node_set(std::set<Node>** node_set, std::set<std::string>* node_ids);
+    
+    /**
+     * @brief Get (Lemon) node corresponding to the id of the root 
+     *
+     * Updates DeregnetData.root
+     *
+     * @param root_id Node id of the root node (null if none specified)
+     */
+    void get_root(std::string* root_id);
 
-      private:
+  private:
 
-        void reverse_graph();
+    /**
+     * @brief Reverse orientation of edges in original input graph
+     */
+    void reverse_graph();
 
-    };
+};
 
 }   // namespace deregnet
 

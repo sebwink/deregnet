@@ -43,41 +43,98 @@
 
 namespace deregnet {
 
+/**
+ * @brief Abstract base class for greedy start heuristics
+ */
 class DeregnetStartHeuristic {
 
   protected:
 
-    Graph* graph;
-    NodeMap<double>* score;
-    Node* root;
-    Node* original_root;
-    std::set<Node>* exclude;
-    std::set<Node>* receptors;
+    Graph* graph;       ///< Underlying graph (in which we try to find subgraphs in)
+    NodeMap<double>* score;     ///< Node scores
+    Node* root;         ///< Root node (if available)
+    Node* original_root;        ///< Original root node (passed on construction)
+    std::set<Node>* exclude;    ///< Nodes to exclude to from any subgraph
+    std::set<Node>* receptors;  ///< Nodes considered to act as 'receptors'
 
-    std::function<bool(double, double)> cmp;
+    std::function<bool(double, double)> cmp;    ///< Comparison function to compare solutions
 
-    std::set<Node>* start_solution { nullptr };
-    bool found_node { false };
-    bool success { false };
+    std::set<Node>* start_solution { nullptr };     ///< heuristic start solution as a set of nodes (if one is found)
+    bool found_node { false };  ///< Internal variable indicating progress of the heuristic
+    bool success { false };     ///< Indicator whether a heuristic solution could be found
 
   public:
 
+    /**
+     * @brief Constructor
+     *
+     * @param xgraph Underlying network (in which we try to find subgraphs in)
+     * @param xscore Node scores
+     * @param root Root node (if available)
+     * @param exclude Nodes to exclude from any subgraph (if available)
+     * @param receptors Nodes considered to be 'receptor' nodes
+     * @param xcmp Comparison function (to compare solutuions, eg std:less)
+     */
     DeregnetStartHeuristic(Graph* xgraph,
                            NodeMap<double>* xscore,
                            Node* root,
                            std::set<Node>* exclude,
                            std::set<Node>* receptors,
                            std::function<bool(double, double)> xcmp);
+    
+    /**
+     * @brief Run the heuristic (ie try to find a heuristic start solution)
+     *
+     * @return Whether a heuristic solution was found
+     */
     bool run();
+
+    /**
+     * @brief Retrieve the start solution (if found)
+     *
+     * @return Tuple containing root node of solution and the solution itself
+     */
     std::pair<Node, std::set<Node>>* getStartSolution();
 
   protected:
 
+    /**
+     * @brief Find next node to add to solution
+     *
+     * @return A node (nullptr if none could be found)
+     */
     Node* get_next_node();
+    
+    /**
+     * @brief Update status of 'best' node
+     *
+     * @param current_best_node Variable capturing the current best node while execution of the algorithm
+     * @param node Node to become the new best node
+     * @param best Score value of the best node
+     */
     void update_best_node(Node** current_best_node, Node* node, double* best);
 
+    /**
+     * @brief Find best node to add to solution in every iteration
+     *
+     * @return The best node to add
+     */
     virtual Node* get_best_root() = 0;
+    
+    /**
+     * @brief Decide whether to continue searching further (for other solution than the one already found)
+     *
+     * @return Whether to search further
+     */
     virtual bool search_further() = 0;
+    
+    /**
+     * @brief Decide whether adding a given node to the solution is feasible wrt the given constraints
+     *
+     * @param node A node in the graph
+     *
+     * @return Whether adding the node is feasible
+     */
     virtual bool feasible_node(Node* node) = 0;
 
 };
