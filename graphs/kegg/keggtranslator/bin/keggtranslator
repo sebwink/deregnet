@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+KEGG_TRANSLATOR_JAR=$HOME/tools/bin
+KEGG_TRANSLATOR_VERSION=2.5
+
+java -jar $KEGG_TRANSLATOR_JAR/KEGGtranslator_v$KEGG_TRANSLATOR_VERSION.jar $@
