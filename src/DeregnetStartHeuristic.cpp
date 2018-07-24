@@ -102,7 +102,9 @@ Node* DeregnetStartHeuristic::get_next_node() {
     return best_node;
 }
 
-void DeregnetStartHeuristic::update_best_node(Node** current_best_node, Node* node, double* best) {
+void DeregnetStartHeuristic::update_best_node(Node** current_best_node,
+                                              Node* node,
+                                              double* best) {
     if (!(*current_best_node)) {
         *current_best_node = new Node();
         **current_best_node = *node;

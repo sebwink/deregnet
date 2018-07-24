@@ -5,7 +5,6 @@ import os
 import zipfile
 
 import requests
-import rarfile
 import pandas as pd
 import igraph as ig
 
@@ -728,6 +727,9 @@ class RegNetwork(DeregnetGraph):
 
     @classmethod
     def get(cls, species='hsa', directed=True, sources=False, local_path=None, **kwargs):
+        # ---
+        import rarfile
+        # ---
         species = 'human' if species == 'hsa' else 'mouse'
         what = species if not directed else 'RegulatoryDirections'
         local_path = DEFAULT_REG_NETWORK_LOCAL_PATH if local_path is None else local_path

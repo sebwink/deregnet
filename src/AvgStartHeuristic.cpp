@@ -91,13 +91,15 @@ bool AvgStartHeuristic::search_further() {
 bool AvgStartHeuristic::feasible_node(Node* node) {
     double new_avg { update_avg(node) };
     int current_size { static_cast<int>(start_solution->size()) };
-    if (new_avg < current_avg && current_size > min_size)
+    if (current_size >= min_size && new_avg < current_avg)
         return false;
     current_avg = new_avg;
     if (exclude) {
-        if (start_solution->find(*node) == start_solution->end() && exclude->find(*node) == exclude->end())
+        if (start_solution->find(*node) == start_solution->end() &&
+            exclude->find(*node) == exclude->end()) {
             return true;
         }
+    }
     else
         if (start_solution->find(*node) == start_solution->end())
             return true;
