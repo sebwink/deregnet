@@ -1,4 +1,4 @@
-#!/opt/anaconda/3.5/bin/python
+#!/usr/bin/env python3
 '''
 
 '''
