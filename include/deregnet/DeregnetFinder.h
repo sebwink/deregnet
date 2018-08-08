@@ -45,6 +45,8 @@
 #ifndef DEREGNET_FINDER_H
 #define DEREGNET_FINDER_H
 
+#include <fstream>
+
 #include <deregnet/DeregnetModel.h>
 #include <deregnet/StartHeuristic.h>
 #include <deregnet/SuboptimalStartHeuristic.h>
@@ -251,6 +253,13 @@ std::vector<Subgraph> DeregnetFinder<ModelType, Data>::run() {
     std::pair<Node, std::set<Node>>* start_solution { nullptr };      // potential heuristic start solution
     // find optimal subgraph
     run_optimal_init(&start_solution);                                // construct model, etc.
+/*
+    std::ofstream file;
+    file.open("heuristic_start.nodes");
+    for (auto v : start_solution->second)
+        file << (*data->nodeid)[v] << "\n";
+    file.close();
+*/
     std::vector<Subgraph> subgraphs;                                  // data structure for found subgraphs
     bool solve_successful { model->solve(start_solution) };           // try to find optimal solution
     run_optimal_windup(solve_successful, &subgraphs);                 // handle result of optimal solution attempt

@@ -495,7 +495,7 @@ void DeregnetModel<grbfrc::FMILP, AvgdrgntData>::setStartSolution(std::pair<Node
         if ((start_solution->second).find(v) != (start_solution->second).end())
             model.setStartSolution(x[v], 1.0);
         else
-            model.setStartSolution(x[v], 1.0);
+            model.setStartSolution(x[v], 0.0);
         if (!root) {
             if (v == start_solution->first)
                 model.setStartSolution((*y)[v], 1.0);

@@ -1,5 +1,5 @@
 CXX = c++
-CXXFLAGS = -std=c++11 -Wall -pedantic -fPIC -ggdb3 -pg # -fopenmp # -DGRBFRC_OMP
+CXXFLAGS = -std=c++11 -Wall -pedantic -fPIC #-ggdb3 -pg # -fopenmp # -DGRBFRC_OMP
 
 include ../gurobi_version.mak
 
@@ -34,6 +34,6 @@ clean :
 	rm -fr lib/libgrbfrc.a lib/libgrbfrc.so *.o
 
 libgrbfrc.so : $(objects)
-	$(CXX) $(objects) -o $@ -shared $(LDFLAGS)
+	$(CXX) $(objects) -o $@ -shared $(LDFLAGS) -Wl,-rpath=${GUROBI_HOME}/lib
 	mv $@ lib
 	rm *.o
