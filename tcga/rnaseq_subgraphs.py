@@ -27,11 +27,13 @@ def parse_args():
                         help='Maximal time to search for a subgraph')
     parser.add_argument('-g', '--gap-cut', type=float, default=None,
                         help='Gap cut to stop optimization prematurely')
+    parser.add_argument('-n', '--normalize-wrt', type=str, default='genewise_median',
+                        help='Normalization strategy for RNASeq data')
     return parser.parse_args()
 
-def prepare_rnaseq_score(dataset):
+def prepare_rnaseq_score(dataset, compare_to):
     id_mapper = BioMap().get_mapper('hgnc')
-    rnaseq_score = get_rnaseq_score(dataset, compare_to='genewise_median')
+    rnaseq_score = get_rnaseq_score(dataset, compare_to=compare_to)
     rnaseq_score.index = [gene.split('.')[0] for gene in rnaseq_score.index]
     rnaseq_score.index = list(id_mapper.map(list(rnaseq_score.index), FROM='ensembl', TO='entrez'))
     return rnaseq_score
@@ -60,13 +62,13 @@ def main(args):
     graph = ig.Graph.Read_GraphML(GRAPH_PATH)
     finder = SubgraphFinder(graph)
     #
-    rnaseq_score = prepare_rnaseq_score(args.dataset)
+    rnaseq_score = prepare_rnaseq_score(args.dataset, args.normalize_wrt)
     patients = list(rnaseq_score.columns)
     abs_vals, minmax = get_mode_args(args.mode)
     base_path = os.path.join('rnaseq', args.layer, args.mode, args.dataset)
     if not os.path.isdir(base_path):
         os.makedirs(base_path)
-    failed = []     # log patients for which no subgraph could be found
+    failed = set()     # log patients for which no subgraph could be found
     for patient_id in patients:
         path = os.path.join(base_path, patient_id)
         if not os.path.isdir(path):
@@ -92,11 +94,11 @@ def main(args):
                                                  terminals=terminals,
                                                  flip_orientation=flip)
         except:
-            failed.append(patient_id)
+            failed.add(patient_id)
         try:
             result.to_graphml(path)
         except:
-            failed.append(patient_id)
+            failed.add(patient_id)
     write_fails(failed, base_path)
 
 if __name__ == '__main__':
