@@ -2,6 +2,7 @@ import os
 import pandas as pd
 
 from tcga.snv import TcgaSnvData
+from tcga.cnv import CnvData
 from tcga.rnaseq import TcgaRnaSeq
 from tcga.methylation import TcgaMethylation450k
 
@@ -22,6 +23,10 @@ def get_rnaseq_score(dataset='lihc', mode='trinary', compare_to='control'):
         return rnaseq.get_trinary_log2fold_score(threshold=2, normalize_wrt=compare_to)
     else:
         return rnaseq.get_binary_log2fold_score(threshold=2, normalize_wrt=compare_to)
+
+def get_cnv_score(dataset='lihc', score='tumor_segment_mean'):
+    cnv = CnvData(dataset)
+    return cnv.genelevel_score(score)
 
 def get_methylation_score(dataset='lihc', **kwargs):
     methylation = TcgaMethylation(dataset)

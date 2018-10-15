@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">6464</data>
+      <data key="v_entrez">6464</data>
+      <data key="v_ensembl">ENSG00000160691</data>
+      <data key="v_symbol">SHC1</data>
+      <data key="v_id">n1136</data>
+      <data key="v_deregnet_score">1.8674</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">291</data>
+      <data key="v_entrez">291</data>
+      <data key="v_ensembl">ENSG00000151729</data>
+      <data key="v_symbol">SLC25A4</data>
+      <data key="v_id">n1348</data>
+      <data key="v_deregnet_score">-1.3192</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">160851</data>
+      <data key="v_entrez">160851</data>
+      <data key="v_ensembl">ENSG00000102780</data>
+      <data key="v_symbol">DGKH</data>
+      <data key="v_id">n1661</data>
+      <data key="v_deregnet_score">-1.331</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">1945</data>
+      <data key="v_entrez">1945</data>
+      <data key="v_ensembl">ENSG00000243364</data>
+      <data key="v_symbol">EFNA4</data>
+      <data key="v_id">n2032</data>
+      <data key="v_deregnet_score">1.8674</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">2308</data>
+      <data key="v_entrez">2308</data>
+      <data key="v_ensembl">ENSG00000150907</data>
+      <data key="v_symbol">FOXO1</data>
+      <data key="v_id">n2562</data>
+      <data key="v_deregnet_score">-1.331</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">1942</data>
+      <data key="v_entrez">1942</data>
+      <data key="v_ensembl">ENSG00000169242</data>
+      <data key="v_symbol">EFNA1</data>
+      <data key="v_id">n3417</data>
+      <data key="v_deregnet_score">1.8674</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">5331</data>
+      <data key="v_entrez">5331</data>
+      <data key="v_ensembl">ENSG00000149782</data>
+      <data key="v_symbol">PLCB3</data>
+      <data key="v_id">n3856</data>
+      <data key="v_deregnet_score">-0.472</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">1944</data>
+      <data key="v_entrez">1944</data>
+      <data key="v_ensembl">ENSG00000143590</data>
+      <data key="v_symbol">EFNA3</data>
+      <data key="v_id">n4632</data>
+      <data key="v_deregnet_score">1.8674</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">817</data>
+      <data key="v_entrez">817</data>
+      <data key="v_ensembl">ENSG00000145349</data>
+      <data key="v_symbol">CAMK2D</data>
+      <data key="v_id">n4769</data>
+      <data key="v_deregnet_score">-1.2583</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">1969</data>
+      <data key="v_entrez">1969</data>
+      <data key="v_ensembl">ENSG00000142627</data>
+      <data key="v_symbol">EPHA2</data>
+      <data key="v_id">n4842</data>
+      <data key="v_deregnet_score">-0.4187</data>
+    </node>
+    <edge source="n2" target="n6">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n3" target="n9">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n4" target="n4">
+      <data key="e_interaction">state change</data>
+    </edge>
+    <edge source="n5" target="n9">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n6" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n6" target="n6">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n6" target="n8">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n7" target="n9">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n8" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n8" target="n1">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n8" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n8" target="n4">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n8" target="n4">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n9" target="n0">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n9" target="n3">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n9" target="n5">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n9" target="n6">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n9" target="n7">
+      <data key="e_interaction">activation</data>
+    </edge>
+  </graph>
+</graphml>

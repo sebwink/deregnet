@@ -16,6 +16,12 @@ class Layers:
             return cls.vogelstein_oncogenes()
         elif layer == 'vogelstein_tumor_suppressors':
             return cls.vogelstein_tumor_suppressors()
+        elif layer == 'vogelstein_as_receptors':
+            vogelstein, _ = cls.vogelstein()
+            return vogelstein, None
+        elif layer == 'vogelstein_as_terminals':
+            _, vogelstein = cls.vogelstein()
+            return vogelstein, None
         elif layer.startswith('rooted/'):
             genes = layer.split('/')[1]
             return cls.rooted(genes)
@@ -30,8 +36,27 @@ class Layers:
             return cls.cnv(**kwargs)
         elif layer == 'genomic':
             return cls.genomic(**kwargs)
+        elif layer == 'hla_as_terminals':
+            return cls.hla(as_receptors=False, as_terminals=True, **kwargs)
+        elif layer == 'svn_to_hla':
+            hla, _ = self.hla(True, False)
+            snv, _ = self.snv(**kwargs)
+            return snv, hla
         else:
             raise ValueError
+
+    @classmethod
+    def hla(cls, as_receptors, as_terminals):
+        hgnc = BioMap().get_mapper('hgnc')
+        hla_genes = [ID for ID in hgnc.get_all('symbol') if ID.startswith('HLA')]
+        print(hla_genes)
+        receptors, terminals = None, None
+        if as_receptors:
+            receptors = hla_genes
+        if as_terminals:
+            terminals = hla_genes
+        return receptors, terminals
+
 
     @classmethod
     def snv(cls, patient):

@@ -2,15 +2,30 @@ import os
 import numpy as np
 import pandas as pd
 import igraph as ig
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 DATA_HOME = os.environ.get('DEREGNET_TCGA_DATA_HOME',
                            os.path.join(os.environ['HOME'], 'projects/DeRegNet/deregnet/tcga'))
 BASE_GRAPH = os.path.join(DATA_HOME, 'graph/kegg_hsa.graphml')
 
 class PatientSubgraphs:
-    def __init__(self, path, base_graph=BASE_GRAPH):
-        self._graphs = self.read_graphs(path)
+    def __init__(self, path=None, base_graph=BASE_GRAPH):
+        if isinstance(path, str):
+            path = [path]
+        if path is None:
+            self._graphs = []
+        else:
+            self._graphs = self.read_graphs(path[0])
+            for p in path[1:]:
+                self._graphs = self._graphs + self.read_graphs(path)
         self._base_graph = base_graph
+
+    @classmethod
+    def from_graph_list(self, graphs, base_graph=BASE_GRAPH):
+        patient_subgraphs = PatientSubgraphs(None, base_graph)
+        patient_subgraphs._graphs = graphs
+        return patient_subgraphs
 
     @classmethod
     def read_graphs(cls, path):
@@ -30,6 +45,11 @@ class PatientSubgraphs:
         if i >= len(self._graphs):
             raise IndexError
         return self._graphs[i]
+
+    def __add__(self, other):
+        assert self._base_graph == other._base_graph
+        graphs = self._graphs + other._graphs
+        return self.from_graph_list(graphs, self._base_graph)
 
     def nodes(self, i, attr='symbol'):
         return {v[attr] for v in self[i].vs}
@@ -76,8 +96,9 @@ class PatientSubgraphs:
             bsgrph = base_graph
         nodes = eval('bsgrph.vs.select('+match_attr+'_in=self.node_union(match_attr))')
         subgraph = bsgrph.subgraph(nodes)
-        for attr in subgraph.vs.attribute_names():
-            subgraph.vs[attr] = [self.node2attr(attr, match_attr)[v[match_attr]] for v in subgraph.vs]
+        if len(self._graphs) > 0:
+            for attr in self._graphs[0].vs.attribute_names():
+                subgraph.vs[attr] = [self.node2attr(attr, match_attr)[v[match_attr]] for v in subgraph.vs]
         return subgraph
 
 
@@ -89,6 +110,10 @@ class CohortSubgraphs:
         self._base_graph = base_graph
         self._patient2subgraph = patient2subgraph
         self._path = None
+
+    def from_patient_subset(self, patients):
+        patient2subgraph = {p: sg for p, sg in self._patient2subgraph.items() if p in patients}
+        return CohortSubgraphs(patient2subgraph, self._base_graph)
 
     @classmethod
     def from_cohort_path(cls,
@@ -107,6 +132,16 @@ class CohortSubgraphs:
         subgraphs._path = cohort_data
         return subgraphs
 
+    def __add__(self, other):
+        assert self._base_graph == other._base_graph
+        patients = set(self.patients) | set(other.patients)
+        patient2subgraphs = {
+            p: self._patient2subgraph.get(p, PatientSubgraphs.from_graph_list([], self._base_graph)) + \
+               other._patient2subgraph.get(p, PatientSubgraphs.from_graph_list([], self._base_graph))
+            for p in patients
+        }
+        return CohortSubgraphs(patient2subgraphs, self._base_graph)
+
     def __or__(self, other):
         assert self._base_graph == other._base_graph
         return CohortSubgraphs({
@@ -121,6 +156,30 @@ class CohortSubgraphs:
     @property
     def patients(self):
         return list(self._patient2subgraph.keys())
+
+    def patient2nodes(self, i=None, patients=None, attr='symbol'):
+        patients = patients if patients else self.patients
+        if i is None:
+            return {p: self[p].node_union(attr) for p in patients }
+        else:
+            return {p: self[p].nodes(i, attr) for p in patients}
+
+    def node_histogram(self, i=None, patients=None, attr='symbol'):
+        patients2nodes = self.patient2nodes(i, patients, attr)
+        node_union = set().union(*[set(nodes) for nodes in patients2nodes.values()])
+        histogram = {node: 0 for node in node_union}
+        for p, nodes in patients2nodes.items():
+            for node in nodes:
+                histogram[node] += 1
+        histogram = pd.DataFrame({'gene': list(histogram.keys()), 'count': list(histogram.values())})
+        histogram.sort_values(by=['count'], ascending=False, inplace=True)
+        return histogram
+
+    def plot_node_histogram(self, patients=None, cutoff=5, attr='symbol', i=None):
+        histogram = self.node_histogram(i, patients, attr)
+        _, ax = plt.subplots(figsize=(14,8))
+        g = sns.barplot(x='gene', y='count', data=histogram[histogram['count']>=cutoff], ax=ax)
+        g.set_xticklabels(g.get_xticklabels(), rotation=90)
 
     def subgraph_scores(self, i=0, mode='average', absval=None):
         if absval is None and self._path.split('/')[-2] == 'deregulated':
@@ -163,14 +222,14 @@ class CohortSubgraphs:
 
     def boolean_attr_overlap_count_matrix(self, attr, base_graph=None, scale=True, subset=None, match_attr='symbol'):
         graphs, matrix, patients = self._matrix_setup(base_graph, subset, match_attr)
-        matrix = populate_matrix_symmetric(graphs, matrix, _boolean_attr_overlap, attr=attr, scale=scale)
+        matrix = populate_matrix_symmetric(graphs, matrix, _boolean_attr_overlap, attr=attr, match_attr=match_attr, scale=scale)
         return pd.DataFrame(data=matrix, index=patients, columns=patients)
 
     def receptor_intersection_count_matrix(self, base_graph=None, scale=True, subset=None, attr='symbol'):
-        return self.boolean_attr_overlap_count_matrix(base_graph, 'deregnet_receptor', scale, subset, attr)
+        return self.boolean_attr_overlap_count_matrix('deregnet_receptor', base_graph, scale, subset, attr)
 
     def terminal_intersection_count_matrix(self, base_graph=None, scale=True, subset=None, attr='symbol'):
-        return self.boolean_attr_overlap_count_matrix(base_graph, 'deregnet_terminal', scale, subset, attr)
+        return self.boolean_attr_overlap_count_matrix('deregnet_terminal', base_graph, scale, subset, attr)
 
 def read_graphs(root, subset):
     graphs = []
@@ -197,7 +256,7 @@ def populate_matrix_symmetric(graphs, matrix, metric, **kwargs):
             matrix[i][j], matrix[j][i] = val, val
     return matrix
 
-def populate_matrix(graphs, matrix, metric, **kwargs): 
+def populate_matrix(graphs, matrix, metric, **kwargs):
     for i, G1 in enumerate(graphs):
         for j, G2 in enumerate(graphs):
             val = metric(G1, G2, **kwargs)
@@ -228,16 +287,19 @@ def node_intersection_count_matrix(root, subset=None, scale=True):
 def regulation_aware_node_intersection_count(G1, G2, scale):
     nodes1 = { v['name'] for v in G1.vs }
     nodes2 = { v['name'] for v in G2.vs }
+    if len(nodes1) == 0 or len(nodes2) == 0:
+        return 0.0
     intersection = nodes1.intersection(nodes2)
     intersection1 = G1.vs.select(name_in=list(intersection))
     intersection2 = G2.vs.select(name_in=list(intersection))
     intersection_size = len(intersection)
     intersection = sum([v1['deregnet_score']*v2['deregnet_score'] for v1,v2 in zip(intersection1, intersection2)])
     if scale:
-        return intersection / (len(nodes1) + len(nodes2) - intersection_size)
+        ret = intersection / (len(nodes1) + len(nodes2) - intersection_size)
     else:
-        return intersection
-    
+        ret = intersection
+    return max(0, ret)
+
 def regulation_aware_intersection_count_matrix(root, subset=None, scale=True):
     graphs, matrix, patients = read_graphs_setup_matrix(root, subset)
     return populate_matrix_symmetric(graphs, matrix, regulation_aware_node_intersection_count, scale=scale), patients
@@ -267,11 +329,11 @@ def shortest_path_value_matrix(root, graph, subset=None, strategy='average', **k
 #
 #
 
-def _boolean_attr_overlap(G1, G2, attr, scale):
-    pos1 = {node['name'] for node in G1.vs if node[attr]}
-    pos2 = {node['name'] for node in G2.vs if node[attr]}
-    nodes1 = {node['name'] for node in G1.vs}
-    nodes2 = {node['name'] for node in G2.vs}
+def _boolean_attr_overlap(G1, G2, attr, scale, match_attr):
+    pos1 = {node[match_attr] for node in G1.vs if node[attr]}
+    pos2 = {node[match_attr] for node in G2.vs if node[attr]}
+    nodes1 = {node[match_attr] for node in G1.vs}
+    nodes2 = {node[match_attr] for node in G2.vs}
     intersection = len(nodes1.intersection(nodes2))
     if scale:
         return len(pos1.intersection(pos2)) / (len(nodes1) + len(nodes2) - intersection)

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="v_deregnet_receptor" for="node" attr.name="deregnet_receptor" attr.type="boolean"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">91543</data>
+      <data key="v_entrez">91543</data>
+      <data key="v_ensembl">ENSG00000134321</data>
+      <data key="v_symbol">RSAD2</data>
+      <data key="v_id">n407</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">3563</data>
+      <data key="v_entrez">3563</data>
+      <data key="v_ensembl">ENSG00000185291</data>
+      <data key="v_symbol">IL3RA</data>
+      <data key="v_id">n881</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">3265</data>
+      <data key="v_entrez">3265</data>
+      <data key="v_ensembl">ENSG00000174775</data>
+      <data key="v_symbol">HRAS</data>
+      <data key="v_id">n948</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">11200</data>
+      <data key="v_entrez">11200</data>
+      <data key="v_ensembl">ENSG00000183765</data>
+      <data key="v_symbol">CHEK2</data>
+      <data key="v_id">n1069</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">2224</data>
+      <data key="v_entrez">2224</data>
+      <data key="v_ensembl">ENSG00000160752</data>
+      <data key="v_symbol">FDPS</data>
+      <data key="v_id">n1118</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">6300</data>
+      <data key="v_entrez">6300</data>
+      <data key="v_ensembl">ENSG00000188130</data>
+      <data key="v_symbol">MAPK12</data>
+      <data key="v_id">n2002</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">4597</data>
+      <data key="v_entrez">4597</data>
+      <data key="v_ensembl">ENSG00000167508</data>
+      <data key="v_symbol">MVD</data>
+      <data key="v_id">n2255</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">1852</data>
+      <data key="v_entrez">1852</data>
+      <data key="v_ensembl">ENSG00000130829</data>
+      <data key="v_symbol">DUSP9</data>
+      <data key="v_id">n2733</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">5600</data>
+      <data key="v_entrez">5600</data>
+      <data key="v_ensembl">ENSG00000185386</data>
+      <data key="v_symbol">MAPK11</data>
+      <data key="v_id">n3414</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">7157</data>
+      <data key="v_entrez">7157</data>
+      <data key="v_ensembl">ENSG00000141510</data>
+      <data key="v_symbol">TP53</data>
+      <data key="v_id">n5464</data>
+      <data key="v_deregnet_score">0</data>
+      <data key="v_deregnet_receptor">true</data>
+    </node>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n5">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n5">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n2" target="n5">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n2" target="n8">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n8">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n2" target="n8">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n3" target="n9">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n3" target="n9">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n4" target="n2">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n4" target="n2">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n4" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n5" target="n9">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n5" target="n9">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n6" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n7" target="n5">
+      <data key="e_interaction">dephosphorylation</data>
+    </edge>
+    <edge source="n7" target="n5">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n7" target="n8">
+      <data key="e_interaction">dephosphorylation</data>
+    </edge>
+    <edge source="n7" target="n8">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n8" target="n9">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n8" target="n9">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+  </graph>
+</graphml>
