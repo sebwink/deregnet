@@ -29,17 +29,26 @@ def parse_args():
                         help='Maximal time to search for a subgraph')
     parser.add_argument('-g', '--gap-cut', type=float, default=None,
                         help='Gap cut to stop optimization prematurely')
+<<<<<<< HEAD
     parser.add_argument('--min-size', type=int, default=10,
                         help='Minimal subgraph size.')
     parser.add_argument('--min-num-terminals', type=int, default=0,
                         help='Minimal number of terminals in subgraph.')
     parser.add_argument('--exclude', type=str, default='',
                         help='Which nodes to exclude from subgraphs.')
+=======
+    parser.add_argument('-n', '--normalize-wrt', type=str, default='genewise_median',
+                        help='Normalization strategy for RNASeq data')
+>>>>>>> 8fe61bce94be8f5f3cae7f9ad716031a0ee10f46
     return parser.parse_args()
 
-def prepare_rnaseq_score(dataset):
+def prepare_rnaseq_score(dataset, compare_to):
     id_mapper = BioMap().get_mapper('hgnc')
+<<<<<<< HEAD
     rnaseq_score = get_rnaseq_score(dataset, compare_to='control')
+=======
+    rnaseq_score = get_rnaseq_score(dataset, compare_to=compare_to)
+>>>>>>> 8fe61bce94be8f5f3cae7f9ad716031a0ee10f46
     rnaseq_score.index = [gene.split('.')[0] for gene in rnaseq_score.index]
     rnaseq_score.index = list(id_mapper.map(list(rnaseq_score.index), FROM='ensembl', TO='entrez'))
     return rnaseq_score
@@ -68,14 +77,18 @@ def main(args):
     hgnc = BioMap().get_mapper('hgnc')
     graph = ig.Graph.Read_GraphML(GRAPH_PATH)
     #
+<<<<<<< HEAD
     rnaseq_score = prepare_rnaseq_score(args.dataset)
     expression_ind = prepare_expression_indicator(args.dataset, threshold=100)
+=======
+    rnaseq_score = prepare_rnaseq_score(args.dataset, args.normalize_wrt)
+>>>>>>> 8fe61bce94be8f5f3cae7f9ad716031a0ee10f46
     patients = list(rnaseq_score.columns)
     abs_vals, minmax = get_mode_args(args.mode)
     base_path = os.path.join('rnaseq', args.layer, args.mode, args.dataset)
     if not os.path.isdir(base_path):
         os.makedirs(base_path)
-    failed = []     # log patients for which no subgraph could be found
+    failed = set()     # log patients for which no subgraph could be found
     for patient_id in patients:
         try:
             expression_induced_graph = get_expression_induced_subgraph(graph, patient_id, expression_ind)
@@ -118,11 +131,11 @@ def main(args):
                                                  min_num_terminals=args.min_num_terminals,
                                                  excluded_nodes=args.exclude.split(','))
         except:
-            failed.append(patient_id)
+            failed.add(patient_id)
         try:
             result.to_graphml(path)
         except:
-            failed.append(patient_id)
+            failed.add(patient_id)
     write_fails(failed, base_path)
 
 if __name__ == '__main__':
