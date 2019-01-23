@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">1780</data>
+      <data key="v_entrez">1780</data>
+      <data key="v_ensembl">ENSG00000158560</data>
+      <data key="v_symbol">DYNC1I1</data>
+      <data key="v_id">n978</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">7280</data>
+      <data key="v_entrez">7280</data>
+      <data key="v_ensembl">ENSG00000137267</data>
+      <data key="v_symbol">TUBB2A</data>
+      <data key="v_id">n1577</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">113457</data>
+      <data key="v_entrez">113457</data>
+      <data key="v_ensembl">ENSG00000075886</data>
+      <data key="v_symbol">TUBA3D</data>
+      <data key="v_id">n3031</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">10376</data>
+      <data key="v_entrez">10376</data>
+      <data key="v_ensembl">ENSG00000123416</data>
+      <data key="v_symbol">TUBA1B</data>
+      <data key="v_id">n3096</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">7278</data>
+      <data key="v_entrez">7278</data>
+      <data key="v_ensembl">ENSG00000198033</data>
+      <data key="v_symbol">TUBA3C</data>
+      <data key="v_id">n3735</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n0" target="n3">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n1">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n4" target="n1">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+  </graph>
+</graphml>

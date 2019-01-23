@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">3953</data>
+      <data key="v_entrez">3953</data>
+      <data key="v_ensembl">ENSG00000116678</data>
+      <data key="v_symbol">LEPR</data>
+      <data key="v_id">n1205</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">85480</data>
+      <data key="v_entrez">85480</data>
+      <data key="v_ensembl">ENSG00000145777</data>
+      <data key="v_symbol">TSLP</data>
+      <data key="v_id">n1374</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">1441</data>
+      <data key="v_entrez">1441</data>
+      <data key="v_ensembl">ENSG00000119535</data>
+      <data key="v_symbol">CSF3R</data>
+      <data key="v_id">n4802</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">3598</data>
+      <data key="v_entrez">3598</data>
+      <data key="v_ensembl">ENSG00000123496</data>
+      <data key="v_symbol">IL13RA2</data>
+      <data key="v_id">n5154</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">3560</data>
+      <data key="v_entrez">3560</data>
+      <data key="v_ensembl">ENSG00000100385</data>
+      <data key="v_symbol">IL2RB</data>
+      <data key="v_id">n5381</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+  </graph>
+</graphml>

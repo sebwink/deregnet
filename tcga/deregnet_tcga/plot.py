@@ -10,12 +10,11 @@ def patient_to_genes_affected_by_snv(cancer_type, id_type=None, **kwargs):
                patient: {mutation[0] for mutation in mutations if mutation[1] == patient}
                for patient in patients
               }
-        
     if id_type is not None:
         hgnc = BioMap().get_mapper('hgnc')
         mapping = {patient: set(hgnc.map(list(genes), FROM='ensembl', TO=id_type))
                    for patient, genes in mapping.items()}
-        mapping = {patient: {gene for gene in genes if gene} 
+        mapping = {patient: {gene for gene in genes if gene}
                    for patient, genes in mapping.items()}
     return mapping
 

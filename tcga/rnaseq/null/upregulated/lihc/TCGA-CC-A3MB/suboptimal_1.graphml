@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">11073</data>
+      <data key="v_entrez">11073</data>
+      <data key="v_ensembl">ENSG00000163781</data>
+      <data key="v_symbol">TOPBP1</data>
+      <data key="v_id">n1625</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">675</data>
+      <data key="v_entrez">675</data>
+      <data key="v_ensembl">ENSG00000139618</data>
+      <data key="v_symbol">BRCA2</data>
+      <data key="v_id">n2661</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">672</data>
+      <data key="v_entrez">672</data>
+      <data key="v_ensembl">ENSG00000012048</data>
+      <data key="v_symbol">BRCA1</data>
+      <data key="v_id">n2832</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">83990</data>
+      <data key="v_entrez">83990</data>
+      <data key="v_ensembl">ENSG00000136492</data>
+      <data key="v_symbol">BRIP1</data>
+      <data key="v_id">n4828</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">580</data>
+      <data key="v_entrez">580</data>
+      <data key="v_ensembl">ENSG00000138376</data>
+      <data key="v_symbol">BARD1</data>
+      <data key="v_id">n4871</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n3" target="n0">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+  </graph>
+</graphml>

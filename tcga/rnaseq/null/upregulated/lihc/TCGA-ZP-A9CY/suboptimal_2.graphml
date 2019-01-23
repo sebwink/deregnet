@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">2167</data>
+      <data key="v_entrez">2167</data>
+      <data key="v_ensembl">ENSG00000170323</data>
+      <data key="v_symbol">FABP4</data>
+      <data key="v_id">n416</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">50943</data>
+      <data key="v_entrez">50943</data>
+      <data key="v_ensembl">ENSG00000049768</data>
+      <data key="v_symbol">FOXP3</data>
+      <data key="v_id">n1186</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">4023</data>
+      <data key="v_entrez">4023</data>
+      <data key="v_ensembl">ENSG00000175445</data>
+      <data key="v_symbol">LPL</data>
+      <data key="v_id">n1564</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">6256</data>
+      <data key="v_entrez">6256</data>
+      <data key="v_ensembl">ENSG00000186350</data>
+      <data key="v_symbol">RXRA</data>
+      <data key="v_id">n2425</data>
+      <data key="v_deregnet_score">0</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">2182</data>
+      <data key="v_entrez">2182</data>
+      <data key="v_ensembl">ENSG00000068366</data>
+      <data key="v_symbol">ACSL4</data>
+      <data key="v_id">n4564</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n3" target="n0">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n3" target="n2">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_interaction">expression</data>
+    </edge>
+  </graph>
+</graphml>

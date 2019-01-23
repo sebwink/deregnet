@@ -13,132 +13,65 @@
   <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
   <graph id="G" edgedefault="directed">
     <node id="n0">
-      <data key="v_name">2099</data>
-      <data key="v_entrez">2099</data>
-      <data key="v_ensembl">ENSG00000091831</data>
-      <data key="v_symbol">ESR1</data>
-      <data key="v_id">n1150</data>
+      <data key="v_name">148</data>
+      <data key="v_entrez">148</data>
+      <data key="v_ensembl">ENSG00000120907</data>
+      <data key="v_symbol">ADRA1A</data>
+      <data key="v_id">n2790</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n1">
-      <data key="v_name">3725</data>
-      <data key="v_entrez">3725</data>
-      <data key="v_ensembl">ENSG00000177606</data>
-      <data key="v_symbol">JUN</data>
-      <data key="v_id">n1601</data>
+      <data key="v_name">6720</data>
+      <data key="v_entrez">6720</data>
+      <data key="v_ensembl">ENSG00000072310</data>
+      <data key="v_symbol">SREBF1</data>
+      <data key="v_id">n2931</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n2">
-      <data key="v_name">112483</data>
-      <data key="v_entrez">112483</data>
-      <data key="v_ensembl">ENSG00000141504</data>
-      <data key="v_symbol">SAT2</data>
-      <data key="v_id">n2183</data>
+      <data key="v_name">2645</data>
+      <data key="v_entrez">2645</data>
+      <data key="v_ensembl">ENSG00000106633</data>
+      <data key="v_symbol">GCK</data>
+      <data key="v_id">n3435</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n3">
-      <data key="v_name">4609</data>
-      <data key="v_entrez">4609</data>
-      <data key="v_ensembl">ENSG00000136997</data>
-      <data key="v_symbol">MYC</data>
-      <data key="v_id">n2829</data>
+      <data key="v_name">79966</data>
+      <data key="v_entrez">79966</data>
+      <data key="v_ensembl">ENSG00000145284</data>
+      <data key="v_symbol">SCD5</data>
+      <data key="v_id">n3916</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n4">
-      <data key="v_name">5054</data>
-      <data key="v_entrez">5054</data>
-      <data key="v_ensembl">ENSG00000106366</data>
-      <data key="v_symbol">SERPINE1</data>
-      <data key="v_id">n3926</data>
+      <data key="v_name">5563</data>
+      <data key="v_entrez">5563</data>
+      <data key="v_ensembl">ENSG00000162409</data>
+      <data key="v_symbol">PRKAA2</data>
+      <data key="v_id">n4503</data>
       <data key="v_deregnet_score">-1</data>
     </node>
-    <node id="n5">
-      <data key="v_name">595</data>
-      <data key="v_entrez">595</data>
-      <data key="v_ensembl">ENSG00000110092</data>
-      <data key="v_symbol">CCND1</data>
-      <data key="v_id">n4220</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n6">
-      <data key="v_name">7056</data>
-      <data key="v_entrez">7056</data>
-      <data key="v_ensembl">ENSG00000178726</data>
-      <data key="v_symbol">THBD</data>
-      <data key="v_id">n4256</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n7">
-      <data key="v_name">6347</data>
-      <data key="v_entrez">6347</data>
-      <data key="v_ensembl">ENSG00000108691</data>
-      <data key="v_symbol">CCL2</data>
-      <data key="v_id">n5002</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n8">
-      <data key="v_name">5934</data>
-      <data key="v_entrez">5934</data>
-      <data key="v_ensembl">ENSG00000103479</data>
-      <data key="v_symbol">RBL2</data>
-      <data key="v_id">n5347</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n9">
-      <data key="v_name">7157</data>
-      <data key="v_entrez">7157</data>
-      <data key="v_ensembl">ENSG00000141510</data>
-      <data key="v_symbol">TP53</data>
-      <data key="v_id">n5464</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <edge source="n0" target="n1">
-      <data key="e_interaction">binding/association</data>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">activation</data>
     </edge>
-    <edge source="n0" target="n3">
-      <data key="e_interaction">expression</data>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">indirect effect</data>
     </edge>
-    <edge source="n0" target="n5">
-      <data key="e_interaction">expression</data>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">indirect effect</data>
     </edge>
     <edge source="n1" target="n3">
       <data key="e_interaction">expression</data>
     </edge>
-    <edge source="n1" target="n4">
-      <data key="e_interaction">expression</data>
+    <edge source="n4" target="n1">
+      <data key="e_interaction">indirect effect</data>
     </edge>
-    <edge source="n1" target="n5">
-      <data key="e_interaction">expression</data>
-    </edge>
-    <edge source="n1" target="n6">
-      <data key="e_interaction">expression</data>
-    </edge>
-    <edge source="n1" target="n7">
-      <data key="e_interaction">activation</data>
-    </edge>
-    <edge source="n1" target="n7">
-      <data key="e_interaction">expression</data>
-    </edge>
-    <edge source="n1" target="n9">
-      <data key="e_interaction">expression</data>
-    </edge>
-    <edge source="n3" target="n5">
-      <data key="e_interaction">expression</data>
-    </edge>
-    <edge source="n5" target="n8">
-      <data key="e_interaction">activation</data>
-    </edge>
-    <edge source="n5" target="n8">
+    <edge source="n4" target="n1">
       <data key="e_interaction">inhibition</data>
-    </edge>
-    <edge source="n5" target="n8">
-      <data key="e_interaction">phosphorylation</data>
-    </edge>
-    <edge source="n9" target="n2">
-      <data key="e_interaction">expression</data>
-    </edge>
-    <edge source="n9" target="n4">
-      <data key="e_interaction">expression</data>
     </edge>
   </graph>
 </graphml>

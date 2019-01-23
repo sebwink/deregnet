@@ -1,5 +1,6 @@
 import os
 from biomap import BioMap
+from tcga.snv import TcgaSnvData
 
 HGNC = BioMap().get_mapper('hgnc')
 
@@ -31,7 +32,14 @@ class Layers:
         elif layer == 'null':
             return None, None
         elif layer == 'snv':
-            return cls.snv(**kwargs)
+            snv = cls.snv(**kwargs)
+            return snv, snv
+        elif layer == 'snv_as_roots':
+            snv = cls.snv(**kwargs)
+            return snv, None
+        elif layer == 'snv_as_terminals':
+            snv = cls.snv(**kwargs)
+            return snv, None
         elif layer == 'cnv':
             return cls.cnv(**kwargs)
         elif layer == 'genomic':
@@ -39,8 +47,8 @@ class Layers:
         elif layer == 'hla_as_terminals':
             return cls.hla(as_receptors=False, as_terminals=True, **kwargs)
         elif layer == 'svn_to_hla':
-            hla, _ = self.hla(True, False)
-            snv, _ = self.snv(**kwargs)
+            hla, _ = cls.hla(True, False)
+            snv, _ = cls.snv(**kwargs)
             return snv, hla
         else:
             raise ValueError
@@ -59,8 +67,14 @@ class Layers:
 
 
     @classmethod
-    def snv(cls, patient):
-        return None, None
+    def snv(cls, patient, cancer_type):
+        snv = TcgaSnvData(cancer_type)
+        snvs = snv.non_silent_mutations(patient)
+        try:
+            snvs = HGNC.map(snvs, FROM='ensembl', TO='entrez')
+        except:
+            snvs = []
+        return [snv for snv in snvs if snv is not None]
 
     @classmethod
     def cnv(cls, patient):

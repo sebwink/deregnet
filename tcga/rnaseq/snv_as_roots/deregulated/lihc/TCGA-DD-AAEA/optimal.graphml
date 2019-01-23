@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="v_deregnet_receptor" for="node" attr.name="deregnet_receptor" attr.type="boolean"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">721</data>
+      <data key="v_entrez">721</data>
+      <data key="v_ensembl">ENSG00000224389</data>
+      <data key="v_symbol">C4B</data>
+      <data key="v_id">n3395</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">718</data>
+      <data key="v_entrez">718</data>
+      <data key="v_ensembl">ENSG00000125730</data>
+      <data key="v_symbol">C3</data>
+      <data key="v_id">n3627</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">722</data>
+      <data key="v_entrez">722</data>
+      <data key="v_ensembl">ENSG00000123838</data>
+      <data key="v_symbol">C4BPA</data>
+      <data key="v_id">n3690</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">true</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">720</data>
+      <data key="v_entrez">720</data>
+      <data key="v_ensembl">ENSG00000244731</data>
+      <data key="v_symbol">C4A</data>
+      <data key="v_id">n4182</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">727</data>
+      <data key="v_entrez">727</data>
+      <data key="v_ensembl">ENSG00000106804</data>
+      <data key="v_symbol">C5</data>
+      <data key="v_id">n4446</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n0">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+  </graph>
+</graphml>

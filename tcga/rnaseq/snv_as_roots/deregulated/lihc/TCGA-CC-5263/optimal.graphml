@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="v_deregnet_receptor" for="node" attr.name="deregnet_receptor" attr.type="boolean"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">898</data>
+      <data key="v_entrez">898</data>
+      <data key="v_ensembl">ENSG00000105173</data>
+      <data key="v_symbol">CCNE1</data>
+      <data key="v_id">n118</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">true</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">1906</data>
+      <data key="v_entrez">1906</data>
+      <data key="v_ensembl">ENSG00000078401</data>
+      <data key="v_symbol">EDN1</data>
+      <data key="v_id">n516</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">1030</data>
+      <data key="v_entrez">1030</data>
+      <data key="v_ensembl">ENSG00000147883</data>
+      <data key="v_symbol">CDKN2B</data>
+      <data key="v_id">n526</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">2305</data>
+      <data key="v_entrez">2305</data>
+      <data key="v_ensembl">ENSG00000111206</data>
+      <data key="v_symbol">FOXM1</data>
+      <data key="v_id">n655</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">6513</data>
+      <data key="v_entrez">6513</data>
+      <data key="v_ensembl">ENSG00000117394</data>
+      <data key="v_symbol">SLC2A1</data>
+      <data key="v_id">n684</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">4172</data>
+      <data key="v_entrez">4172</data>
+      <data key="v_ensembl">ENSG00000112118</data>
+      <data key="v_symbol">MCM3</data>
+      <data key="v_id">n763</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">5207</data>
+      <data key="v_entrez">5207</data>
+      <data key="v_ensembl">ENSG00000158571</data>
+      <data key="v_symbol">PFKFB1</data>
+      <data key="v_id">n773</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">9134</data>
+      <data key="v_entrez">9134</data>
+      <data key="v_ensembl">ENSG00000175305</data>
+      <data key="v_symbol">CCNE2</data>
+      <data key="v_id">n774</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">2538</data>
+      <data key="v_entrez">2538</data>
+      <data key="v_ensembl">ENSG00000131482</data>
+      <data key="v_symbol">G6PC</data>
+      <data key="v_id">n808</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">4998</data>
+      <data key="v_entrez">4998</data>
+      <data key="v_ensembl">ENSG00000085840</data>
+      <data key="v_symbol">ORC1</data>
+      <data key="v_id">n1052</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n10">
+      <data key="v_name">1373</data>
+      <data key="v_entrez">1373</data>
+      <data key="v_ensembl">ENSG00000021826</data>
+      <data key="v_symbol">CPS1</data>
+      <data key="v_id">n1437</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n11">
+      <data key="v_name">2203</data>
+      <data key="v_entrez">2203</data>
+      <data key="v_ensembl">ENSG00000165140</data>
+      <data key="v_symbol">FBP1</data>
+      <data key="v_id">n1459</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n12">
+      <data key="v_name">990</data>
+      <data key="v_entrez">990</data>
+      <data key="v_ensembl">ENSG00000094804</data>
+      <data key="v_symbol">CDC6</data>
+      <data key="v_id">n1594</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n13">
+      <data key="v_name">4318</data>
+      <data key="v_entrez">4318</data>
+      <data key="v_ensembl">ENSG00000100985</data>
+      <data key="v_symbol">MMP9</data>
+      <data key="v_id">n1815</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n14">
+      <data key="v_name">2752</data>
+      <data key="v_entrez">2752</data>
+      <data key="v_ensembl">ENSG00000135821</data>
+      <data key="v_symbol">GLUL</data>
+      <data key="v_id">n1921</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n15">
+      <data key="v_name">130589</data>
+      <data key="v_entrez">130589</data>
+      <data key="v_ensembl">ENSG00000143891</data>
+      <data key="v_symbol">GALM</data>
+      <data key="v_id">n1994</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n16">
+      <data key="v_name">4176</data>
+      <data key="v_entrez">4176</data>
+      <data key="v_ensembl">ENSG00000166508</data>
+      <data key="v_symbol">MCM7</data>
+      <data key="v_id">n2069</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">true</data>
+    </node>
+    <node id="n17">
+      <data key="v_name">1869</data>
+      <data key="v_entrez">1869</data>
+      <data key="v_ensembl">ENSG00000101412</data>
+      <data key="v_symbol">E2F1</data>
+      <data key="v_id">n2070</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n18">
+      <data key="v_name">27165</data>
+      <data key="v_entrez">27165</data>
+      <data key="v_ensembl">ENSG00000135423</data>
+      <data key="v_symbol">GLS2</data>
+      <data key="v_id">n2223</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n19">
+      <data key="v_name">23594</data>
+      <data key="v_entrez">23594</data>
+      <data key="v_ensembl">ENSG00000091651</data>
+      <data key="v_symbol">ORC6</data>
+      <data key="v_id">n2229</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n20">
+      <data key="v_name">5009</data>
+      <data key="v_entrez">5009</data>
+      <data key="v_ensembl">ENSG00000036473</data>
+      <data key="v_symbol">OTC</data>
+      <data key="v_id">n2331</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n21">
+      <data key="v_name">4175</data>
+      <data key="v_entrez">4175</data>
+      <data key="v_ensembl">ENSG00000076003</data>
+      <data key="v_symbol">MCM6</data>
+      <data key="v_id">n2542</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n22">
+      <data key="v_name">890</data>
+      <data key="v_entrez">890</data>
+      <data key="v_ensembl">ENSG00000145386</data>
+      <data key="v_symbol">CCNA2</data>
+      <data key="v_id">n2574</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n23">
+      <data key="v_name">5091</data>
+      <data key="v_entrez">5091</data>
+      <data key="v_ensembl">ENSG00000173599</data>
+      <data key="v_symbol">PC</data>
+      <data key="v_id">n2667</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n24">
+      <data key="v_name">80201</data>
+      <data key="v_entrez">80201</data>
+      <data key="v_ensembl">ENSG00000156510</data>
+      <data key="v_symbol">HKDC1</data>
+      <data key="v_id">n2699</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n25">
+      <data key="v_name">4609</data>
+      <data key="v_entrez">4609</data>
+      <data key="v_ensembl">ENSG00000136997</data>
+      <data key="v_symbol">MYC</data>
+      <data key="v_id">n2829</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n26">
+      <data key="v_name">5315</data>
+      <data key="v_entrez">5315</data>
+      <data key="v_ensembl">ENSG00000067225</data>
+      <data key="v_symbol">PKM</data>
+      <data key="v_id">n2878</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n27">
+      <data key="v_name">4605</data>
+      <data key="v_entrez">4605</data>
+      <data key="v_ensembl">ENSG00000101057</data>
+      <data key="v_symbol">MYBL2</data>
+      <data key="v_id">n2880</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n28">
+      <data key="v_name">5106</data>
+      <data key="v_entrez">5106</data>
+      <data key="v_ensembl">ENSG00000100889</data>
+      <data key="v_symbol">PCK2</data>
+      <data key="v_id">n3124</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n29">
+      <data key="v_name">5933</data>
+      <data key="v_entrez">5933</data>
+      <data key="v_ensembl">ENSG00000080839</data>
+      <data key="v_symbol">RBL1</data>
+      <data key="v_id">n3148</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n30">
+      <data key="v_name">2645</data>
+      <data key="v_entrez">2645</data>
+      <data key="v_ensembl">ENSG00000106633</data>
+      <data key="v_symbol">GCK</data>
+      <data key="v_id">n3435</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n31">
+      <data key="v_name">4173</data>
+      <data key="v_entrez">4173</data>
+      <data key="v_ensembl">ENSG00000104738</data>
+      <data key="v_symbol">MCM4</data>
+      <data key="v_id">n3487</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n32">
+      <data key="v_name">4174</data>
+      <data key="v_entrez">4174</data>
+      <data key="v_ensembl">ENSG00000100297</data>
+      <data key="v_symbol">MCM5</data>
+      <data key="v_id">n3528</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n33">
+      <data key="v_name">2571</data>
+      <data key="v_entrez">2571</data>
+      <data key="v_ensembl">ENSG00000128683</data>
+      <data key="v_symbol">GAD1</data>
+      <data key="v_id">n3659</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n34">
+      <data key="v_name">1870</data>
+      <data key="v_entrez">1870</data>
+      <data key="v_ensembl">ENSG00000007968</data>
+      <data key="v_symbol">E2F2</data>
+      <data key="v_id">n3906</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n35">
+      <data key="v_name">57016</data>
+      <data key="v_entrez">57016</data>
+      <data key="v_ensembl">ENSG00000198074</data>
+      <data key="v_symbol">AKR1B10</data>
+      <data key="v_id">n4038</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n36">
+      <data key="v_name">4312</data>
+      <data key="v_entrez">4312</data>
+      <data key="v_ensembl">ENSG00000196611</data>
+      <data key="v_symbol">MMP1</data>
+      <data key="v_id">n4111</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n37">
+      <data key="v_name">595</data>
+      <data key="v_entrez">595</data>
+      <data key="v_ensembl">ENSG00000110092</data>
+      <data key="v_symbol">CCND1</data>
+      <data key="v_id">n4220</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n38">
+      <data key="v_name">1029</data>
+      <data key="v_entrez">1029</data>
+      <data key="v_ensembl">ENSG00000147889</data>
+      <data key="v_symbol">CDKN2A</data>
+      <data key="v_id">n4304</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n39">
+      <data key="v_name">286826</data>
+      <data key="v_entrez">286826</data>
+      <data key="v_ensembl">ENSG00000183814</data>
+      <data key="v_symbol">LIN9</data>
+      <data key="v_id">n4410</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n40">
+      <data key="v_name">7422</data>
+      <data key="v_entrez">7422</data>
+      <data key="v_ensembl">ENSG00000112715</data>
+      <data key="v_symbol">VEGFA</data>
+      <data key="v_id">n4483</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n41">
+      <data key="v_name">6514</data>
+      <data key="v_entrez">6514</data>
+      <data key="v_ensembl">ENSG00000163581</data>
+      <data key="v_symbol">SLC2A2</data>
+      <data key="v_id">n4669</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n42">
+      <data key="v_name">5209</data>
+      <data key="v_entrez">5209</data>
+      <data key="v_ensembl">ENSG00000170525</data>
+      <data key="v_symbol">PFKFB3</data>
+      <data key="v_id">n4691</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n43">
+      <data key="v_name">2746</data>
+      <data key="v_entrez">2746</data>
+      <data key="v_ensembl">ENSG00000148672</data>
+      <data key="v_symbol">GLUD1</data>
+      <data key="v_id">n4820</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n44">
+      <data key="v_name">5210</data>
+      <data key="v_entrez">5210</data>
+      <data key="v_ensembl">ENSG00000114268</data>
+      <data key="v_symbol">PFKFB4</data>
+      <data key="v_id">n4922</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n45">
+      <data key="v_name">5214</data>
+      <data key="v_entrez">5214</data>
+      <data key="v_ensembl">ENSG00000067057</data>
+      <data key="v_symbol">PFKP</data>
+      <data key="v_id">n4950</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n46">
+      <data key="v_name">3099</data>
+      <data key="v_entrez">3099</data>
+      <data key="v_ensembl">ENSG00000159399</data>
+      <data key="v_symbol">HK2</data>
+      <data key="v_id">n5175</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n47">
+      <data key="v_name">4171</data>
+      <data key="v_entrez">4171</data>
+      <data key="v_ensembl">ENSG00000073111</data>
+      <data key="v_symbol">MCM2</data>
+      <data key="v_id">n5252</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n48">
+      <data key="v_name">1910</data>
+      <data key="v_entrez">1910</data>
+      <data key="v_ensembl">ENSG00000136160</data>
+      <data key="v_symbol">EDNRB</data>
+      <data key="v_id">n5444</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n49">
+      <data key="v_name">5313</data>
+      <data key="v_entrez">5313</data>
+      <data key="v_ensembl">ENSG00000143627</data>
+      <data key="v_symbol">PKLR</data>
+      <data key="v_id">n5469</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <edge source="n0" target="n29">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n0" target="n29">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n0" target="n29">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n1" target="n48">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n37">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n3" target="n39">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n6" target="n11">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n6" target="n45">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n7" target="n29">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n7" target="n29">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n7" target="n29">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n9" target="n5">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n9" target="n16">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n9" target="n21">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n9" target="n31">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n9" target="n32">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n9" target="n47">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n10" target="n14">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n10" target="n18">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n10" target="n20">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n10" target="n43">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n12" target="n9">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n12" target="n19">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n13" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n13" target="n40">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n14" target="n10">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n14" target="n33">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n14" target="n43">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n15" target="n8">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n15" target="n24">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n15" target="n30">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n15" target="n35">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n15" target="n46">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n17" target="n0">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n17" target="n3">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n17" target="n7">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n17" target="n22">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n17" target="n27">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n18" target="n10">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n18" target="n14">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n18" target="n33">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n18" target="n43">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n19" target="n5">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n19" target="n16">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n19" target="n21">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n19" target="n31">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n19" target="n32">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n19" target="n47">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n22" target="n12">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n22" target="n12">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n22" target="n17">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n22" target="n17">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n22" target="n27">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n22" target="n27">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n22" target="n34">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n22" target="n34">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n23" target="n28">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n24" target="n6">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n24" target="n11">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n24" target="n15">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n24" target="n26">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n24" target="n42">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n24" target="n44">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n24" target="n45">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n24" target="n49">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n25" target="n2">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n25" target="n4">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n13">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n18">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n24">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n26">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n36">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n37">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n38">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n25" target="n40">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n41">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n25" target="n46">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n26" target="n23">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n27" target="n39">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n28" target="n23">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n28" target="n26">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n28" target="n49">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n29" target="n17">
+      <data key="e_interaction">dissociation</data>
+    </edge>
+    <edge source="n29" target="n17">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n29" target="n25">
+      <data key="e_interaction">repression</data>
+    </edge>
+    <edge source="n29" target="n34">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n30" target="n15">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n30" target="n26">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n30" target="n49">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n34" target="n0">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n34" target="n3">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n34" target="n7">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n34" target="n27">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n37" target="n29">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n37" target="n29">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n37" target="n29">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n38" target="n37">
+      <data key="e_interaction">missing interaction</data>
+    </edge>
+    <edge source="n38" target="n37">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n42" target="n11">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n42" target="n45">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n43" target="n14">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n43" target="n18">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n43" target="n33">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n44" target="n11">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n44" target="n45">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n46" target="n6">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n46" target="n11">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n46" target="n15">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n46" target="n26">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n46" target="n42">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n46" target="n44">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n46" target="n45">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n46" target="n49">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n49" target="n23">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

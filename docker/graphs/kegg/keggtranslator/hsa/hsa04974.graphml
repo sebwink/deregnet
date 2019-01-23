@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="id" attr.type="string" for="edge" id="d17"/>
+<key attr.name="description" attr.type="string" for="edge" id="d16"/>
+<key attr.name="interactionType" attr.type="string" for="edge" id="d15"/>
+<key attr.name="entrezIds" attr.type="string" for="node" id="d14"/>
+<key attr.name="uniprotIds" attr.type="string" for="node" id="d13"/>
+<key attr.name="ensemblIds" attr.type="string" for="node" id="d12"/>
+<key attr.name="label" attr.type="string" for="node" id="d11"/>
+<key attr.name="y" attr.type="string" for="node" id="d10"/>
+<key attr.name="x" attr.type="string" for="node" id="d9"/>
+<key attr.name="description" attr.type="string" for="node" id="d8"/>
+<key attr.name="type" attr.type="string" for="node" id="d7"/>
+<key attr.name="nodeLabel" attr.type="string" for="node" id="d6"/>
+<key attr.name="keggIds" attr.type="string" for="node" id="d5"/>
+<key attr.name="url" attr.type="string" for="node" id="d4"/>
+<key attr.name="nodeName" attr.type="string" for="node" id="d3"/>
+<key attr.name="nodeColor" attr.type="string" for="node" id="d2"/>
+<key attr.name="nodePosition" attr.type="string" for="node" id="d1"/>
+<key attr.name="nodeSize" attr.type="string" for="node" id="d0"/>
+<graph edgedefault="directed"><node id="n0">
+  <data key="d0">310|25</data>
+  <data key="d1">40|45</data>
+  <data key="d2">#00FF00</data>
+  <data key="d3">Protein digestion and absorption</data>
+  <data key="d4">http://www.kegg.jp/dbget-bin/www_bget?hsa04974</data>
+  <data key="d5">path:hsa04974</data>
+  <data key="d6">Protein digestion and absorption - Homo sapiens (human)</data>
+  <data key="d7">pathway</data>
+  <data key="d8">Protein is a dietary component essential for nutritional homeostasis in humans. Normally ingested protein undergoes a complex series of degradative processes following the action of gastric pancreatic and small intestinal enzymes. The result of this proteolytic activity is a mixture of amino acids and small peptides. Amino acids (AAs) are transported into the enterocyte (intestinal epithelial cell) by a variety of AA transporters that are specific for cationic (basic) AA neutral AA and anionic (acidic) AA. Small peptides are absorbed into enterocytes by the PEPT1 transporter. Inside enterocytes peptides are hydrolyzed and the resulting amino acids are released together with those absorbed by AA transporters into blood via multiple basolateral AA transporters. Hydrolysis-resistant peptides however are transported out of the cells by a basolateral peptide transporter that has not been identified molecularly.</data>
+  <data key="d9">40.0</data>
+  <data key="d10">45.5</data>
+  <data key="d11">Protein digestion and absorption</data>
+</node>
+<node id="n1">
+  <data key="d0">46|17</data>
+  <data key="d1">189|266</data>
+  <data key="d2">#BFFFBF</data>
+  <data key="d3">PGA</data>
+  <data key="d4">http://www.kegg.jp/dbget-bin/www_bget?hsa:5222+hsa:643834+hsa:643847</data>
+  <data key="d12">ENSG00000256713,ENSG00000229859,ENSG00000229183</data>
+  <data key="d13">P0DJD9,P0DJD8,P0DJD7 A0A1S5UZ02 B7Z719</data>
+  <data key="d5">hsa:5222,hsa:643834,hsa:643847</data>
+  <data key="d14">5222,643834,643847</data>
+  <data key="d6">PGA5 Pg5, PGA3, PGA4</data>
+  <data key="d7">protein</data>
+  <data key="d8">(RefSeq) pepsinogen 5 group I (pepsinogen A),(RefSeq) pepsinogen 3 group I (pepsinogen A),(RefSeq) pepsinogen 4 group I (pepsinogen A)</data>
+  <data key="d9">189.0</data>
+  <data key="d10">266.5</data>
+  <data key="d11">PGA</data>
+</node>
+<node id="n2">
+  <data key="d0">8|8</data>
+  <data key="d1">209|237</data>
+  <data key="d2">#FFFFFF</data>
+  <data key="d3">HCl</data>
+  <data key="d4">http://www.kegg.jp/dbget-bin/www_bget?C01327</data>
+  <data key="d5">cpd:C01327</data>
+  <data key="d6">Hydrochloric-acid HCl Hydrogen-chloride Hydrochloride HCl</data>
+  <data key="d7">small molecule</data>
+  <data key="d9">209.0</data>
+  <data key="d10">237.0</data>
+  <data key="d11">HCl</data>
+</node>
+<edge source="n2" target="n1">
+  <data key="d15">activation</data>
+  <data key="d16">PCrel</data>
+  <data key="d17">e0</data>
+</edge>
+</graph></graphml>

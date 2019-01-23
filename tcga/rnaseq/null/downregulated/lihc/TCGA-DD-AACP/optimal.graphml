@@ -13,123 +13,59 @@
   <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
   <graph id="G" edgedefault="directed">
     <node id="n0">
-      <data key="v_name">64902</data>
-      <data key="v_entrez">64902</data>
-      <data key="v_ensembl">ENSG00000113492</data>
-      <data key="v_symbol">AGXT2</data>
-      <data key="v_id">n243</data>
+      <data key="v_name">5340</data>
+      <data key="v_entrez">5340</data>
+      <data key="v_ensembl">ENSG00000122194</data>
+      <data key="v_symbol">PLG</data>
+      <data key="v_id">n2382</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n1">
-      <data key="v_name">1036</data>
-      <data key="v_entrez">1036</data>
-      <data key="v_ensembl">ENSG00000129596</data>
-      <data key="v_symbol">CDO1</data>
-      <data key="v_id">n273</data>
+      <data key="v_name">2161</data>
+      <data key="v_entrez">2161</data>
+      <data key="v_ensembl">ENSG00000131187</data>
+      <data key="v_symbol">F12</data>
+      <data key="v_id">n3572</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n2">
-      <data key="v_name">51380</data>
-      <data key="v_entrez">51380</data>
-      <data key="v_ensembl">ENSG00000139631</data>
-      <data key="v_symbol">CSAD</data>
-      <data key="v_id">n1152</data>
+      <data key="v_name">3818</data>
+      <data key="v_entrez">3818</data>
+      <data key="v_ensembl">ENSG00000164344</data>
+      <data key="v_symbol">KLKB1</data>
+      <data key="v_id">n3602</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n3">
-      <data key="v_name">210</data>
-      <data key="v_entrez">210</data>
-      <data key="v_ensembl">ENSG00000148218</data>
-      <data key="v_symbol">ALAD</data>
-      <data key="v_id">n1246</data>
+      <data key="v_name">718</data>
+      <data key="v_entrez">718</data>
+      <data key="v_ensembl">ENSG00000125730</data>
+      <data key="v_symbol">C3</data>
+      <data key="v_id">n3627</data>
       <data key="v_deregnet_score">-1</data>
     </node>
     <node id="n4">
-      <data key="v_name">570</data>
-      <data key="v_entrez">570</data>
-      <data key="v_ensembl">ENSG00000136881</data>
-      <data key="v_symbol">BAAT</data>
-      <data key="v_id">n1809</data>
+      <data key="v_name">2160</data>
+      <data key="v_entrez">2160</data>
+      <data key="v_ensembl">ENSG00000088926</data>
+      <data key="v_symbol">F11</data>
+      <data key="v_id">n4393</data>
       <data key="v_deregnet_score">-1</data>
     </node>
-    <node id="n5">
-      <data key="v_name">1491</data>
-      <data key="v_entrez">1491</data>
-      <data key="v_ensembl">ENSG00000116761</data>
-      <data key="v_symbol">CTH</data>
-      <data key="v_id">n1986</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n6">
-      <data key="v_name">211</data>
-      <data key="v_entrez">211</data>
-      <data key="v_ensembl">ENSG00000023330</data>
-      <data key="v_symbol">ALAS1</data>
-      <data key="v_id">n2004</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n7">
-      <data key="v_name">443</data>
-      <data key="v_entrez">443</data>
-      <data key="v_ensembl">ENSG00000108381</data>
-      <data key="v_symbol">ASPA</data>
-      <data key="v_id">n3205</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n8">
-      <data key="v_name">2805</data>
-      <data key="v_entrez">2805</data>
-      <data key="v_ensembl">ENSG00000120053</data>
-      <data key="v_symbol">GOT1</data>
-      <data key="v_id">n3710</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <node id="n9">
-      <data key="v_name">2628</data>
-      <data key="v_entrez">2628</data>
-      <data key="v_ensembl">ENSG00000171766</data>
-      <data key="v_symbol">GATM</data>
-      <data key="v_id">n4101</data>
-      <data key="v_deregnet_score">-1</data>
-    </node>
-    <edge source="n0" target="n6">
-      <data key="e_interaction">compound</data>
+    <edge source="n0" target="n3">
+      <data key="e_interaction">inhibition</data>
     </edge>
-    <edge source="n0" target="n9">
-      <data key="e_interaction">compound</data>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">activation</data>
     </edge>
     <edge source="n1" target="n2">
-      <data key="e_interaction">compound</data>
+      <data key="e_interaction">activation</data>
     </edge>
-    <edge source="n1" target="n5">
-      <data key="e_interaction">compound</data>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">activation</data>
     </edge>
-    <edge source="n1" target="n8">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n2" target="n4">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n5" target="n0">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n5" target="n1">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n5" target="n8">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n6" target="n3">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n7" target="n8">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n8" target="n1">
-      <data key="e_interaction">compound</data>
-    </edge>
-    <edge source="n9" target="n6">
-      <data key="e_interaction">compound</data>
+    <edge source="n2" target="n0">
+      <data key="e_interaction">activation</data>
     </edge>
   </graph>
 </graphml>

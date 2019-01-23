@@ -51,8 +51,11 @@ class PatientSubgraphs:
         graphs = self._graphs + other._graphs
         return self.from_graph_list(graphs, self._base_graph)
 
-    def nodes(self, i, attr='symbol'):
-        return {v[attr] for v in self[i].vs}
+    def nodes(self, i, attr='symbol', if_attr_true=None):
+        if if_attr_true is None:
+            return {v[attr] for v in self[i].vs}
+        else:
+            return {v[attr] for v in self[i].vs if v.attributes().get(if_attr_true, False)}
 
     def subgraph_score(self, i, mode='average', absval=False):
         if len(self._graphs) == 0:
@@ -65,16 +68,16 @@ class PatientSubgraphs:
             return score_sum / len(self[i].vs)
         return score_sum
 
-    def aggregate_subgraph_scores(aggregation_mode='average', mode='average', absval=False):
+    def aggregate_subgraph_scores(self, aggregation_mode='average', mode='average', absval=False):
         aggregated_score_sum = sum(self.subgraph_score(i, mode, absval) for i in range(len(self._graphs)))
         if aggregation_mode == 'average':
             return aggregated_score_sum / len(self._graphs)
         return aggregated_score_sum
 
-    def node_union(self, attr='symbol'):
+    def node_union(self, attr='symbol', if_attr_true=None):
         if len(self._graphs) == 0:
             return set()
-        return self.nodes(0, attr).union(*[self.nodes(i, attr) for i in range(1, len(self._graphs))])
+        return self.nodes(0, attr, if_attr_true).union(*[self.nodes(i, attr, if_attr_true) for i in range(1, len(self._graphs))])
 
     def node2attr(self, attr, node_id='symbol'):
         node2attr = []
@@ -114,13 +117,34 @@ class CohortSubgraphs:
     def from_patient_subset(self, patients):
         patient2subgraph = {p: sg for p, sg in self._patient2subgraph.items() if p in patients}
         return CohortSubgraphs(patient2subgraph, self._base_graph)
+    
+    @classmethod
+    def from_path_with_score_filter(cls, path, subset=None, threshold=0.3, base_graph=BASE_GRAPH, data_home=DATA_HOME):
+                      
+        def cmp_downreg(score, threshold=-0.3):
+            return score < threshold
 
+        def cmp_upreg(score, threshold=0.3):
+            return score > threshold
+
+        path = os.path.join(DATA_HOME, path)
+        subgraphs = CohortSubgraphs.from_cohort_path(path, subset=subset, base_graph=base_graph, data_home=data_home)
+        if 'downregulated' in path:
+            cmp = cmp_downreg
+        else:
+            cmp = cmp_upreg
+        deregulated = [patient for patient, score in subgraphs.subgraph_scores().items() if cmp(score)]
+        subgraphs = CohortSubgraphs.from_cohort_path(path, subset=deregulated, base_graph=base_graph, data_home=data_home)
+        return subgraphs
+        
     @classmethod
     def from_cohort_path(cls,
                          cohort_path,
                          subset=None,
                          base_graph=BASE_GRAPH,
                          data_home=DATA_HOME):
+
+        
         cohort_data = os.path.join(DATA_HOME, cohort_path)
         patient2subgraph = { }
         for patient_id in subset or os.listdir(cohort_data):
@@ -157,12 +181,12 @@ class CohortSubgraphs:
     def patients(self):
         return list(self._patient2subgraph.keys())
 
-    def patient2nodes(self, i=None, patients=None, attr='symbol'):
+    def patient2nodes(self, i=None, patients=None, attr='symbol', if_attr_true=None):
         patients = patients if patients else self.patients
         if i is None:
-            return {p: self[p].node_union(attr) for p in patients }
+            return {p: self[p].node_union(attr, if_attr_true) for p in patients }
         else:
-            return {p: self[p].nodes(i, attr) for p in patients}
+            return {p: self[p].nodes(i, attr, if_attr_true) for p in patients}
 
     def node_histogram(self, i=None, patients=None, attr='symbol'):
         patients2nodes = self.patient2nodes(i, patients, attr)
@@ -180,6 +204,41 @@ class CohortSubgraphs:
         _, ax = plt.subplots(figsize=(14,8))
         g = sns.barplot(x='gene', y='count', data=histogram[histogram['count']>=cutoff], ax=ax)
         g.set_xticklabels(g.get_xticklabels(), rotation=90)
+
+    def node_histogram_restricted_to_boolean_attr(self, rattr, i=None, patients=None, attr='symbol'):
+        patients2nodes = self.patient2nodes(i, patients, attr, rattr)
+        node_union = set().union(*[set(nodes) for nodes in patients2nodes.values()])
+        histogram = {node: 0 for node in node_union}
+        for p, nodes in patients2nodes.items():
+            for node in nodes:
+                histogram[node] += 1
+        histogram = pd.DataFrame({'gene': list(histogram.keys()), 'count': list(histogram.values())})
+        histogram.sort_values(by=['count'], ascending=False, inplace=True)
+        return histogram
+
+    def plot_node_histogram_restricted_to_boolean_attr(self, rattr, cutoff=5, **kwargs):
+        histogram = self.node_histogram_restricted_to_boolean_attr(rattr, **kwargs)
+        _, ax = plt.subplots(figsize=(14,8))
+        g = sns.barplot(x='gene', y='count', data=histogram[histogram['count']>=cutoff], ax=ax)
+        g.set_xticklabels(g.get_xticklabels(), rotation=90)
+
+
+    def get_gene_cooccurence_matrix(self, i=None, patients=None, attr='symbol'):
+        patient2nodes = self.patient2nodes(i, patients, attr)
+        nodes = list({v for nodes in patient2nodes.values() for v in nodes})
+        npairs = [(u,v) for i, u in enumerate(nodes) for v in nodes[i:]]
+        cooccurence = {npair: 0 for npair in npairs}
+        for patient, pnodes in patient2nodes.items():
+            for n1, n2 in cooccurence:
+                if n1 in pnodes and n2 in pnodes:
+                    cooccurence[(n1,n2)] = cooccurence[(n1,n2)] + 1
+        matrix = np.zeros((len(nodes), len(nodes)))
+        for i, n1 in enumerate(nodes):
+            for j, n2 in enumerate(nodes[i:]):
+                val = cooccurence[(n1,n2)]
+                matrix[i][j], matrix[j][i] = val, val
+        return pd.DataFrame(data=matrix, index=nodes, columns=nodes)
+
 
     def subgraph_scores(self, i=0, mode='average', absval=None):
         if absval is None and self._path.split('/')[-2] == 'deregulated':
@@ -230,6 +289,33 @@ class CohortSubgraphs:
 
     def terminal_intersection_count_matrix(self, base_graph=None, scale=True, subset=None, attr='symbol'):
         return self.boolean_attr_overlap_count_matrix('deregnet_terminal', base_graph, scale, subset, attr)
+    
+    def with_any_of(self, genes):
+        genes = [genes] if isinstance(genes, str) else genes
+        patient2nodes = self.patient2nodes()
+        return list({patient for patient, nodes in patient2nodes.items()
+                     if any([(gene in nodes) for gene in genes])})
+
+    def with_none_of(self, genes):
+        genes = [genes] if isinstance(genes, str) else genes
+        patient2nodes = self.patient2nodes()
+        return list({patient for patient, nodes in patient2nodes.items()
+                     if not any([(gene in nodes) for gene in genes])})
+
+    def with_all_of(self, genes):
+        genes = [genes] if isinstance(genes, str) else genes
+        patient2nodes = self.patient2nodes()
+        return list({patient for patient, nodes in patient2nodes.items()
+                     if all([(gene in nodes) for gene in genes])})
+
+    def plot_node_histogram_for_subgraphs_with(self, genes, cutoff=30, _all=False):
+        if _all:
+            patients = get_subgraphs_with_all(genes)
+        else:
+            patients = get_subgraphs_with_any(genes)
+        print('# patients: ', len(patients))
+        self.plot_node_histogram(cutoff=cutoff, patients=patients)
+    
 
 def read_graphs(root, subset):
     graphs = []

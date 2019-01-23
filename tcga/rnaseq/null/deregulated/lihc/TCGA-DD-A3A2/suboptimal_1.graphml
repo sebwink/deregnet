@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">2263</data>
+      <data key="v_entrez">2263</data>
+      <data key="v_ensembl">ENSG00000066468</data>
+      <data key="v_symbol">FGFR2</data>
+      <data key="v_id">n1057</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">3082</data>
+      <data key="v_entrez">3082</data>
+      <data key="v_ensembl">ENSG00000019991</data>
+      <data key="v_symbol">HGF</data>
+      <data key="v_id">n1974</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">11213</data>
+      <data key="v_entrez">11213</data>
+      <data key="v_ensembl">ENSG00000090376</data>
+      <data key="v_symbol">IRAK3</data>
+      <data key="v_id">n4104</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">6272</data>
+      <data key="v_entrez">6272</data>
+      <data key="v_ensembl">ENSG00000134243</data>
+      <data key="v_symbol">SORT1</data>
+      <data key="v_id">n4612</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">4804</data>
+      <data key="v_entrez">4804</data>
+      <data key="v_ensembl">ENSG00000064300</data>
+      <data key="v_symbol">NGFR</data>
+      <data key="v_id">n4665</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n4" target="n2">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+  </graph>
+</graphml>
