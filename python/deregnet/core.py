@@ -358,6 +358,7 @@ class AbsoluteDeregnetArguments(DeregenetArguments):
 class AverageDeregnetArguments(DeregenetArguments):
     def __init__(self, min_size=15,
                        max_size=50,
+                       min_num_terminals=0,
                        receptors=None,
                        terminals=None,
                        algorithm='GeneralizedCharnesCooper',
@@ -418,6 +419,7 @@ class AverageDeregnetArguments(DeregenetArguments):
         '''
         self._min_size = int(min_size)
         self._max_size = int(max_size)
+        self.min_num_terminals = min_num_terminals
         self.receptors = receptors
         self.terminals = terminals
         self._algorithm = str(algorithm)
@@ -522,7 +524,7 @@ class SubgraphFinder:
                            hence be used to match nodes to scores, etc.).
                            Default: 'name'
             deregnet_binpath (str): If you want to use this class with other binaries than the
-                                    default ones you can set the path here. Usually you should 
+                                    default ones you can set the path here. Usually you should
                                     not do this and do not have to be concerned with this.
             tmp_file_path (str): path where temporary file will be stored.
                                  Default '${HOME}/.deregnet/tmp'
@@ -546,7 +548,7 @@ class SubgraphFinder:
         '''
         This method run DeRegNet. If it receives an instance of AbsoluteDeregnetArguments
         as argument, it runs the absolute score version, if it receives an instance
-        AverageDeregnetArguments, it run the average score version. In any case it 
+        AverageDeregnetArguments, it run the average score version. In any case it
         return an instance of SubgraphFinderResult.
 
         Args:
@@ -573,6 +575,7 @@ class SubgraphFinder:
                              flip_orientation=False,
                              min_size=15,
                              max_size=50,
+                             min_num_terminals=0,
                              num_suboptimal=0,
                              max_overlap=0,
                              abs_values=False,
@@ -665,6 +668,7 @@ class SubgraphFinder:
                              '--output-dir' : rundir,
                              '--min-size' : str(min_size),
                              '--max-size': str(max_size),
+                             '--min-num-terminals': str(min_num_terminals),
                              '--suboptimal' : str(num_suboptimal),
                              '--max-overlap-percentage' : str(max_overlap),
                              '--model-sense' : model_sense,
@@ -806,7 +810,7 @@ class SubgraphFinder:
             drgnt_argdict['--exclude-file'] = exclude_file
         if included_nodes:
             self._write_geneset(include_file, included_nodes)
-            drgnt_argdict['--include-file'] = receptors_file
+            drgnt_argdict['--include-file'] = include_file
         # arguments as list (for subprocess.call)
         drgnt_args = []
         for arg in drgnt_argdict:
@@ -902,7 +906,7 @@ class SubgraphFinder:
 
 class SubgraphFinderResult:
     '''
-    Instances of this class will be returned by calls to SubgraphFinder's 
+    Instances of this class will be returned by calls to SubgraphFinder's
     subgraph detection algorithm run methods.
     '''
     def __init__(self, optimal, suboptimal, mode):
@@ -985,10 +989,10 @@ class SubgraphFinderResult:
 
     @property
     def subgraphs(self):
-        return [optimal] + suboptimal
+        return [self.optimal] + self.suboptimal
 
     def to_graphml(self, path='.'):
         self.optimal.write_graphml(os.path.join(path, 'optimal.graphml'))
         for i, subgraph in enumerate(self.suboptimal):
             writable_subgraph = stringify_graph_attributes(subgraph)
-            writable_subgraph.write_graphml(os.path.join(path, 'suboptimal'+str(i+1)+'.graphml'))
+            writable_subgraph.write_graphml(os.path.join(path, 'suboptimal_'+str(i+1)+'.graphml'))

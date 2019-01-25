@@ -109,7 +109,7 @@ def populate_shared_args(deregnet_args, argparse_args, id_mapper):
     deregnet_args.time_limit = argparse_args.time_limit
     deregnet_args.gap_cut = argparse_args.gap_cut
     deregnet_args.max_overlap = argparse_args.max_overlap
-    deregnet_args.suboptimal = argparse_args.suboptimal
+    deregnet_args.num_suboptimal = argparse_args.suboptimal
     deregnet_args.debug = argparse_args.debug
     deregnet_args.abs_values = argparse_args.abs_values
 
@@ -156,20 +156,22 @@ def parse_scores(score_file,
     return scores
 
 def parse_geneset(layer_name, argparse_args, id_mapper):
-    # please do not use this to do funny things
-    return _parse_geneset(eval('argparse_args.'+layer_name+'_file'),
-                          eval('argparse_args.'+layer_name+'_genesets'),
-                          eval('argparse_args.'+layer_name),
-                          eval('argparse_args.'+layer_name+'_id_type'),
+    return _parse_geneset(argparse_args.__dict__[layer_name+'_file'],
+                          argparse_args.__dict__[layer_name+'_genesets'],
+                          argparse_args.__dict__[layer_name],
+                          argparse_args.__dict__[layer_name+'_id_type'],
                           argparse_args.graph_id_type,
                           id_mapper)
 
 def _parse_geneset(geneset_files, geneset_names, genes, geneset_id_type, target_id_type, id_mapper):
     if geneset_files is None and genes is None:
         return set()
-    S = bioset.BioSet('S', set(genes.split(',')))
+    sinit = set()
+    if genes:
+        sinit = set(genes.split(','))
+    S = bioset.BioSet('S', sinit)
     geneset_names_cnt = 0
-    for geneset_file in geneset_files:
+    for geneset_file in (geneset_files or []):
         suffix = geneset_file.split('.')[-1]
         if suffix != 'gmt':
             S |= bioset.BioSet.from_grp(geneset_file)
@@ -178,6 +180,7 @@ def _parse_geneset(geneset_files, geneset_names, genes, geneset_id_type, target_
             names = geneset_names[geneset_names_cnt].split(',')
             S |= coll.union(names)
             geneset_names_cnt += 1
-    if geneset_id_type != graph_id_type:
-        S.map(id_mapper, geneset_id_type, graph_id_type, inplace=True)
+    if geneset_id_type != target_id_type:
+        S.map(id_mapper, geneset_id_type, target_id_type, inplace=True)
+    print(S)
     return S
