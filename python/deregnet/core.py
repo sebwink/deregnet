@@ -159,8 +159,8 @@ class DeregenetArguments:
         self._max_overlap = float(max_overlap)
         self.abs_values = bool(abs_values)
         self._model_sense = str(model_sense)
-        self._time_limit = float(time_limit)
-        self._gap_cut = float(gap_cut)
+        self._time_limit = time_limit if time_limit is None else float(time_limit)
+        self._gap_cut = gap_cut if gap_cut is None else float(gap_cut)
         self.debug = bool(debug)
 
         if not self.validate():
@@ -362,6 +362,7 @@ class AverageDeregnetArguments(DeregenetArguments):
                        receptors=None,
                        terminals=None,
                        algorithm='GeneralizedCharnesCooper',
+                       root=None, # TODO get rid of --> REST API
                        **kwargs):
         '''
         This class wraps all arguments needed to run the average score
@@ -514,7 +515,8 @@ class SubgraphFinder:
                        id_attr='name',
                        deregnet_binpath=None,
                        tmp_file_path=None,
-                       delete_temporary_files=True):
+                       delete_temporary_files=True,
+                       log_file=None):
         '''
         Args:
 
@@ -542,6 +544,7 @@ class SubgraphFinder:
         self.graph_file = os.path.join(self.tmp_file_path, 'graph.lgf')
         self.graph = graph
         self.id_attr = id_attr
+        self.log = log_file if log_file else 'deregnet.log'
         self._graph_to_lgf()  # writes self.graph_file
 
     def run(self, args):
@@ -710,7 +713,8 @@ class SubgraphFinder:
             print(' '.join(call))
             subprocess.call(['gdb', '--args']+call)
         else:
-            subprocess.call(call)  # TODO: reroute messages
+            with open(self.log, 'a') as logp:
+                subprocess.call(call, stdout=logp, stderr=logp)  # TODO: reroute messages
         print(' '.join(call))
         # parse back the results
         node_names_list = self._read_result(rundir)
@@ -828,7 +832,8 @@ class SubgraphFinder:
             print(call)
             subprocess.call(['gdb', '--args']+call)
         else:
-            subprocess.call(call)  # TODO: reroute messages
+            with open(self.log, 'a') as logp:
+                subprocess.call(call, stdout=logp, stderr=logp)  # TODO: reroute messages
         # parse back the results
         node_names_list = self._read_result(rundir)
         subgraphs = [self._get_subgraph(node_names) for node_names in node_names_list]
@@ -991,8 +996,14 @@ class SubgraphFinderResult:
     def subgraphs(self):
         return [self.optimal] + self.suboptimal
 
-    def to_graphml(self, path='.'):
+    def to_graphml(self, path='.', compress=False):
         self.optimal.write_graphml(os.path.join(path, 'optimal.graphml'))
         for i, subgraph in enumerate(self.suboptimal):
             writable_subgraph = stringify_graph_attributes(subgraph)
-            writable_subgraph.write_graphml(os.path.join(path, 'suboptimal_'+str(i+1)+'.graphml'))
+            if compress:
+                writable_subgraph.write_graphmlz(os.path.join(path, 'suboptimal'+str(i+1)+'.graphml.gz'))
+            else:
+                writable_subgraph.write_graphml(os.path.join(path, 'suboptimal'+str(i+1)+'.graphml'))
+
+    def to_graphmlz(self, i, filename):
+        self.subgraphs[i].write_graphmlz(filename)
