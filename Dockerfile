@@ -1,45 +1,49 @@
-FROM sebwink/gurobi
+FROM sebwink/lemon-headers:131 as lemon
 
-RUN apt-get install -y build-essential cmake
+FROM sebwink/grbfrc as build
 
-RUN python3 -m pip install --upgrade pip && \
-    python3 -m pip install python-igraph
+COPY --from=lemon /usr/local/include/lemon /usr/local/include/lemon
 
-RUN python3 -m pip install pandas
-
-RUN cd tmp && \
-    wget http://lemon.cs.elte.hu/pub/sources/lemon-1.3.1.tar.gz && \
-    tar xvf lemon-1.3.1.tar.gz && cd lemon-1.3.1 && \
-    mkdir build && cd build && mkdir -p /opt/lemon/1.3.1 && \
-    cmake -DCMAKE_INSTALL_PREFIX=/opt/lemon/1.3.1 .. && make && make install && \ 
-    cd / && rm -r tmp/lemon-1.3.1*
-
-RUN mkdir /deregnet
+RUN apt-get update && \
+    apt-get upgrade -y && \
+	apt-get install -y build-essential && \
+    mkdir -p /deregnet/bin /deregnet/build
 WORKDIR /deregnet 
 
-COPY common.mak .
-COPY gurobi_version.mak .
-COPY drgnt.mak .
-COPY avgdrgnt.mak .
-COPY build.sh .
-COPY Makefile .
+COPY docker/deregnet/common.mak .
+COPY docker/deregnet/drgnt.mak .
+COPY docker/deregnet/avgdrgnt.mak .
 COPY include include
 COPY src src
-COPY grbfrc grbfrc
-COPY python python
-COPY bin bin
 
-RUN cd /deregnet && \
-    make && \
-    ln -s /deregnet/bin/avgdrgnt /usr/local/bin/avgdrgnt && \
-    ln -s /deregnet/bin/drgnt /usr/local/bin/drgnt && \
-    ln -s /deregnet/bin/avgdrgnt.py /usr/local/bin/avgdrgnt.py && \
-    ln -s /deregnet/bin/drgnt.py /usr/local/bin/drgnt.py && \
-    ln -s /deregnet/python/deregnet /usr/local/lib/python3.6/site-packages/deregnet
+RUN make -f avgdrgnt.mak && \
+    make -f drgnt.mak
 
-RUN python3 -m pip install biomap-utils
+RUN apt-get install -y python3 && \
+	apt-get install -y python3-pip && \
+	python3 -m pip install --upgrade pip && \
+	python3 -m pip install pandas && \
+	python3 -m pip install biomap-utils && \
+	apt-get install -y libz-dev && \
+	apt-get install -y libxml2-dev && \
+    python3 -m pip install python-igraph
 
-RUN mkdir /io
+FROM debian:stretch-slim
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+	apt-get install -y python3-minimal libxml2 libz-dev
+
+COPY --from=build /usr/local/lib /usr/local/lib
+COPY --from=build /deregnet/bin/drgnt /usr/local/bin/
+COPY --from=build /deregnet/bin/avgdrgnt /usr/local/bin/
+COPY --from=build /usr/local/lib/python3.5/dist-packages /usr/local/lib/python3.5/dist-packages
+
+COPY python/deregnet /usr/local/lib/python3.5/dist-packages/deregnet 
+COPY bin/drgnt.py /usr/local/bin/
+COPY bin/avgdrgnt.py /usr/local/bin/
+
+RUN python3 -m pip install six && mkdir /io
 WORKDIR /io
 
-ENTRYPOINT ["/deregnet/bin/avgdrgnt.py"]
+ENTRYPOINT ["avgdrgnt.py"]

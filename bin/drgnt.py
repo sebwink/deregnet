@@ -6,7 +6,7 @@ import argparse
 
 import igraph as ig
 
-from biomap import BioMap
+#from biomap import BioMap
 
 import deregnet.core
 import deregnet.script
@@ -30,7 +30,7 @@ def main():
     graph = ig.Graph.Read_GraphML(argparse_args.graph)
     finder = deregnet.SubgraphFinder(graph, argparse_args.graph_id_attr)
     # get the id mapper from BioMap
-    id_mapper = BioMap.get_mapper(argparse_args.id_mapper)
+    id_mapper = None #BioMap.get_mapper(argparse_args.id_mapper)
     # initialize the argument object ...
     deregnet_args = deregnet.core.AbsoluteDeregnetArguments()
     # ... and populate it
