@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="v_deregnet_receptor" for="node" attr.name="deregnet_receptor" attr.type="boolean"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">112755</data>
+      <data key="v_entrez">112755</data>
+      <data key="v_ensembl">ENSG00000099365</data>
+      <data key="v_symbol">STX1B</data>
+      <data key="v_id">n2751</data>
+      <data key="v_deregnet_score">0</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">6804</data>
+      <data key="v_entrez">6804</data>
+      <data key="v_ensembl">ENSG00000106089</data>
+      <data key="v_symbol">STX1A</data>
+      <data key="v_id">n4130</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">2054</data>
+      <data key="v_entrez">2054</data>
+      <data key="v_ensembl">ENSG00000111450</data>
+      <data key="v_symbol">STX2</data>
+      <data key="v_id">n4286</data>
+      <data key="v_deregnet_score">0</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">6809</data>
+      <data key="v_entrez">6809</data>
+      <data key="v_ensembl">ENSG00000166900</data>
+      <data key="v_symbol">STX3</data>
+      <data key="v_id">n4734</data>
+      <data key="v_deregnet_score">0</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">6616</data>
+      <data key="v_entrez">6616</data>
+      <data key="v_ensembl">ENSG00000132639</data>
+      <data key="v_symbol">SNAP25</data>
+      <data key="v_id">n5147</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">true</data>
+    </node>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+  </graph>
+</graphml>

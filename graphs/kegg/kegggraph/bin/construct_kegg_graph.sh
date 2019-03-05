@@ -9,7 +9,7 @@ DESTINATION=$BINDIR/../$SPECIES
 mkdir -p $DESTINATION
 SIFFILE=$DESTINATION/kegg_$SPECIES.sif
 if [ ! -d "$KGMLDIR" ]; then
-    mkdir $KGMLDIR
+    mkdir -p $KGMLDIR
     $PYTHON $BINDIR/../../bin/download_kgml.py $SPECIES $KGMLDIR
 fi
 $RSCRIPT --vanilla $BINDIR/parse_to_graph.R $KGMLDIR $SIFFILE

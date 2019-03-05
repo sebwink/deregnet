@@ -136,6 +136,7 @@ def parse_scores(score_file,
         ids = id_mapper.map(ids, score_id_type, graph_id_type)
         # TODO: handle situations with list-valued id types
     df.drop_duplicates(inplace=True)
+    print(df.head(), id_column)
     df = df.groupby(id_column).mean()
     # df.set_index(id_column, inplace=True)
 

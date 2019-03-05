@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">91442</data>
+      <data key="v_entrez">91442</data>
+      <data key="v_ensembl">ENSG00000131944</data>
+      <data key="v_symbol">FAAP24</data>
+      <data key="v_id">n438</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">2177</data>
+      <data key="v_entrez">2177</data>
+      <data key="v_ensembl">ENSG00000144554</data>
+      <data key="v_symbol">FANCD2</data>
+      <data key="v_id">n553</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">57697</data>
+      <data key="v_entrez">57697</data>
+      <data key="v_ensembl">ENSG00000187790</data>
+      <data key="v_symbol">FANCM</data>
+      <data key="v_id">n1383</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">5888</data>
+      <data key="v_entrez">5888</data>
+      <data key="v_ensembl">ENSG00000051180</data>
+      <data key="v_symbol">RAD51</data>
+      <data key="v_id">n1889</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">675</data>
+      <data key="v_entrez">675</data>
+      <data key="v_ensembl">ENSG00000139618</data>
+      <data key="v_symbol">BRCA2</data>
+      <data key="v_id">n2661</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">116028</data>
+      <data key="v_entrez">116028</data>
+      <data key="v_ensembl">ENSG00000175643</data>
+      <data key="v_symbol">RMI2</data>
+      <data key="v_id">n3826</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">83990</data>
+      <data key="v_entrez">83990</data>
+      <data key="v_ensembl">ENSG00000136492</data>
+      <data key="v_symbol">BRIP1</data>
+      <data key="v_id">n4828</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">29089</data>
+      <data key="v_entrez">29089</data>
+      <data key="v_ensembl">ENSG00000077152</data>
+      <data key="v_symbol">UBE2T</data>
+      <data key="v_id">n5177</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">2189</data>
+      <data key="v_entrez">2189</data>
+      <data key="v_ensembl">ENSG00000221829</data>
+      <data key="v_symbol">FANCG</data>
+      <data key="v_id">n5196</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">641</data>
+      <data key="v_entrez">641</data>
+      <data key="v_ensembl">ENSG00000197299</data>
+      <data key="v_symbol">BLM</data>
+      <data key="v_id">n5331</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">ubiquitination</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n0">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n1">
+      <data key="e_interaction">ubiquitination</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n5" target="n2">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n6" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n7" target="n1">
+      <data key="e_interaction">ubiquitination</data>
+    </edge>
+    <edge source="n8" target="n1">
+      <data key="e_interaction">ubiquitination</data>
+    </edge>
+    <edge source="n9" target="n2">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+  </graph>
+</graphml>

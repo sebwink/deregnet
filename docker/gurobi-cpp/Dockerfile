@@ -11,7 +11,7 @@ RUN apt-get update && \
     tar xvfz gurobi${GUROBI_VERSION}_linux64.tar.gz
     
 
-FROM debian:stretch-slim
+FROM python:3.6-slim
 
 ARG GUROBI_VERSION=8.1.0
 ARG GUROBI_TAG=810
