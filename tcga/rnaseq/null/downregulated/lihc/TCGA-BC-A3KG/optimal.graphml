@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">2687</data>
+      <data key="v_entrez">2687</data>
+      <data key="v_ensembl">ENSG00000099998</data>
+      <data key="v_symbol">GGT5</data>
+      <data key="v_id">n694</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">570</data>
+      <data key="v_entrez">570</data>
+      <data key="v_ensembl">ENSG00000136881</data>
+      <data key="v_symbol">BAAT</data>
+      <data key="v_id">n1809</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">51056</data>
+      <data key="v_entrez">51056</data>
+      <data key="v_ensembl">ENSG00000002549</data>
+      <data key="v_symbol">LAP3</data>
+      <data key="v_id">n3221</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">23600</data>
+      <data key="v_entrez">23600</data>
+      <data key="v_ensembl">ENSG00000242110</data>
+      <data key="v_symbol">AMACR</data>
+      <data key="v_id">n3226</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">10998</data>
+      <data key="v_entrez">10998</data>
+      <data key="v_ensembl">ENSG00000083807</data>
+      <data key="v_symbol">SLC27A5</data>
+      <data key="v_id">n5483</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n4" target="n1">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

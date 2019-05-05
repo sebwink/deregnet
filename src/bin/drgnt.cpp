@@ -156,7 +156,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 string absolute_values { "absolute-values" };
                 // --model-sense
                 if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0 )
-                    data.model_sense = optarg;
+                    data.model_sense = string(optarg);
                 // --no-start-heuristic
                 if ( strcmp(long_options[option_index].name, no_start_heuristic.c_str()) == 0 )
                     data.start_heuristic = false;

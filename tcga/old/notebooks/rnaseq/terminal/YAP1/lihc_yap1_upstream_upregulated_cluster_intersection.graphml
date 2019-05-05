@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_TCGA-DD-A4NS" for="node" attr.name="TCGA-DD-A4NS" attr.type="double"/>
+  <key id="v_TCGA-G3-A25T" for="node" attr.name="TCGA-G3-A25T" attr.type="double"/>
+  <key id="v_TCGA-QA-A7B7" for="node" attr.name="TCGA-QA-A7B7" attr.type="double"/>
+  <key id="v_TCGA-CC-A7II" for="node" attr.name="TCGA-CC-A7II" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NJ" for="node" attr.name="TCGA-DD-A4NJ" attr.type="double"/>
+  <key id="v_TCGA-UB-A7ME" for="node" attr.name="TCGA-UB-A7ME" attr.type="double"/>
+  <key id="v_TCGA-CC-A3MB" for="node" attr.name="TCGA-CC-A3MB" attr.type="double"/>
+  <key id="v_TCGA-G3-A25Y" for="node" attr.name="TCGA-G3-A25Y" attr.type="double"/>
+  <key id="v_TCGA-DD-AACP" for="node" attr.name="TCGA-DD-AACP" attr.type="double"/>
+  <key id="v_TCGA-ED-A627" for="node" attr.name="TCGA-ED-A627" attr.type="double"/>
+  <key id="v_TCGA-DD-AADA" for="node" attr.name="TCGA-DD-AADA" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVW" for="node" attr.name="TCGA-DD-AAVW" attr.type="double"/>
+  <key id="v_TCGA-G3-A5SJ" for="node" attr.name="TCGA-G3-A5SJ" attr.type="double"/>
+  <key id="v_TCGA-DD-AADB" for="node" attr.name="TCGA-DD-AADB" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A1" for="node" attr.name="TCGA-DD-A3A1" attr.type="double"/>
+  <key id="v_TCGA-CC-5258" for="node" attr.name="TCGA-CC-5258" attr.type="double"/>
+  <key id="v_TCGA-ED-A97K" for="node" attr.name="TCGA-ED-A97K" attr.type="double"/>
+  <key id="v_TCGA-BW-A5NQ" for="node" attr.name="TCGA-BW-A5NQ" attr.type="double"/>
+  <key id="v_TCGA-ED-A8O6" for="node" attr.name="TCGA-ED-A8O6" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QQ" for="node" attr.name="TCGA-FV-A2QQ" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IG" for="node" attr.name="TCGA-CC-A7IG" attr.type="double"/>
+  <key id="v_TCGA-WX-AA47" for="node" attr.name="TCGA-WX-AA47" attr.type="double"/>
+  <key id="v_TCGA-G3-A7M9" for="node" attr.name="TCGA-G3-A7M9" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EC" for="node" attr.name="TCGA-DD-A1EC" attr.type="double"/>
+  <key id="v_TCGA-CC-A9FU" for="node" attr.name="TCGA-CC-A9FU" attr.type="double"/>
+  <key id="v_TCGA-CC-A5UE" for="node" attr.name="TCGA-CC-A5UE" attr.type="double"/>
+  <key id="v_TCGA-DD-AACL" for="node" attr.name="TCGA-DD-AACL" attr.type="double"/>
+  <key id="v_TCGA-RC-A6M5" for="node" attr.name="TCGA-RC-A6M5" attr.type="double"/>
+  <key id="v_TCGA-DD-AACW" for="node" attr.name="TCGA-DD-AACW" attr.type="double"/>
+  <key id="v_TCGA-FV-A4ZP" for="node" attr.name="TCGA-FV-A4ZP" attr.type="double"/>
+  <key id="v_TCGA-GJ-A3OU" for="node" attr.name="TCGA-GJ-A3OU" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MA" for="node" attr.name="TCGA-UB-A7MA" attr.type="double"/>
+  <key id="v_TCGA-ED-A66X" for="node" attr.name="TCGA-ED-A66X" attr.type="double"/>
+  <key id="v_TCGA-BW-A5NP" for="node" attr.name="TCGA-BW-A5NP" attr.type="double"/>
+  <key id="v_TCGA-DD-AADO" for="node" attr.name="TCGA-DD-AADO" attr.type="double"/>
+  <key id="v_TCGA-CC-5260" for="node" attr.name="TCGA-CC-5260" attr.type="double"/>
+  <key id="v_TCGA-DD-AACS" for="node" attr.name="TCGA-DD-AACS" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IJ" for="node" attr.name="TCGA-CC-A7IJ" attr.type="double"/>
+  <key id="v_TCGA-DD-AACC" for="node" attr.name="TCGA-DD-AACC" attr.type="double"/>
+  <key id="v_TCGA-DD-AAED" for="node" attr.name="TCGA-DD-AAED" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A6" for="node" attr.name="TCGA-DD-A3A6" attr.type="double"/>
+  <key id="v_TCGA-5R-AA1D" for="node" attr.name="TCGA-5R-AA1D" attr.type="double"/>
+  <key id="v_TCGA-DD-AACH" for="node" attr.name="TCGA-DD-AACH" attr.type="double"/>
+  <key id="v_TCGA-PD-A5DF" for="node" attr.name="TCGA-PD-A5DF" attr.type="double"/>
+  <key id="v_TCGA-DD-AACI" for="node" attr.name="TCGA-DD-AACI" attr.type="double"/>
+  <key id="v_TCGA-DD-A11A" for="node" attr.name="TCGA-DD-A11A" attr.type="double"/>
+  <key id="v_TCGA-CC-A8HV" for="node" attr.name="TCGA-CC-A8HV" attr.type="double"/>
+  <key id="v_TCGA-DD-A114" for="node" attr.name="TCGA-DD-A114" attr.type="double"/>
+  <key id="v_TCGA-DD-AACN" for="node" attr.name="TCGA-DD-AACN" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVV" for="node" attr.name="TCGA-DD-AAVV" attr.type="double"/>
+  <key id="v_TCGA-ZS-A9CD" for="node" attr.name="TCGA-ZS-A9CD" attr.type="double"/>
+  <key id="v_TCGA-BC-A3KF" for="node" attr.name="TCGA-BC-A3KF" attr.type="double"/>
+  <key id="v_TCGA-RC-A6M3" for="node" attr.name="TCGA-RC-A6M3" attr.type="double"/>
+  <key id="v_TCGA-FV-A3R3" for="node" attr.name="TCGA-FV-A3R3" attr.type="double"/>
+  <key id="v_TCGA-UB-AA0U" for="node" attr.name="TCGA-UB-AA0U" attr.type="double"/>
+  <key id="v_TCGA-DD-AADI" for="node" attr.name="TCGA-DD-AADI" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NR" for="node" attr.name="TCGA-DD-A4NR" attr.type="double"/>
+  <key id="v_TCGA-BC-A10S" for="node" attr.name="TCGA-BC-A10S" attr.type="double"/>
+  <key id="v_TCGA-CC-A9FV" for="node" attr.name="TCGA-CC-A9FV" attr.type="double"/>
+  <key id="v_TCGA-DD-AACY" for="node" attr.name="TCGA-DD-AACY" attr.type="double"/>
+  <key id="v_TCGA-ED-A7PZ" for="node" attr.name="TCGA-ED-A7PZ" attr.type="double"/>
+  <key id="v_TCGA-FV-A3I0" for="node" attr.name="TCGA-FV-A3I0" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QR" for="node" attr.name="TCGA-FV-A2QR" attr.type="double"/>
+  <key id="v_TCGA-GJ-A9DB" for="node" attr.name="TCGA-GJ-A9DB" attr.type="double"/>
+  <key id="v_TCGA-BC-A112" for="node" attr.name="TCGA-BC-A112" attr.type="double"/>
+  <key id="v_TCGA-2V-A95S" for="node" attr.name="TCGA-2V-A95S" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVS" for="node" attr.name="TCGA-DD-AAVS" attr.type="double"/>
+  <key id="v_TCGA-CC-A3MC" for="node" attr.name="TCGA-CC-A3MC" attr.type="double"/>
+  <key id="v_TCGA-KR-A7K7" for="node" attr.name="TCGA-KR-A7K7" attr.type="double"/>
+  <key id="v_TCGA-DD-AAD1" for="node" attr.name="TCGA-DD-AAD1" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A3" for="node" attr.name="TCGA-DD-A3A3" attr.type="double"/>
+  <key id="v_TCGA-CC-A123" for="node" attr.name="TCGA-CC-A123" attr.type="double"/>
+  <key id="v_TCGA-DD-AACB" for="node" attr.name="TCGA-DD-AACB" attr.type="double"/>
+  <key id="v_TCGA-DD-AADD" for="node" attr.name="TCGA-DD-AADD" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H6" for="node" attr.name="TCGA-2Y-A9H6" attr.type="double"/>
+  <key id="v_TCGA-DD-AADP" for="node" attr.name="TCGA-DD-AADP" attr.type="double"/>
+  <key id="v_TCGA-DD-AADC" for="node" attr.name="TCGA-DD-AADC" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NG" for="node" attr.name="TCGA-DD-A4NG" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GX" for="node" attr.name="TCGA-2Y-A9GX" attr.type="double"/>
+  <key id="v_TCGA-BC-A10W" for="node" attr.name="TCGA-BC-A10W" attr.type="double"/>
+  <key id="v_TCGA-CC-A5UC" for="node" attr.name="TCGA-CC-A5UC" attr.type="double"/>
+  <key id="v_TCGA-DD-AADK" for="node" attr.name="TCGA-DD-AADK" attr.type="double"/>
+  <key id="v_TCGA-CC-A9FS" for="node" attr.name="TCGA-CC-A9FS" attr.type="double"/>
+  <key id="v_TCGA-ED-A8O5" for="node" attr.name="TCGA-ED-A8O5" attr.type="double"/>
+  <key id="v_TCGA-DD-AACG" for="node" attr.name="TCGA-DD-AACG" attr.type="double"/>
+  <key id="v_TCGA-FV-A4ZQ" for="node" attr.name="TCGA-FV-A4ZQ" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EJ" for="node" attr.name="TCGA-DD-A1EJ" attr.type="double"/>
+  <key id="v_TCGA-DD-A73G" for="node" attr.name="TCGA-DD-A73G" attr.type="double"/>
+  <key id="v_TCGA-BC-A10Q" for="node" attr.name="TCGA-BC-A10Q" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KA" for="node" attr.name="TCGA-EP-A2KA" attr.type="double"/>
+  <key id="v_TCGA-CC-A3MA" for="node" attr.name="TCGA-CC-A3MA" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EG" for="node" attr.name="TCGA-DD-A1EG" attr.type="double"/>
+  <key id="v_TCGA-CC-A1HT" for="node" attr.name="TCGA-CC-A1HT" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H8" for="node" attr.name="TCGA-2Y-A9H8" attr.type="double"/>
+  <key id="v_TCGA-DD-AADY" for="node" attr.name="TCGA-DD-AADY" attr.type="double"/>
+  <key id="v_TCGA-DD-A39X" for="node" attr.name="TCGA-DD-A39X" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H5" for="node" attr.name="TCGA-2Y-A9H5" attr.type="double"/>
+  <key id="v_TCGA-BC-4072" for="node" attr.name="TCGA-BC-4072" attr.type="double"/>
+  <key id="v_TCGA-EP-A3JL" for="node" attr.name="TCGA-EP-A3JL" attr.type="double"/>
+  <key id="v_TCGA-ED-A7XP" for="node" attr.name="TCGA-ED-A7XP" attr.type="double"/>
+  <key id="v_TCGA-DD-AADQ" for="node" attr.name="TCGA-DD-AADQ" attr.type="double"/>
+  <key id="v_TCGA-ED-A82E" for="node" attr.name="TCGA-ED-A82E" attr.type="double"/>
+  <key id="v_TCGA-DD-AAD2" for="node" attr.name="TCGA-DD-AAD2" attr.type="double"/>
+  <key id="v_TCGA-DD-AAC8" for="node" attr.name="TCGA-DD-AAC8" attr.type="double"/>
+  <key id="v_TCGA-CC-5261" for="node" attr.name="TCGA-CC-5261" attr.type="double"/>
+  <key id="v_TCGA-MR-A8JO" for="node" attr.name="TCGA-MR-A8JO" attr.type="double"/>
+  <key id="v_TCGA-ZP-A9D1" for="node" attr.name="TCGA-ZP-A9D1" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE0" for="node" attr.name="TCGA-DD-AAE0" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVU" for="node" attr.name="TCGA-DD-AAVU" attr.type="double"/>
+  <key id="v_TCGA-DD-AA3A" for="node" attr.name="TCGA-DD-AA3A" attr.type="double"/>
+  <key id="v_TCGA-DD-AACT" for="node" attr.name="TCGA-DD-AACT" attr.type="double"/>
+  <key id="v_TCGA-RC-A7S9" for="node" attr.name="TCGA-RC-A7S9" attr.type="double"/>
+  <key id="v_TCGA-CC-A8HT" for="node" attr.name="TCGA-CC-A8HT" attr.type="double"/>
+  <key id="v_TCGA-DD-AADW" for="node" attr.name="TCGA-DD-AADW" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NB" for="node" attr.name="TCGA-DD-A4NB" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EH" for="node" attr.name="TCGA-DD-A1EH" attr.type="double"/>
+  <key id="v_TCGA-DD-A73C" for="node" attr.name="TCGA-DD-A73C" attr.type="double"/>
+  <key id="v_TCGA-DD-AACD" for="node" attr.name="TCGA-DD-AACD" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GY" for="node" attr.name="TCGA-2Y-A9GY" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EI" for="node" attr.name="TCGA-DD-A1EI" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EF" for="node" attr.name="TCGA-DD-A1EF" attr.type="double"/>
+  <key id="v_TCGA-RG-A7D4" for="node" attr.name="TCGA-RG-A7D4" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE6" for="node" attr.name="TCGA-DD-AAE6" attr.type="double"/>
+  <key id="v_TCGA-RC-A7SH" for="node" attr.name="TCGA-RC-A7SH" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NE" for="node" attr.name="TCGA-DD-A4NE" attr.type="double"/>
+  <key id="v_TCGA-BD-A3EP" for="node" attr.name="TCGA-BD-A3EP" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE1" for="node" attr.name="TCGA-DD-AAE1" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H0" for="node" attr.name="TCGA-2Y-A9H0" attr.type="double"/>
+  <key id="v_TCGA-ED-A459" for="node" attr.name="TCGA-ED-A459" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV7" for="node" attr.name="TCGA-G3-AAV7" attr.type="double"/>
+  <key id="v_TCGA-DD-AADJ" for="node" attr.name="TCGA-DD-AADJ" attr.type="double"/>
+  <key id="v_TCGA-RC-A6M6" for="node" attr.name="TCGA-RC-A6M6" attr.type="double"/>
+  <key id="v_TCGA-DD-A73F" for="node" attr.name="TCGA-DD-A73F" attr.type="double"/>
+  <key id="v_TCGA-DD-A4ND" for="node" attr.name="TCGA-DD-A4ND" attr.type="double"/>
+  <key id="v_TCGA-CC-5263" for="node" attr.name="TCGA-CC-5263" attr.type="double"/>
+  <key id="v_TCGA-DD-A116" for="node" attr.name="TCGA-DD-A116" attr.type="double"/>
+  <key id="v_TCGA-FV-A496" for="node" attr.name="TCGA-FV-A496" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A9" for="node" attr.name="TCGA-DD-A3A9" attr.type="double"/>
+  <key id="v_TCGA-CC-5259" for="node" attr.name="TCGA-CC-5259" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVQ" for="node" attr.name="TCGA-DD-AAVQ" attr.type="double"/>
+  <key id="v_TCGA-BC-A216" for="node" attr.name="TCGA-BC-A216" attr.type="double"/>
+  <key id="v_TCGA-CC-A9FW" for="node" attr.name="TCGA-CC-A9FW" attr.type="double"/>
+  <key id="v_TCGA-FV-A3I1" for="node" attr.name="TCGA-FV-A3I1" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H2" for="node" attr.name="TCGA-2Y-A9H2" attr.type="double"/>
+  <key id="v_TCGA-DD-AAD5" for="node" attr.name="TCGA-DD-AAD5" attr.type="double"/>
+  <key id="v_TCGA-CC-5264" for="node" attr.name="TCGA-CC-5264" attr.type="double"/>
+  <key id="v_TCGA-DD-AAD6" for="node" attr.name="TCGA-DD-AAD6" attr.type="double"/>
+  <key id="v_TCGA-BC-A8YO" for="node" attr.name="TCGA-BC-A8YO" attr.type="double"/>
+  <key id="v_TCGA-WX-AA44" for="node" attr.name="TCGA-WX-AA44" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NH" for="node" attr.name="TCGA-DD-A4NH" attr.type="double"/>
+  <key id="v_TCGA-CC-A3M9" for="node" attr.name="TCGA-CC-A3M9" attr.type="double"/>
+  <key id="v_TCGA-DD-AACZ" for="node" attr.name="TCGA-DD-AACZ" attr.type="double"/>
+  <key id="v_TCGA-ED-A5KG" for="node" attr.name="TCGA-ED-A5KG" attr.type="double"/>
+  <key id="v_TCGA-BC-A10R" for="node" attr.name="TCGA-BC-A10R" attr.type="double"/>
+  <key id="v_TCGA-5C-A9VH" for="node" attr.name="TCGA-5C-A9VH" attr.type="double"/>
+  <key id="v_TCGA-GJ-A6C0" for="node" attr.name="TCGA-GJ-A6C0" attr.type="double"/>
+  <key id="v_TCGA-ZP-A9D2" for="node" attr.name="TCGA-ZP-A9D2" attr.type="double"/>
+  <key id="v_TCGA-WQ-AB4B" for="node" attr.name="TCGA-WQ-AB4B" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IE" for="node" attr.name="TCGA-CC-A7IE" attr.type="double"/>
+  <key id="v_TCGA-FV-A23B" for="node" attr.name="TCGA-FV-A23B" attr.type="double"/>
+  <key id="v_TCGA-BC-A69H" for="node" attr.name="TCGA-BC-A69H" attr.type="double"/>
+  <key id="v_TCGA-DD-A119" for="node" attr.name="TCGA-DD-A119" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV4" for="node" attr.name="TCGA-G3-AAV4" attr.type="double"/>
+  <key id="v_TCGA-CC-A8HS" for="node" attr.name="TCGA-CC-A8HS" attr.type="double"/>
+  <key id="v_TCGA-XR-A8TC" for="node" attr.name="TCGA-XR-A8TC" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H7" for="node" attr.name="TCGA-2Y-A9H7" attr.type="double"/>
+  <key id="v_TCGA-K7-A5RG" for="node" attr.name="TCGA-K7-A5RG" attr.type="double"/>
+  <key id="v_TCGA-BC-4073" for="node" attr.name="TCGA-BC-4073" attr.type="double"/>
+  <key id="v_TCGA-ED-A7PX" for="node" attr.name="TCGA-ED-A7PX" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MF" for="node" attr.name="TCGA-UB-A7MF" attr.type="double"/>
+  <key id="v_TCGA-5C-A9VG" for="node" attr.name="TCGA-5C-A9VG" attr.type="double"/>
+  <key id="v_TCGA-ED-A66Y" for="node" attr.name="TCGA-ED-A66Y" attr.type="double"/>
+  <key id="v_TCGA-ED-A7PY" for="node" attr.name="TCGA-ED-A7PY" attr.type="double"/>
+  <key id="v_TCGA-XR-A8TD" for="node" attr.name="TCGA-XR-A8TD" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NN" for="node" attr.name="TCGA-DD-A4NN" attr.type="double"/>
+  <key id="e_interactions" for="edge" attr.name="interactions" attr.type="boolean"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_entrez">10413</data>
+      <data key="v_symbol">YAP1</data>
+      <data key="v_ensembl">ENSG00000137693</data>
+      <data key="v_name">10413</data>
+      <data key="v_id">n4491</data>
+      <data key="v_TCGA-DD-A4NS">0</data>
+      <data key="v_TCGA-G3-A25T">0</data>
+      <data key="v_TCGA-QA-A7B7">0</data>
+      <data key="v_TCGA-CC-A7II">0</data>
+      <data key="v_TCGA-DD-A4NJ">0</data>
+      <data key="v_TCGA-UB-A7ME">0</data>
+      <data key="v_TCGA-CC-A3MB">0</data>
+      <data key="v_TCGA-G3-A25Y">0</data>
+      <data key="v_TCGA-DD-AACP">0</data>
+      <data key="v_TCGA-ED-A627">0</data>
+      <data key="v_TCGA-DD-AADA">0</data>
+      <data key="v_TCGA-DD-AAVW">0</data>
+      <data key="v_TCGA-G3-A5SJ">0</data>
+      <data key="v_TCGA-DD-AADB">0</data>
+      <data key="v_TCGA-DD-A3A1">0</data>
+      <data key="v_TCGA-CC-5258">0</data>
+      <data key="v_TCGA-ED-A97K">0</data>
+      <data key="v_TCGA-BW-A5NQ">1</data>
+      <data key="v_TCGA-ED-A8O6">0</data>
+      <data key="v_TCGA-FV-A2QQ">0</data>
+      <data key="v_TCGA-CC-A7IG">0</data>
+      <data key="v_TCGA-WX-AA47">0</data>
+      <data key="v_TCGA-G3-A7M9">0</data>
+      <data key="v_TCGA-DD-A1EC">0</data>
+      <data key="v_TCGA-CC-A9FU">0</data>
+      <data key="v_TCGA-CC-A5UE">0</data>
+      <data key="v_TCGA-DD-AACL">0</data>
+      <data key="v_TCGA-RC-A6M5">0</data>
+      <data key="v_TCGA-DD-AACW">0</data>
+      <data key="v_TCGA-FV-A4ZP">-1</data>
+      <data key="v_TCGA-GJ-A3OU">0</data>
+      <data key="v_TCGA-UB-A7MA">0</data>
+      <data key="v_TCGA-ED-A66X">0</data>
+      <data key="v_TCGA-BW-A5NP">0</data>
+      <data key="v_TCGA-DD-AADO">0</data>
+      <data key="v_TCGA-CC-5260">0</data>
+      <data key="v_TCGA-DD-AACS">0</data>
+      <data key="v_TCGA-CC-A7IJ">0</data>
+      <data key="v_TCGA-DD-AACC">0</data>
+      <data key="v_TCGA-DD-AAED">0</data>
+      <data key="v_TCGA-DD-A3A6">0</data>
+      <data key="v_TCGA-5R-AA1D">0</data>
+      <data key="v_TCGA-DD-AACH">0</data>
+      <data key="v_TCGA-PD-A5DF">0</data>
+      <data key="v_TCGA-DD-AACI">0</data>
+      <data key="v_TCGA-DD-A11A">0</data>
+      <data key="v_TCGA-CC-A8HV">0</data>
+      <data key="v_TCGA-DD-A114">0</data>
+      <data key="v_TCGA-DD-AACN">0</data>
+      <data key="v_TCGA-DD-AAVV">0</data>
+      <data key="v_TCGA-ZS-A9CD">0</data>
+      <data key="v_TCGA-BC-A3KF">0</data>
+      <data key="v_TCGA-RC-A6M3">0</data>
+      <data key="v_TCGA-FV-A3R3">0</data>
+      <data key="v_TCGA-UB-AA0U">0</data>
+      <data key="v_TCGA-DD-AADI">0</data>
+      <data key="v_TCGA-DD-A4NR">0</data>
+      <data key="v_TCGA-BC-A10S">0</data>
+      <data key="v_TCGA-CC-A9FV">0</data>
+      <data key="v_TCGA-DD-AACY">0</data>
+      <data key="v_TCGA-ED-A7PZ">0</data>
+      <data key="v_TCGA-FV-A3I0">0</data>
+      <data key="v_TCGA-FV-A2QR">0</data>
+      <data key="v_TCGA-GJ-A9DB">0</data>
+      <data key="v_TCGA-BC-A112">0</data>
+      <data key="v_TCGA-2V-A95S">0</data>
+      <data key="v_TCGA-DD-AAVS">0</data>
+      <data key="v_TCGA-CC-A3MC">0</data>
+      <data key="v_TCGA-KR-A7K7">0</data>
+      <data key="v_TCGA-DD-AAD1">0</data>
+      <data key="v_TCGA-DD-A3A3">0</data>
+      <data key="v_TCGA-CC-A123">0</data>
+      <data key="v_TCGA-DD-AACB">0</data>
+      <data key="v_TCGA-DD-AADD">0</data>
+      <data key="v_TCGA-2Y-A9H6">0</data>
+      <data key="v_TCGA-DD-AADP">0</data>
+      <data key="v_TCGA-DD-AADC">0</data>
+      <data key="v_TCGA-DD-A4NG">0</data>
+      <data key="v_TCGA-2Y-A9GX">0</data>
+      <data key="v_TCGA-BC-A10W">0</data>
+      <data key="v_TCGA-CC-A5UC">0</data>
+      <data key="v_TCGA-DD-AADK">0</data>
+      <data key="v_TCGA-CC-A9FS">0</data>
+      <data key="v_TCGA-ED-A8O5">0</data>
+      <data key="v_TCGA-DD-AACG">0</data>
+      <data key="v_TCGA-FV-A4ZQ">0</data>
+      <data key="v_TCGA-DD-A1EJ">0</data>
+      <data key="v_TCGA-DD-A73G">0</data>
+      <data key="v_TCGA-BC-A10Q">0</data>
+      <data key="v_TCGA-EP-A2KA">0</data>
+      <data key="v_TCGA-CC-A3MA">0</data>
+      <data key="v_TCGA-DD-A1EG">0</data>
+      <data key="v_TCGA-CC-A1HT">0</data>
+      <data key="v_TCGA-2Y-A9H8">0</data>
+      <data key="v_TCGA-DD-AADY">0</data>
+      <data key="v_TCGA-DD-A39X">0</data>
+      <data key="v_TCGA-2Y-A9H5">0</data>
+      <data key="v_TCGA-BC-4072">0</data>
+      <data key="v_TCGA-EP-A3JL">0</data>
+      <data key="v_TCGA-ED-A7XP">0</data>
+      <data key="v_TCGA-DD-AADQ">0</data>
+      <data key="v_TCGA-ED-A82E">0</data>
+      <data key="v_TCGA-DD-AAD2">0</data>
+      <data key="v_TCGA-DD-AAC8">0</data>
+      <data key="v_TCGA-CC-5261">0</data>
+      <data key="v_TCGA-MR-A8JO">0</data>
+      <data key="v_TCGA-ZP-A9D1">0</data>
+      <data key="v_TCGA-DD-AAE0">0</data>
+      <data key="v_TCGA-DD-AAVU">0</data>
+      <data key="v_TCGA-DD-AA3A">0</data>
+      <data key="v_TCGA-DD-AACT">0</data>
+      <data key="v_TCGA-RC-A7S9">0</data>
+      <data key="v_TCGA-CC-A8HT">0</data>
+      <data key="v_TCGA-DD-AADW">0</data>
+      <data key="v_TCGA-DD-A4NB">0</data>
+      <data key="v_TCGA-DD-A1EH">0</data>
+      <data key="v_TCGA-DD-A73C">0</data>
+      <data key="v_TCGA-DD-AACD">0</data>
+      <data key="v_TCGA-2Y-A9GY">0</data>
+      <data key="v_TCGA-DD-A1EI">0</data>
+      <data key="v_TCGA-DD-A1EF">0</data>
+      <data key="v_TCGA-RG-A7D4">0</data>
+      <data key="v_TCGA-DD-AAE6">0</data>
+      <data key="v_TCGA-RC-A7SH">0</data>
+      <data key="v_TCGA-DD-A4NE">0</data>
+      <data key="v_TCGA-BD-A3EP">0</data>
+      <data key="v_TCGA-DD-AAE1">0</data>
+      <data key="v_TCGA-2Y-A9H0">0</data>
+      <data key="v_TCGA-ED-A459">0</data>
+      <data key="v_TCGA-G3-AAV7">0</data>
+      <data key="v_TCGA-DD-AADJ">0</data>
+      <data key="v_TCGA-RC-A6M6">0</data>
+      <data key="v_TCGA-DD-A73F">0</data>
+      <data key="v_TCGA-DD-A4ND">0</data>
+      <data key="v_TCGA-CC-5263">0</data>
+      <data key="v_TCGA-DD-A116">0</data>
+      <data key="v_TCGA-FV-A496">0</data>
+      <data key="v_TCGA-DD-A3A9">0</data>
+      <data key="v_TCGA-CC-5259">0</data>
+      <data key="v_TCGA-DD-AAVQ">0</data>
+      <data key="v_TCGA-BC-A216">0</data>
+      <data key="v_TCGA-CC-A9FW">0</data>
+      <data key="v_TCGA-FV-A3I1">0</data>
+      <data key="v_TCGA-2Y-A9H2">0</data>
+      <data key="v_TCGA-DD-AAD5">0</data>
+      <data key="v_TCGA-CC-5264">0</data>
+      <data key="v_TCGA-DD-AAD6">0</data>
+      <data key="v_TCGA-BC-A8YO">0</data>
+      <data key="v_TCGA-WX-AA44">0</data>
+      <data key="v_TCGA-DD-A4NH">0</data>
+      <data key="v_TCGA-CC-A3M9">0</data>
+      <data key="v_TCGA-DD-AACZ">0</data>
+      <data key="v_TCGA-ED-A5KG">0</data>
+      <data key="v_TCGA-BC-A10R">0</data>
+      <data key="v_TCGA-5C-A9VH">0</data>
+      <data key="v_TCGA-GJ-A6C0">0</data>
+      <data key="v_TCGA-ZP-A9D2">0</data>
+      <data key="v_TCGA-WQ-AB4B">0</data>
+      <data key="v_TCGA-CC-A7IE">0</data>
+      <data key="v_TCGA-FV-A23B">0</data>
+      <data key="v_TCGA-BC-A69H">0</data>
+      <data key="v_TCGA-DD-A119">0</data>
+      <data key="v_TCGA-G3-AAV4">0</data>
+      <data key="v_TCGA-CC-A8HS">0</data>
+      <data key="v_TCGA-XR-A8TC">0</data>
+      <data key="v_TCGA-2Y-A9H7">0</data>
+      <data key="v_TCGA-K7-A5RG">0</data>
+      <data key="v_TCGA-BC-4073">0</data>
+      <data key="v_TCGA-ED-A7PX">0</data>
+      <data key="v_TCGA-UB-A7MF">0</data>
+      <data key="v_TCGA-5C-A9VG">0</data>
+      <data key="v_TCGA-ED-A66Y">0</data>
+      <data key="v_TCGA-ED-A7PY">0</data>
+      <data key="v_TCGA-XR-A8TD">0</data>
+      <data key="v_TCGA-DD-A4NN">0</data>
+    </node>
+  </graph>
+</graphml>

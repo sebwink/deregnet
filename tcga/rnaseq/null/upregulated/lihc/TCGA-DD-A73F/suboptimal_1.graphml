@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">10663</data>
+      <data key="v_entrez">10663</data>
+      <data key="v_ensembl">ENSG00000172215</data>
+      <data key="v_symbol">CXCR6</data>
+      <data key="v_id">n2</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">2826</data>
+      <data key="v_entrez">2826</data>
+      <data key="v_ensembl">ENSG00000184451</data>
+      <data key="v_symbol">CCR10</data>
+      <data key="v_id">n1299</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">6370</data>
+      <data key="v_entrez">6370</data>
+      <data key="v_ensembl">ENSG00000131142</data>
+      <data key="v_symbol">CCL25</data>
+      <data key="v_id">n1684</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">2829</data>
+      <data key="v_entrez">2829</data>
+      <data key="v_ensembl">ENSG00000173578</data>
+      <data key="v_symbol">XCR1</data>
+      <data key="v_id">n1849</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">1234</data>
+      <data key="v_entrez">1234</data>
+      <data key="v_ensembl">ENSG00000160791</data>
+      <data key="v_symbol">CCR5</data>
+      <data key="v_id">n5267</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n2" target="n0">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n0">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n1">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+  </graph>
+</graphml>

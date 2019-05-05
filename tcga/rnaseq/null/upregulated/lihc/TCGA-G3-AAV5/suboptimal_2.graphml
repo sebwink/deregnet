@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">6241</data>
+      <data key="v_entrez">6241</data>
+      <data key="v_ensembl">ENSG00000171848</data>
+      <data key="v_symbol">RRM2</data>
+      <data key="v_id">n3441</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">4831</data>
+      <data key="v_entrez">4831</data>
+      <data key="v_ensembl">ENSG00000243678</data>
+      <data key="v_symbol">NME2</data>
+      <data key="v_id">n4055</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">4830</data>
+      <data key="v_entrez">4830</data>
+      <data key="v_ensembl">ENSG00000239672</data>
+      <data key="v_symbol">NME1</data>
+      <data key="v_id">n4371</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">318</data>
+      <data key="v_entrez">318</data>
+      <data key="v_ensembl">ENSG00000164978</data>
+      <data key="v_symbol">NUDT2</data>
+      <data key="v_id">n4618</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">84284</data>
+      <data key="v_entrez">84284</data>
+      <data key="v_ensembl">ENSG00000135778</data>
+      <data key="v_symbol">NTPCR</data>
+      <data key="v_id">n4932</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n0">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

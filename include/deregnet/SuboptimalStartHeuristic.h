@@ -44,6 +44,9 @@
 
 namespace deregnet {
 
+/**
+ * @brief Implementation of the heuristic solution algorithm for suboptimal part of the absolute DeRegNet algorithm
+ */
 class SuboptimalStartHeuristic : public DeregnetStartHeuristic {
 
   private:
@@ -56,6 +59,20 @@ class SuboptimalStartHeuristic : public DeregnetStartHeuristic {
 
   public:
 
+    /**
+     * @brief 
+     *
+     * @param xgraph
+     * @param xscore
+     * @param root
+     * @param exclude
+     * @param receptors
+     * @param xcmp
+     * @param xnodeid
+     * @param xnodes_sof_far
+     * @param xmax_overlap
+     * @param xsize
+     */
     SuboptimalStartHeuristic(Graph* xgraph,
                              NodeMap<double>* xscore,
                              Node* root,

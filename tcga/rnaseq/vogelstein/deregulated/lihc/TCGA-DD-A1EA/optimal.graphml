@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="v_deregnet_receptor" for="node" attr.name="deregnet_receptor" attr.type="boolean"/>
+  <key id="v_deregnet_terminal" for="node" attr.name="deregnet_terminal" attr.type="boolean"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">1581</data>
+      <data key="v_entrez">1581</data>
+      <data key="v_ensembl">ENSG00000167910</data>
+      <data key="v_symbol">CYP7A1</data>
+      <data key="v_id">n781</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+      <data key="v_deregnet_terminal">false</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">8694</data>
+      <data key="v_entrez">8694</data>
+      <data key="v_ensembl">ENSG00000185000</data>
+      <data key="v_symbol">DGAT1</data>
+      <data key="v_id">n1414</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+      <data key="v_deregnet_terminal">false</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">1586</data>
+      <data key="v_entrez">1586</data>
+      <data key="v_ensembl">ENSG00000148795</data>
+      <data key="v_symbol">CYP17A1</data>
+      <data key="v_id">n1598</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+      <data key="v_deregnet_terminal">false</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">145226</data>
+      <data key="v_entrez">145226</data>
+      <data key="v_ensembl">ENSG00000139988</data>
+      <data key="v_symbol">RDH12</data>
+      <data key="v_id">n2641</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+      <data key="v_deregnet_terminal">false</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">53630</data>
+      <data key="v_entrez">53630</data>
+      <data key="v_ensembl">ENSG00000135697</data>
+      <data key="v_symbol">BCO1</data>
+      <data key="v_id">n2973</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+      <data key="v_deregnet_terminal">false</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">6258</data>
+      <data key="v_entrez">6258</data>
+      <data key="v_ensembl">ENSG00000143171</data>
+      <data key="v_symbol">RXRG</data>
+      <data key="v_id">n3164</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+      <data key="v_deregnet_terminal">false</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">9968</data>
+      <data key="v_entrez">9968</data>
+      <data key="v_ensembl">ENSG00000184634</data>
+      <data key="v_symbol">MED12</data>
+      <data key="v_id">n3365</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">true</data>
+      <data key="v_deregnet_terminal">true</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">8630</data>
+      <data key="v_entrez">8630</data>
+      <data key="v_ensembl">ENSG00000025423</data>
+      <data key="v_symbol">HSD17B6</data>
+      <data key="v_id">n3739</data>
+      <data key="v_deregnet_score">-1</data>
+      <data key="v_deregnet_receptor">false</data>
+      <data key="v_deregnet_terminal">false</data>
+    </node>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n7">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n7">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n5" target="n0">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n6" target="n5">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n7" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

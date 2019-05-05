@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">5921</data>
+      <data key="v_entrez">5921</data>
+      <data key="v_ensembl">ENSG00000145715</data>
+      <data key="v_symbol">RASA1</data>
+      <data key="v_id">n820</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">2185</data>
+      <data key="v_entrez">2185</data>
+      <data key="v_ensembl">ENSG00000120899</data>
+      <data key="v_symbol">PTK2B</data>
+      <data key="v_id">n1011</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">6597</data>
+      <data key="v_entrez">6597</data>
+      <data key="v_ensembl">ENSG00000127616</data>
+      <data key="v_symbol">SMARCA4</data>
+      <data key="v_id">n1355</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">1499</data>
+      <data key="v_entrez">1499</data>
+      <data key="v_ensembl">ENSG00000168036</data>
+      <data key="v_symbol">CTNNB1</data>
+      <data key="v_id">n4738</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">596</data>
+      <data key="v_entrez">596</data>
+      <data key="v_ensembl">ENSG00000171791</data>
+      <data key="v_symbol">BCL2</data>
+      <data key="v_id">n5253</data>
+    </node>
+    <edge source="n3" target="n3">
+      <data key="e_interaction">activation</data>
+    </edge>
+  </graph>
+</graphml>

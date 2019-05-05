@@ -42,6 +42,8 @@ namespace deregnet {
 
 #define INVALID lemon::INVALID
 
+// using INVALID = lemon::INVALID looks smarter ;)
+
 using Graph = lemon::SmartDigraph;
 
 using Node = Graph::Node;

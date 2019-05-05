@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_TCGA-DD-AAEG" for="node" attr.name="TCGA-DD-AAEG" attr.type="double"/>
+  <key id="v_TCGA-HP-A5N0" for="node" attr.name="TCGA-HP-A5N0" attr.type="double"/>
+  <key id="v_TCGA-G3-A6UC" for="node" attr.name="TCGA-G3-A6UC" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CK" for="node" attr.name="TCGA-G3-A3CK" attr.type="double"/>
+  <key id="v_TCGA-G3-A7M8" for="node" attr.name="TCGA-G3-A7M8" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NO" for="node" attr.name="TCGA-DD-A4NO" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A4" for="node" attr.name="TCGA-DD-A3A4" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NP" for="node" attr.name="TCGA-DD-A4NP" attr.type="double"/>
+  <key id="v_TCGA-KR-A7K8" for="node" attr.name="TCGA-KR-A7K8" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEI" for="node" attr.name="TCGA-DD-AAEI" attr.type="double"/>
+  <key id="v_TCGA-G3-A25V" for="node" attr.name="TCGA-G3-A25V" attr.type="double"/>
+  <key id="v_TCGA-LG-A9QD" for="node" attr.name="TCGA-LG-A9QD" attr.type="double"/>
+  <key id="v_TCGA-BC-A10T" for="node" attr.name="TCGA-BC-A10T" attr.type="double"/>
+  <key id="v_TCGA-BC-A5W4" for="node" attr.name="TCGA-BC-A5W4" attr.type="double"/>
+  <key id="v_TCGA-DD-AAD0" for="node" attr.name="TCGA-DD-AAD0" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KB" for="node" attr.name="TCGA-EP-A2KB" attr.type="double"/>
+  <key id="v_TCGA-DD-AADR" for="node" attr.name="TCGA-DD-AADR" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GZ" for="node" attr.name="TCGA-2Y-A9GZ" attr.type="double"/>
+  <key id="v_TCGA-BC-A217" for="node" attr.name="TCGA-BC-A217" attr.type="double"/>
+  <key id="v_TCGA-YA-A8S7" for="node" attr.name="TCGA-YA-A8S7" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NI" for="node" attr.name="TCGA-DD-A4NI" attr.type="double"/>
+  <key id="v_TCGA-G3-A5SI" for="node" attr.name="TCGA-G3-A5SI" attr.type="double"/>
+  <key id="v_TCGA-XR-A8TF" for="node" attr.name="TCGA-XR-A8TF" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE3" for="node" attr.name="TCGA-DD-AAE3" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CJ" for="node" attr.name="TCGA-G3-A3CJ" attr.type="double"/>
+  <key id="v_TCGA-ZP-A9CY" for="node" attr.name="TCGA-ZP-A9CY" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV1" for="node" attr.name="TCGA-G3-AAV1" attr.type="double"/>
+  <key id="v_TCGA-MI-A75E" for="node" attr.name="TCGA-MI-A75E" attr.type="double"/>
+  <key id="v_TCGA-KR-A7K0" for="node" attr.name="TCGA-KR-A7K0" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEH" for="node" attr.name="TCGA-DD-AAEH" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EA" for="node" attr.name="TCGA-DD-A1EA" attr.type="double"/>
+  <key id="v_TCGA-DD-AACV" for="node" attr.name="TCGA-DD-AACV" attr.type="double"/>
+  <key id="v_TCGA-BC-A69I" for="node" attr.name="TCGA-BC-A69I" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE9" for="node" attr.name="TCGA-DD-AAE9" attr.type="double"/>
+  <key id="v_TCGA-DD-A4NK" for="node" attr.name="TCGA-DD-A4NK" attr.type="double"/>
+  <key id="v_TCGA-DD-AACX" for="node" attr.name="TCGA-DD-AACX" attr.type="double"/>
+  <key id="v_TCGA-MI-A75G" for="node" attr.name="TCGA-MI-A75G" attr.type="double"/>
+  <key id="v_TCGA-MI-A75H" for="node" attr.name="TCGA-MI-A75H" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KC" for="node" attr.name="TCGA-EP-A2KC" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IL" for="node" attr.name="TCGA-CC-A7IL" attr.type="double"/>
+  <key id="v_TCGA-3K-AAZ8" for="node" attr.name="TCGA-3K-AAZ8" attr.type="double"/>
+  <key id="v_TCGA-DD-A11B" for="node" attr.name="TCGA-DD-A11B" attr.type="double"/>
+  <key id="v_TCGA-WX-AA46" for="node" attr.name="TCGA-WX-AA46" attr.type="double"/>
+  <key id="v_TCGA-DD-AAC9" for="node" attr.name="TCGA-DD-AAC9" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IH" for="node" attr.name="TCGA-CC-A7IH" attr.type="double"/>
+  <key id="v_TCGA-LG-A6GG" for="node" attr.name="TCGA-LG-A6GG" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVX" for="node" attr.name="TCGA-DD-AAVX" attr.type="double"/>
+  <key id="v_upregulation" for="node" attr.name="upregulation" attr.type="double"/>
+  <key id="e_interactions" for="edge" attr.name="interactions" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_entrez">6788</data>
+      <data key="v_symbol">STK3</data>
+      <data key="v_ensembl">ENSG00000104375</data>
+      <data key="v_name">6788</data>
+      <data key="v_id">n642</data>
+      <data key="v_TCGA-DD-AAEG">0</data>
+      <data key="v_TCGA-HP-A5N0">0</data>
+      <data key="v_TCGA-G3-A6UC">0</data>
+      <data key="v_TCGA-G3-A3CK">0</data>
+      <data key="v_TCGA-G3-A7M8">0</data>
+      <data key="v_TCGA-DD-A4NO">0</data>
+      <data key="v_TCGA-DD-A3A4">0</data>
+      <data key="v_TCGA-DD-A4NP">0</data>
+      <data key="v_TCGA-KR-A7K8">0</data>
+      <data key="v_TCGA-DD-AAEI">0</data>
+      <data key="v_TCGA-G3-A25V">0</data>
+      <data key="v_TCGA-LG-A9QD">0</data>
+      <data key="v_TCGA-BC-A10T">0</data>
+      <data key="v_TCGA-BC-A5W4">0</data>
+      <data key="v_TCGA-DD-AAD0">0</data>
+      <data key="v_TCGA-EP-A2KB">0</data>
+      <data key="v_TCGA-DD-AADR">0</data>
+      <data key="v_TCGA-2Y-A9GZ">0</data>
+      <data key="v_TCGA-BC-A217">0</data>
+      <data key="v_TCGA-YA-A8S7">0</data>
+      <data key="v_TCGA-DD-A4NI">0</data>
+      <data key="v_TCGA-G3-A5SI">0</data>
+      <data key="v_TCGA-XR-A8TF">0</data>
+      <data key="v_TCGA-DD-AAE3">0</data>
+      <data key="v_TCGA-G3-A3CJ">0</data>
+      <data key="v_TCGA-ZP-A9CY">0</data>
+      <data key="v_TCGA-G3-AAV1">0</data>
+      <data key="v_TCGA-MI-A75E">0</data>
+      <data key="v_TCGA-KR-A7K0">0</data>
+      <data key="v_TCGA-DD-AAEH">0</data>
+      <data key="v_TCGA-DD-A1EA">0</data>
+      <data key="v_TCGA-DD-AACV">0</data>
+      <data key="v_TCGA-BC-A69I">0</data>
+      <data key="v_TCGA-DD-AAE9">0</data>
+      <data key="v_TCGA-DD-A4NK">0</data>
+      <data key="v_TCGA-DD-AACX">0</data>
+      <data key="v_TCGA-MI-A75G">0</data>
+      <data key="v_TCGA-MI-A75H">0</data>
+      <data key="v_TCGA-EP-A2KC">0</data>
+      <data key="v_TCGA-CC-A7IL">0</data>
+      <data key="v_TCGA-3K-AAZ8">0</data>
+      <data key="v_TCGA-DD-A11B">0</data>
+      <data key="v_TCGA-WX-AA46">0</data>
+      <data key="v_TCGA-DD-AAC9">0</data>
+      <data key="v_TCGA-CC-A7IH">0</data>
+      <data key="v_TCGA-LG-A6GG">0</data>
+      <data key="v_TCGA-DD-AAVX">0</data>
+      <data key="v_upregulation">0</data>
+    </node>
+    <node id="n1">
+      <data key="v_entrez">5499</data>
+      <data key="v_symbol">PPP1CA</data>
+      <data key="v_ensembl">ENSG00000172531</data>
+      <data key="v_name">5499</data>
+      <data key="v_id">n813</data>
+      <data key="v_TCGA-DD-AAEG">0</data>
+      <data key="v_TCGA-HP-A5N0">0</data>
+      <data key="v_TCGA-G3-A6UC">0</data>
+      <data key="v_TCGA-G3-A3CK">0</data>
+      <data key="v_TCGA-G3-A7M8">0</data>
+      <data key="v_TCGA-DD-A4NO">0</data>
+      <data key="v_TCGA-DD-A3A4">0</data>
+      <data key="v_TCGA-DD-A4NP">0</data>
+      <data key="v_TCGA-KR-A7K8">0</data>
+      <data key="v_TCGA-DD-AAEI">0</data>
+      <data key="v_TCGA-G3-A25V">0</data>
+      <data key="v_TCGA-LG-A9QD">0</data>
+      <data key="v_TCGA-BC-A10T">0</data>
+      <data key="v_TCGA-BC-A5W4">0</data>
+      <data key="v_TCGA-DD-AAD0">0</data>
+      <data key="v_TCGA-EP-A2KB">0</data>
+      <data key="v_TCGA-DD-AADR">0</data>
+      <data key="v_TCGA-2Y-A9GZ">0</data>
+      <data key="v_TCGA-BC-A217">0</data>
+      <data key="v_TCGA-YA-A8S7">0</data>
+      <data key="v_TCGA-DD-A4NI">0</data>
+      <data key="v_TCGA-G3-A5SI">0</data>
+      <data key="v_TCGA-XR-A8TF">0</data>
+      <data key="v_TCGA-DD-AAE3">0</data>
+      <data key="v_TCGA-G3-A3CJ">0</data>
+      <data key="v_TCGA-ZP-A9CY">0</data>
+      <data key="v_TCGA-G3-AAV1">0</data>
+      <data key="v_TCGA-MI-A75E">0</data>
+      <data key="v_TCGA-KR-A7K0">0</data>
+      <data key="v_TCGA-DD-AAEH">0</data>
+      <data key="v_TCGA-DD-A1EA">0</data>
+      <data key="v_TCGA-DD-AACV">0</data>
+      <data key="v_TCGA-BC-A69I">0</data>
+      <data key="v_TCGA-DD-AAE9">0</data>
+      <data key="v_TCGA-DD-A4NK">0</data>
+      <data key="v_TCGA-DD-AACX">0</data>
+      <data key="v_TCGA-MI-A75G">0</data>
+      <data key="v_TCGA-MI-A75H">0</data>
+      <data key="v_TCGA-EP-A2KC">0</data>
+      <data key="v_TCGA-CC-A7IL">0</data>
+      <data key="v_TCGA-3K-AAZ8">0</data>
+      <data key="v_TCGA-DD-A11B">0</data>
+      <data key="v_TCGA-WX-AA46">0</data>
+      <data key="v_TCGA-DD-AAC9">0</data>
+      <data key="v_TCGA-CC-A7IH">0</data>
+      <data key="v_TCGA-LG-A6GG">0</data>
+      <data key="v_TCGA-DD-AAVX">0</data>
+      <data key="v_upregulation">0</data>
+    </node>
+    <node id="n2">
+      <data key="v_entrez">8994</data>
+      <data key="v_symbol">LIMD1</data>
+      <data key="v_ensembl">ENSG00000144791</data>
+      <data key="v_name">8994</data>
+      <data key="v_id">n3002</data>
+      <data key="v_TCGA-DD-AAEG">0</data>
+      <data key="v_TCGA-HP-A5N0">0</data>
+      <data key="v_TCGA-G3-A6UC">0</data>
+      <data key="v_TCGA-G3-A3CK">0</data>
+      <data key="v_TCGA-G3-A7M8">0</data>
+      <data key="v_TCGA-DD-A4NO">0</data>
+      <data key="v_TCGA-DD-A3A4">0</data>
+      <data key="v_TCGA-DD-A4NP">0</data>
+      <data key="v_TCGA-KR-A7K8">0</data>
+      <data key="v_TCGA-DD-AAEI">0</data>
+      <data key="v_TCGA-G3-A25V">0</data>
+      <data key="v_TCGA-LG-A9QD">0</data>
+      <data key="v_TCGA-BC-A10T">0</data>
+      <data key="v_TCGA-BC-A5W4">0</data>
+      <data key="v_TCGA-DD-AAD0">0</data>
+      <data key="v_TCGA-EP-A2KB">0</data>
+      <data key="v_TCGA-DD-AADR">0</data>
+      <data key="v_TCGA-2Y-A9GZ">0</data>
+      <data key="v_TCGA-BC-A217">0</data>
+      <data key="v_TCGA-YA-A8S7">0</data>
+      <data key="v_TCGA-DD-A4NI">0</data>
+      <data key="v_TCGA-G3-A5SI">0</data>
+      <data key="v_TCGA-XR-A8TF">0</data>
+      <data key="v_TCGA-DD-AAE3">0</data>
+      <data key="v_TCGA-G3-A3CJ">0</data>
+      <data key="v_TCGA-ZP-A9CY">0</data>
+      <data key="v_TCGA-G3-AAV1">0</data>
+      <data key="v_TCGA-MI-A75E">0</data>
+      <data key="v_TCGA-KR-A7K0">0</data>
+      <data key="v_TCGA-DD-AAEH">0</data>
+      <data key="v_TCGA-DD-A1EA">0</data>
+      <data key="v_TCGA-DD-AACV">0</data>
+      <data key="v_TCGA-BC-A69I">0</data>
+      <data key="v_TCGA-DD-AAE9">0</data>
+      <data key="v_TCGA-DD-A4NK">0</data>
+      <data key="v_TCGA-DD-AACX">0</data>
+      <data key="v_TCGA-MI-A75G">0</data>
+      <data key="v_TCGA-MI-A75H">0</data>
+      <data key="v_TCGA-EP-A2KC">0</data>
+      <data key="v_TCGA-CC-A7IL">0</data>
+      <data key="v_TCGA-3K-AAZ8">0</data>
+      <data key="v_TCGA-DD-A11B">0</data>
+      <data key="v_TCGA-WX-AA46">0</data>
+      <data key="v_TCGA-DD-AAC9">0</data>
+      <data key="v_TCGA-CC-A7IH">0</data>
+      <data key="v_TCGA-LG-A6GG">0</data>
+      <data key="v_TCGA-DD-AAVX">0</data>
+      <data key="v_upregulation">0</data>
+    </node>
+    <node id="n3">
+      <data key="v_entrez">10413</data>
+      <data key="v_symbol">YAP1</data>
+      <data key="v_ensembl">ENSG00000137693</data>
+      <data key="v_name">10413</data>
+      <data key="v_id">n4491</data>
+      <data key="v_TCGA-DD-AAEG">0</data>
+      <data key="v_TCGA-HP-A5N0">0</data>
+      <data key="v_TCGA-G3-A6UC">0</data>
+      <data key="v_TCGA-G3-A3CK">0</data>
+      <data key="v_TCGA-G3-A7M8">0</data>
+      <data key="v_TCGA-DD-A4NO">0</data>
+      <data key="v_TCGA-DD-A3A4">0</data>
+      <data key="v_TCGA-DD-A4NP">0</data>
+      <data key="v_TCGA-KR-A7K8">0</data>
+      <data key="v_TCGA-DD-AAEI">0</data>
+      <data key="v_TCGA-G3-A25V">0</data>
+      <data key="v_TCGA-LG-A9QD">0</data>
+      <data key="v_TCGA-BC-A10T">0</data>
+      <data key="v_TCGA-BC-A5W4">0</data>
+      <data key="v_TCGA-DD-AAD0">0</data>
+      <data key="v_TCGA-EP-A2KB">0</data>
+      <data key="v_TCGA-DD-AADR">0</data>
+      <data key="v_TCGA-2Y-A9GZ">0</data>
+      <data key="v_TCGA-BC-A217">0</data>
+      <data key="v_TCGA-YA-A8S7">0</data>
+      <data key="v_TCGA-DD-A4NI">0</data>
+      <data key="v_TCGA-G3-A5SI">0</data>
+      <data key="v_TCGA-XR-A8TF">0</data>
+      <data key="v_TCGA-DD-AAE3">0</data>
+      <data key="v_TCGA-G3-A3CJ">0</data>
+      <data key="v_TCGA-ZP-A9CY">0</data>
+      <data key="v_TCGA-G3-AAV1">0</data>
+      <data key="v_TCGA-MI-A75E">0</data>
+      <data key="v_TCGA-KR-A7K0">0</data>
+      <data key="v_TCGA-DD-AAEH">0</data>
+      <data key="v_TCGA-DD-A1EA">0</data>
+      <data key="v_TCGA-DD-AACV">0</data>
+      <data key="v_TCGA-BC-A69I">0</data>
+      <data key="v_TCGA-DD-AAE9">0</data>
+      <data key="v_TCGA-DD-A4NK">0</data>
+      <data key="v_TCGA-DD-AACX">0</data>
+      <data key="v_TCGA-MI-A75G">0</data>
+      <data key="v_TCGA-MI-A75H">0</data>
+      <data key="v_TCGA-EP-A2KC">0</data>
+      <data key="v_TCGA-CC-A7IL">0</data>
+      <data key="v_TCGA-3K-AAZ8">0</data>
+      <data key="v_TCGA-DD-A11B">0</data>
+      <data key="v_TCGA-WX-AA46">0</data>
+      <data key="v_TCGA-DD-AAC9">0</data>
+      <data key="v_TCGA-CC-A7IH">0</data>
+      <data key="v_TCGA-LG-A6GG">0</data>
+      <data key="v_TCGA-DD-AAVX">0</data>
+      <data key="v_upregulation">0</data>
+    </node>
+    <node id="n4">
+      <data key="v_entrez">9113</data>
+      <data key="v_symbol">LATS1</data>
+      <data key="v_ensembl">ENSG00000131023</data>
+      <data key="v_name">9113</data>
+      <data key="v_id">n4777</data>
+      <data key="v_TCGA-DD-AAEG">0</data>
+      <data key="v_TCGA-HP-A5N0">0</data>
+      <data key="v_TCGA-G3-A6UC">0</data>
+      <data key="v_TCGA-G3-A3CK">0</data>
+      <data key="v_TCGA-G3-A7M8">0</data>
+      <data key="v_TCGA-DD-A4NO">0</data>
+      <data key="v_TCGA-DD-A3A4">0</data>
+      <data key="v_TCGA-DD-A4NP">0</data>
+      <data key="v_TCGA-KR-A7K8">0</data>
+      <data key="v_TCGA-DD-AAEI">0</data>
+      <data key="v_TCGA-G3-A25V">0</data>
+      <data key="v_TCGA-LG-A9QD">0</data>
+      <data key="v_TCGA-BC-A10T">0</data>
+      <data key="v_TCGA-BC-A5W4">0</data>
+      <data key="v_TCGA-DD-AAD0">0</data>
+      <data key="v_TCGA-EP-A2KB">0</data>
+      <data key="v_TCGA-DD-AADR">0</data>
+      <data key="v_TCGA-2Y-A9GZ">0</data>
+      <data key="v_TCGA-BC-A217">0</data>
+      <data key="v_TCGA-YA-A8S7">0</data>
+      <data key="v_TCGA-DD-A4NI">0</data>
+      <data key="v_TCGA-G3-A5SI">0</data>
+      <data key="v_TCGA-XR-A8TF">0</data>
+      <data key="v_TCGA-DD-AAE3">0</data>
+      <data key="v_TCGA-G3-A3CJ">0</data>
+      <data key="v_TCGA-ZP-A9CY">0</data>
+      <data key="v_TCGA-G3-AAV1">0</data>
+      <data key="v_TCGA-MI-A75E">0</data>
+      <data key="v_TCGA-KR-A7K0">0</data>
+      <data key="v_TCGA-DD-AAEH">0</data>
+      <data key="v_TCGA-DD-A1EA">0</data>
+      <data key="v_TCGA-DD-AACV">0</data>
+      <data key="v_TCGA-BC-A69I">0</data>
+      <data key="v_TCGA-DD-AAE9">0</data>
+      <data key="v_TCGA-DD-A4NK">0</data>
+      <data key="v_TCGA-DD-AACX">0</data>
+      <data key="v_TCGA-MI-A75G">0</data>
+      <data key="v_TCGA-MI-A75H">0</data>
+      <data key="v_TCGA-EP-A2KC">0</data>
+      <data key="v_TCGA-CC-A7IL">0</data>
+      <data key="v_TCGA-3K-AAZ8">0</data>
+      <data key="v_TCGA-DD-A11B">0</data>
+      <data key="v_TCGA-WX-AA46">0</data>
+      <data key="v_TCGA-DD-AAC9">0</data>
+      <data key="v_TCGA-CC-A7IH">0</data>
+      <data key="v_TCGA-LG-A6GG">0</data>
+      <data key="v_TCGA-DD-AAVX">0</data>
+      <data key="v_upregulation">0</data>
+    </node>
+    <edge source="n0" target="n4">
+      <data key="e_interactions">phosphorylation,activation</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_interactions">dephosphorylation,activation</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_interactions">inhibition</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interactions">inhibition,phosphorylation</data>
+    </edge>
+  </graph>
+</graphml>

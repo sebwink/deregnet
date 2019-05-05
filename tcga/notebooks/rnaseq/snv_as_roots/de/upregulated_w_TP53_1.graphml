@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_TCGA-G3-A5SM_count" for="node" attr.name="TCGA-G3-A5SM_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE9_count" for="node" attr.name="TCGA-DD-AAE9_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AADB_count" for="node" attr.name="TCGA-DD-AADB_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A11D_count" for="node" attr.name="TCGA-DD-A11D_count" attr.type="double"/>
+  <key id="v_TCGA-LG-A9QC_count" for="node" attr.name="TCGA-LG-A9QC_count" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QQ_count" for="node" attr.name="TCGA-FV-A2QQ_count" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IG_count" for="node" attr.name="TCGA-CC-A7IG_count" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CK_count" for="node" attr.name="TCGA-G3-A3CK_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE4_count" for="node" attr.name="TCGA-DD-AAE4_count" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MD_count" for="node" attr.name="TCGA-UB-A7MD_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EL_count" for="node" attr.name="TCGA-DD-A1EL_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AACW_count" for="node" attr.name="TCGA-DD-AACW_count" attr.type="double"/>
+  <key id="v_TCGA-FV-A4ZP_count" for="node" attr.name="TCGA-FV-A4ZP_count" attr.type="double"/>
+  <key id="v_TCGA-ED-A66X_count" for="node" attr.name="TCGA-ED-A66X_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A4_count" for="node" attr.name="TCGA-DD-A3A4_count" attr.type="double"/>
+  <key id="v_TCGA-K7-AAU7_count" for="node" attr.name="TCGA-K7-AAU7_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A6_count" for="node" attr.name="TCGA-DD-A3A6_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEI_count" for="node" attr.name="TCGA-DD-AAEI_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AACN_count" for="node" attr.name="TCGA-DD-AACN_count" attr.type="double"/>
+  <key id="v_TCGA-BC-A3KF_count" for="node" attr.name="TCGA-BC-A3KF_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AADI_count" for="node" attr.name="TCGA-DD-AADI_count" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KC_count" for="node" attr.name="TCGA-EP-A2KC_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AACY_count" for="node" attr.name="TCGA-DD-AACY_count" attr.type="double"/>
+  <key id="v_TCGA-ES-A2HT_count" for="node" attr.name="TCGA-ES-A2HT_count" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QR_count" for="node" attr.name="TCGA-FV-A2QR_count" attr.type="double"/>
+  <key id="v_TCGA-BC-A112_count" for="node" attr.name="TCGA-BC-A112_count" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GS_count" for="node" attr.name="TCGA-2Y-A9GS_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EK_count" for="node" attr.name="TCGA-DD-A1EK_count" attr.type="double"/>
+  <key id="v_TCGA-2V-A95S_count" for="node" attr.name="TCGA-2V-A95S_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVS_count" for="node" attr.name="TCGA-DD-AAVS_count" attr.type="double"/>
+  <key id="v_TCGA-CC-A3MC_count" for="node" attr.name="TCGA-CC-A3MC_count" attr.type="double"/>
+  <key id="v_TCGA-BC-A10U_count" for="node" attr.name="TCGA-BC-A10U_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A3_count" for="node" attr.name="TCGA-DD-A3A3_count" attr.type="double"/>
+  <key id="v_TCGA-BC-A10Z_count" for="node" attr.name="TCGA-BC-A10Z_count" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV3_count" for="node" attr.name="TCGA-G3-AAV3_count" attr.type="double"/>
+  <key id="v_TCGA-BC-A5W4_count" for="node" attr.name="TCGA-BC-A5W4_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AADK_count" for="node" attr.name="TCGA-DD-AADK_count" attr.type="double"/>
+  <key id="v_TCGA-CC-A9FS_count" for="node" attr.name="TCGA-CC-A9FS_count" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H8_count" for="node" attr.name="TCGA-2Y-A9H8_count" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H5_count" for="node" attr.name="TCGA-2Y-A9H5_count" attr.type="double"/>
+  <key id="v_TCGA-BC-4072_count" for="node" attr.name="TCGA-BC-4072_count" attr.type="double"/>
+  <key id="v_TCGA-T1-A6J8_count" for="node" attr.name="TCGA-T1-A6J8_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AADQ_count" for="node" attr.name="TCGA-DD-AADQ_count" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CH_count" for="node" attr.name="TCGA-G3-A3CH_count" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GT_count" for="node" attr.name="TCGA-2Y-A9GT_count" attr.type="double"/>
+  <key id="v_TCGA-ED-A82E_count" for="node" attr.name="TCGA-ED-A82E_count" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KB_count" for="node" attr.name="TCGA-EP-A2KB_count" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV5_count" for="node" attr.name="TCGA-G3-AAV5_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AA3A_count" for="node" attr.name="TCGA-DD-AA3A_count" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GZ_count" for="node" attr.name="TCGA-2Y-A9GZ_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A73C_count" for="node" attr.name="TCGA-DD-A73C_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AAW0_count" for="node" attr.name="TCGA-DD-AAW0_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EF_count" for="node" attr.name="TCGA-DD-A1EF_count" attr.type="double"/>
+  <key id="v_TCGA-3K-AAZ8_count" for="node" attr.name="TCGA-3K-AAZ8_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEK_count" for="node" attr.name="TCGA-DD-AAEK_count" attr.type="double"/>
+  <key id="v_TCGA-RC-A6M6_count" for="node" attr.name="TCGA-RC-A6M6_count" attr.type="double"/>
+  <key id="v_TCGA-G3-A5SL_count" for="node" attr.name="TCGA-G3-A5SL_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A73F_count" for="node" attr.name="TCGA-DD-A73F_count" attr.type="double"/>
+  <key id="v_TCGA-CC-5263_count" for="node" attr.name="TCGA-CC-5263_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A116_count" for="node" attr.name="TCGA-DD-A116_count" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CG_count" for="node" attr.name="TCGA-G3-A3CG_count" attr.type="double"/>
+  <key id="v_TCGA-CC-5264_count" for="node" attr.name="TCGA-CC-5264_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE3_count" for="node" attr.name="TCGA-DD-AAE3_count" attr.type="double"/>
+  <key id="v_TCGA-WX-AA44_count" for="node" attr.name="TCGA-WX-AA44_count" attr.type="double"/>
+  <key id="v_TCGA-CC-A3M9_count" for="node" attr.name="TCGA-CC-A3M9_count" attr.type="double"/>
+  <key id="v_TCGA-5C-A9VH_count" for="node" attr.name="TCGA-5C-A9VH_count" attr.type="double"/>
+  <key id="v_TCGA-WJ-A86L_count" for="node" attr.name="TCGA-WJ-A86L_count" attr.type="double"/>
+  <key id="v_TCGA-DD-AACF_count" for="node" attr.name="TCGA-DD-AACF_count" attr.type="double"/>
+  <key id="v_TCGA-CC-A5UD_count" for="node" attr.name="TCGA-CC-A5UD_count" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EB_count" for="node" attr.name="TCGA-DD-A1EB_count" attr.type="double"/>
+  <key id="v_TCGA-XR-A8TC_count" for="node" attr.name="TCGA-XR-A8TC_count" attr.type="double"/>
+  <key id="v_TCGA-KR-A7K0_count" for="node" attr.name="TCGA-KR-A7K0_count" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MF_count" for="node" attr.name="TCGA-UB-A7MF_count" attr.type="double"/>
+  <key id="v_TCGA-ED-A66Y_count" for="node" attr.name="TCGA-ED-A66Y_count" attr.type="double"/>
+  <key id="v_TCGA-ED-A7PY_count" for="node" attr.name="TCGA-ED-A7PY_count" attr.type="double"/>
+  <key id="v_TCGA-ZP-A9CV_count" for="node" attr.name="TCGA-ZP-A9CV_count" attr.type="double"/>
+  <key id="v_avg_count" for="node" attr.name="avg_count" attr.type="double"/>
+  <key id="v_cluster_avg_count" for="node" attr.name="cluster_avg_count" attr.type="double"/>
+  <key id="v_notcluster_avg_count" for="node" attr.name="notcluster_avg_count" attr.type="double"/>
+  <key id="v_TCGA-G3-A5SM_log2fold_wrt_control" for="node" attr.name="TCGA-G3-A5SM_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE9_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AAE9_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AADB_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AADB_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A11D_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A11D_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-LG-A9QC_log2fold_wrt_control" for="node" attr.name="TCGA-LG-A9QC_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QQ_log2fold_wrt_control" for="node" attr.name="TCGA-FV-A2QQ_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IG_log2fold_wrt_control" for="node" attr.name="TCGA-CC-A7IG_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CK_log2fold_wrt_control" for="node" attr.name="TCGA-G3-A3CK_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE4_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AAE4_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MD_log2fold_wrt_control" for="node" attr.name="TCGA-UB-A7MD_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EL_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A1EL_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AACW_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AACW_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-FV-A4ZP_log2fold_wrt_control" for="node" attr.name="TCGA-FV-A4ZP_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-ED-A66X_log2fold_wrt_control" for="node" attr.name="TCGA-ED-A66X_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A4_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A3A4_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-K7-AAU7_log2fold_wrt_control" for="node" attr.name="TCGA-K7-AAU7_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A6_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A3A6_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEI_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AAEI_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AACN_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AACN_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-BC-A3KF_log2fold_wrt_control" for="node" attr.name="TCGA-BC-A3KF_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AADI_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AADI_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KC_log2fold_wrt_control" for="node" attr.name="TCGA-EP-A2KC_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AACY_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AACY_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-ES-A2HT_log2fold_wrt_control" for="node" attr.name="TCGA-ES-A2HT_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QR_log2fold_wrt_control" for="node" attr.name="TCGA-FV-A2QR_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-BC-A112_log2fold_wrt_control" for="node" attr.name="TCGA-BC-A112_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GS_log2fold_wrt_control" for="node" attr.name="TCGA-2Y-A9GS_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EK_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A1EK_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-2V-A95S_log2fold_wrt_control" for="node" attr.name="TCGA-2V-A95S_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVS_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AAVS_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-CC-A3MC_log2fold_wrt_control" for="node" attr.name="TCGA-CC-A3MC_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-BC-A10U_log2fold_wrt_control" for="node" attr.name="TCGA-BC-A10U_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A3_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A3A3_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-BC-A10Z_log2fold_wrt_control" for="node" attr.name="TCGA-BC-A10Z_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV3_log2fold_wrt_control" for="node" attr.name="TCGA-G3-AAV3_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-BC-A5W4_log2fold_wrt_control" for="node" attr.name="TCGA-BC-A5W4_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AADK_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AADK_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-CC-A9FS_log2fold_wrt_control" for="node" attr.name="TCGA-CC-A9FS_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H8_log2fold_wrt_control" for="node" attr.name="TCGA-2Y-A9H8_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H5_log2fold_wrt_control" for="node" attr.name="TCGA-2Y-A9H5_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-BC-4072_log2fold_wrt_control" for="node" attr.name="TCGA-BC-4072_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-T1-A6J8_log2fold_wrt_control" for="node" attr.name="TCGA-T1-A6J8_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AADQ_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AADQ_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CH_log2fold_wrt_control" for="node" attr.name="TCGA-G3-A3CH_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GT_log2fold_wrt_control" for="node" attr.name="TCGA-2Y-A9GT_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-ED-A82E_log2fold_wrt_control" for="node" attr.name="TCGA-ED-A82E_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KB_log2fold_wrt_control" for="node" attr.name="TCGA-EP-A2KB_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV5_log2fold_wrt_control" for="node" attr.name="TCGA-G3-AAV5_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AA3A_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AA3A_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GZ_log2fold_wrt_control" for="node" attr.name="TCGA-2Y-A9GZ_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A73C_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A73C_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AAW0_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AAW0_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EF_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A1EF_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-3K-AAZ8_log2fold_wrt_control" for="node" attr.name="TCGA-3K-AAZ8_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEK_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AAEK_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-RC-A6M6_log2fold_wrt_control" for="node" attr.name="TCGA-RC-A6M6_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-G3-A5SL_log2fold_wrt_control" for="node" attr.name="TCGA-G3-A5SL_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A73F_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A73F_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-CC-5263_log2fold_wrt_control" for="node" attr.name="TCGA-CC-5263_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A116_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A116_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CG_log2fold_wrt_control" for="node" attr.name="TCGA-G3-A3CG_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-CC-5264_log2fold_wrt_control" for="node" attr.name="TCGA-CC-5264_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE3_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AAE3_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-WX-AA44_log2fold_wrt_control" for="node" attr.name="TCGA-WX-AA44_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-CC-A3M9_log2fold_wrt_control" for="node" attr.name="TCGA-CC-A3M9_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-5C-A9VH_log2fold_wrt_control" for="node" attr.name="TCGA-5C-A9VH_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-WJ-A86L_log2fold_wrt_control" for="node" attr.name="TCGA-WJ-A86L_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-AACF_log2fold_wrt_control" for="node" attr.name="TCGA-DD-AACF_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-CC-A5UD_log2fold_wrt_control" for="node" attr.name="TCGA-CC-A5UD_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EB_log2fold_wrt_control" for="node" attr.name="TCGA-DD-A1EB_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-XR-A8TC_log2fold_wrt_control" for="node" attr.name="TCGA-XR-A8TC_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-KR-A7K0_log2fold_wrt_control" for="node" attr.name="TCGA-KR-A7K0_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MF_log2fold_wrt_control" for="node" attr.name="TCGA-UB-A7MF_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-ED-A66Y_log2fold_wrt_control" for="node" attr.name="TCGA-ED-A66Y_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-ED-A7PY_log2fold_wrt_control" for="node" attr.name="TCGA-ED-A7PY_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-ZP-A9CV_log2fold_wrt_control" for="node" attr.name="TCGA-ZP-A9CV_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_avg_log2fold_wrt_control" for="node" attr.name="avg_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_cluster_avg_log2fold_wrt_control" for="node" attr.name="cluster_avg_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_notcluster_avg_log2fold_wrt_control" for="node" attr.name="notcluster_avg_log2fold_wrt_control" attr.type="double"/>
+  <key id="v_TCGA-G3-A5SM_non_silent_snv" for="node" attr.name="TCGA-G3-A5SM_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE9_non_silent_snv" for="node" attr.name="TCGA-DD-AAE9_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AADB_non_silent_snv" for="node" attr.name="TCGA-DD-AADB_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A11D_non_silent_snv" for="node" attr.name="TCGA-DD-A11D_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-LG-A9QC_non_silent_snv" for="node" attr.name="TCGA-LG-A9QC_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QQ_non_silent_snv" for="node" attr.name="TCGA-FV-A2QQ_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-CC-A7IG_non_silent_snv" for="node" attr.name="TCGA-CC-A7IG_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CK_non_silent_snv" for="node" attr.name="TCGA-G3-A3CK_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE4_non_silent_snv" for="node" attr.name="TCGA-DD-AAE4_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MD_non_silent_snv" for="node" attr.name="TCGA-UB-A7MD_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EL_non_silent_snv" for="node" attr.name="TCGA-DD-A1EL_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AACW_non_silent_snv" for="node" attr.name="TCGA-DD-AACW_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-FV-A4ZP_non_silent_snv" for="node" attr.name="TCGA-FV-A4ZP_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-ED-A66X_non_silent_snv" for="node" attr.name="TCGA-ED-A66X_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A4_non_silent_snv" for="node" attr.name="TCGA-DD-A3A4_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-K7-AAU7_non_silent_snv" for="node" attr.name="TCGA-K7-AAU7_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A6_non_silent_snv" for="node" attr.name="TCGA-DD-A3A6_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEI_non_silent_snv" for="node" attr.name="TCGA-DD-AAEI_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AACN_non_silent_snv" for="node" attr.name="TCGA-DD-AACN_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-BC-A3KF_non_silent_snv" for="node" attr.name="TCGA-BC-A3KF_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AADI_non_silent_snv" for="node" attr.name="TCGA-DD-AADI_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KC_non_silent_snv" for="node" attr.name="TCGA-EP-A2KC_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AACY_non_silent_snv" for="node" attr.name="TCGA-DD-AACY_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-ES-A2HT_non_silent_snv" for="node" attr.name="TCGA-ES-A2HT_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-FV-A2QR_non_silent_snv" for="node" attr.name="TCGA-FV-A2QR_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-BC-A112_non_silent_snv" for="node" attr.name="TCGA-BC-A112_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GS_non_silent_snv" for="node" attr.name="TCGA-2Y-A9GS_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EK_non_silent_snv" for="node" attr.name="TCGA-DD-A1EK_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-2V-A95S_non_silent_snv" for="node" attr.name="TCGA-2V-A95S_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AAVS_non_silent_snv" for="node" attr.name="TCGA-DD-AAVS_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-CC-A3MC_non_silent_snv" for="node" attr.name="TCGA-CC-A3MC_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-BC-A10U_non_silent_snv" for="node" attr.name="TCGA-BC-A10U_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A3A3_non_silent_snv" for="node" attr.name="TCGA-DD-A3A3_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-BC-A10Z_non_silent_snv" for="node" attr.name="TCGA-BC-A10Z_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV3_non_silent_snv" for="node" attr.name="TCGA-G3-AAV3_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-BC-A5W4_non_silent_snv" for="node" attr.name="TCGA-BC-A5W4_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AADK_non_silent_snv" for="node" attr.name="TCGA-DD-AADK_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-CC-A9FS_non_silent_snv" for="node" attr.name="TCGA-CC-A9FS_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H8_non_silent_snv" for="node" attr.name="TCGA-2Y-A9H8_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9H5_non_silent_snv" for="node" attr.name="TCGA-2Y-A9H5_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-BC-4072_non_silent_snv" for="node" attr.name="TCGA-BC-4072_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-T1-A6J8_non_silent_snv" for="node" attr.name="TCGA-T1-A6J8_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AADQ_non_silent_snv" for="node" attr.name="TCGA-DD-AADQ_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CH_non_silent_snv" for="node" attr.name="TCGA-G3-A3CH_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GT_non_silent_snv" for="node" attr.name="TCGA-2Y-A9GT_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-ED-A82E_non_silent_snv" for="node" attr.name="TCGA-ED-A82E_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-EP-A2KB_non_silent_snv" for="node" attr.name="TCGA-EP-A2KB_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-G3-AAV5_non_silent_snv" for="node" attr.name="TCGA-G3-AAV5_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AA3A_non_silent_snv" for="node" attr.name="TCGA-DD-AA3A_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-2Y-A9GZ_non_silent_snv" for="node" attr.name="TCGA-2Y-A9GZ_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A73C_non_silent_snv" for="node" attr.name="TCGA-DD-A73C_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AAW0_non_silent_snv" for="node" attr.name="TCGA-DD-AAW0_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EF_non_silent_snv" for="node" attr.name="TCGA-DD-A1EF_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-3K-AAZ8_non_silent_snv" for="node" attr.name="TCGA-3K-AAZ8_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AAEK_non_silent_snv" for="node" attr.name="TCGA-DD-AAEK_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-RC-A6M6_non_silent_snv" for="node" attr.name="TCGA-RC-A6M6_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-G3-A5SL_non_silent_snv" for="node" attr.name="TCGA-G3-A5SL_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A73F_non_silent_snv" for="node" attr.name="TCGA-DD-A73F_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-CC-5263_non_silent_snv" for="node" attr.name="TCGA-CC-5263_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A116_non_silent_snv" for="node" attr.name="TCGA-DD-A116_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-G3-A3CG_non_silent_snv" for="node" attr.name="TCGA-G3-A3CG_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-CC-5264_non_silent_snv" for="node" attr.name="TCGA-CC-5264_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AAE3_non_silent_snv" for="node" attr.name="TCGA-DD-AAE3_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-WX-AA44_non_silent_snv" for="node" attr.name="TCGA-WX-AA44_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-CC-A3M9_non_silent_snv" for="node" attr.name="TCGA-CC-A3M9_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-5C-A9VH_non_silent_snv" for="node" attr.name="TCGA-5C-A9VH_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-WJ-A86L_non_silent_snv" for="node" attr.name="TCGA-WJ-A86L_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-AACF_non_silent_snv" for="node" attr.name="TCGA-DD-AACF_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-CC-A5UD_non_silent_snv" for="node" attr.name="TCGA-CC-A5UD_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-DD-A1EB_non_silent_snv" for="node" attr.name="TCGA-DD-A1EB_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-XR-A8TC_non_silent_snv" for="node" attr.name="TCGA-XR-A8TC_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-KR-A7K0_non_silent_snv" for="node" attr.name="TCGA-KR-A7K0_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-UB-A7MF_non_silent_snv" for="node" attr.name="TCGA-UB-A7MF_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-ED-A66Y_non_silent_snv" for="node" attr.name="TCGA-ED-A66Y_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-ED-A7PY_non_silent_snv" for="node" attr.name="TCGA-ED-A7PY_non_silent_snv" attr.type="double"/>
+  <key id="v_TCGA-ZP-A9CV_non_silent_snv" for="node" attr.name="TCGA-ZP-A9CV_non_silent_snv" attr.type="double"/>
+  <key id="v_avg_non_silent_snv" for="node" attr.name="avg_non_silent_snv" attr.type="double"/>
+  <key id="v_cluster_avg_non_silent_snv" for="node" attr.name="cluster_avg_non_silent_snv" attr.type="double"/>
+  <key id="v_notcluster_avg_non_silent_snv" for="node" attr.name="notcluster_avg_non_silent_snv" attr.type="double"/>
+  <key id="v_sum_non_silent_snv" for="node" attr.name="sum_non_silent_snv" attr.type="double"/>
+  <key id="v_cluster_sum_non_silent_snv" for="node" attr.name="cluster_sum_non_silent_snv" attr.type="double"/>
+  <key id="v_notcluster_sum_non_silent_snv" for="node" attr.name="notcluster_sum_non_silent_snv" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">816</data>
+      <data key="v_entrez">816</data>
+      <data key="v_ensembl">ENSG00000058404</data>
+      <data key="v_symbol">CAMK2B</data>
+      <data key="v_id">n748</data>
+      <data key="v_TCGA-G3-A5SM_count">5.11318</data>
+      <data key="v_TCGA-DD-AAE9_count">9.75718</data>
+      <data key="v_TCGA-DD-AADB_count">2.25263</data>
+      <data key="v_TCGA-DD-A11D_count">502.662</data>
+      <data key="v_TCGA-LG-A9QC_count">15.4203</data>
+      <data key="v_TCGA-FV-A2QQ_count">0.928868</data>
+      <data key="v_TCGA-CC-A7IG_count">175.687</data>
+      <data key="v_TCGA-G3-A3CK_count">7.52803</data>
+      <data key="v_TCGA-DD-AAE4_count">53.041</data>
+      <data key="v_TCGA-UB-A7MD_count">4.91349</data>
+      <data key="v_TCGA-DD-A1EL_count">253.164</data>
+      <data key="v_TCGA-DD-AACW_count">1.93913</data>
+      <data key="v_TCGA-FV-A4ZP_count">27.3792</data>
+      <data key="v_TCGA-ED-A66X_count">33.5673</data>
+      <data key="v_TCGA-DD-A3A4_count">188.244</data>
+      <data key="v_TCGA-K7-AAU7_count">22.8027</data>
+      <data key="v_TCGA-DD-A3A6_count">1340.79</data>
+      <data key="v_TCGA-DD-AAEI_count">10.3744</data>
+      <data key="v_TCGA-DD-AACN_count">95.0663</data>
+      <data key="v_TCGA-BC-A3KF_count">902.374</data>
+      <data key="v_TCGA-DD-AADI_count">191.819</data>
+      <data key="v_TCGA-EP-A2KC_count">3.07321</data>
+      <data key="v_TCGA-DD-AACY_count">498.73</data>
+      <data key="v_TCGA-ES-A2HT_count">317.569</data>
+      <data key="v_TCGA-FV-A2QR_count">49.8636</data>
+      <data key="v_TCGA-BC-A112_count">8.76524</data>
+      <data key="v_TCGA-2Y-A9GS_count">0.682408</data>
+      <data key="v_TCGA-DD-A1EK_count">307.91</data>
+      <data key="v_TCGA-2V-A95S_count">366.55</data>
+      <data key="v_TCGA-DD-AAVS_count">13.5837</data>
+      <data key="v_TCGA-CC-A3MC_count">74.4704</data>
+      <data key="v_TCGA-BC-A10U_count">447.337</data>
+      <data key="v_TCGA-DD-A3A3_count">338.828</data>
+      <data key="v_TCGA-BC-A10Z_count">74.7595</data>
+      <data key="v_TCGA-G3-AAV3_count">13.7475</data>
+      <data key="v_TCGA-BC-A5W4_count">604.708</data>
+      <data key="v_TCGA-DD-AADK_count">419.036</data>
+      <data key="v_TCGA-CC-A9FS_count">125.469</data>
+      <data key="v_TCGA-2Y-A9H8_count">42.3047</data>
+      <data key="v_TCGA-2Y-A9H5_count">22.2939</data>
+      <data key="v_TCGA-BC-4072_count">597.501</data>
+      <data key="v_TCGA-T1-A6J8_count">30.4787</data>
+      <data key="v_TCGA-DD-AADQ_count">13.1777</data>
+      <data key="v_TCGA-G3-A3CH_count">698.584</data>
+      <data key="v_TCGA-2Y-A9GT_count">512.68</data>
+      <data key="v_TCGA-ED-A82E_count">10.9778</data>
+      <data key="v_TCGA-EP-A2KB_count">4.45585</data>
+      <data key="v_TCGA-G3-AAV5_count">13.1921</data>
+      <data key="v_TCGA-DD-AA3A_count">49.4202</data>
+      <data key="v_TCGA-2Y-A9GZ_count">7.90145</data>
+      <data key="v_TCGA-DD-A73C_count">6.07269</data>
+      <data key="v_TCGA-DD-AAW0_count">539.388</data>
+      <data key="v_TCGA-DD-A1EF_count">139.699</data>
+      <data key="v_TCGA-3K-AAZ8_count">6.29587</data>
+      <data key="v_TCGA-DD-AAEK_count">18.5122</data>
+      <data key="v_TCGA-RC-A6M6_count">35.402</data>
+      <data key="v_TCGA-G3-A5SL_count">57.6729</data>
+      <data key="v_TCGA-DD-A73F_count">702.532</data>
+      <data key="v_TCGA-CC-5263_count">116.964</data>
+      <data key="v_TCGA-DD-A116_count">1798.54</data>
+      <data key="v_TCGA-G3-A3CG_count">7.35652</data>
+      <data key="v_TCGA-CC-5264_count">2.44534</data>
+      <data key="v_TCGA-DD-AAE3_count">1322.5</data>
+      <data key="v_TCGA-WX-AA44_count">175.435</data>
+      <data key="v_TCGA-CC-A3M9_count">3.52654</data>
+      <data key="v_TCGA-5C-A9VH_count">29.9642</data>
+      <data key="v_TCGA-WJ-A86L_count">273.46</data>
+      <data key="v_TCGA-DD-AACF_count">8.0301</data>
+      <data key="v_TCGA-CC-A5UD_count">29.2967</data>
+      <data key="v_TCGA-DD-A1EB_count">1421.86</data>
+      <data key="v_TCGA-XR-A8TC_count">11.3454</data>
+      <data key="v_TCGA-KR-A7K0_count">7.99325</data>
+      <data key="v_TCGA-UB-A7MF_count">128.892</data>
+      <data key="v_TCGA-ED-A66Y_count">1338.13</data>
+      <data key="v_TCGA-ED-A7PY_count">208.478</data>
+      <data key="v_TCGA-ZP-A9CV_count">73.8761</data>
+      <data key="v_avg_count">236.533</data>
+      <data key="v_cluster_avg_count">32.9404</data>
+      <data key="v_notcluster_avg_count">244.85</data>
+      <data key="v_TCGA-G3-A5SM_log2fold_wrt_control">-6.39568</data>
+      <data key="v_TCGA-DD-AAE9_log2fold_wrt_control">-5.58037</data>
+      <data key="v_TCGA-DD-AADB_log2fold_wrt_control">-7.30599</data>
+      <data key="v_TCGA-DD-A11D_log2fold_wrt_control">-0.0498913</data>
+      <data key="v_TCGA-LG-A9QC_log2fold_wrt_control">-4.97019</data>
+      <data key="v_TCGA-FV-A2QQ_log2fold_wrt_control">-8.05984</data>
+      <data key="v_TCGA-CC-A7IG_log2fold_wrt_control">-1.54254</data>
+      <data key="v_TCGA-G3-A3CK_log2fold_wrt_control">-5.91539</data>
+      <data key="v_TCGA-DD-AAE4_log2fold_wrt_control">-3.25162</data>
+      <data key="v_TCGA-UB-A7MD_log2fold_wrt_control">-6.44359</data>
+      <data key="v_TCGA-DD-A1EL_log2fold_wrt_control">-7.28677</data>
+      <data key="v_TCGA-DD-AACW_log2fold_wrt_control">-7.45221</data>
+      <data key="v_TCGA-FV-A4ZP_log2fold_wrt_control">-4.18083</data>
+      <data key="v_TCGA-ED-A66X_log2fold_wrt_control">-3.89626</data>
+      <data key="v_TCGA-DD-A3A4_log2fold_wrt_control">-7.76866</data>
+      <data key="v_TCGA-K7-AAU7_log2fold_wrt_control">-4.43455</data>
+      <data key="v_TCGA-DD-A3A6_log2fold_wrt_control">1.48243</data>
+      <data key="v_TCGA-DD-AAEI_log2fold_wrt_control">-5.49988</data>
+      <data key="v_TCGA-DD-AACN_log2fold_wrt_control">-2.42164</data>
+      <data key="v_TCGA-BC-A3KF_log2fold_wrt_control">0.811581</data>
+      <data key="v_TCGA-DD-AADI_log2fold_wrt_control">-1.4165</data>
+      <data key="v_TCGA-EP-A2KC_log2fold_wrt_control">-6.98143</data>
+      <data key="v_TCGA-DD-AACY_log2fold_wrt_control">-0.0425931</data>
+      <data key="v_TCGA-ES-A2HT_log2fold_wrt_control">-0.480767</data>
+      <data key="v_TCGA-FV-A2QR_log2fold_wrt_control">-3.36122</data>
+      <data key="v_TCGA-BC-A112_log2fold_wrt_control">-5.71994</data>
+      <data key="v_TCGA-2Y-A9GS_log2fold_wrt_control">-8.25707</data>
+      <data key="v_TCGA-DD-A1EK_log2fold_wrt_control">-0.736556</data>
+      <data key="v_TCGA-2V-A95S_log2fold_wrt_control">-0.485803</data>
+      <data key="v_TCGA-DD-AAVS_log2fold_wrt_control">-5.14131</data>
+      <data key="v_TCGA-CC-A3MC_log2fold_wrt_control">-2.76976</data>
+      <data key="v_TCGA-BC-A10U_log2fold_wrt_control">-4.66748</data>
+      <data key="v_TCGA-DD-A3A3_log2fold_wrt_control">-0.255933</data>
+      <data key="v_TCGA-BC-A10Z_log2fold_wrt_control">-7.81802</data>
+      <data key="v_TCGA-G3-AAV3_log2fold_wrt_control">-5.1252</data>
+      <data key="v_TCGA-BC-A5W4_log2fold_wrt_control">0.234879</data>
+      <data key="v_TCGA-DD-AADK_log2fold_wrt_control">-0.29323</data>
+      <data key="v_TCGA-CC-A9FS_log2fold_wrt_control">-2.02496</data>
+      <data key="v_TCGA-2Y-A9H8_log2fold_wrt_control">-3.57115</data>
+      <data key="v_TCGA-2Y-A9H5_log2fold_wrt_control">-4.46572</data>
+      <data key="v_TCGA-BC-4072_log2fold_wrt_control">0.217611</data>
+      <data key="v_TCGA-T1-A6J8_log2fold_wrt_control">-4.03129</data>
+      <data key="v_TCGA-DD-AADQ_log2fold_wrt_control">-5.18205</data>
+      <data key="v_TCGA-G3-A3CH_log2fold_wrt_control">-0.711068</data>
+      <data key="v_TCGA-2Y-A9GT_log2fold_wrt_control">-0.00287439</data>
+      <data key="v_TCGA-ED-A82E_log2fold_wrt_control">-5.4253</data>
+      <data key="v_TCGA-EP-A2KB_log2fold_wrt_control">-6.5598</data>
+      <data key="v_TCGA-G3-AAV5_log2fold_wrt_control">-5.18058</data>
+      <data key="v_TCGA-DD-AA3A_log2fold_wrt_control">-3.35167</data>
+      <data key="v_TCGA-2Y-A9GZ_log2fold_wrt_control">-5.85356</data>
+      <data key="v_TCGA-DD-A73C_log2fold_wrt_control">-6.18534</data>
+      <data key="v_TCGA-DD-AAW0_log2fold_wrt_control">0.0702527</data>
+      <data key="v_TCGA-DD-A1EF_log2fold_wrt_control">-1.87113</data>
+      <data key="v_TCGA-3K-AAZ8_log2fold_wrt_control">-6.14052</data>
+      <data key="v_TCGA-DD-AAEK_log2fold_wrt_control">-4.7213</data>
+      <data key="v_TCGA-RC-A6M6_log2fold_wrt_control">-3.82165</data>
+      <data key="v_TCGA-G3-A5SL_log2fold_wrt_control">-3.13298</data>
+      <data key="v_TCGA-DD-A73F_log2fold_wrt_control">0.450872</data>
+      <data key="v_TCGA-CC-5263_log2fold_wrt_control">-2.1254</data>
+      <data key="v_TCGA-DD-A116_log2fold_wrt_control">2.58695</data>
+      <data key="v_TCGA-G3-A3CG_log2fold_wrt_control">-5.9447</data>
+      <data key="v_TCGA-CC-5264_log2fold_wrt_control">-7.22295</data>
+      <data key="v_TCGA-DD-AAE3_log2fold_wrt_control">1.36254</data>
+      <data key="v_TCGA-WX-AA44_log2fold_wrt_control">-1.54461</data>
+      <data key="v_TCGA-CC-A3M9_log2fold_wrt_control">-6.82919</data>
+      <data key="v_TCGA-5C-A9VH_log2fold_wrt_control">-4.05507</data>
+      <data key="v_TCGA-WJ-A86L_log2fold_wrt_control">-0.907149</data>
+      <data key="v_TCGA-DD-AACF_log2fold_wrt_control">-5.83286</data>
+      <data key="v_TCGA-CC-A5UD_log2fold_wrt_control">-4.08651</data>
+      <data key="v_TCGA-DD-A1EB_log2fold_wrt_control">2.0257</data>
+      <data key="v_TCGA-XR-A8TC_log2fold_wrt_control">-5.3817</data>
+      <data key="v_TCGA-KR-A7K0_log2fold_wrt_control">-5.83876</data>
+      <data key="v_TCGA-UB-A7MF_log2fold_wrt_control">-1.98643</data>
+      <data key="v_TCGA-ED-A66Y_log2fold_wrt_control">1.37948</data>
+      <data key="v_TCGA-ED-A7PY_log2fold_wrt_control">-1.29694</data>
+      <data key="v_TCGA-ZP-A9CV_log2fold_wrt_control">-2.78117</data>
+      <data key="v_avg_log2fold_wrt_control">-3.46648</data>
+      <data key="v_cluster_avg_log2fold_wrt_control">-3.92647</data>
+      <data key="v_notcluster_avg_log2fold_wrt_control">-3.45639</data>
+      <data key="v_avg_non_silent_snv">0</data>
+      <data key="v_cluster_avg_non_silent_snv">0</data>
+      <data key="v_notcluster_avg_non_silent_snv">0</data>
+      <data key="v_sum_non_silent_snv">0</data>
+      <data key="v_cluster_sum_non_silent_snv">0</data>
+      <data key="v_notcluster_sum_non_silent_snv">0</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">3725</data>
+      <data key="v_entrez">3725</data>
+      <data key="v_ensembl">ENSG00000177606</data>
+      <data key="v_symbol">JUN</data>
+      <data key="v_id">n1601</data>
+      <data key="v_TCGA-G3-A5SM_count">3801.28</data>
+      <data key="v_TCGA-DD-AAE9_count">3844.33</data>
+      <data key="v_TCGA-DD-AADB_count">3352.67</data>
+      <data key="v_TCGA-DD-A11D_count">19634.7</data>
+      <data key="v_TCGA-LG-A9QC_count">7569.45</data>
+      <data key="v_TCGA-FV-A2QQ_count">4034.07</data>
+      <data key="v_TCGA-CC-A7IG_count">7148.58</data>
+      <data key="v_TCGA-G3-A3CK_count">2636.87</data>
+      <data key="v_TCGA-DD-AAE4_count">7734.84</data>
+      <data key="v_TCGA-UB-A7MD_count">15575.8</data>
+      <data key="v_TCGA-DD-A1EL_count">10314.4</data>
+      <data key="v_TCGA-DD-AACW_count">2206.73</data>
+      <data key="v_TCGA-FV-A4ZP_count">915.494</data>
+      <data key="v_TCGA-ED-A66X_count">4915.9</data>
+      <data key="v_TCGA-DD-A3A4_count">7626.77</data>
+      <data key="v_TCGA-K7-AAU7_count">7811.19</data>
+      <data key="v_TCGA-DD-A3A6_count">28960.7</data>
+      <data key="v_TCGA-DD-AAEI_count">12888.9</data>
+      <data key="v_TCGA-DD-AACN_count">22085.6</data>
+      <data key="v_TCGA-BC-A3KF_count">2705.38</data>
+      <data key="v_TCGA-DD-AADI_count">2659.74</data>
+      <data key="v_TCGA-EP-A2KC_count">7157.51</data>
+      <data key="v_TCGA-DD-AACY_count">11935.2</data>
+      <data key="v_TCGA-ES-A2HT_count">7066.86</data>
+      <data key="v_TCGA-FV-A2QR_count">23509.4</data>
+      <data key="v_TCGA-BC-A112_count">3309.61</data>
+      <data key="v_TCGA-2Y-A9GS_count">4875.12</data>
+      <data key="v_TCGA-DD-A1EK_count">10977.8</data>
+      <data key="v_TCGA-2V-A95S_count">2684.15</data>
+      <data key="v_TCGA-DD-AAVS_count">3759.97</data>
+      <data key="v_TCGA-CC-A3MC_count">7215.14</data>
+      <data key="v_TCGA-BC-A10U_count">18863.1</data>
+      <data key="v_TCGA-DD-A3A3_count">21238.1</data>
+      <data key="v_TCGA-BC-A10Z_count">13810.6</data>
+      <data key="v_TCGA-G3-AAV3_count">2985.03</data>
+      <data key="v_TCGA-BC-A5W4_count">6444.64</data>
+      <data key="v_TCGA-DD-AADK_count">3920.84</data>
+      <data key="v_TCGA-CC-A9FS_count">5394.22</data>
+      <data key="v_TCGA-2Y-A9H8_count">4103.56</data>
+      <data key="v_TCGA-2Y-A9H5_count">8579.59</data>
+      <data key="v_TCGA-BC-4072_count">1659.73</data>
+      <data key="v_TCGA-T1-A6J8_count">8519.76</data>
+      <data key="v_TCGA-DD-AADQ_count">5803.46</data>
+      <data key="v_TCGA-G3-A3CH_count">3162.4</data>
+      <data key="v_TCGA-2Y-A9GT_count">3361.75</data>
+      <data key="v_TCGA-ED-A82E_count">2111.59</data>
+      <data key="v_TCGA-EP-A2KB_count">12158.5</data>
+      <data key="v_TCGA-G3-AAV5_count">5833.85</data>
+      <data key="v_TCGA-DD-AA3A_count">8944.24</data>
+      <data key="v_TCGA-2Y-A9GZ_count">8172.08</data>
+      <data key="v_TCGA-DD-A73C_count">6250.53</data>
+      <data key="v_TCGA-DD-AAW0_count">5743.48</data>
+      <data key="v_TCGA-DD-A1EF_count">7810.66</data>
+      <data key="v_TCGA-3K-AAZ8_count">3615.63</data>
+      <data key="v_TCGA-DD-AAEK_count">3626.7</data>
+      <data key="v_TCGA-RC-A6M6_count">1396.07</data>
+      <data key="v_TCGA-G3-A5SL_count">5276.16</data>
+      <data key="v_TCGA-DD-A73F_count">2635.92</data>
+      <data key="v_TCGA-CC-5263_count">8068.92</data>
+      <data key="v_TCGA-DD-A116_count">6128.67</data>
+      <data key="v_TCGA-G3-A3CG_count">1998.52</data>
+      <data key="v_TCGA-CC-5264_count">5444.32</data>
+      <data key="v_TCGA-DD-AAE3_count">9429.13</data>
+      <data key="v_TCGA-WX-AA44_count">4797.43</data>
+      <data key="v_TCGA-CC-A3M9_count">5683.01</data>
+      <data key="v_TCGA-5C-A9VH_count">5672.89</data>
+      <data key="v_TCGA-WJ-A86L_count">3877.91</data>
+      <data key="v_TCGA-DD-AACF_count">1812.79</data>
+      <data key="v_TCGA-CC-A5UD_count">4945.88</data>
+      <data key="v_TCGA-DD-A1EB_count">17444.2</data>
+      <data key="v_TCGA-XR-A8TC_count">3029.21</data>
+      <data key="v_TCGA-KR-A7K0_count">6685.36</data>
+      <data key="v_TCGA-UB-A7MF_count">5094.33</data>
+      <data key="v_TCGA-ED-A66Y_count">2525.05</data>
+      <data key="v_TCGA-ED-A7PY_count">2707.23</data>
+      <data key="v_TCGA-ZP-A9CV_count">3781.29</data>
+      <data key="v_avg_count">7124.51</data>
+      <data key="v_cluster_avg_count">1604.43</data>
+      <data key="v_notcluster_avg_count">7303.55</data>
+      <data key="v_TCGA-G3-A5SM_log2fold_wrt_control">-2.07746</data>
+      <data key="v_TCGA-DD-AAE9_log2fold_wrt_control">-2.06122</data>
+      <data key="v_TCGA-DD-AADB_log2fold_wrt_control">-2.25859</data>
+      <data key="v_TCGA-DD-A11D_log2fold_wrt_control">-0.757875</data>
+      <data key="v_TCGA-LG-A9QC_log2fold_wrt_control">-1.08395</data>
+      <data key="v_TCGA-FV-A2QQ_log2fold_wrt_control">-1.99173</data>
+      <data key="v_TCGA-CC-A7IG_log2fold_wrt_control">-1.16647</data>
+      <data key="v_TCGA-G3-A3CK_log2fold_wrt_control">-2.60496</data>
+      <data key="v_TCGA-DD-AAE4_log2fold_wrt_control">-1.05277</data>
+      <data key="v_TCGA-UB-A7MD_log2fold_wrt_control">-0.0430035</data>
+      <data key="v_TCGA-DD-A1EL_log2fold_wrt_control">-1.82902</data>
+      <data key="v_TCGA-DD-AACW_log2fold_wrt_control">-2.86177</data>
+      <data key="v_TCGA-FV-A4ZP_log2fold_wrt_control">-4.13013</data>
+      <data key="v_TCGA-ED-A66X_log2fold_wrt_control">-1.70658</data>
+      <data key="v_TCGA-DD-A3A4_log2fold_wrt_control">-3.21706</data>
+      <data key="v_TCGA-K7-AAU7_log2fold_wrt_control">-1.0386</data>
+      <data key="v_TCGA-DD-A3A6_log2fold_wrt_control">-0.0852072</data>
+      <data key="v_TCGA-DD-AAEI_log2fold_wrt_control">-0.316163</data>
+      <data key="v_TCGA-DD-AACN_log2fold_wrt_control">0.460774</data>
+      <data key="v_TCGA-BC-A3KF_log2fold_wrt_control">-2.56797</data>
+      <data key="v_TCGA-DD-AADI_log2fold_wrt_control">-2.5925</data>
+      <data key="v_TCGA-EP-A2KC_log2fold_wrt_control">-1.16467</data>
+      <data key="v_TCGA-DD-AACY_log2fold_wrt_control">-0.427059</data>
+      <data key="v_TCGA-ES-A2HT_log2fold_wrt_control">-1.98691</data>
+      <data key="v_TCGA-FV-A2QR_log2fold_wrt_control">-1.52806</data>
+      <data key="v_TCGA-BC-A112_log2fold_wrt_control">-2.27723</data>
+      <data key="v_TCGA-2Y-A9GS_log2fold_wrt_control">-1.71859</data>
+      <data key="v_TCGA-DD-A1EK_log2fold_wrt_control">-0.547682</data>
+      <data key="v_TCGA-2V-A95S_log2fold_wrt_control">-2.57933</data>
+      <data key="v_TCGA-DD-AAVS_log2fold_wrt_control">-2.09322</data>
+      <data key="v_TCGA-CC-A3MC_log2fold_wrt_control">-1.1531</data>
+      <data key="v_TCGA-BC-A10U_log2fold_wrt_control">-0.626801</data>
+      <data key="v_TCGA-DD-A3A3_log2fold_wrt_control">-2.46338</data>
+      <data key="v_TCGA-BC-A10Z_log2fold_wrt_control">-1.71258</data>
+      <data key="v_TCGA-G3-AAV3_log2fold_wrt_control">-2.4261</data>
+      <data key="v_TCGA-BC-A5W4_log2fold_wrt_control">-1.316</data>
+      <data key="v_TCGA-DD-AADK_log2fold_wrt_control">-2.0328</data>
+      <data key="v_TCGA-CC-A9FS_log2fold_wrt_control">-1.57265</data>
+      <data key="v_TCGA-2Y-A9H8_log2fold_wrt_control">-1.9671</data>
+      <data key="v_TCGA-2Y-A9H5_log2fold_wrt_control">-0.903251</data>
+      <data key="v_TCGA-BC-4072_log2fold_wrt_control">-3.27251</data>
+      <data key="v_TCGA-T1-A6J8_log2fold_wrt_control">-0.913346</data>
+      <data key="v_TCGA-DD-AADQ_log2fold_wrt_control">-1.46717</data>
+      <data key="v_TCGA-G3-A3CH_log2fold_wrt_control">-2.47765</data>
+      <data key="v_TCGA-2Y-A9GT_log2fold_wrt_control">-2.25469</data>
+      <data key="v_TCGA-ED-A82E_log2fold_wrt_control">-2.92532</data>
+      <data key="v_TCGA-EP-A2KB_log2fold_wrt_control">-0.400313</data>
+      <data key="v_TCGA-G3-AAV5_log2fold_wrt_control">-1.45963</data>
+      <data key="v_TCGA-DD-AA3A_log2fold_wrt_control">-0.843208</data>
+      <data key="v_TCGA-2Y-A9GZ_log2fold_wrt_control">-0.973449</data>
+      <data key="v_TCGA-DD-A73C_log2fold_wrt_control">-1.36012</data>
+      <data key="v_TCGA-DD-AAW0_log2fold_wrt_control">-1.48215</data>
+      <data key="v_TCGA-DD-A1EF_log2fold_wrt_control">-1.0387</data>
+      <data key="v_TCGA-3K-AAZ8_log2fold_wrt_control">-2.14968</data>
+      <data key="v_TCGA-DD-AAEK_log2fold_wrt_control">-2.14527</data>
+      <data key="v_TCGA-RC-A6M6_log2fold_wrt_control">-3.52192</data>
+      <data key="v_TCGA-G3-A5SL_log2fold_wrt_control">-1.60456</data>
+      <data key="v_TCGA-DD-A73F_log2fold_wrt_control">-2.60547</data>
+      <data key="v_TCGA-CC-5263_log2fold_wrt_control">-0.991774</data>
+      <data key="v_TCGA-DD-A116_log2fold_wrt_control">-2.1359</data>
+      <data key="v_TCGA-G3-A3CG_log2fold_wrt_control">-3.00467</data>
+      <data key="v_TCGA-CC-5264_log2fold_wrt_control">-1.55931</data>
+      <data key="v_TCGA-DD-AAE3_log2fold_wrt_control">-0.76705</data>
+      <data key="v_TCGA-WX-AA44_log2fold_wrt_control">-1.74177</data>
+      <data key="v_TCGA-CC-A3M9_log2fold_wrt_control">-1.49742</data>
+      <data key="v_TCGA-5C-A9VH_log2fold_wrt_control">-1.49999</data>
+      <data key="v_TCGA-WJ-A86L_log2fold_wrt_control">-2.04868</data>
+      <data key="v_TCGA-DD-AACF_log2fold_wrt_control">-3.14532</data>
+      <data key="v_TCGA-CC-A5UD_log2fold_wrt_control">-1.69781</data>
+      <data key="v_TCGA-DD-A1EB_log2fold_wrt_control">-1.02099</data>
+      <data key="v_TCGA-XR-A8TC_log2fold_wrt_control">-2.40491</data>
+      <data key="v_TCGA-KR-A7K0_log2fold_wrt_control">-1.26311</data>
+      <data key="v_TCGA-UB-A7MF_log2fold_wrt_control">-1.65515</data>
+      <data key="v_TCGA-ED-A66Y_log2fold_wrt_control">-2.66745</data>
+      <data key="v_TCGA-ED-A7PY_log2fold_wrt_control">-2.56698</data>
+      <data key="v_TCGA-ZP-A9CV_log2fold_wrt_control">-2.08507</data>
+      <data key="v_avg_log2fold_wrt_control">-1.73852</data>
+      <data key="v_cluster_avg_log2fold_wrt_control">-3.33362</data>
+      <data key="v_notcluster_avg_log2fold_wrt_control">-1.70136</data>
+      <data key="v_TCGA-G3-A5SM_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE9_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADB_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A11D_non_silent_snv">0</data>
+      <data key="v_TCGA-LG-A9QC_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QQ_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A7IG_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CK_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AAE4_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MD_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EL_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACW_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A4ZP_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A66X_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A4_non_silent_snv">0</data>
+      <data key="v_TCGA-K7-AAU7_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A6_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAEI_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACN_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A3KF_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADI_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KC_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACY_non_silent_snv">0</data>
+      <data key="v_TCGA-ES-A2HT_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QR_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A112_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GS_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EK_non_silent_snv">0</data>
+      <data key="v_TCGA-2V-A95S_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAVS_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A3MC_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10U_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10Z_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A5W4_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADK_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A9FS_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9H8_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9H5_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-4072_non_silent_snv">0</data>
+      <data key="v_TCGA-T1-A6J8_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADQ_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CH_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GT_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A82E_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KB_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV5_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AA3A_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GZ_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73C_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAW0_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EF_non_silent_snv">0</data>
+      <data key="v_TCGA-3K-AAZ8_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAEK_non_silent_snv">0</data>
+      <data key="v_TCGA-RC-A6M6_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A5SL_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73F_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5263_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A116_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CG_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5264_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE3_non_silent_snv">0</data>
+      <data key="v_TCGA-WX-AA44_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A3M9_non_silent_snv">0</data>
+      <data key="v_TCGA-5C-A9VH_non_silent_snv">0</data>
+      <data key="v_TCGA-WJ-A86L_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACF_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A5UD_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EB_non_silent_snv">0</data>
+      <data key="v_TCGA-XR-A8TC_non_silent_snv">1</data>
+      <data key="v_TCGA-KR-A7K0_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MF_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A66Y_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A7PY_non_silent_snv">0</data>
+      <data key="v_TCGA-ZP-A9CV_non_silent_snv">0</data>
+      <data key="v_avg_non_silent_snv">0.0263158</data>
+      <data key="v_cluster_avg_non_silent_snv">0</data>
+      <data key="v_notcluster_avg_non_silent_snv">0.0277778</data>
+      <data key="v_sum_non_silent_snv">2</data>
+      <data key="v_cluster_sum_non_silent_snv">0</data>
+      <data key="v_notcluster_sum_non_silent_snv">2</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">7057</data>
+      <data key="v_entrez">7057</data>
+      <data key="v_ensembl">ENSG00000137801</data>
+      <data key="v_symbol">THBS1</data>
+      <data key="v_id">n2195</data>
+      <data key="v_TCGA-G3-A5SM_count">3367.39</data>
+      <data key="v_TCGA-DD-AAE9_count">2534.91</data>
+      <data key="v_TCGA-DD-AADB_count">13982.1</data>
+      <data key="v_TCGA-DD-A11D_count">8157.45</data>
+      <data key="v_TCGA-LG-A9QC_count">8921.62</data>
+      <data key="v_TCGA-FV-A2QQ_count">951.161</data>
+      <data key="v_TCGA-CC-A7IG_count">2532.43</data>
+      <data key="v_TCGA-G3-A3CK_count">5340.8</data>
+      <data key="v_TCGA-DD-AAE4_count">305.443</data>
+      <data key="v_TCGA-UB-A7MD_count">2832.63</data>
+      <data key="v_TCGA-DD-A1EL_count">34933.5</data>
+      <data key="v_TCGA-DD-AACW_count">5153.23</data>
+      <data key="v_TCGA-FV-A4ZP_count">2893.64</data>
+      <data key="v_TCGA-ED-A66X_count">14044.1</data>
+      <data key="v_TCGA-DD-A3A4_count">6372.19</data>
+      <data key="v_TCGA-K7-AAU7_count">16348.7</data>
+      <data key="v_TCGA-DD-A3A6_count">9496.73</data>
+      <data key="v_TCGA-DD-AAEI_count">1719.55</data>
+      <data key="v_TCGA-DD-AACN_count">23525.5</data>
+      <data key="v_TCGA-BC-A3KF_count">440.126</data>
+      <data key="v_TCGA-DD-AADI_count">5392.36</data>
+      <data key="v_TCGA-EP-A2KC_count">3250.69</data>
+      <data key="v_TCGA-DD-AACY_count">495.176</data>
+      <data key="v_TCGA-ES-A2HT_count">5248.19</data>
+      <data key="v_TCGA-FV-A2QR_count">26388.6</data>
+      <data key="v_TCGA-BC-A112_count">3290.62</data>
+      <data key="v_TCGA-2Y-A9GS_count">5569.13</data>
+      <data key="v_TCGA-DD-A1EK_count">2138.41</data>
+      <data key="v_TCGA-2V-A95S_count">14197.8</data>
+      <data key="v_TCGA-DD-AAVS_count">6271.59</data>
+      <data key="v_TCGA-CC-A3MC_count">1540.31</data>
+      <data key="v_TCGA-BC-A10U_count">19052.1</data>
+      <data key="v_TCGA-DD-A3A3_count">8559.01</data>
+      <data key="v_TCGA-BC-A10Z_count">7508.34</data>
+      <data key="v_TCGA-G3-AAV3_count">2869.55</data>
+      <data key="v_TCGA-BC-A5W4_count">48.8913</data>
+      <data key="v_TCGA-DD-AADK_count">3992.07</data>
+      <data key="v_TCGA-CC-A9FS_count">1381.08</data>
+      <data key="v_TCGA-2Y-A9H8_count">1251.84</data>
+      <data key="v_TCGA-2Y-A9H5_count">11525.1</data>
+      <data key="v_TCGA-BC-4072_count">4525.52</data>
+      <data key="v_TCGA-T1-A6J8_count">7751.12</data>
+      <data key="v_TCGA-DD-AADQ_count">968.561</data>
+      <data key="v_TCGA-G3-A3CH_count">5984.93</data>
+      <data key="v_TCGA-2Y-A9GT_count">1323.78</data>
+      <data key="v_TCGA-ED-A82E_count">2599.55</data>
+      <data key="v_TCGA-EP-A2KB_count">14045.6</data>
+      <data key="v_TCGA-G3-AAV5_count">7607.46</data>
+      <data key="v_TCGA-DD-AA3A_count">4420.64</data>
+      <data key="v_TCGA-2Y-A9GZ_count">1222.75</data>
+      <data key="v_TCGA-DD-A73C_count">871.865</data>
+      <data key="v_TCGA-DD-AAW0_count">17267.1</data>
+      <data key="v_TCGA-DD-A1EF_count">5079.05</data>
+      <data key="v_TCGA-3K-AAZ8_count">1796.12</data>
+      <data key="v_TCGA-DD-AAEK_count">10469.5</data>
+      <data key="v_TCGA-RC-A6M6_count">1405.31</data>
+      <data key="v_TCGA-G3-A5SL_count">7148.73</data>
+      <data key="v_TCGA-DD-A73F_count">946.228</data>
+      <data key="v_TCGA-CC-5263_count">4268.39</data>
+      <data key="v_TCGA-DD-A116_count">2129.41</data>
+      <data key="v_TCGA-G3-A3CG_count">2311.17</data>
+      <data key="v_TCGA-CC-5264_count">637.746</data>
+      <data key="v_TCGA-DD-AAE3_count">3241.21</data>
+      <data key="v_TCGA-WX-AA44_count">6515.37</data>
+      <data key="v_TCGA-CC-A3M9_count">3463.65</data>
+      <data key="v_TCGA-5C-A9VH_count">6525.42</data>
+      <data key="v_TCGA-WJ-A86L_count">291.45</data>
+      <data key="v_TCGA-DD-AACF_count">1203.51</data>
+      <data key="v_TCGA-CC-A5UD_count">2739.61</data>
+      <data key="v_TCGA-DD-A1EB_count">9708.44</data>
+      <data key="v_TCGA-XR-A8TC_count">2555.14</data>
+      <data key="v_TCGA-KR-A7K0_count">7665.53</data>
+      <data key="v_TCGA-UB-A7MF_count">572.776</data>
+      <data key="v_TCGA-ED-A66Y_count">3507.53</data>
+      <data key="v_TCGA-ED-A7PY_count">1935.87</data>
+      <data key="v_TCGA-ZP-A9CV_count">2719.81</data>
+      <data key="v_avg_count">5937.5</data>
+      <data key="v_cluster_avg_count">966.756</data>
+      <data key="v_notcluster_avg_count">6119.42</data>
+      <data key="v_TCGA-G3-A5SM_log2fold_wrt_control">-1.82503</data>
+      <data key="v_TCGA-DD-AAE9_log2fold_wrt_control">-2.23458</data>
+      <data key="v_TCGA-DD-AADB_log2fold_wrt_control">0.228524</data>
+      <data key="v_TCGA-DD-A11D_log2fold_wrt_control">-2.75616</data>
+      <data key="v_TCGA-LG-A9QC_log2fold_wrt_control">-0.419619</data>
+      <data key="v_TCGA-FV-A2QQ_log2fold_wrt_control">-3.64781</data>
+      <data key="v_TCGA-CC-A7IG_log2fold_wrt_control">-2.23599</data>
+      <data key="v_TCGA-G3-A3CK_log2fold_wrt_control">-1.15976</data>
+      <data key="v_TCGA-DD-AAE4_log2fold_wrt_control">-5.28339</data>
+      <data key="v_TCGA-UB-A7MD_log2fold_wrt_control">-2.07444</data>
+      <data key="v_TCGA-DD-A1EL_log2fold_wrt_control">-2.45692</data>
+      <data key="v_TCGA-DD-AACW_log2fold_wrt_control">-1.21133</data>
+      <data key="v_TCGA-FV-A4ZP_log2fold_wrt_control">-2.0437</data>
+      <data key="v_TCGA-ED-A66X_log2fold_wrt_control">0.234914</data>
+      <data key="v_TCGA-DD-A3A4_log2fold_wrt_control">-4.59225</data>
+      <data key="v_TCGA-K7-AAU7_log2fold_wrt_control">0.454106</data>
+      <data key="v_TCGA-DD-A3A6_log2fold_wrt_control">-0.197344</data>
+      <data key="v_TCGA-DD-AAEI_log2fold_wrt_control">-2.79421</data>
+      <data key="v_TCGA-DD-AACN_log2fold_wrt_control">0.979126</data>
+      <data key="v_TCGA-BC-A3KF_log2fold_wrt_control">-4.75782</data>
+      <data key="v_TCGA-DD-AADI_log2fold_wrt_control">-1.1459</data>
+      <data key="v_TCGA-EP-A2KC_log2fold_wrt_control">-1.8759</data>
+      <data key="v_TCGA-DD-AACY_log2fold_wrt_control">-4.58816</data>
+      <data key="v_TCGA-ES-A2HT_log2fold_wrt_control">-3.05912</data>
+      <data key="v_TCGA-FV-A2QR_log2fold_wrt_control">-2.78771</data>
+      <data key="v_TCGA-BC-A112_log2fold_wrt_control">-1.85829</data>
+      <data key="v_TCGA-2Y-A9GS_log2fold_wrt_control">-1.09938</data>
+      <data key="v_TCGA-DD-A1EK_log2fold_wrt_control">-2.47987</data>
+      <data key="v_TCGA-2V-A95S_log2fold_wrt_control">0.250607</data>
+      <data key="v_TCGA-DD-AAVS_log2fold_wrt_control">-0.928024</data>
+      <data key="v_TCGA-CC-A3MC_log2fold_wrt_control">-2.95293</data>
+      <data key="v_TCGA-BC-A10U_log2fold_wrt_control">-1.53758</data>
+      <data key="v_TCGA-DD-A3A3_log2fold_wrt_control">-2.54901</data>
+      <data key="v_TCGA-BC-A10Z_log2fold_wrt_control">-4.99948</data>
+      <data key="v_TCGA-G3-AAV3_log2fold_wrt_control">-2.05576</data>
+      <data key="v_TCGA-BC-A5W4_log2fold_wrt_control">-7.90215</data>
+      <data key="v_TCGA-DD-AADK_log2fold_wrt_control">-1.57959</data>
+      <data key="v_TCGA-CC-A9FS_log2fold_wrt_control">-3.11024</data>
+      <data key="v_TCGA-2Y-A9H8_log2fold_wrt_control">-3.25189</data>
+      <data key="v_TCGA-2Y-A9H5_log2fold_wrt_control">-0.0502578</data>
+      <data key="v_TCGA-BC-4072_log2fold_wrt_control">-1.39868</data>
+      <data key="v_TCGA-T1-A6J8_log2fold_wrt_control">-0.622495</data>
+      <data key="v_TCGA-DD-AADQ_log2fold_wrt_control">-3.62168</data>
+      <data key="v_TCGA-G3-A3CH_log2fold_wrt_control">-1.53419</data>
+      <data key="v_TCGA-2Y-A9GT_log2fold_wrt_control">-3.17133</data>
+      <data key="v_TCGA-ED-A82E_log2fold_wrt_control">-2.19827</data>
+      <data key="v_TCGA-EP-A2KB_log2fold_wrt_control">0.235061</data>
+      <data key="v_TCGA-G3-AAV5_log2fold_wrt_control">-0.649482</data>
+      <data key="v_TCGA-DD-AA3A_log2fold_wrt_control">-1.4325</data>
+      <data key="v_TCGA-2Y-A9GZ_log2fold_wrt_control">-3.28578</data>
+      <data key="v_TCGA-DD-A73C_log2fold_wrt_control">-3.77326</data>
+      <data key="v_TCGA-DD-AAW0_log2fold_wrt_control">0.532949</data>
+      <data key="v_TCGA-DD-A1EF_log2fold_wrt_control">-1.23224</data>
+      <data key="v_TCGA-3K-AAZ8_log2fold_wrt_control">-2.7314</data>
+      <data key="v_TCGA-DD-AAEK_log2fold_wrt_control">-0.188831</data>
+      <data key="v_TCGA-RC-A6M6_log2fold_wrt_control">-3.08517</data>
+      <data key="v_TCGA-G3-A5SL_log2fold_wrt_control">-0.739197</data>
+      <data key="v_TCGA-DD-A73F_log2fold_wrt_control">-3.6553</data>
+      <data key="v_TCGA-CC-5263_log2fold_wrt_control">-1.48306</data>
+      <data key="v_TCGA-DD-A116_log2fold_wrt_control">-3.44564</data>
+      <data key="v_TCGA-G3-A3CG_log2fold_wrt_control">-2.36784</data>
+      <data key="v_TCGA-CC-5264_log2fold_wrt_control">-4.22377</data>
+      <data key="v_TCGA-DD-AAE3_log2fold_wrt_control">-1.88011</data>
+      <data key="v_TCGA-WX-AA44_log2fold_wrt_control">-0.873018</data>
+      <data key="v_TCGA-CC-A3M9_log2fold_wrt_control">-1.78438</data>
+      <data key="v_TCGA-5C-A9VH_log2fold_wrt_control">-0.870794</data>
+      <data key="v_TCGA-WJ-A86L_log2fold_wrt_control">-5.35082</data>
+      <data key="v_TCGA-DD-AACF_log2fold_wrt_control">-3.30864</data>
+      <data key="v_TCGA-CC-A5UD_log2fold_wrt_control">-2.12259</data>
+      <data key="v_TCGA-DD-A1EB_log2fold_wrt_control">-2.76303</data>
+      <data key="v_TCGA-XR-A8TC_log2fold_wrt_control">-2.22312</data>
+      <data key="v_TCGA-KR-A7K0_log2fold_wrt_control">-0.638513</data>
+      <data key="v_TCGA-UB-A7MF_log2fold_wrt_control">-4.37853</data>
+      <data key="v_TCGA-ED-A66Y_log2fold_wrt_control">-1.76622</data>
+      <data key="v_TCGA-ED-A7PY_log2fold_wrt_control">-2.62336</data>
+      <data key="v_TCGA-ZP-A9CV_log2fold_wrt_control">-2.13305</data>
+      <data key="v_avg_log2fold_wrt_control">-2.15977</data>
+      <data key="v_cluster_avg_log2fold_wrt_control">-3.91488</data>
+      <data key="v_notcluster_avg_log2fold_wrt_control">-2.10799</data>
+      <data key="v_avg_non_silent_snv">0</data>
+      <data key="v_cluster_avg_non_silent_snv">0</data>
+      <data key="v_notcluster_avg_non_silent_snv">0</data>
+      <data key="v_sum_non_silent_snv">0</data>
+      <data key="v_cluster_sum_non_silent_snv">0</data>
+      <data key="v_notcluster_sum_non_silent_snv">0</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">2353</data>
+      <data key="v_entrez">2353</data>
+      <data key="v_ensembl">ENSG00000170345</data>
+      <data key="v_symbol">FOS</data>
+      <data key="v_id">n3339</data>
+      <data key="v_TCGA-G3-A5SM_count">1856.81</data>
+      <data key="v_TCGA-DD-AAE9_count">199.046</data>
+      <data key="v_TCGA-DD-AADB_count">313.116</data>
+      <data key="v_TCGA-DD-A11D_count">15949.1</data>
+      <data key="v_TCGA-LG-A9QC_count">904.016</data>
+      <data key="v_TCGA-FV-A2QQ_count">1837.3</data>
+      <data key="v_TCGA-CC-A7IG_count">1566.94</data>
+      <data key="v_TCGA-G3-A3CK_count">972.485</data>
+      <data key="v_TCGA-DD-AAE4_count">4943.79</data>
+      <data key="v_TCGA-UB-A7MD_count">9110.43</data>
+      <data key="v_TCGA-DD-A1EL_count">3411.52</data>
+      <data key="v_TCGA-DD-AACW_count">189.065</data>
+      <data key="v_TCGA-FV-A4ZP_count">465.447</data>
+      <data key="v_TCGA-ED-A66X_count">1671.51</data>
+      <data key="v_TCGA-DD-A3A4_count">1804.96</data>
+      <data key="v_TCGA-K7-AAU7_count">10831.3</data>
+      <data key="v_TCGA-DD-A3A6_count">20353.2</data>
+      <data key="v_TCGA-DD-AAEI_count">881.822</data>
+      <data key="v_TCGA-DD-AACN_count">5265.81</data>
+      <data key="v_TCGA-BC-A3KF_count">626.422</data>
+      <data key="v_TCGA-DD-AADI_count">1656.71</data>
+      <data key="v_TCGA-EP-A2KC_count">1779.39</data>
+      <data key="v_TCGA-DD-AACY_count">2113.38</data>
+      <data key="v_TCGA-ES-A2HT_count">7736.83</data>
+      <data key="v_TCGA-FV-A2QR_count">25403.1</data>
+      <data key="v_TCGA-BC-A112_count">785.95</data>
+      <data key="v_TCGA-2Y-A9GS_count">1175.11</data>
+      <data key="v_TCGA-DD-A1EK_count">2190.6</data>
+      <data key="v_TCGA-2V-A95S_count">1568.37</data>
+      <data key="v_TCGA-DD-AAVS_count">514.143</data>
+      <data key="v_TCGA-CC-A3MC_count">2668.68</data>
+      <data key="v_TCGA-BC-A10U_count">13139.1</data>
+      <data key="v_TCGA-DD-A3A3_count">15763.4</data>
+      <data key="v_TCGA-BC-A10Z_count">10020.6</data>
+      <data key="v_TCGA-G3-AAV3_count">429.837</data>
+      <data key="v_TCGA-BC-A5W4_count">705.064</data>
+      <data key="v_TCGA-DD-AADK_count">1077.43</data>
+      <data key="v_TCGA-CC-A9FS_count">2787.26</data>
+      <data key="v_TCGA-2Y-A9H8_count">637.455</data>
+      <data key="v_TCGA-2Y-A9H5_count">2941.91</data>
+      <data key="v_TCGA-BC-4072_count">1037.79</data>
+      <data key="v_TCGA-T1-A6J8_count">765.778</data>
+      <data key="v_TCGA-DD-AADQ_count">192.394</data>
+      <data key="v_TCGA-G3-A3CH_count">3583.19</data>
+      <data key="v_TCGA-2Y-A9GT_count">827.684</data>
+      <data key="v_TCGA-ED-A82E_count">403.435</data>
+      <data key="v_TCGA-EP-A2KB_count">8767.62</data>
+      <data key="v_TCGA-G3-AAV5_count">1454.06</data>
+      <data key="v_TCGA-DD-AA3A_count">2650.57</data>
+      <data key="v_TCGA-2Y-A9GZ_count">2741.8</data>
+      <data key="v_TCGA-DD-A73C_count">1384.57</data>
+      <data key="v_TCGA-DD-AAW0_count">1261.07</data>
+      <data key="v_TCGA-DD-A1EF_count">180.86</data>
+      <data key="v_TCGA-3K-AAZ8_count">4652.65</data>
+      <data key="v_TCGA-DD-AAEK_count">1874.78</data>
+      <data key="v_TCGA-RC-A6M6_count">2047.93</data>
+      <data key="v_TCGA-G3-A5SL_count">910.15</data>
+      <data key="v_TCGA-DD-A73F_count">1891.5</data>
+      <data key="v_TCGA-CC-5263_count">1674.54</data>
+      <data key="v_TCGA-DD-A116_count">13094.3</data>
+      <data key="v_TCGA-G3-A3CG_count">5843.53</data>
+      <data key="v_TCGA-CC-5264_count">588.839</data>
+      <data key="v_TCGA-DD-AAE3_count">13579.1</data>
+      <data key="v_TCGA-WX-AA44_count">901.449</data>
+      <data key="v_TCGA-CC-A3M9_count">4519.84</data>
+      <data key="v_TCGA-5C-A9VH_count">1380.28</data>
+      <data key="v_TCGA-WJ-A86L_count">435.376</data>
+      <data key="v_TCGA-DD-AACF_count">745.795</data>
+      <data key="v_TCGA-CC-A5UD_count">1013.36</data>
+      <data key="v_TCGA-DD-A1EB_count">27312.1</data>
+      <data key="v_TCGA-XR-A8TC_count">1587.54</data>
+      <data key="v_TCGA-KR-A7K0_count">5479.37</data>
+      <data key="v_TCGA-UB-A7MF_count">1548.08</data>
+      <data key="v_TCGA-ED-A66Y_count">1168.33</data>
+      <data key="v_TCGA-ED-A7PY_count">497.369</data>
+      <data key="v_TCGA-ZP-A9CV_count">5171.33</data>
+      <data key="v_avg_count">3966.01</data>
+      <data key="v_cluster_avg_count">1406.85</data>
+      <data key="v_notcluster_avg_count">4130.86</data>
+      <data key="v_TCGA-G3-A5SM_log2fold_wrt_control">-3.451</data>
+      <data key="v_TCGA-DD-AAE9_log2fold_wrt_control">-6.6662</data>
+      <data key="v_TCGA-DD-AADB_log2fold_wrt_control">-6.01524</data>
+      <data key="v_TCGA-DD-A11D_log2fold_wrt_control">-2.52561</data>
+      <data key="v_TCGA-LG-A9QC_log2fold_wrt_control">-4.4886</data>
+      <data key="v_TCGA-FV-A2QQ_log2fold_wrt_control">-3.46624</data>
+      <data key="v_TCGA-CC-A7IG_log2fold_wrt_control">-3.69574</data>
+      <data key="v_TCGA-G3-A3CK_log2fold_wrt_control">-4.38338</data>
+      <data key="v_TCGA-DD-AAE4_log2fold_wrt_control">-2.0387</data>
+      <data key="v_TCGA-UB-A7MD_log2fold_wrt_control">-1.15693</data>
+      <data key="v_TCGA-DD-A1EL_log2fold_wrt_control">-3.81732</data>
+      <data key="v_TCGA-DD-AACW_log2fold_wrt_control">-6.74005</data>
+      <data key="v_TCGA-FV-A4ZP_log2fold_wrt_control">-5.44483</data>
+      <data key="v_TCGA-ED-A66X_log2fold_wrt_control">-3.60259</data>
+      <data key="v_TCGA-DD-A3A4_log2fold_wrt_control">-4.64074</data>
+      <data key="v_TCGA-K7-AAU7_log2fold_wrt_control">-0.907345</data>
+      <data key="v_TCGA-DD-A3A6_log2fold_wrt_control">-1.81917</data>
+      <data key="v_TCGA-DD-AAEI_log2fold_wrt_control">-4.52442</data>
+      <data key="v_TCGA-DD-AACN_log2fold_wrt_control">-1.94768</data>
+      <data key="v_TCGA-BC-A3KF_log2fold_wrt_control">-5.0171</data>
+      <data key="v_TCGA-DD-AADI_log2fold_wrt_control">-3.61542</data>
+      <data key="v_TCGA-EP-A2KC_log2fold_wrt_control">-3.51242</data>
+      <data key="v_TCGA-DD-AACY_log2fold_wrt_control">-3.26437</data>
+      <data key="v_TCGA-ES-A2HT_log2fold_wrt_control">-3.06973</data>
+      <data key="v_TCGA-FV-A2QR_log2fold_wrt_control">-4.41249</data>
+      <data key="v_TCGA-BC-A112_log2fold_wrt_control">-4.69027</data>
+      <data key="v_TCGA-2Y-A9GS_log2fold_wrt_control">-4.11059</data>
+      <data key="v_TCGA-DD-A1EK_log2fold_wrt_control">-3.21263</data>
+      <data key="v_TCGA-2V-A95S_log2fold_wrt_control">-3.69443</data>
+      <data key="v_TCGA-DD-AAVS_log2fold_wrt_control">-5.30157</data>
+      <data key="v_TCGA-CC-A3MC_log2fold_wrt_control">-2.92794</data>
+      <data key="v_TCGA-BC-A10U_log2fold_wrt_control">-4.76217</data>
+      <data key="v_TCGA-DD-A3A3_log2fold_wrt_control">-5.40882</data>
+      <data key="v_TCGA-BC-A10Z_log2fold_wrt_control">-6.74596</data>
+      <data key="v_TCGA-G3-AAV3_log2fold_wrt_control">-5.5594</data>
+      <data key="v_TCGA-BC-A5W4_log2fold_wrt_control">-4.84674</data>
+      <data key="v_TCGA-DD-AADK_log2fold_wrt_control">-4.23568</data>
+      <data key="v_TCGA-CC-A9FS_log2fold_wrt_control">-2.86525</data>
+      <data key="v_TCGA-2Y-A9H8_log2fold_wrt_control">-4.99195</data>
+      <data key="v_TCGA-2Y-A9H5_log2fold_wrt_control">-2.78737</data>
+      <data key="v_TCGA-BC-4072_log2fold_wrt_control">-4.28971</data>
+      <data key="v_TCGA-T1-A6J8_log2fold_wrt_control">-4.72773</data>
+      <data key="v_TCGA-DD-AADQ_log2fold_wrt_control">-6.71499</data>
+      <data key="v_TCGA-G3-A3CH_log2fold_wrt_control">-5.09874</data>
+      <data key="v_TCGA-2Y-A9GT_log2fold_wrt_control">-4.61572</data>
+      <data key="v_TCGA-ED-A82E_log2fold_wrt_control">-5.65063</data>
+      <data key="v_TCGA-EP-A2KB_log2fold_wrt_control">-1.21226</data>
+      <data key="v_TCGA-G3-AAV5_log2fold_wrt_control">-3.80353</data>
+      <data key="v_TCGA-DD-AA3A_log2fold_wrt_control">-2.93776</data>
+      <data key="v_TCGA-2Y-A9GZ_log2fold_wrt_control">-2.88896</data>
+      <data key="v_TCGA-DD-A73C_log2fold_wrt_control">-3.87413</data>
+      <data key="v_TCGA-DD-AAW0_log2fold_wrt_control">-4.00882</data>
+      <data key="v_TCGA-DD-A1EF_log2fold_wrt_control">-6.80371</data>
+      <data key="v_TCGA-3K-AAZ8_log2fold_wrt_control">-2.12625</data>
+      <data key="v_TCGA-DD-AAEK_log2fold_wrt_control">-3.43712</data>
+      <data key="v_TCGA-RC-A6M6_log2fold_wrt_control">-3.30974</data>
+      <data key="v_TCGA-G3-A5SL_log2fold_wrt_control">-4.47885</data>
+      <data key="v_TCGA-DD-A73F_log2fold_wrt_control">-3.42431</data>
+      <data key="v_TCGA-CC-5263_log2fold_wrt_control">-3.59998</data>
+      <data key="v_TCGA-DD-A116_log2fold_wrt_control">-5.31845</data>
+      <data key="v_TCGA-G3-A3CG_log2fold_wrt_control">-1.79752</data>
+      <data key="v_TCGA-CC-5264_log2fold_wrt_control">-5.10622</data>
+      <data key="v_TCGA-DD-AAE3_log2fold_wrt_control">-0.581188</data>
+      <data key="v_TCGA-WX-AA44_log2fold_wrt_control">-4.49269</data>
+      <data key="v_TCGA-CC-A3M9_log2fold_wrt_control">-2.16802</data>
+      <data key="v_TCGA-5C-A9VH_log2fold_wrt_control">-3.8786</data>
+      <data key="v_TCGA-WJ-A86L_log2fold_wrt_control">-5.54097</data>
+      <data key="v_TCGA-DD-AACF_log2fold_wrt_control">-4.76583</data>
+      <data key="v_TCGA-CC-A5UD_log2fold_wrt_control">-4.32404</data>
+      <data key="v_TCGA-DD-A1EB_log2fold_wrt_control">-4.16919</data>
+      <data key="v_TCGA-XR-A8TC_log2fold_wrt_control">-3.67691</data>
+      <data key="v_TCGA-KR-A7K0_log2fold_wrt_control">-1.89034</data>
+      <data key="v_TCGA-UB-A7MF_log2fold_wrt_control">-3.7132</data>
+      <data key="v_TCGA-ED-A66Y_log2fold_wrt_control">-4.11893</data>
+      <data key="v_TCGA-ED-A7PY_log2fold_wrt_control">-5.34933</data>
+      <data key="v_TCGA-ZP-A9CV_log2fold_wrt_control">-1.9738</data>
+      <data key="v_avg_log2fold_wrt_control">-3.95042</data>
+      <data key="v_cluster_avg_log2fold_wrt_control">-4.01873</data>
+      <data key="v_notcluster_avg_log2fold_wrt_control">-3.91511</data>
+      <data key="v_TCGA-G3-A5SM_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE9_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADB_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A11D_non_silent_snv">0</data>
+      <data key="v_TCGA-LG-A9QC_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QQ_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A7IG_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CK_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE4_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MD_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EL_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACW_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A4ZP_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A66X_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A4_non_silent_snv">0</data>
+      <data key="v_TCGA-K7-AAU7_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A6_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAEI_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACN_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A3KF_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADI_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KC_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACY_non_silent_snv">0</data>
+      <data key="v_TCGA-ES-A2HT_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QR_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A112_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GS_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EK_non_silent_snv">0</data>
+      <data key="v_TCGA-2V-A95S_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAVS_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A3MC_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10U_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10Z_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A5W4_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADK_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A9FS_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9H8_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9H5_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-4072_non_silent_snv">0</data>
+      <data key="v_TCGA-T1-A6J8_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADQ_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CH_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GT_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A82E_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KB_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV5_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AA3A_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GZ_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73C_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAW0_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EF_non_silent_snv">0</data>
+      <data key="v_TCGA-3K-AAZ8_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AAEK_non_silent_snv">0</data>
+      <data key="v_TCGA-RC-A6M6_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A5SL_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73F_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5263_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A116_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CG_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5264_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE3_non_silent_snv">0</data>
+      <data key="v_TCGA-WX-AA44_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A3M9_non_silent_snv">0</data>
+      <data key="v_TCGA-5C-A9VH_non_silent_snv">0</data>
+      <data key="v_TCGA-WJ-A86L_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACF_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A5UD_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EB_non_silent_snv">0</data>
+      <data key="v_TCGA-XR-A8TC_non_silent_snv">0</data>
+      <data key="v_TCGA-KR-A7K0_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MF_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A66Y_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A7PY_non_silent_snv">0</data>
+      <data key="v_TCGA-ZP-A9CV_non_silent_snv">0</data>
+      <data key="v_avg_non_silent_snv">0.0131579</data>
+      <data key="v_cluster_avg_non_silent_snv">0</data>
+      <data key="v_notcluster_avg_non_silent_snv">0.0138889</data>
+      <data key="v_sum_non_silent_snv">1</data>
+      <data key="v_cluster_sum_non_silent_snv">0</data>
+      <data key="v_notcluster_sum_non_silent_snv">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">23236</data>
+      <data key="v_entrez">23236</data>
+      <data key="v_ensembl">ENSG00000182621</data>
+      <data key="v_symbol">PLCB1</data>
+      <data key="v_id">n3540</data>
+      <data key="v_TCGA-G3-A5SM_count">585.094</data>
+      <data key="v_TCGA-DD-AAE9_count">485.907</data>
+      <data key="v_TCGA-DD-AADB_count">1606.88</data>
+      <data key="v_TCGA-DD-A11D_count">639.273</data>
+      <data key="v_TCGA-LG-A9QC_count">137.819</data>
+      <data key="v_TCGA-FV-A2QQ_count">618.626</data>
+      <data key="v_TCGA-CC-A7IG_count">965.489</data>
+      <data key="v_TCGA-G3-A3CK_count">318.915</data>
+      <data key="v_TCGA-DD-AAE4_count">473.711</data>
+      <data key="v_TCGA-UB-A7MD_count">434.025</data>
+      <data key="v_TCGA-DD-A1EL_count">1105.64</data>
+      <data key="v_TCGA-DD-AACW_count">694.208</data>
+      <data key="v_TCGA-FV-A4ZP_count">711.86</data>
+      <data key="v_TCGA-ED-A66X_count">1015.24</data>
+      <data key="v_TCGA-DD-A3A4_count">175.639</data>
+      <data key="v_TCGA-K7-AAU7_count">1119.02</data>
+      <data key="v_TCGA-DD-A3A6_count">143.301</data>
+      <data key="v_TCGA-DD-AAEI_count">473.331</data>
+      <data key="v_TCGA-DD-AACN_count">1757</data>
+      <data key="v_TCGA-BC-A3KF_count">130.99</data>
+      <data key="v_TCGA-DD-AADI_count">356.847</data>
+      <data key="v_TCGA-EP-A2KC_count">765.23</data>
+      <data key="v_TCGA-DD-AACY_count">73.4472</data>
+      <data key="v_TCGA-ES-A2HT_count">106.515</data>
+      <data key="v_TCGA-FV-A2QR_count">519.009</data>
+      <data key="v_TCGA-BC-A112_count">208.175</data>
+      <data key="v_TCGA-2Y-A9GS_count">1003.82</data>
+      <data key="v_TCGA-DD-A1EK_count">1332.1</data>
+      <data key="v_TCGA-2V-A95S_count">773.429</data>
+      <data key="v_TCGA-DD-AAVS_count">409.548</data>
+      <data key="v_TCGA-CC-A3MC_count">602.361</data>
+      <data key="v_TCGA-BC-A10U_count">1394.6</data>
+      <data key="v_TCGA-DD-A3A3_count">231.492</data>
+      <data key="v_TCGA-BC-A10Z_count">967.617</data>
+      <data key="v_TCGA-G3-AAV3_count">362.017</data>
+      <data key="v_TCGA-BC-A5W4_count">503.066</data>
+      <data key="v_TCGA-DD-AADK_count">491.549</data>
+      <data key="v_TCGA-CC-A9FS_count">103.163</data>
+      <data key="v_TCGA-2Y-A9H8_count">75.9562</data>
+      <data key="v_TCGA-2Y-A9H5_count">728.565</data>
+      <data key="v_TCGA-BC-4072_count">1261.85</data>
+      <data key="v_TCGA-T1-A6J8_count">1165.81</data>
+      <data key="v_TCGA-DD-AADQ_count">162.086</data>
+      <data key="v_TCGA-G3-A3CH_count">187.746</data>
+      <data key="v_TCGA-2Y-A9GT_count">345.612</data>
+      <data key="v_TCGA-ED-A82E_count">292.01</data>
+      <data key="v_TCGA-EP-A2KB_count">790.913</data>
+      <data key="v_TCGA-G3-AAV5_count">44.7066</data>
+      <data key="v_TCGA-DD-AA3A_count">91.4274</data>
+      <data key="v_TCGA-2Y-A9GZ_count">534.336</data>
+      <data key="v_TCGA-DD-A73C_count">347.011</data>
+      <data key="v_TCGA-DD-AAW0_count">924.784</data>
+      <data key="v_TCGA-DD-A1EF_count">326.796</data>
+      <data key="v_TCGA-3K-AAZ8_count">334.581</data>
+      <data key="v_TCGA-DD-AAEK_count">799.389</data>
+      <data key="v_TCGA-RC-A6M6_count">2002.52</data>
+      <data key="v_TCGA-G3-A5SL_count">254.121</data>
+      <data key="v_TCGA-DD-A73F_count">790.11</data>
+      <data key="v_TCGA-CC-5263_count">2827.77</data>
+      <data key="v_TCGA-DD-A116_count">87.1759</data>
+      <data key="v_TCGA-G3-A3CG_count">1416.13</data>
+      <data key="v_TCGA-CC-5264_count">1814.93</data>
+      <data key="v_TCGA-DD-AAE3_count">363.145</data>
+      <data key="v_TCGA-WX-AA44_count">546.166</data>
+      <data key="v_TCGA-CC-A3M9_count">280.36</data>
+      <data key="v_TCGA-5C-A9VH_count">421.431</data>
+      <data key="v_TCGA-WJ-A86L_count">1629.06</data>
+      <data key="v_TCGA-DD-AACF_count">32.1204</data>
+      <data key="v_TCGA-CC-A5UD_count">543.115</data>
+      <data key="v_TCGA-DD-A1EB_count">178.647</data>
+      <data key="v_TCGA-XR-A8TC_count">652.358</data>
+      <data key="v_TCGA-KR-A7K0_count">108.908</data>
+      <data key="v_TCGA-UB-A7MF_count">241.931</data>
+      <data key="v_TCGA-ED-A66Y_count">1551.02</data>
+      <data key="v_TCGA-ED-A7PY_count">693.934</data>
+      <data key="v_TCGA-ZP-A9CV_count">316.89</data>
+      <data key="v_avg_count">644.229</data>
+      <data key="v_cluster_avg_count">1066.82</data>
+      <data key="v_notcluster_avg_count">612.943</data>
+      <data key="v_TCGA-G3-A5SM_log2fold_wrt_control">1.4141</data>
+      <data key="v_TCGA-DD-AAE9_log2fold_wrt_control">1.14662</data>
+      <data key="v_TCGA-DD-AADB_log2fold_wrt_control">2.87005</data>
+      <data key="v_TCGA-DD-A11D_log2fold_wrt_control">2.28199</data>
+      <data key="v_TCGA-LG-A9QC_log2fold_wrt_control">-0.663826</data>
+      <data key="v_TCGA-FV-A2QQ_log2fold_wrt_control">1.49437</data>
+      <data key="v_TCGA-CC-A7IG_log2fold_wrt_control">2.13572</data>
+      <data key="v_TCGA-G3-A3CK_log2fold_wrt_control">0.540656</data>
+      <data key="v_TCGA-DD-AAE4_log2fold_wrt_control">1.11002</data>
+      <data key="v_TCGA-UB-A7MD_log2fold_wrt_control">0.984067</data>
+      <data key="v_TCGA-DD-A1EL_log2fold_wrt_control">3.14093</data>
+      <data key="v_TCGA-DD-AACW_log2fold_wrt_control">1.66041</data>
+      <data key="v_TCGA-FV-A4ZP_log2fold_wrt_control">1.69659</data>
+      <data key="v_TCGA-ED-A66X_log2fold_wrt_control">2.20814</data>
+      <data key="v_TCGA-DD-A3A4_log2fold_wrt_control">-0.682588</data>
+      <data key="v_TCGA-K7-AAU7_log2fold_wrt_control">2.34842</data>
+      <data key="v_TCGA-DD-A3A6_log2fold_wrt_control">-0.198388</data>
+      <data key="v_TCGA-DD-AAEI_log2fold_wrt_control">1.10886</data>
+      <data key="v_TCGA-DD-AACN_log2fold_wrt_control">2.99883</data>
+      <data key="v_TCGA-BC-A3KF_log2fold_wrt_control">-0.736606</data>
+      <data key="v_TCGA-DD-AADI_log2fold_wrt_control">0.702311</data>
+      <data key="v_TCGA-EP-A2KC_log2fold_wrt_control">1.80075</data>
+      <data key="v_TCGA-DD-AACY_log2fold_wrt_control">-1.56274</data>
+      <data key="v_TCGA-ES-A2HT_log2fold_wrt_control">-1.5023</data>
+      <data key="v_TCGA-FV-A2QR_log2fold_wrt_control">2.03043</data>
+      <data key="v_TCGA-BC-A112_log2fold_wrt_control">-0.072325</data>
+      <data key="v_TCGA-2Y-A9GS_log2fold_wrt_control">2.19184</data>
+      <data key="v_TCGA-DD-A1EK_log2fold_wrt_control">2.59968</data>
+      <data key="v_TCGA-2V-A95S_log2fold_wrt_control">1.8161</data>
+      <data key="v_TCGA-DD-AAVS_log2fold_wrt_control">0.90052</data>
+      <data key="v_TCGA-CC-A3MC_log2fold_wrt_control">1.45599</data>
+      <data key="v_TCGA-BC-A10U_log2fold_wrt_control">3.43204</data>
+      <data key="v_TCGA-DD-A3A3_log2fold_wrt_control">-0.590139</data>
+      <data key="v_TCGA-BC-A10Z_log2fold_wrt_control">2.85791</data>
+      <data key="v_TCGA-G3-AAV3_log2fold_wrt_control">0.723003</data>
+      <data key="v_TCGA-BC-A5W4_log2fold_wrt_control">1.19658</data>
+      <data key="v_TCGA-DD-AADK_log2fold_wrt_control">1.16324</data>
+      <data key="v_TCGA-CC-A9FS_log2fold_wrt_control">-1.07819</data>
+      <data key="v_TCGA-2Y-A9H8_log2fold_wrt_control">-1.51492</data>
+      <data key="v_TCGA-2Y-A9H5_log2fold_wrt_control">1.73</data>
+      <data key="v_TCGA-BC-4072_log2fold_wrt_control">2.52158</data>
+      <data key="v_TCGA-T1-A6J8_log2fold_wrt_control">2.40747</data>
+      <data key="v_TCGA-DD-AADQ_log2fold_wrt_control">-0.431402</data>
+      <data key="v_TCGA-G3-A3CH_log2fold_wrt_control">-0.332149</data>
+      <data key="v_TCGA-2Y-A9GT_log2fold_wrt_control">0.656291</data>
+      <data key="v_TCGA-ED-A82E_log2fold_wrt_control">0.413919</data>
+      <data key="v_TCGA-EP-A2KB_log2fold_wrt_control">1.84831</data>
+      <data key="v_TCGA-G3-AAV5_log2fold_wrt_control">-2.26656</data>
+      <data key="v_TCGA-DD-AA3A_log2fold_wrt_control">-1.25064</data>
+      <data key="v_TCGA-2Y-A9GZ_log2fold_wrt_control">1.28341</data>
+      <data key="v_TCGA-DD-A73C_log2fold_wrt_control">0.6621</data>
+      <data key="v_TCGA-DD-AAW0_log2fold_wrt_control">2.07364</data>
+      <data key="v_TCGA-DD-A1EF_log2fold_wrt_control">0.575764</data>
+      <data key="v_TCGA-3K-AAZ8_log2fold_wrt_control">0.609627</data>
+      <data key="v_TCGA-DD-AAEK_log2fold_wrt_control">1.86367</data>
+      <data key="v_TCGA-RC-A6M6_log2fold_wrt_control">3.18744</data>
+      <data key="v_TCGA-G3-A5SL_log2fold_wrt_control">0.214149</data>
+      <data key="v_TCGA-DD-A73F_log2fold_wrt_control">1.84685</data>
+      <data key="v_TCGA-CC-5263_log2fold_wrt_control">3.68507</data>
+      <data key="v_TCGA-DD-A116_log2fold_wrt_control">-2.76109</data>
+      <data key="v_TCGA-G3-A3CG_log2fold_wrt_control">2.68787</data>
+      <data key="v_TCGA-CC-5264_log2fold_wrt_control">3.04561</data>
+      <data key="v_TCGA-DD-AAE3_log2fold_wrt_control">0.727482</data>
+      <data key="v_TCGA-WX-AA44_log2fold_wrt_control">1.31495</data>
+      <data key="v_TCGA-CC-A3M9_log2fold_wrt_control">0.355383</data>
+      <data key="v_TCGA-5C-A9VH_log2fold_wrt_control">0.941684</data>
+      <data key="v_TCGA-WJ-A86L_log2fold_wrt_control">2.88982</data>
+      <data key="v_TCGA-DD-AACF_log2fold_wrt_control">-2.73124</data>
+      <data key="v_TCGA-CC-A5UD_log2fold_wrt_control">1.30688</data>
+      <data key="v_TCGA-DD-A1EB_log2fold_wrt_control">-1.4985</data>
+      <data key="v_TCGA-XR-A8TC_log2fold_wrt_control">1.57084</data>
+      <data key="v_TCGA-KR-A7K0_log2fold_wrt_control">-1.00074</data>
+      <data key="v_TCGA-UB-A7MF_log2fold_wrt_control">0.143513</data>
+      <data key="v_TCGA-ED-A66Y_log2fold_wrt_control">2.81904</data>
+      <data key="v_TCGA-ED-A7PY_log2fold_wrt_control">1.65984</data>
+      <data key="v_TCGA-ZP-A9CV_log2fold_wrt_control">0.531494</data>
+      <data key="v_avg_log2fold_wrt_control">1.00934</data>
+      <data key="v_cluster_avg_log2fold_wrt_control">0.954554</data>
+      <data key="v_notcluster_avg_log2fold_wrt_control">0.9855</data>
+      <data key="v_TCGA-G3-A5SM_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE9_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADB_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A11D_non_silent_snv">0</data>
+      <data key="v_TCGA-LG-A9QC_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QQ_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A7IG_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CK_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE4_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MD_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EL_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACW_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A4ZP_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A66X_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A4_non_silent_snv">0</data>
+      <data key="v_TCGA-K7-AAU7_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A3A6_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAEI_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACN_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A3KF_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADI_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KC_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACY_non_silent_snv">0</data>
+      <data key="v_TCGA-ES-A2HT_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QR_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A112_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GS_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EK_non_silent_snv">0</data>
+      <data key="v_TCGA-2V-A95S_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAVS_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A3MC_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10U_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10Z_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A5W4_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADK_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A9FS_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9H8_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9H5_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-4072_non_silent_snv">0</data>
+      <data key="v_TCGA-T1-A6J8_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADQ_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CH_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GT_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A82E_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KB_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV5_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AA3A_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GZ_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73C_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAW0_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EF_non_silent_snv">0</data>
+      <data key="v_TCGA-3K-AAZ8_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAEK_non_silent_snv">0</data>
+      <data key="v_TCGA-RC-A6M6_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A5SL_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73F_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5263_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A116_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CG_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5264_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE3_non_silent_snv">0</data>
+      <data key="v_TCGA-WX-AA44_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A3M9_non_silent_snv">0</data>
+      <data key="v_TCGA-5C-A9VH_non_silent_snv">0</data>
+      <data key="v_TCGA-WJ-A86L_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACF_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A5UD_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EB_non_silent_snv">0</data>
+      <data key="v_TCGA-XR-A8TC_non_silent_snv">0</data>
+      <data key="v_TCGA-KR-A7K0_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MF_non_silent_snv">1</data>
+      <data key="v_TCGA-ED-A66Y_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A7PY_non_silent_snv">0</data>
+      <data key="v_TCGA-ZP-A9CV_non_silent_snv">0</data>
+      <data key="v_avg_non_silent_snv">0.0263158</data>
+      <data key="v_cluster_avg_non_silent_snv">0</data>
+      <data key="v_notcluster_avg_non_silent_snv">0.0277778</data>
+      <data key="v_sum_non_silent_snv">2</data>
+      <data key="v_cluster_sum_non_silent_snv">0</data>
+      <data key="v_notcluster_sum_non_silent_snv">2</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">7157</data>
+      <data key="v_entrez">7157</data>
+      <data key="v_ensembl">ENSG00000141510</data>
+      <data key="v_symbol">TP53</data>
+      <data key="v_id">n5464</data>
+      <data key="v_TCGA-G3-A5SM_count">598.972</data>
+      <data key="v_TCGA-DD-AAE9_count">1596.27</data>
+      <data key="v_TCGA-DD-AADB_count">2381.03</data>
+      <data key="v_TCGA-DD-A11D_count">984.459</data>
+      <data key="v_TCGA-LG-A9QC_count">1539.14</data>
+      <data key="v_TCGA-FV-A2QQ_count">2039.79</data>
+      <data key="v_TCGA-CC-A7IG_count">341.087</data>
+      <data key="v_TCGA-G3-A3CK_count">1362.57</data>
+      <data key="v_TCGA-DD-AAE4_count">1496.12</data>
+      <data key="v_TCGA-UB-A7MD_count">627.289</data>
+      <data key="v_TCGA-DD-A1EL_count">1030.48</data>
+      <data key="v_TCGA-DD-AACW_count">4158.46</data>
+      <data key="v_TCGA-FV-A4ZP_count">2636.96</data>
+      <data key="v_TCGA-ED-A66X_count">2662.09</data>
+      <data key="v_TCGA-DD-A3A4_count">1766.46</data>
+      <data key="v_TCGA-K7-AAU7_count">1484.71</data>
+      <data key="v_TCGA-DD-A3A6_count">2243.77</data>
+      <data key="v_TCGA-DD-AAEI_count">374.774</data>
+      <data key="v_TCGA-DD-AACN_count">2959.16</data>
+      <data key="v_TCGA-BC-A3KF_count">644.47</data>
+      <data key="v_TCGA-DD-AADI_count">3549.18</data>
+      <data key="v_TCGA-EP-A2KC_count">993.416</data>
+      <data key="v_TCGA-DD-AACY_count">1929.77</data>
+      <data key="v_TCGA-ES-A2HT_count">1452.02</data>
+      <data key="v_TCGA-FV-A2QR_count">1144.73</data>
+      <data key="v_TCGA-BC-A112_count">2095.62</data>
+      <data key="v_TCGA-2Y-A9GS_count">1735.36</data>
+      <data key="v_TCGA-DD-A1EK_count">504.92</data>
+      <data key="v_TCGA-2V-A95S_count">1674.12</data>
+      <data key="v_TCGA-DD-AAVS_count">2775.15</data>
+      <data key="v_TCGA-CC-A3MC_count">871.963</data>
+      <data key="v_TCGA-BC-A10U_count">1269.95</data>
+      <data key="v_TCGA-DD-A3A3_count">890.761</data>
+      <data key="v_TCGA-BC-A10Z_count">1249.5</data>
+      <data key="v_TCGA-G3-AAV3_count">2025.46</data>
+      <data key="v_TCGA-BC-A5W4_count">1031.86</data>
+      <data key="v_TCGA-DD-AADK_count">1769.19</data>
+      <data key="v_TCGA-CC-A9FS_count">1423.84</data>
+      <data key="v_TCGA-2Y-A9H8_count">2309.45</data>
+      <data key="v_TCGA-2Y-A9H5_count">1857.53</data>
+      <data key="v_TCGA-BC-4072_count">936.823</data>
+      <data key="v_TCGA-T1-A6J8_count">200.969</data>
+      <data key="v_TCGA-DD-AADQ_count">2390.44</data>
+      <data key="v_TCGA-G3-A3CH_count">968.367</data>
+      <data key="v_TCGA-2Y-A9GT_count">820.032</data>
+      <data key="v_TCGA-ED-A82E_count">3290.6</data>
+      <data key="v_TCGA-EP-A2KB_count">5010.6</data>
+      <data key="v_TCGA-G3-AAV5_count">1480.45</data>
+      <data key="v_TCGA-DD-AA3A_count">4249.32</data>
+      <data key="v_TCGA-2Y-A9GZ_count">987.681</data>
+      <data key="v_TCGA-DD-A73C_count">1284.81</data>
+      <data key="v_TCGA-DD-AAW0_count">1822.93</data>
+      <data key="v_TCGA-DD-A1EF_count">3551.09</data>
+      <data key="v_TCGA-3K-AAZ8_count">2375.34</data>
+      <data key="v_TCGA-DD-AAEK_count">1255.46</data>
+      <data key="v_TCGA-RC-A6M6_count">129.294</data>
+      <data key="v_TCGA-G3-A5SL_count">1346.3</data>
+      <data key="v_TCGA-DD-A73F_count">906.247</data>
+      <data key="v_TCGA-CC-5263_count">347.716</data>
+      <data key="v_TCGA-DD-A116_count">1236.55</data>
+      <data key="v_TCGA-G3-A3CG_count">1200.34</data>
+      <data key="v_TCGA-CC-5264_count">153.079</data>
+      <data key="v_TCGA-DD-AAE3_count">1055.11</data>
+      <data key="v_TCGA-WX-AA44_count">600.23</data>
+      <data key="v_TCGA-CC-A3M9_count">2132.38</data>
+      <data key="v_TCGA-5C-A9VH_count">2226.05</data>
+      <data key="v_TCGA-WJ-A86L_count">138.529</data>
+      <data key="v_TCGA-DD-AACF_count">286.072</data>
+      <data key="v_TCGA-CC-A5UD_count">3881.43</data>
+      <data key="v_TCGA-DD-A1EB_count">1204.18</data>
+      <data key="v_TCGA-XR-A8TC_count">1205.85</data>
+      <data key="v_TCGA-KR-A7K0_count">1018.14</data>
+      <data key="v_TCGA-UB-A7MF_count">1221.37</data>
+      <data key="v_TCGA-ED-A66Y_count">2682.18</data>
+      <data key="v_TCGA-ED-A7PY_count">2544.92</data>
+      <data key="v_TCGA-ZP-A9CV_count">1704.98</data>
+      <data key="v_avg_count">1622.73</data>
+      <data key="v_cluster_avg_count">188.716</data>
+      <data key="v_notcluster_avg_count">1702.4</data>
+      <data key="v_TCGA-G3-A5SM_log2fold_wrt_control">-1.21351</data>
+      <data key="v_TCGA-DD-AAE9_log2fold_wrt_control">0.199135</data>
+      <data key="v_TCGA-DD-AADB_log2fold_wrt_control">0.775715</data>
+      <data key="v_TCGA-DD-A11D_log2fold_wrt_control">-0.97247</data>
+      <data key="v_TCGA-LG-A9QC_log2fold_wrt_control">0.146586</data>
+      <data key="v_TCGA-FV-A2QQ_log2fold_wrt_control">0.552654</data>
+      <data key="v_TCGA-CC-A7IG_log2fold_wrt_control">-2.02404</data>
+      <data key="v_TCGA-G3-A3CK_log2fold_wrt_control">-0.0290835</data>
+      <data key="v_TCGA-DD-AAE4_log2fold_wrt_control">0.105716</data>
+      <data key="v_TCGA-UB-A7MD_log2fold_wrt_control">-1.14698</data>
+      <data key="v_TCGA-DD-A1EL_log2fold_wrt_control">-0.325197</data>
+      <data key="v_TCGA-DD-AACW_log2fold_wrt_control">1.57992</data>
+      <data key="v_TCGA-FV-A4ZP_log2fold_wrt_control">0.922948</data>
+      <data key="v_TCGA-ED-A66X_log2fold_wrt_control">0.936626</data>
+      <data key="v_TCGA-DD-A3A4_log2fold_wrt_control">-0.265817</data>
+      <data key="v_TCGA-K7-AAU7_log2fold_wrt_control">0.0946756</data>
+      <data key="v_TCGA-DD-A3A6_log2fold_wrt_control">1.02761</data>
+      <data key="v_TCGA-DD-AAEI_log2fold_wrt_control">-1.88854</data>
+      <data key="v_TCGA-DD-AACN_log2fold_wrt_control">1.0892</data>
+      <data key="v_TCGA-BC-A3KF_log2fold_wrt_control">-1.10805</data>
+      <data key="v_TCGA-DD-AADI_log2fold_wrt_control">1.35142</data>
+      <data key="v_TCGA-EP-A2KC_log2fold_wrt_control">-0.484555</data>
+      <data key="v_TCGA-DD-AACY_log2fold_wrt_control">0.472697</data>
+      <data key="v_TCGA-ES-A2HT_log2fold_wrt_control">-0.262056</data>
+      <data key="v_TCGA-FV-A2QR_log2fold_wrt_control">-0.764866</data>
+      <data key="v_TCGA-BC-A112_log2fold_wrt_control">0.591591</data>
+      <data key="v_TCGA-2Y-A9GS_log2fold_wrt_control">0.319592</data>
+      <data key="v_TCGA-DD-A1EK_log2fold_wrt_control">-1.45949</data>
+      <data key="v_TCGA-2V-A95S_log2fold_wrt_control">0.267788</data>
+      <data key="v_TCGA-DD-AAVS_log2fold_wrt_control">0.996608</data>
+      <data key="v_TCGA-CC-A3MC_log2fold_wrt_control">-0.672484</data>
+      <data key="v_TCGA-BC-A10U_log2fold_wrt_control">-0.1224</data>
+      <data key="v_TCGA-DD-A3A3_log2fold_wrt_control">-1.00139</data>
+      <data key="v_TCGA-BC-A10Z_log2fold_wrt_control">-1.10706</data>
+      <data key="v_TCGA-G3-AAV3_log2fold_wrt_control">0.542485</data>
+      <data key="v_TCGA-BC-A5W4_log2fold_wrt_control">-0.429827</data>
+      <data key="v_TCGA-DD-AADK_log2fold_wrt_control">0.347429</data>
+      <data key="v_TCGA-CC-A9FS_log2fold_wrt_control">0.0343192</data>
+      <data key="v_TCGA-2Y-A9H8_log2fold_wrt_control">0.731699</data>
+      <data key="v_TCGA-2Y-A9H5_log2fold_wrt_control">0.417685</data>
+      <data key="v_TCGA-BC-4072_log2fold_wrt_control">-0.569089</data>
+      <data key="v_TCGA-T1-A6J8_log2fold_wrt_control">-2.78427</data>
+      <data key="v_TCGA-DD-AADQ_log2fold_wrt_control">0.7814</data>
+      <data key="v_TCGA-G3-A3CH_log2fold_wrt_control">-0.467293</data>
+      <data key="v_TCGA-2Y-A9GT_log2fold_wrt_control">-0.760966</data>
+      <data key="v_TCGA-ED-A82E_log2fold_wrt_control">1.24231</data>
+      <data key="v_TCGA-EP-A2KB_log2fold_wrt_control">1.8488</data>
+      <data key="v_TCGA-G3-AAV5_log2fold_wrt_control">0.0905323</data>
+      <data key="v_TCGA-DD-AA3A_log2fold_wrt_control">1.61109</data>
+      <data key="v_TCGA-2Y-A9GZ_log2fold_wrt_control">-0.492899</data>
+      <data key="v_TCGA-DD-A73C_log2fold_wrt_control">-0.113802</data>
+      <data key="v_TCGA-DD-AAW0_log2fold_wrt_control">0.390575</data>
+      <data key="v_TCGA-DD-A1EF_log2fold_wrt_control">1.35219</data>
+      <data key="v_TCGA-3K-AAZ8_log2fold_wrt_control">0.772266</data>
+      <data key="v_TCGA-DD-AAEK_log2fold_wrt_control">-0.14711</data>
+      <data key="v_TCGA-RC-A6M6_log2fold_wrt_control">-3.41663</data>
+      <data key="v_TCGA-G3-A5SL_log2fold_wrt_control">-0.0464049</data>
+      <data key="v_TCGA-DD-A73F_log2fold_wrt_control">-0.61691</data>
+      <data key="v_TCGA-CC-5263_log2fold_wrt_control">-1.99635</data>
+      <data key="v_TCGA-DD-A116_log2fold_wrt_control">-0.0230946</data>
+      <data key="v_TCGA-G3-A3CG_log2fold_wrt_control">-0.211833</data>
+      <data key="v_TCGA-CC-5264_log2fold_wrt_control">-3.17474</data>
+      <data key="v_TCGA-DD-AAE3_log2fold_wrt_control">-0.397718</data>
+      <data key="v_TCGA-WX-AA44_log2fold_wrt_control">-1.21049</data>
+      <data key="v_TCGA-CC-A3M9_log2fold_wrt_control">0.616663</data>
+      <data key="v_TCGA-5C-A9VH_log2fold_wrt_control">0.678655</data>
+      <data key="v_TCGA-WJ-A86L_log2fold_wrt_control">-3.31784</data>
+      <data key="v_TCGA-DD-AACF_log2fold_wrt_control">-2.27699</data>
+      <data key="v_TCGA-CC-A5UD_log2fold_wrt_control">1.48048</data>
+      <data key="v_TCGA-DD-A1EB_log2fold_wrt_control">-0.439209</data>
+      <data key="v_TCGA-XR-A8TC_log2fold_wrt_control">-0.205231</data>
+      <data key="v_TCGA-KR-A7K0_log2fold_wrt_control">-0.449124</data>
+      <data key="v_TCGA-UB-A7MF_log2fold_wrt_control">-0.186794</data>
+      <data key="v_TCGA-ED-A66Y_log2fold_wrt_control">0.947466</data>
+      <data key="v_TCGA-ED-A7PY_log2fold_wrt_control">0.87171</data>
+      <data key="v_TCGA-ZP-A9CV_log2fold_wrt_control">0.294127</data>
+      <data key="v_avg_log2fold_wrt_control">-0.159214</data>
+      <data key="v_cluster_avg_log2fold_wrt_control">-2.94893</data>
+      <data key="v_notcluster_avg_log2fold_wrt_control">-0.00422927</data>
+      <data key="v_TCGA-G3-A5SM_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AAE9_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADB_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A11D_non_silent_snv">0</data>
+      <data key="v_TCGA-LG-A9QC_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QQ_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A7IG_non_silent_snv">1</data>
+      <data key="v_TCGA-G3-A3CK_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE4_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MD_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A1EL_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AACW_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A4ZP_non_silent_snv">1</data>
+      <data key="v_TCGA-ED-A66X_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A3A4_non_silent_snv">0</data>
+      <data key="v_TCGA-K7-AAU7_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A3A6_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAEI_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AACN_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A3KF_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AADI_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KC_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AACY_non_silent_snv">0</data>
+      <data key="v_TCGA-ES-A2HT_non_silent_snv">0</data>
+      <data key="v_TCGA-FV-A2QR_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A112_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GS_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A1EK_non_silent_snv">0</data>
+      <data key="v_TCGA-2V-A95S_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAVS_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A3MC_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10U_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A3A3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A10Z_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV3_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-A5W4_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AADK_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-A9FS_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9H8_non_silent_snv">1</data>
+      <data key="v_TCGA-2Y-A9H5_non_silent_snv">0</data>
+      <data key="v_TCGA-BC-4072_non_silent_snv">0</data>
+      <data key="v_TCGA-T1-A6J8_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AADQ_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CH_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GT_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A82E_non_silent_snv">0</data>
+      <data key="v_TCGA-EP-A2KB_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-AAV5_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AA3A_non_silent_snv">0</data>
+      <data key="v_TCGA-2Y-A9GZ_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73C_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAW0_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A1EF_non_silent_snv">0</data>
+      <data key="v_TCGA-3K-AAZ8_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAEK_non_silent_snv">0</data>
+      <data key="v_TCGA-RC-A6M6_non_silent_snv">1</data>
+      <data key="v_TCGA-G3-A5SL_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-A73F_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5263_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A116_non_silent_snv">0</data>
+      <data key="v_TCGA-G3-A3CG_non_silent_snv">0</data>
+      <data key="v_TCGA-CC-5264_non_silent_snv">0</data>
+      <data key="v_TCGA-DD-AAE3_non_silent_snv">0</data>
+      <data key="v_TCGA-WX-AA44_non_silent_snv">1</data>
+      <data key="v_TCGA-CC-A3M9_non_silent_snv">1</data>
+      <data key="v_TCGA-5C-A9VH_non_silent_snv">0</data>
+      <data key="v_TCGA-WJ-A86L_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-AACF_non_silent_snv">1</data>
+      <data key="v_TCGA-CC-A5UD_non_silent_snv">1</data>
+      <data key="v_TCGA-DD-A1EB_non_silent_snv">1</data>
+      <data key="v_TCGA-XR-A8TC_non_silent_snv">0</data>
+      <data key="v_TCGA-KR-A7K0_non_silent_snv">0</data>
+      <data key="v_TCGA-UB-A7MF_non_silent_snv">1</data>
+      <data key="v_TCGA-ED-A66Y_non_silent_snv">0</data>
+      <data key="v_TCGA-ED-A7PY_non_silent_snv">0</data>
+      <data key="v_TCGA-ZP-A9CV_non_silent_snv">0</data>
+      <data key="v_avg_non_silent_snv">0.289474</data>
+      <data key="v_cluster_avg_non_silent_snv">1</data>
+      <data key="v_notcluster_avg_non_silent_snv">0.25</data>
+      <data key="v_sum_non_silent_snv">22</data>
+      <data key="v_cluster_sum_non_silent_snv">4</data>
+      <data key="v_notcluster_sum_non_silent_snv">18</data>
+    </node>
+    <edge source="n1" target="n5">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n3" target="n5">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n4" target="n0">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n4" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n5" target="n2">
+      <data key="e_interaction">expression</data>
+    </edge>
+  </graph>
+</graphml>

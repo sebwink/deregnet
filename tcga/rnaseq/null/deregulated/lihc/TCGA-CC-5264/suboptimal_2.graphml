@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">5603</data>
+      <data key="v_entrez">5603</data>
+      <data key="v_ensembl">ENSG00000156711</data>
+      <data key="v_symbol">MAPK13</data>
+      <data key="v_id">n1694</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">5106</data>
+      <data key="v_entrez">5106</data>
+      <data key="v_ensembl">ENSG00000100889</data>
+      <data key="v_symbol">PCK2</data>
+      <data key="v_id">n3124</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">7867</data>
+      <data key="v_entrez">7867</data>
+      <data key="v_ensembl">ENSG00000114738</data>
+      <data key="v_symbol">MAPKAPK3</data>
+      <data key="v_id">n3581</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">10891</data>
+      <data key="v_entrez">10891</data>
+      <data key="v_ensembl">ENSG00000109819</data>
+      <data key="v_symbol">PPARGC1A</data>
+      <data key="v_id">n3888</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">1843</data>
+      <data key="v_entrez">1843</data>
+      <data key="v_ensembl">ENSG00000120129</data>
+      <data key="v_symbol">DUSP1</data>
+      <data key="v_id">n5022</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n0" target="n3">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n0" target="n3">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n3" target="n3">
+      <data key="e_interaction">state change</data>
+    </edge>
+    <edge source="n4" target="n0">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n4" target="n0">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+  </graph>
+</graphml>

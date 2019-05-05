@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="v_deregnet_receptor" for="node" attr.name="deregnet_receptor" attr.type="boolean"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">7298</data>
+      <data key="v_entrez">7298</data>
+      <data key="v_ensembl">ENSG00000176890</data>
+      <data key="v_symbol">TYMS</data>
+      <data key="v_id">n2191</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">7083</data>
+      <data key="v_entrez">7083</data>
+      <data key="v_ensembl">ENSG00000167900</data>
+      <data key="v_symbol">TK1</data>
+      <data key="v_id">n2396</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">true</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">56953</data>
+      <data key="v_entrez">56953</data>
+      <data key="v_ensembl">ENSG00000205309</data>
+      <data key="v_symbol">NT5M</data>
+      <data key="v_id">n2640</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">151531</data>
+      <data key="v_entrez">151531</data>
+      <data key="v_ensembl">ENSG00000007001</data>
+      <data key="v_symbol">UPP2</data>
+      <data key="v_id">n3809</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">7371</data>
+      <data key="v_entrez">7371</data>
+      <data key="v_ensembl">ENSG00000143179</data>
+      <data key="v_symbol">UCK2</data>
+      <data key="v_id">n4345</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

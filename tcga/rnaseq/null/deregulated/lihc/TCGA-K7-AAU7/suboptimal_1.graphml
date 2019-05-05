@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">5104</data>
+      <data key="v_entrez">5104</data>
+      <data key="v_ensembl">ENSG00000188488</data>
+      <data key="v_symbol">SERPINA5</data>
+      <data key="v_id">n1763</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">5340</data>
+      <data key="v_entrez">5340</data>
+      <data key="v_ensembl">ENSG00000122194</data>
+      <data key="v_symbol">PLG</data>
+      <data key="v_id">n2382</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">5624</data>
+      <data key="v_entrez">5624</data>
+      <data key="v_ensembl">ENSG00000115718</data>
+      <data key="v_symbol">PROC</data>
+      <data key="v_id">n3088</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">5054</data>
+      <data key="v_entrez">5054</data>
+      <data key="v_ensembl">ENSG00000106366</data>
+      <data key="v_symbol">SERPINE1</data>
+      <data key="v_id">n3926</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">5327</data>
+      <data key="v_entrez">5327</data>
+      <data key="v_ensembl">ENSG00000104368</data>
+      <data key="v_symbol">PLAT</data>
+      <data key="v_id">n5241</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n4" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+  </graph>
+</graphml>

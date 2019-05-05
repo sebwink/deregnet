@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">2538</data>
+      <data key="v_entrez">2538</data>
+      <data key="v_ensembl">ENSG00000131482</data>
+      <data key="v_symbol">G6PC</data>
+      <data key="v_id">n808</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">51422</data>
+      <data key="v_entrez">51422</data>
+      <data key="v_ensembl">ENSG00000106617</data>
+      <data key="v_symbol">PRKAG2</data>
+      <data key="v_id">n1556</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">5106</data>
+      <data key="v_entrez">5106</data>
+      <data key="v_ensembl">ENSG00000100889</data>
+      <data key="v_symbol">PCK2</data>
+      <data key="v_id">n3124</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">2027</data>
+      <data key="v_entrez">2027</data>
+      <data key="v_ensembl">ENSG00000108515</data>
+      <data key="v_symbol">ENO3</data>
+      <data key="v_id">n3380</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">79602</data>
+      <data key="v_entrez">79602</data>
+      <data key="v_ensembl">ENSG00000006831</data>
+      <data key="v_symbol">ADIPOR2</data>
+      <data key="v_id">n5113</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n2" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n4" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n4" target="n1">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+  </graph>
+</graphml>

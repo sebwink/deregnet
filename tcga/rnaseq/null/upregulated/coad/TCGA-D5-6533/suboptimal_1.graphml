@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">8313</data>
+      <data key="v_entrez">8313</data>
+      <data key="v_ensembl">ENSG00000168646</data>
+      <data key="v_symbol">AXIN2</data>
+      <data key="v_id">n66</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">7004</data>
+      <data key="v_entrez">7004</data>
+      <data key="v_ensembl">ENSG00000197905</data>
+      <data key="v_symbol">TEAD4</data>
+      <data key="v_id">n1741</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">4316</data>
+      <data key="v_entrez">4316</data>
+      <data key="v_ensembl">ENSG00000137673</data>
+      <data key="v_symbol">MMP7</data>
+      <data key="v_id">n1906</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">8061</data>
+      <data key="v_entrez">8061</data>
+      <data key="v_ensembl">ENSG00000175592</data>
+      <data key="v_symbol">FOSL1</data>
+      <data key="v_id">n3626</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">6932</data>
+      <data key="v_entrez">6932</data>
+      <data key="v_ensembl">ENSG00000081059</data>
+      <data key="v_symbol">TCF7</data>
+      <data key="v_id">n3794</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n0">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n4" target="n0">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n4" target="n2">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_interaction">expression</data>
+    </edge>
+  </graph>
+</graphml>

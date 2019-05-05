@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">3624</data>
+      <data key="v_entrez">3624</data>
+      <data key="v_ensembl">ENSG00000122641</data>
+      <data key="v_symbol">INHBA</data>
+      <data key="v_id">n146</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">1535</data>
+      <data key="v_entrez">1535</data>
+      <data key="v_ensembl">ENSG00000051523</data>
+      <data key="v_symbol">CYBA</data>
+      <data key="v_id">n328</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">1906</data>
+      <data key="v_entrez">1906</data>
+      <data key="v_ensembl">ENSG00000078401</data>
+      <data key="v_symbol">EDN1</data>
+      <data key="v_id">n516</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">4318</data>
+      <data key="v_entrez">4318</data>
+      <data key="v_ensembl">ENSG00000100985</data>
+      <data key="v_symbol">MMP9</data>
+      <data key="v_id">n1815</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">6300</data>
+      <data key="v_entrez">6300</data>
+      <data key="v_ensembl">ENSG00000188130</data>
+      <data key="v_symbol">MAPK12</data>
+      <data key="v_id">n2002</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">2775</data>
+      <data key="v_entrez">2775</data>
+      <data key="v_ensembl">ENSG00000087258</data>
+      <data key="v_symbol">GNAO1</data>
+      <data key="v_id">n3466</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">93</data>
+      <data key="v_entrez">93</data>
+      <data key="v_ensembl">ENSG00000114739</data>
+      <data key="v_symbol">ACVR2B</data>
+      <data key="v_id">n5009</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">1910</data>
+      <data key="v_entrez">1910</data>
+      <data key="v_ensembl">ENSG00000136160</data>
+      <data key="v_symbol">EDNRB</data>
+      <data key="v_id">n5444</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <edge source="n0" target="n6">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n7">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n3" target="n2">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n5" target="n4">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n6" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n6" target="n1">
+      <data key="e_interaction">indirect effect</data>
+    </edge>
+    <edge source="n7" target="n5">
+      <data key="e_interaction">binding/association</data>
+    </edge>
+    <edge source="n7" target="n5">
+      <data key="e_interaction">activation</data>
+    </edge>
+  </graph>
+</graphml>

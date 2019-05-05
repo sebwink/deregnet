@@ -233,7 +233,7 @@ FMILPSol YGGY::getSolution() {
 
 void YGGY::backTransformSolution() {
     int status { transformation.get(GRB_IntAttr_Status) };
-    if (status == GRB_OPTIMAL) {
+    if (status == GRB_OPTIMAL || status == GRB_INTERRUPTED || status == GRB_TIME_LIMIT) {
       solution.objVal = transformation.get(GRB_DoubleAttr_ObjVal);
       double uval { u.get(GRB_DoubleAttr_X) };
       for (int i = 0; i < base_model->get(GRB_IntAttr_NumVars); i++) {

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">51179</data>
+      <data key="v_entrez">51179</data>
+      <data key="v_ensembl">ENSG00000116882</data>
+      <data key="v_symbol">HAO2</data>
+      <data key="v_id">n1046</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">54363</data>
+      <data key="v_entrez">54363</data>
+      <data key="v_ensembl">ENSG00000101323</data>
+      <data key="v_symbol">HAO1</data>
+      <data key="v_id">n1378</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">847</data>
+      <data key="v_entrez">847</data>
+      <data key="v_ensembl">ENSG00000121691</data>
+      <data key="v_symbol">CAT</data>
+      <data key="v_id">n2636</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">23498</data>
+      <data key="v_entrez">23498</data>
+      <data key="v_ensembl">ENSG00000162882</data>
+      <data key="v_symbol">HAAO</data>
+      <data key="v_id">n3247</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">9380</data>
+      <data key="v_entrez">9380</data>
+      <data key="v_ensembl">ENSG00000137106</data>
+      <data key="v_symbol">GRHPR</data>
+      <data key="v_id">n3993</data>
+      <data key="v_deregnet_score">-1</data>
+    </node>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n0">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n2" target="n1">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n3" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

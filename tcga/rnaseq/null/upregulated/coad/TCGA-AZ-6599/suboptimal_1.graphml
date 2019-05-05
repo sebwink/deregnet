@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">192134</data>
+      <data key="v_entrez">192134</data>
+      <data key="v_ensembl">ENSG00000198488</data>
+      <data key="v_symbol">B3GNT6</data>
+      <data key="v_id">n651</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">11226</data>
+      <data key="v_entrez">11226</data>
+      <data key="v_ensembl">ENSG00000139629</data>
+      <data key="v_symbol">GALNT6</data>
+      <data key="v_id">n709</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">26290</data>
+      <data key="v_entrez">26290</data>
+      <data key="v_ensembl">ENSG00000130035</data>
+      <data key="v_symbol">GALNT8</data>
+      <data key="v_id">n797</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">8693</data>
+      <data key="v_entrez">8693</data>
+      <data key="v_ensembl">ENSG00000257594</data>
+      <data key="v_symbol">GALNT4</data>
+      <data key="v_id">n1339</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">442117</data>
+      <data key="v_entrez">442117</data>
+      <data key="v_ensembl">ENSG00000174473</data>
+      <data key="v_symbol">GALNTL6</data>
+      <data key="v_id">n2057</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n3">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

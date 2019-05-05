@@ -39,11 +39,14 @@
 
 namespace deregnet {
 
+/**
+ * @brief Represents all data and parameters needed to run the absolute version of DeRegNet
+ */
 class DrgntData : public DeregnetData {
 
       public:
 
-        int size { 20 };
+        int size { 20 };        ///< Size of resulting subgraphs
 
     };
 

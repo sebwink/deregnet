@@ -110,6 +110,7 @@ int main(int argc, char* argv[]) {
     finalize_data(options, data);
     DeregnetFinder<FMILP, Data> subgraphFinder(&data);
     vector<Subgraph> subgraphs { subgraphFinder.run() };
+    std::cout << subgraphs.size() << std::endl;
     writeSubgraphs(subgraphs, options.outdir);
     return 0;
 }
@@ -122,6 +123,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 		{"graph", 1, 0, 'g'},
 		{"terminals", 1, 0, 'T'},
 		{"terminals-file", 1, 0, 0},
+        {"min-num-terminals", 1, 0, 0},
 		{"receptors", 1, 0, 'R'},
 		{"receptors-file", 1, 0, 0},
 		{"score", 1, 0, 's'},
@@ -143,7 +145,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 		{"no-start-heuristic", 0, 0, 0},
         {"help", 0, 0, 'h'},
 		{"version", 0, 0, 'v'},
-        {"model-sense", 0, 0, 0},
+        {"model-sense", 1, 0, 0},
         {"absolute-values", 0, 0, 0},
 		{NULL, 0, NULL, 0}
 	};
@@ -163,6 +165,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 string exclude_file { "exclude-file" };
                 string model_sense { "model-sense" };
                 string absolute_values { "absolute-values" };
+                string min_num_terminals { "min-num-terminals" };
                 // --no-start-heuristic
                 if ( strcmp(long_options[option_index].name, no_start_heuristic.c_str()) == 0 )
                     data.start_heuristic = false;
@@ -173,7 +176,7 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 else if ( strcmp(long_options[option_index].name, terminals_file.c_str()) == 0)
                     register_node_set_file(&options.terminals, optarg);
                 // --absolute-values
-                if ( strcmp(long_options[option_index].name, absolute_values.c_str()) == 0 )
+                else if ( strcmp(long_options[option_index].name, absolute_values.c_str()) == 0 )
                     options.absolute_values = true;
                 // --receptors-file
                 else if ( strcmp(long_options[option_index].name, receptors_file.c_str()) == 0)
@@ -184,9 +187,11 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
                 // --exclude-file
 				else if ( strcmp(long_options[option_index].name, exclude_file.c_str()) == 0)
 					register_node_set_file(&options.exclude, optarg);
-                else if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0)
-                    data.model_sense = string(optarg);
-				break;
+                else if ( strcmp(long_options[option_index].name, model_sense.c_str()) == 0) 
+				    data.model_sense = optarg;
+                else if ( strcmp(long_options[option_index].name, min_num_terminals.c_str()) == 0)
+                    data.min_num_terminals = new int( atoi(optarg) );
+                break;
 			}
 			case 'g':
 				// -g,--graph
@@ -218,7 +223,6 @@ void parse_options(int argc, char* argv[], Options& options, Data& data) {
 				else {
 				    cout << "\nUnknown algorithm option provided:" << endl;
 					cout << "-a,--algorithm  < gcc | dta | ovt >" << endl;
-					print_help();
 					exit(OPTION_ERROR);
 				}
 				break;
@@ -300,6 +304,9 @@ void finalize_data(Options& options, Data& data) {
 // writeSubgraphs ###########################################################
 
 void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
+    // hard to do platform-independent without Boost or C++17
+    // on the other hand, it is 2017 now ...
+    std::cout << (*outdirp) << std::endl;
     char cwd[2048];
     string outdir;
     if (getcwd(cwd, sizeof(cwd)) != NULL)
@@ -317,6 +324,12 @@ void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
         subgraph.writeToFile(outdir_plain, true);
     }
 }
+
+/*
+void write_subgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
+    //fs::path outdir(*outdirp);
+}
+*/
 
 // print_version ############################################################
 

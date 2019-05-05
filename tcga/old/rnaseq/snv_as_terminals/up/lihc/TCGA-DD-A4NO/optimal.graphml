@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="v_deregnet_receptor" for="node" attr.name="deregnet_receptor" attr.type="boolean"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">2252</data>
+      <data key="v_entrez">2252</data>
+      <data key="v_ensembl">ENSG00000140285</data>
+      <data key="v_symbol">FGF7</data>
+      <data key="v_id">n35</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">2324</data>
+      <data key="v_entrez">2324</data>
+      <data key="v_ensembl">ENSG00000037280</data>
+      <data key="v_symbol">FLT4</data>
+      <data key="v_id">n1256</data>
+      <data key="v_deregnet_score">0</data>
+      <data key="v_deregnet_receptor">true</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">5154</data>
+      <data key="v_entrez">5154</data>
+      <data key="v_ensembl">ENSG00000197461</data>
+      <data key="v_symbol">PDGFA</data>
+      <data key="v_id">n2619</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">4854</data>
+      <data key="v_entrez">4854</data>
+      <data key="v_ensembl">ENSG00000074181</data>
+      <data key="v_symbol">NOTCH3</data>
+      <data key="v_id">n4087</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">1944</data>
+      <data key="v_entrez">1944</data>
+      <data key="v_ensembl">ENSG00000143590</data>
+      <data key="v_symbol">EFNA3</data>
+      <data key="v_id">n4632</data>
+      <data key="v_deregnet_score">1</data>
+      <data key="v_deregnet_receptor">false</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n2" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">expression</data>
+    </edge>
+    <edge source="n4" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+  </graph>
+</graphml>

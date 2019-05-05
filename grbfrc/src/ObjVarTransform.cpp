@@ -47,13 +47,13 @@ void ObjVarTransform::copy_model() {
 }
 
 void ObjVarTransform::add_u_constraint() {
-    GRBLinExpr& objnum { objective->numerator };
+    const GRBLinExpr& objnum { objective->numerator };
     GRBLinExpr transformed_objnum { objnum.getConstant() };
     for (unsigned int i = 0; i < objnum.size(); ++i) {
         GRBVar var = objnum.getVar(i);
         transformed_objnum += objnum.getCoeff(i) * (*tx[getIndex(var)]);
     }
-    GRBLinExpr& objdenom { objective->denominator };
+    const GRBLinExpr& objdenom { objective->denominator };
     GRBLinExpr transformed_objdenom { objdenom.getConstant() };
     for (unsigned int i = 0; i < objdenom.size(); ++i) {
         GRBVar glover_var = transformation.addVar(-GRB_INFINITY, GRB_INFINITY, 0.0, 'C');

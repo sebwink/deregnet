@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_entrez" for="node" attr.name="entrez" attr.type="string"/>
+  <key id="v_ensembl" for="node" attr.name="ensembl" attr.type="string"/>
+  <key id="v_symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_deregnet_score" for="node" attr.name="deregnet_score" attr.type="double"/>
+  <key id="e_interaction" for="edge" attr.name="interaction" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">114</data>
+      <data key="v_entrez">114</data>
+      <data key="v_ensembl">ENSG00000155897</data>
+      <data key="v_symbol">ADCY8</data>
+      <data key="v_id">n214</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">785</data>
+      <data key="v_entrez">785</data>
+      <data key="v_ensembl">ENSG00000182389</data>
+      <data key="v_symbol">CACNB4</data>
+      <data key="v_id">n381</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">5923</data>
+      <data key="v_entrez">5923</data>
+      <data key="v_ensembl">ENSG00000058335</data>
+      <data key="v_symbol">RASGRF1</data>
+      <data key="v_id">n853</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">815</data>
+      <data key="v_entrez">815</data>
+      <data key="v_ensembl">ENSG00000070808</data>
+      <data key="v_symbol">CAMK2A</data>
+      <data key="v_id">n3523</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">4830</data>
+      <data key="v_entrez">4830</data>
+      <data key="v_ensembl">ENSG00000239672</data>
+      <data key="v_symbol">NME1</data>
+      <data key="v_id">n4371</data>
+      <data key="v_deregnet_score">1</data>
+    </node>
+    <edge source="n0" target="n4">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_interaction">compound</data>
+    </edge>
+    <edge source="n3" target="n0">
+      <data key="e_interaction">inhibition</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">activation</data>
+    </edge>
+    <edge source="n3" target="n1">
+      <data key="e_interaction">phosphorylation</data>
+    </edge>
+    <edge source="n4" target="n0">
+      <data key="e_interaction">compound</data>
+    </edge>
+  </graph>
+</graphml>

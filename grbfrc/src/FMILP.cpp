@@ -129,8 +129,10 @@ void FMILP::setObjDenominator(GRBLinExpr& objDenominator)
 int FMILP::getObjSense()
  { return objective.sense; }
 
-void FMILP::setObjSense(int objSense)
- { objective.sense = objSense; }
+void FMILP::setObjSense(int objSense) { 
+    objective.sense = objSense; 
+    baseModel->set(GRB_IntAttr_ModelSense, objSense);
+}
 
 void FMILP::addConstr(const GRBLinExpr lhsExpr,
                         char sense,
