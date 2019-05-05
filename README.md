@@ -1,51 +1,120 @@
-# Deregnet - Find deregulated subnetworks
+# DeRegNet - Find deregulated subnetworks
 
 ## Introduction
 
-Coming soon...
+One of the main challenges of high-throuput omics technologies 
+(genomics, transcriptomic, proteomic, metabolomics, etc.) is the 
+interpretation and analysis of the resulting datasets in terms
+of known or previously unknown biologial processes. Biological networks
+(transcriptional regulatory networks, signaling networks, metabolic
+network, etc.) provide promising scafolds with which to approach
+multi-omics datasets. Existing resources, constructed for
+example from pathway databases like KEGG, Reactome, etc., provide
+extensive interconnected networks linking genes, proteins and other
+biological agents by various kinds of interactions like generic
+activation or inhibition, transcriptional suppression or postranscriptional
+modifications like posphorylation. DeRegNet allows the extraction and
+prioritisation of subnetworks of larger biomolecular networks based on
+suitable omics data like for example gene expression.
 
 ## Installation
 
-### Prerequisites
+There, broady speaking, two modes of installation and usage for the basic
+DeRegNet programs: *Native* and *Docker*. It is recommended to use Docker
+whenever possible. Both ways assume a Linux operating system.
 
-This software work is developed and tested on Ubuntu and Scientific Linux, but should
-work on other Linux installations as well.
+### Native
 
-Nothing is offcially supported or guaranteed. Use at your own peril.
+#### Prerequisites
 
-Inofficially you can always write a mail to: *winkler@informatik.uni-tuebingen.de*
-
-You will need two prerequistes installed on your system:
+DeRegNet relies on the following two software distributions:
 
 * [Lemon graph library](http://lemon.cs.elte.hu/trac/lemon)
-* [Gurobi](http://www.gurobi.com)
+* [Gurobi](http://www.gurobi.com) (version >= 7.0.2)
 
-### Install
+To install DeRegNet locally on your machine install these two prerequsistes first.
+DeRegNet requires a Gurobi version >= 7.0.2. The native local installation of 
+DeRegNet works with any [supported licensing scheme](http://www.gurobi.com/downloads/licenses/license-center)
+for the Gurobi libraries.
+
+#### Install
 
 In *common.mak* set *LEMON\_HOME* according to your environment.
 
 In *gurobi\_version.mak* specify your Gurobi version and set *GUROBI\_HOME* according to your environment.
-If you use Gurobi version < 7.0.2 write me an E-Mail. Better, install the newest version of Gurobi.
 
-Use *bash* otherwise things may break...
+'''sh
+make
+'''
 
-Then at your command prompt, type *make*. 
+This builds the main DeRegNet executables in the *bin* directory: *drgnt* and *avgdrgnt*.
 
-In case of successful compilation you find the two binaries *drgnt* and *avgdrgnt* in the *bin* directory.
+In order to install the Python interface of DeRegNet navigate to the *python* subdirectory
+and run
 
-## Basic usage
+'''sh
+python3 setup.py install
+'''
 
-You can either use *bin/drgnt* or *bin/avgdrgnt* directly, or you can use the Python (Python 3!) wrappers
-*bin/drgnt.py* and *bin/avgdrgnt.py*. For the Python scripts to be functional make a soft link
-to python/deregnet in the relevant "site-packages" directory of the relevant Python installation (regrettably 
-there is no canonical Python installation procedure for the "deregnet" package at this point). Also make sure
-you point the shebang in *bin/drgnt.py* and *bin/avgdrgnt.py* to the Python installation in question. Also, make 
-sure you have the Python packages referenced in *python/deregnet/deregnet.py* installed.
+#### Basic usage
+
+'''sh
+bin/avgdrgnt.py --help
+'''
+
+#### Examples
+
+'''sh
+bin/avgdrgnt.py --graph test/kegg_hsa.graphml \
+                --scores test/data/score.csv \
+				--sep , \
+				--output-path test
+'''
+
+### Docker
+
+This mode of installation and usage does not require you to download
+this repository.
+
+#### Prerequisites
+
+* [Docker](https://www.docker.com/).
+* A floating (!) [license for Gurobi](http://www.gurobi.com/downloads/licenses/license-center).
+  (currently the corresponding license server is assumed to be called "license")
+
+#### Install
+
+'''sh
+docker pull sebwink/deregnet
+'''
+
+#### Basic usage
+
+'''sh
+docker run sebwink/deregnet --help
+'''
+
+#### Examples
+
+docker run -v $(pwd)/test:/io sebwink/deregnet \
+                                  --graph kegg_hsa.graphml \
+                                  --scores data/score.csv \
+				                  --sep , 
 
 ## General remarks
 
-Good luck!
+Feedback and problems can be reported to deregnet@informatik.uni-tuebingen.de.
 
 ## Documentation
+
+'''sh
+bin/avgdrgnt.py --help
+'''
+
+or
+
+'''
+docker run sebwink/deregnet --help
+'''
 
 [ProjectPage](https://sebwink.github.io/deregnet/)
