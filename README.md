@@ -19,7 +19,7 @@ suitable omics data like for example gene expression.
 
 ## Installation
 
-There, broady speaking, two modes of installation and usage for the basic
+There are, broadly speaking, two modes of installation and usage for the basic
 DeRegNet programs: *Native* and *Docker*. It is recommended to use Docker
 whenever possible. Both ways assume a Linux operating system.
 
@@ -43,33 +43,33 @@ In *common.mak* set *LEMON\_HOME* according to your environment.
 
 In *gurobi\_version.mak* specify your Gurobi version and set *GUROBI\_HOME* according to your environment.
 
-'''sh
+```sh
 make
-'''
+```
 
 This builds the main DeRegNet executables in the *bin* directory: *drgnt* and *avgdrgnt*.
 
 In order to install the Python interface of DeRegNet navigate to the *python* subdirectory
 and run
 
-'''sh
+```sh
 python3 setup.py install
-'''
+```
 
 #### Basic usage
 
-'''sh
+```sh
 bin/avgdrgnt.py --help
-'''
+```
 
 #### Examples
 
-'''sh
+```sh
 bin/avgdrgnt.py --graph test/kegg_hsa.graphml \
                 --scores test/data/score.csv \
 				--sep , \
 				--output-path test
-'''
+```
 
 ### Docker
 
@@ -84,22 +84,24 @@ this repository.
 
 #### Install
 
-'''sh
+```sh
 docker pull sebwink/deregnet
-'''
+```
 
 #### Basic usage
 
-'''sh
+```sh
 docker run sebwink/deregnet --help
-'''
+```
 
 #### Examples
 
+```sh
 docker run -v $(pwd)/test:/io sebwink/deregnet \
                                   --graph kegg_hsa.graphml \
                                   --scores data/score.csv \
 				                  --sep , 
+```
 
 ## General remarks
 
@@ -107,14 +109,14 @@ Feedback and problems can be reported to deregnet@informatik.uni-tuebingen.de.
 
 ## Documentation
 
-'''sh
+```sh
 bin/avgdrgnt.py --help
-'''
+```
 
 or
 
-'''
+```sh
 docker run sebwink/deregnet --help
-'''
+```
 
 [ProjectPage](https://sebwink.github.io/deregnet/)
