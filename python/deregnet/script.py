@@ -130,13 +130,13 @@ def parse_scores(score_file,
     if isinstance(score_file, pd.DataFrame):
         df = score_file
     else:
-        df = pd.read_table(score_file, sep=col_sep, dtype={'id_column': str}, **header)
+        df = pd.read_csv(score_file, sep=col_sep, dtype={'id_column': str}, **header)
     if score_id_type != graph_id_type:
         ids = list(df[id_column])
         ids = id_mapper.map(ids, score_id_type, graph_id_type)
         # TODO: handle situations with list-valued id types
     df.drop_duplicates(inplace=True)
-    print(df.head(), id_column)
+    #print(df.head(), id_column)
     df = df.groupby(id_column).mean()
     # df.set_index(id_column, inplace=True)
 

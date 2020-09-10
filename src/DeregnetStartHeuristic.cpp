@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------
 //                   deregnet -- find deregulated pathways
 // --------------------------------------------------------------------------
-// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2016
+// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2020
 //
 // This software is released under a three-clause BSD license:
 //  * Redistributions of source code must retain the above copyright
@@ -36,8 +36,8 @@
 #include <utility>
 #include <functional>
 
-#include <deregnet/usinglemon.h>
-#include <deregnet/DeregnetStartHeuristic.h>
+#include "usinglemon.hpp"
+#include "DeregnetStartHeuristic.hpp"
 
 using namespace std;
 

@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------
 //                   deregnet -- find deregulated pathways
 // --------------------------------------------------------------------------
-// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2016
+// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2020
 //
 // This software is released under a three-clause BSD license:
 //  * Redistributions of source code must retain the above copyright
@@ -48,10 +48,10 @@
 // gurobi ###################################################################
 #include <gurobi_c++.h>
 // deregnet #################################################################
-#include <deregnet/utils.h>
-#include <deregnet/version.h>
-#include <deregnet/DrgntData.h>
-#include <deregnet/DeregnetFinder.h>
+#include "utils.hpp"
+#include "version.hpp"
+#include "DrgntData.hpp"
+#include "DeregnetFinder.hpp"
 
 #define OPTION_ERROR 1
 
@@ -268,7 +268,7 @@ void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
         outdir = string(cwd);
     if (outdirp)
         outdir = *outdirp;
-    struct stat st = {0};
+    struct stat st;
     if (stat(outdir.c_str(), &st) == -1)
         mkdir(outdir.c_str(), 0700);
     string outdir_plain { outdir + "/plain" };

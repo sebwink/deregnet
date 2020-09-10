@@ -656,8 +656,6 @@ class SubgraphFinder:
         # handle scores
         self._prepare_scores(score_file, scores, default_score)  # writes self.score_file
         # handle algorithm synonyms
-        print(rundir)
-        print(os.listdir(rundir))
         if algorithm == 'GeneralizedCharnesCooper':
             algorithm = 'gcc'
         elif algorithm == 'Dinkelbach':
@@ -715,11 +713,11 @@ class SubgraphFinder:
         else:
             with open(self.log, 'a') as logp:
                 subprocess.call(call, stdout=logp, stderr=logp)  # TODO: reroute messages
-        print(' '.join(call))
         # parse back the results
         node_names_list = self._read_result(rundir)
         subgraphs = [self._get_subgraph(node_names) for node_names in node_names_list]
         self._write_deregnet_attrs(subgraphs, scores, default_score, receptors, terminals)
+        shutil.rmtree(rundir)
         return SubgraphFinderResult(optimal=subgraphs[0],
                                     suboptimal=subgraphs[1:],
                                     mode='avg')
@@ -838,6 +836,7 @@ class SubgraphFinder:
         node_names_list = self._read_result(rundir)
         subgraphs = [self._get_subgraph(node_names) for node_names in node_names_list]
         self._write_deregnet_attrs(subgraphs, scores, default_score, root=root) # TODO: register root
+        shutil.rmtree(rundir)
         return SubgraphFinderResult(optimal=subgraphs[0],
                                     suboptimal=subgraphs[1:],
                                     mode='abs')

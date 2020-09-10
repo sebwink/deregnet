@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------
 //                   deregnet -- find deregulated pathways
 // --------------------------------------------------------------------------
-// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2016
+// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2020
 //
 // This software is released under a three-clause BSD license:
 //  * Redistributions of source code must retain the above copyright
@@ -43,9 +43,9 @@
 #include <lemon/connectivity.h>
 #include <lemon/adaptors.h>
 
-#include <deregnet/usinglemon.h>
+#include "usinglemon.hpp"
 
-#include <deregnet/LazyConstraintCallback.h>
+#include "LazyConstraintCallback.hpp"
 
 using namespace std;
 
