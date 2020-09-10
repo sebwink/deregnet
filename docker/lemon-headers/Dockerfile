@@ -1,4 +1,4 @@
-FROM debian:stretch-slim as build
+FROM debian:buster-slim as build
 
 RUN apt-get update && \
     apt-get upgrade -y && \
