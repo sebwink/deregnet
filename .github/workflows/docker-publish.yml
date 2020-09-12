@@ -38,11 +38,12 @@ jobs:
             if [ -f docker-compose.test.yml ]; then
               docker-compose --file docker-compose.test.yml build
               docker-compose --file docker-compose.test.yml run sut
-            else
-              docker build . --build-arg GUROBI_USER=$GUROBI_USER \
-                --build-arg GRBFRC_GUROBI_VERSION=$GUROBI_VERSION \
-                --build-arg GRBFRC_IMAGE_TAG=$GRBFRC_IMAGE_TAG \
-                --file Dockerfile
+            else 
+              echo SKIP
+            #docker build . --build-arg GUROBI_USER=$GUROBI_USER \
+            #    --build-arg GRBFRC_GUROBI_VERSION=$GUROBI_VERSION \
+            #    --build-arg GRBFRC_IMAGE_TAG=$GRBFRC_IMAGE_TAG \
+            #    --file Dockerfile
             fi
           done
   # Push image to GitHub Packages.
