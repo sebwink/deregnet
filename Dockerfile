@@ -1,46 +1,52 @@
+ARG GRBFRC_IMAGE_TAG=latest
+ARG GRBFRC_GUROBI_VERSION=9.0.2
+
 FROM sebwink/lemon-headers:131 as lemon
 
-FROM sebwink/grbfrc as build
+FROM sebwink/libgrbfrc-grb${GRBFRC_GUROBI_VERSION}:${GRBFRC_IMAGE_TAG}
+
+ARG GUROBI_USER
 
 COPY --from=lemon /usr/local/include/lemon /usr/local/include/lemon
+
+USER root
 
 RUN apt-get update && \
     apt-get upgrade -y && \
 	apt-get install -y build-essential && \
-    mkdir -p /deregnet/bin /deregnet/build
+	apt-get install -y python3-dev python3-pip && \
+	mkdir /deregnet
+
 WORKDIR /deregnet 
 
-COPY docker/deregnet/common.mak .
-COPY docker/deregnet/drgnt.mak .
-COPY docker/deregnet/avgdrgnt.mak .
-COPY include include
+COPY Makefile .
 COPY src src
+COPY upstream/libgrbfrc/gurobi.mak gurobi.mak
 
-RUN make -f avgdrgnt.mak && \
-    make -f drgnt.mak
+RUN LIBGRBFRC=/usr/local/include GUROBI_MAKEFILE=gurobi.mak make all
 
-RUN python3 -m pip install --upgrade pip && \
-	python3 -m pip install pandas && \
+RUN python3 -m pip install pandas && \
 	python3 -m pip install biomap-utils && \
 	apt-get install -y libz-dev && \
 	apt-get install -y libxml2-dev && \
+	apt-get install -y git && \
+	apt-get install -y libtool && \
+	apt-get install bison -y && \
+    apt-get install byacc -y && \
+	apt-get install flex -y && \
     python3 -m pip install python-igraph
 
-FROM python:3.6-slim
-
-RUN apt-get update && \
-    apt-get upgrade -y && \
-	apt-get install -y libxml2 libz-dev
-
-COPY --from=build /usr/local/lib /usr/local/lib
-COPY --from=build /deregnet/bin/drgnt /usr/local/bin/
-COPY --from=build /deregnet/bin/avgdrgnt /usr/local/bin/
-COPY --from=build /usr/local/lib/python3.6/site-packages /usr/local/lib/python3.5/site-packages
-
-COPY python/deregnet /usr/local/lib/python3.6/site-packages/deregnet 
-COPY bin/drgnt.py /usr/local/bin/
-COPY bin/avgdrgnt.py /usr/local/bin/
+COPY python python 
 
 WORKDIR /io
 
-ENTRYPOINT ["avgdrgnt.py"]
+RUN chown -R ${GUROBI_USER}:${GUROBI_USER} /io && \
+		echo "GUROBI_USER: ${GUROBI_USER}" && \
+		mkdir -p /home/${GUROBI_USER} && \
+		chown -R ${GUROBI_USER}:${GUROBI_USER} /home/${GUROBI_USER}
+
+USER ${GUROBI_USER}
+
+ENV PATH=/deregnet/python/scripts:${PATH}
+
+ENTRYPOINT ["/deregnet/python/scripts/avgdrgnt.py"]

@@ -141,7 +141,7 @@ def parse_scores(score_file,
     # df.set_index(id_column, inplace=True)
 
 
-    scores = {ID: float(df.ix[ID, score_column]) for ID in df.index}
+    scores = {ID: float(df.loc[ID, score_column]) for ID in df.index}
     nan_keys = {ID for ID in scores if math.isnan(scores[ID])}
     for ID in nan_keys:
         del scores[ID]

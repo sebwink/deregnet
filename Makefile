@@ -1,17 +1,17 @@
 SELF := $(abspath $(firstword $(MAKEFILE_LIST)))                                                                                                                          
 SELFDIR := $(dir $(SELF))
 
-GUROBI_MAKEFILE=$(SELFDIR)/upstream/libgrbfrc/gurobi.mak 
+GUROBI_MAKEFILE ?= $(SELFDIR)/upstream/libgrbfrc/gurobi.mak 
 
 -include ${GUROBI_MAKEFILE}
 
 CXX=c++
 CXXFLAGS += -m64 -g -std=c++17 -Wall -Wextra -pedantic -fPIC #-Werror
 CPPFLAGS += -Isrc -I${GUROBI_HOME}/include -I$(SELFDIR)/upstream/libgrbfrc/include
-LIBGRBFRC = $(SELFDIR)/upstream/libgrbfrc/lib
-LDPATHS += -L${GUROBI_HOME}/lib -L$(LIBGRBFRC)
+LIBGRBFRC ?= $(SELFDIR)/upstream/libgrbfrc/lib
+LDPATHS += -L${GUROBI_HOME}/lib -lgurobi${GUROBI_VERSION_SUFFIX} -lgurobi_c++ -L$(LIBGRBFRC) -lgrbfrc
 LDFLAGS += ${LDPATHS} -Wl,-rpath=$(LIBGRBFRC)
-LDLIBS += -lgurobi_c++ -lgurobi${GUROBI_VERSION_SUFFIX} -lgrbfrc -lpthread -lm
+LDLIBS += -lpthread -lm
 
 SRCDIR=src
 SOURCES=$(wildcard $(SRCDIR)/*.cpp) 
@@ -35,6 +35,7 @@ destroy: clean
 
 deregnet: install-python lgrbfrc all 
 	@#
+
 
 all : $(BINS)
 	@#
@@ -67,8 +68,10 @@ docker: docker@$(GUROBI_VERSION)
 	@#
 
 docker@%:
-	@cd upstream/gurobi-docker && make gurobi@$*-local 
-	@docker build . --build-arg GUROBI_VERSION=$*-local -t sebwink/libgrbfrc-grb$*:local
+	@make destroy
+	@cd upstream/libgrbfrc && git submodule update --init --recursive && cd upstream/gurobi-docker && make gurobi@$*-local
+	@cd upstream/libgrbfrc && make docker@$* 
+	@docker build --no-cache --build-arg GUROBI_USER=$$(pwd) --build-arg GRBFRC_GUROBI_VERSION=$* --build-arg GRBFRC_IMAGE_TAG=local -t sebwink/deregnet:local .
 
 docs:  
 	@cd doc/doxygen && doxygen Doxyfile
