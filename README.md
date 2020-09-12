@@ -1,5 +1,7 @@
 # DeRegNet - Find deregulated subnetworks
 
+![Docker](https://github.com/sebwink/deregnet/workflows/Docker/badge.svg?branch=master)
+
 ## Introduction
 
 One of the main challenges of high-throuput omics technologies 
