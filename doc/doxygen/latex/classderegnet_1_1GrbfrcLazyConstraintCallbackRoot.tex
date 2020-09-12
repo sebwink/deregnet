@@ -1,0 +1,179 @@
+\hypertarget{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot}{}\section{deregnet\+:\+:Grbfrc\+Lazy\+Constraint\+Callback\+Root Class Reference}
+\label{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot}\index{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}}
+
+
+Wrapper for lazy constraint callback needed for fractional integer formulation (fixed root)  
+
+
+
+
+{\ttfamily \#include $<$Grbfrc\+Lazy\+Constraint\+Callback.\+hpp$>$}
+
+
+
+Inheritance diagram for deregnet\+:\+:Grbfrc\+Lazy\+Constraint\+Callback\+Root\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for deregnet\+:\+:Grbfrc\+Lazy\+Constraint\+Callback\+Root\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a56a7b25e09c0db1de37f46d5be41009d}{Grbfrc\+Lazy\+Constraint\+Callback\+Root} (\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$xgraph, \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$xroot, double $\ast$xgap\+\_\+cut)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a257a89c84c5cf68ee764cc819f3a2653}{register\+\_\+vargrps} () override
+\begin{DoxyCompactList}\small\item\em Method implementing the mapping to reformulated models. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$ \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a93e8aeef7796880ba2efa59770ed98ad}{graph}
+\begin{DoxyCompactList}\small\item\em Underlying network (in which we try to find the subgraphs) \end{DoxyCompactList}\item 
+\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$ \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a49a59d875ea23a1b443ec39b3c221e4d}{root}
+\begin{DoxyCompactList}\small\item\em The (fixed) root node. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_aa396c45cfdd6231f7c93560f5ce3f013}{gap\+\_\+cut}
+\begin{DoxyCompactList}\small\item\em Gap-\/cut parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper for lazy constraint callback needed for fractional integer formulation (fixed root) 
+
+Definition at line 56 of file Grbfrc\+Lazy\+Constraint\+Callback.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a56a7b25e09c0db1de37f46d5be41009d}\label{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a56a7b25e09c0db1de37f46d5be41009d}} 
+\index{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}!Grbfrc\+Lazy\+Constraint\+Callback\+Root@{Grbfrc\+Lazy\+Constraint\+Callback\+Root}}
+\index{Grbfrc\+Lazy\+Constraint\+Callback\+Root@{Grbfrc\+Lazy\+Constraint\+Callback\+Root}!deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}}
+\subsubsection{\texorpdfstring{Grbfrc\+Lazy\+Constraint\+Callback\+Root()}{GrbfrcLazyConstraintCallbackRoot()}}
+{\footnotesize\ttfamily deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root (\begin{DoxyParamCaption}\item[{\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$}]{xgraph,  }\item[{\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$}]{xroot,  }\item[{double $\ast$}]{xgap\+\_\+cut }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xgraph} & Underlying network (in which we try to find subgraphs) \\
+\hline
+{\em xroot} & The (fixed) root node \\
+\hline
+{\em xgap\+\_\+cut} & Gap-\/cut parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Grbfrc\+Lazy\+Constraint\+Callback.\+cpp.
+
+
+
+References gap\+\_\+cut, and root.
+
+
+\begin{DoxyCode}
+40     : \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a93e8aeef7796880ba2efa59770ed98ad}{graph} \{ xgraph \},
+41       \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a49a59d875ea23a1b443ec39b3c221e4d}{root} \{ xroot \},
+42       \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_aa396c45cfdd6231f7c93560f5ce3f013}{gap\_cut} \{ xgap\_cut \} \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a257a89c84c5cf68ee764cc819f3a2653}\label{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a257a89c84c5cf68ee764cc819f3a2653}} 
+\index{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}!register\+\_\+vargrps@{register\+\_\+vargrps}}
+\index{register\+\_\+vargrps@{register\+\_\+vargrps}!deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}}
+\subsubsection{\texorpdfstring{register\+\_\+vargrps()}{register\_vargrps()}}
+{\footnotesize\ttfamily void deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root\+::register\+\_\+vargrps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method implementing the mapping to reformulated models. 
+
+
+
+Definition at line 44 of file Grbfrc\+Lazy\+Constraint\+Callback.\+cpp.
+
+
+
+References gap\+\_\+cut, graph, and root.
+
+
+\begin{DoxyCode}
+44                                                         \{
+45     std::map<Node, GRBVar>* x = \textcolor{keyword}{new} std::map<Node, GRBVar>((*transformed\_vargrps)[0]);
+46     cbp = \textcolor{keyword}{new} LazyConstraintCallbackRoot(x, \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a93e8aeef7796880ba2efa59770ed98ad}{graph}, \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a49a59d875ea23a1b443ec39b3c221e4d}{root}, \hyperlink{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_aa396c45cfdd6231f7c93560f5ce3f013}{gap\_cut});
+47 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_aa396c45cfdd6231f7c93560f5ce3f013}\label{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_aa396c45cfdd6231f7c93560f5ce3f013}} 
+\index{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}!gap\+\_\+cut@{gap\+\_\+cut}}
+\index{gap\+\_\+cut@{gap\+\_\+cut}!deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}}
+\subsubsection{\texorpdfstring{gap\+\_\+cut}{gap\_cut}}
+{\footnotesize\ttfamily double$\ast$ deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root\+::gap\+\_\+cut\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gap-\/cut parameter. 
+
+
+
+Definition at line 78 of file Grbfrc\+Lazy\+Constraint\+Callback.\+hpp.
+
+
+
+Referenced by Grbfrc\+Lazy\+Constraint\+Callback\+Root(), and register\+\_\+vargrps().
+
+\mbox{\Hypertarget{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a93e8aeef7796880ba2efa59770ed98ad}\label{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a93e8aeef7796880ba2efa59770ed98ad}} 
+\index{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}!graph@{graph}}
+\index{graph@{graph}!deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}}
+\subsubsection{\texorpdfstring{graph}{graph}}
+{\footnotesize\ttfamily \hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph}$\ast$ deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root\+::graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Underlying network (in which we try to find the subgraphs) 
+
+
+
+Definition at line 76 of file Grbfrc\+Lazy\+Constraint\+Callback.\+hpp.
+
+
+
+Referenced by register\+\_\+vargrps().
+
+\mbox{\Hypertarget{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a49a59d875ea23a1b443ec39b3c221e4d}\label{classderegnet_1_1GrbfrcLazyConstraintCallbackRoot_a49a59d875ea23a1b443ec39b3c221e4d}} 
+\index{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}!root@{root}}
+\index{root@{root}!deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root@{deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}$\ast$ deregnet\+::\+Grbfrc\+Lazy\+Constraint\+Callback\+Root\+::root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The (fixed) root node. 
+
+
+
+Definition at line 77 of file Grbfrc\+Lazy\+Constraint\+Callback.\+hpp.
+
+
+
+Referenced by Grbfrc\+Lazy\+Constraint\+Callback\+Root(), and register\+\_\+vargrps().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{GrbfrcLazyConstraintCallback_8hpp}{Grbfrc\+Lazy\+Constraint\+Callback.\+hpp}\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{GrbfrcLazyConstraintCallback_8cpp}{Grbfrc\+Lazy\+Constraint\+Callback.\+cpp}\end{DoxyCompactItemize}

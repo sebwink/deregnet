@@ -28,6 +28,10 @@ Using deregnet is the only officially supported and documented way of running de
 bin/avgdrgnt.py --help
 ```
 
+```sh 
+docker/local/run sebwink/deregnet:latest --graph test/kegg_hsa.graphml --scores test/data/score.csv --sep , --graph-id-attr ensembl
+``` 
+
 #### Examples
 
 ```sh

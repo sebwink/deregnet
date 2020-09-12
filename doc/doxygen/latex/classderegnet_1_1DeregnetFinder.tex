@@ -1,0 +1,735 @@
+\hypertarget{classderegnet_1_1DeregnetFinder}{}\section{deregnet\+:\+:Deregnet\+Finder$<$ Model\+Type, Data $>$ Class Template Reference}
+\label{classderegnet_1_1DeregnetFinder}\index{deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$@{deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$}}
+
+
+Main entry point for running De\+Reg\+Net algorithms.  
+
+
+
+
+{\ttfamily \#include $<$Deregnet\+Finder.\+hpp$>$}
+
+
+
+Collaboration diagram for deregnet\+:\+:Deregnet\+Finder$<$ Model\+Type, Data $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classderegnet_1_1DeregnetFinder_a5a19a86a0f9f9fa17e8ab625c748d31a}{Deregnet\+Finder} (\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $\ast$xdata)
+\begin{DoxyCompactList}\small\item\em Constructor, taking the relevant data as argument. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ \hyperlink{classderegnet_1_1DeregnetFinder_a1a6119b306b54ff44d8c78f34fc037ab}{run} ()
+\begin{DoxyCompactList}\small\item\em Method which finds the subgraphs. \end{DoxyCompactList}\item 
+void \hyperlink{classderegnet_1_1DeregnetFinder_a9bca73c631c1ce679b07f1e0664abfa2}{find\+\_\+start\+\_\+solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$start\+\_\+solution)
+\begin{DoxyCompactList}\small\item\em Finds a heuristic optimal start solution. \end{DoxyCompactList}\item 
+void \hyperlink{classderegnet_1_1DeregnetFinder_a85fcde1dddbfd03ffc4ae8d244b4fc72}{find\+\_\+suboptimal\+\_\+start\+\_\+solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$start\+\_\+solution, std\+::set$<$ std\+::string $>$ $\ast$nodes\+\_\+so\+\_\+far)
+\begin{DoxyCompactList}\small\item\em Finds a heuristic suboptimal start solution. \end{DoxyCompactList}\item 
+\hyperlink{structderegnet_1_1Subgraph}{Subgraph} \hyperlink{classderegnet_1_1DeregnetFinder_a681d5e2506f9b6075ab36e742a360328}{to\+\_\+subgraph} (\hyperlink{structderegnet_1_1Solution}{Solution} solution, std\+::string signature)
+\begin{DoxyCompactList}\small\item\em Transform a solution from the \hyperlink{structderegnet_1_1Solution}{Solution} type to the \hyperlink{structderegnet_1_1Subgraph}{Subgraph} type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetFinder_a1b7a50c77d09000e2d80b39025d67393}{find\+\_\+start\+\_\+solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$start\+\_\+solution)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetFinder_a6a5305626ad5039e294fa2f6bd3b4b74}{find\+\_\+start\+\_\+solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$start\+\_\+solution)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetFinder_a42eca7055ed54197e27df7bd70271a13}{find\+\_\+suboptimal\+\_\+start\+\_\+solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$start\+\_\+solution, std\+::set$<$ std\+::string $>$ $\ast$nodes\+\_\+so\+\_\+far)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classderegnet_1_1DeregnetFinder_ae81ebb01d3cba09b12858bce7799e2a5}{find\+\_\+suboptimal\+\_\+start\+\_\+solution} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$start\+\_\+solution, std\+::set$<$ std\+::string $>$ $\ast$nodes\+\_\+so\+\_\+far)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classderegnet_1_1DeregnetFinder_ae0335349d6a60ee204d10bf8b7366cfa}{run\+\_\+optimal\+\_\+init} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$start\+\_\+solution)
+\begin{DoxyCompactList}\small\item\em Preparation for finding the optimal subgraph. \end{DoxyCompactList}\item 
+void \hyperlink{classderegnet_1_1DeregnetFinder_ad996cee997a5db4e09016a6f725a6701}{run\+\_\+suboptimal\+\_\+init} (std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $>$ $\ast$$\ast$start\+\_\+solution, std\+::set$<$ std\+::string $>$ $\ast$nodes\+\_\+so\+\_\+far)
+\begin{DoxyCompactList}\small\item\em Perparation for finding suboptimal subgraphs. \end{DoxyCompactList}\item 
+void \hyperlink{classderegnet_1_1DeregnetFinder_a92610c1444ba271820e64d224ec64bb7}{run\+\_\+optimal\+\_\+windup} (bool solve\+\_\+successful, std\+::vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ $\ast$subgraphs)
+\begin{DoxyCompactList}\small\item\em Post-\/processing after attempt to find optimal subgraph. \end{DoxyCompactList}\item 
+bool \hyperlink{classderegnet_1_1DeregnetFinder_a4021d92d787877187a24dcbaf0c1bad1}{run\+\_\+suboptimal\+\_\+windup} (bool solve\+\_\+successful, std\+::vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ $\ast$subgraphs, std\+::set$<$ std\+::string $>$ $\ast$nodes\+\_\+so\+\_\+far, int i)
+\begin{DoxyCompactList}\small\item\em Post-\/processing after attempt to find suboptimal subgraphs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $\ast$ \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}
+\begin{DoxyCompactList}\small\item\em Pointer to \hyperlink{classderegnet_1_1DeregnetData}{Deregnet\+Data}, i.\+e. \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data} or \hyperlink{classderegnet_1_1AvgdrgntData}{Avgdrgnt\+Data}. \end{DoxyCompactList}\item 
+\hyperlink{classderegnet_1_1DeregnetModel}{Deregnet\+Model}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$ $\ast$ \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}
+\begin{DoxyCompactList}\small\item\em Model instance to be build and solved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Model\+Type, typename Data$>$\newline
+class deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$}
+
+Main entry point for running De\+Reg\+Net algorithms. 
+
+\hyperlink{classderegnet_1_1DeregnetFinder}{Deregnet\+Finder} has two template paramters\+: 1) Model\+Type, referring to either G\+R\+B\+Model or grbfrc\+::\+F\+M\+I\+LP, 2) Data, referring to a type representing algorithm data suitable for the Model\+Type parameter. In case of Model\+Type = G\+R\+B\+Model, Data should be \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data}, in case of Model\+Type = grbfrc\+::\+F\+M\+I\+LP, Data should be \hyperlink{classderegnet_1_1AvgdrgntData}{Avgdrgnt\+Data}.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]This desgin seems not very optimal and somehow flawed. The most straight-\/forward improvment would be to implement the absolute version of the algorithm, i.\+e. Model\+Type = G\+R\+B\+Model, in terms of grbfrc\+::\+F\+M\+I\+LP. Model\+Type would go away and Data could specfiy which algorithm to run, for example.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]More refined logging system.\end{DoxyRefDesc}
+
+
+\begin{DoxyAuthor}{Author}
+Sebastian Winkler 
+\end{DoxyAuthor}
+
+
+Definition at line 81 of file Deregnet\+Finder.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a5a19a86a0f9f9fa17e8ab625c748d31a}\label{classderegnet_1_1DeregnetFinder_a5a19a86a0f9f9fa17e8ab625c748d31a}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!Deregnet\+Finder@{Deregnet\+Finder}}
+\index{Deregnet\+Finder@{Deregnet\+Finder}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{Deregnet\+Finder()}{DeregnetFinder()}}
+{\footnotesize\ttfamily template$<$typename Model\+Type , typename Data $>$ \\
+\hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::\hyperlink{classderegnet_1_1DeregnetFinder}{Deregnet\+Finder} (\begin{DoxyParamCaption}\item[{\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $\ast$}]{xdata }\end{DoxyParamCaption})}
+
+
+
+Constructor, taking the relevant data as argument. 
+
+A \hyperlink{classderegnet_1_1DeregnetFinder}{Deregnet\+Finder} object is instantiated by passing a pointer to a suitable Data object. In case of Model\+Type = G\+R\+B\+Model, this data object should be of type \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data}, in case of Model\+Type = grbfrc\+::\+F\+M\+I\+LP, it should be of type Avgdrngt\+Data. (Having to state this here is most likely expression of a design flaw. As long as you do as just specfified, it works though and otherwise the code will presumably not compile anyhow. But having to match the two template parameters manually feels wrong.)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xdata} & Pointer to suitable \hyperlink{classderegnet_1_1DeregnetData}{Deregnet\+Data} object. If Model\+Type = G\+R\+B\+Model, you have to pass a pointer to a \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data} object, in case of Model\+Type = grbfrc\+::\+F\+M\+I\+LP, you have to pass a pointer to a \hyperlink{classderegnet_1_1AvgdrgntData}{Avgdrgnt\+Data} object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::model.
+
+
+\begin{DoxyCode}
+167  : \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data} \{ xdata \},
+168    \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model} \{ \textcolor{keyword}{new} DeregnetModel<ModelType, Data>(xdata) \}
+169 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a9bca73c631c1ce679b07f1e0664abfa2}\label{classderegnet_1_1DeregnetFinder_a9bca73c631c1ce679b07f1e0664abfa2}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!find\+\_\+start\+\_\+solution@{find\+\_\+start\+\_\+solution}}
+\index{find\+\_\+start\+\_\+solution@{find\+\_\+start\+\_\+solution}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{find\+\_\+start\+\_\+solution()}{find\_start\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Model\+Type, typename Data$>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::find\+\_\+start\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$}]{start\+\_\+solution }\end{DoxyParamCaption})}
+
+
+
+Finds a heuristic optimal start solution. 
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+optimal\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a9bca73c631c1ce679b07f1e0664abfa2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a1b7a50c77d09000e2d80b39025d67393}\label{classderegnet_1_1DeregnetFinder_a1b7a50c77d09000e2d80b39025d67393}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!find\+\_\+start\+\_\+solution@{find\+\_\+start\+\_\+solution}}
+\index{find\+\_\+start\+\_\+solution@{find\+\_\+start\+\_\+solution}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{find\+\_\+start\+\_\+solution()}{find\_start\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ G\+R\+B\+Model, \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data} $>$\+::find\+\_\+start\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$}]{start\+\_\+solution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 318 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::exclude, deregnet\+::\+Deregnet\+Data\+::graph, deregnet\+::\+Deregnet\+Data\+::model\+\_\+sense, deregnet\+::\+Deregnet\+Data\+::receptors, deregnet\+::\+Deregnet\+Data\+::root, and deregnet\+::\+Deregnet\+Data\+::score.
+
+
+\begin{DoxyCode}
+319                                                                                               \{
+320     std::function<bool(double, double)> cmp;
+321     \textcolor{comment}{// Adjust comparison function based on whether to minimize or maximize}
+322     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ac3918536b5423facf0ac155997703c52}{model\_sense} == \textcolor{stringliteral}{"min"}) cmp = std::greater<double>();
+323     \textcolor{keywordflow}{else} cmp = std::less<double>();
+324     \textcolor{comment}{// Try to find start solution and when successful register it}
+325     StartHeuristic heuristic(\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ab76d30fa2ef87099faecb31e3f95b6d6}{graph},
+326                              \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a32970c8f43eb8be313ad08d829223b1f}{score},
+327                              \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a51a22fd88f929b1b1a00edb409b4cd55}{root},
+328                              \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a8e4398e6ece11ef87767914c6f2c304d}{exclude},
+329                              \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors},
+330                              cmp,
+331                              \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->size);
+332     \textcolor{keywordflow}{if} (heuristic.run())
+333         *start\_solution = heuristic.getStartSolution();
+334 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a6a5305626ad5039e294fa2f6bd3b4b74}\label{classderegnet_1_1DeregnetFinder_a6a5305626ad5039e294fa2f6bd3b4b74}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!find\+\_\+start\+\_\+solution@{find\+\_\+start\+\_\+solution}}
+\index{find\+\_\+start\+\_\+solution@{find\+\_\+start\+\_\+solution}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{find\+\_\+start\+\_\+solution()}{find\_start\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ \hyperlink{namespacederegnet_a31759ad43b8b9641205bcf69b09f10c5}{F\+M\+I\+LP}, \hyperlink{classderegnet_1_1AvgdrgntData}{Avgdrgnt\+Data} $>$\+::find\+\_\+start\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$}]{start\+\_\+solution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 338 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::exclude, deregnet\+::\+Deregnet\+Data\+::graph, deregnet\+::\+Avgdrgnt\+Data\+::max\+\_\+size, deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+size, deregnet\+::\+Deregnet\+Data\+::model\+\_\+sense, deregnet\+::\+Deregnet\+Data\+::receptors, deregnet\+::\+Deregnet\+Data\+::root, and deregnet\+::\+Deregnet\+Data\+::score.
+
+
+\begin{DoxyCode}
+339                                                                                               \{
+340 
+341 
+342     std::function<bool(double, double)> cmp;
+343     \textcolor{comment}{// Adjust comparison function based on whether to minimize or maximize}
+344     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ac3918536b5423facf0ac155997703c52}{model\_sense} == \textcolor{stringliteral}{"min"}) cmp = std::greater<double>();
+345     \textcolor{keywordflow}{else} cmp = std::less<double>();
+346     \textcolor{comment}{// Try to find start solution and when successful register it}
+347     AvgStartHeuristic heuristic(\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ab76d30fa2ef87099faecb31e3f95b6d6}{graph},
+348                                 \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a32970c8f43eb8be313ad08d829223b1f}{score},
+349                                 \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a51a22fd88f929b1b1a00edb409b4cd55}{root},
+350                                 \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a8e4398e6ece11ef87767914c6f2c304d}{exclude},
+351                                 \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors},
+352                                 cmp,
+353                                 \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}{min\_size},
+354                                 \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a9e844158e12d5e1c4d519c492cffeb17}{max\_size});
+355     \textcolor{keywordflow}{if} (heuristic.run())
+356         *start\_solution = heuristic.getStartSolution();
+357 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a85fcde1dddbfd03ffc4ae8d244b4fc72}\label{classderegnet_1_1DeregnetFinder_a85fcde1dddbfd03ffc4ae8d244b4fc72}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!find\+\_\+suboptimal\+\_\+start\+\_\+solution@{find\+\_\+suboptimal\+\_\+start\+\_\+solution}}
+\index{find\+\_\+suboptimal\+\_\+start\+\_\+solution@{find\+\_\+suboptimal\+\_\+start\+\_\+solution}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{find\+\_\+suboptimal\+\_\+start\+\_\+solution()}{find\_suboptimal\_start\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Model\+Type, typename Data$>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::find\+\_\+suboptimal\+\_\+start\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$}]{start\+\_\+solution,  }\item[{std\+::set$<$ std\+::string $>$ $\ast$}]{nodes\+\_\+so\+\_\+far }\end{DoxyParamCaption})}
+
+
+
+Finds a heuristic suboptimal start solution. 
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a85fcde1dddbfd03ffc4ae8d244b4fc72_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a42eca7055ed54197e27df7bd70271a13}\label{classderegnet_1_1DeregnetFinder_a42eca7055ed54197e27df7bd70271a13}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!find\+\_\+suboptimal\+\_\+start\+\_\+solution@{find\+\_\+suboptimal\+\_\+start\+\_\+solution}}
+\index{find\+\_\+suboptimal\+\_\+start\+\_\+solution@{find\+\_\+suboptimal\+\_\+start\+\_\+solution}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{find\+\_\+suboptimal\+\_\+start\+\_\+solution()}{find\_suboptimal\_start\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ G\+R\+B\+Model, \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data} $>$\+::find\+\_\+suboptimal\+\_\+start\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$}]{start\+\_\+solution,  }\item[{std\+::set$<$ std\+::string $>$ $\ast$}]{nodes\+\_\+so\+\_\+far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 364 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::exclude, deregnet\+::\+Deregnet\+Data\+::graph, deregnet\+::\+Deregnet\+Data\+::max\+\_\+overlap, deregnet\+::\+Deregnet\+Data\+::model\+\_\+sense, deregnet\+::\+Deregnet\+Data\+::nodeid, deregnet\+::\+Deregnet\+Data\+::receptors, deregnet\+::\+Deregnet\+Data\+::root, and deregnet\+::\+Deregnet\+Data\+::score.
+
+
+\begin{DoxyCode}
+365                                                                                                           \{
+366     std::function<bool(double, double)> cmp;
+367     \textcolor{comment}{// Adjust comparison function based on whether to minimize or maximize}
+368     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ac3918536b5423facf0ac155997703c52}{model\_sense} == \textcolor{stringliteral}{"min"}) cmp = std::greater<double>();
+369     \textcolor{keywordflow}{else} cmp = std::less<double>();
+370     \textcolor{comment}{// Try to find start solution and when successful register it}
+371     SuboptimalStartHeuristic heuristic(\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ab76d30fa2ef87099faecb31e3f95b6d6}{graph},
+372                                        \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a32970c8f43eb8be313ad08d829223b1f}{score},
+373                                        \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a51a22fd88f929b1b1a00edb409b4cd55}{root},
+374                                        \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a8e4398e6ece11ef87767914c6f2c304d}{exclude},
+375                                        \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors},
+376                                        cmp,
+377                                        \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3b57d7ed19c104c7fe257e17f0d2cfb5}{nodeid},
+378                                        nodes\_so\_far,
+379                                        \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a43111d8664fd9db36f36f75b24ba62e9}{max\_overlap},
+380                                        \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->size);
+381     \textcolor{keywordflow}{if} (heuristic.run())
+382         *start\_solution = heuristic.getStartSolution();
+383 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_ae81ebb01d3cba09b12858bce7799e2a5}\label{classderegnet_1_1DeregnetFinder_ae81ebb01d3cba09b12858bce7799e2a5}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!find\+\_\+suboptimal\+\_\+start\+\_\+solution@{find\+\_\+suboptimal\+\_\+start\+\_\+solution}}
+\index{find\+\_\+suboptimal\+\_\+start\+\_\+solution@{find\+\_\+suboptimal\+\_\+start\+\_\+solution}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{find\+\_\+suboptimal\+\_\+start\+\_\+solution()}{find\_suboptimal\_start\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ \hyperlink{namespacederegnet_a31759ad43b8b9641205bcf69b09f10c5}{F\+M\+I\+LP}, \hyperlink{classderegnet_1_1AvgdrgntData}{Avgdrgnt\+Data} $>$\+::find\+\_\+suboptimal\+\_\+start\+\_\+solution (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$}]{start\+\_\+solution,  }\item[{std\+::set$<$ std\+::string $>$ $\ast$}]{nodes\+\_\+so\+\_\+far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 387 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::exclude, deregnet\+::\+Deregnet\+Data\+::graph, deregnet\+::\+Deregnet\+Data\+::max\+\_\+overlap, deregnet\+::\+Avgdrgnt\+Data\+::max\+\_\+size, deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+size, deregnet\+::\+Deregnet\+Data\+::model\+\_\+sense, deregnet\+::\+Deregnet\+Data\+::nodeid, deregnet\+::\+Deregnet\+Data\+::receptors, deregnet\+::\+Deregnet\+Data\+::root, and deregnet\+::\+Deregnet\+Data\+::score.
+
+
+\begin{DoxyCode}
+388                                                                                                           \{
+389 
+390     std::function<bool(double, double)> cmp;
+391     \textcolor{comment}{// Adjust comparison function based on whether to minimize or maximize}
+392     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ac3918536b5423facf0ac155997703c52}{model\_sense} == \textcolor{stringliteral}{"min"}) cmp = std::greater<double>();
+393     \textcolor{keywordflow}{else} cmp = std::less<double>();
+394     \textcolor{comment}{// Try to find start solution and when successful register it}
+395     AvgSuboptimalStartHeuristic heuristic(\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ab76d30fa2ef87099faecb31e3f95b6d6}{graph},
+396                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a32970c8f43eb8be313ad08d829223b1f}{score},
+397                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a51a22fd88f929b1b1a00edb409b4cd55}{root},
+398                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a8e4398e6ece11ef87767914c6f2c304d}{exclude},
+399                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors},
+400                                           cmp,
+401                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3b57d7ed19c104c7fe257e17f0d2cfb5}{nodeid},
+402                                           nodes\_so\_far,
+403                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a43111d8664fd9db36f36f75b24ba62e9}{max\_overlap},
+404                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}{min\_size},
+405                                           \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1AvgdrgntData_a9e844158e12d5e1c4d519c492cffeb17}{max\_size});
+406     \textcolor{keywordflow}{if} (heuristic.run())
+407         *start\_solution = heuristic.getStartSolution();
+408 
+409 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a1a6119b306b54ff44d8c78f34fc037ab}\label{classderegnet_1_1DeregnetFinder_a1a6119b306b54ff44d8c78f34fc037ab}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!run@{run}}
+\index{run@{run}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily template$<$typename Model\+Type , typename Data $>$ \\
+std\+::vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method which finds the subgraphs. 
+
+This method finds subgraphs as specified on instantiation of the \hyperlink{classderegnet_1_1DeregnetFinder}{Deregnet\+Finder} instance. You get back a vector with the subgraphs.
+
+\begin{DoxyReturn}{Returns}
+Vector containing the the subgraphs 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::model, deregnet\+::\+Deregnet\+Data\+::num\+\_\+subopt\+\_\+iter, deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+optimal\+\_\+init(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+optimal\+\_\+windup(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+init(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+windup().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+252                                                          \{
+253     std::pair<Node, std::set<Node>>* start\_solution \{ \textcolor{keyword}{nullptr} \};      \textcolor{comment}{// potential heuristic start solution}
+254     \textcolor{comment}{// find optimal subgraph}
+255     \hyperlink{classderegnet_1_1DeregnetFinder_ae0335349d6a60ee204d10bf8b7366cfa}{run\_optimal\_init}(&start\_solution);                                \textcolor{comment}{// construct model,
+       etc.}
+256 \textcolor{comment}{/*}
+257 \textcolor{comment}{    std::ofstream file;}
+258 \textcolor{comment}{    file.open("heuristic\_start.nodes");}
+259 \textcolor{comment}{    for (auto v : start\_solution->second)}
+260 \textcolor{comment}{        file << (*data->nodeid)[v] << "\(\backslash\)n";}
+261 \textcolor{comment}{    file.close();}
+262 \textcolor{comment}{*/}
+263     std::vector<Subgraph> subgraphs;                                  \textcolor{comment}{// data structure for found subgraphs}
+264     \textcolor{keywordtype}{bool} solve\_successful \{ \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->solve(start\_solution) \};           \textcolor{comment}{// try to find optimal solution}
+265     \hyperlink{classderegnet_1_1DeregnetFinder_a92610c1444ba271820e64d224ec64bb7}{run\_optimal\_windup}(solve\_successful, &subgraphs);                 \textcolor{comment}{// handle result of
+       optimal solution attempt}
+266     \textcolor{comment}{// find suboptimal subgraphs}
+267     std::set<std::string> nodes\_so\_far \{ subgraphs.back().nodes \};    \textcolor{comment}{// tracking nodes contained in some
+       already found subgraph}
+268     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_adb7428cd99112156ae9f80187af9ebbe}{num\_subopt\_iter}; ++i) \{
+269         start\_solution = \textcolor{keyword}{nullptr};                                     \textcolor{comment}{// reset to NULL ... Where does the
+       previous one go? Memory leak?}
+270         \hyperlink{classderegnet_1_1DeregnetFinder_ad996cee997a5db4e09016a6f725a6701}{run\_suboptimal\_init}(&start\_solution, &nodes\_so\_far);          \textcolor{comment}{// adapt model for
+       finding next suboptimal, etc.}
+271         solve\_successful = \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->solve(start\_solution);              \textcolor{comment}{// try to find next suboptimal
+       solution}
+272         \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetFinder_a4021d92d787877187a24dcbaf0c1bad1}{run\_suboptimal\_windup}(solve\_successful, &subgraphs, &nodes\_so\_far, i))   
+         \textcolor{comment}{// once no suboptimal subgraph could be found, do not try again ;)}
+273             \textcolor{keywordflow}{break};
+274     \}
+275     \textcolor{keywordflow}{return} subgraphs;
+276 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a1a6119b306b54ff44d8c78f34fc037ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classderegnet_1_1DeregnetFinder_a1a6119b306b54ff44d8c78f34fc037ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_ae0335349d6a60ee204d10bf8b7366cfa}\label{classderegnet_1_1DeregnetFinder_ae0335349d6a60ee204d10bf8b7366cfa}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!run\+\_\+optimal\+\_\+init@{run\+\_\+optimal\+\_\+init}}
+\index{run\+\_\+optimal\+\_\+init@{run\+\_\+optimal\+\_\+init}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{run\+\_\+optimal\+\_\+init()}{run\_optimal\_init()}}
+{\footnotesize\ttfamily template$<$typename Model\+Type, typename Data$>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::run\+\_\+optimal\+\_\+init (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$$>$ $\ast$$\ast$}]{start\+\_\+solution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Preparation for finding the optimal subgraph. 
+
+
+
+Definition at line 173 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Deregnet\+Data\+::exclude, deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+start\+\_\+solution(), deregnet\+::\+Deregnet\+Data\+::include, deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::model, deregnet\+::\+Deregnet\+Data\+::receptors, deregnet\+::\+Deregnet\+Data\+::root, deregnet\+::\+Deregnet\+Data\+::start\+\_\+heuristic, and deregnet\+::\+Deregnet\+Data\+::terminals.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run().
+
+
+\begin{DoxyCode}
+173                                                                                                     \{
+174     \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->createVariables();       \textcolor{comment}{// create binary variables corresponding to the nodes}
+175     \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->addBaseConstraints();    \textcolor{comment}{// add base constraints to the model, ie connectivity etc.}
+176     \textcolor{comment}{// add optional constraints (ie. include, exclude, receptor and/or terminal constraints)}
+177     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a438d16e60be5d119d174aa039f070ab2}{include})
+178         \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->addIncludeConstraints();   \textcolor{comment}{// which nodes to include in the subgraph, no matter what}
+179     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a8e4398e6ece11ef87767914c6f2c304d}{exclude})
+180         \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->addExcludeConstraints();   \textcolor{comment}{// which nodes to exclude from the subgraph, no matter what}
+181     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors} && !\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a51a22fd88f929b1b1a00edb409b4cd55}{root})
+182         \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->addReceptorConstraints();  \textcolor{comment}{// how to handle nodes which are 'receptors'}
+183     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a1fe559c6056cd411647f836849e4b0da}{terminals})
+184         \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->addTerminalConstraints();  \textcolor{comment}{// how to handle nodes which are 'temrinals'}
+185     \textcolor{comment}{// optionally find heuristic start solution by greedy algorithm}
+186     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_abac721360704af5615f7ff84b183eebd}{start\_heuristic})
+187         \hyperlink{classderegnet_1_1DeregnetFinder_a9bca73c631c1ce679b07f1e0664abfa2}{find\_start\_solution}(start\_solution);
+188     \textcolor{comment}{// in case a heuristic start solution was specfied but none was found, issue a warning.}
+189     \textcolor{comment}{// TODO: not necessarily always to std::cout ...}
+190     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_abac721360704af5615f7ff84b183eebd}{start\_heuristic} && !(*start\_solution))
+191         std::cout << \textcolor{stringliteral}{"No heuristic start solution found.\(\backslash\)n"} << std::endl;
+192 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_ae0335349d6a60ee204d10bf8b7366cfa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_ae0335349d6a60ee204d10bf8b7366cfa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a92610c1444ba271820e64d224ec64bb7}\label{classderegnet_1_1DeregnetFinder_a92610c1444ba271820e64d224ec64bb7}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!run\+\_\+optimal\+\_\+windup@{run\+\_\+optimal\+\_\+windup}}
+\index{run\+\_\+optimal\+\_\+windup@{run\+\_\+optimal\+\_\+windup}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{run\+\_\+optimal\+\_\+windup()}{run\_optimal\_windup()}}
+{\footnotesize\ttfamily template$<$typename Model\+Type , typename Data $>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::run\+\_\+optimal\+\_\+windup (\begin{DoxyParamCaption}\item[{bool}]{solve\+\_\+successful,  }\item[{std\+::vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ $\ast$}]{subgraphs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Post-\/processing after attempt to find optimal subgraph. 
+
+
+
+Definition at line 196 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::model, N\+O\+\_\+\+O\+P\+T\+I\+M\+A\+L\+\_\+\+S\+U\+B\+G\+R\+A\+P\+H\+\_\+\+F\+O\+U\+ND, and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run().
+
+
+\begin{DoxyCode}
+196                                                                                                            
+         \{
+197     \textcolor{comment}{// if a solution was found update subgraphs data structure}
+198     \textcolor{keywordflow}{if} ( solve\_successful ) \{
+199         subgraphs->push\_back ( \hyperlink{classderegnet_1_1DeregnetFinder_a681d5e2506f9b6075ab36e742a360328}{to\_subgraph}( \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->getCurrentSolution(), \textcolor{stringliteral}{"optimal"} ) );
+200     \}
+201     \textcolor{comment}{// if no solution was found, issue a message and end the program}
+202     \textcolor{comment}{// TODO: not necessarily always to std::cerr}
+203     \textcolor{comment}{// TODO: exit normally and handle issue in normal program flow?}
+204     \textcolor{keywordflow}{else} \{
+205         std::cerr << \textcolor{stringliteral}{"No optimal subgraph could be found."} << std::endl;
+206         exit(\hyperlink{DeregnetData_8hpp_a4cfde67e3f13f361cd54de13be284610}{NO\_OPTIMAL\_SUBGRAPH\_FOUND});
+207     \}
+208 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a92610c1444ba271820e64d224ec64bb7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a92610c1444ba271820e64d224ec64bb7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_ad996cee997a5db4e09016a6f725a6701}\label{classderegnet_1_1DeregnetFinder_ad996cee997a5db4e09016a6f725a6701}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!run\+\_\+suboptimal\+\_\+init@{run\+\_\+suboptimal\+\_\+init}}
+\index{run\+\_\+suboptimal\+\_\+init@{run\+\_\+suboptimal\+\_\+init}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{run\+\_\+suboptimal\+\_\+init()}{run\_suboptimal\_init()}}
+{\footnotesize\ttfamily template$<$typename Model\+Type , typename Data $>$ \\
+void \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::run\+\_\+suboptimal\+\_\+init (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $>$ $\ast$$\ast$}]{start\+\_\+solution,  }\item[{std\+::set$<$ std\+::string $>$ $\ast$}]{nodes\+\_\+so\+\_\+far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Perparation for finding suboptimal subgraphs. 
+
+
+
+Definition at line 212 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+suboptimal\+\_\+start\+\_\+solution(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::model, and deregnet\+::\+Deregnet\+Data\+::start\+\_\+heuristic.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run().
+
+
+\begin{DoxyCode}
+213                                                                                            \{
+214     \textcolor{comment}{// make sure only a certain fraction of nodes contained in some already found subgraph}
+215     \textcolor{comment}{// will be contained this subgraph}
+216     \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->addSuboptimalityConstraint(*nodes\_so\_far);  
+217     \textcolor{comment}{// optionally find heuristic start solution by greedy algorithm}
+218     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_abac721360704af5615f7ff84b183eebd}{start\_heuristic})
+219         \hyperlink{classderegnet_1_1DeregnetFinder_a85fcde1dddbfd03ffc4ae8d244b4fc72}{find\_suboptimal\_start\_solution}(start\_solution, nodes\_so\_far);
+220     \textcolor{comment}{// in case a heuristic start solution was specfied but none was found, issue a warning.}
+221     \textcolor{comment}{// TODO: not necessarily always to std::cout ...}
+222     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_abac721360704af5615f7ff84b183eebd}{start\_heuristic} && !(*start\_solution))
+223         std::cout << \textcolor{stringliteral}{"No heuristic start solution found.\(\backslash\)n"} << std::endl;
+224 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_ad996cee997a5db4e09016a6f725a6701_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_ad996cee997a5db4e09016a6f725a6701_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a4021d92d787877187a24dcbaf0c1bad1}\label{classderegnet_1_1DeregnetFinder_a4021d92d787877187a24dcbaf0c1bad1}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!run\+\_\+suboptimal\+\_\+windup@{run\+\_\+suboptimal\+\_\+windup}}
+\index{run\+\_\+suboptimal\+\_\+windup@{run\+\_\+suboptimal\+\_\+windup}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{run\+\_\+suboptimal\+\_\+windup()}{run\_suboptimal\_windup()}}
+{\footnotesize\ttfamily template$<$typename Model\+Type , typename Data $>$ \\
+bool \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::run\+\_\+suboptimal\+\_\+windup (\begin{DoxyParamCaption}\item[{bool}]{solve\+\_\+successful,  }\item[{std\+::vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ $\ast$}]{subgraphs,  }\item[{std\+::set$<$ std\+::string $>$ $\ast$}]{nodes\+\_\+so\+\_\+far,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Post-\/processing after attempt to find suboptimal subgraphs. 
+
+
+
+Definition at line 228 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::model, deregnet\+::\+Solution\+::nodes, and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run().
+
+
+\begin{DoxyCode}
+231                                                                    \{
+232     \textcolor{comment}{// if a solution was found update subgraphs data structure}
+233     \textcolor{comment}{// Also, update the data structure tracking nodes contained in any already found subgraph}
+234     \textcolor{keywordflow}{if} ( solve\_successful ) \{
+235         Solution current = \hyperlink{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}{model}->getCurrentSolution() ;
+236         subgraphs->push\_back(\hyperlink{classderegnet_1_1DeregnetFinder_a681d5e2506f9b6075ab36e742a360328}{to\_subgraph}( current, \textcolor{stringliteral}{"suboptimal\_"} + std::to\_string(i) ));
+237         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} node: current.nodes)
+238             nodes\_so\_far->insert(node);
+239         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+240     \}
+241     \textcolor{comment}{// if no solution was found, issue a message}
+242     \textcolor{comment}{// TODO: not necessarily always to std::cout}
+243     \textcolor{keywordflow}{else} \{
+244         std::cout << \textcolor{stringliteral}{"With these parameters, no more than "} << i
+245                   << \textcolor{stringliteral}{" suboptimal subgraphs could be found."} << std::endl;
+246         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+247     \}
+248 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a4021d92d787877187a24dcbaf0c1bad1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a4021d92d787877187a24dcbaf0c1bad1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_a681d5e2506f9b6075ab36e742a360328}\label{classderegnet_1_1DeregnetFinder_a681d5e2506f9b6075ab36e742a360328}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!to\+\_\+subgraph@{to\+\_\+subgraph}}
+\index{to\+\_\+subgraph@{to\+\_\+subgraph}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{to\+\_\+subgraph()}{to\_subgraph()}}
+{\footnotesize\ttfamily template$<$typename Model\+Type , typename Data $>$ \\
+\hyperlink{structderegnet_1_1Subgraph}{Subgraph} \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::to\+\_\+subgraph (\begin{DoxyParamCaption}\item[{\hyperlink{structderegnet_1_1Solution}{Solution}}]{solution,  }\item[{std\+::string}]{signature }\end{DoxyParamCaption})}
+
+
+
+Transform a solution from the \hyperlink{structderegnet_1_1Solution}{Solution} type to the \hyperlink{structderegnet_1_1Subgraph}{Subgraph} type. 
+
+
+
+Definition at line 280 of file Deregnet\+Finder.\+hpp.
+
+
+
+References deregnet\+::\+Solution\+::avg\+\_\+score, deregnet\+::\+Subgraph\+::avg\+\_\+score, deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::data, deregnet\+::\+Solution\+::edgelist, deregnet\+::\+Subgraph\+::edgelist, deregnet\+::get\+Node\+By\+Id(), deregnet\+::\+Deregnet\+Data\+::nodeid, deregnet\+::\+Solution\+::nodes, deregnet\+::\+Subgraph\+::nodes, deregnet\+::\+Deregnet\+Data\+::original\+\_\+graph, deregnet\+::\+Deregnet\+Data\+::receptor\+\_\+as\+\_\+root, deregnet\+::\+Deregnet\+Data\+::receptors, deregnet\+::\+Subgraph\+::receptors, deregnet\+::\+Solution\+::rootid, deregnet\+::\+Subgraph\+::rootid, deregnet\+::\+Subgraph\+::signature, deregnet\+::\+Deregnet\+Data\+::terminals, deregnet\+::\+Subgraph\+::terminals, deregnet\+::\+Solution\+::total\+\_\+score, and deregnet\+::\+Subgraph\+::total\+\_\+score.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+optimal\+\_\+windup(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+windup().
+
+
+\begin{DoxyCode}
+280                                                                                             \{
+281     Subgraph subgraph;
+282     subgraph.signature = signature;
+283     subgraph.rootid = solution.rootid;
+284     subgraph.nodes = solution.nodes;
+285     subgraph.total\_score = solution.total\_score;
+286     subgraph.avg\_score = solution.avg\_score;
+287     \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ae7936fe59661a68464134b9251303727}{receptor\_as\_root})
+288         swap(\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors}, \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a1fe559c6056cd411647f836849e4b0da}{terminals});
+289     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors})
+290         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} nodeid : subgraph.nodes) \{
+291             \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} node;
+292             \textcolor{keywordflow}{if} (\hyperlink{namespacederegnet_afefc9088a0ea47e8d8c1225b5de29244}{getNodeById}(\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3ea2abe9900785d80fa0141afdd985a9}{original\_graph}, 
+      \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3b57d7ed19c104c7fe257e17f0d2cfb5}{nodeid}, nodeid, &node))
+293                 \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors}->find(node) != \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->
+      \hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors}->end())
+294                     subgraph.receptors.insert(nodeid);
+295         \}
+296     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a1fe559c6056cd411647f836849e4b0da}{terminals})
+297         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} nodeid : subgraph.nodes) \{
+298             \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} node;
+299             \textcolor{keywordflow}{if} (\hyperlink{namespacederegnet_afefc9088a0ea47e8d8c1225b5de29244}{getNodeById}(\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3ea2abe9900785d80fa0141afdd985a9}{original\_graph}, 
+      \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a3b57d7ed19c104c7fe257e17f0d2cfb5}{nodeid}, nodeid, &node))
+300                 \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_a1fe559c6056cd411647f836849e4b0da}{terminals}->find(node) != \hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->
+      \hyperlink{classderegnet_1_1DeregnetData_a1fe559c6056cd411647f836849e4b0da}{terminals}->end())
+301                     subgraph.terminals.insert(nodeid);
+302         \}
+303     \textcolor{keywordflow}{if} (!\hyperlink{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}{data}->\hyperlink{classderegnet_1_1DeregnetData_ae7936fe59661a68464134b9251303727}{receptor\_as\_root})
+304         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} edge : solution.edgelist)
+305             subgraph.edgelist.insert(std::make\_pair(edge.second, edge.first));
+306     \textcolor{keywordflow}{else}
+307         subgraph.edgelist = solution.edgelist;
+308     \textcolor{keywordflow}{return} subgraph;
+309 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a681d5e2506f9b6075ab36e742a360328_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1DeregnetFinder_a681d5e2506f9b6075ab36e742a360328_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}\label{classderegnet_1_1DeregnetFinder_ab158f2a6bb7f39ed3d6e4a9ffe568232}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!data@{data}}
+\index{data@{data}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$typename Model\+Type, typename Data$>$ \\
+\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data}$\ast$ \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to \hyperlink{classderegnet_1_1DeregnetData}{Deregnet\+Data}, i.\+e. \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data} or \hyperlink{classderegnet_1_1AvgdrgntData}{Avgdrgnt\+Data}. 
+
+
+
+Definition at line 85 of file Deregnet\+Finder.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+start\+\_\+solution(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+suboptimal\+\_\+start\+\_\+solution(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+optimal\+\_\+init(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+init(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}\label{classderegnet_1_1DeregnetFinder_ad922d8e38124b4c75daac29a928fcf5b}} 
+\index{deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}!model@{model}}
+\index{model@{model}!deregnet\+::\+Deregnet\+Finder@{deregnet\+::\+Deregnet\+Finder}}
+\subsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily template$<$typename Model\+Type, typename Data$>$ \\
+\hyperlink{classderegnet_1_1DeregnetModel}{Deregnet\+Model}$<$Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data}$>$$\ast$ \hyperlink{classderegnet_1_1DeregnetFinder}{deregnet\+::\+Deregnet\+Finder}$<$ Model\+Type, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} $>$\+::model\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Model instance to be build and solved. 
+
+
+
+Definition at line 86 of file Deregnet\+Finder.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::\+Deregnet\+Finder(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+optimal\+\_\+init(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+optimal\+\_\+windup(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+init(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+windup().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{DeregnetFinder_8hpp}{Deregnet\+Finder.\+hpp}\end{DoxyCompactItemize}

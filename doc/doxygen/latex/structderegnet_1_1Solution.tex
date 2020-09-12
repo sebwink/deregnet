@@ -1,0 +1,129 @@
+\hypertarget{structderegnet_1_1Solution}{}\section{deregnet\+:\+:Solution Struct Reference}
+\label{structderegnet_1_1Solution}\index{deregnet\+::\+Solution@{deregnet\+::\+Solution}}
+
+
+Representation of a solution to one of the De\+Reg\+Net problems.  
+
+
+
+
+{\ttfamily \#include $<$utils.\+hpp$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::set$<$ std\+::string $>$ \hyperlink{structderegnet_1_1Solution_a581de4de354d10149c7b9c0816c70840}{nodes}
+\begin{DoxyCompactList}\small\item\em Nodes in the solution (node id\textquotesingle{}s) \end{DoxyCompactList}\item 
+std\+::set$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ \hyperlink{structderegnet_1_1Solution_aa4dcc94d51fa7e4e9443263572d8b18d}{edgelist}
+\begin{DoxyCompactList}\small\item\em edgelist (node id --$>$ node id) \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structderegnet_1_1Solution_a1aca697c0ec5e039837094cb45731215}{rootid}
+\begin{DoxyCompactList}\small\item\em Node id of the root node. \end{DoxyCompactList}\item 
+double \hyperlink{structderegnet_1_1Solution_af2e4901767f70d22b41acafa8cfb62d2}{total\+\_\+score}
+\begin{DoxyCompactList}\small\item\em Total score, ie $\displaystyle \sum_{v \in V_{subgraph}} s_v $. \end{DoxyCompactList}\item 
+double \hyperlink{structderegnet_1_1Solution_a9282be3934d49183f8b5304130ee07c7}{avg\+\_\+score}
+\begin{DoxyCompactList}\small\item\em Total average score, ie total\+\_\+score / card(nodes) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Representation of a solution to one of the De\+Reg\+Net problems. 
+
+Definition at line 99 of file utils.\+hpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structderegnet_1_1Solution_a9282be3934d49183f8b5304130ee07c7}\label{structderegnet_1_1Solution_a9282be3934d49183f8b5304130ee07c7}} 
+\index{deregnet\+::\+Solution@{deregnet\+::\+Solution}!avg\+\_\+score@{avg\+\_\+score}}
+\index{avg\+\_\+score@{avg\+\_\+score}!deregnet\+::\+Solution@{deregnet\+::\+Solution}}
+\subsubsection{\texorpdfstring{avg\+\_\+score}{avg\_score}}
+{\footnotesize\ttfamily double deregnet\+::\+Solution\+::avg\+\_\+score}
+
+
+
+Total average score, ie total\+\_\+score / card(nodes) 
+
+
+
+Definition at line 104 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model\+Type, deregnet\+::\+Avgdrgnt\+Data $>$\+::get\+Current\+Solution(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Solution_aa4dcc94d51fa7e4e9443263572d8b18d}\label{structderegnet_1_1Solution_aa4dcc94d51fa7e4e9443263572d8b18d}} 
+\index{deregnet\+::\+Solution@{deregnet\+::\+Solution}!edgelist@{edgelist}}
+\index{edgelist@{edgelist}!deregnet\+::\+Solution@{deregnet\+::\+Solution}}
+\subsubsection{\texorpdfstring{edgelist}{edgelist}}
+{\footnotesize\ttfamily std\+::set$<$std\+::pair$<$std\+::string, std\+::string$>$ $>$ deregnet\+::\+Solution\+::edgelist}
+
+
+
+edgelist (node id --$>$ node id) 
+
+
+
+Definition at line 101 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model\+Type, deregnet\+::\+Avgdrgnt\+Data $>$\+::get\+Current\+Solution(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Solution_a581de4de354d10149c7b9c0816c70840}\label{structderegnet_1_1Solution_a581de4de354d10149c7b9c0816c70840}} 
+\index{deregnet\+::\+Solution@{deregnet\+::\+Solution}!nodes@{nodes}}
+\index{nodes@{nodes}!deregnet\+::\+Solution@{deregnet\+::\+Solution}}
+\subsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$ deregnet\+::\+Solution\+::nodes}
+
+
+
+Nodes in the solution (node id\textquotesingle{}s) 
+
+
+
+Definition at line 100 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model\+Type, deregnet\+::\+Avgdrgnt\+Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model\+Type, deregnet\+::\+Avgdrgnt\+Data $>$\+::get\+Current\+Solution(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run\+\_\+suboptimal\+\_\+windup(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Solution_a1aca697c0ec5e039837094cb45731215}\label{structderegnet_1_1Solution_a1aca697c0ec5e039837094cb45731215}} 
+\index{deregnet\+::\+Solution@{deregnet\+::\+Solution}!rootid@{rootid}}
+\index{rootid@{rootid}!deregnet\+::\+Solution@{deregnet\+::\+Solution}}
+\subsubsection{\texorpdfstring{rootid}{rootid}}
+{\footnotesize\ttfamily std\+::string deregnet\+::\+Solution\+::rootid}
+
+
+
+Node id of the root node. 
+
+
+
+Definition at line 102 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model\+Type, deregnet\+::\+Avgdrgnt\+Data $>$\+::get\+Current\+Solution(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Solution_af2e4901767f70d22b41acafa8cfb62d2}\label{structderegnet_1_1Solution_af2e4901767f70d22b41acafa8cfb62d2}} 
+\index{deregnet\+::\+Solution@{deregnet\+::\+Solution}!total\+\_\+score@{total\+\_\+score}}
+\index{total\+\_\+score@{total\+\_\+score}!deregnet\+::\+Solution@{deregnet\+::\+Solution}}
+\subsubsection{\texorpdfstring{total\+\_\+score}{total\_score}}
+{\footnotesize\ttfamily double deregnet\+::\+Solution\+::total\+\_\+score}
+
+
+
+Total score, ie $\displaystyle \sum_{v \in V_{subgraph}} s_v $. 
+
+
+
+Definition at line 103 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Model$<$ Model\+Type, deregnet\+::\+Avgdrgnt\+Data $>$\+::\+\_\+get\+Current\+Solution(), deregnet\+::\+Deregnet\+Model$<$ Model\+Type, deregnet\+::\+Avgdrgnt\+Data $>$\+::get\+Current\+Solution(), and deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{utils_8hpp}{utils.\+hpp}\end{DoxyCompactItemize}

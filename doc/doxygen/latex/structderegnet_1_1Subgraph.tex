@@ -1,0 +1,213 @@
+\hypertarget{structderegnet_1_1Subgraph}{}\section{deregnet\+:\+:Subgraph Struct Reference}
+\label{structderegnet_1_1Subgraph}\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+
+
+Representation of a subgraph corresponding to a \hyperlink{structderegnet_1_1Solution}{Solution}.  
+
+
+
+
+{\ttfamily \#include $<$utils.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structderegnet_1_1Subgraph_ad82c2a1c9c43701b0239f3c32e120d82}{write\+To\+File} (std\+::string filepath, bool plain=false)
+\begin{DoxyCompactList}\small\item\em Write to file in S\+IF format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{structderegnet_1_1Subgraph_aae642b8b0b71de5539218040b0d7e201}{signature}
+\item 
+std\+::set$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ \hyperlink{structderegnet_1_1Subgraph_a918a816236f30355b2ec812af629db09}{edgelist}
+\item 
+std\+::set$<$ std\+::string $>$ \hyperlink{structderegnet_1_1Subgraph_a6f8b8d288c1314cc9623e732c5b89056}{nodes}
+\item 
+std\+::set$<$ std\+::string $>$ \hyperlink{structderegnet_1_1Subgraph_a2a818ffe02ceced905ef38cb9a5253df}{receptors}
+\item 
+std\+::set$<$ std\+::string $>$ \hyperlink{structderegnet_1_1Subgraph_a030ed025dd1e2e38c48147283a93bd61}{terminals}
+\item 
+std\+::string \hyperlink{structderegnet_1_1Subgraph_a0e214a14649dcd35959c619cbdd9ce2b}{rootid}
+\item 
+double \hyperlink{structderegnet_1_1Subgraph_a3fdd10c0e803822ae09a71e5b549e471}{total\+\_\+score}
+\item 
+double \hyperlink{structderegnet_1_1Subgraph_ad2836fb4bf0db09a91363f5fc894a02a}{avg\+\_\+score}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Representation of a subgraph corresponding to a \hyperlink{structderegnet_1_1Solution}{Solution}. 
+
+Definition at line 110 of file utils.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_ad82c2a1c9c43701b0239f3c32e120d82}\label{structderegnet_1_1Subgraph_ad82c2a1c9c43701b0239f3c32e120d82}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!write\+To\+File@{write\+To\+File}}
+\index{write\+To\+File@{write\+To\+File}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{write\+To\+File()}{writeToFile()}}
+{\footnotesize\ttfamily void deregnet\+::\+Subgraph\+::write\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath,  }\item[{bool}]{plain = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Write to file in S\+IF format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path of file \\
+\hline
+{\em plain} & Whether to use plain S\+IF format or add a metadata header \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+98                                                       \{
+99     ofstream sif\_file;
+100     sif\_file.open(filepath + \textcolor{stringliteral}{"/"} + \hyperlink{structderegnet_1_1Subgraph_aae642b8b0b71de5539218040b0d7e201}{signature} + \textcolor{stringliteral}{".sif"});
+101     \textcolor{keywordflow}{if} (!plain) \{
+102         sif\_file << \textcolor{stringliteral}{"# root : "} << \hyperlink{structderegnet_1_1Subgraph_a0e214a14649dcd35959c619cbdd9ce2b}{rootid} << \textcolor{stringliteral}{"\(\backslash\)n"}
+103                  << \textcolor{stringliteral}{"# total\_score : "} << \hyperlink{structderegnet_1_1Subgraph_a3fdd10c0e803822ae09a71e5b549e471}{total\_score} << \textcolor{stringliteral}{"\(\backslash\)n"}
+104                  << \textcolor{stringliteral}{"# avg\_score : "} << \hyperlink{structderegnet_1_1Subgraph_ad2836fb4bf0db09a91363f5fc894a02a}{avg\_score} << \textcolor{stringliteral}{"\(\backslash\)n"}
+105                  << \textcolor{stringliteral}{"# receptors : "};
+106         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} receptor: \hyperlink{structderegnet_1_1Subgraph_a2a818ffe02ceced905ef38cb9a5253df}{receptors})
+107             sif\_file << receptor << \textcolor{stringliteral}{" "};
+108         sif\_file << \textcolor{stringliteral}{"\(\backslash\)n# terminals : "};
+109         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} terminal: \hyperlink{structderegnet_1_1Subgraph_a030ed025dd1e2e38c48147283a93bd61}{terminals})
+110             sif\_file << terminal << \textcolor{stringliteral}{" "};
+111         sif\_file << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"};
+112     \}
+113     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} edge : \hyperlink{structderegnet_1_1Subgraph_a918a816236f30355b2ec812af629db09}{edgelist}) \{
+114         sif\_file << edge.first
+115                  << \textcolor{stringliteral}{"\(\backslash\)tpp\(\backslash\)t"}
+116                  << edge.second
+117                  << \textcolor{stringliteral}{"\(\backslash\)n"};
+118     \}
+119     sif\_file.close();
+120 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_ad2836fb4bf0db09a91363f5fc894a02a}\label{structderegnet_1_1Subgraph_ad2836fb4bf0db09a91363f5fc894a02a}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!avg\+\_\+score@{avg\+\_\+score}}
+\index{avg\+\_\+score@{avg\+\_\+score}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{avg\+\_\+score}{avg\_score}}
+{\footnotesize\ttfamily double deregnet\+::\+Subgraph\+::avg\+\_\+score}
+
+
+
+Definition at line 119 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_a918a816236f30355b2ec812af629db09}\label{structderegnet_1_1Subgraph_a918a816236f30355b2ec812af629db09}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!edgelist@{edgelist}}
+\index{edgelist@{edgelist}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{edgelist}{edgelist}}
+{\footnotesize\ttfamily std\+::set$<$std\+::pair$<$std\+::string, std\+::string$>$ $>$ deregnet\+::\+Subgraph\+::edgelist}
+
+
+
+Definition at line 113 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_a6f8b8d288c1314cc9623e732c5b89056}\label{structderegnet_1_1Subgraph_a6f8b8d288c1314cc9623e732c5b89056}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!nodes@{nodes}}
+\index{nodes@{nodes}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$ deregnet\+::\+Subgraph\+::nodes}
+
+
+
+Definition at line 114 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_a2a818ffe02ceced905ef38cb9a5253df}\label{structderegnet_1_1Subgraph_a2a818ffe02ceced905ef38cb9a5253df}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!receptors@{receptors}}
+\index{receptors@{receptors}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{receptors}{receptors}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$ deregnet\+::\+Subgraph\+::receptors}
+
+
+
+Definition at line 115 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_a0e214a14649dcd35959c619cbdd9ce2b}\label{structderegnet_1_1Subgraph_a0e214a14649dcd35959c619cbdd9ce2b}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!rootid@{rootid}}
+\index{rootid@{rootid}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{rootid}{rootid}}
+{\footnotesize\ttfamily std\+::string deregnet\+::\+Subgraph\+::rootid}
+
+
+
+Definition at line 117 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_aae642b8b0b71de5539218040b0d7e201}\label{structderegnet_1_1Subgraph_aae642b8b0b71de5539218040b0d7e201}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!signature@{signature}}
+\index{signature@{signature}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily std\+::string deregnet\+::\+Subgraph\+::signature}
+
+
+
+Definition at line 112 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_a030ed025dd1e2e38c48147283a93bd61}\label{structderegnet_1_1Subgraph_a030ed025dd1e2e38c48147283a93bd61}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!terminals@{terminals}}
+\index{terminals@{terminals}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{terminals}{terminals}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$ deregnet\+::\+Subgraph\+::terminals}
+
+
+
+Definition at line 116 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+\mbox{\Hypertarget{structderegnet_1_1Subgraph_a3fdd10c0e803822ae09a71e5b549e471}\label{structderegnet_1_1Subgraph_a3fdd10c0e803822ae09a71e5b549e471}} 
+\index{deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}!total\+\_\+score@{total\+\_\+score}}
+\index{total\+\_\+score@{total\+\_\+score}!deregnet\+::\+Subgraph@{deregnet\+::\+Subgraph}}
+\subsubsection{\texorpdfstring{total\+\_\+score}{total\_score}}
+{\footnotesize\ttfamily double deregnet\+::\+Subgraph\+::total\+\_\+score}
+
+
+
+Definition at line 118 of file utils.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::to\+\_\+subgraph().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{utils_8hpp}{utils.\+hpp}\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{utils_8cpp}{utils.\+cpp}\end{DoxyCompactItemize}

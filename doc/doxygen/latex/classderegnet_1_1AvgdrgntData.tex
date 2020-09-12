@@ -1,0 +1,144 @@
+\hypertarget{classderegnet_1_1AvgdrgntData}{}\section{deregnet\+:\+:Avgdrgnt\+Data Class Reference}
+\label{classderegnet_1_1AvgdrgntData}\index{deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}}
+
+
+Represents all data and parameters to run the average version of the De\+Reg\+Net.  
+
+
+
+
+{\ttfamily \#include $<$Avgdrgnt\+Data.\+hpp$>$}
+
+
+
+Inheritance diagram for deregnet\+:\+:Avgdrgnt\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classderegnet_1_1AvgdrgntData__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for deregnet\+:\+:Avgdrgnt\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classderegnet_1_1AvgdrgntData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}{min\+\_\+size} \{ 20 \}
+\begin{DoxyCompactList}\small\item\em Minimal size of the resulting subgraphs. \end{DoxyCompactList}\item 
+int \hyperlink{classderegnet_1_1AvgdrgntData_a9e844158e12d5e1c4d519c492cffeb17}{max\+\_\+size} \{ 50 \}
+\begin{DoxyCompactList}\small\item\em Maximal size of the resulting subgraphs. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classderegnet_1_1AvgdrgntData_a38c3bdd86fa3d6ef16ca5db821ca12d2}{min\+\_\+num\+\_\+terminals} \{ nullptr \}
+\begin{DoxyCompactList}\small\item\em Minimal number of terminal nodes in subgraphs. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classderegnet_1_1AvgdrgntData_a908acb714a65fd9ec4c278fa08150d96}{min\+\_\+num\+\_\+receptors} \{ nullptr \}
+\begin{DoxyCompactList}\small\item\em Minimal number of receptor nodes in subgraphs. \end{DoxyCompactList}\item 
+\hyperlink{namespacederegnet_ad59156f873b7ab02d384164b900cd874}{Algorithm} \hyperlink{classderegnet_1_1AvgdrgntData_aa75d6acc2d63aa589651c705eaf89280}{algorithm} \{ Algorithm\+::\+D\+TA \}
+\begin{DoxyCompactList}\small\item\em Which solution algorithm to employ. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents all data and parameters to run the average version of the De\+Reg\+Net. 
+
+Definition at line 51 of file Avgdrgnt\+Data.\+hpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classderegnet_1_1AvgdrgntData_aa75d6acc2d63aa589651c705eaf89280}\label{classderegnet_1_1AvgdrgntData_aa75d6acc2d63aa589651c705eaf89280}} 
+\index{deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}}
+\subsubsection{\texorpdfstring{algorithm}{algorithm}}
+{\footnotesize\ttfamily \hyperlink{namespacederegnet_ad59156f873b7ab02d384164b900cd874}{Algorithm} deregnet\+::\+Avgdrgnt\+Data\+::algorithm \{ Algorithm\+::\+D\+TA \}}
+
+
+
+Which solution algorithm to employ. 
+
+
+
+Definition at line 61 of file Avgdrgnt\+Data.\+hpp.
+
+
+
+Referenced by finalize\+\_\+data(), and parse\+\_\+options().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgdrgntData_a9e844158e12d5e1c4d519c492cffeb17}\label{classderegnet_1_1AvgdrgntData_a9e844158e12d5e1c4d519c492cffeb17}} 
+\index{deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}}
+\subsubsection{\texorpdfstring{max\+\_\+size}{max\_size}}
+{\footnotesize\ttfamily int deregnet\+::\+Avgdrgnt\+Data\+::max\+\_\+size \{ 50 \}}
+
+
+
+Maximal size of the resulting subgraphs. 
+
+
+
+Definition at line 56 of file Avgdrgnt\+Data.\+hpp.
+
+
+
+Referenced by finalize\+\_\+data(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+start\+\_\+solution(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+suboptimal\+\_\+start\+\_\+solution(), and parse\+\_\+options().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgdrgntData_a908acb714a65fd9ec4c278fa08150d96}\label{classderegnet_1_1AvgdrgntData_a908acb714a65fd9ec4c278fa08150d96}} 
+\index{deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}!min\+\_\+num\+\_\+receptors@{min\+\_\+num\+\_\+receptors}}
+\index{min\+\_\+num\+\_\+receptors@{min\+\_\+num\+\_\+receptors}!deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}}
+\subsubsection{\texorpdfstring{min\+\_\+num\+\_\+receptors}{min\_num\_receptors}}
+{\footnotesize\ttfamily int$\ast$ deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+num\+\_\+receptors \{ nullptr \}}
+
+
+
+Minimal number of receptor nodes in subgraphs. 
+
+
+
+Definition at line 59 of file Avgdrgnt\+Data.\+hpp.
+
+\mbox{\Hypertarget{classderegnet_1_1AvgdrgntData_a38c3bdd86fa3d6ef16ca5db821ca12d2}\label{classderegnet_1_1AvgdrgntData_a38c3bdd86fa3d6ef16ca5db821ca12d2}} 
+\index{deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}!min\+\_\+num\+\_\+terminals@{min\+\_\+num\+\_\+terminals}}
+\index{min\+\_\+num\+\_\+terminals@{min\+\_\+num\+\_\+terminals}!deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}}
+\subsubsection{\texorpdfstring{min\+\_\+num\+\_\+terminals}{min\_num\_terminals}}
+{\footnotesize\ttfamily int$\ast$ deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+num\+\_\+terminals \{ nullptr \}}
+
+
+
+Minimal number of terminal nodes in subgraphs. 
+
+
+
+Definition at line 58 of file Avgdrgnt\+Data.\+hpp.
+
+
+
+Referenced by parse\+\_\+options().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}\label{classderegnet_1_1AvgdrgntData_a733e0cd627433fca043a7f9b70af18c3}} 
+\index{deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}!min\+\_\+size@{min\+\_\+size}}
+\index{min\+\_\+size@{min\+\_\+size}!deregnet\+::\+Avgdrgnt\+Data@{deregnet\+::\+Avgdrgnt\+Data}}
+\subsubsection{\texorpdfstring{min\+\_\+size}{min\_size}}
+{\footnotesize\ttfamily int deregnet\+::\+Avgdrgnt\+Data\+::min\+\_\+size \{ 20 \}}
+
+
+
+Minimal size of the resulting subgraphs. 
+
+
+
+Definition at line 55 of file Avgdrgnt\+Data.\+hpp.
+
+
+
+Referenced by deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+start\+\_\+solution(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::find\+\_\+suboptimal\+\_\+start\+\_\+solution(), and parse\+\_\+options().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{AvgdrgntData_8hpp}{Avgdrgnt\+Data.\+hpp}\end{DoxyCompactItemize}

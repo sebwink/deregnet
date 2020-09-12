@@ -1,0 +1,1302 @@
+\hypertarget{drgnt_8cpp}{}\section{/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/bin/drgnt.cpp File Reference}
+\label{drgnt_8cpp}\index{/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/bin/drgnt.\+cpp@{/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/bin/drgnt.\+cpp}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$gurobi\+\_\+c++.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}utils.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}version.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Drgnt\+Data.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Deregnet\+Finder.\+hpp\char`\"{}}\newline
+Include dependency graph for drgnt.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structOptions}{Options}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{drgnt_8cpp_ae3dc96433849f69c5dfbcd3a621823b0}{O\+P\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{drgnt_8cpp_a8a7a70bbb25058581f7e92c3fe947a3c}{Data} = \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{drgnt_8cpp_ae35731f2bdc4ffb20fae51759998b707}{parse\+\_\+options} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, \hyperlink{structOptions}{Options} \&options, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} \&data)
+\item 
+void \hyperlink{drgnt_8cpp_af166ec9917c82f0f736217d3ac5bd370}{finalize\+\_\+data} (\hyperlink{structOptions}{Options} \&options, \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} \&data)
+\item 
+void \hyperlink{drgnt_8cpp_a233aa248a3a52203f9d2d7175b8ab54f}{write\+Subgraphs} (vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ \&subgraphs, string $\ast$outdir)
+\item 
+void \hyperlink{drgnt_8cpp_a6302aaae12249e8ea16bfdc7de892f21}{print\+\_\+version} ()
+\item 
+void \hyperlink{drgnt_8cpp_a853216ac51aa181669ff4d3de74058a7}{print\+\_\+help} ()
+\item 
+int \hyperlink{drgnt_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{drgnt_8cpp_a02849994ac7eec9d6b6824e5334c49e0}{print\+\_\+help\+\_\+b} ()
+\item 
+void \hyperlink{drgnt_8cpp_ade1979e92ac0b847c3e613289986bc85}{print\+\_\+help\+\_\+c} ()
+\item 
+void \hyperlink{drgnt_8cpp_af15906740df28f94678153da7f217c28}{print\+\_\+help\+\_\+e} ()
+\item 
+void \hyperlink{drgnt_8cpp_ad5fdc0ab2ee21d996d9b1592f0ac2104}{print\+\_\+help\+\_\+f} ()
+\item 
+void \hyperlink{drgnt_8cpp_a7f628cbf15cc89bf8585a552a66c29ca}{print\+\_\+help\+\_\+g} ()
+\item 
+void \hyperlink{drgnt_8cpp_a6a40716001d7d6f7dea0c93c2fb41146}{print\+\_\+help\+\_\+h} ()
+\item 
+void \hyperlink{drgnt_8cpp_ac2523be017b2bfe2e7853d2aec02c40a}{print\+\_\+help\+\_\+i} ()
+\item 
+void \hyperlink{drgnt_8cpp_afed5285fac57ef77df7b07a0d1491bed}{print\+\_\+help\+\_\+n} ()
+\item 
+void \hyperlink{drgnt_8cpp_a7aee3d417f2241a4b74300e9328b1a9e}{print\+\_\+help\+\_\+o} ()
+\item 
+void \hyperlink{drgnt_8cpp_a893713e75daf950c88bb48dc8e6a3662}{print\+\_\+help\+\_\+p} ()
+\item 
+void \hyperlink{drgnt_8cpp_a9656be8c556408b62432ec3a6518c3b3}{print\+\_\+help\+\_\+r} ()
+\item 
+void \hyperlink{drgnt_8cpp_af1c23b0b0991cabd99789732946271dc}{print\+\_\+help\+\_\+R} ()
+\item 
+void \hyperlink{drgnt_8cpp_a1efde679992643b2ec68eacdb84217b1}{print\+\_\+help\+\_\+s} ()
+\item 
+void \hyperlink{drgnt_8cpp_a64d939f33167ac034898303f1eeb4466}{print\+\_\+help\+\_\+t} ()
+\item 
+void \hyperlink{drgnt_8cpp_ae3f618417830f06bdbc8caa53850002c}{print\+\_\+help\+\_\+T} ()
+\item 
+void \hyperlink{drgnt_8cpp_a15a804e59115a5261513e37def863335}{print\+\_\+help\+\_\+v} ()
+\item 
+void \hyperlink{drgnt_8cpp_a788d2cb3aeb4ecda19dd9675e9c4a2da}{print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic} ()
+\item 
+void \hyperlink{drgnt_8cpp_a91a89c03ab1179facff8b208f5419141}{print\+\_\+help\+\_\+terminals\+\_\+file} ()
+\item 
+void \hyperlink{drgnt_8cpp_a301fefc310fe081ebb2f99a6f384a99a}{print\+\_\+help\+\_\+receptors\+\_\+file} ()
+\item 
+void \hyperlink{drgnt_8cpp_afc40bd7b3ab751d4f055df5eb635ef95}{print\+\_\+help\+\_\+include\+\_\+file} ()
+\item 
+void \hyperlink{drgnt_8cpp_af2fad4474285e991cdb4e6ac5c1756f2}{print\+\_\+help\+\_\+exclude\+\_\+file} ()
+\item 
+void \hyperlink{drgnt_8cpp_ac80befdde83b65cca1a2a182fd5db754}{print\+\_\+help\+\_\+model\+\_\+sense} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{drgnt_8cpp_ae3dc96433849f69c5dfbcd3a621823b0}\label{drgnt_8cpp_ae3dc96433849f69c5dfbcd3a621823b0}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!O\+P\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR@{O\+P\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}}
+\index{O\+P\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR@{O\+P\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}{OPTION\_ERROR}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR~1}
+
+
+
+Definition at line 56 of file drgnt.\+cpp.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{drgnt_8cpp_a8a7a70bbb25058581f7e92c3fe947a3c}\label{drgnt_8cpp_a8a7a70bbb25058581f7e92c3fe947a3c}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!Data@{Data}}
+\index{Data@{Data}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily using \hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} =  \hyperlink{classderegnet_1_1DrgntData}{Drgnt\+Data}}
+
+
+
+Definition at line 79 of file drgnt.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{drgnt_8cpp_af166ec9917c82f0f736217d3ac5bd370}\label{drgnt_8cpp_af166ec9917c82f0f736217d3ac5bd370}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!finalize\+\_\+data@{finalize\+\_\+data}}
+\index{finalize\+\_\+data@{finalize\+\_\+data}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{finalize\+\_\+data()}{finalize\_data()}}
+{\footnotesize\ttfamily void finalize\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{structOptions}{Options} \&}]{options,  }\item[{\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 252 of file drgnt.\+cpp.
+
+
+
+References Options\+::absolute\+\_\+values, deregnet\+::\+Deregnet\+Data\+::exclude, Options\+::exclude, deregnet\+::\+Deregnet\+Data\+::get\+\_\+node\+\_\+set(), deregnet\+::\+Deregnet\+Data\+::get\+\_\+root(), deregnet\+::\+Deregnet\+Data\+::include, Options\+::include, Options\+::lgf\+\_\+file, deregnet\+::\+Deregnet\+Data\+::read\+\_\+graph(), deregnet\+::\+Deregnet\+Data\+::read\+\_\+score(), deregnet\+::\+Deregnet\+Data\+::receptors, Options\+::receptors, Options\+::root\+\_\+id, Options\+::score\+\_\+tsv, deregnet\+::\+Deregnet\+Data\+::terminals, and Options\+::terminals.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+252                                                  \{
+253     data.\hyperlink{classderegnet_1_1DeregnetData_ae5edd8f077b20056f416d42ef3fb03d2}{read\_graph}(options.\hyperlink{structOptions_ab1d4dd586f45745c976ef7fcd2536221}{lgf\_file});
+254     data.\hyperlink{classderegnet_1_1DeregnetData_a01308048556370738e4ac335aba62ffd}{read\_score}(options.\hyperlink{structOptions_a1f2fa7263f58ae203aa79f71b4a26540}{score\_tsv}, options.
+      \hyperlink{structOptions_a86e7be53c40b22db67261e2c34282736}{absolute\_values});
+255     data.\hyperlink{classderegnet_1_1DeregnetData_a7d662c0dd84d814bbaaf56718a99306a}{get\_node\_set}(&data.\hyperlink{classderegnet_1_1DeregnetData_a1fe559c6056cd411647f836849e4b0da}{terminals}, options.\hyperlink{structOptions_a50e99d4f8be4e78eea581ea9378d3b4a}{terminals});
+256     data.\hyperlink{classderegnet_1_1DeregnetData_a7d662c0dd84d814bbaaf56718a99306a}{get\_node\_set}(&data.\hyperlink{classderegnet_1_1DeregnetData_a470cc9f84741c59897ab1e7a3daa1205}{receptors}, options.\hyperlink{structOptions_a4192410864fec99db1eea65c8d8dfb52}{receptors});
+257     data.\hyperlink{classderegnet_1_1DeregnetData_a7d662c0dd84d814bbaaf56718a99306a}{get\_node\_set}(&data.\hyperlink{classderegnet_1_1DeregnetData_a438d16e60be5d119d174aa039f070ab2}{include}, options.\hyperlink{structOptions_a90ea5ea52a8010baead4fa1c9b587b6f}{include});
+258     data.\hyperlink{classderegnet_1_1DeregnetData_a7d662c0dd84d814bbaaf56718a99306a}{get\_node\_set}(&data.\hyperlink{classderegnet_1_1DeregnetData_a8e4398e6ece11ef87767914c6f2c304d}{exclude}, options.\hyperlink{structOptions_a0b4e7353a06f655fb83a2402ed52ecd0}{exclude});
+259     data.\hyperlink{classderegnet_1_1DeregnetData_aaef262d5ca460f10851b25c01ad2f9bc}{get\_root}(options.\hyperlink{structOptions_a7df263753dc02f88a187ed119f3f8c37}{root\_id});
+260 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_af166ec9917c82f0f736217d3ac5bd370_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{drgnt_8cpp_af166ec9917c82f0f736217d3ac5bd370_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{drgnt_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!main@{main}}
+\index{main@{main}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file drgnt.\+cpp.
+
+
+
+References finalize\+\_\+data(), Options\+::outdir, parse\+\_\+options(), deregnet\+::\+Deregnet\+Finder$<$ Model\+Type, Data $>$\+::run(), and write\+Subgraphs().
+
+
+\begin{DoxyCode}
+103                                  \{
+104     \hyperlink{structOptions}{Options} options;
+105     \hyperlink{classderegnet_1_1AvgdrgntData}{Data} data;
+106     \hyperlink{drgnt_8cpp_ae35731f2bdc4ffb20fae51759998b707}{parse\_options}(argc, argv, options, data);
+107     \hyperlink{drgnt_8cpp_af166ec9917c82f0f736217d3ac5bd370}{finalize\_data}(options, data);
+108     \hyperlink{classderegnet_1_1DeregnetFinder}{DeregnetFinder<GRBModel, Data>} subgraphFinder(&data);
+109     vector<Subgraph> subgraphs \{ subgraphFinder.run() \};
+110     \hyperlink{drgnt_8cpp_a233aa248a3a52203f9d2d7175b8ab54f}{writeSubgraphs}(subgraphs, options.\hyperlink{structOptions_a80746ce696086f5fb130d798849d0277}{outdir});
+111     \textcolor{keywordflow}{return} 0;
+112 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{drgnt_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_ae35731f2bdc4ffb20fae51759998b707}\label{drgnt_8cpp_ae35731f2bdc4ffb20fae51759998b707}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!parse\+\_\+options@{parse\+\_\+options}}
+\index{parse\+\_\+options@{parse\+\_\+options}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{parse\+\_\+options()}{parse\_options()}}
+{\footnotesize\ttfamily void parse\+\_\+options (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\hyperlink{structOptions}{Options} \&}]{options,  }\item[{\hyperlink{avgdrgnt_8cpp_a1d1235306db276e9b36acba1db1509e8}{Data} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 114 of file drgnt.\+cpp.
+
+
+
+References Options\+::absolute\+\_\+values, Options\+::exclude, deregnet\+::\+Deregnet\+Data\+::gap\+\_\+cut, Options\+::include, Options\+::lgf\+\_\+file, deregnet\+::\+Deregnet\+Data\+::max\+\_\+overlap, deregnet\+::\+Deregnet\+Data\+::model\+\_\+sense, deregnet\+::\+Deregnet\+Data\+::num\+\_\+subopt\+\_\+iter, Options\+::outdir, print\+\_\+help(), print\+\_\+version(), deregnet\+::\+Deregnet\+Data\+::receptor\+\_\+as\+\_\+root, Options\+::receptors, deregnet\+::register\+\_\+node\+\_\+set(), deregnet\+::register\+\_\+node\+\_\+set\+\_\+file(), Options\+::root\+\_\+id, Options\+::score\+\_\+tsv, deregnet\+::\+Deregnet\+Data\+::start\+\_\+heuristic, Options\+::terminals, and deregnet\+::\+Deregnet\+Data\+::time\+\_\+limit.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+114                                                                          \{
+115 
+116     \textcolor{keyword}{static} \textcolor{keyword}{struct }option long\_options[] \{
+117         \{\textcolor{stringliteral}{"graph"}, 1, 0, \textcolor{charliteral}{'g'}\},
+118         \{\textcolor{stringliteral}{"terminals"}, 1, 0, \textcolor{charliteral}{'T'}\},
+119         \{\textcolor{stringliteral}{"terminals-file"}, 1, 0, 0\},
+120         \{\textcolor{stringliteral}{"receptors"}, 1, 0, \textcolor{charliteral}{'R'}\},
+121         \{\textcolor{stringliteral}{"receptors-file"}, 1, 0, 0\},
+122         \{\textcolor{stringliteral}{"score"}, 1, 0, \textcolor{charliteral}{'s'}\},
+123         \{\textcolor{stringliteral}{"root"}, 1, 0, \textcolor{charliteral}{'r'}\},
+124         \{\textcolor{stringliteral}{"flip-orientation"}, 0, 0, \textcolor{charliteral}{'f'}\},
+125         \{\textcolor{stringliteral}{"output-dir"}, 1, 0, \textcolor{charliteral}{'o'}\},
+126         \{\textcolor{stringliteral}{"size"}, 1, 0, \textcolor{charliteral}{'n'}\},
+127         \{\textcolor{stringliteral}{"time-limit"}, 1, 0, \textcolor{charliteral}{'t'}\},
+128         \{\textcolor{stringliteral}{"gap-cut"}, 1, 0, \textcolor{charliteral}{'c'}\},
+129         \{\textcolor{stringliteral}{"exclude"}, 1, 0, \textcolor{charliteral}{'e'}\},
+130         \{\textcolor{stringliteral}{"include"}, 1, 0, \textcolor{charliteral}{'i'}\},
+131         \{\textcolor{stringliteral}{"exclude-file"}, 1, 0, 0\},
+132         \{\textcolor{stringliteral}{"include-file"}, 1, 0, 0\},
+133         \{\textcolor{stringliteral}{"suboptimal"}, 1, 0, \textcolor{charliteral}{'b'}\},
+134         \{\textcolor{stringliteral}{"max-overlap-percentage"}, 1, 0, \textcolor{charliteral}{'p'}\},
+135         \{\textcolor{stringliteral}{"no-start-heuristic"}, 0, 0, 0\},
+136         \{\textcolor{stringliteral}{"help"}, 0, 0, \textcolor{charliteral}{'h'}\},
+137         \{\textcolor{stringliteral}{"version"}, 0, 0, \textcolor{charliteral}{'v'}\},
+138         \{\textcolor{stringliteral}{"model-sense"}, 1, 0, 0\},
+139         \{\textcolor{stringliteral}{"absolute-values"}, 0, 0, 0\},
+140         \{NULL, 0, NULL, 0\}
+141     \};
+142 
+143     \textcolor{keywordtype}{int} opt;
+144     \textcolor{keywordtype}{int} option\_index = 0;
+145     \textcolor{keywordtype}{string} option\_signature = \textcolor{stringliteral}{"hfvg:s:n:r:R:T:i:e:b:p:t:c:o:"};
+146     \textcolor{keywordflow}{while} ( (opt = getopt\_long(argc, argv, option\_signature.c\_str(),
+147                                long\_options, &option\_index)) != -1) \{
+148         \textcolor{keywordflow}{switch} (opt) \{
+149             \textcolor{keywordflow}{case} 0: \{
+150                 \textcolor{keywordtype}{string} no\_start\_heuristic \{ \textcolor{stringliteral}{"no-start-heuristic"} \};
+151                 \textcolor{keywordtype}{string} terminals\_file \{ \textcolor{stringliteral}{"terminals-file"} \};
+152                 \textcolor{keywordtype}{string} receptors\_file \{ \textcolor{stringliteral}{"receptors-file"} \};
+153                 \textcolor{keywordtype}{string} include\_file \{ \textcolor{stringliteral}{"include-file"} \};
+154                 \textcolor{keywordtype}{string} exclude\_file \{ \textcolor{stringliteral}{"exclude-file"} \};
+155                 \textcolor{keywordtype}{string} model\_sense \{ \textcolor{stringliteral}{"model-sense"} \};
+156                 \textcolor{keywordtype}{string} absolute\_values \{ \textcolor{stringliteral}{"absolute-values"} \};
+157                 \textcolor{comment}{// --model-sense}
+158                 \textcolor{keywordflow}{if} ( strcmp(long\_options[option\_index].name, model\_sense.c\_str()) == 0 )
+159                     data.\hyperlink{classderegnet_1_1DeregnetData_ac3918536b5423facf0ac155997703c52}{model\_sense} = string(optarg);
+160                 \textcolor{comment}{// --no-start-heuristic}
+161                 \textcolor{keywordflow}{if} ( strcmp(long\_options[option\_index].name, no\_start\_heuristic.c\_str()) == 0 )
+162                     data.\hyperlink{classderegnet_1_1DeregnetData_abac721360704af5615f7ff84b183eebd}{start\_heuristic} = \textcolor{keyword}{false};
+163                 \textcolor{comment}{// --absolute-values}
+164                 \textcolor{keywordflow}{if} ( strcmp(long\_options[option\_index].name, absolute\_values.c\_str()) == 0 )
+165                     options.\hyperlink{structOptions_a86e7be53c40b22db67261e2c34282736}{absolute\_values} = \textcolor{keyword}{true};
+166                 \textcolor{comment}{// --terminals-file}
+167                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( strcmp(long\_options[option\_index].name, terminals\_file.c\_str()) == 0)
+168                     \hyperlink{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0}{register\_node\_set\_file}(&options.
+      \hyperlink{structOptions_a50e99d4f8be4e78eea581ea9378d3b4a}{terminals}, optarg);
+169                 \textcolor{comment}{// --receptors-file}
+170                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( strcmp(long\_options[option\_index].name, receptors\_file.c\_str()) == 0)
+171                     \hyperlink{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0}{register\_node\_set\_file}(&options.
+      \hyperlink{structOptions_a4192410864fec99db1eea65c8d8dfb52}{receptors}, optarg);
+172                 \textcolor{comment}{// --include-file}
+173                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( strcmp(long\_options[option\_index].name, include\_file.c\_str()) == 0)
+174                     \hyperlink{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0}{register\_node\_set\_file}(&options.
+      \hyperlink{structOptions_a90ea5ea52a8010baead4fa1c9b587b6f}{include}, optarg);
+175                 \textcolor{comment}{// --exclude-file}
+176                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( strcmp(long\_options[option\_index].name, exclude\_file.c\_str()) == 0)
+177                     \hyperlink{namespacederegnet_a11d599a7ac217876cf35b3f6899532c0}{register\_node\_set\_file}(&options.
+      \hyperlink{structOptions_a0b4e7353a06f655fb83a2402ed52ecd0}{exclude}, optarg);
+178                 \textcolor{keywordflow}{break};
+179             \}
+180             \textcolor{keywordflow}{case} \textcolor{charliteral}{'g'}:
+181                 \textcolor{comment}{// -g,--graph}
+182                 options.\hyperlink{structOptions_ab1d4dd586f45745c976ef7fcd2536221}{lgf\_file} = \textcolor{keyword}{new} string(optarg);
+183                 \textcolor{keywordflow}{break};
+184             \textcolor{keywordflow}{case} \textcolor{charliteral}{'T'}:
+185                 \textcolor{comment}{// -T,--terminals}
+186                 \hyperlink{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba}{register\_node\_set}(&options.\hyperlink{structOptions_a50e99d4f8be4e78eea581ea9378d3b4a}{terminals}, optarg);
+187                 \textcolor{keywordflow}{break};
+188             \textcolor{keywordflow}{case} \textcolor{charliteral}{'R'}:
+189                 \textcolor{comment}{// -R,--receptors}
+190                 \hyperlink{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba}{register\_node\_set}(&options.\hyperlink{structOptions_a4192410864fec99db1eea65c8d8dfb52}{receptors}, optarg);
+191                 \textcolor{keywordflow}{break};
+192             \textcolor{keywordflow}{case} \textcolor{charliteral}{'s'}:
+193                 \textcolor{comment}{// -s,--score}
+194                 options.\hyperlink{structOptions_a1f2fa7263f58ae203aa79f71b4a26540}{score\_tsv} = \textcolor{keyword}{new} string(optarg);
+195                 \textcolor{keywordflow}{break};
+196             \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'}:
+197                 \textcolor{comment}{// -r,--root}
+198                 options.\hyperlink{structOptions_a7df263753dc02f88a187ed119f3f8c37}{root\_id} = \textcolor{keyword}{new} string(optarg);
+199                 \textcolor{keywordflow}{break};
+200             \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:
+201                 \textcolor{comment}{// -f,--flip-orientation}
+202                 data.\hyperlink{classderegnet_1_1DeregnetData_ae7936fe59661a68464134b9251303727}{receptor\_as\_root} = \textcolor{keyword}{false};
+203                 \textcolor{keywordflow}{break};
+204             \textcolor{keywordflow}{case} \textcolor{charliteral}{'o'}:
+205                 \textcolor{comment}{// -o,--output-dir}
+206                 options.\hyperlink{structOptions_a80746ce696086f5fb130d798849d0277}{outdir} = \textcolor{keyword}{new} string(optarg);
+207                 \textcolor{keywordflow}{break};
+208             \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+209                 \textcolor{comment}{// -n,--size}
+210                 data.size = atoi( optarg );
+211                 \textcolor{keywordflow}{break};
+212             \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+213                 \textcolor{comment}{// -t,--time-limit}
+214                 data.\hyperlink{classderegnet_1_1DeregnetData_ac378faf7e8466135b8dc0ced907d98ae}{time\_limit} = \textcolor{keyword}{new} double( atof( optarg ) );
+215                 \textcolor{keywordflow}{break};
+216             \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}:
+217                 \textcolor{comment}{// -c,--gap-cut}
+218                 data.\hyperlink{classderegnet_1_1DeregnetData_a3637c87366454adc152487fc2f5cfede}{gap\_cut} = \textcolor{keyword}{new} double( atof( optarg ) );
+219                 \textcolor{keywordflow}{break};
+220             \textcolor{keywordflow}{case} \textcolor{charliteral}{'e'}:
+221                 \textcolor{comment}{// -e,--exclude}
+222                 \hyperlink{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba}{register\_node\_set}(&options.\hyperlink{structOptions_a0b4e7353a06f655fb83a2402ed52ecd0}{exclude}, optarg);
+223                 \textcolor{keywordflow}{break};
+224             \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}:
+225                 \textcolor{comment}{// -i,--include}
+226                 \hyperlink{namespacederegnet_a639799db7e485ee8cc15b5933be7b4ba}{register\_node\_set}(&options.\hyperlink{structOptions_a90ea5ea52a8010baead4fa1c9b587b6f}{include}, optarg);
+227                 \textcolor{keywordflow}{break};
+228             \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'}:
+229                 \textcolor{comment}{// -b,--suboptimal}
+230                 data.\hyperlink{classderegnet_1_1DeregnetData_adb7428cd99112156ae9f80187af9ebbe}{num\_subopt\_iter} = atoi( optarg );
+231                 \textcolor{keywordflow}{break};
+232             \textcolor{keywordflow}{case} \textcolor{charliteral}{'p'}:
+233                 \textcolor{comment}{// -p,--max-overlap-percentage}
+234                 data.\hyperlink{classderegnet_1_1DeregnetData_a43111d8664fd9db36f36f75b24ba62e9}{max\_overlap} = atof( optarg );
+235                 \textcolor{keywordflow}{break};
+236             \textcolor{keywordflow}{case} \textcolor{charliteral}{'h'}:
+237                 \textcolor{comment}{// -h,--help}
+238                 \hyperlink{drgnt_8cpp_a853216ac51aa181669ff4d3de74058a7}{print\_help}();
+239                 exit(EXIT\_SUCCESS);
+240             \textcolor{keywordflow}{case} \textcolor{charliteral}{'v'}:
+241                 \textcolor{comment}{// -v,--version}
+242                 \hyperlink{drgnt_8cpp_a6302aaae12249e8ea16bfdc7de892f21}{print\_version}();
+243                 exit(EXIT\_SUCCESS);
+244             \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
+245                 \textcolor{keywordflow}{break};
+246         \}
+247     \}
+248 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{drgnt_8cpp_ae35731f2bdc4ffb20fae51759998b707_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{drgnt_8cpp_ae35731f2bdc4ffb20fae51759998b707_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a853216ac51aa181669ff4d3de74058a7}\label{drgnt_8cpp_a853216ac51aa181669ff4d3de74058a7}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help@{print\+\_\+help}}
+\index{print\+\_\+help@{print\+\_\+help}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help()}{print\_help()}}
+{\footnotesize\ttfamily void print\+\_\+help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 575 of file drgnt.\+cpp.
+
+
+
+References print\+\_\+help\+\_\+b(), print\+\_\+help\+\_\+c(), print\+\_\+help\+\_\+e(), print\+\_\+help\+\_\+exclude\+\_\+file(), print\+\_\+help\+\_\+f(), print\+\_\+help\+\_\+g(), print\+\_\+help\+\_\+h(), print\+\_\+help\+\_\+i(), print\+\_\+help\+\_\+include\+\_\+file(), print\+\_\+help\+\_\+model\+\_\+sense(), print\+\_\+help\+\_\+n(), print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic(), print\+\_\+help\+\_\+o(), print\+\_\+help\+\_\+p(), print\+\_\+help\+\_\+r(), print\+\_\+help\+\_\+\+R(), print\+\_\+help\+\_\+receptors\+\_\+file(), print\+\_\+help\+\_\+s(), print\+\_\+help\+\_\+t(), print\+\_\+help\+\_\+\+T(), print\+\_\+help\+\_\+terminals\+\_\+file(), print\+\_\+help\+\_\+v(), and print\+\_\+version().
+
+
+
+Referenced by parse\+\_\+options().
+
+
+\begin{DoxyCode}
+575                   \{
+576     \hyperlink{drgnt_8cpp_a6302aaae12249e8ea16bfdc7de892f21}{print\_version}();
+577     \hyperlink{drgnt_8cpp_a02849994ac7eec9d6b6824e5334c49e0}{print\_help\_b}();
+578     \hyperlink{drgnt_8cpp_ade1979e92ac0b847c3e613289986bc85}{print\_help\_c}();
+579     \hyperlink{drgnt_8cpp_af15906740df28f94678153da7f217c28}{print\_help\_e}();
+580     \hyperlink{drgnt_8cpp_ad5fdc0ab2ee21d996d9b1592f0ac2104}{print\_help\_f}();
+581     \hyperlink{drgnt_8cpp_a7f628cbf15cc89bf8585a552a66c29ca}{print\_help\_g}();
+582     \hyperlink{drgnt_8cpp_a6a40716001d7d6f7dea0c93c2fb41146}{print\_help\_h}();
+583     \hyperlink{drgnt_8cpp_ac2523be017b2bfe2e7853d2aec02c40a}{print\_help\_i}();
+584     \hyperlink{drgnt_8cpp_afed5285fac57ef77df7b07a0d1491bed}{print\_help\_n}();
+585     \hyperlink{drgnt_8cpp_a7aee3d417f2241a4b74300e9328b1a9e}{print\_help\_o}();
+586     \hyperlink{drgnt_8cpp_a893713e75daf950c88bb48dc8e6a3662}{print\_help\_p}();
+587     \hyperlink{drgnt_8cpp_a9656be8c556408b62432ec3a6518c3b3}{print\_help\_r}();
+588     \hyperlink{drgnt_8cpp_af1c23b0b0991cabd99789732946271dc}{print\_help\_R}();
+589     \hyperlink{drgnt_8cpp_a1efde679992643b2ec68eacdb84217b1}{print\_help\_s}();
+590     \hyperlink{drgnt_8cpp_a64d939f33167ac034898303f1eeb4466}{print\_help\_t}();
+591     \hyperlink{drgnt_8cpp_ae3f618417830f06bdbc8caa53850002c}{print\_help\_T}();
+592     \hyperlink{drgnt_8cpp_a15a804e59115a5261513e37def863335}{print\_help\_v}();
+593     \hyperlink{drgnt_8cpp_a788d2cb3aeb4ecda19dd9675e9c4a2da}{print\_help\_no\_start\_heuristic}();
+594     \hyperlink{drgnt_8cpp_a91a89c03ab1179facff8b208f5419141}{print\_help\_terminals\_file}();
+595     \hyperlink{drgnt_8cpp_a301fefc310fe081ebb2f99a6f384a99a}{print\_help\_receptors\_file}();
+596     \hyperlink{drgnt_8cpp_afc40bd7b3ab751d4f055df5eb635ef95}{print\_help\_include\_file}();
+597     \hyperlink{drgnt_8cpp_af2fad4474285e991cdb4e6ac5c1756f2}{print\_help\_exclude\_file}();
+598     \hyperlink{drgnt_8cpp_ac80befdde83b65cca1a2a182fd5db754}{print\_help\_model\_sense}();
+599     \hyperlink{drgnt_8cpp_a6302aaae12249e8ea16bfdc7de892f21}{print\_version}();
+600     cout << endl;
+601 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{drgnt_8cpp_a853216ac51aa181669ff4d3de74058a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{drgnt_8cpp_a853216ac51aa181669ff4d3de74058a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a02849994ac7eec9d6b6824e5334c49e0}\label{drgnt_8cpp_a02849994ac7eec9d6b6824e5334c49e0}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+b@{print\+\_\+help\+\_\+b}}
+\index{print\+\_\+help\+\_\+b@{print\+\_\+help\+\_\+b}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+b()}{print\_help\_b()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 297 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+297                     \{
+298     cout << \textcolor{stringliteral}{"\(\backslash\)n -b,--suboptimal:\(\backslash\)n\(\backslash\)n"}
+299          << \textcolor{stringliteral}{" Specify the number of suboptimal subgraphs\(\backslash\)n"}
+300          << \textcolor{stringliteral}{" to be searched for. \(\backslash\)n\(\backslash\)n"}
+301          << \textcolor{stringliteral}{" Default: 0.\(\backslash\)n\(\backslash\)n"}
+302          << \textcolor{stringliteral}{" Usage: -b,--suboptimal N \(\backslash\)n"}
+303          << \textcolor{stringliteral}{"         N: integer in [0,100].\(\backslash\)n\(\backslash\)n"}
+304          << \textcolor{stringliteral}{" See also: -p,--max-overlap-percentage\(\backslash\)n"}
+305          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+306          << endl;
+307 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a02849994ac7eec9d6b6824e5334c49e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_ade1979e92ac0b847c3e613289986bc85}\label{drgnt_8cpp_ade1979e92ac0b847c3e613289986bc85}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+c@{print\+\_\+help\+\_\+c}}
+\index{print\+\_\+help\+\_\+c@{print\+\_\+help\+\_\+c}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+c()}{print\_help\_c()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+c (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 309 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+309                     \{
+310     cout << \textcolor{stringliteral}{"\(\backslash\)n -c,--gap-cut: \(\backslash\)n\(\backslash\)n"}
+311          << \textcolor{stringliteral}{" Specify a gap cut to stop optimization prematurely.\(\backslash\)n"}
+312          << \textcolor{stringliteral}{" This option is not available with algorithm dta.\(\backslash\)n\(\backslash\)n"}
+313          << \textcolor{stringliteral}{" Default: 0.0 (i.e. solve to optimality).\(\backslash\)n\(\backslash\)n"}
+314          << \textcolor{stringliteral}{" Usage: -c,--gap-cut p\(\backslash\)n"}
+315          << \textcolor{stringliteral}{"         p: double in [0.0, 100.0].\(\backslash\)n\(\backslash\)n"}
+316          << \textcolor{stringliteral}{" See also: -t,--time-limit\(\backslash\)n"}
+317          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+318          << endl;
+319 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_ade1979e92ac0b847c3e613289986bc85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_af15906740df28f94678153da7f217c28}\label{drgnt_8cpp_af15906740df28f94678153da7f217c28}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+e@{print\+\_\+help\+\_\+e}}
+\index{print\+\_\+help\+\_\+e@{print\+\_\+help\+\_\+e}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+e()}{print\_help\_e()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+e (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 321 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+321                     \{
+322     cout << \textcolor{stringliteral}{"\(\backslash\)n -e,--exclude: \(\backslash\)n\(\backslash\)n"}
+323          << \textcolor{stringliteral}{" Specify a set of nodes which you want to exclude\(\backslash\)n"}
+324          << \textcolor{stringliteral}{" from any subgraph. Nodes in your set which are not\(\backslash\)n"}
+325          << \textcolor{stringliteral}{" in the graph are ignored.\(\backslash\)n\(\backslash\)n"}
+326          << \textcolor{stringliteral}{" Default: \(\backslash\)"\(\backslash\)" (i.e. exclude none of the nodes).\(\backslash\)n\(\backslash\)n"}
+327          << \textcolor{stringliteral}{" Usage: -e,--exclude nodes \(\backslash\)n"}
+328          << \textcolor{stringliteral}{"         nodes: comma-seperated list of node ids\(\backslash\)n"}
+329          << \textcolor{stringliteral}{"                (no spaces!).\(\backslash\)n\(\backslash\)n"}
+330          << \textcolor{stringliteral}{" Usage example: -e TP53,DIRAS3,BRCA1 \(\backslash\)n\(\backslash\)n"}
+331          << \textcolor{stringliteral}{" See also: --exclude-file\(\backslash\)n"}
+332          << \textcolor{stringliteral}{"           -i,--include\(\backslash\)n"}
+333          << \textcolor{stringliteral}{"           --include-file\(\backslash\)n"}
+334          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+335          << endl;
+336 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_af15906740df28f94678153da7f217c28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_af2fad4474285e991cdb4e6ac5c1756f2}\label{drgnt_8cpp_af2fad4474285e991cdb4e6ac5c1756f2}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+exclude\+\_\+file@{print\+\_\+help\+\_\+exclude\+\_\+file}}
+\index{print\+\_\+help\+\_\+exclude\+\_\+file@{print\+\_\+help\+\_\+exclude\+\_\+file}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+exclude\+\_\+file()}{print\_help\_exclude\_file()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+exclude\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 550 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+550                                \{
+551     cout << \textcolor{stringliteral}{"\(\backslash\)n --exclude-file: \(\backslash\)n\(\backslash\)n"}
+552          << \textcolor{stringliteral}{" Specify a relative/absolute path to a file cont-\(\backslash\)n"}
+553          << \textcolor{stringliteral}{" aining nodes to be excluded from any subgraph.\(\backslash\)n\(\backslash\)n"}
+554          << \textcolor{stringliteral}{" Usage: --exclude-file path/to/file\(\backslash\)n"}
+555          << \textcolor{stringliteral}{"         file: text file containing one node id per\(\backslash\)n"}
+556          << \textcolor{stringliteral}{"               line (and nothing else).\(\backslash\)n\(\backslash\)n"}
+557          << \textcolor{stringliteral}{" See also: -e,--exclude\(\backslash\)n"}
+558          << \textcolor{stringliteral}{"           -i,--include\(\backslash\)n"}
+559          << \textcolor{stringliteral}{"           --include-file\(\backslash\)n"}
+560          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+561          << endl;
+562 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_af2fad4474285e991cdb4e6ac5c1756f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_ad5fdc0ab2ee21d996d9b1592f0ac2104}\label{drgnt_8cpp_ad5fdc0ab2ee21d996d9b1592f0ac2104}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+f@{print\+\_\+help\+\_\+f}}
+\index{print\+\_\+help\+\_\+f@{print\+\_\+help\+\_\+f}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+f()}{print\_help\_f()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 338 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+338                     \{
+339     cout << \textcolor{stringliteral}{"\(\backslash\)n -f,--flip-orientation: \(\backslash\)n\(\backslash\)n"}
+340          << \textcolor{stringliteral}{" Apply any algorithm to a reversed version of the\(\backslash\)n"}
+341          << \textcolor{stringliteral}{" graph. This will result of subgraphs converging\(\backslash\)n"}
+342          << \textcolor{stringliteral}{" into a terminal node (or several terminal nodes)\(\backslash\)n\(\backslash\)n"}
+343          << \textcolor{stringliteral}{" Usage: -f,--flip-orientation\(\backslash\)n"}
+344          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+345          << endl;
+346 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_ad5fdc0ab2ee21d996d9b1592f0ac2104_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a7f628cbf15cc89bf8585a552a66c29ca}\label{drgnt_8cpp_a7f628cbf15cc89bf8585a552a66c29ca}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+g@{print\+\_\+help\+\_\+g}}
+\index{print\+\_\+help\+\_\+g@{print\+\_\+help\+\_\+g}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+g()}{print\_help\_g()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+g (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 348 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+348                     \{
+349     cout << \textcolor{stringliteral}{"\(\backslash\)n -g,--graph: \(\backslash\)n\(\backslash\)n"}
+350          << \textcolor{stringliteral}{" Specify the graph with respect to which you want\(\backslash\)n"}
+351          << \textcolor{stringliteral}{" to look for subgraphs.\(\backslash\)n\(\backslash\)n"}
+352          << \textcolor{stringliteral}{" Default: some version of KEGG\(\backslash\)n\(\backslash\)n"}
+353          << \textcolor{stringliteral}{" Usage: -g,--graph graph.lgf \(\backslash\)n"}
+354          << \textcolor{stringliteral}{"        graph.lgf: lemon graph format (lgf) file\(\backslash\)n"}
+355          << \textcolor{stringliteral}{"                   containing your graph. See User's\(\backslash\)n"}
+356          << \textcolor{stringliteral}{"                   Manual for further specification.\(\backslash\)n"}
+357          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+358          << endl;
+359 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a7f628cbf15cc89bf8585a552a66c29ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a6a40716001d7d6f7dea0c93c2fb41146}\label{drgnt_8cpp_a6a40716001d7d6f7dea0c93c2fb41146}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+h@{print\+\_\+help\+\_\+h}}
+\index{print\+\_\+help\+\_\+h@{print\+\_\+help\+\_\+h}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+h()}{print\_help\_h()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+h (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 361 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+361                     \{
+362     cout << \textcolor{stringliteral}{"\(\backslash\)n -h,--help: \(\backslash\)n\(\backslash\)n"}
+363          << \textcolor{stringliteral}{" Print this help screen.\(\backslash\)n"}
+364          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+365          << endl;
+366 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a6a40716001d7d6f7dea0c93c2fb41146_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_ac2523be017b2bfe2e7853d2aec02c40a}\label{drgnt_8cpp_ac2523be017b2bfe2e7853d2aec02c40a}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+i@{print\+\_\+help\+\_\+i}}
+\index{print\+\_\+help\+\_\+i@{print\+\_\+help\+\_\+i}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+i()}{print\_help\_i()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+i (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 368 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+368                     \{
+369     cout << \textcolor{stringliteral}{"\(\backslash\)n -i,--include: \(\backslash\)n\(\backslash\)n"}
+370          << \textcolor{stringliteral}{" Specify a set of nodes which you want to include\(\backslash\)n"}
+371          << \textcolor{stringliteral}{" in any subgraph. Nodes in your set which are not\(\backslash\)n"}
+372          << \textcolor{stringliteral}{" in the graph are ignored.\(\backslash\)n\(\backslash\)n"}
+373          << \textcolor{stringliteral}{" Default: \(\backslash\)"\(\backslash\)" (i.e. no node is included for sure).\(\backslash\)n\(\backslash\)n"}
+374          << \textcolor{stringliteral}{" Usage: -i,--include nodes\(\backslash\)n"}
+375          << \textcolor{stringliteral}{"         nodes: comma-seperated list of node ids\(\backslash\)n"}
+376          << \textcolor{stringliteral}{"                (no spaces!).\(\backslash\)n\(\backslash\)n"}
+377          << \textcolor{stringliteral}{" Usage example: -i TP53,DIRAS3,BRCA1 \(\backslash\)n\(\backslash\)n"}
+378          << \textcolor{stringliteral}{" See also: --include-file\(\backslash\)n"}
+379          << \textcolor{stringliteral}{"           -e,--exclude\(\backslash\)n"}
+380          << \textcolor{stringliteral}{"           --exclude-file\(\backslash\)n"}
+381          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+382          << endl;
+383 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_ac2523be017b2bfe2e7853d2aec02c40a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_afc40bd7b3ab751d4f055df5eb635ef95}\label{drgnt_8cpp_afc40bd7b3ab751d4f055df5eb635ef95}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+include\+\_\+file@{print\+\_\+help\+\_\+include\+\_\+file}}
+\index{print\+\_\+help\+\_\+include\+\_\+file@{print\+\_\+help\+\_\+include\+\_\+file}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+include\+\_\+file()}{print\_help\_include\_file()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+include\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 536 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+536                                \{
+537     cout << \textcolor{stringliteral}{"\(\backslash\)n --include-file: \(\backslash\)n\(\backslash\)n"}
+538          << \textcolor{stringliteral}{" Specify a relative/absolute path to a file cont-\(\backslash\)n"}
+539          << \textcolor{stringliteral}{" aining nodes to be included in any subgraph.\(\backslash\)n\(\backslash\)n"}
+540          << \textcolor{stringliteral}{" Usage: --include-file path/to/file\(\backslash\)n"}
+541          << \textcolor{stringliteral}{"         file: text file containing one node id per\(\backslash\)n"}
+542          << \textcolor{stringliteral}{"               line (and nothing else).\(\backslash\)n\(\backslash\)n"}
+543          << \textcolor{stringliteral}{" See also: -i,--include\(\backslash\)n"}
+544          << \textcolor{stringliteral}{"           -e,--exclude\(\backslash\)n"}
+545          << \textcolor{stringliteral}{"           --exclude-file\(\backslash\)n"}
+546          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+547          << endl;
+548 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_afc40bd7b3ab751d4f055df5eb635ef95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_ac80befdde83b65cca1a2a182fd5db754}\label{drgnt_8cpp_ac80befdde83b65cca1a2a182fd5db754}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+model\+\_\+sense@{print\+\_\+help\+\_\+model\+\_\+sense}}
+\index{print\+\_\+help\+\_\+model\+\_\+sense@{print\+\_\+help\+\_\+model\+\_\+sense}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+model\+\_\+sense()}{print\_help\_model\_sense()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+model\+\_\+sense (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 564 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+564                               \{
+565     cout << \textcolor{stringliteral}{"\(\backslash\)n --model-sense: \(\backslash\)n\(\backslash\)n"}
+566          << \textcolor{stringliteral}{" Specify whether to maximize or minimize.\(\backslash\)n\(\backslash\)n"}
+567          << \textcolor{stringliteral}{" Default: max\(\backslash\)n\(\backslash\)n"}
+568          << \textcolor{stringliteral}{" Usage: --model-sense max || min\(\backslash\)n"}
+569          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+570          << endl;
+571 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_ac80befdde83b65cca1a2a182fd5db754_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_afed5285fac57ef77df7b07a0d1491bed}\label{drgnt_8cpp_afed5285fac57ef77df7b07a0d1491bed}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+n@{print\+\_\+help\+\_\+n}}
+\index{print\+\_\+help\+\_\+n@{print\+\_\+help\+\_\+n}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+n()}{print\_help\_n()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+n (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 385 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+385                     \{
+386     cout << \textcolor{stringliteral}{"\(\backslash\)n -n,--size: \(\backslash\)n\(\backslash\)n"}
+387          << \textcolor{stringliteral}{" Specify size of the subgraphs.\(\backslash\)n\(\backslash\)n"}
+388          << \textcolor{stringliteral}{" Default: 20 \(\backslash\)n\(\backslash\)n"}
+389          << \textcolor{stringliteral}{" Usage: -n,--size s \(\backslash\)n"}
+390          << \textcolor{stringliteral}{"        s: integer in [1,inf].\(\backslash\)n"}
+391          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+392          << endl;
+393 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_afed5285fac57ef77df7b07a0d1491bed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a788d2cb3aeb4ecda19dd9675e9c4a2da}\label{drgnt_8cpp_a788d2cb3aeb4ecda19dd9675e9c4a2da}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic@{print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic}}
+\index{print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic@{print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic()}{print\_help\_no\_start\_heuristic()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+no\+\_\+start\+\_\+heuristic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 501 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+501                                      \{
+502     cout << \textcolor{stringliteral}{"\(\backslash\)n --no-start-heuristic: \(\backslash\)n\(\backslash\)n"}
+503          << \textcolor{stringliteral}{" Do not use greedy start heuristic.\(\backslash\)n"}
+504          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+505          << endl;
+506 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a788d2cb3aeb4ecda19dd9675e9c4a2da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a7aee3d417f2241a4b74300e9328b1a9e}\label{drgnt_8cpp_a7aee3d417f2241a4b74300e9328b1a9e}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+o@{print\+\_\+help\+\_\+o}}
+\index{print\+\_\+help\+\_\+o@{print\+\_\+help\+\_\+o}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+o()}{print\_help\_o()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+o (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 395 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+395                     \{
+396     cout << \textcolor{stringliteral}{"\(\backslash\)n -o,--output-dir: \(\backslash\)n\(\backslash\)n"}
+397          << \textcolor{stringliteral}{" Specify an absolute/relative path of a directory to\(\backslash\)n"}
+398          << \textcolor{stringliteral}{" which all output will be written.\(\backslash\)n\(\backslash\)n"}
+399          << \textcolor{stringliteral}{" Default: directory from which avgdrgnt is invoked.\(\backslash\)n\(\backslash\)n"}
+400          << \textcolor{stringliteral}{" Usage: -o,--output-dir path/to/directory\(\backslash\)n"}
+401          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+402          << endl;
+403 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a7aee3d417f2241a4b74300e9328b1a9e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a893713e75daf950c88bb48dc8e6a3662}\label{drgnt_8cpp_a893713e75daf950c88bb48dc8e6a3662}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+p@{print\+\_\+help\+\_\+p}}
+\index{print\+\_\+help\+\_\+p@{print\+\_\+help\+\_\+p}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+p()}{print\_help\_p()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 405 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+405                     \{
+406     cout << \textcolor{stringliteral}{"\(\backslash\)n -p,--max-overlap-percentage: \(\backslash\)n\(\backslash\)n"}
+407          << \textcolor{stringliteral}{" Specify a percentage which determines to which\(\backslash\)n"}
+408          << \textcolor{stringliteral}{" extent different suboptimal subgraph can overlap.\(\backslash\)n"}
+409          << \textcolor{stringliteral}{" TODO: specify exact policy ...\(\backslash\)n\(\backslash\)n"}
+410          << \textcolor{stringliteral}{" Default: 0.0 (i.e. no overlap) \(\backslash\)n\(\backslash\)n"}
+411          << \textcolor{stringliteral}{" Usage: -p,--max-overlap-precentage p \(\backslash\)n"}
+412          << \textcolor{stringliteral}{"         p: double in [0.0, 100.0].\(\backslash\)n\(\backslash\)n"}
+413          << \textcolor{stringliteral}{" See also: -b,--suboptimal\(\backslash\)n"}
+414          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+415          << endl;
+416 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a893713e75daf950c88bb48dc8e6a3662_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a9656be8c556408b62432ec3a6518c3b3}\label{drgnt_8cpp_a9656be8c556408b62432ec3a6518c3b3}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+r@{print\+\_\+help\+\_\+r}}
+\index{print\+\_\+help\+\_\+r@{print\+\_\+help\+\_\+r}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+r()}{print\_help\_r()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+r (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 418 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+418                     \{
+419     cout << \textcolor{stringliteral}{"\(\backslash\)n -r,--root: \(\backslash\)n\(\backslash\)n"}
+420          << \textcolor{stringliteral}{" Fix a particular node to be the root node of any\(\backslash\)n"}
+421          << \textcolor{stringliteral}{" subgraph. Node identifiers which are not in the \(\backslash\)n"}
+422          << \textcolor{stringliteral}{" the graph are ignored.\(\backslash\)n\(\backslash\)n"}
+423          << \textcolor{stringliteral}{" Default: None (i.e. the algorithm finds a root)\(\backslash\)n\(\backslash\)n"}
+424          << \textcolor{stringliteral}{" Usage: -r,--root rootid\(\backslash\)n"}
+425          << \textcolor{stringliteral}{"         rootid: root id\(\backslash\)n\(\backslash\)n"}
+426          << \textcolor{stringliteral}{" Usage example: -r TP53\(\backslash\)n\(\backslash\)n"}
+427          << \textcolor{stringliteral}{" See also: -u,--max-size\(\backslash\)n"}
+428          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+429          << endl;
+430 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a9656be8c556408b62432ec3a6518c3b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_af1c23b0b0991cabd99789732946271dc}\label{drgnt_8cpp_af1c23b0b0991cabd99789732946271dc}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+R@{print\+\_\+help\+\_\+R}}
+\index{print\+\_\+help\+\_\+R@{print\+\_\+help\+\_\+R}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+\+R()}{print\_help\_R()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+R (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 432 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+432                     \{
+433     cout << \textcolor{stringliteral}{"\(\backslash\)n -R,--receptors: \(\backslash\)n\(\backslash\)n"}
+434          << \textcolor{stringliteral}{" Specify a set of nodes which you want to be\(\backslash\)n"}
+435          << \textcolor{stringliteral}{" considered \(\backslash\)"receptors\(\backslash\)". Nodes in your set\(\backslash\)n"}
+436          << \textcolor{stringliteral}{" which are not in the graph are ignored.\(\backslash\)n\(\backslash\)n"}
+437          << \textcolor{stringliteral}{" Default: \(\backslash\)"\(\backslash\)" (i.e. no receptors).\(\backslash\)n\(\backslash\)n"}
+438          << \textcolor{stringliteral}{" Usage: -R,--receptors nodes \(\backslash\)n"}
+439          << \textcolor{stringliteral}{"         nodes: comma-seperated list of node ids\(\backslash\)n"}
+440          << \textcolor{stringliteral}{"                (no spaces!).\(\backslash\)n\(\backslash\)n"}
+441          << \textcolor{stringliteral}{" Usage example: -R TP53,DIRAS3,BRCA1 \(\backslash\)n\(\backslash\)n"}
+442          << \textcolor{stringliteral}{" See also: --receptors-file\(\backslash\)n"}
+443          << \textcolor{stringliteral}{"           -T,--terminals\(\backslash\)n"}
+444          << \textcolor{stringliteral}{"           --terminals-file\(\backslash\)n"}
+445          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+446          << endl;
+447 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_af1c23b0b0991cabd99789732946271dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a301fefc310fe081ebb2f99a6f384a99a}\label{drgnt_8cpp_a301fefc310fe081ebb2f99a6f384a99a}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+receptors\+\_\+file@{print\+\_\+help\+\_\+receptors\+\_\+file}}
+\index{print\+\_\+help\+\_\+receptors\+\_\+file@{print\+\_\+help\+\_\+receptors\+\_\+file}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+receptors\+\_\+file()}{print\_help\_receptors\_file()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+receptors\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 522 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+522                                  \{
+523     cout << \textcolor{stringliteral}{"\(\backslash\)n --receptors-file: \(\backslash\)n\(\backslash\)n"}
+524          << \textcolor{stringliteral}{" Specify a relative/absolute path to a file cont-\(\backslash\)n"}
+525          << \textcolor{stringliteral}{" aining \(\backslash\)"receptors\(\backslash\)".\(\backslash\)n\(\backslash\)n"}
+526          << \textcolor{stringliteral}{" Usage: --receptors-file path/to/file\(\backslash\)n"}
+527          << \textcolor{stringliteral}{"         file: text file containing one node id per\(\backslash\)n"}
+528          << \textcolor{stringliteral}{"               line (and nothing else).\(\backslash\)n\(\backslash\)n"}
+529          << \textcolor{stringliteral}{" See also: -R,--receptors\(\backslash\)n"}
+530          << \textcolor{stringliteral}{"           -T,--terminals\(\backslash\)n"}
+531          << \textcolor{stringliteral}{"           --terminals-file\(\backslash\)n"}
+532          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+533          << endl;
+534 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a301fefc310fe081ebb2f99a6f384a99a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a1efde679992643b2ec68eacdb84217b1}\label{drgnt_8cpp_a1efde679992643b2ec68eacdb84217b1}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+s@{print\+\_\+help\+\_\+s}}
+\index{print\+\_\+help\+\_\+s@{print\+\_\+help\+\_\+s}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+s()}{print\_help\_s()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 449 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+449                     \{
+450     cout << \textcolor{stringliteral}{"\(\backslash\)n -s,--score: \(\backslash\)n\(\backslash\)n"}
+451          << \textcolor{stringliteral}{" Specify a relative/absolute path to a score file.\(\backslash\)n"}
+452          << \textcolor{stringliteral}{" Nodes non-existent in the graph are ignored.\(\backslash\)n\(\backslash\)n"}
+453          << \textcolor{stringliteral}{" Default: None (i.e. you have to specify this!)\(\backslash\)n\(\backslash\)n"}
+454          << \textcolor{stringliteral}{" Usage: -s,--score path/to/score\_file\(\backslash\)n"}
+455          << \textcolor{stringliteral}{"         path/to/score\_file: score\_file should be\(\backslash\)n"}
+456          << \textcolor{stringliteral}{"         a tsv file (with no header) containing (no-\(\backslash\)n"}
+457          << \textcolor{stringliteral}{"         thing but) two columns, where the first \(\backslash\)n"}
+458          << \textcolor{stringliteral}{"         refers to node ids and the second to their\(\backslash\)n"}
+459          << \textcolor{stringliteral}{"         scores.\(\backslash\)n\(\backslash\)n"}
+460          << \textcolor{stringliteral}{" Use avgdrgnt.py for more flexibility.\(\backslash\)n"}
+461          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+462          << endl;
+463 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a1efde679992643b2ec68eacdb84217b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a64d939f33167ac034898303f1eeb4466}\label{drgnt_8cpp_a64d939f33167ac034898303f1eeb4466}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+t@{print\+\_\+help\+\_\+t}}
+\index{print\+\_\+help\+\_\+t@{print\+\_\+help\+\_\+t}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+t()}{print\_help\_t()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 465 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+465                     \{
+466     cout << \textcolor{stringliteral}{"\(\backslash\)n -t,--time-limit: \(\backslash\)n\(\backslash\)n"}
+467          << \textcolor{stringliteral}{" Specify a time limit to stop optimization\(\backslash\)n"}
+468          << \textcolor{stringliteral}{" prematurely.\(\backslash\)n\(\backslash\)n"}
+469          << \textcolor{stringliteral}{" Default:  inf (i.e. no time limit).\(\backslash\)n\(\backslash\)n"}
+470          << \textcolor{stringliteral}{" Usage: -t,--time-limit limit\(\backslash\)n"}
+471          << \textcolor{stringliteral}{"         limit: double in [0.0, inf].\(\backslash\)n\(\backslash\)n"}
+472          << \textcolor{stringliteral}{" See also: -c,--gap-cut\(\backslash\)n"}
+473          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+474          << endl;
+475 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a64d939f33167ac034898303f1eeb4466_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_ae3f618417830f06bdbc8caa53850002c}\label{drgnt_8cpp_ae3f618417830f06bdbc8caa53850002c}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+T@{print\+\_\+help\+\_\+T}}
+\index{print\+\_\+help\+\_\+T@{print\+\_\+help\+\_\+T}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+\+T()}{print\_help\_T()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 477 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+477                     \{
+478     cout << \textcolor{stringliteral}{"\(\backslash\)n -T,--terminals: \(\backslash\)n\(\backslash\)n"}
+479          << \textcolor{stringliteral}{" Specify a set of nodes which you want to be\(\backslash\)n"}
+480          << \textcolor{stringliteral}{" considered \(\backslash\)"terminals\(\backslash\)". Nodes in your set\(\backslash\)n"}
+481          << \textcolor{stringliteral}{" which are not in the graph are ignored.\(\backslash\)n\(\backslash\)n"}
+482          << \textcolor{stringliteral}{" Default: \(\backslash\)"\(\backslash\)" (i.e. no receptors).\(\backslash\)n\(\backslash\)n"}
+483          << \textcolor{stringliteral}{" Usage: -T,--terminals nodes \(\backslash\)n"}
+484          << \textcolor{stringliteral}{"         nodes: comma-seperated list of node ids\(\backslash\)n"}
+485          << \textcolor{stringliteral}{"                (no spaces!).\(\backslash\)n\(\backslash\)n"}
+486          << \textcolor{stringliteral}{" Usage example: -T TP53,DIRAS3,BRCA1 \(\backslash\)n\(\backslash\)n"}
+487          << \textcolor{stringliteral}{" See also: --terminals-file\(\backslash\)n"}
+488          << \textcolor{stringliteral}{"           -R,--receptors\(\backslash\)n"}
+489          << \textcolor{stringliteral}{"           --receptors-file\(\backslash\)n"}
+490          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+491          << endl;
+492 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_ae3f618417830f06bdbc8caa53850002c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a91a89c03ab1179facff8b208f5419141}\label{drgnt_8cpp_a91a89c03ab1179facff8b208f5419141}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+terminals\+\_\+file@{print\+\_\+help\+\_\+terminals\+\_\+file}}
+\index{print\+\_\+help\+\_\+terminals\+\_\+file@{print\+\_\+help\+\_\+terminals\+\_\+file}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+terminals\+\_\+file()}{print\_help\_terminals\_file()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+terminals\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 508 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+508                                  \{
+509     cout << \textcolor{stringliteral}{"\(\backslash\)n --terminals-file: \(\backslash\)n\(\backslash\)n"}
+510          << \textcolor{stringliteral}{" Specify a relative/absolute path to a file cont-\(\backslash\)n"}
+511          << \textcolor{stringliteral}{" aining \(\backslash\)"terminals\(\backslash\)".\(\backslash\)n\(\backslash\)n"}
+512          << \textcolor{stringliteral}{" Usage: --terminals-file path/to/file\(\backslash\)n"}
+513          << \textcolor{stringliteral}{"         file: text file containing one node id per\(\backslash\)n"}
+514          << \textcolor{stringliteral}{"               line (and nothing else).\(\backslash\)n\(\backslash\)n"}
+515          << \textcolor{stringliteral}{" See also: -T,--terminals\(\backslash\)n"}
+516          << \textcolor{stringliteral}{"           -R,--receptors\(\backslash\)n"}
+517          << \textcolor{stringliteral}{"           --receptors-file\(\backslash\)n"}
+518          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+519          << endl;
+520 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a91a89c03ab1179facff8b208f5419141_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a15a804e59115a5261513e37def863335}\label{drgnt_8cpp_a15a804e59115a5261513e37def863335}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+help\+\_\+v@{print\+\_\+help\+\_\+v}}
+\index{print\+\_\+help\+\_\+v@{print\+\_\+help\+\_\+v}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+help\+\_\+v()}{print\_help\_v()}}
+{\footnotesize\ttfamily void print\+\_\+help\+\_\+v (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 494 of file drgnt.\+cpp.
+
+
+
+Referenced by print\+\_\+help().
+
+
+\begin{DoxyCode}
+494                     \{
+495     cout << \textcolor{stringliteral}{"\(\backslash\)n -v,--version: \(\backslash\)n\(\backslash\)n"}
+496          << \textcolor{stringliteral}{" Display deregnet version information.\(\backslash\)n"}
+497          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+498          << endl;
+499 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a15a804e59115a5261513e37def863335_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a6302aaae12249e8ea16bfdc7de892f21}\label{drgnt_8cpp_a6302aaae12249e8ea16bfdc7de892f21}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!print\+\_\+version@{print\+\_\+version}}
+\index{print\+\_\+version@{print\+\_\+version}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+version()}{print\_version()}}
+{\footnotesize\ttfamily void print\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 285 of file drgnt.\+cpp.
+
+
+
+References D\+E\+R\+E\+G\+N\+E\+T\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR, and D\+E\+R\+E\+G\+N\+E\+T\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR.
+
+
+
+Referenced by parse\+\_\+options(), and print\+\_\+help().
+
+
+\begin{DoxyCode}
+285                      \{
+286     cout << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n"}
+287          << \textcolor{stringliteral}{"\(\backslash\)n||||||||||   drgnt, deregnet version "}
+288          << \hyperlink{version_8hpp_a60e5743027ea0911aef8bbf9b24efd98}{DEREGNET\_VERSION\_MAJOR} << \textcolor{stringliteral}{"."}
+289          << \hyperlink{version_8hpp_ab15b81995cab963d6fe2ed850c1e5dc6}{DEREGNET\_VERSION\_MINOR}
+290          << \textcolor{stringliteral}{"  ||||||||||\(\backslash\)n"}
+291          << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n"}
+292          << endl;
+293 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drgnt_8cpp_a6302aaae12249e8ea16bfdc7de892f21_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{drgnt_8cpp_a233aa248a3a52203f9d2d7175b8ab54f}\label{drgnt_8cpp_a233aa248a3a52203f9d2d7175b8ab54f}} 
+\index{drgnt.\+cpp@{drgnt.\+cpp}!write\+Subgraphs@{write\+Subgraphs}}
+\index{write\+Subgraphs@{write\+Subgraphs}!drgnt.\+cpp@{drgnt.\+cpp}}
+\subsubsection{\texorpdfstring{write\+Subgraphs()}{writeSubgraphs()}}
+{\footnotesize\ttfamily void write\+Subgraphs (\begin{DoxyParamCaption}\item[{vector$<$ \hyperlink{structderegnet_1_1Subgraph}{Subgraph} $>$ \&}]{subgraphs,  }\item[{string $\ast$}]{outdir }\end{DoxyParamCaption})}
+
+
+
+Definition at line 264 of file drgnt.\+cpp.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+264                                                                   \{
+265     \textcolor{keywordtype}{char} cwd[2048];
+266     \textcolor{keywordtype}{string} outdir;
+267     \textcolor{keywordflow}{if} (getcwd(cwd, \textcolor{keyword}{sizeof}(cwd)) != NULL)
+268         outdir = string(cwd);
+269     \textcolor{keywordflow}{if} (outdirp)
+270         outdir = *outdirp;
+271     \textcolor{keyword}{struct }stat st;
+272     \textcolor{keywordflow}{if} (stat(outdir.c\_str(), &st) == -1)
+273         mkdir(outdir.c\_str(), 0700);
+274     \textcolor{keywordtype}{string} outdir\_plain \{ outdir + \textcolor{stringliteral}{"/plain"} \};
+275     \textcolor{keywordflow}{if} (stat(outdir\_plain.c\_str(), &st) == -1)
+276         mkdir(outdir\_plain.c\_str(), 0700);
+277     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} subgraph : subgraphs) \{
+278         subgraph.writeToFile(outdir);
+279         subgraph.writeToFile(outdir\_plain, \textcolor{keyword}{true});
+280     \}
+281 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{drgnt_8cpp_a233aa248a3a52203f9d2d7175b8ab54f_icgraph}
+\end{center}
+\end{figure}

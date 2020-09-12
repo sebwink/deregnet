@@ -1,0 +1,14 @@
+\form#0:$r \in V$
+\form#1:$S$
+\form#2:\[ \begin{equation} \forall v \in S: x_v = 1 \end{equation} \]
+\form#3:\[ \begin{equation} \forall v \in S: x_v = 0 \end{equation} \]
+\form#4:$G'=(V',E')$
+\form#5:$S \subset V'$
+\form#6:$u \in V' \backslash S $
+\form#7:$(u,v) \in E'$
+\form#8:$v \notin S$
+\form#9:$G'=(V',E') \subset G=(V,E)$
+\form#10:\[ \begin{equation} \displaystyle \sum_{v \in S} x_v - \displaystyle \sum_{u \in N^{-}(S)} x_u \leq |S| - 1 \end{equation} \]
+\form#11:$N^{-}(S) = \{v \in V \backslash S: \exists u \in S: (v,u) \in E \} $
+\form#12:\[ \begin{equation} \displaystyle \sum_{v \in S} (x_v - y_v) - \displaystyle \sum_{u \in N^{-}(S)} x_u \leq |S| - 1 \end{equation} \]
+\form#13:$\displaystyle \sum_{v \in V_{subgraph}} s_v $

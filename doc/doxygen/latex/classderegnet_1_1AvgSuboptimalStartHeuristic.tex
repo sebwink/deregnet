@@ -1,0 +1,462 @@
+\hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic}{}\section{deregnet\+:\+:Avg\+Suboptimal\+Start\+Heuristic Class Reference}
+\label{classderegnet_1_1AvgSuboptimalStartHeuristic}\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+
+
+Implementation of the heuristic solution algorithm for the suboptimal part of the average De\+Reg\+Net algorithm.  
+
+
+
+
+{\ttfamily \#include $<$Avg\+Suboptimal\+Start\+Heuristic.\+hpp$>$}
+
+
+
+Inheritance diagram for deregnet\+:\+:Avg\+Suboptimal\+Start\+Heuristic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classderegnet_1_1AvgSuboptimalStartHeuristic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for deregnet\+:\+:Avg\+Suboptimal\+Start\+Heuristic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classderegnet_1_1AvgSuboptimalStartHeuristic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a12082995005a50591bb64951417b2a96}{Avg\+Suboptimal\+Start\+Heuristic} (\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$xgraph, \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ double $>$ $\ast$xscore, \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a4605d41352e3adf1f9f9f32466a4e61e}{root}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$\hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$\hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors}, std\+::function$<$ bool(double, double)$>$ xcmp, \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ std\+::string $>$ $\ast$xnodeid, std\+::set$<$ std\+::string $>$ $\ast$xnodes\+\_\+sof\+\_\+far, double xmax\+\_\+overlap, int xmin\+\_\+size, int xmax\+\_\+size)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_abc4fa54576da31f3037f2c1aa2cd9140}{is\+\_\+overlap\+\_\+node} (\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$node)
+\item 
+virtual \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$ \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a732194c0c56e6f28839114e3ab119109}{get\+\_\+best\+\_\+root} () override
+\begin{DoxyCompactList}\small\item\em Find best node to add to solution in every iteration. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a668a9db07c0d29c9b3618487f25fe5f4}{search\+\_\+further} () override
+\begin{DoxyCompactList}\small\item\em Decide whether to continue searching further (for other solution than the one already found) \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_aca3dd2ae41b88a0bd925b297d490e2cb}{feasible\+\_\+node} (\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$node) override
+\begin{DoxyCompactList}\small\item\em Decide whether adding a given node to the solution is feasible wrt the given constraints. \end{DoxyCompactList}\item 
+double \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a29659ab4864fddd2c226da7e1ada22ef}{update\+\_\+avg} (\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ std\+::string $>$ $\ast$ \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_af59e6b6ba10fd5d2c210a0947cf37e66}{nodeid}
+\item 
+std\+::set$<$ std\+::string $>$ $\ast$ \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ac07c2b61bf03b25e1bd87cb353bd4597}{nodes\+\_\+so\+\_\+far}
+\item 
+double \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a6e019ada1557663d456e7f81757d14ab}{max\+\_\+overlap}
+\item 
+int \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a71b5a73f79c4c161e9df9085ece2c270}{min\+\_\+size}
+\item 
+int \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_aafc01553c8d2a9a877f23c6bdee305aa}{max\+\_\+size}
+\item 
+int \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ad541b941d327ba928a7951e43ad1fea4}{current\+\_\+overlapping\+\_\+nodes} \{ 0 \}
+\item 
+double \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a5c07fde8d2f92daeb4cc33f85e8bf1e2}{current\+\_\+avg} \{ 0.\+0 \}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implementation of the heuristic solution algorithm for the suboptimal part of the average De\+Reg\+Net algorithm. 
+
+Definition at line 50 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_a12082995005a50591bb64951417b2a96}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_a12082995005a50591bb64951417b2a96}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!Avg\+Suboptimal\+Start\+Heuristic@{Avg\+Suboptimal\+Start\+Heuristic}}
+\index{Avg\+Suboptimal\+Start\+Heuristic@{Avg\+Suboptimal\+Start\+Heuristic}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{Avg\+Suboptimal\+Start\+Heuristic()}{AvgSuboptimalStartHeuristic()}}
+{\footnotesize\ttfamily deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::\+Avg\+Suboptimal\+Start\+Heuristic (\begin{DoxyParamCaption}\item[{\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$}]{xgraph,  }\item[{\hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ double $>$ $\ast$}]{xscore,  }\item[{\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$}]{root,  }\item[{std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$}]{exclude,  }\item[{std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$}]{receptors,  }\item[{std\+::function$<$ bool(double, double)$>$}]{xcmp,  }\item[{\hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ std\+::string $>$ $\ast$}]{xnodeid,  }\item[{std\+::set$<$ std\+::string $>$ $\ast$}]{xnodes\+\_\+sof\+\_\+far,  }\item[{double}]{xmax\+\_\+overlap,  }\item[{int}]{xmin\+\_\+size,  }\item[{int}]{xmax\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file Avg\+Suboptimal\+Start\+Heuristic.\+cpp.
+
+
+
+References max\+\_\+overlap, max\+\_\+size, min\+\_\+size, and nodes\+\_\+so\+\_\+far.
+
+
+\begin{DoxyCode}
+55  : \hyperlink{classderegnet_1_1DeregnetStartHeuristic_af7fa694b10f54c669fce9431214ffc98}{DeregnetStartHeuristic}(xgraph, xscore, \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a4605d41352e3adf1f9f9f32466a4e61e}{root}, 
+      \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}, \hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors}, xcmp),
+56    \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_af59e6b6ba10fd5d2c210a0947cf37e66}{nodeid} \{ xnodeid \},
+57    \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ac07c2b61bf03b25e1bd87cb353bd4597}{nodes\_so\_far} \{ xnodes\_sof\_far \},
+58    \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a6e019ada1557663d456e7f81757d14ab}{max\_overlap} \{ xmax\_overlap \},
+59    \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a71b5a73f79c4c161e9df9085ece2c270}{min\_size} \{ xmin\_size \},
+60    \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_aafc01553c8d2a9a877f23c6bdee305aa}{max\_size} \{ xmax\_size \}
+61 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_aca3dd2ae41b88a0bd925b297d490e2cb}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_aca3dd2ae41b88a0bd925b297d490e2cb}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!feasible\+\_\+node@{feasible\+\_\+node}}
+\index{feasible\+\_\+node@{feasible\+\_\+node}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{feasible\+\_\+node()}{feasible\_node()}}
+{\footnotesize\ttfamily bool deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::feasible\+\_\+node (\begin{DoxyParamCaption}\item[{\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Decide whether adding a given node to the solution is feasible wrt the given constraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & A node in the graph\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether adding the node is feasible 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classderegnet_1_1DeregnetStartHeuristic_ac296c4f122f7d3ad2fcc2cbb0d1b5379}{deregnet\+::\+Deregnet\+Start\+Heuristic}.
+
+
+
+Definition at line 107 of file Avg\+Suboptimal\+Start\+Heuristic.\+cpp.
+
+
+
+References current\+\_\+avg, current\+\_\+overlapping\+\_\+nodes, is\+\_\+overlap\+\_\+node(), max\+\_\+overlap, min\+\_\+size, deregnet\+::\+Deregnet\+Start\+Heuristic\+::start\+\_\+solution, and update\+\_\+avg().
+
+
+\begin{DoxyCode}
+107                                                           \{
+108     \textcolor{keywordtype}{double} new\_avg \{ \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a29659ab4864fddd2c226da7e1ada22ef}{update\_avg}(node) \};
+109     \textcolor{keywordtype}{int} current\_size \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->size()) \};
+110     \textcolor{keywordflow}{if} (new\_avg < current\_avg && current\_size > \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a71b5a73f79c4c161e9df9085ece2c270}{min\_size})
+111         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+112     \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a5c07fde8d2f92daeb4cc33f85e8bf1e2}{current\_avg} = new\_avg;
+113 
+114     \textcolor{keywordtype}{bool} overlap\_node \{ \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_abc4fa54576da31f3037f2c1aa2cd9140}{is\_overlap\_node}(node) \};
+115     \textcolor{keywordtype}{double} potential\_overlap \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}( \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ad541b941d327ba928a7951e43ad1fea4}{current\_overlapping\_nodes} / 
+      \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->size() ) \};
+116     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}) \{
+117         \textcolor{keywordflow}{if} (overlap\_node) \{
+118             \textcolor{keywordflow}{if} (   \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->end()
+119                 && potential\_overlap < \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a6e019ada1557663d456e7f81757d14ab}{max\_overlap}
+120                 && \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}->end()) \{
+121                 \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ad541b941d327ba928a7951e43ad1fea4}{current\_overlapping\_nodes}++;
+122                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+123             \}
+124         \}
+125         \textcolor{keywordflow}{else} \{
+126             \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->end() && 
+      \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}->end())
+127                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+128         \}
+129     \}
+130     \textcolor{keywordflow}{else} \{
+131         \textcolor{keywordflow}{if} (overlap\_node) \{
+132             \textcolor{keywordflow}{if} (   \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->end()
+133                 && potential\_overlap < \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a6e019ada1557663d456e7f81757d14ab}{max\_overlap}) \{
+134                 \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ad541b941d327ba928a7951e43ad1fea4}{current\_overlapping\_nodes}++;
+135                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+136             \}
+137         \}
+138         \textcolor{keywordflow}{else} \{
+139             \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->end())
+140                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+141         \}
+142     \}
+143     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+144 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1AvgSuboptimalStartHeuristic_aca3dd2ae41b88a0bd925b297d490e2cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_a732194c0c56e6f28839114e3ab119109}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_a732194c0c56e6f28839114e3ab119109}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!get\+\_\+best\+\_\+root@{get\+\_\+best\+\_\+root}}
+\index{get\+\_\+best\+\_\+root@{get\+\_\+best\+\_\+root}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{get\+\_\+best\+\_\+root()}{get\_best\_root()}}
+{\footnotesize\ttfamily \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$ deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::get\+\_\+best\+\_\+root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Find best node to add to solution in every iteration. 
+
+\begin{DoxyReturn}{Returns}
+The best node to add 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a372be86d0fb8ac94bd926a1f4d09e102}{deregnet\+::\+Deregnet\+Start\+Heuristic}.
+
+
+
+Definition at line 63 of file Avg\+Suboptimal\+Start\+Heuristic.\+cpp.
+
+
+
+References deregnet\+::\+Deregnet\+Start\+Heuristic\+::graph, I\+N\+V\+A\+L\+ID, is\+\_\+overlap\+\_\+node(), max\+\_\+overlap, nodes\+\_\+so\+\_\+far, and deregnet\+::\+Deregnet\+Start\+Heuristic\+::update\+\_\+best\+\_\+node().
+
+
+\begin{DoxyCode}
+63                                                  \{
+64     \textcolor{keywordtype}{double} best;
+65     \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}* best\_node \{ \textcolor{keyword}{nullptr} \};
+66     \textcolor{keywordtype}{bool} overlap\_matters \{ \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a6e019ada1557663d456e7f81757d14ab}{max\_overlap} < 1.0 / \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ac07c2b61bf03b25e1bd87cb353bd4597}{nodes\_so\_far}->size() \};
+67     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors})
+68         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} v : *\hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors}) \{
+69             \textcolor{keywordflow}{if} ( \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_abc4fa54576da31f3037f2c1aa2cd9140}{is\_overlap\_node}(&v) && overlap\_matters )
+70                 \textcolor{keywordflow}{continue};
+71             \textcolor{keywordflow}{else}
+72                 \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a50179ff9db4d416b93ff41d1dcee1358}{update\_best\_node}(&best\_node, &v, &best);
+73         \}
+74     \textcolor{keywordflow}{else}
+75         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a4da8e53fc7c0fa3dbe0e3ef07296d75e}{graph}); v != \hyperlink{usinglemon_8hpp_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v) \{
+76             \textcolor{keywordflow}{if} ( \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_abc4fa54576da31f3037f2c1aa2cd9140}{is\_overlap\_node}(&v) && overlap\_matters )
+77                 \textcolor{keywordflow}{continue};
+78             \textcolor{keywordflow}{else}
+79                 \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a50179ff9db4d416b93ff41d1dcee1358}{update\_best\_node}(&best\_node, &v, &best);
+80         \}
+81     \textcolor{keywordflow}{return} best\_node;
+82 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1AvgSuboptimalStartHeuristic_a732194c0c56e6f28839114e3ab119109_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_abc4fa54576da31f3037f2c1aa2cd9140}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_abc4fa54576da31f3037f2c1aa2cd9140}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!is\+\_\+overlap\+\_\+node@{is\+\_\+overlap\+\_\+node}}
+\index{is\+\_\+overlap\+\_\+node@{is\+\_\+overlap\+\_\+node}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{is\+\_\+overlap\+\_\+node()}{is\_overlap\_node()}}
+{\footnotesize\ttfamily bool deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::is\+\_\+overlap\+\_\+node (\begin{DoxyParamCaption}\item[{\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 146 of file Avg\+Suboptimal\+Start\+Heuristic.\+cpp.
+
+
+
+References nodeid, and nodes\+\_\+so\+\_\+far.
+
+
+
+Referenced by feasible\+\_\+node(), and get\+\_\+best\+\_\+root().
+
+
+\begin{DoxyCode}
+146                                                             \{
+147     \textcolor{keywordflow}{for} (set<string>::iterator nodeID = \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ac07c2b61bf03b25e1bd87cb353bd4597}{nodes\_so\_far}->begin(); nodeID != 
+      \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_ac07c2b61bf03b25e1bd87cb353bd4597}{nodes\_so\_far}->end(); ++nodeID)
+148         \textcolor{keywordflow}{if} ( *nodeID == (*\hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_af59e6b6ba10fd5d2c210a0947cf37e66}{nodeid})[*node] )
+149             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+150     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+151 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1AvgSuboptimalStartHeuristic_abc4fa54576da31f3037f2c1aa2cd9140_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_a668a9db07c0d29c9b3618487f25fe5f4}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_a668a9db07c0d29c9b3618487f25fe5f4}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!search\+\_\+further@{search\+\_\+further}}
+\index{search\+\_\+further@{search\+\_\+further}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{search\+\_\+further()}{search\_further()}}
+{\footnotesize\ttfamily bool deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::search\+\_\+further (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Decide whether to continue searching further (for other solution than the one already found) 
+
+\begin{DoxyReturn}{Returns}
+Whether to search further 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classderegnet_1_1DeregnetStartHeuristic_ac3ee2c3022512f9d4ec7a6b49358e60a}{deregnet\+::\+Deregnet\+Start\+Heuristic}.
+
+
+
+Definition at line 84 of file Avg\+Suboptimal\+Start\+Heuristic.\+cpp.
+
+
+
+References deregnet\+::\+Deregnet\+Start\+Heuristic\+::found\+\_\+node, max\+\_\+size, min\+\_\+size, deregnet\+::\+Deregnet\+Start\+Heuristic\+::start\+\_\+solution, and deregnet\+::\+Deregnet\+Start\+Heuristic\+::success.
+
+
+\begin{DoxyCode}
+84                                                  \{
+85     \textcolor{keywordtype}{int} current\_size \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->size()) \};
+86     \textcolor{keywordflow}{if} (current\_size < \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a71b5a73f79c4c161e9df9085ece2c270}{min\_size}) \{
+87         \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a1ca705794583fb3b6e563efeceb4445e}{found\_node})
+88             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+89         \textcolor{keywordflow}{else}
+90             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+91     \}
+92     \textcolor{keywordflow}{if} (current\_size >= \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a71b5a73f79c4c161e9df9085ece2c270}{min\_size} && current\_size < \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_aafc01553c8d2a9a877f23c6bdee305aa}{max\_size}) \{
+93         \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a1ca705794583fb3b6e563efeceb4445e}{found\_node})
+94             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+95         \textcolor{keywordflow}{else} \{
+96             \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a72fd16ee027f6aa973f1ff29746addba}{success} = \textcolor{keyword}{true};
+97             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+98         \}
+99     \}
+100     \textcolor{keywordflow}{if} (current\_size == \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_aafc01553c8d2a9a877f23c6bdee305aa}{max\_size}) \{
+101         \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a72fd16ee027f6aa973f1ff29746addba}{success} = \textcolor{keyword}{true};
+102         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+103     \}
+104     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+105 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_a29659ab4864fddd2c226da7e1ada22ef}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_a29659ab4864fddd2c226da7e1ada22ef}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!update\+\_\+avg@{update\+\_\+avg}}
+\index{update\+\_\+avg@{update\+\_\+avg}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{update\+\_\+avg()}{update\_avg()}}
+{\footnotesize\ttfamily double deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::update\+\_\+avg (\begin{DoxyParamCaption}\item[{\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 153 of file Avg\+Suboptimal\+Start\+Heuristic.\+cpp.
+
+
+
+References current\+\_\+avg, deregnet\+::\+Deregnet\+Start\+Heuristic\+::score, and deregnet\+::\+Deregnet\+Start\+Heuristic\+::start\+\_\+solution.
+
+
+
+Referenced by feasible\+\_\+node().
+
+
+\begin{DoxyCode}
+153                                                          \{
+154     \textcolor{keywordtype}{int} current\_size \{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->size()) \};
+155     \textcolor{keywordflow}{return} ((*\hyperlink{classderegnet_1_1DeregnetStartHeuristic_ae03300e79482975e98f95cba19ad32b0}{score})[*node] + current\_size * \hyperlink{classderegnet_1_1AvgSuboptimalStartHeuristic_a5c07fde8d2f92daeb4cc33f85e8bf1e2}{current\_avg}) / (current\_size + 1);
+156 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1AvgSuboptimalStartHeuristic_a29659ab4864fddd2c226da7e1ada22ef_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_a5c07fde8d2f92daeb4cc33f85e8bf1e2}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_a5c07fde8d2f92daeb4cc33f85e8bf1e2}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!current\+\_\+avg@{current\+\_\+avg}}
+\index{current\+\_\+avg@{current\+\_\+avg}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{current\+\_\+avg}{current\_avg}}
+{\footnotesize\ttfamily double deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::current\+\_\+avg \{ 0.\+0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+Referenced by feasible\+\_\+node(), and update\+\_\+avg().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_ad541b941d327ba928a7951e43ad1fea4}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_ad541b941d327ba928a7951e43ad1fea4}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!current\+\_\+overlapping\+\_\+nodes@{current\+\_\+overlapping\+\_\+nodes}}
+\index{current\+\_\+overlapping\+\_\+nodes@{current\+\_\+overlapping\+\_\+nodes}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{current\+\_\+overlapping\+\_\+nodes}{current\_overlapping\_nodes}}
+{\footnotesize\ttfamily int deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::current\+\_\+overlapping\+\_\+nodes \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+Referenced by feasible\+\_\+node().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_a6e019ada1557663d456e7f81757d14ab}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_a6e019ada1557663d456e7f81757d14ab}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!max\+\_\+overlap@{max\+\_\+overlap}}
+\index{max\+\_\+overlap@{max\+\_\+overlap}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{max\+\_\+overlap}{max\_overlap}}
+{\footnotesize\ttfamily double deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::max\+\_\+overlap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 56 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+Referenced by Avg\+Suboptimal\+Start\+Heuristic(), feasible\+\_\+node(), and get\+\_\+best\+\_\+root().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_aafc01553c8d2a9a877f23c6bdee305aa}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_aafc01553c8d2a9a877f23c6bdee305aa}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{max\+\_\+size}{max\_size}}
+{\footnotesize\ttfamily int deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::max\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 58 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+Referenced by Avg\+Suboptimal\+Start\+Heuristic(), and search\+\_\+further().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_a71b5a73f79c4c161e9df9085ece2c270}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_a71b5a73f79c4c161e9df9085ece2c270}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!min\+\_\+size@{min\+\_\+size}}
+\index{min\+\_\+size@{min\+\_\+size}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{min\+\_\+size}{min\_size}}
+{\footnotesize\ttfamily int deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::min\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+Referenced by Avg\+Suboptimal\+Start\+Heuristic(), feasible\+\_\+node(), and search\+\_\+further().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_af59e6b6ba10fd5d2c210a0947cf37e66}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_af59e6b6ba10fd5d2c210a0947cf37e66}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!nodeid@{nodeid}}
+\index{nodeid@{nodeid}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{nodeid}{nodeid}}
+{\footnotesize\ttfamily \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$std\+::string$>$$\ast$ deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::nodeid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 54 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+Referenced by is\+\_\+overlap\+\_\+node().
+
+\mbox{\Hypertarget{classderegnet_1_1AvgSuboptimalStartHeuristic_ac07c2b61bf03b25e1bd87cb353bd4597}\label{classderegnet_1_1AvgSuboptimalStartHeuristic_ac07c2b61bf03b25e1bd87cb353bd4597}} 
+\index{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}!nodes\+\_\+so\+\_\+far@{nodes\+\_\+so\+\_\+far}}
+\index{nodes\+\_\+so\+\_\+far@{nodes\+\_\+so\+\_\+far}!deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic@{deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{nodes\+\_\+so\+\_\+far}{nodes\_so\_far}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$$\ast$ deregnet\+::\+Avg\+Suboptimal\+Start\+Heuristic\+::nodes\+\_\+so\+\_\+far\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 55 of file Avg\+Suboptimal\+Start\+Heuristic.\+hpp.
+
+
+
+Referenced by Avg\+Suboptimal\+Start\+Heuristic(), get\+\_\+best\+\_\+root(), and is\+\_\+overlap\+\_\+node().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{AvgSuboptimalStartHeuristic_8hpp}{Avg\+Suboptimal\+Start\+Heuristic.\+hpp}\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{AvgSuboptimalStartHeuristic_8cpp}{Avg\+Suboptimal\+Start\+Heuristic.\+cpp}\end{DoxyCompactItemize}

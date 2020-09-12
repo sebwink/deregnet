@@ -1,0 +1,258 @@
+\hypertarget{classderegnet_1_1StartHeuristic}{}\section{deregnet\+:\+:Start\+Heuristic Class Reference}
+\label{classderegnet_1_1StartHeuristic}\index{deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}}
+
+
+Implementation of heuristic start solution algorithm for absolute optimal De\+Reg\+Net algorithm.  
+
+
+
+
+{\ttfamily \#include $<$Start\+Heuristic.\+hpp$>$}
+
+
+
+Inheritance diagram for deregnet\+:\+:Start\+Heuristic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classderegnet_1_1StartHeuristic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for deregnet\+:\+:Start\+Heuristic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classderegnet_1_1StartHeuristic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classderegnet_1_1StartHeuristic_aff83b16a2ae0fd4041f19f787a0da23f}{Start\+Heuristic} (\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$xgraph, \hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ double $>$ $\ast$xscore, \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a4605d41352e3adf1f9f9f32466a4e61e}{root}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$\hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}, std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$\hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors}, std\+::function$<$ bool(double, double)$>$ xcmp, int xsize)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$ \hyperlink{classderegnet_1_1StartHeuristic_a84ed02caf211e22b663e4e3c0d5b4f24}{get\+\_\+best\+\_\+root} () override
+\begin{DoxyCompactList}\small\item\em Find best node to add to solution in every iteration. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classderegnet_1_1StartHeuristic_acbc34cb7479d3e68d6ef0554b739fc52}{search\+\_\+further} () override
+\begin{DoxyCompactList}\small\item\em Decide whether to continue searching further (for other solution than the one already found) \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classderegnet_1_1StartHeuristic_a1d7931058aceb84790f861a39f0a8bfd}{feasible\+\_\+node} (\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$node) override
+\begin{DoxyCompactList}\small\item\em Decide whether adding a given node to the solution is feasible wrt the given constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}{size}
+\begin{DoxyCompactList}\small\item\em Size of the current subgraph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implementation of heuristic start solution algorithm for absolute optimal De\+Reg\+Net algorithm. 
+
+Definition at line 49 of file Start\+Heuristic.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classderegnet_1_1StartHeuristic_aff83b16a2ae0fd4041f19f787a0da23f}\label{classderegnet_1_1StartHeuristic_aff83b16a2ae0fd4041f19f787a0da23f}} 
+\index{deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}!Start\+Heuristic@{Start\+Heuristic}}
+\index{Start\+Heuristic@{Start\+Heuristic}!deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{Start\+Heuristic()}{StartHeuristic()}}
+{\footnotesize\ttfamily deregnet\+::\+Start\+Heuristic\+::\+Start\+Heuristic (\begin{DoxyParamCaption}\item[{\hyperlink{namespacederegnet_a55b76c55bbabc682cbc61f8b9948799e}{Graph} $\ast$}]{xgraph,  }\item[{\hyperlink{namespacederegnet_ae102b707ae1d6f83c639ece5e0dd5658}{Node\+Map}$<$ double $>$ $\ast$}]{xscore,  }\item[{\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$}]{root,  }\item[{std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$}]{exclude,  }\item[{std\+::set$<$ \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $>$ $\ast$}]{receptors,  }\item[{std\+::function$<$ bool(double, double)$>$}]{xcmp,  }\item[{int}]{xsize }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xgraph} & \\
+\hline
+{\em xscore} & \\
+\hline
+{\em root} & \\
+\hline
+{\em exclude} & \\
+\hline
+{\em receptors} & \\
+\hline
+{\em xcmp} & \\
+\hline
+{\em xsize} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file Start\+Heuristic.\+cpp.
+
+
+\begin{DoxyCode}
+49  : \hyperlink{classderegnet_1_1DeregnetStartHeuristic_af7fa694b10f54c669fce9431214ffc98}{DeregnetStartHeuristic}(xgraph, xscore, \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a4605d41352e3adf1f9f9f32466a4e61e}{root}, 
+      \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}, \hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors}, xcmp),
+50    \hyperlink{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}{size} \{ xsize \}
+51 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classderegnet_1_1StartHeuristic_a1d7931058aceb84790f861a39f0a8bfd}\label{classderegnet_1_1StartHeuristic_a1d7931058aceb84790f861a39f0a8bfd}} 
+\index{deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}!feasible\+\_\+node@{feasible\+\_\+node}}
+\index{feasible\+\_\+node@{feasible\+\_\+node}!deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{feasible\+\_\+node()}{feasible\_node()}}
+{\footnotesize\ttfamily bool deregnet\+::\+Start\+Heuristic\+::feasible\+\_\+node (\begin{DoxyParamCaption}\item[{\hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Decide whether adding a given node to the solution is feasible wrt the given constraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & A node in the graph\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether adding the node is feasible 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classderegnet_1_1DeregnetStartHeuristic_ac296c4f122f7d3ad2fcc2cbb0d1b5379}{deregnet\+::\+Deregnet\+Start\+Heuristic}.
+
+
+
+Definition at line 80 of file Start\+Heuristic.\+cpp.
+
+
+
+References deregnet\+::\+Deregnet\+Start\+Heuristic\+::start\+\_\+solution.
+
+
+\begin{DoxyCode}
+80                                              \{
+81     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}) \{
+82         \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->end() && 
+      \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_aa22c6581cd404bf7ac325850b28dc951}{exclude}->end())
+83             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+84         \}
+85     \textcolor{keywordflow}{else}
+86         \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->find(*node) == \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a7450e11ca0a265b055f95e7832b65e2f}{start\_solution}->end())
+87             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+88     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+89 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classderegnet_1_1StartHeuristic_a84ed02caf211e22b663e4e3c0d5b4f24}\label{classderegnet_1_1StartHeuristic_a84ed02caf211e22b663e4e3c0d5b4f24}} 
+\index{deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}!get\+\_\+best\+\_\+root@{get\+\_\+best\+\_\+root}}
+\index{get\+\_\+best\+\_\+root@{get\+\_\+best\+\_\+root}!deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{get\+\_\+best\+\_\+root()}{get\_best\_root()}}
+{\footnotesize\ttfamily \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node} $\ast$ deregnet\+::\+Start\+Heuristic\+::get\+\_\+best\+\_\+root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Find best node to add to solution in every iteration. 
+
+\begin{DoxyReturn}{Returns}
+The best node to add 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a372be86d0fb8ac94bd926a1f4d09e102}{deregnet\+::\+Deregnet\+Start\+Heuristic}.
+
+
+
+Definition at line 53 of file Start\+Heuristic.\+cpp.
+
+
+
+References deregnet\+::\+Deregnet\+Start\+Heuristic\+::graph, I\+N\+V\+A\+L\+ID, and deregnet\+::\+Deregnet\+Start\+Heuristic\+::update\+\_\+best\+\_\+node().
+
+
+\begin{DoxyCode}
+53                                     \{
+54     \textcolor{keywordtype}{double} best;
+55     \hyperlink{namespacederegnet_a744bad34f2de9856d36715a445f027f3}{Node}* best\_node \{ \textcolor{keyword}{nullptr} \};
+56     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors})
+57         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} v : *\hyperlink{classderegnet_1_1DeregnetStartHeuristic_ab80c046ff2b7c64086fceb84987b3e50}{receptors})
+58             \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a50179ff9db4d416b93ff41d1dcee1358}{update\_best\_node}(&best\_node, &v, &best);
+59     \textcolor{keywordflow}{else}
+60         \textcolor{keywordflow}{for} (\hyperlink{namespacederegnet_ac34314e1b5f456fc6d1bb9d96316de4a}{NodeIt} v(*\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a4da8e53fc7c0fa3dbe0e3ef07296d75e}{graph}); v != \hyperlink{usinglemon_8hpp_adf770fe2eec438e3758ffe905dbae208}{INVALID}; ++v)
+61             \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a50179ff9db4d416b93ff41d1dcee1358}{update\_best\_node}(&best\_node, &v, &best);
+62     \textcolor{keywordflow}{return} best\_node;
+63 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classderegnet_1_1StartHeuristic_a84ed02caf211e22b663e4e3c0d5b4f24_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classderegnet_1_1StartHeuristic_acbc34cb7479d3e68d6ef0554b739fc52}\label{classderegnet_1_1StartHeuristic_acbc34cb7479d3e68d6ef0554b739fc52}} 
+\index{deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}!search\+\_\+further@{search\+\_\+further}}
+\index{search\+\_\+further@{search\+\_\+further}!deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{search\+\_\+further()}{search\_further()}}
+{\footnotesize\ttfamily bool deregnet\+::\+Start\+Heuristic\+::search\+\_\+further (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Decide whether to continue searching further (for other solution than the one already found) 
+
+\begin{DoxyReturn}{Returns}
+Whether to search further 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classderegnet_1_1DeregnetStartHeuristic_ac3ee2c3022512f9d4ec7a6b49358e60a}{deregnet\+::\+Deregnet\+Start\+Heuristic}.
+
+
+
+Definition at line 66 of file Start\+Heuristic.\+cpp.
+
+
+
+References deregnet\+::\+Deregnet\+Start\+Heuristic\+::found\+\_\+node, size, and deregnet\+::\+Deregnet\+Start\+Heuristic\+::success.
+
+
+\begin{DoxyCode}
+66                                     \{
+67     \hyperlink{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}{size}--;
+68     \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}{size} > 0 && \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a1ca705794583fb3b6e563efeceb4445e}{found\_node})
+69         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}{size} > 0 && !\hyperlink{classderegnet_1_1DeregnetStartHeuristic_a1ca705794583fb3b6e563efeceb4445e}{found\_node})
+71         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+72     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}{size} == 0) \{
+73         \hyperlink{classderegnet_1_1DeregnetStartHeuristic_a72fd16ee027f6aa973f1ff29746addba}{success} = \textcolor{keyword}{true};
+74         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+75     \}
+76     \textcolor{keywordflow}{else}
+77         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+78 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}\label{classderegnet_1_1StartHeuristic_acd3b3c6a5103491c252b774545ad470b}} 
+\index{deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}!size@{size}}
+\index{size@{size}!deregnet\+::\+Start\+Heuristic@{deregnet\+::\+Start\+Heuristic}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int deregnet\+::\+Start\+Heuristic\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of the current subgraph. 
+
+
+
+Definition at line 53 of file Start\+Heuristic.\+hpp.
+
+
+
+Referenced by search\+\_\+further().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{StartHeuristic_8hpp}{Start\+Heuristic.\+hpp}\item 
+/datadisk/bbubu/home/self/bbubu/projects/deregnet/src/\hyperlink{StartHeuristic_8cpp}{Start\+Heuristic.\+cpp}\end{DoxyCompactItemize}
