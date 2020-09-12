@@ -3,11 +3,11 @@
 ## Introduction
 
 One of the main challenges of high-throuput omics technologies 
-(genomics, transcriptomic, proteomic, metabolomics, etc.) is the 
+(genomics, transcriptomics, proteomics, metabolomics, etc.) is the 
 interpretation and analysis of the resulting datasets in terms
 of known or previously unknown biologial processes. Biological networks
 (transcriptional regulatory networks, signaling networks, metabolic
-network, etc.) provide promising scafolds with which to approach
+network, etc.) provide promising scaffolds for approaching
 multi-omics datasets. Existing resources, constructed for
 example from pathway databases like KEGG, Reactome, etc., provide
 extensive interconnected networks linking genes, proteins and other
@@ -17,44 +17,10 @@ modifications like posphorylation. DeRegNet allows the extraction and
 prioritisation of subnetworks of larger biomolecular networks based on
 suitable omics data like for example gene expression.
 
-## Installation
+## Run via Docker 
 
-There are, broadly speaking, two modes of installation and usage for the basic
-DeRegNet programs: *Native* and *Docker*. It is recommended to use Docker
-whenever possible. Both ways assume a Linux operating system.
+Using deregnet is the only officially supported and documented way of running deregnet.
 
-### Native
-
-#### Prerequisites
-
-DeRegNet relies on the following two software distributions:
-
-* [Lemon graph library](http://lemon.cs.elte.hu/trac/lemon)
-* [Gurobi](http://www.gurobi.com) (version >= 7.0.2)
-
-To install DeRegNet locally on your machine install these two prerequsistes first.
-DeRegNet requires a Gurobi version >= 7.0.2. The native local installation of 
-DeRegNet works with any [supported licensing scheme](http://www.gurobi.com/downloads/licenses/license-center)
-for the Gurobi libraries.
-
-#### Install
-
-In *common.mak* set *LEMON\_HOME* according to your environment.
-
-In *gurobi\_version.mak* specify your Gurobi version and set *GUROBI\_HOME* according to your environment.
-
-```sh
-make
-```
-
-This builds the main DeRegNet executables in the *bin* directory: *drgnt* and *avgdrgnt*.
-
-In order to install the Python interface of DeRegNet navigate to the *python* subdirectory
-and run
-
-```sh
-python3 setup.py install
-```
 
 #### Basic usage
 

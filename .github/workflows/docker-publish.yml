@@ -109,6 +109,9 @@ jobs:
             docker tag $IMAGE_NAME $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:latest
             docker push $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:latest
 
+            echo $GUROBI_VERSION 
+            echo $DEFAULT_GUROBI_VERSION
+
             if [[ "$GUROBI_VERSION" == "$DEFAULT_GUROBI_VERSION" ]]; then
               VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
               docker tag $IMAGE_NAME $IMAGE_ID_GITHUB_PKG:$VERSION
