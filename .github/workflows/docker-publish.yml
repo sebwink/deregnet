@@ -25,7 +25,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
       - name: Run tests
         run: |
           for GUROBI_VERSION in $(cat $GUROBI_VERSIONS); do
@@ -58,7 +59,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
       - name: Build and push images
         run: |
           for GUROBI_VERSION in $(cat $GUROBI_VERSIONS); do
