@@ -6,6 +6,7 @@ FROM sebwink/lemon-headers:131 as lemon
 FROM sebwink/libgrbfrc-grb${GRBFRC_GUROBI_VERSION}:${GRBFRC_IMAGE_TAG}
 
 ARG GUROBI_USER
+ARG GRBFRC_GUROBI_VERSION
 
 COPY --from=lemon /usr/local/include/lemon /usr/local/include/lemon
 
@@ -23,7 +24,7 @@ COPY Makefile .
 COPY src src
 COPY upstream/libgrbfrc/gurobi.mak gurobi.mak
 
-RUN LIBGRBFRC=/usr/local/include GUROBI_MAKEFILE=gurobi.mak make all
+RUN GUROBI_VERSION_TAG=${GRBFRC_GUROBI_VERSION} LIBGRBFRC=/usr/local/include GUROBI_MAKEFILE=gurobi.mak make all
 
 RUN python3 -m pip install pandas && \
 	python3 -m pip install biomap-utils && \
