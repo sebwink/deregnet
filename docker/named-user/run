@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+SELFDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+GUROBI_LICENSE=${GUROBI_LICENSE:-$HOME/.licenses/gurobi}
+DEREGNET_JUPYTER_PORT=${DEREGNET_JUPYTER_PORT:-8888}
+
+# BUILD local image
+
+BASEIMAGE=$1
+shift
+
+cd $SELFDIR
+docker build --no-cache \
+  --build-arg GUROBI_USER=$(whoami) \
+  --build-arg BASEIMAGE=$BASEIMAGE \
+  -t sebwink/deregnet:$(whoami) . > /dev/null
+cd -
+
+PERMISSIONS=$(stat -c "%a" $(pwd))
+OWNER=$(stat -c "%U" $(pwd))
+GROUP=$(stat -c "%G" $(pwd))
+
+docker run --rm -v $(pwd):/io debian:buster-slim sh -c "chmod 777 /io"
+
+if [[ "$@" == "jupyter lab" ]]; then
+  CMD="jupyter lab --ip=0.0.0.0"
+  PORTS="-p $DEREGNET_JUPYTER_PORT:8888"
+else
+  CMD="$@"
+fi 
+
+docker run --rm -it --pid host \
+		--mac-address $MAC_ADDRESS_FOR_GUROBI_DOCKER \
+		-v $GUROBI_LICENSE:/gurobi/lic \
+		-v $(pwd):/io \
+		$PORTS \
+		sebwink/deregnet:$(whoami) "$CMD"
+
+docker run --rm -v $(pwd):/io debian:buster-slim sh -c "chmod $PERMISSIONS /io"
+docker run --rm -v $(pwd):/io debian:buster-slim sh -c "chown -R $(id -u $OWNER):$(id -g $GROUP) /io"

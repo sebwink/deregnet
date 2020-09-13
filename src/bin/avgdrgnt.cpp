@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------
 //                   deregnet -- find deregulated pathways
 // --------------------------------------------------------------------------
-// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2016
+// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2020
 //
 // This software is released under a three-clause BSD license:
 //  * Redistributions of source code must retain the above copyright
@@ -46,12 +46,12 @@
 #include <string>
 #include <set>
 // grbfrc ###################################################################
-#include <grbfrc/FMILP.h>
+#include "grbfrc/FMILP.hpp"
 // deregnet #################################################################
-#include <deregnet/version.h>
-#include <deregnet/utils.h>
-#include <deregnet/AvgdrgntData.h>
-#include <deregnet/DeregnetFinder.h>
+#include "version.hpp"
+#include "utils.hpp"
+#include "AvgdrgntData.hpp"
+#include "DeregnetFinder.hpp"
 
 #define OPTION_ERROR 1
 
@@ -313,7 +313,7 @@ void writeSubgraphs(vector<Subgraph>& subgraphs, string* outdirp) {
         outdir = string(cwd);
     if (outdirp)
         outdir = *outdirp;
-    struct stat st = {0};
+    struct stat st;
     if (stat(outdir.c_str(), &st) == -1)
         mkdir(outdir.c_str(), 0700);
     string outdir_plain { outdir + "/plain" };

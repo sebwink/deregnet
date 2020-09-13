@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------
 //                   deregnet -- find deregulated pathways
 // --------------------------------------------------------------------------
-// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2016
+// Copyright Sebastian Winkler --- Eberhard Karls University Tuebingen, 2020
 //
 // This software is released under a three-clause BSD license:
 //  * Redistributions of source code must retain the above copyright
@@ -47,9 +47,9 @@
 
 #include <gurobi_c++.h>
 
-#include <deregnet/utils.h>
-#include <deregnet/usinglemon.h>
-#include <deregnet/DeregnetData.h>
+#include "utils.hpp"
+#include "usinglemon.hpp"
+#include "DeregnetData.hpp"
 
 using namespace std;
 

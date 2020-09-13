@@ -1,0 +1,136 @@
+name: Docker
+
+on:
+  push:
+    # Publish `v1.2.3` tags as releases.
+    branches:
+      - master
+        
+    tags:
+      - '*'
+
+  # Run tests for any PRs.
+  pull_request:
+
+env:
+  # TODO: Change variable to your image's name.
+  IMAGE_NAME: deregnet
+  GUROBI_VERSIONS: upstream/libgrbfrc/upstream/gurobi-docker/GUROBI_VERSIONS
+  GUROBI_USER: gurobi 
+  GRBFRC_IMAGE_TAG: latest
+
+jobs:
+  # Run tests.
+  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+      - name: Run tests
+        run: |
+          for GUROBI_VERSION in $(cat $GUROBI_VERSIONS); do
+          
+            echo "GUROBI_VERSION: $GUROBI_VERSION"
+            
+            if [ -f docker-compose.test.yml ]; then
+              docker-compose --file docker-compose.test.yml build
+              docker-compose --file docker-compose.test.yml run sut
+            else 
+              echo SKIP
+            #docker build . --build-arg GUROBI_USER=$GUROBI_USER \
+            #    --build-arg GRBFRC_GUROBI_VERSION=$GUROBI_VERSION \
+            #    --build-arg GRBFRC_IMAGE_TAG=$GRBFRC_IMAGE_TAG \
+            #    --file Dockerfile
+            fi
+          done
+  # Push image to GitHub Packages.
+  # See also https://docs.docker.com/docker-hub/builds/
+  push:
+    # Ensure test job passes before pushing image.
+    needs: test
+
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+      - name: Build and push images
+        run: |
+          for GUROBI_VERSION in $(cat $GUROBI_VERSIONS); do
+          
+            echo "GUROBI_VERSION: $GUROBI_VERSION"
+          
+            docker build . --build-arg GUROBI_USER=$GUROBI_USER \
+              --build-arg GRBFRC_GUROBI_VERSION=$GUROBI_VERSION \
+              --build-arg GRBFRC_IMAGE_TAG=$GRBFRC_IMAGE_TAG \
+              --file Dockerfile --tag $IMAGE_NAME-$GUROBI_VERSION
+          done
+      - name: Log into registry
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+          echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login docker.io -u sebwink --password-stdin
+      - name: Push image
+        run: |
+          DEFAULT_GUROBI_VERSION=$(cat $GUROBI_VERSIONS | tail -n 1)
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          for GUROBI_VERSION in $(cat $GUROBI_VERSIONS); do
+          
+            echo "PUSH for GUROBI_VERSION: $GUROBI_VERSION"
+          
+            GUROBI_MAJOR_VERSION=$(echo $GUROBI_VERSION | cut -d'.' -f 1-2)
+            GUROBI_VERSION_TAG=$(echo $GUROBI_VERSION | sed 's/\.//g')
+          
+            IMAGE_ID_GITHUB_PKG=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
+            IMAGE_ID_DOCKER_HUB=docker.io/sebwink/$IMAGE_NAME
+            # Change all uppercase to lowercase
+            IMAGE_ID_GITHUB_PKG=$(echo $IMAGE_ID_GITHUB_PKG | tr '[A-Z]' '[a-z]')
+            IMAGE_ID_DOCKER_HUB=$(echo $IMAGE_ID_DOCKER_HUB | tr '[A-Z]' '[a-z]')
+            echo IMAGE_ID_GITHUB_PKG=$IMAGE_ID_GITHUB_PKG
+            echo IMAGE_ID_DOCKER_HUB=$IMAGE_ID_DOCKER_HUB
+            echo GUROBI_VERSION=$GUROBI_VERSION
+            echo GUROBI_MAJOR_VERSION=$GUROBI_MAJOR_VERSION
+            echo GUROBI_VERSION_TAG=$GUROBI_VERSION_TAG
+            GIT_HASH=$(git rev-parse --short "$GITHUB_SHA")
+          
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG:grb$GUROBI_VERSION
+            docker push $IMAGE_ID_GITHUB_PKG:grb$GUROBI_VERSION
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:$GIT_HASH
+            docker push $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:$GIT_HASH
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:latest
+            docker push $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:latest
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:$VERSION
+            docker push $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:$VERSION
+            
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB:grb$GUROBI_VERSION 
+            docker push $IMAGE_ID_DOCKER_HUB:grb$GUROBI_VERSION
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$GIT_HASH
+            docker push $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$GIT_HASH
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:latest
+            docker push $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:latest
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$VERSION
+            docker push $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$VERSION
+
+            echo $GUROBI_VERSION 
+            echo $DEFAULT_GUROBI_VERSION
+
+            if [[ "$GUROBI_VERSION" == "$DEFAULT_GUROBI_VERSION" ]]; then
+              docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG:$VERSION
+              docker push $IMAGE_ID_GITHUB_PKG:$VERSION
+              docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG:$GIT_HASH
+              docker push $IMAGE_ID_GITHUB_PKG:$GIT_HASH
+              docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG:latest
+              docker push $IMAGE_ID_GITHUB_PKG:latest
+              docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB:$VERSION
+              docker push $IMAGE_ID_DOCKER_HUB:$VERSION
+              docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB:$GIT_HASH
+              docker push $IMAGE_ID_DOCKER_HUB:$GIT_HASH
+              docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB:latest
+              docker push $IMAGE_ID_DOCKER_HUB:latest
+            fi 
+
+          done
