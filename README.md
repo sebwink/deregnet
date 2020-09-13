@@ -40,7 +40,7 @@ Using deregnet via Docker is the only officially supported and documented way of
 From within the root of the repo, run as follows:
 
 ```sh
-docker/named-user/run sebwink/deregnet:latest deregnet.py --help
+docker/named-user/run sebwink/deregnet:latest avgdrgnt.py --help
 ```
 
 ```sh
@@ -178,7 +178,7 @@ optional arguments:
 ```
 
 ```sh 
-docker/name-user/run sebwink/deregnet:latest deregnet.py --graph test/kegg_hsa.graphml --scores test/data/score.csv --sep , --graph-id-attr ensembl
+docker/name-user/run sebwink/deregnet:latest avgdrgnt.py --graph test/kegg_hsa.graphml --scores test/data/score.csv --sep , --graph-id-attr ensembl
 ``` 
 
 ## General remarks
