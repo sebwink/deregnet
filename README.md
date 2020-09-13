@@ -2,6 +2,8 @@
 
 ![Docker](https://github.com/sebwink/deregnet/workflows/Docker/badge.svg?branch=master)
 
+by Sebastian Winkler and University of Tuebingen
+
 ## Introduction
 
 One of the main challenges of high-throuput omics technologies 
