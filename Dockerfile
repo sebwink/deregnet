@@ -47,6 +47,8 @@ RUN chown -R ${GUROBI_USER}:${GUROBI_USER} /io && \
 		mkdir -p /home/${GUROBI_USER} && \
 		chown -R ${GUROBI_USER}:${GUROBI_USER} /home/${GUROBI_USER}
 
+RUN ln -s /deregnet/python/deregnet /usr/local/lib/python3.7/dist-packages/deregnet
+
 USER ${GUROBI_USER}
 
 ENV PATH=/deregnet/bin:${PATH}
