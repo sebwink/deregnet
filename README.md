@@ -23,21 +23,85 @@ suitable omics data like for example gene expression.
 
 Using deregnet via Docker is the only officially supported and documented way of running deregnet.
 
-### Setup for use with a Gurobi floating license
+### Gurobi floating license
 
+In case of a Gurobi [token server / floating license](https://www.gurobi.com/documentation/9.0/quickstart_linux/creating_a_token_server_cl.html#subsection:clientlicensetoken) you need to make your license file known to the deregnet 
+Docker container. Do this by
+
+```sh
+export GUROBI_LICENSE=<path to your license file>
+```
+before running deregnet.
+
+By default the license file will be expected in *~/.licenses/gurobi*.
+You need to make sure that the license server configured in your license is reachable from Docker containers
+running on your host.
+
+Once the license is configured, the best way to run deregnet is via [*docker/token-server/run*](https://github.com/sebwink/deregnet/tree/master/docker/token-server) script:
+
+```sh
+docker/token-server/run <DEREGNET_IMAGE> <CMD>
+```
+See below for further information about the <DEREGNET_IMAGE> and <CMD> placeholders.
 
 ### Setup for use with a Gurobi named-user license
 
+In case of a Gurobi [named user academic license]https://www.gurobi.com/documentation/9.0/quickstart_linux/creating_a_new_academic_li.html#subsection:createacademiclicense) you also need to make your license file known to the deregnet 
+Docker container. Do this by
 
-### Input-output via Docker volumes
+```sh
+export GUROBI_LICENSE=<path to your license file>
+```
+before running deregnet.
+
+By default the license file will be expected in *~/.licenses/gurobi*.
+
+In order to make a named user license work for deregnet, one additional step is to find the MAC address with respect to which your license
+is registered. Do the following before running deregnet:
+
+```
+export MAC_ADDRESS_FOR_GUROBI_DOCKER=<YOUR-MAC-ADDRESS>
+```
+
+Finding your right <YOUR-MAC-ADDRESS> is system-specific, in case of doubt, try all MAC addresses listed by *ifconfig -a* and proceed by trial and error until
+your license is accepted while running deregnet (see below).
+
+Once the license is configured, the best way to run deregnet is via [*docker/named-user/run*](https://github.com/sebwink/deregnet/tree/master/docker/named-user) script:
+
+```sh
+docker/token-server/run <DEREGNET_IMAGE> <CMD>
+```
+See below for further information about the \<DEREGNET_IMAGE\> and \<CMD\> placeholders.
+
+### \<DEREGNET_IMAGE\>
+
+Deregnet Docker images are available from [Docker Hub](https://hub.docker.com/repository/docker/sebwink/deregnet) and [GitHub Packages](https://github.com/sebwink/deregnet/packages). Usually, you should be able to just run:
+
+```sh
+docker/token-server/run sebwink/deregnet:latest <CMD>
+```
+
+To run a specific release of deregnet run for example:
 
 
-### Security considerations
+```sh
+docker/token-server/run sebwink/deregnet:0.99.999 <CMD>
+```
+
+The best way to run with a specific [supported](https://github.com/sebwink/gurobi-docker/blob/master/GUROBI_VERSIONS) Gurobi version is for example like so:
 
 
-### Basic usage
+```sh
+docker/token-server/run sebwink/deregnet-grb9.0.2:0.99.999 <CMD>
+```
 
-From within the root of the repo, run as follows:
+```sh
+docker/token-server/run sebwink/deregnet-grb8.1.1:latest <CMD>
+```
+
+### \<CMD\>
+  
+deregnet Docker images support multiple commands. The most straight-forward one is to [use](https://github.com/sebwink/deregnet/tree/master/examples/command-line) the main script for deregnet:
 
 ```sh
 docker/named-user/run sebwink/deregnet:latest avgdrgnt.py --help
@@ -177,9 +241,30 @@ optional arguments:
                         supported by chosen biomap mapper
 ```
 
+For example:
+
 ```sh 
-docker/name-user/run sebwink/deregnet:latest avgdrgnt.py --graph test/kegg_hsa.graphml --scores test/data/score.csv --sep , --graph-id-attr ensembl
+docker/name-user/run sebwink/deregnet:latest avgdrgnt.py \
+  --graph test/kegg_hsa.graphml \
+  --scores test/data/score.csv \
+  --sep , \
+  --graph-id-attr ensembl
 ``` 
+
+Other commands include *drgnt.py* (Optimization for absolute, not average, best subgraphs).
+
+The most frequent other use cases are to run [Jupyter Lab](https://github.com/sebwink/deregnet/tree/master/examples/jupyterlab) or custom [Python scripts](https://github.com/sebwink/deregnet/tree/master/examples/custom-python-script).
+
+### [Examples](https://github.com/sebwink/deregnet/tree/master/examples)
+
+### Input-output via Docker volumes
+
+Generally your current working directory will be mounted in the running Docker containers. Also some Docker-necessitated access right and owner
+sanitations will be carried out, [see for example](https://github.com/sebwink/deregnet/blob/master/docker/named-user/run).
+
+### Security considerations
+
+Only run the deregnet images in trusted environments.
 
 ## General remarks
 
