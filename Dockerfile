@@ -48,6 +48,7 @@ RUN chown -R ${GUROBI_USER}:${GUROBI_USER} /io && \
 
 USER ${GUROBI_USER}
 
+ENV PATH=/deregnet/bin:${PATH}
 ENV PATH=/deregnet/python/scripts:${PATH}
 
-ENTRYPOINT ["/deregnet/python/scripts/avgdrgnt.py"]
+ENTRYPOINT ["sh", "-c"]
