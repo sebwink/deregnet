@@ -2,7 +2,7 @@
 
 ![Docker](https://github.com/sebwink/deregnet/workflows/Docker/badge.svg?branch=master)
 
-by Sebastian Winkler and University of Tuebingen
+by [Sebastian Winkler](https://github.com/sebwink) and [Applied Bioinformatics Group](https://kohlbacherlab.org/), University of Tuebingen
 
 ## Introduction
 
