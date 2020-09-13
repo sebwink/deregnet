@@ -185,6 +185,4 @@ docker/name-user/run sebwink/deregnet:latest avgdrgnt.py --graph test/kegg_hsa.g
 
 Feedback and problems can be reported via GitHub [Issues](https://github.com/sebwink/deregnet/issues).
 
-```
-
 [ProjectPage](https://sebwink.github.io/deregnet/)
