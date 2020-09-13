@@ -44,7 +44,7 @@ Once the license is configured, the best way to run deregnet is via [*docker/tok
 ```sh
 docker/token-server/run <DEREGNET_IMAGE> <CMD>
 ```
-See below for further information about the <DEREGNET_IMAGE> and <CMD> placeholders.
+See below for further information about the \<DEREGNET_IMAGE\> and \<CMD\> placeholders.
 
 ### Setup for use with a Gurobi named-user license
 
