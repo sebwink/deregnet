@@ -33,9 +33,10 @@ RUN python3 -m pip install pandas && \
 	apt-get install -y git && \
 	apt-get install -y libtool && \
 	apt-get install bison -y && \
-    apt-get install byacc -y && \
+        apt-get install byacc -y && \
 	apt-get install flex -y && \
-    python3 -m pip install python-igraph
+        python3 -m pip install python-igraph && \
+	python3 -m pip install ipython jupyterlab
 
 COPY python python 
 
