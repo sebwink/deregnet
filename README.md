@@ -65,7 +65,7 @@ is registered. Do the following before running deregnet:
 export MAC_ADDRESS_FOR_GUROBI_DOCKER=<YOUR-MAC-ADDRESS>
 ```
 
-Finding your right <YOUR-MAC-ADDRESS> is system-specific, in case of doubt, try all MAC addresses listed by *ifconfig -a* and proceed by trial and error until
+Finding your right \<YOUR-MAC-ADDRESS\> is system-specific, in case of doubt, try all MAC addresses listed by *ifconfig -a* and proceed by trial and error until
 your license is accepted while running deregnet (see below).
 
 Once the license is configured, the best way to run deregnet is via [*docker/named-user/run*](https://github.com/sebwink/deregnet/tree/master/docker/named-user) script:
