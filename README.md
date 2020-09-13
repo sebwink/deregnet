@@ -23,6 +23,8 @@ suitable omics data like for example gene expression.
 
 Using deregnet via Docker is the only officially supported and documented way of running deregnet. See [examples here](https://github.com/sebwink/deregnet/tree/master/examples).
 
+In any case, you need [Docker](https://www.docker.com/) installed.
+
 ### Gurobi floating license
 
 In case of a Gurobi [token server / floating license](https://www.gurobi.com/documentation/9.0/quickstart_linux/creating_a_token_server_cl.html#subsection:clientlicensetoken) you need to make your license file known to the deregnet 
@@ -69,7 +71,7 @@ your license is accepted while running deregnet (see below).
 Once the license is configured, the best way to run deregnet is via [*docker/named-user/run*](https://github.com/sebwink/deregnet/tree/master/docker/named-user) script:
 
 ```sh
-docker/token-server/run <DEREGNET_IMAGE> <CMD>
+docker/named-user/run <DEREGNET_IMAGE> <CMD>
 ```
 See below for further information about the \<DEREGNET_IMAGE\> and \<CMD\> placeholders.
 
