@@ -77,6 +77,7 @@ jobs:
       - name: Push image
         run: |
           DEFAULT_GUROBI_VERSION=$(cat $GUROBI_VERSIONS | tail -n 1)
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           for GUROBI_VERSION in $(cat $GUROBI_VERSIONS); do
           
             echo "PUSH for GUROBI_VERSION: $GUROBI_VERSION"
@@ -102,19 +103,22 @@ jobs:
             docker push $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:$GIT_HASH
             docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:latest
             docker push $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:latest
-                    
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:$VERSION
+            docker push $IMAGE_ID_GITHUB_PKG-grb$GUROBI_VERSION:$VERSION
+            
             docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB:grb$GUROBI_VERSION 
             docker push $IMAGE_ID_DOCKER_HUB:grb$GUROBI_VERSION
             docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$GIT_HASH
             docker push $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$GIT_HASH
             docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:latest
             docker push $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:latest
+            docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$VERSION
+            docker push $IMAGE_ID_DOCKER_HUB-grb$GUROBI_VERSION:$VERSION
 
             echo $GUROBI_VERSION 
             echo $DEFAULT_GUROBI_VERSION
 
             if [[ "$GUROBI_VERSION" == "$DEFAULT_GUROBI_VERSION" ]]; then
-              VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
               docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG:$VERSION
               docker push $IMAGE_ID_GITHUB_PKG:$VERSION
               docker tag $IMAGE_NAME-$GUROBI_VERSION $IMAGE_ID_GITHUB_PKG:$GIT_HASH
