@@ -4,17 +4,8 @@ SELFDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 GUROBI_LICENSE=${GUROBI_LICENSE:-$HOME/.licenses/gurobi}
 
-# BUILD local image
-
 BASEIMAGE=$1
 shift
-
-cd $SELFDIR
-docker build --no-cache \
-  --build-arg GUROBI_USER=$(whoami) \
-  --build-arg BASEIMAGE=$BASEIMAGE \
-  -t sebwink/deregnet:$(whoami) . > /dev/null
-cd -
 
 PERMISSIONS=$(stat -c "%a" $(pwd))
 OWNER=$(stat -c "%U" $(pwd))
@@ -26,7 +17,7 @@ docker run --rm -it --pid host \
 		--mac-address $MAC_ADDRESS_FOR_GUROBI_DOCKER \
 		-v $GUROBI_LICENSE:/gurobi/lic \
 		-v $(pwd):/io \
-		sebwink/deregnet:$(whoami) $@
+		$BASEIMAGE $@
 
 docker run --rm -v $(pwd):/io debian:buster-slim sh -c "chmod $PERMISSIONS /io"
 docker run --rm -v $(pwd):/io debian:buster-slim sh -c "chown -R $(id -u $OWNER):$(id -g $GROUP) /io"
