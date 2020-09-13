@@ -17,8 +17,7 @@ $DEREGNET_HOME/docker/$GUROBI_LICENSE_MODE/run sebwink/deregnet:0.99.999 avgdrgn
 		--graph-id-attr ensembl
 ```
 
-Your current working directory gets mounted into the Docker container and results of the benchmark 
-script correspondingly will end up there after it finishes running.
+Your current working directory gets mounted into the Docker container and results of deregnet run (here: deregnet.log and optimal.graphml) correspondingly will end up there after it finishes running.
 
 For more control concerning Docker volumes, etc. you can have a look at the implementation of the
 *docker/<license-mode>/run* scripts for [named-user](https://github.com/sebwink/deregnet/tree/master/docker/named-user) mode 
