@@ -80,7 +80,7 @@ See below for further information about the \<DEREGNET_IMAGE\> and \<CMD\> place
 
 ### \<DEREGNET_IMAGE\>
 
-Deregnet Docker images are available from [Docker Hub](https://hub.docker.com/repository/docker/sebwink/deregnet) and [GitHub Packages](https://github.com/sebwink/deregnet/packages). Usually, you should be able to just run:
+Deregnet Docker images are available from [Docker Hub](https://hub.docker.com/r/sebwink/deregnet) and [GitHub Packages](https://github.com/sebwink/deregnet/packages). Usually, you should be able to just run:
 
 ```sh
 docker/token-server/run sebwink/deregnet:latest <CMD>
