@@ -21,6 +21,10 @@ modifications like posphorylation. DeRegNet allows the extraction and
 prioritisation of subnetworks of larger biomolecular networks based on
 suitable omics data like for example gene expression.
 
+## Open Source
+
+DeRegNet is open source and its source code is available [here](https://github.com/sebwink/deregnet).
+
 ## Run via Docker 
 
 Using deregnet via Docker is the only officially supported and documented way of running deregnet. See [examples here](https://github.com/sebwink/deregnet/tree/master/examples).
