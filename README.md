@@ -1,4 +1,4 @@
-# DeRegNet - Find deregulated subnetworks
+# [DeRegNet](https://dereg.net/) - Find deregulated subnetworks
 
 ![Docker](https://github.com/sebwink/deregnet/workflows/Docker/badge.svg?branch=master)
 
