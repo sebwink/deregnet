@@ -14,7 +14,7 @@ USER root
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-	apt-get install -y build-essential && \
+	apt-get install -y build-essential cmake && \
 	apt-get install -y python3-dev python3-pip && \
 	mkdir /deregnet
 
