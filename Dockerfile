@@ -19,7 +19,7 @@ USER root
 RUN apt-get update && \
     apt-get upgrade -y && \
 	apt-get install -y build-essential && \
-	apt-get install -y python3-dev python3-pip && \
+	apt-get install -y python3-dev python3-pip libffi-dev && \
 	mkdir /deregnet
 	
 # CMAKE
